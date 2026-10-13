@@ -1,0 +1,7 @@
+id,subsistema,pieza,funcion,especificacion_objetivo,cantidad,proveedor,referencia,coste_unitario_eur,masa_kg,consumo_w,disponibilidad,licencia,estado_validacion,notas
+HW-001,robot,controlador_seguridad,parada_independiente,por_definir,1,,,,,,,por_decidir,pendiente,Separado de LLM
+HW-002,robot,actuador_rueda_pata,locomocion_escaleras,por_calcular,4,,,,,,,por_decidir,pendiente,Par e inercia por CAD
+HW-003,robot,brazo_7gdl,manipulacion_bimanual,por_calcular,2,,,,,,,por_decidir,pendiente,Par fuerza y cambio herramienta
+HW-004,dock,marcador_apriltag,alineacion_optica,calibrado,1,,,,,,,abierto,propuesta,Marcador imprimible
+HW-005,dock,cargador_protegido,carga_con_BMS,por_definir,1,,,,,,,por_decidir,pendiente,Contactos sin tension peligrosa expuesta
+HW-006,taller,transportador_bajo,extraccion_lavadora,por_calcular,1,,,,,,,por_decidir,pendiente,No alzar electrodomesticos con brazos
