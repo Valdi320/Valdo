@@ -14,7 +14,11 @@ La [especificación canónica](PROYECTO_CANONICO.md) conserva íntegramente la v
 - [Fuentes y normas](09-referencias-y-normas.md)
 - [Preguntas de I+D](10-decisiones-y-proximos-pasos.md)
 
+- **[Investigación nueva con diez informes](../research/2026-10-13/README.md)** — resultados, fuentes y limitaciones 13/10/2026.
 - [ADR-0001 — arquitectura preliminar](ADR-0001-arquitectura-preliminar.md)
+- [ADR-0002 — simulación y validación incremental](ADR-0002-estrategia-de-investigacion.md)
+- [30 experimentos priorizados](../research/2026-10-13/experimentos-priorizados.csv)
+- [30 riesgos de I+D adicionales](../research/2026-10-13/riesgos-adicionales.csv)
 - [Ensayos y criterios de aceptación](../tests/MATRIZ_ACEPTACION.md)
 - [Registro de riesgos](../safety/REGISTRO_RIESGOS.csv)
 - [BOM preliminar](../hardware/BOM_PLANTILLA.csv)
