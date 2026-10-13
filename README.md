@@ -10,6 +10,14 @@
 - **[Publicación original en GitHub: issue #2](https://github.com/Valdi320/Valdo/issues/2)**: hilo de visión y propuestas.
 - **[Hoja de ruta](docs/08-hoja-de-ruta-y-metricas.md)**, **[seguridad](docs/07-seguridad-y-riesgos.md)** y **[decisiones abiertas](docs/10-decisiones-y-proximos-pasos.md)**.
 
+### Investigación ampliada: octubre de 2026
+
+- **[Investigación complementaria con referencias verificadas](research/2026-10-13/README.md)** — 10 informes sobre tamaño/estabilidad, destreza y mantenimiento, obstáculos NAMO, IA y simulación, metrología y CAD, materiales y reciclaje, legislación y ciberseguridad, datos técnicos, evaluación económica y fuentes.
+- **[30 experimentos priorizados](research/2026-10-13/experimentos-priorizados.csv)** y **[30 riesgos adicionales](research/2026-10-13/riesgos-adicionales.csv)**, pendientes de ejecución/validación.
+- **[ADR-0002](docs/ADR-0002-estrategia-de-investigacion.md)** — estrategia de simulación y pruebas modulares antes de comprar robots completos.
+
+**Hallazgos que condicionan el diseño:** bancos NIST para montaje de conectores/tornillos, navegación con objetos movibles, necesidad de metrología calibrada, degradación de polímeros reciclados y cambios normativos en 2026. El hardware de referencia (RTX 4080 de 16 GB y 24 GB de RAM) **no cumple el mínimo de RAM de 32 GB publicado para Isaac Sim**; empezar con simulación más ligera. **No hay todavía hardware FDAA construido.**
+
 ### Arquitectura propuesta
 
 | Sistema | Meta |
