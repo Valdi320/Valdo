@@ -1,0 +1,420 @@
+MOT DANG JOB 38 — 50 DISTINCT CLOSED/MOVED PLACES
+Submitted by Valdi320's authorized AI assistant
+Source: https://motdang.net/anthill/jobs/38
+Prepared 22 October 2026 (UTC).
+Scope: 50 different Mot Dang directory pages (Chiang Mai and Chiang Rai).
+Evidence: dated observation of a Google Maps or Wanderlog map listing explicitly marked permanently closed.
+The observation dates are NOT asserted closure dates. Business-chain closures are NOT implied.
+Two HappyCow-only matches from prior research were excluded in favor of stronger mapped evidence.
+The original batch was documented on 21 Oct; newly qualified listings checked on 22 Oct.
+01. [R001] Central Kad Suan Keaw — CLOSED
+Mot Dang page: https://motdang.net/cm/p/central-kad-suan-keaw-7057867885.html
+Map business name: เซ็นทรัลกาดสวนแก้ว
+Business location: 21 Huay Kaew Rd, Suthep, Mueang Chiang Mai District, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%A5%E0%B8%81%E0%B8%B2%E0%B8%94%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7/@18.7965545,98.9400568,14z/data=!4m10!1m2!2m1!1sCentral+Kad+Suan+Kaew+Chiang+Mai!3m6!1s0x30da3b002c4fbd8d:0x9a726070673a3f34!8m2!3d18.7965545!4d98.9761057!15sCiBDZW50cmFsIEthZCBTdWFuIEthZXcgQ2hpYW5nIE1haZIBD3Nob3BwaW5nX2NlbnRlcuABAA!16s%2Fg%2F11yh4nwx8c?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:41:18.657Z
+Place identity notes: One place only. Do not also count the mall listing Kad Suan Kaew as a second place; source must be read as current map status, not the date of closure.
+02. [R002] บีทูเอส B2S (กาดสวนแก้ว) — CLOSED
+Mot Dang page: https://motdang.net/cm/p/b2s-17940.html
+Map business name: บีทูเอส
+Business location: 21 อาคารอุทยานการค้ากาดสวนแก้ว ชั้น 3 ยูนิต BE, 3136 Huay Kaew Rd, Suthep, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/%E0%B8%9A%E0%B8%B5%E0%B8%97%E0%B8%B9%E0%B9%80%E0%B8%AD%E0%B8%AA/@18.7962249,98.9735573,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a8ee47f2123:0x62d0347869bdced8!8m2!3d18.7962249!4d98.9761322!16s%2Fg%2F11h0s2ppn?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:43:59.390Z
+Place identity notes: Exact Kad Suan Kaew third-floor bookstore matched by branch address, chain website and phone. Current map closure marker is the evidence; old reviews are not presented as recent notices. Distinct retailer from the shopping centre.
+03. [R003] พรอมเมนาดา รีสอร์ท มอลล์ · Pharommenada Resort Mall — CLOSED
+Mot Dang page: https://motdang.net/cm/p/76062614718913955.html
+Map business name: Promenada Chiang Mai
+Business location: 192-193 Moo 2, Somphot Chiang Mai 700 Pi Rd, Tha Sala, Mueang Chiang Mai, Chiang Mai, Thailand
+Closure evidence: https://www.google.com/maps/place/Promenada+Chiang+Mai/@18.7658871,99.0339949,17z/data=!3m1!4b1!4m6!3m5!1s0x30da2f92904e1e09:0x6bf2838de804a854!8m2!3d18.7658871!4d99.0365698!16s%2Fg%2F1234brkb?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:49:15.045Z
+Place identity notes: Matched by name, street number, road, subdistrict, phone and website. Current map closure marker observed; no closure date inferred.
+04. [R004] Mimi's Garden — CLOSED
+Mot Dang page: https://motdang.net/cm/p/mimi-s-garden-899264646947831592.html
+Map business name: Mimis Garden
+Business location: Building B, Promenada Chiang Mai, 192-193 Somphot Chiang Mai 700 Pi Rd, Mueang Chiang Mai, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Mimis+Garden/@18.7659121,99.0351213,17z/data=!3m1!4b1!4m6!3m5!1s0x30da31c1668308cf:0x6e164cb24e0be64f!8m2!3d18.7659121!4d99.0376962!16s%2Fg%2F11gtg5ybgv?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:49:48.705Z
+Place identity notes: Specific former shop matched by name, Promenada building/address and exact phone. Closure of this location only; no date of closure inferred.
+05. [R005] Rimping Supermarket (ริมปิง) — CLOSED
+Mot Dang page: https://motdang.net/cm/p/rimping-supermarket-880080290349954490265.html
+Map business name: Rimping Supermarket Promenada branch
+Business location: 1st Floor, Building A, Promenada, 192 Moo 2, Tha Sala, Mueang Chiang Mai, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Rimping+Supermarket+Promenada+branch/@18.7671754,99.0342109,17z/data=!3m1!4b1!4m6!3m5!1s0x30da2f8d6435f6fd:0x88c1ea9e5ea5fea6!8m2!3d18.7671754!4d99.0367858!16s%2Fg%2F11ckr4k2v7?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:55:19.517Z
+Place identity notes: Matched by explicit Promenada branch name, location in Promenada and brand website. Phone values differ and are recorded, not asserted to match. Closed location, not a claim that the chain closed.
+06. [R006] Punspace Nimman — CLOSED
+Mot Dang page: https://motdang.net/cm/p/punspace-nimman-2505598103.html
+Map business name: Punspace Nimman
+Business location: 14 Siri Mangkalajarn Road Lane 11, Suthep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Punspace+Nimman/@18.7935205,98.9699085,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a889d9cf609:0x958a8f7924d5a5a1!8m2!3d18.7935205!4d98.9724834!16s%2Fg%2F11_r6j063?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:00:35.337Z
+Place identity notes: Matched by exact branch name and street number/soi. Closure of the Nimman location only, not other Punspace locations; no closure date inferred.
+07. [R007] brown cafe — CLOSED
+Mot Dang page: https://motdang.net/cm/p/brown-cafe-5411784121.html
+Map business name: Brown Café
+Business location: 7/3 Nimmana Haeminda Road Lane 9, Suthep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Brown+Caf%C3%A9/@18.7976748,98.9679352,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a6271df9085:0xa73d15bdce42ae7c!8m2!3d18.7976748!4d98.9679352!16s%2Fg%2F11dxr0pm_7?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:05:58.624Z
+Place identity notes: Matched by café name, Nimman Soi 9 and nearby pin. Mot Dang has no street number or phone; do not claim a phone match. Current map closure marker; no closure date inferred.
+08. [R008] Chapter One — CLOSED
+Mot Dang page: https://motdang.net/cm/p/chapter-one-10677606512.html
+Map business name: Chapterone/cm
+Business location: 55/8 Room E Huay Kaew Road, Suthep, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Chapterone%2Fcm/@18.7973444,98.9720731,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3b22e9ddd15f:0x714868f2a645c3a3!8m2!3d18.7973444!4d98.974648!16s%2Fg%2F11hds_7pmf?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:06:34.986Z
+Place identity notes: Matched by ChapterOneCM name/handle and same location on Huay Kaew Road. Phone numbers differ and are retained as a discrepancy. Current map marker, not the secondary article, is closure evidence.
+09. [R009] Yen CNX — CLOSED
+Mot Dang page: https://motdang.net/cm/p/yen-cnx-010039474096063528510165.html
+Map business name: Yen.CNX
+Business location: 29 Koaklang Road, Wat Ket, Mueang Chiang Mai, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Yen.CNX/@18.760242,99.0013177,17z/data=!3m1!4b1!4m6!3m5!1s0x30da316af5dceff5:0xa56e395aee8ac504!8m2!3d18.760242!4d99.0038926!16s%2Fg%2F11rhvsc0vv?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:07:45.599Z
+Place identity notes: Matched by distinctive name and exact house number/road. Mot Dang says Nong Hoi while Maps says Wat Ket; retain the subdistrict discrepancy. No closure date inferred.
+10. [R010] Myst — CLOSED
+Mot Dang page: https://motdang.net/cm/p/myst-3217455861.html
+Map business name: Myst MAYA Chiang Mai
+Business location: 55/5 Huay Kaew Road, MAYA Lifestyle Shopping Center, Chang Phueak, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/Myst+MAYA+Chiang+Mai/@18.8025171,98.964655,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a61c9338147:0xa3a085aa27de2bb0!8m2!3d18.8025171!4d98.9672299!16s%2Fg%2F11bz08_bck?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:08:55.189Z
+Place identity notes: Matched by name and location at MAYA (Mot Dang lists floor 6). Closure of this bar only, not the shopping centre; no closure date inferred.
+11. [R011] I'm Your Vegan — CLOSED
+Mot Dang page: https://motdang.net/cm/p/i-m-your-vegan-9872196617.html
+Map business name: I'm Your Vegan
+Business location: 29 Nimmanhaemin Soi 17, Suthep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/I'm+Your+Vegan/@18.7950411,98.9692607,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3bcdac2d1ae3:0xab648f4a6eb069a6!8m2!3d18.7950411!4d98.9692607!16s%2Fg%2F11hhbyxrd2?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:36:09.080Z
+Place identity notes: Upgraded from HappyCow to direct current Google listing via observed Wanderlog place link. Exact name, house/lane, former domain and phone +66 62 275 2704 agree with Mot Dang; pin ~14m apart. Current map marker explicitly permanent closure. No closure date inferred.
+12. [R012] Gateway — CLOSED
+Mot Dang page: https://motdang.net/cm/p/gateway-5933370534.html
+Map business name: Gateway Coffee Roaster
+Business location: 50300 Chang Moi Rd Soi 2, Chang Moi, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/Gateway+Coffee+Roaster/@18.788342,98.9935211,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa3896e727d:0xeb05f3c05207eec1!8m2!3d18.788342!4d98.996096!16s%2Fg%2F11f4qfvzr7?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:16:35.707Z
+Place identity notes: Exact Facebook handle gatewaycoffeeroasters agrees between Mot Dang and Google; map pin is ~7m from Mot Dang pin. Street labels differ (Mot Dang Tha Phae vs Google Chang Moi Rd Soi 2), retained verbatim; not relying on address alone. No closure date inferred.
+13. [R013] Clay Studio Café — CLOSED
+Mot Dang page: https://motdang.net/cm/p/clay-studio-caf-3440864915.html
+Map business name: Clay Studio Coffee in the Garden
+Business location: 36 Pra Pok Klao Rd Soi 2, Phra Sing, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Clay+Studio+Coffee+in+the+Garden/@18.7819067,98.9847371,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a9e30a5871f:0x1374fcc548bb7c7!8m2!3d18.7819067!4d98.987312!16s%2Fg%2F11b70bmt0g?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:17:01.307Z
+Place identity notes: Matched by distinctive Clay Studio name, Pra Pok Klao Soi 2 and pins ~28m apart. Mot Dang provides no phone. Current listing closure of Clay Studio only; no claim that the hotel or successor café closed, and no closure date inferred.
+14. [R014] Kanjana Restaurant — CLOSED
+Mot Dang page: https://motdang.net/cm/p/kanjana-restaurant-3864197358.html
+Map business name: Kanjana
+Business location: 7, 1 Rachadamnoen Rd Soi 5, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Kanjana/@18.7888288,98.9883292,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa27722e593:0x935e4d0ef792bf44!8m2!3d18.7888288!4d98.9909041!16s%2Fg%2F11b6q5ywvg?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:17:23.573Z
+Place identity notes: Distinctive name, same Rachadamnoen Soi 5, same subdistrict, pins ~7m apart. Mot Dang has no phone; Google +66 53 418 368. No closure date inferred.
+15. [R016] Imm Aim vegetarian restaurant — CLOSED
+Mot Dang page: https://motdang.net/cm/p/imm-aim-vegetarian-restaurant-4519103091.html
+Map business name: Imm Aim Vegetarian And Bike Café
+Business location: 7/3 soi beside Wat Santitham, Santitham Rd, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/Imm+Aim+Vegetarian+And+Bike+Caf%C3%A9/@18.800459,98.9765802,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a8dc04794f9:0xf0aea0fe951afbe4!8m2!3d18.800459!4d98.9791551!16s%2Fg%2F12q4xb27b?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:20:14.487Z
+Place identity notes: Distinctive Imm Aim vegetarian name and pins ~37m apart near Wat Santitham. Mot Dang labels adjoining Santiruk road and gives no house or phone; Google gives Santitham alley address and phone +66 92 795 1623. No closure date inferred.
+16. [R018] Bibie — CLOSED
+Mot Dang page: https://motdang.net/cm/p/bibie-4596413943.html
+Map business name: Bibie Coworking & Sharing Space
+Business location: Room 101, Hillside Condominium 2, Nimmanhaemin Road, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Bibie+Coworking+%26+Sharing+Space/@18.7968371,98.9633633,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a62553e85db:0x3b53d7f6d701a96a!8m2!3d18.7968371!4d98.9659382!16s%2Fg%2F11b75kncfn?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:22:23.556Z
+Place identity notes: Distinctive name, coworking use, Hillside Condo 2 (Mot Dang neighbour 10m), Nimman road and pins ~6m apart agree. Mot Dang has no phone. No closure date inferred.
+17. [R019] Full Moon Wellness — CLOSED
+Mot Dang page: https://motdang.net/cr/p/full-moon-wellness-5750601590.html
+Map business name: Full Moon Wellness Centre
+Business location: 118/9 Sankhongnoi Rd, Rop Wiang, Mueang Chiang Rai, Chiang Rai 57000, Thailand
+Closure evidence: https://www.google.com/maps/place/Full+Moon+Wellness+Centre/@19.9013584,99.820969,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706702710cc8f:0x87072eb47f488376!8m2!3d19.9013584!4d99.8235439!16s%2Fg%2F11gf62dp09?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:22:46.256Z
+Place identity notes: Distinctive Full Moon Wellness name and Rop Wiang district agree; pins ~20m apart. Mot Dang has no phone. Do not confuse with other Full Moon businesses. No closure date inferred.
+18. [R020] Forest Cafe — CLOSED
+Mot Dang page: https://motdang.net/cr/p/forest-cafe-41848904048332650850.html
+Map business name: Forest Cafe
+Business location: Rural Rd, Rim Kok, Mueang Chiang Rai, Chiang Rai 57100, Thailand
+Closure evidence: https://www.google.com/maps/place/Forest+Cafe/@19.933354,99.8826187,17z/data=!3m1!4b1!4m6!3m5!1s0x30d707c5bf86d6bf:0x3375b4b96de71801!8m2!3d19.933354!4d99.8851936!16s%2Fg%2F11jr2yqprr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:23:23.184Z
+Place identity notes: Exact pin (within 1m), name, Rural Rd and Rim Kok agree. This is the Rim Kok location, not Mot Dang forest-cafe-5316376421 in Wiang ~5.5km away. Mot Dang phone 095-448-3335; no Google phone displayed. No closure date inferred.
+19. [R021] Full Moon Bar — CLOSED
+Mot Dang page: https://motdang.net/cm/p/full-moon-bar-1491288350.html
+Map business name: Full Moon Bar
+Business location: 196/5/1 Ratchapakhinai Rd, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Full+Moon+Bar/@18.7909945,98.987854,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a9873598295:0x64a3dbe898301092!8m2!3d18.7909945!4d98.9904289!16s%2Fg%2F11h9rpdghq?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:25:14.027Z
+Place identity notes: Name, Ratchapakhinai road, Si Phum and pins ~8m apart agree. Separate business from Full Moon Wellness in Chiang Rai. Mot Dang has no phone. No closure date inferred.
+20. [R022] Pentatonic Rock Bar — CLOSED
+Mot Dang page: https://motdang.net/cm/p/pentatonic-rock-bar-4693594489.html
+Map business name: Pentatonic rock bar
+Business location: 204/5 Ratchapakhinai Rd, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Pentatonic+rock+bar/@18.7911798,98.9877807,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a980cc7bf4f:0x2b5e300657f1c708!8m2!3d18.7911798!4d98.9903556!16s%2Fg%2F11bw6ckx9x?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:26:26.761Z
+Place identity notes: Exact distinctive name, Si Phum and pins ~5m apart. Mot Dang street text Rstvithi Road Soi 48 differs and is retained as discrepancy; exact position resolves identity. Excludes separate Pa Tan profile 5532371221 and neighbouring Babylon Bar. No closure date inferred.
+21. [R023] Crazy german — CLOSED
+Mot Dang page: https://motdang.net/cm/p/crazy-german-6354525386.html
+Map business name: Crazy German Bar
+Business location: Chang Moi Rd, Si Phum, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/Crazy+German+Bar/@18.7903105,98.9912858,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa31ac3fa45:0xbba10851ad2758ea!8m2!3d18.7903105!4d98.9938607!16s%2Fg%2F11byxg6vrf?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:26:54.020Z
+Place identity notes: Distinctive name, Chang Moi road and pins ~12m apart match. Subdistrict label differs: Mot Dang Changmoi vs Google Si Phum. No phone in Mot Dang. This is the moat-side location, not separate Warorot profile 9360247460853440497 (~760m east). No closure date inferred.
+22. [R024] City Home Guesthouse — CLOSED
+Mot Dang page: https://motdang.net/cr/p/city-home-guesthouse-484142603.html
+Map business name: City Home Guest House
+Business location: 868 Phaholyothin Rd, Wiang, Mueang Chiang Rai, Chiang Rai 57000, Thailand
+Closure evidence: https://www.google.com/maps/place/City+Home+Guest+House/@19.905578,99.8307819,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70667a3c20305:0xdacc19583fde7659!8m2!3d19.905578!4d99.8333568!16s%2Fg%2F1wn7b42v?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:27:12.884Z
+Place identity notes: Exact name, 868 Phaholyothin, Wiang, postcode and phone +66 53 600 155 agree. Pins ~48m apart. No closure date inferred.
+23. [R025] SS1254372 Cafe — CLOSED
+Mot Dang page: https://motdang.net/cm/p/ss1254372-cafe-6860299486.html
+Map business name: SS1254372 Cafe
+Business location: Gallery Seescape, Suthep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/SS1254372+Cafe/@18.7949086,98.9658379,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3bb1e29e3b19:0xacd21b301a7ba688!8m2!3d18.7949086!4d98.9684128!16s%2Fg%2F11gtgdjc9z?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:29:07.564Z
+Place identity notes: Exact distinctive name and phone +66 93 831 9394 agree, both at Gallery Seescape, pins ~9m apart. Mot Dang gives 22 Nimmanhaemin Soi 17. Do not count duplicate profile ss1254372-cafe-6788691585 separately; gallery itself not claimed closed. No closure date inferred.
+24. [R026] iberry garden — CLOSED
+Mot Dang page: https://motdang.net/cm/p/iberry-garden-5340666521.html
+Map business name: iberry Garden
+Business location: 13 Sai Nam Phueng Alley, Su Thep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/iberry+Garden/@18.794203,98.9667672,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a8804efe68b:0x9f262d2891dcaf9e!8m2!3d18.794203!4d98.9693421!16s%2Fg%2F1td__xml?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:29:30.442Z
+Place identity notes: Exact name, phone +66 53 895 181, official domain iberryhomemade.com and Sai Nam Phueng/Nimman Soi 17 agree. Pins ~43m apart. Do not count adjacent iberry profile separately. No closure date inferred.
+25. [R027] Little Story Cafe — CLOSED
+Mot Dang page: https://motdang.net/cm/p/little-story-cafe-6163753685.html
+Map business name: Little Story Café
+Business location: 79/1 Kotchasarn Rd, Chang Khlan, Mueang Chiang Mai, Chiang Mai 50100, Thailand
+Closure evidence: https://www.google.com/maps/place/Little+Story+Caf%C3%A9/@18.7842989,98.9915077,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa1041ab7c3:0x81ab98eed6f03873!8m2!3d18.7842989!4d98.9940826!16s%2Fg%2F11bxg107y8?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:29:48.583Z
+Place identity notes: Distinctive name, Chang Khlan and pins ~5m apart agree. Mot Dang provides no phone; Google lists +66 53 206 995 ext 113. No closure date inferred.
+26. [R028] My Secret Cafe (also called My Secret Cafe in town) — CLOSED
+Mot Dang page: https://motdang.net/cm/p/my-secret-cafe-3907871477.html
+Map business name: My Secret Cafe In Town
+Business location: 175 12 Rachadamnoen Rd, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/My+Secret+Cafe+In+Town/@18.7880812,98.9806789,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a9b90963497:0xeca932e0af7aa28c!8m2!3d18.7880812!4d98.9832538!16s%2Fg%2F11b6xcnkxm?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:30:22.415Z
+Place identity notes: Mot Dang explicitly lists alias My Secret Cafe in town; pins ~4m apart. Subdistrict differs (Mot Dang Phra Sing vs Google Si Phum). Mot Dang ground-check date 2026-06-20 predates current Google observation and does not establish present operation. Not counting San Phisuea location 3340956813. No closure date inferred.
+27. [R029] peppermint coffee house — CLOSED
+Mot Dang page: https://motdang.net/cm/p/peppermint-coffee-house-2055855118.html
+Map business name: Peppermint Cafe
+Business location: 5/19 Rachadamnoen Rd Soi 5, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Peppermint+Cafe/@18.788562,98.9882351,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa275409693:0x381a147dc2de0548!8m2!3d18.788562!4d98.99081!16s%2Fg%2F11clyfsk8l?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:31:09.938Z
+Place identity notes: Peppermint name, exact Rachadamnoen Soi 5, Si Phum and pins ~14m apart agree. House numbers differ (Mot Dang 1/1 vs Google 5/19), so retained explicitly; no Google phone to cross-match. Do not confuse The Peppermint on Ratchawithi ~240m north. No closure date inferred.
+28. [R030] New Delhi Indian Restaurant — CLOSED
+Mot Dang page: https://motdang.net/cm/p/new-delhi-indian-restaurant-10591363905.html
+Map business name: New Delhi Indian Restaurant
+Business location: 46, 32 Ratvithi Rd, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/New+Delhi+Indian+Restaurant/@18.790719,98.9881305,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a98728b07fd:0x7c38138968759cfd!8m2!3d18.790719!4d98.9907054!16s%2Fg%2F11b70crb63?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:32:03.000Z
+Place identity notes: Exact name, 46/32 Ratvithi, Si Phum and phone +66 83 508 3726 agree. Pins ~17m apart. Do not count other New Delhi Mot Dang profiles separately. No closure date inferred.
+29. [R031] Overstand — CLOSED
+Mot Dang page: https://motdang.net/cm/p/overstand-3632320011.html
+Map business name: Overstand Coffee & Breakfast Chiang Mai
+Business location: 19/3 Ratchamanka Road Soi 2, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Overstand+Coffee+%26+Breakfast+Chiang+Mai/@18.786053,98.9901405,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa18f723d8f:0xf337b465e2e23947!8m2!3d18.786053!4d98.9927154!16s%2Fg%2F11b6bbljxy?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:37:30.873Z
+Place identity notes: Distinctive name and exact 19/3 Ratchamanka Soi 2 match, pins ~10m apart. Phones differ (Mot Dang 091-482-0372; Google +66 94 626 8311); subdistrict label differs (Phra Sing vs Si Phum). Not the other Overstand location. No closure date inferred.
+30. [R032] Cooking Love — CLOSED
+Mot Dang page: https://motdang.net/cm/p/cooking-love-3385473023.html
+Map business name: Cooking Love
+Business location: 18/7-8 Ratchadamnoen Road, Si Phum, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Cooking+Love/@18.7890686,98.9897569,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa25da9cd41:0x9298980a366fe5f1!8m2!3d18.7890686!4d98.9923318!16s%2Fg%2F11b6rvb8tf?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:38:11.553Z
+Place identity notes: Exact name and Ratchadamnoen Soi 1 location agree; pins ~3m apart in Si Phum. Mot Dang has no phone. Not Cooking love profile 7106483588 at another location. No closure date inferred.
+31. [R033] THC Roof top bar — CLOSED
+Mot Dang page: https://motdang.net/cm/p/thc-roof-top-bar-5203532421.html
+Map business name: THC Rooftop bar
+Business location: 19 Mun Mueang Rd, Phra Sing, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/THC+Rooftop+bar/@18.7843518,98.9901797,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa1bab46dfd:0x5c68d66871ffd73b!8m2!3d18.7843518!4d98.9927546!16s%2Fg%2F11c1dzdltp?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:40:10.614Z
+Place identity notes: Distinctive rooftop-bar name, Moon Muang/Mun Mueang road, Phra Sing and pins ~19m apart agree. No phone displayed in either. Do not count duplicate THC profile 7286 separately. No closure date inferred.
+32. [R034] Looper Co. — CLOSED
+Mot Dang page: https://motdang.net/cm/p/looper-co-6217577485.html
+Map business name: Looper Co.
+Business location: 151 Ratchawong Rd, Chang Moi, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/Looper+Co./@18.7931645,98.9941982,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3ba19ddc371b:0x1d80b12c975cde23!8m2!3d18.7931645!4d98.9967731!16s%2Fg%2F11fct0zwr4?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:40:29.531Z
+Place identity notes: Exact distinctive name, Ratchawong / Ratchawong Soi 3 area, Chang Moi and pins ~15m apart agree. Mot Dang has no phone. No closure date inferred.
+33. [R035] Parallel Universe of Lunar 2 on the Hidden Moon — CLOSED
+Mot Dang page: https://motdang.net/cm/p/parallel-universe-of-lunar-2-on-the-hidden-moon-5331035321.html
+Map business name: Parallel Universe Of Lunar 2 On The Hidden Moon
+Business location: 5F Nimmanahaeminda Road, Su Thep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Parallel+Universe+Of+Lunar+2+On+The+Hidden+Moon/@18.799817,98.9649634,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a61f20a5797:0x602a50a83665a887!8m2!3d18.799817!4d98.9675383!16s%2Fg%2F11gdh1wfl5?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:40:53.534Z
+Place identity notes: Exact highly distinctive name and pins ~5m apart at One Nimman agree. Mot Dang street Nimman Soi 1 and One Nimman bearing agree; its separate airport/Mahidol address text is inconsistent and not relied on. Phones differ (089-998-7722 vs Google +66 92 706 0736). No closure date inferred; not closure of One Nimman.
+34. [R036] Bus Bar — CLOSED
+Mot Dang page: https://motdang.net/cm/p/bus-bar-3222795502.html
+Map business name: Bus Bar
+Business location: 79/1 Loi Kroh Rd, Chang Moi, Mueang Chiang Mai, Chiang Mai 50100, Thailand
+Closure evidence: https://www.google.com/maps/place/Bus+Bar/@18.7841168,99.0038287,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3aa825467ac1:0xf9866a7467bf2898!8m2!3d18.7841168!4d99.0038287!16s%2Fg%2F11b6sjsfnz?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:42:53.140Z
+Place identity notes: Name, Loi Kroh road, Iron Bridge location and pins ~15m apart agree. Mot Dang subdistrict Chang Khlan vs Google Chang Moi differs. No Mot Dang phone. Direct place link recovered through Wanderlog because broad Google search returned unrelated names. No closure date inferred.
+35. [R037] We Didn’t Land On The Moon Since 1987 — CLOSED
+Mot Dang page: https://motdang.net/cm/p/we-didn-t-land-on-the-moon-since-1987-9612879817.html
+Map business name: We Didn’t Land on The Moon Since 1987
+Business location: Tha Phae Road / City View Tower Condominium, Chang Moi, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/We+Didn%E2%80%99t+Land+on+The+Moon+Since+1987/@18.7895889,98.9945989,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3bafdd27bffd:0xc0454bf313177f95!8m2!3d18.7895889!4d98.9971738!16s%2Fg%2F11g3gyn54z?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:43:13.687Z
+Place identity notes: Exact highly distinctive name, Tha Phae Soi 2, Cityview Tower neighbour 20m and pins ~10m apart agree. Mot Dang has no phone. No closure date inferred; condominium itself not claimed closed.
+36. [R038] The Roast — CLOSED
+Mot Dang page: https://motdang.net/cr/p/the-roast-772907454.html
+Map business name: The Roast Chiang Rai Coffee
+Business location: 124/3 Sankhongluang Rd, Rop Wiang, Mueang Chiang Rai, Chiang Rai 57000, Thailand
+Closure evidence: https://www.google.com/maps/place/The+Roast+Chiang+Rai+Coffee/@19.8996932,99.8246736,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7066ee541eae9:0x48a23f0d492dd902!8m2!3d19.8996932!4d99.8272485!16s%2Fg%2F11bttrq48x?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:43:36.739Z
+Place identity notes: Name, exact 124/3 Sankhongluang and phone +66 88 700 0762 agree; pins ~2m apart. Subdistrict differs (Mot Dang Wiang vs Google Rop Wiang). No closure date inferred.
+37. [R039] Concept Yard — CLOSED
+Mot Dang page: https://motdang.net/cr/p/concept-yard-960934932.html
+Map business name: Concept Yard Chiangrai : Multi-Living Space
+Business location: 368 Trairat Rd, Wiang, Mueang Chiang Rai, Chiang Rai 57000, Thailand
+Closure evidence: https://www.google.com/maps/place/Concept+Yard+Chiangrai+:+Multi-Living+Space/@19.9075658,99.8261407,17z/data=!3m1!4b1!4m6!3m5!1s0x30d7066422ed80ab:0xe97b51bc1b042758!8m2!3d19.9075658!4d99.8287156!16s%2Fg%2F11g01tfrc5?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:44:19.142Z
+Place identity notes: Distinctive name, exact 368 Trairat Road, Wiang and pins ~9m apart agree. Phone differs (Mot Dang 097-924-8998; Google +66 99 919 7978). Current closure marker observed despite recent image upload; upload date alone does not establish trading. No closure date inferred.
+38. [R040] DaMa Cafe Chingrai — CLOSED
+Mot Dang page: https://motdang.net/cr/p/dama-cafe-chingrai-4555833893.html
+Map business name: DaMa Cafe Chiangrai
+Business location: 353/1, Rim Kok, Mueang Chiang Rai, Chiang Rai 57000, Thailand
+Closure evidence: https://www.google.com/maps/place/DaMa+Cafe+Chiangrai/@19.9235996,99.8480442,17z/data=!3m1!4b1!4m6!3m5!1s0x30d706fa55960153:0xae01c3cbc4a636a3!8m2!3d19.9235996!4d99.8506191!16s%2Fg%2F11bymzmbvg?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:44:54.508Z
+Place identity notes: Exact distinctive name, 353/1 Rim Kok and phone +66 96 925 6535 agree; pins ~12m apart. Postcode differs (Mot Dang 57100 vs Google 57000), retained explicitly. No closure date inferred.
+39. [R041] Norn Nung Len — CLOSED
+Mot Dang page: https://motdang.net/cr/p/norn-nung-len-6218636593.html
+Map business name: Norn Nung Len Cafe'&Hostel
+Business location: 869 108-109 Pemavipat Rd, Wiang, Mueang Chiang Rai, Chiang Rai 57000, Thailand
+Closure evidence: https://www.google.com/maps/place/Norn+Nung+Len+Cafe'%26Hostel/@19.905424,99.8302223,17z/data=!3m1!4b1!4m6!3m5!1s0x30d70667afb5217d:0x5584a55e0f4514d5!8m2!3d19.905424!4d99.8327972!16s%2Fg%2F11c558l_96?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:45:16.401Z
+Place identity notes: Distinctive name, Wiang and pins ~7m apart agree. Mot Dang has no phone or house number; Google provides full address and +66 61 928 2626. No closure date inferred.
+40. [R042] East Bar — CLOSED
+Mot Dang page: https://motdang.net/cm/p/east-bar-12441290001.html
+Map business name: East Bar
+Business location: 70/1 Huay Kaew Road, Chiang Mai 50300
+Closure evidence: https://wanderlog.com/place/details/2357631/east-bar
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=East+Bar%2C+%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88+70%2C+1+Huay+Kaew+Rd%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50300%2C+Thailand&query_place_id=ChIJZdeQQcU72jAR5R_U8bjhysM
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:26.836855Z
+Place identity notes: Exact street number 70/1 on Huay Kaew Road; same named bar; mapped location near MAYA. Closure status is for this location only; date observed, not date it shut.
+41. [R043] Ratana's Kitchen — CLOSED
+Mot Dang page: https://motdang.net/cm/p/ratana-s-kitchen-1041248368.html
+Map business name: Ratana's Kitchen
+Business location: 320 Tha Phae Road, Chang Moi, Chiang Mai 50300
+Closure evidence: https://wanderlog.com/place/details/3253441/ratanas-kitchen
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Ratana%27s+Kitchen%2C+320+Tha+Phae+Road%2C+Tambon+Chang+Moi%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50300%2C+Thailand&query_place_id=ChIJRexqkqM62jARtBMYs_v5A0o
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:28.340399Z
+Place identity notes: Exact business name, same phone +66 53 233 739, same Tha Phae location. Closure status is for this location only; date observed, not date it shut.
+42. [R044] Inter Bar — CLOSED
+Mot Dang page: https://motdang.net/cm/p/inter-bar-1041255922.html
+Map business name: Inter Bar
+Business location: Chang Moi, Chiang Mai 50300 (QXQV+4PV)
+Closure evidence: https://wanderlog.com/place/details/3996433/inter-bar
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Inter+Bar%2C+QXQV%2B4PV%2C+Tambon+Chang+Moi%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50300%2C+Thailand&query_place_id=ChIJ40bYx6M62jARQ_FG-PuvcTU
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:29.151960Z
+Place identity notes: Exact business name and same phone +66 53 276 653. Closure status is for this location only; date observed, not date it shut.
+43. [R045] คาเฟ่ เม้าท์ฟิวล์ — CLOSED
+Mot Dang page: https://motdang.net/cm/p/cafe-mouthfeel-3897763597.html
+Map business name: Cafe Mouthfeel
+Business location: Santitham, Chang Phueak, Chiang Mai 50300 (RX4F+294)
+Closure evidence: https://wanderlog.com/place/details/12155112/cafe-mouthfeel
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Cafe+Mouthfeel%2C+RX4F%2B294%2C+Tambon+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50300%2C+Thailand&query_place_id=ChIJN89TTYs62jAR0Yz6vNQrApM
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:29.930435Z
+Place identity notes: Thai/English cafe names agree; same Santitham area; verify mapped coordinates. Closure status is for this location only; date observed, not date it shut.
+44. [R046] Coco Cafe — CLOSED
+Mot Dang page: https://motdang.net/cm/p/coco-cafe-7023419521.html
+Map business name: CoCo Cafe
+Business location: 3 Prapokklao Lane 7, Phra Sing, Chiang Mai 50200
+Closure evidence: https://wanderlog.com/place/details/3020716/coco-cafe
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=CoCo+Cafe%2C+3+Prapokklao+Lane+7+Old+City%2C+Phrasingh%2C+Phrasigh%2C+Chiang+Mai+50200%2C+Thailand&query_place_id=ChIJuXLG9V472jARvW4YkkoOq0I
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:30.746202Z
+Place identity notes: Same cafe name in the Phra Pok Klao/Soi 7 area; verify mapped coordinates. Closure status is for this location only; date observed, not date it shut.
+45. [R047] Coffee Plus — CLOSED
+Mot Dang page: https://motdang.net/cm/p/coffee-plus-5626559221.html
+Map business name: Coffee Plus
+Business location: 14/1 Rachadamnoen Road Soi 5, Si Phum, Chiang Mai 50200
+Closure evidence: https://wanderlog.com/place/details/3253396/coffee-plus
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Coffee+Plus%2C+14%2C+1+Rachadamnoen+Rd+Soi+5+Old+City%2C+Tambon+Si+Phum%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50200%2C+Thailand&query_place_id=ChIJp8h3h6I62jARJU6fWf_3Il0
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:31.535732Z
+Place identity notes: Exact address and phone +66 95 928 9562 in both listings. Closure status is for this location only; date observed, not date it shut.
+46. [R048] Brick House Hostel — CLOSED
+Mot Dang page: https://motdang.net/cm/p/brick-house-hostel-578887285.html
+Map business name: Brick House Hostel
+Business location: 7/2 Kamphaeng Din Soi 2, Chiang Mai 50100
+Closure evidence: https://wanderlog.com/place/details/1816955/brick-house-hostel-chiang-mai
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Brick+House+Hostel+Chiang+Mai%2C+7%2C+2+%E0%B8%8B%E0%B8%AD%E0%B8%A2+2%2C+Tambon+Chang+Moi%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50100%2C+Thailand&query_place_id=ChIJm79pE0o72jARqv5LzGsstw0
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:32.369868Z
+Place identity notes: Brick House Hostel at 7/2 Soi 2; Google-backed map listing closed; do not infer any successor is closed. Closure status is for this location only; date observed, not date it shut.
+47. [R049] Deejai Backpackers — CLOSED
+Mot Dang page: https://motdang.net/cm/p/deejai-backpackers-2638262561.html
+Map business name: Deejai Backpackers
+Business location: 193/1-2 Ratchamanka Road, Phra Sing, Chiang Mai 50200
+Closure evidence: https://wanderlog.com/place/details/370280/deejai-backpackers
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Deejai+Backpackers%2C+193%2C+1-2+Ratchamanka+Rd+Old+City%2C+Tambon+Phra+Sing%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50200%2C+Thailand&query_place_id=ChIJrTwwypw62jARMd7H3nCGsoU
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:33.167561Z
+Place identity notes: Exact hostel name and same Old City Ratchamanka location. Closure status is for this location only; date observed, not date it shut.
+48. [R050] PM Guesthouse — CLOSED
+Mot Dang page: https://motdang.net/cm/p/pm-guesthouse-4059564674.html
+Map business name: PM Guesthouse
+Business location: 252/3 Prapokklao Road, Si Phum, Chiang Mai 50200
+Closure evidence: https://wanderlog.com/place/details/12032183/pm-guesthouse
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=PM+Guesthouse%2C+252%2F3+Prapokklao+Road+Old+City%2C+Tambon+Si+Phum%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50200%2C+Thailand&query_place_id=ChIJf9nacJc62jARnvpuSrhBA4U
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:36.465599Z
+Place identity notes: Same named guesthouse and exact 252/3 Prapokklao Road address. Closure status is for this location only; date observed, not date it shut.
+49. [R051] Charoen Suan Aek — CLOSED
+Mot Dang page: https://motdang.net/cm/p/charoen-suan-aek-6502039586.html
+Map business name: Charoen Suan Aek
+Business location: 37 Moo 8, San Phi Suea, Chiang Mai 50300
+Closure evidence: https://wanderlog.com/place/details/1978431/charoen-suan-aek
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Charoen+Suan+Aek%2C+37+%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%E0%B8%97%E0%B8%B5%E0%B9%88+8+%E0%B8%8B%E0%B8%AD%E0%B8%A2+%E0%B8%AA%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%81%2C+San+Phi+Suea%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50300%2C+Thailand&query_place_id=ChIJAVBxttc62jARfDyhP1LjSpw
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:37.313603Z
+Place identity notes: Exact restaurant name and San Phi Suea, Chiang Mai location; verify mapped coordinates. Closure status is for this location only; date observed, not date it shut.
+50. [R052] Rasta Love Cafe' Chiangmai — CLOSED
+Mot Dang page: https://motdang.net/cm/p/rasta-love-cafe-chiangmai-048753742815279107874.html
+Map business name: Rasta Love Cafe' Chiangmai
+Business location: Old City, Si Phum, Chiang Mai 50200 (QXRR+F68)
+Closure evidence: https://wanderlog.com/place/details/12397231/rasta-love-cafe-chiang-mai
+Google Maps business link: https://www.google.com/maps/search/?api=1&query=Rasta+Love+Cafe%27+Chiang+Mai%2C+QXRR%2BF68%2C+Old+City%2C+Tambon+Si+Phum%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai+50200%2C+Thailand&query_place_id=ChIJvZz-ZA472jARWrxR_QIvgK0
+Status shown: Permanently Closed
+Observed UTC: 2026-10-22T10:46:38.065210Z
+Place identity notes: Exact distinctive name and phone +66 83 974 3642 match; plus-code area also agrees. Closure status is for this location only; date observed, not date it shut.
