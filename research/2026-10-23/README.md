@@ -6,6 +6,7 @@ Primera entrega fechada para ampliar FDAA hacia vivienda, energía, agua, alimen
 - [24 casos abiertos: función y dependencias](CATALOGO.md)
 - [Precios, exclusiones y costes pendientes](PRECIOS.md)
 - [Fuentes, enlaces y límites](FUENTES.md)
+- [Primer avance energético con cuatro consultas PVGIS y datos originales](ENERGIA_PVGIS.md)
 
 **Decisión provisional:** priorizar reparación, reducción de demanda y sistemas sencillos y mantenibles. La siguiente unidad es energía útil por estación, almacenamiento y reposición; después agua y alimentación. La ventaja de un equipo cerrado tendrá que demostrarse por necesidad concreta antes de estudiar una implementación abierta propia.
 

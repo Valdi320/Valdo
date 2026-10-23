@@ -54,6 +54,9 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 50. [BOE · Ley 1/2019, artículo 2, texto consolidado consultado](https://www.boe.es/buscar/act.php?id=BOE-A-2019-2364#a2)
 51. [BOE · TRLPI, artículo 100, texto consolidado consultado](https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930#a100)
 
+52. [JRC · PVGIS API, parámetros, unidades y modelos](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/api-non-interactive-service_en)
+53. [JRC · PVcalc, alcance y resultados](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/pvgis-5-tools/grid-connected-pv_en)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.
