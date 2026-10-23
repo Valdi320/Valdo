@@ -66,3 +66,7 @@ El [anexo térmico](CALOR_ALMACENAMIENTO_DEMANDA.md) añade EQUATION EQ2 100L ar
 ## Aislamiento y recambios que requieren identificación
 
 El [anexo de aislamiento y repuestos](AISLAMIENTO_MATERIALES_REPUESTOS.md) registra corcho de 100 mm a 60,48 €/m² en la tabla de Abriga, Aglocork a 133,58 € por caja de 1,5 m² y lana ISOLENA a 36,89 € por 2,5 kg. Son formatos y productos distintos; no equivalen a un cerramiento instalado. Los kits de termo de 49,61 € y 39,99 € se documentan como candidatos no validados y se excluyen del presupuesto del artículo 92389709. [Observaciones, impuestos y límites](datos/aislamiento_repuestos_2026-10-23.json).
+
+## Medición y mecanizado
+
+El [anexo de medición](MEDICION_MECANIZADO_PRECISION.md) añade el calibre 530-104 a 38,00 € sin IVA en TN-Tools y 52,99 € con IVA en HBM; un juego de 47 bloques a 219,99 € con IVA, sin certificado individual verificado; y la cabecera de StrongHold ONE a 1.259,00 € con impuestos en la región mostrada, sin configuración completa resuelta. Ninguna cifra representa un taller entregado y validado en España. La lista OLSK revisada contiene cantidades, sin precios. [Datos y exclusiones](datos/medicion_mecanizado_2026-10-23.json).

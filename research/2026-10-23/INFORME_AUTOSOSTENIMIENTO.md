@@ -177,3 +177,7 @@ Se incorpora [almacenamiento de calor y reducción de batería](CALOR_ALMACENAMI
 ### Aislamiento y repuestos de esta misma fecha
 
 El [anexo de materiales y reparación](AISLAMIENTO_MATERIALES_REPUESTOS.md) compara corcho, lana, celulosa y paneles de paja, separando materia prima local de producto comprobado. Añade un cálculo ideal de reducción de pérdidas y precios de material, sin presupuesto instalado. La búsqueda de piezas del termo detecta modelos diferentes con el mismo nombre y deja dos kits fuera del coste de reparación por falta de compatibilidad acreditada. Se incorpora una pared de diseño abierto como referencia, sin declararla vivienda validada.
+
+### Medición y mecanizado de esta misma fecha
+
+El [anexo de precisión](MEDICION_MECANIZADO_PRECISION.md) separa resolución, medida y aptitud de una pieza. Compara PrintNC, OLSK y OpenFlexure con versiones y licencias concretas; incorpora la inspección de una lista original de componentes y precios de instrumentos. No se atribuye exactitud a una máquina a partir de sus pasos ni se declara cerrada la cadena de herramientas, patrones o materiales.

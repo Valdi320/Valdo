@@ -19,11 +19,12 @@ Primera entrega fechada para ampliar FDAA hacia vivienda, energía, agua, alimen
 - [Baterías, cauchos, lubricación y electrónica: cadenas de reposición](MATERIALES_CRITICOS_REPOSICION.md)
 - [Acumulación de calor, aislamiento y reducción de batería](CALOR_ALMACENAMIENTO_DEMANDA.md)
 - [Aislamiento con materiales locales y repuestos por referencia exacta](AISLAMIENTO_MATERIALES_REPUESTOS.md)
+- [Medición, mecanizado y verificación de repuestos propios](MEDICION_MECANIZADO_PRECISION.md)
 
 **Decisión provisional:** comprobar primero vivienda admisible, agua segura y demanda térmica. Medir necesidades, trabajo y reparación antes de comprar maquinaria o ampliar automatización.
 
 **Estado de la evidencia:** diez consultas PVGIS y anexos de agua, alimentación, vivienda, materiales, IA, ropa, higiene y movilidad. La integración contrasta cargas, potencia simultánea y costes parciales con reposición hipotética. No hay finca seleccionada, sistema completo validado, dieta autónoma o presupuesto instalado. No se acredita gasto cero.
 
-**Continuación:** herramientas de medida y fabricación de precisión; documentación de una reparación con referencias exactas; profundización en cadenas críticas y datos pendientes de los subsistemas anteriores. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
+**Continuación:** herramientas de corte y afilado; calidad y tratamiento de metales recuperados; documentación de una reparación con referencias exactas y datos pendientes de los subsistemas anteriores. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
 
 Se añade a la [especificación canónica](../../docs/PROYECTO_CANONICO.md) y a la [campaña anterior](../2026-10-13/README.md), sin reemplazarlas. No se publican datos domésticos privados ni se modifica la decisión pendiente sobre la licencia global del repositorio.

@@ -1,0 +1,187 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental y ejemplo aritmético; sin compra, mecanizado o ensayo físico",
+  "ejemplo_decision": {
+    "limite_inferior_mm_elegido": "19.90",
+    "limite_superior_mm_elegido": "20.10",
+    "margen_total_mm_hipotetico": "0.04",
+    "casos": [
+      {
+        "lectura_mm": "20.01",
+        "intervalo_min_mm": "19.97",
+        "intervalo_max_mm": "20.05",
+        "resultado_regla_elegida": "intervalo_dentro"
+      },
+      {
+        "lectura_mm": "20.09",
+        "intervalo_min_mm": "20.05",
+        "intervalo_max_mm": "20.13",
+        "resultado_regla_elegida": "solapamiento_no_decide"
+      },
+      {
+        "lectura_mm": "20.20",
+        "intervalo_min_mm": "20.16",
+        "intervalo_max_mm": "20.24",
+        "resultado_regla_elegida": "intervalo_fuera"
+      }
+    ],
+    "limite": "margen didáctico, no incertidumbre evaluada ni especificación de instrumento; nivel de confianza sin asignar; no conformidad de pieza real"
+  },
+  "precios_observados_eur": [
+    {
+      "fuente": 202,
+      "producto": "Mitutoyo 530-104 TN-Tools",
+      "precio": "38.00",
+      "IVA": "no incluido"
+    },
+    {
+      "fuente": 203,
+      "producto": "Mitutoyo 530-104 HBM",
+      "precio": "52.99",
+      "IVA": "incluido según página"
+    },
+    {
+      "fuente": 204,
+      "producto": "HBM 47 bloques anunciado grado 1, artículo 00732",
+      "precio": "219.99",
+      "IVA": "incluido según página",
+      "certificado_individual_verificado": false
+    },
+    {
+      "fuente": 216,
+      "producto": "Rat Rig StrongHold ONE",
+      "precio_cabecera": "1259.00",
+      "IVA": "impuestos incluidos en región mostrada Portugal; final España pendiente",
+      "total_configuracion": null,
+      "exclusiones": "electrónica y opciones por resolver, envío, útiles y taller"
+    }
+  ],
+  "suma_parcial_calibre_y_bloques_eur": "272.98",
+  "limite_suma": "no presupuesto completo, recomendación de compra o calibración acreditada",
+  "calibre_referencia": {
+    "modelo": "530-104",
+    "fuente": 201,
+    "graduacion_mm": ".05",
+    "exactitud_declarada_mm": "+/- .05",
+    "mecanico": true,
+    "licencia_abierta_acreditada": false,
+    "superioridad_sobre_abierto_equivalente_demostrada": false
+  },
+  "printnc": {
+    "fuentes": [
+      205,
+      206,
+      207,
+      208
+    ],
+    "version_wiki_indexada": "V4; archivos V4.0.30",
+    "repositorio_github_anterior": "V2.1 obsoleto, archivado 2024-10-19",
+    "licencia_leida_repo_antiguo": "CC-BY-4.0",
+    "CAD_actuales_descargados": false,
+    "limite": "no transferir integridad, compatibilidad o licencia de archivos antiguos a actuales"
+  },
+  "olsk": {
+    "fuentes": [
+      209,
+      210,
+      211
+    ],
+    "version": "Small CNC V3",
+    "commit": "cae066fa5b78b596743e1f2e432b93539cba8c24",
+    "licencias_segun_dep5": {
+      "cad_BOM": "CERN-OHL-W-2.0",
+      "firmware_settings": "AGPL-3.0-or-later",
+      "media_Assembly_Manual_public": "CC-BY-SA-4.0",
+      "fuentes_tipograficas": "avisos individuales por revisar",
+      "V1_V2": "mapeo pendiente en metadatos"
+    },
+    "lista_original": {
+      "nombre": "OLSK_Small_CNC_V3-BOM.xlsx",
+      "fuente": 211,
+      "bytes": 11388,
+      "sha256": "abe23984cb9b6ab4f3ef0e223db1c5777e2e59967bb57411b4de24ea63251683",
+      "hoja": "sheet1",
+      "rango_datos": "A1:B267",
+      "filas_no_vacias": 267,
+      "columnas_con_datos": [
+        "A",
+        "B"
+      ],
+      "formulas": 0,
+      "precios": "no hay columna de precios",
+      "ejemplos": [
+        {
+          "rango": "A14:B14",
+          "descripcion": "Ball Screw SFU1605 800mm",
+          "cantidad": 2
+        },
+        {
+          "rango": "A99:B99",
+          "descripcion": "MGN12 Rail 370mm",
+          "cantidad": 2
+        },
+        {
+          "rango": "A111:B111",
+          "descripcion": "Spindle Holder (CNC Milled)",
+          "cantidad": 1
+        },
+        {
+          "rango": "A123:B123",
+          "descripcion": "12 Tool Magazine (CNC Milled)",
+          "cantidad": 1
+        }
+      ],
+      "no_concluir": "267 filas no equivalen a 267 piezas distintas, porcentaje local o coste"
+    },
+    "discrepancia_documental": "README anuncia 10 herramientas; nombre de fila A123 indica 12 Tool Magazine; significado o revisión pendiente",
+    "no_inspeccionado": [
+      "contenido de CAD",
+      "ZIP firmware",
+      "reproducción física",
+      "exactitud de piezas y coste total"
+    ]
+  },
+  "openflexure": {
+    "fuentes": [
+      212,
+      213,
+      214,
+      215,
+      217
+    ],
+    "referencia": "v7.0.0-beta5",
+    "estado_version": "beta",
+    "licencia_documentacion_build": "CERN-OHL-S-2.0",
+    "PLA_lista_alta_resolucion_g": 400,
+    "dependencias_ejemplos": [
+      "óptica",
+      "Raspberry Pi 4",
+      "cámara v2",
+      "Sangaboard v0.5",
+      "motores",
+      "juntas Viton"
+    ],
+    "MICAT_funcion_documentada": "calibración del tamaño de píxel con patrón USAF",
+    "no_equivale": [
+      "resolución óptica",
+      "exactitud dimensional global",
+      "dureza",
+      "resistencia",
+      "potabilidad"
+    ],
+    "presupuesto_actual_completo": null
+  },
+  "ratrig_paso_completo_mm_segun_ficha": ".04",
+  "ratrig_limite_paso": "no es tolerancia de mecanizado; licencia de todo el conjunto sin auditar",
+  "limites_acceso": [
+    "PrintNC wiki y archivos: cuerpo vacío al abrir, se conserva contenido indexado",
+    "CEM PDF: mantenimiento en consultas posteriores; sin revisar reglas completas",
+    "Artículo PMC11448745: CAPTCHA; no usado ni eludido"
+  ],
+  "prioridades": [
+    "pieza objetivo no crítica con requisitos definidos",
+    "cadena de fabricación y comprobación antes de maquinaria",
+    "CAD, firmware y BOM de misma revisión",
+    "herramientas de corte, afilado y calidad de metales recuperados"
+  ]
+}
