@@ -1,0 +1,9 @@
+source_record,issue_type,field
+1,possible_same_name_review,name
+2,duplicate_id_review,id
+2,invalid_decimal,amount
+2,possible_same_name_review,name
+3,duplicate_id_review,id
+3,possible_same_name_review,name
+4,missing_required,id
+5,possible_same_name_review,name
