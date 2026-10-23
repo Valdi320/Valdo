@@ -22,11 +22,12 @@ Primera entrega fechada para ampliar FDAA hacia vivienda, energía, agua, alimen
 - [Medición, mecanizado y verificación de repuestos propios](MEDICION_MECANIZADO_PRECISION.md)
 - [Afilado, consumibles y reutilización de metales](AFILADO_METALES_REUTILIZACION.md)
 - [Corrosión, uniones desmontables y materiales auxiliares](CORROSION_UNIONES_MATERIALES_AUXILIARES.md)
+- [Juntas, bombas y fabricación de piezas elastoméricas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md)
 
 **Decisión provisional:** comprobar primero vivienda admisible, agua segura y demanda térmica. Medir necesidades, trabajo y reparación antes de comprar maquinaria o ampliar automatización.
 
 **Estado de la evidencia:** diez consultas PVGIS y anexos de agua, alimentación, vivienda, materiales, IA, ropa, higiene y movilidad. La integración contrasta cargas, potencia simultánea y costes parciales con reposición hipotética. No hay finca seleccionada, sistema completo validado, dieta autónoma o presupuesto instalado. No se acredita gasto cero.
 
-**Continuación:** juntas y sellos de circuitos de agua, compatibilidad de materiales y acceso al recambio; ficha completa de una reparación no crítica con referencias exactas. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
+**Continuación:** una bomba de agua concreta con despiece y recambios; presión y caudal requeridos frente a una alternativa con menor bombeo; reparación no crítica documentada. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
 
 Se añade a la [especificación canónica](../../docs/PROYECTO_CANONICO.md) y a la [campaña anterior](../2026-10-13/README.md), sin reemplazarlas. No se publican datos domésticos privados ni se modifica la decisión pendiente sobre la licencia global del repositorio.

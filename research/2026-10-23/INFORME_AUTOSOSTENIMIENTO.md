@@ -189,3 +189,7 @@ El [anexo de mantenimiento de herramientas](AFILADO_METALES_REUTILIZACION.md) id
 ### Corrosión, desmontaje y auxiliares de esta misma fecha
 
 El [anexo de durabilidad y uniones](CORROSION_UNIONES_MATERIALES_AUXILIARES.md) distingue duración de recubrimientos y tiempo hasta mantenimiento. Identifica dependencias de fijadores y acabados, límites de almacenamiento y permisos distintos en OpenStructures. Propone documentar una reparación no crítica; no acredita fabricación doméstica de auxiliares equivalentes ni duración indefinida.
+
+### Juntas y piezas flexibles de esta misma fecha
+
+El [anexo de juntas y bombas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) identifica moldeo de silicona con útiles impresos y una oferta anunciada de impresión directa. Separa forma, compuesto y aptitud sanitaria; revisa dos bombas con alcance y licencias distintos, y una diferencia entre tubo descrito y parámetros. El cálculo de material para una junta seca experimental no es un coste de recambio equivalente ni una pieza validada.

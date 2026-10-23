@@ -78,3 +78,7 @@ El [anexo de afilado](AFILADO_METALES_REUTILIZACION.md) recoge placas DMT de com
 ## Protección y materiales auxiliares
 
 El [anexo de corrosión y uniones](CORROSION_UNIONES_MATERIALES_AUXILIARES.md) registra fijador LOCTITE 243 de 5 ml a 11,88 € en apertura directa (9,90 € en un resultado indexado previo, causa no confirmada), y Hybrid Wood Protector de 100 ml a 22,42 € con impuestos en la tienda española. La presentación belga de 1 L Chocolate figura a 127,45 €, sin entrega e impuestos españoles comprobados. Portes, preparación y complementos quedan fuera; no constituyen una cesta ni gasto anual. [Datos y exclusiones](datos/corrosion_uniones_2026-10-23.json).
+
+## Juntas y materiales de moldeo
+
+El [anexo de piezas flexibles](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) registra EasyPlat ACQUA 900 g a 29,04 € con IVA y KWC Home Z.605.806 a 6,58 € con impuestos. Son materiales y funciones distintos, sin sustitución validada. El cabezal Prusa XL de silicona figura a 925 USD con región Estados Unidos, sin precio entregado en España o stock confirmados. Los 280 USD de HiPeristaltic y 35 USD de Phisik son costes aproximados publicados por proyectos, no ofertas actuales. El ejemplo propio de 0,122 € solo valora material consumido, exige comprar el kit completo y excluye útil y proceso. [Datos y exclusiones](datos/juntas_bombas_2026-10-23.json).

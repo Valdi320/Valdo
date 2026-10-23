@@ -1,0 +1,279 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "revisión documental y estática; sin instalación, impresión, moldeo, bombeo o ensayos físicos",
+  "fuentes": [
+    {
+      "numero": 245,
+      "titulo": "BOE · Real Decreto 3/2023, artículo 44 y disposiciones sobre materiales; texto consolidado consultado",
+      "url": "https://www.boe.es/eli/es/rd/2023/01/10/3/con#a44"
+    },
+    {
+      "numero": 246,
+      "titulo": "Parker · O-Ring Handbook PTD5705, texto web sobre selección y almacenamiento; descarga local 403, sin verificación visual de tablas",
+      "url": "https://www.parker.com/content/dam/Parker-com/Literature/Praedifa/Catalogs/Catalog_O-Ring-Handbook_PTD5705-EN.pdf"
+    },
+    {
+      "numero": 247,
+      "titulo": "Watson-Marlow · Manual 401U, desgaste del tubo y dependencia de condiciones en cabezales 400D/400DM",
+      "url": "https://www.wmfts.com/es-ar/resources/bibliografia/manuals/en/401u-manual-en/"
+    },
+    {
+      "numero": 248,
+      "titulo": "HiPeristaltic · README fijado, alcance de laboratorio, costes y prestación anunciados",
+      "url": "https://github.com/gunakkoc/HiPeristaltic/blob/db9a43589ec3b8e9f0624caa9871cc5c3a12e66a/README.md"
+    },
+    {
+      "numero": 249,
+      "titulo": "HiPeristaltic · Licencia raíz Apache-2.0 de la revisión estudiada",
+      "url": "https://github.com/gunakkoc/HiPeristaltic/blob/db9a43589ec3b8e9f0624caa9871cc5c3a12e66a/LICENSE"
+    },
+    {
+      "numero": 250,
+      "titulo": "HiPeristaltic · Árbol recursivo no truncado; extensiones mecánicas y archivo ZIP no abierto",
+      "url": "https://api.github.com/repos/gunakkoc/HiPeristaltic/git/trees/db9a43589ec3b8e9f0624caa9871cc5c3a12e66a?recursive=1"
+    },
+    {
+      "numero": 251,
+      "titulo": "Phisik · Bomba peristáltica, README de revisión de 2020 y ejemplo de tubo",
+      "url": "https://github.com/Phisik/Peristaltic-Pump/blob/8dbbafe1e1c8c02d33d99f95e23c47561df6de33/README.md"
+    },
+    {
+      "numero": 252,
+      "titulo": "Phisik · Licencia raíz CC BY-NC-SA 4.0",
+      "url": "https://github.com/Phisik/Peristaltic-Pump/blob/8dbbafe1e1c8c02d33d99f95e23c47561df6de33/LICENSE"
+    },
+    {
+      "numero": 253,
+      "titulo": "Phisik · settings.scad, dimensiones por defecto y cabecera GPL sin versión",
+      "url": "https://github.com/Phisik/Peristaltic-Pump/blob/8dbbafe1e1c8c02d33d99f95e23c47561df6de33/scad/settings.scad"
+    },
+    {
+      "numero": 254,
+      "titulo": "Phisik · pump.scad, cabecera GPL e importación de parámetros",
+      "url": "https://github.com/Phisik/Peristaltic-Pump/blob/8dbbafe1e1c8c02d33d99f95e23c47561df6de33/scad/pump.scad"
+    },
+    {
+      "numero": 255,
+      "titulo": "Formlabs · Producción de piezas de silicona con moldes impresos, compatibilidad y desgaste",
+      "url": "https://formlabs.com/support/Silicone-mold-making-and-silicone-part-production/"
+    },
+    {
+      "numero": 256,
+      "titulo": "Feroca · EasyPlat ACQUA, kit de 900 g, densidad, dureza y precio con IVA",
+      "url": "https://feroca.com/es/siliconas-de-platino-adicion/1234-3382-easyplat-acqua.html"
+    },
+    {
+      "numero": 257,
+      "titulo": "Suministros Sanitarios · KWC Home Z.605.806, especificaciones anunciadas y precio",
+      "url": "https://www.suministrossanitarios.com/es/complementos-para-grifos/146911-junta-torica-d2035x178-irhd70-epdm-marca-kwc-home.html"
+    },
+    {
+      "numero": 258,
+      "titulo": "Prusa · Cabezal de silicona XL de Filament2, precio USD con región Estados Unidos; disponibilidad no confirmada",
+      "url": "https://www.prusa3d.com/es/producto/original-prusa-xl-silicone-printing-toolhead/"
+    },
+    {
+      "numero": 259,
+      "titulo": "Filament2 · Tubo de material líquido, tecnología declarada patentada y acceso anticipado",
+      "url": "https://www.filament2.com/"
+    },
+    {
+      "numero": 260,
+      "titulo": "HiPeristaltic · Aviso específico de licencia del controlador HAL incluido",
+      "url": "https://github.com/gunakkoc/HiPeristaltic/blob/db9a43589ec3b8e9f0624caa9871cc5c3a12e66a/firmware/STM32G0B1RET6_BIGTREETECH/STM32CubeProject/HiPeristaltic/Drivers/STM32G0xx_HAL_Driver/LICENSE.txt"
+    }
+  ],
+  "seleccion_junta": {
+    "fuentes": [
+      245,
+      246
+    ],
+    "variables": [
+      "compuesto",
+      "dimensiones y alojamiento",
+      "estática o dinámica",
+      "fluido y limpieza",
+      "presión y temperatura",
+      "superficies",
+      "deformación remanente",
+      "almacenamiento",
+      "aptitud sanitaria cuando corresponda"
+    ],
+    "regimen_legal_finca_concreta_resuelto": false,
+    "esta_revision_no_aprueba_material_generico_para_agua_potable": true,
+    "tablas_Parker_inspeccion_visual": false
+  },
+  "bombeo": {
+    "fuente_fabricante_desgaste": 247,
+    "alcance_manual": "401U y cabezales 400D/400DM; no transferir horas a equipos impresos",
+    "vida_tubo_bomba_propia_horas": null,
+    "escala_aritmetica_elegida": {
+      "volumen_L": 100,
+      "caudal_supuesto_L_min": "0.7",
+      "minutos": "142.8571428571428571428571429",
+      "incluye_contrapresion_perdidas_paradas": false,
+      "prueba_servicio_domestico": false
+    }
+  },
+  "HiPeristaltic": {
+    "commit": "db9a43589ec3b8e9f0624caa9871cc5c3a12e66a",
+    "fecha_commit": "2026-05-07T02:29:49Z",
+    "fuentes": [
+      248,
+      249,
+      250,
+      260
+    ],
+    "licencia_raiz": "Apache-2.0",
+    "dependencias_licencia_uniforme": false,
+    "HAL_aviso": "condiciones de paquete; en su ausencia BSD-3-Clause",
+    "arbol_entradas": 442,
+    "arbol_truncado": false,
+    "archivos_sueltos_extensiones_STL_STEP_STP_SCAD_FCStd_DXF": 0,
+    "ZIP_no_abierto": "silav2/HiPeristaltic.zip",
+    "licencia_y_reproducibilidad_mecanica_verificadas": false,
+    "coste_aproximado_USD_anunciado_proyecto": 280,
+    "prestacion_volumetrica_hasta_por_ciento_anunciada": "0.2",
+    "prestacion_replicada_aqui": false,
+    "precio_entregado_Espana": null
+  },
+  "Phisik": {
+    "commit": "8dbbafe1e1c8c02d33d99f95e23c47561df6de33",
+    "fecha_commit": "2020-10-16T04:55:33Z",
+    "fuentes": [
+      251,
+      252,
+      253,
+      254
+    ],
+    "licencia_raiz": "CC-BY-NC-SA-4.0",
+    "cabecera_archivos_SCAD": "Licence GPL, sin versión en la cabecera",
+    "interpretacion_alcance_licencias_resuelta": false,
+    "elegido_como_base_comercial": false,
+    "ejemplo_README_tubo_mm": {
+      "exterior": 7,
+      "interior": "5.5",
+      "pared": ".75"
+    },
+    "parametros_fuente_tubo_mm": {
+      "exterior": 9,
+      "pared": "1.5",
+      "interior_por_resta": "6.0"
+    },
+    "settings_blob_sha": "b7a220fba02ec4d65af7f3c734bc61a1c7ef7394",
+    "pump_blob_sha": "c3a606d99928d3e4e79ae241b3229ee2fac242ad",
+    "README_caudal_anunciado_mL_min": 700,
+    "coste_historico_aproximado_USD": 35,
+    "calibracion_transferible_entre_configuraciones_demostrada": false,
+    "render_impresion_validacion_fisica": false
+  },
+  "moldeo": {
+    "fuente_proceso": 255,
+    "alcance": "Formlabs documenta piezas de silicona dentro de moldes impresos; no equivalencia automática a FDM o agua potable",
+    "moldes_10_20_usos": "observación típica de la guía comercial, no vida garantizada de un molde propio",
+    "material_precio": {
+      "fuente": 256,
+      "producto": "EasyPlat ACQUA",
+      "referencia": "201354301",
+      "kit_g": 900,
+      "eur_IVA_incluido": "29.04",
+      "envio_calculado": false,
+      "dureza_anunciada": "Shore A25",
+      "densidad_g_cm3": "1.20",
+      "aptitud_agua_potable_verificada": false,
+      "formulacion_abierta_completa_verificada": false,
+      "vida_almacenamiento_confirmada": false
+    },
+    "ejemplo_propio_no_validado": {
+      "objeto": "junta plana experimental de caja seca, sin función sanitaria, de presión, protección eléctrica o carga",
+      "exterior_mm": 50,
+      "interior_mm": 30,
+      "espesor_mm": 2,
+      "formula_cm3": "pi/4 * (D_exterior**2 - D_interior**2) * espesor / 1000",
+      "volumen_cm3": "2.51327412287183440",
+      "masa_teorica_g": "3.0159289474462012800",
+      "masa_extra_elegida_sobre_teorica_por_ciento": 25,
+      "masa_con_perdida_g": "3.769911184307751600000",
+      "coste_material_consumido_eur": "0.12164246754699678496000",
+      "desembolso_kit_eur": "29.04",
+      "excluye": [
+        "útil",
+        "material de impresión",
+        "energía",
+        "preparación",
+        "herramientas",
+        "rechazos",
+        "envío",
+        "conservación del sobrante"
+      ],
+      "equivalente_a_junta_KWC": false
+    }
+  },
+  "recambio_comercial": {
+    "fuente": 257,
+    "marca": "KWC Home",
+    "referencia": "Z.605.806",
+    "material_anunciado": "EPDM",
+    "dimensiones_mm_anunciadas": [
+      "20.35",
+      "1.78"
+    ],
+    "dureza_anunciada": "IRHD70",
+    "eur_impuestos_incluidos": "6.58",
+    "compatibilidad_grifo_concreto_verificada": false,
+    "documentacion_sanitaria_fabricante_verificada": false,
+    "no_sustituir_por": "ejemplo propio de silicona de otro material, dureza y geometría"
+  },
+  "impresion_directa_silicona": {
+    "fuentes": [
+      258,
+      259
+    ],
+    "producto": "Prusa XL Silicone Printing Toolhead / Filament2",
+    "USD_mostrados": 925,
+    "region_mostrada": "Estados Unidos",
+    "precio_final_Espana_confirmado": false,
+    "disponibilidad_confirmada": false,
+    "fecha_septiembre": "solo resultado indexado; no confirmada en apertura actual",
+    "Filament2_declara_patentado": true,
+    "solicitud_patente_analizada": false,
+    "apertura_cabezal_consumible_y_formulacion_verificada": false,
+    "ventaja_muy_superior_a_ruta_abierta_equivalente_demostrada": false,
+    "compra_elegida": false
+  },
+  "limites_acceso": [
+    {
+      "recurso": "RSC D5DD00157A",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00157a",
+      "resultado": "403; no se elude ni se afirma revisión íntegra"
+    },
+    {
+      "recurso": "DOI hardware HiPeristaltic",
+      "url": "https://doi.org/10.5281/zenodo.15223798",
+      "resultado": "error 500 de redirección del navegador de investigación, no recuperable; no archivos CAD revisados"
+    },
+    {
+      "recurso": "Parker PTD5705 descarga local",
+      "resultado": "403; texto web leído, imágenes no recibidas, sin comprobación visual de tablas"
+    },
+    {
+      "recurso": "123rodamiento OR-102X3-EPDM70",
+      "resultado": "403; no se adopta como presupuesto verificado"
+    },
+    {
+      "recurso": "Tameson S2347-X20",
+      "resultado": "URL no accesible; no se adopta precio como presupuesto verificado"
+    },
+    {
+      "recurso": "Electromecánica Casado 18.64x3.53",
+      "resultado": "tiempo agotado; no se adopta como presupuesto verificado"
+    }
+  ],
+  "continuacion": [
+    "bomba de agua concreta y despiece",
+    "presión, caudal y comodidad exigidos",
+    "alternativa con menor bombeo",
+    "reparación no crítica con compatibilidad documentada"
+  ],
+  "autosuficiencia_completa_y_gasto_cero_demostrados": false
+}
