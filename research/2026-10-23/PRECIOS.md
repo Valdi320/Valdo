@@ -1,0 +1,27 @@
+# Referencias económicas · 23/10/2026
+
+**Sin compras.** Observaciones de páginas comerciales o de los autores, consultadas el 23/10/2026. Los precios pueden cambiar. No se han seleccionado variantes, añadido productos a un carrito ni comprobado un presupuesto entregado en España. Los enlaces de cada fila son fuentes directas del vendedor o del proyecto.
+
+| Elemento | Precio visible o referencia | Tipo de dato y condiciones | Qué falta sumar o comprobar | Fuente |
+|---|---|---|---|---|
+| Copymaster3D Voron Trident 350 | 899 EUR | Precio anunciado; página indica IVA incluido y transporte aparte | No incluye Raspberry Pi ni piezas impresas; impuestos finales de destino, envío, herramientas y consumibles pendientes | [39](https://printbay-oberberg.de/products/copymaster3d-voron-trident-kit-350-x-350-x-250mm) |
+| LDO Voron Trident 300 Rev D | 1.320 EUR | Precio anunciado con impuestos; transporte al finalizar compra | No se confirma disponibilidad: aparece «Sold out» junto a controles de compra/recogida. Verificar piezas faltantes y configuración completa | [40](https://myrigs3d.com/collections/ldo-kits/products/ldo-kit-voron-trident-300-revd) |
+| Voron Trident 300, Meltbro | Desde 879,99 EUR | Precio base con IVA alemán del 19 %; transporte aparte | Raspberry y piezas impresas son opciones. No equivale a coste completo puesto en España ni al mismo kit de las filas anteriores | [41](https://meltbro.de/voron-trident-300mm-dreizack-komplettes-3d-drucker-kit-dragon-hotend-ptfe-kabel.html) |
+| Home Assistant Green | 179 EUR | Precio recomendado por el fabricante, impuestos aplicables incluidos en la referencia EUR; precio real depende de distribuidor | Radios/sensores/actuadores y transporte, según necesidad. Antes de comprar: evaluar hardware ya disponible | [42](https://www.home-assistant.io/green/) |
+| OpenSprinkler OS | 189-229 EUR | Rango anunciado en ficha; tienda publica precios con IVA | Versión, fuente opcional, válvulas, tuberías, sensores, suministro de agua, envío y condiciones de destino. Revisar licencia del hardware exacto además del firmware | [43](https://opensprinklershop.de/en/product/opensprinkler-3-0/) |
+| Prusament PETG, varios colores de 1 kg | Referencia 29,99 EUR | Página del fabricante muestra referencia EUR con IVA; no es oferta final confirmada para España | Transporte, variante, consumo real y pérdidas. La tienda puede mostrar USD según región. No es el material recomendado para todas las piezas de una Voron | [44](https://prusament.com/materials/prusament-petg/) |
+| FarmBot Genesis v1.9 | 5.995 USD | Precio de catálogo; preventa | IVA/importación/transporte aplicable a España, fecha efectiva y accesorios/huerto. No se convierte a EUR ni se da por disponible para entrega inmediata | [45](https://farm.bot/collections/farmbot-kits) |
+| FarmBot Genesis XL v1.9 | 7.995 USD | Precio de catálogo; preventa | Las mismas condiciones anteriores; superficie y productividad deben ajustarse al uso real. Precio del robot no equivale a alimentación completa | [45](https://farm.bot/collections/farmbot-kits) |
+| Precious Plastic, inyectora básica | 350 EUR | Estimación de materiales del proyecto en Países Bajos; no es máquina terminada a la venta ni presupuesto local actual | Fabricación, trabajo, herramientas, molde, control, espacio y transporte. Ficha: 30 kg y 800 W | [10](https://www.preciousplastic.com/machines/basic) |
+| Precious Plastic, trituradora básica | 1.100 EUR | Estimación de materiales del proyecto en Países Bajos | Fabricación, trabajo, accesorios e instalación adecuados. Ficha: 150 kg, 2,2 kW y 400 V | [10](https://www.preciousplastic.com/machines/basic) |
+| Precious Plastic, taller Mix | 2.000-10.000 EUR | Estimación de inversión publicada para el conjunto de taller | El proyecto contempla unos 50 m² y 2-4 personas. No es presupuesto de una habitación ni paquete llave en mano | [46](https://www.preciousplastic.com/starterkits/showcase/mix) |
+
+## Interpretación y decisiones
+
+**[I] No hay una recomendación de compra.** Los kits Voron no son comparables directamente por su precio: cambian tamaño, componentes y exclusiones. Hay que cerrar una BOM de la versión concreta y sumar fabricación de piezas, herramientas y puesta en marcha. El precio superior de LDO no demuestra aquí mayor calidad medida ni que se amortice.
+
+**[I] La automatización puede ser una mala inversión aunque sea abierta.** Antes de FarmBot se debe comparar riego y manejo sencillos, tiempo humano, superficie y valor de la producción. Antes de un taller de reciclaje se debe medir cuánto material necesitamos y cuánto costaría comprarlo o trabajar en un taller compartido. No se han calculado amortizaciones porque faltan uso, producción, fallos y costes completos.
+
+**[I] Coste cero no se consigue ocultando consumibles.** A la referencia del PETG deben añadirse desgaste y energía. Si se recicla material, se sustituyen algunas compras por clasificación, preparación, maquinaria y control; no se demuestra coste total cero. Toda inversión llevará una lista de dependencias no eliminadas.
+
+**[A] Sin precio completo todavía:** sistema fotovoltaico de vivienda, almacenamiento, tratamiento de agua, vivienda, saneamiento, CNC y equipos de medición. No se eligen capacidades ni presupuestos sin definir lugar y necesidades. La siguiente campaña prioriza energía y coste de reposición.

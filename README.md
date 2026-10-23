@@ -10,6 +10,11 @@
 - **[Publicación original en GitHub: issue #2](https://github.com/Valdi320/Valdo/issues/2)**: hilo de visión y propuestas.
 - **[Hoja de ruta](docs/08-hoja-de-ruta-y-metricas.md)**, **[seguridad](docs/07-seguridad-y-riesgos.md)** y **[decisiones abiertas](docs/10-decisiones-y-proximos-pasos.md)**.
 
+### Autosostenimiento e investigación continua: 23 de octubre de 2026
+
+- **[Informe de autosostenimiento, 24 casos y plan de continuidad](research/2026-10-23/README.md)**: energía, agua, alimentación, fabricación y límites de dependencia industrial.
+- **[Precios consultados y exclusiones](research/2026-10-23/PRECIOS.md)** y **[51 referencias principales](research/2026-10-23/FUENTES.md)**. Sin compras ni prototipos nuevos; no se declara alcanzado un gasto cotidiano de cero euros.
+
 ### Investigación ampliada: octubre de 2026
 
 - **[Investigación complementaria con referencias verificadas](research/2026-10-13/README.md)** — 10 informes sobre tamaño/estabilidad, destreza y mantenimiento, obstáculos NAMO, IA y simulación, metrología y CAD, materiales y reciclaje, legislación y ciberseguridad, datos técnicos, evaluación económica y fuentes.
