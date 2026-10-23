@@ -54,3 +54,7 @@ Se añaden dos referencias IKEA: frigorífico LAGAN 00572853 a 299 € y placa T
 ## Ropa lavado y movilidad
 
 Tres referencias comerciales nuevas: UDDARP 70525467 a 499 €, Alfa Style 40 a 250 € y E-ACTV 100 cuadro bajo 8893262 a 999,99 €. El [anexo de ropa e higiene](ROPA_HIGIENE_MOVILIDAD.md) identifica funciones, exclusiones y consumos de referencia. No hay elección de compra, presupuesto instalado o ventaja equivalente demostrada sobre una alternativa abierta. [Registro económico y escenarios](datos/ropa_higiene_movilidad_2026-10-23.json).
+
+## Materiales críticos y almacenamiento experimental
+
+El [anexo de reposición](MATERIALES_CRITICOS_REPOSICION.md) conserva los costes históricos en USD del artículo de batería de hierro y sus celdas de 8 mL. No son precios actuales por kWh ni una oferta de FBRC. Quedan pendientes presupuestos completos de banco níquel-hierro y kit experimental; no se reutilizan boletines antiguos como ofertas vigentes. [Datos y límites](datos/materiales_criticos_2026-10-23.json).

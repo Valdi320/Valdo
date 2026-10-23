@@ -122,7 +122,7 @@ Las referencias de precios se conservan en el documento adjunto. Se distingue pr
 
 Cada campaña deberá conservar fecha, fuentes, condiciones económicas, cambios respecto de la anterior y pendientes. Se publican únicamente textos propios, enlaces y datos no personales necesarios para la investigación. Las fuentes enlazadas conservan sus licencias. No se adjuntan archivos privados, credenciales ni el informe personalizado anterior. La licencia global de FDAA sigue pendiente según CONTRIBUTING.md; esta entrega no la cambia.
 
-**Estado de esta edición:** investigación documental y cálculos, sin vivienda autónoma, prototipo físico o gasto cero demostrado. Los anexos de energía, agua, alimentación, vivienda, materiales e IA se cruzan en la [integración de servicios y costes](INTEGRACION_VIDA_COSTES.md). Faltan finca, necesidades medidas, funcionamiento y presupuesto completos. El [anexo de ropa, higiene y movilidad](ROPA_HIGIENE_MOVILIDAD.md) amplía la cobertura funcional; siguen pendientes materiales críticos y validación de cadenas completas.
+**Estado de esta edición:** investigación documental y cálculos, sin vivienda autónoma o gasto cero demostrado. La [integración de servicios y costes](INTEGRACION_VIDA_COSTES.md) cruza los subsistemas estudiados. Se amplía con [ropa, higiene y movilidad](ROPA_HIGIENE_MOVILIDAD.md) y [materiales críticos de reposición](MATERIALES_CRITICOS_REPOSICION.md). Faltan finca, necesidades medidas, funcionamiento y presupuesto completos.
 
 
 ### Avance energético de esta misma fecha
@@ -163,3 +163,8 @@ Se incorpora [vida cotidiana y costes](INTEGRACION_VIDA_COSTES.md): demanda parc
 ### Ropa higiene y movilidad de esta misma fecha
 
 Se incorpora [ropa, calzado, lavado, higiene y movilidad](ROPA_HIGIENE_MOVILIDAD.md): patronaje abierto, control de máquinas, límites de la fibra propia y materiales de desgaste. Se conservan la preferencia por automatización y las diferencias entre diseño accesible, reparación y reproducción íntegra desde recursos locales. Los escenarios no miden necesidades personales ni acreditan un porcentaje o fecha de independencia completa.
+
+
+### Baterías y materiales críticos de esta misma fecha
+
+Se incorpora [almacenamiento, cauchos, lubricantes y electrónica](MATERIALES_CRITICOS_REPOSICION.md). La plataforma FBRC tiene documentación abierta y un alcance experimental explícito; se distinguen eficiencia de celda y sistema, y se registran dos discrepancias de composición para confirmar. La vida anunciada de una batería no elimina mantenimiento o materias primas. No se acredita fabricación íntegra doméstica ni se ejecutan experimentos químicos o eléctricos.

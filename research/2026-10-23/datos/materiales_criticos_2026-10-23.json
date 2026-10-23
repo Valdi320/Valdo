@@ -1,0 +1,113 @@
+{
+  "fecha": "2026-10-23",
+  "tipo": "investigación documental, lectura estática y aritmética; no ensayos físicos o ejecución del código ajeno",
+  "nife_energia_ejemplo": {
+    "kwh_util_dia_elegidos": "2",
+    "rendimiento_caso_1": ".70",
+    "rendimiento_caso_2": ".80",
+    "carga_kwh_dia_caso_1": "2.857142857142857142857142857",
+    "carga_kwh_dia_caso_2": "2.5",
+    "diferencia_kwh_ano_365dias": "130.3571428571428571428571428",
+    "alcance": "rendimientos tomados del rango anunciado por proveedor [158]; uso constante elegido; no banco dimensionado"
+  },
+  "bombas_escenario_elegido": {
+    "watios": 10,
+    "horas_dia": 24,
+    "kwh_dia": "0.24",
+    "energia_util_kwh_dia": "2",
+    "eficiencia_celda_elegida": ".70",
+    "eficiencia_cociente_util_entrada": "0.6457564575645756457564575646",
+    "no_es": "consumo o eficiencia de FBRC medidos; no incluye otras pérdidas"
+  },
+  "articulo_hierro": {
+    "fuente": 159,
+    "lectura": "resumen y tabla indexados, apertura 403 sin intento de elusión",
+    "licencia_tabla": "CC BY-NC-ND 4.0",
+    "potencia_maxima_publicada_mw_l": 250,
+    "volumen_lineal_hipotetico_para_1kw_l": "4.0E+3",
+    "costes_historicos_usd": {
+      "min_celda_8ml": "4.58",
+      "max_celda_8ml": "13.74",
+      "montaje_para_50_celdas_8ml": "400"
+    },
+    "limite": "no coste por kWh, presupuesto actual, banco instalado o dato de plataforma FBRC"
+  },
+  "fbrc": {
+    "certificado": "FR000028",
+    "version_certificada": "1.0.0",
+    "fecha_certificacion": "2025-08-28",
+    "area_kit_cm2": 2,
+    "licencia_registro": "CERN-OHL-S-2.0",
+    "uso_manual": "educación e investigación, no almacenamiento real",
+    "gran_formato_2025_cm2": 175,
+    "fuentes": [
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      170
+    ]
+  },
+  "revision_cuaderno_171": {
+    "fecha_cuaderno": "2026-03-26",
+    "autor": "Kirk Pollard Smith",
+    "url": "https://dualpower.supply/posts/lab-notebook-9/",
+    "alcance": "observaciones estáticas condicionadas a exactitud de masas y volumen publicados; sin contacto o cambio upstream",
+    "volumen_publicado_ml": 11,
+    "masa_molar_KI_g_mol": "166.0028",
+    "masas_declaradas_g": {
+      "ZnCl2": "1.40",
+      "NH4Cl": "1.08",
+      "KI": "3.32",
+      "H2O": "8.51",
+      "TriEG": "0.58"
+    },
+    "KI_mol_l_usando_masa_declarada_KI": "1.818151150572049496645949235",
+    "KI_mol_l_usando_masa_ZnCl2_como_codigo": "0.7666902442171293058145569067",
+    "masa_parcial_como_codigo_g": "13.81",
+    "masa_todos_ingredientes_g": "14.89",
+    "masa_omitida_g": "1.08",
+    "limites": [
+      "confirmar masa física antes de corregir tabla",
+      "aclarar concentración por masa de solución o disolvente",
+      "no se deduce que la medida eléctrica sea incorrecta",
+      "integración publicada de energía no incorpora potencia de bombas"
+    ]
+  },
+  "dependencias_clave": [
+    {
+      "ruta": "FBRC",
+      "externas": "electrodos, separador, juntas, bombas, tubos, reactivos y electrónica de medida",
+      "primer_avance": "reconciliar composición y balance con auxiliares"
+    },
+    {
+      "ruta": "NiFe",
+      "externas": "electrodos, reactivos, recipiente, agua de reposición y control de carga",
+      "primer_avance": "oferta completa y mantenimiento por banco concreto"
+    },
+    {
+      "ruta": "Caucho vegetal",
+      "externas": "selección vegetal, extracción, formulación, aditivos, conformado y calidad",
+      "primer_avance": "una pieza estática de baja exigencia con requisitos definidos"
+    },
+    {
+      "ruta": "Lubricante vegetal",
+      "externas": "aceite base controlado, aditivos, especificaciones y verificación de desgaste",
+      "primer_avance": "una aplicación concreta frente a referencia"
+    },
+    {
+      "ruta": "Microfabricación",
+      "externas": "obleas preparadas, químicos, equipos, instrumental y encapsulado",
+      "primer_avance": "dispositivo simple útil, no sustituir informática moderna por número de transistores"
+    }
+  ],
+  "precios_actuales": "no se obtuvo oferta de banco NiFe ni presupuesto completo FBRC; no se convierten costes históricos en cotizaciones",
+  "acceso_limitado": [
+    "artículo HardwareX 403: se conserva solo contenido indexado",
+    "enlace al repositorio FBRC desde homepage: error de herramienta; documentación pública y registro OSHWA sí legibles",
+    "ruta inglesa Perma redirige a inicio: se siguió navegación del fabricante a ficha francesa",
+    "ruta HSE inicialmente propuesta no accesible: localizada página oficial Getting started"
+  ]
+}
