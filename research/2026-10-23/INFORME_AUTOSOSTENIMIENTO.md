@@ -201,3 +201,7 @@ El [anexo biotecnológico](BIOPRODUCCION_SILICONA.md) identifica evidencia de en
 ### Extrusión abierta y silicona de esta misma fecha
 
 El [anexo de extrusión](EXTRUSION_ABIERTA_SILICONA.md) verifica declaración CERN-OHL-P-2.0 y archivos STEP de Allstruder, con límites de lectura y validación. Separa el coste orientativo del mecanismo del proceso completo y calcula cómo cambia la fuerza al variar el diámetro de jeringa. La evidencia de formulación e impresión de silicona no acredita una combinación propia lista ni producción local del polímero.
+
+### Agua atmosférica y fabricación propia de esta misma fecha
+
+El [anexo de agua del aire](AGUA_ATMOSFERICA_FABRICACION.md) distingue captación, potabilidad y conservación; contrasta condiciones nominales con clima histórico y calcula la escala energética. Audita dos antecedentes públicos sin acreditar licencia integral o máquina potable reproducible. Mantiene abierta la sorción solar, con métodos pendientes de lectura. No se elige suministro único ni se compra equipo.

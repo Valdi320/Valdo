@@ -1,0 +1,401 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental y aritmética; sin compras, instalación, fabricación, ensayo físico o consumo de agua experimental",
+  "fuentes": [
+    {
+      "numero": 278,
+      "titulo": "EPA · Atmospheric Water Generation Technology, evaluación GEN-350 de tres meses, noviembre de 2019",
+      "url": "https://www.epa.gov/sites/default/files/2019-11/documents/awg_technical_brief_final_05nov19.pdf"
+    },
+    {
+      "numero": 279,
+      "titulo": "DOE · Alternative Water Sources, captación, uso, clima y mantenimiento",
+      "url": "https://www.energy.gov/cmei/femp/best-management-practice-14-alternative-water-sources"
+    },
+    {
+      "numero": 280,
+      "titulo": "Watergen · GENNY, ficha actual y condiciones nominales de energía",
+      "url": "https://watergen.com/product-page-genny/"
+    },
+    {
+      "numero": 281,
+      "titulo": "Watergen · Tecnología, cartuchos semestrales y límites de afirmaciones comerciales",
+      "url": "https://watergen.com/technology/"
+    },
+    {
+      "numero": 282,
+      "titulo": "Dhoop Solar · DW-90, precio público con IVA; entrega y rendimiento local pendientes",
+      "url": "https://www.dhoopsolar.es/generadores-de-agua"
+    },
+    {
+      "numero": 283,
+      "titulo": "OpenAWG · Árbol recursivo fijado, no truncado",
+      "url": "https://api.github.com/repos/openawg/openawg/git/trees/c03ccb9fcca86f70d1dd5e32b71ea0784273ab80?recursive=1"
+    },
+    {
+      "numero": 284,
+      "titulo": "OpenAWG · BlueIce Alpha, referencias comerciales y certificación pendiente en README",
+      "url": "https://github.com/openawg/openawg/blob/c03ccb9fcca86f70d1dd5e32b71ea0784273ab80/blueice/README.md"
+    },
+    {
+      "numero": 285,
+      "titulo": "OpenAWG · Fresh from the lab, comunicación inicial 22/03/2016; informes enlazados no auditados",
+      "url": "https://openawg.github.io/2016/03/22/fresh-from-the-lab.html"
+    },
+    {
+      "numero": 286,
+      "titulo": "WaterOfLife-OpenAWG · Árbol recursivo fijado, seis archivos Markdown",
+      "url": "https://api.github.com/repos/Bardockthegreat/WaterOfLife-OpenAWG/git/trees/62ecd2db624031b608f8a41ded1b2fda91173008?recursive=1"
+    },
+    {
+      "numero": 287,
+      "titulo": "WaterOfLife-OpenAWG · README, declaración de licencia, BOM y expectativas",
+      "url": "https://github.com/Bardockthegreat/WaterOfLife-OpenAWG/blob/62ecd2db624031b608f8a41ded1b2fda91173008/README.md"
+    },
+    {
+      "numero": 288,
+      "titulo": "WaterOfLife-OpenAWG · Performance Expectations, sin registro instrumental adjunto",
+      "url": "https://github.com/Bardockthegreat/WaterOfLife-OpenAWG/blob/62ecd2db624031b608f8a41ded1b2fda91173008/docs/docs/performance.md"
+    },
+    {
+      "numero": 289,
+      "titulo": "Guan y colaboradores · Captación solar con tejidos de gel, Nature Water 09/06/2026; solo resumen indexado, redirección inaccesible",
+      "url": "https://www.nature.com/articles/s44221-026-00645-6"
+    },
+    {
+      "numero": 290,
+      "titulo": "Liu y colaboradores · Panel de hidrogel en Death Valley, Nature Water 11/06/2025; solo resumen indexado, redirección inaccesible",
+      "url": "https://www.nature.com/articles/s44221-025-00447-2"
+    }
+  ],
+  "AEMET": {
+    "fuente_previa": 69,
+    "estacion": "9434 Zaragoza Aeropuerto",
+    "periodo": "1981-2010",
+    "filas_seleccionadas": [
+      {
+        "mes": "enero",
+        "T_C": "6.6",
+        "HR_por_ciento": 75
+      },
+      {
+        "mes": "abril",
+        "T_C": "13.8",
+        "HR_por_ciento": 57
+      },
+      {
+        "mes": "julio",
+        "T_C": "25.3",
+        "HR_por_ciento": 47
+      },
+      {
+        "mes": "octubre",
+        "T_C": "16.2",
+        "HR_por_ciento": 67
+      },
+      {
+        "mes": "diciembre",
+        "T_C": "7.0",
+        "HR_por_ciento": 76
+      }
+    ],
+    "url_consultada": "https://www.aemet.es/en/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=9434",
+    "no_equivale_a": [
+      "clima horario de finca",
+      "producción mensual de máquina",
+      "año 2026 observado"
+    ]
+  },
+  "GENNY_ficha_fabricante": {
+    "fuente": 280,
+    "kWh_L": ".4",
+    "condicion_T_C": "26.7",
+    "condicion_HR_por_ciento": 60,
+    "capacidad_max_L_dia_anunciada": 30,
+    "masa_kg": 80,
+    "umbral_T_C_anunciado": 18,
+    "umbral_HR_por_ciento_anunciado": 30,
+    "potencia_nominal_W": 550,
+    "pico_calentamiento_UE_W": 2600,
+    "rendimiento_horario_Zaragoza_demostrado": false,
+    "cartuchos_meses_segun_pagina_tecnologica": 6,
+    "fuente_cartuchos": 281
+  },
+  "energia_sensibilidad_no_simulacion_horaria": {
+    "formula": "litros/dia * kWh/litro",
+    "escenarios": [
+      {
+        "L_dia_elegidos": 5,
+        "kWh_L": "0.4",
+        "kWh_dia": "2.0",
+        "origen_sec": "ficha comercial a 26,7 C y 60% HR"
+      },
+      {
+        "L_dia_elegidos": 5,
+        "kWh_L": "1",
+        "kWh_dia": "5",
+        "origen_sec": "hipótesis elegida, no medida"
+      },
+      {
+        "L_dia_elegidos": 5,
+        "kWh_L": "3",
+        "kWh_dia": "15",
+        "origen_sec": "hipótesis elegida, no medida"
+      },
+      {
+        "L_dia_elegidos": 100,
+        "kWh_L": "0.4",
+        "kWh_dia": "40.0",
+        "origen_sec": "ficha comercial a 26,7 C y 60% HR"
+      },
+      {
+        "L_dia_elegidos": 100,
+        "kWh_L": "1",
+        "kWh_dia": "100",
+        "origen_sec": "hipótesis elegida, no medida"
+      },
+      {
+        "L_dia_elegidos": 100,
+        "kWh_L": "3",
+        "kWh_dia": "300",
+        "origen_sec": "hipótesis elegida, no medida"
+      }
+    ],
+    "demanda_no_personalizada": true,
+    "comparacion_PVGIS_previa": {
+      "kWh_dia_por_kWp_diciembre": "2.83",
+      "potencia_kWp_elegida": 6,
+      "kWh_dia_medios_modelados": "16.98",
+      "no_garantiza": [
+        "mínimo diario",
+        "continuidad",
+        "electricidad tras batería",
+        "rendimiento AWG"
+      ]
+    }
+  },
+  "OpenAWG": {
+    "commit": "c03ccb9fcca86f70d1dd5e32b71ea0784273ab80",
+    "fecha_commit": "2016-05-20T20:09:21Z",
+    "arbol_entradas": 106,
+    "archivos": 74,
+    "arbol_truncado": false,
+    "archivo_license_copying_identificado_por_nombre": false,
+    "auditoria_licencias_dependencias": false,
+    "README_blueice_leido": true,
+    "certificacion_indicada_pendiente": true,
+    "entrada_blog_leida": true,
+    "informes_laboratorio_enlazados_leidos": false,
+    "no_prueba": [
+      "potabilidad continua",
+      "fabricación de todas las piezas",
+      "licencia abierta global"
+    ]
+  },
+  "WaterOfLife": {
+    "commit": "62ecd2db624031b608f8a41ded1b2fda91173008",
+    "fecha_commit": "2026-04-15T02:55:17Z",
+    "arbol_entradas": 11,
+    "archivos": 6,
+    "todos_archivos_Markdown": true,
+    "arbol_truncado": false,
+    "archivo_licencia_separado": false,
+    "declaracion_README": "MIT License or Creative Commons Attribution 4.0",
+    "licencia_integral_verificada": false,
+    "CAD_y_registro_instrumental_en_arbol": false,
+    "precio_total_USD_anunciado": [
+      60,
+      100
+    ],
+    "BOM_rangos_publicados": [
+      {
+        "elemento": "TEC1-12706",
+        "min_USD": 3,
+        "max_USD": 6
+      },
+      {
+        "elemento": "disipador y ventilador",
+        "min_USD": 10,
+        "max_USD": 25
+      },
+      {
+        "elemento": "placa fría",
+        "min_USD": 5,
+        "max_USD": 10
+      },
+      {
+        "elemento": "aletas",
+        "min_USD": 5,
+        "max_USD": 15
+      },
+      {
+        "elemento": "ventilador entrada",
+        "min_USD": 5,
+        "max_USD": 10
+      },
+      {
+        "elemento": "filtro polvo",
+        "min_USD": 3,
+        "max_USD": 10
+      },
+      {
+        "elemento": "fuente 12 V",
+        "min_USD": 15,
+        "max_USD": 25
+      },
+      {
+        "elemento": "fusible",
+        "min_USD": 3,
+        "max_USD": 5
+      },
+      {
+        "elemento": "interruptor",
+        "min_USD": 2,
+        "max_USD": 5
+      },
+      {
+        "elemento": "convertidor buck",
+        "min_USD": 5,
+        "max_USD": 10
+      },
+      {
+        "elemento": "embudo",
+        "min_USD": 2,
+        "max_USD": 5
+      },
+      {
+        "elemento": "tubo",
+        "min_USD": 5,
+        "max_USD": 10
+      },
+      {
+        "elemento": "carbón",
+        "min_USD": 10,
+        "max_USD": 20
+      },
+      {
+        "elemento": "recipiente",
+        "min_USD": 5,
+        "max_USD": 10
+      },
+      {
+        "elemento": "estructura",
+        "min_USD": 10,
+        "max_USD": 20
+      },
+      {
+        "elemento": "aislamiento",
+        "min_USD": 5,
+        "max_USD": 10
+      },
+      {
+        "elemento": "sellado",
+        "min_USD": 5,
+        "max_USD": 10
+      }
+    ],
+    "suma_propia_todo_comprado_por_numero_de_Peltier": {
+      "1": {
+        "min_USD": 98,
+        "max_USD": 206
+      },
+      "2": {
+        "min_USD": 101,
+        "max_USD": 212
+      }
+    },
+    "entrega_impuestos_Espana_y_potabilidad_incluidos": false,
+    "expectativa_no_medicion_un_modulo": {
+      "L_dia": [
+        ".3",
+        ".6"
+      ],
+      "T_C": [
+        24,
+        30
+      ],
+      "HR_por_ciento": [
+        60,
+        80
+      ]
+    },
+    "propuesta_adoptada_o_construida": false
+  },
+  "sorcion_solar": [
+    {
+      "fuente": 289,
+      "fecha_publicacion": "2026-06-09",
+      "resultado_resumen": "1,3 L con dos módulos en Austin, aproximadamente 62% HR",
+      "metodos_suplemento_y_BOM_leidos": false,
+      "vida_multianual_y_replicacion_domestica_verificadas": false
+    },
+    {
+      "fuente": 290,
+      "fecha_publicacion": "2025-06-11",
+      "resultado_resumen": "57,0–161,5 mL/día, dispositivo de escala métrica en Death Valley",
+      "no_transformado_en_litros_por_m2": true,
+      "metodos_suplemento_y_BOM_leidos": false
+    }
+  ],
+  "potabilidad": {
+    "fuente_EPA": 278,
+    "equipo_del_estudio": "GEN-350",
+    "duracion_meses": 3,
+    "microbiologia_favorable_en_estudio": true,
+    "recuento_heterotrofo_elevado_y_control_crecimiento": true,
+    "no_extendido_a_equipo_propio": true,
+    "sales_bajas_o_carbon_solo_no_prueban_potabilidad": true
+  },
+  "precio_Espana": {
+    "fuente": 282,
+    "modelo": "DW-90",
+    "EUR_IVA_incluido": "2995",
+    "L_dia_anunciados": 30,
+    "condicion_unica_de_ensayo_y_entrega_y_stock_verificados": false,
+    "no_es_recomendacion_de_compra": true
+  },
+  "limites_acceso": [
+    {
+      "recurso": "Nature s44221-026-00645-6",
+      "resultado": "500 redirección a identificación inaccesible; solo resumen indexado, no elusión"
+    },
+    {
+      "recurso": "Nature s44221-025-00447-2",
+      "resultado": "500 redirección a identificación inaccesible; solo resumen indexado, no elusión"
+    },
+    {
+      "recurso": "Nature s41467-024-52137-4",
+      "resultado": "500 redirección inaccesible; no usado para diseñar o extrapolar"
+    },
+    {
+      "recurso": "PMC12118538",
+      "resultado": "CAPTCHA; no elusión ni lectura íntegra"
+    },
+    {
+      "recurso": "MDPI 1996-1073/16/13/5201 y 2227-9717/13/9/3003",
+      "resultado": "429; tablas indexadas no empleadas como ensayo auditado"
+    },
+    {
+      "recurso": "Stellenbosch 10019.1/124564",
+      "resultado": "403; no elusión"
+    },
+    {
+      "recurso": "RSC D2EE01071B",
+      "resultado": "403; no elusión ni revisión del modelo completo"
+    },
+    {
+      "recurso": "Watergen legacy FAQ",
+      "resultado": "timeout; no usado para fijar mantenimiento universal"
+    }
+  ],
+  "decision": "investigar sorción solar documentada y arquitectura modular abierta; AWG como complemento pendiente de demostrar, no fuente única elegida para Zaragoza",
+  "siguiente_evidencia_necesaria": [
+    "método y materiales reutilizables de sorción",
+    "serie meteorológica horaria",
+    "BOM por referencia",
+    "cantidad útil, energía total y continuidad",
+    "tratamiento y conservación validados",
+    "reposición y trabajo por litro"
+  ],
+  "gasto_cero_y_suministro_potable_propio_demostrados": false
+}

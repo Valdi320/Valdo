@@ -90,3 +90,7 @@ La [revisión biotecnológica](BIOPRODUCCION_SILICONA.md) no identifica un culti
 ## Extrusión abierta y espesantes
 
 El [anexo de extrusión](EXTRUSION_ABIERTA_SILICONA.md) conserva 50–51 USD como coste orientativo publicado de Allstruder, sin presupuesto español instalado. THI-VEX 1 oz, peso anunciado 0,03 kg, figura a 4,70 GBP con IVA británico; entrega e impuestos finales españoles no calculados. No se suman como una cesta compatible ni se comparan directamente con un cabezal de dos componentes. Faltan impresora anfitriona, material, jeringas, boquillas, preparación, limpieza y rechazos. [Datos y exclusiones](datos/extrusion_silicona_2026-10-23.json).
+
+## Agua atmosférica
+
+Dhoop Solar DW-90: **2.995 EUR con IVA** en página pública, entrega y disponibilidad pendientes. La suma propia de los 17 rangos de la BOM WaterOfLife asciende a **98–206 USD con un Peltier** o **101–212 USD con dos**, comprando todos los elementos enumerados. No incluye entrega española, impuestos, instrumentación o validación de agua de consumo. No se equiparan capacidades, calidad ni precios de estas dos rutas. El coste de sorción solar reproducible queda pendiente. [Anexo](AGUA_ATMOSFERICA_FABRICACION.md) y [datos](datos/agua_atmosferica_2026-10-23.json).
