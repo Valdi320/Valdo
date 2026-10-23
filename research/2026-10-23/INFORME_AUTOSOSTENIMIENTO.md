@@ -122,7 +122,7 @@ Las referencias de precios se conservan en el documento adjunto. Se distingue pr
 
 Cada campaña deberá conservar fecha, fuentes, condiciones económicas, cambios respecto de la anterior y pendientes. Se publican únicamente textos propios, enlaces y datos no personales necesarios para la investigación. Las fuentes enlazadas conservan sus licencias. No se adjuntan archivos privados, credenciales ni el informe personalizado anterior. La licencia global de FDAA sigue pendiente según CONTRIBUTING.md; esta entrega no la cambia.
 
-**Estado de esta edición:** investigación documental y cálculos, sin vivienda autónoma o gasto cero demostrado. La [integración de servicios y costes](INTEGRACION_VIDA_COSTES.md) cruza los subsistemas estudiados. Se amplía con [ropa, higiene y movilidad](ROPA_HIGIENE_MOVILIDAD.md) y [materiales críticos de reposición](MATERIALES_CRITICOS_REPOSICION.md). Faltan finca, necesidades medidas, funcionamiento y presupuesto completos.
+**Estado de esta edición:** investigación documental y cálculos, sin vivienda autónoma o gasto cero demostrado. La [integración de servicios y costes](INTEGRACION_VIDA_COSTES.md) cruza los subsistemas estudiados. Se amplía con [ropa, higiene y movilidad](ROPA_HIGIENE_MOVILIDAD.md) y [materiales críticos de reposición](MATERIALES_CRITICOS_REPOSICION.md). La [comparación térmica](CALOR_ALMACENAMIENTO_DEMANDA.md) añade pérdidas, consumo, control abierto y límites de equipos comerciales. Faltan finca, necesidades medidas, funcionamiento y presupuesto completos.
 
 
 ### Avance energético de esta misma fecha
@@ -168,3 +168,8 @@ Se incorpora [ropa, calzado, lavado, higiene y movilidad](ROPA_HIGIENE_MOVILIDAD
 ### Baterías y materiales críticos de esta misma fecha
 
 Se incorpora [almacenamiento, cauchos, lubricantes y electrónica](MATERIALES_CRITICOS_REPOSICION.md). La plataforma FBRC tiene documentación abierta y un alcance experimental explícito; se distinguen eficiencia de celda y sistema, y se registran dos discrepancias de composición para confirmar. La vida anunciada de una batería no elimina mantenimiento o materias primas. No se acredita fabricación íntegra doméstica ni se ejecutan experimentos químicos o eléctricos.
+
+
+### Acumulación térmica de esta misma fecha
+
+Se incorpora [almacenamiento de calor y reducción de batería](CALOR_ALMACENAMIENTO_DEMANDA.md), con capacidades de agua, enfriamiento ideal y una condición explícita para ahorrar energía. Se comparan dos referencias comerciales sin asumir equivalencia ni apertura del hardware; compacto no significa portátil o reparable por el propietario. No hay elección de compra o instalación validada.

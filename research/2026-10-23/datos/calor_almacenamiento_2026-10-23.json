@@ -1,0 +1,193 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "documentación y cálculos analíticos propios; no ensayo, diseño sanitario o instalación validada",
+  "capacidades_agua": {
+    "densidad_elegida_kg_l": 1,
+    "calor_especifico_aproximado_kj_kg_k": "4.18",
+    "formula": "Q_kWh = litros * densidad * cp * deltaT / 3600",
+    "casos": [
+      {
+        "litros": 50,
+        "masa_kg_densidad_elegida_1": 50,
+        "kwh_delta20": "1.161111111111111111111111111",
+        "kwh_delta40": "2.322222222222222222222222222"
+      },
+      {
+        "litros": 100,
+        "masa_kg_densidad_elegida_1": 100,
+        "kwh_delta20": "2.322222222222222222222222222",
+        "kwh_delta40": "4.644444444444444444444444444"
+      },
+      {
+        "litros": 200,
+        "masa_kg_densidad_elegida_1": 200,
+        "kwh_delta20": "4.644444444444444444444444444",
+        "kwh_delta40": "9.288888888888888888888888889"
+      },
+      {
+        "litros": 500,
+        "masa_kg_densidad_elegida_1": 500,
+        "kwh_delta20": "11.61111111111111111111111111",
+        "kwh_delta40": "23.22222222222222222222222222"
+      }
+    ],
+    "limite": "energía térmica, sin pérdidas; no capacidad eléctrica ni consigna sanitaria"
+  },
+  "enfriamiento_tecnico": {
+    "litros_elegidos": 100,
+    "C_kwh_K": "0.1161111111111111111111111111",
+    "T0_C": 60,
+    "ambiente_constante_C": 20,
+    "umbral_tecnico_C": 40,
+    "modelo": "un solo volumen mezclado, sin extracción, sin calentamiento; T = Ta + (T0-Ta)*exp(-(UA_W_K/1000)*t_h/C_kWh_K)",
+    "limites": "no estratificación, intercambio real, tuberías individuales o ACS potable; UA elegido no pertenece a equipo",
+    "resultados": [
+      {
+        "UA_W_K_elegido": "0.5",
+        "horas": 12,
+        "temperatura_C": 57.985511585821044,
+        "perdida_kwh": 0.2339044880907788,
+        "kwh_sobre_umbral40": 2.0883177341314436
+      },
+      {
+        "UA_W_K_elegido": "0.5",
+        "horas": 24,
+        "temperatura_C": 56.07247726091362,
+        "perdida_kwh": 0.45602902914947385,
+        "kwh_sobre_umbral40": 1.8661931930727484
+      },
+      {
+        "UA_W_K_elegido": "0.5",
+        "horas": 72,
+        "temperatura_C": 49.336474556320994,
+        "perdida_kwh": 1.2381537876271735,
+        "kwh_sobre_umbral40": 1.0840684345950486
+      },
+      {
+        "UA_W_K_elegido": "1",
+        "horas": 12,
+        "temperatura_C": 56.07247726091362,
+        "perdida_kwh": 0.45602902914947385,
+        "kwh_sobre_umbral40": 1.8661931930727484
+      },
+      {
+        "UA_W_K_elegido": "1",
+        "horas": 24,
+        "temperatura_C": 52.53059039347826,
+        "perdida_kwh": 0.8672814487572461,
+        "kwh_sobre_umbral40": 1.4549407734649762
+      },
+      {
+        "UA_W_K_elegido": "1",
+        "horas": 72,
+        "temperatura_C": 41.51571848484173,
+        "perdida_kwh": 2.1462304648155994,
+        "kwh_sobre_umbral40": 0.1759917574066228
+      },
+      {
+        "UA_W_K_elegido": "2",
+        "horas": 12,
+        "temperatura_C": 52.53059039347826,
+        "perdida_kwh": 0.8672814487572461,
+        "kwh_sobre_umbral40": 1.4549407734649762
+      },
+      {
+        "UA_W_K_elegido": "2",
+        "horas": 24,
+        "temperatura_C": 46.4559827837065,
+        "perdida_kwh": 1.572610887891856,
+        "kwh_sobre_umbral40": 0.7496113343303662
+      },
+      {
+        "UA_W_K_elegido": "2",
+        "horas": 72,
+        "temperatura_C": 31.573153547973998,
+        "perdida_kwh": 3.300672726929686,
+        "kwh_sobre_umbral40": 0.0
+      }
+    ]
+  },
+  "comparacion_energia_ideal": {
+    "Q_util_kwh_noche": "2",
+    "eficiencia_efectiva_ruta_bateria_elegida": "0.9",
+    "perdida_termica_elegida_kwh": "0.5",
+    "ruta_A_bateria_resistencia_kwh": "2.222222222222222222222222222",
+    "ruta_B_resistencia_almacenamiento_kwh": "2.5",
+    "ruta_C_bateria_bomba_COP2_kwh": "1.111111111111111111111111111",
+    "ruta_D_bomba_COP3_almacenamiento_kwh": "0.8333333333333333333333333333",
+    "umbral_perdida_igual_generador_kwh": "0.222222222222222222222222222",
+    "no_es": "COP medido, potencia dimensionada, presupuesto ACS instantáneo o resultado horario PVGIS"
+  },
+  "productos_referencia": [
+    {
+      "fuente": 180,
+      "producto": "EQUATION EQ2 100L / ficha Utilis, artículo 92389709",
+      "precio_mostrado_eur": "209",
+      "volumen_anunciado_l": 100,
+      "potencia_kw": "1.5",
+      "masa_vacio_kg": "24.5",
+      "materiales_anunciados": [
+        "acero esmaltado",
+        "ánodo de magnesio",
+        "aislamiento poliuretano"
+      ],
+      "exclusiones": "referencia exacta y manual, transporte final, instalación y repuestos; sin apertura de diseño acreditada"
+    },
+    {
+      "fuente_precio": 179,
+      "producto": "Thermino 150 ePlus",
+      "precio_GBP_sin_VAT": "1500",
+      "precio_GBP_con_VAT_britanico_mostrado": "1800",
+      "fuente_tabla_SAP": 176,
+      "equivalente_cilindro_l": 140,
+      "perdida_termica_etiqueta_kwh_24h": ".67",
+      "fuente_manual": 177,
+      "manual": "D0083 1.8, 13/10/2025",
+      "masa_vacio_kg": 136,
+      "masa_lleno_kg": 140,
+      "espera_electrica_declarada_W": 7,
+      "variantes_potencia_W_por_MPN": [
+        2800,
+        1800
+      ],
+      "limites": "vacío se refiere a intercambiador sin agua; no portátil; confirmar MPN, condiciones ensayo, importación y coste completo; no sumar automáticamente espera y pérdidas térmicas"
+    }
+  ],
+  "potencia": {
+    "inversor_previo_continuo25C_W": 2400,
+    "variante_2800_supera_por_W": 400,
+    "variante_1800_margen_aritmetico_sin_otras_cargas_W": 600,
+    "limite": "comparación de fichas, no validación o elección de modelo"
+  },
+  "software_abierto": [
+    {
+      "proyecto": "ThermalTank",
+      "licencia": "BSD-3-Clause",
+      "funcion": "modelo científico, no hardware de depósito",
+      "fuentes": [
+        172,
+        173
+      ]
+    },
+    {
+      "proyecto": "PVRouter-1-phase",
+      "licencia": "LGPL-2.1",
+      "funcion": "firmware, compatibilidad aislada sin evaluar",
+      "fuentes": [
+        174,
+        175
+      ]
+    }
+  ],
+  "evidencia_fuentes": [
+    "Manual Sunamp descargado para lectura; tablas de páginas 11 y 14 revisadas como imagen",
+    "Página de producto Sunamp consultada sin acciones de compra; controles genéricos de carrito no acreditan pedido",
+    "Generalitat Valenciana: apertura restringida; no se intenta eludir, se conserva alcance del contenido indexado"
+  ],
+  "siguiente_evidencia": [
+    "inventario de una reparación o acumulador concreto y repuestos",
+    "demanda, aislamiento y perfiles horarios en finca real",
+    "contrastar calor útil y trabajo de mantenimiento antes de compra",
+    "materiales de aislamiento locales y herramientas de precisión"
+  ]
+}

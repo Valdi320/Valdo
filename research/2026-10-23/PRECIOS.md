@@ -58,3 +58,7 @@ Tres referencias comerciales nuevas: UDDARP 70525467 a 499 €, Alfa Style 40 a 
 ## Materiales críticos y almacenamiento experimental
 
 El [anexo de reposición](MATERIALES_CRITICOS_REPOSICION.md) conserva los costes históricos en USD del artículo de batería de hierro y sus celdas de 8 mL. No son precios actuales por kWh ni una oferta de FBRC. Quedan pendientes presupuestos completos de banco níquel-hierro y kit experimental; no se reutilizan boletines antiguos como ofertas vigentes. [Datos y límites](datos/materiales_criticos_2026-10-23.json).
+
+## Acumulación de calor
+
+El [anexo térmico](CALOR_ALMACENAMIENTO_DEMANDA.md) añade EQUATION EQ2 100L artículo 92389709 a 209 € y Thermino 150 ePlus a 1.500 GBP sin VAT / 1.800 GBP con VAT británico anunciado. No son capacidades equivalentes ni precios completos instalados en España; no se convierten divisas o se elige compra. [Datos, condiciones y supuestos](datos/calor_almacenamiento_2026-10-23.json).
