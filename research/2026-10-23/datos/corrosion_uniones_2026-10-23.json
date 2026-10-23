@@ -1,0 +1,210 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "documentación y aritmética; sin compra, fabricación, tratamiento o ensayos físicos",
+  "fuentes": [
+    {
+      "numero": 235,
+      "titulo": "American Galvanizers Association · Espesor, ambiente y tiempo hasta primer mantenimiento, 04/12/2014",
+      "url": "https://galvanizeit.org/knowledgebase/article/estimating-the-life-of-hot-dip-galvanized-coatings"
+    },
+    {
+      "numero": 236,
+      "titulo": "NASA · Ficha de Fastener Design Manual, NASA-RP-1228, publicado 01/03/1990",
+      "url": "https://ntrs.nasa.gov/citations/19900009424"
+    },
+    {
+      "numero": 237,
+      "titulo": "NASA · Texto de Fastener Design Manual, sección de corrosión; sin uso de tablas para dimensionado",
+      "url": "https://ntrs.nasa.gov/api/citations/19900009424/downloads/19900009424.pdf"
+    },
+    {
+      "numero": 238,
+      "titulo": "Henkel · LOCTITE 243, ficha técnica de abril de 2025, desmontaje y almacenamiento",
+      "url": "https://datasheets.tdx.henkel.com/LOCTITE-243-en_GL.pdf"
+    },
+    {
+      "numero": 239,
+      "titulo": "Mecatechnic · LOCTITE 243 5 ml VD71202; 11,88 euros en apertura frente a 9,90 indexados",
+      "url": "https://www.mecatechnic.com/es-ES/p/fijador-de-roscas-loctite-243-normal-frasco-5ml_VD71202"
+    },
+    {
+      "numero": 240,
+      "titulo": "Rubio Monocoat · Mantenimiento de Hybrid Wood Protector según exposición",
+      "url": "https://service.rubiomonocoat.com/how-long-does-rubio-monocoat-hybrid-wood-protector-last"
+    },
+    {
+      "numero": 241,
+      "titulo": "Rubio Monocoat Bélgica · Hybrid Wood Protector, 1 L Chocolate, rendimiento y almacenamiento",
+      "url": "https://rubiomonocoat.be/en/products/hybrid-wood-protector"
+    },
+    {
+      "numero": 242,
+      "titulo": "Rubio Monocoat España · Hybrid Wood Protector 100 ml, precio con impuestos y límites de la ficha",
+      "url": "https://www.rubiomonocoat.es/products/hybrid-wood-protector-100ml-1"
+    },
+    {
+      "numero": 243,
+      "titulo": "OpenStructures · FAQ, retícula, licencias OS_open y OS_non-commercial 1.0 y alcance de compatibilidad",
+      "url": "https://www.openstructures.net/faq"
+    },
+    {
+      "numero": 244,
+      "titulo": "Oregon State University Extension · Humedad, movimiento de madera y protección frente a exposición",
+      "url": "https://extension.oregonstate.edu/catalog/em-8600-wood-moisture-relationships"
+    }
+  ],
+  "corrosion": {
+    "fuentes": [
+      235,
+      236,
+      237
+    ],
+    "NASA_documento": "NASA-RP-1228",
+    "NASA_publicacion": "1990-03-01",
+    "alcance_NASA": "documentación histórica; sin dimensionado normativo actual ni recetas de recubrimiento",
+    "galvanizado_TFM": "estimación atmosférica dependiente de espesor y ambiente; no vida total",
+    "umbral_acero_oxidado_por_ciento_descrito_AGA": 5,
+    "no_extrapolar": [
+      "suelo",
+      "agua",
+      "cualquier tornillo zincado",
+      "finca española sin identificar"
+    ],
+    "duracion_local_anos": null,
+    "recubrimiento_domestico_equivalente_demostrado": false
+  },
+  "fijador": {
+    "fuente_tecnica": 238,
+    "producto": "LOCTITE 243",
+    "fecha_TDS": "2025-04",
+    "funcion": "fijador anaeróbico de resistencia media; desmontaje normal con herramienta manual",
+    "formulacion_completa_abierta_verificada": false,
+    "sustitucion_por_fijacion_generica_validada": false,
+    "precio": {
+      "fuente": 239,
+      "ref": "VD71202",
+      "envase_ml": 5,
+      "eur_apertura": "11.88",
+      "eur_resultado_indexado_previo": "9.90",
+      "causa_diferencia_confirmada": null,
+      "impuestos_producto_confirmados": false,
+      "envio_incluido": false,
+      "disponibilidad": "página indica en stock; sin compra"
+    },
+    "coste_por_reparacion_eur": null
+  },
+  "madera": {
+    "fuente_humedad": 244,
+    "producto_comparado": "Hybrid Wood Protector; no DuroGrit",
+    "mantenimiento_fuente": 240,
+    "pauta_fabricante": {
+      "revision_visual": "anual",
+      "horizontal": "anual",
+      "vertical": "cada 3–5 años",
+      "dependencias": [
+        "lugar",
+        "madera",
+        "color"
+      ]
+    },
+    "almacenamiento_fuente": 241,
+    "almacenamiento_meses_publicados": 36,
+    "no_equivale_a": "duración del tratamiento aplicado o reserva por décadas",
+    "precios": [
+      {
+        "fuente": 241,
+        "pais_tienda": "Bélgica",
+        "envase_ml": 1000,
+        "color": "Chocolate",
+        "eur": "127.45",
+        "impuestos_confirmados": false,
+        "entrega_Espana_confirmada": false,
+        "stock_confirmado": false
+      },
+      {
+        "fuente": 242,
+        "pais_tienda": "España",
+        "envase_ml": 100,
+        "eur": "22.42",
+        "impuestos_incluidos": true,
+        "envio_incluido": false,
+        "stock_confirmado": false,
+        "advertencia_ficha": "mezcla menciones a muestras de 20 ml y a otro producto; no usar como procedimiento"
+      }
+    ],
+    "calculo_ilustrativo_propio": {
+      "area_m2": 10,
+      "rendimiento_min_m2_L": 15,
+      "rendimiento_max_m2_L": 30,
+      "cantidad_min_L": "0.3333333333333333333333333333",
+      "cantidad_max_L": "0.6666666666666666666666666667",
+      "excluye": [
+        "absorción real",
+        "preparación",
+        "pérdidas",
+        "envases completos",
+        "componente adicional",
+        "mantenimiento"
+      ],
+      "presupuesto_o_gasto_anual": false
+    },
+    "equivalente_abierto_local_demostrado": false
+  },
+  "modularidad": {
+    "fuente": 243,
+    "proyecto": "OpenStructures",
+    "reticula_mm": [
+      40,
+      40
+    ],
+    "licencias_explicadas_FAQ": [
+      "OS_open 1.0",
+      "OS_non-commercial 1.0"
+    ],
+    "permisos_uniformes_catalogo": false,
+    "OS_open": "incluye uso comercial bajo sus condiciones",
+    "OS_non_commercial": "usos más allá del personal sujetos a condiciones y tarifas",
+    "CAD_pieza_concreta_descargado": false,
+    "auditoria_licencia_pieza_completa": false,
+    "resistencia_e_intercambiabilidad_demostradas": false
+  },
+  "propuesta_propia": {
+    "objeto": "organizador interior desmontable para herramientas ligeras",
+    "estado": "ficha de documentación propuesta; sin CAD ni prototipo",
+    "excluye": [
+      "función estructural",
+      "electricidad",
+      "presión",
+      "contacto alimentario"
+    ],
+    "campos": [
+      "referencia y revisión",
+      "material y acabado",
+      "cantidad",
+      "acceso y herramientas",
+      "interfaz y holguras",
+      "exposición",
+      "auxiliares y consumo",
+      "historial",
+      "procedencia y licencia"
+    ],
+    "ciclos_desmontaje_propuestos": 5,
+    "ciclos_ejecutados": 0,
+    "cinco_ciclos_no_son": [
+      "norma",
+      "certificación",
+      "predicción de vida"
+    ]
+  },
+  "limites": [
+    "sin porcentaje global de autosuficiencia",
+    "sin fecha de independencia total",
+    "sin compra elegida",
+    "sin reposición completa de herramientas y materiales demostrada"
+  ],
+  "continuacion": [
+    "juntas y sellos de circuitos de agua",
+    "compatibilidad y acceso al recambio",
+    "ficha completa de reparación no crítica"
+  ]
+}

@@ -74,3 +74,7 @@ El [anexo de medición](MEDICION_MECANIZADO_PRECISION.md) añade el calibre 530-
 ## Afilado y consumibles de mantenimiento
 
 El [anexo de afilado](AFILADO_METALES_REUTILIZACION.md) recoge placas DMT de combinaciones distintas a 124,10 € y 194,50 €, con impuestos anunciados, y ACC150 de dos envases de 150 ml a 44,00 € en la última lectura (otra apertura mostró 43,00 €). No se consideran productos equivalentes o un conjunto compatible. El cálculo de 30 preparaciones nuevas de concentrado no indica número de afilados o gasto anual. [Precios, cantidades y exclusiones](datos/afilado_metales_2026-10-23.json).
+
+## Protección y materiales auxiliares
+
+El [anexo de corrosión y uniones](CORROSION_UNIONES_MATERIALES_AUXILIARES.md) registra fijador LOCTITE 243 de 5 ml a 11,88 € en apertura directa (9,90 € en un resultado indexado previo, causa no confirmada), y Hybrid Wood Protector de 100 ml a 22,42 € con impuestos en la tienda española. La presentación belga de 1 L Chocolate figura a 127,45 €, sin entrega e impuestos españoles comprobados. Portes, preparación y complementos quedan fuera; no constituyen una cesta ni gasto anual. [Datos y exclusiones](datos/corrosion_uniones_2026-10-23.json).

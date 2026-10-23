@@ -185,3 +185,7 @@ El [anexo de precisión](MEDICION_MECANIZADO_PRECISION.md) separa resolución, m
 ### Afilado y reutilización de metales de esta misma fecha
 
 El [anexo de mantenimiento de herramientas](AFILADO_METALES_REUTILIZACION.md) identifica una guía paramétrica abierta y una adaptación pendiente para placas finas. Distingue filos reafilables de hojas endurecidas no limables; añade precios de abrasivos y un consumible de sistema comercial, sin prometer duración infinita. La revisión de metales conserva los límites de identificación, composición y tratamiento antes de atribuir propiedades al material recuperado.
+
+### Corrosión, desmontaje y auxiliares de esta misma fecha
+
+El [anexo de durabilidad y uniones](CORROSION_UNIONES_MATERIALES_AUXILIARES.md) distingue duración de recubrimientos y tiempo hasta mantenimiento. Identifica dependencias de fijadores y acabados, límites de almacenamiento y permisos distintos en OpenStructures. Propone documentar una reparación no crítica; no acredita fabricación doméstica de auxiliares equivalentes ni duración indefinida.
