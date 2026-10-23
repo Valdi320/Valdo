@@ -1,0 +1,41 @@
+{
+  "annotated_records": 5,
+  "automatically_merged_or_deleted": false,
+  "candidate_pairs": 2,
+  "candidate_pairs_capped": false,
+  "issues": {
+    "duplicate_id_review": 2,
+    "invalid_decimal": 1,
+    "missing_required": 1,
+    "possible_same_name_review": 4
+  },
+  "original_unmodified": true,
+  "output_sha256": {
+    "annotated_rows.csv": "cea26bb5094e9f69817f6bf4719109ee663e43a774d75ae7a2d7ee235f8cfa9c",
+    "candidate_duplicates.csv": "40c3e2aadcb01020a14e54f55e890f931af7c4a3695959136a23f7062ed02852",
+    "exceptions.csv": "ffdedfb38391dd4a5eb4fd9915ddbcb243445f5d6ce1b00dee3fdff5861bc518"
+  },
+  "rules": {
+    "city": "city",
+    "id": "id",
+    "name": "name",
+    "numeric_decimal_dot": [
+      "amount"
+    ],
+    "required": [
+      "id",
+      "name",
+      "city"
+    ]
+  },
+  "source_columns": [
+    "id",
+    "name",
+    "city",
+    "amount"
+  ],
+  "source_filename": "sample_input.csv",
+  "source_records": 5,
+  "source_sha256": "bc01998406782a74f960918ec02cac4301bd2f69e3ea0a620afdf1bc3363643b",
+  "version": 1
+}
