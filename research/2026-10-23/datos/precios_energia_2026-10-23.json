@@ -1,0 +1,72 @@
+{
+  "fecha_consulta": "2026-10-23",
+  "estado": "Observación documental; sin pedido ni presupuesto instalado; no usar como oferta garantizada",
+  "referencias": [
+    {
+      "id": 58,
+      "equipo": "Pylontech US5000",
+      "precio_anunciado_eur": "1088.09",
+      "precio_sin_iva_eur": "899.25",
+      "url": "https://autosolar.es/baterias-litio-48v/bateria-litio-48kwh-pylontech-us5000-48v"
+    },
+    {
+      "id": 59,
+      "equipo": "MultiPlus-II 48V 3000VA 35+32A",
+      "precio_anunciado_eur": "685.00",
+      "iva": "No desglosado en lectura de la ficha; confirmar",
+      "url": "https://www.leroymerlin.es/productos/inversor-victron-multiplus-ii-48v-3000va-35-32a-90106970.html"
+    },
+    {
+      "id": 60,
+      "equipo": "SmartSolar MPPT 150/35",
+      "precio_anunciado_eur": "161.76",
+      "iva": "Incluido según vendedor",
+      "url": "https://generasolar.es/product/regulador-victron-smartsolar-mppt-150-35/"
+    },
+    {
+      "id": 61,
+      "equipo": "Lote 7 Tensite 500W N-Type Full Black",
+      "precio_anunciado_eur": "644.99",
+      "precio_sin_iva_eur": "533.05",
+      "url": "https://autosolar.es/panel-solar-24-voltios/pack-7-unidades-placas-solares-500w-tensite-full-black-topcon-n-type"
+    }
+  ],
+  "cestas_no_validadas": [
+    {
+      "potencia_considerada_kwp": 3,
+      "lotes_7_paneles": 1,
+      "controladores_150_35": 2,
+      "inversores_48_3000": 1,
+      "modulos_us5000": 1,
+      "suma_eur": "2741.60",
+      "incluye_instalacion": false
+    },
+    {
+      "potencia_considerada_kwp": 6,
+      "lotes_7_paneles": 2,
+      "controladores_150_35": 4,
+      "inversores_48_3000": 1,
+      "modulos_us5000": 1,
+      "suma_eur": "3710.11",
+      "incluye_instalacion": false
+    },
+    {
+      "potencia_considerada_kwp": 3,
+      "lotes_7_paneles": 1,
+      "controladores_150_35": 2,
+      "inversores_48_3000": 1,
+      "modulos_us5000": 3,
+      "suma_eur": "4917.78",
+      "incluye_instalacion": false
+    },
+    {
+      "potencia_considerada_kwp": 6,
+      "lotes_7_paneles": 2,
+      "controladores_150_35": 4,
+      "inversores_48_3000": 1,
+      "modulos_us5000": 3,
+      "suma_eur": "5886.29",
+      "incluye_instalacion": false
+    }
+  ]
+}

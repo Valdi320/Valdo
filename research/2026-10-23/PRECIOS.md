@@ -24,4 +24,4 @@
 
 **[I] Coste cero no se consigue ocultando consumibles.** A la referencia del PETG deben añadirse desgaste y energía. Si se recicla material, se sustituyen algunas compras por clasificación, preparación, maquinaria y control; no se demuestra coste total cero. Toda inversión llevará una lista de dependencias no eliminadas.
 
-**[A] Sin precio completo todavía:** sistema fotovoltaico de vivienda, almacenamiento, tratamiento de agua, vivienda, saneamiento, CNC y equipos de medición. No se eligen capacidades ni presupuestos sin definir lugar y necesidades. La siguiente campaña prioriza energía y coste de reposición.
+**[A] Sin precio completo todavía:** instalación energética de vivienda, tratamiento de agua, vivienda, saneamiento, CNC y equipos de medición. Se han añadido [referencias parciales de paneles, almacenamiento y electrónica](ENERGIA_COSTES_REPARACION.md), sin cerrar coste instalado. No se eligen capacidades ni presupuestos sin definir lugar y necesidades. Se mantienen pendientes demanda real, emplazamiento y coste completo; la comparación energética ya incluye escenarios y reposición.

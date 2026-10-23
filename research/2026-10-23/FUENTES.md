@@ -57,6 +57,22 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 52. [JRC · PVGIS API, parámetros, unidades y modelos](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/api-non-interactive-service_en)
 53. [JRC · PVcalc, alcance y resultados](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/pvgis-5-tools/grid-connected-pv_en)
 
+54. [Victron · Ficha MultiPlus-II, potencia continua y consumo sin carga](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-EN.pdf)
+55. [Victron · Ficha SmartSolar MPPT 150/35 y 150/45](https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf)
+56. [Pylontech · Ficha US5000/US5000-B, copia del documento del fabricante](https://cdn.autosolar.es/pdf/datasheet-pylontech-us5000.pdf)
+57. [Pylontech · Manual US5000, copia del documento del fabricante](https://cdn.autosolar.es/pdf/manual-pylontech-us5000.pdf)
+58. [AutoSolar · Precio US5000, artículo 1880909](https://autosolar.es/baterias-litio-48v/bateria-litio-48kwh-pylontech-us5000-48v)
+59. [Leroy Merlin · Precio MultiPlus-II 48 V 3000 VA 35+32 A](https://www.leroymerlin.es/productos/inversor-victron-multiplus-ii-48v-3000va-35-32a-90106970.html)
+60. [GeneraSolar · Precio SmartSolar MPPT 150/35](https://generasolar.es/product/regulador-victron-smartsolar-mppt-150-35/)
+61. [AutoSolar · Precio lote de siete módulos Tensite 500 W Full Black N-Type](https://autosolar.es/panel-solar-24-voltios/pack-7-unidades-placas-solares-500w-tensite-full-black-topcon-n-type)
+62. [IDAE · La bomba de calor en la rehabilitación energética de edificios, guía 2023](https://www.idae.es/sites/default/files/documentos/publicaciones_idae/Guias_IDAE_La_Bomba_de_calor_2023_V11.pdf)
+63. [OpenEnergyMonitor · Visión del sistema, medición y registro local](https://openenergymonitor.org/docs/overview.html)
+64. [OpenEnergyMonitor · Medición de bombas de calor, consumo y calor entregado](https://docs.openenergymonitor.org/applications/heatpump.html)
+65. [diyBMS v4 · Hardware, advertencias y licencia no comercial](https://github.com/stuartpittaway/diyBMSv4)
+66. [foxBMS 2 · Plataforma de desarrollo de BMS](https://github.com/foxBMS/foxbms-2)
+67. [foxBMS 2 · Licencias por componente](https://raw.githubusercontent.com/foxBMS/foxbms-2/master/LICENSE.md)
+68. [HeatpumpMonitor.org · Precisión y límites de los datos de instalaciones](https://heatpumpmonitor.org/about)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.

@@ -122,9 +122,14 @@ Las referencias de precios se conservan en el documento adjunto. Se distingue pr
 
 Cada campaña deberá conservar fecha, fuentes, condiciones económicas, cambios respecto de la anterior y pendientes. Se publican únicamente textos propios, enlaces y datos no personales necesarios para la investigación. Las fuentes enlazadas conservan sus licencias. No se adjuntan archivos privados, credenciales ni el informe personalizado anterior. La licencia global de FDAA sigue pendiente según CONTRIBUTING.md; esta entrega no la cambia.
 
-**Estado al cerrar esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Su siguiente unidad de trabajo es la comparación energética descrita en la sección 8.
+**Estado de esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Los avances energéticos de esta misma fecha ya están anexados; siguen faltando medidas reales y presupuesto completo. El siguiente bloque documental independiente es agua, alimentación y conservación.
 
 
 ### Avance energético de esta misma fecha
 
 Se han añadido cuatro consultas reproducibles a PVGIS: dos montajes y dos escenarios aislados. Véase [ENERGIA_PVGIS.md](ENERGIA_PVGIS.md). No se ha dimensionado ni presupuestado todavía una vivienda real.
+
+
+### Segundo avance energético de esta misma fecha
+
+Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada. El siguiente bloque documental independiente es agua, alimentación y conservación.
