@@ -1,0 +1,192 @@
+{
+  "fecha": "2026-10-23",
+  "fuente_lluvia": {
+    "url": "https://www.aemet.es/es/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?k=arn&l=9434",
+    "autor": "AEMET",
+    "estacion": "9434 Zaragoza Aeropuerto",
+    "periodo": "1981-2010",
+    "tipo": "normales mensuales; transcripción de la tabla pública, no serie diaria ni predicción",
+    "precipitacion_mensual_mm": [
+      21,
+      22,
+      19,
+      39,
+      44,
+      26,
+      17,
+      17,
+      30,
+      36,
+      30,
+      21
+    ],
+    "precipitacion_anual_mm": 322
+  },
+  "supuestos": {
+    "dias_anuales": 365,
+    "coeficiente_captacion": 0.8,
+    "demanda_domestica_l_d": [
+      50,
+      100,
+      150
+    ],
+    "cubiertas_m2": [
+      50,
+      100,
+      200
+    ],
+    "periodo_sin_lluvia_dias": [
+      30,
+      60,
+      90
+    ],
+    "huerto_m2": 100,
+    "riego_aportado_l_m2_d": 3,
+    "dias_de_riego": 90,
+    "alimentacion": {
+      "superficie_m2": 100,
+      "rendimientos_hipoteticos_kg_m2_por_cosecha": [
+        1,
+        2,
+        3
+      ],
+      "cosechas_anuales": 1,
+      "fraccion_disponible_para_comer": 0.8,
+      "energia_kcal_kg_comestible": 880,
+      "referencia_contable_kcal_d": 2000,
+      "url_valor_energetico": "https://www.mapa.gob.es/es/ministerio/servicios/informacion/patata_tcm30-102520.pdf",
+      "tipo_evidencia_energia": "valor de ficha MAPA consultado en extracto indexado; PDF no disponible para lectura integral"
+    }
+  },
+  "captacion_anual": [
+    {
+      "cubierta_m2": 50,
+      "litros_brutos_anuales": 12880.0,
+      "media_l_d": 35.28767123287671,
+      "litros_brutos_mensuales": [
+        840.0,
+        880.0,
+        760.0,
+        1560.0,
+        1760.0,
+        1040.0,
+        680.0,
+        680.0,
+        1200.0,
+        1440.0,
+        1200.0,
+        840.0
+      ]
+    },
+    {
+      "cubierta_m2": 100,
+      "litros_brutos_anuales": 25760.0,
+      "media_l_d": 70.57534246575342,
+      "litros_brutos_mensuales": [
+        1680.0,
+        1760.0,
+        1520.0,
+        3120.0,
+        3520.0,
+        2080.0,
+        1360.0,
+        1360.0,
+        2400.0,
+        2880.0,
+        2400.0,
+        1680.0
+      ]
+    },
+    {
+      "cubierta_m2": 200,
+      "litros_brutos_anuales": 51520.0,
+      "media_l_d": 141.15068493150685,
+      "litros_brutos_mensuales": [
+        3360.0,
+        3520.0,
+        3040.0,
+        6240.0,
+        7040.0,
+        4160.0,
+        2720.0,
+        2720.0,
+        4800.0,
+        5760.0,
+        4800.0,
+        3360.0
+      ]
+    }
+  ],
+  "reservas_sin_lluvia": [
+    {
+      "demanda_l_d": 50,
+      "dias": 30,
+      "litros": 1500
+    },
+    {
+      "demanda_l_d": 50,
+      "dias": 60,
+      "litros": 3000
+    },
+    {
+      "demanda_l_d": 50,
+      "dias": 90,
+      "litros": 4500
+    },
+    {
+      "demanda_l_d": 100,
+      "dias": 30,
+      "litros": 3000
+    },
+    {
+      "demanda_l_d": 100,
+      "dias": 60,
+      "litros": 6000
+    },
+    {
+      "demanda_l_d": 100,
+      "dias": 90,
+      "litros": 9000
+    },
+    {
+      "demanda_l_d": 150,
+      "dias": 30,
+      "litros": 4500
+    },
+    {
+      "demanda_l_d": 150,
+      "dias": 60,
+      "litros": 9000
+    },
+    {
+      "demanda_l_d": 150,
+      "dias": 90,
+      "litros": 13500
+    }
+  ],
+  "escenarios_alimentarios": [
+    {
+      "kg_m2_hipoteticos": 1,
+      "kg_cosechados": 100,
+      "kg_disponibles_comestibles": 80.0,
+      "kcal_contables": 70400.0,
+      "porcentaje_referencia_730000_kcal": 9.643835616438356
+    },
+    {
+      "kg_m2_hipoteticos": 2,
+      "kg_cosechados": 200,
+      "kg_disponibles_comestibles": 160.0,
+      "kcal_contables": 140800.0,
+      "porcentaje_referencia_730000_kcal": 19.28767123287671
+    },
+    {
+      "kg_m2_hipoteticos": 3,
+      "kg_cosechados": 300,
+      "kg_disponibles_comestibles": 240.0,
+      "kcal_contables": 211200.0,
+      "porcentaje_referencia_730000_kcal": 28.931506849315067
+    }
+  ],
+  "riego_escenario_l": 27000,
+  "demanda_domestica_100_l_d_mas_riego_l": 63500
+}

@@ -1,0 +1,60 @@
+{
+  "fecha_consulta": "2026-10-23",
+  "estado": "Referencias documentales sin pedido; confirmar disponibilidad, destino y alcance; no es presupuesto completo",
+  "precios": [
+    {
+      "referencia": 85,
+      "nombre": "GRAF agua potable 1000L ref 25136176",
+      "precio_eur": "290.00",
+      "iva": "incluido según ficha",
+      "pendiente": "disponibilidad por almacén, transporte, conexiones, instalación",
+      "url": "https://www.obramat.es/productos/deposito-de-agua-potable-1000-l-25136176.html"
+    },
+    {
+      "referencia": 86,
+      "nombre": "Aquatonne agua potable 1000L",
+      "precio_desde_eur": "375.64",
+      "iva": "incluido según ficha",
+      "transporte_mostrado_eur": "31.46",
+      "pendiente": "destino y condiciones del transporte",
+      "url": "https://www.todocontenedor.com/producto/deposito-aquatonne-agua-potable-1000-litros.html"
+    },
+    {
+      "referencia": 87,
+      "nombre": "Agua Ecosocial servicio Análisis Potabilidad",
+      "precio_eur": "134.31",
+      "iva": "incluido según ficha",
+      "mensajeria": "incluida para Península según proveedor",
+      "alcance": "panel básico de parámetros listados; no se presume cobertura de cualquier contaminante",
+      "url": "https://aguaecosocial.com/producto/analisis-potabilidad/"
+    },
+    {
+      "referencia": 88,
+      "nombre": "H.Koenig DSY900 anunciado por HOME HOME en Leroy Merlin",
+      "precio_eur": "129.90",
+      "potencia_anunciada_w": 650,
+      "campana_visible": "05 septiembre - 05 diciembre; confirmar condiciones al consultar",
+      "pendiente": "destino, impuestos desglosados, prestaciones y reparabilidad; no recomendado como superioridad probada",
+      "url": "https://www.leroymerlin.es/productos/h-koenig-dsy900-deshidratador-de-alimentos-6-bandejas-de-secado-extraibles-termostato-variable-de-35-a-75-c-pantalla-lcd-tactil-650w-89619231.html"
+    }
+  ],
+  "aritmetica_no_presupuesto": {
+    "9_depositos_graf_capacidad_nominal_l": 9000,
+    "9_depositos_graf_precio_eur": "2610",
+    "excluye": "obra, transporte, conexiones, captación, tratamiento, analíticas y demás partidas"
+  },
+  "incidencias_acceso": [
+    {
+      "fuente": "PDF AEMET 1991-2020 consultado",
+      "resultado": "acceso directo rechazado; no se elude; no usado como base de cálculo"
+    },
+    {
+      "fuente": "Página FAO Small-scale aquaponic food production",
+      "resultado": "403; no se elude ni se usa como evidencia de prestaciones"
+    },
+    {
+      "fuente": "MAPA ficha Patata",
+      "resultado": "PDF no accesible para lectura integral; valor energético obtenido del extracto indexado"
+    }
+  ]
+}

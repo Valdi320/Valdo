@@ -25,3 +25,8 @@
 **[I] Coste cero no se consigue ocultando consumibles.** A la referencia del PETG deben añadirse desgaste y energía. Si se recicla material, se sustituyen algunas compras por clasificación, preparación, maquinaria y control; no se demuestra coste total cero. Toda inversión llevará una lista de dependencias no eliminadas.
 
 **[A] Sin precio completo todavía:** instalación energética de vivienda, tratamiento de agua, vivienda, saneamiento, CNC y equipos de medición. Se han añadido [referencias parciales de paneles, almacenamiento y electrónica](ENERGIA_COSTES_REPARACION.md), sin cerrar coste instalado. No se eligen capacidades ni presupuestos sin definir lugar y necesidades. Se mantienen pendientes demanda real, emplazamiento y coste completo; la comparación energética ya incluye escenarios y reposición.
+
+
+## Avance de agua y conservación
+
+Se añaden [referencias de depósitos y análisis](AGUA_CAPTACION_CALIDAD.md) y [un deshidratador comercial como referencia de coste](ALIMENTACION_CONSERVACION.md). No hay presupuesto instalado, tratamiento elegido ni fabricación propia validada. Véase también el registro de precios en datos/precios_agua_conservacion_2026-10-23.json.

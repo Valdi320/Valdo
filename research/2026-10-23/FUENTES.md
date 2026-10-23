@@ -73,6 +73,28 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 67. [foxBMS 2 · Licencias por componente](https://raw.githubusercontent.com/foxBMS/foxbms-2/master/LICENSE.md)
 68. [HeatpumpMonitor.org · Precisión y límites de los datos de instalaciones](https://heatpumpmonitor.org/about)
 
+69. [AEMET · Normales Zaragoza Aeropuerto 9434, periodo 1981-2010](https://www.aemet.es/es/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?k=arn&l=9434)
+70. [BOE · Texto refundido de la Ley de Aguas, artículos 54 y 59](https://www.boe.es/buscar/act.php?id=BOE-A-2001-14276)
+71. [BOE · Reglamento del Dominio Público Hidráulico, artículos 84-87](https://www.boe.es/buscar/act.php?id=BOE-A-1986-10638)
+72. [BOE · RD 3/2023, agua de consumo, ámbito y tipos de abastecimiento](https://www.boe.es/buscar/act.php?id=BOE-A-2023-628)
+73. [CHE · Registro de Aguas y derechos de aprovechamiento](https://itebro.chebro.es/fr/web/guest/registro-de-aguas)
+74. [CDC · Collecting Rainwater and Your Health, 2024](https://cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html)
+75. [CAWST · Biosand Filter Manual, edición 2009, copia en Universidad de Hawái](https://www.ctahr.hawaii.edu/hawaiirain/Library/Guides%26Manuals/CAWST%20files/Biosand%20Filter%20Manual_Version%2010_Sep%2009%5B1%5D.pdf)
+76. [CAWST · Competencias para construcción, instalación y control de filtros](https://washresources.cawst.org/en/collections/c1e60be2/competency-framework-for-biosand-filter-technicians)
+77. [farmOS · Registro y planificación agrícola, código y licencia](https://github.com/farmOS/farmOS)
+78. [Mycodo · Monitorización y regulación, código y licencia](https://github.com/kizniche/Mycodo)
+79. [MAPA · Ficha Patata, composición: extracto indexado; PDF sin lectura integral](https://www.mapa.gob.es/es/ministerio/servicios/informacion/patata_tcm30-102520.pdf)
+80. [AESAN · Conservas caseras y límites de la inspección visual](https://www.aesan.gob.es/eu/actualidad/actualidad-noticias/conservas_caseras)
+81. [NCHFP / University of Georgia · Sun Drying](https://nchfp.uga.edu/how/dry/sun-drying/)
+82. [Appropedia · Referencia histórica sobre secado solar de alimentos](https://www.appropedia.org/Solar_and_Energy_Conserving_Food_Technologies/The_use_of_solar_food_dryers)
+83. [Appropedia · Política de licencias, con excepciones por contenido](https://www.appropedia.org/Appropedia:Copyrights)
+84. [L’Atelier Paysan · Plantoir à poireaux, planos y licencia no comercial](https://www.latelierpaysan.org/Plantoir-a-poireaux)
+85. [Obramat · GRAF depósito agua potable 1000 L, precio y referencia](https://www.obramat.es/productos/deposito-de-agua-potable-1000-l-25136176.html)
+86. [Todocontenedor · Aquatonne 1000 L, precio anunciado y transporte](https://www.todocontenedor.com/producto/deposito-aquatonne-agua-potable-1000-litros.html)
+87. [Agua Ecosocial · Análisis Potabilidad: precio, parámetros y condiciones](https://aguaecosocial.com/producto/analisis-potabilidad/)
+88. [Leroy Merlin / HOME HOME · Deshidratador H.Koenig DSY900, ficha comercial](https://www.leroymerlin.es/productos/h-koenig-dsy900-deshidratador-de-alimentos-6-bandejas-de-secado-extraibles-termostato-variable-de-35-a-75-c-pantalla-lcd-tactil-650w-89619231.html)
+89. [INE · Suministro y saneamiento del agua 2022, publicación actualizada en 2024](https://www.ine.es/dyngs/Prensa/ESSA2022.htm)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.
