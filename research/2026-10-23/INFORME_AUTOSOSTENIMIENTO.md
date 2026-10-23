@@ -213,3 +213,7 @@ El [anexo de almacenamiento](COBRE_ALMACENAMIENTO_AGUA.md) contrasta acción ant
 ### Sorción solar: cadena de materiales y balance térmico
 
 El [anexo de sorbentes](AGUA_SOLAR_SORBENTES.md) contrasta sílice disponible y MOF-303 con síntesis a escala publicada. Reacción acuosa no equivale a fabricación íntegra sin compras: siguen purificación, secado y control de propiedades. La sensibilidad de superficie usa irradiación, calor y rendimientos hipotéticos; no predice suministro. No se selecciona aún aparato ni se demuestra potabilidad o reposición cero.
+
+### Materiales ajustables y taller abierto
+
+El [anexo de impresión](MATERIALES_IMPRIMIBLES_Y_TALLER.md) compara familias de material, apertura real y precio de una variante. La [investigación dedicada](MATERIAL_DOMESTICO_AJUSTABLE.md) estudia producción doméstica: celulosa y almidón para usos limitados, celulosa bacteriana como línea de biosíntesis y caucho vegetal como otra cadena. No hay materia única, filamento casero validado o fabricación desde arena que sustituya todas las funciones. El rendimiento publicado de una película no equivale a producción doméstica útil o a coste final cero.

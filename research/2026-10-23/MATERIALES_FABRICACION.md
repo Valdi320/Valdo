@@ -128,3 +128,7 @@ Las filas son una **matriz de trabajo**, no ocho procesos ya validados ni recome
 El [anexo de juntas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) conserva la evidencia de moldeo, las limitaciones de compatibilidad y un ejemplo geométrico no crítico. La documentación comercial de moldeo [255] no demuestra que FDM sirva para cualquier molde o precisión, ni abre la formulación de la silicona. Se comparará acabado y material por pieza antes de escoger otra máquina.
 
 **[I]** Fabricar la forma no equivale a sintetizar el material: imprimir plástico comprado o colar silicona comprada reduce dependencia de ciertos recambios, pero conserva la del insumo. La elección se revisará si una tecnología ofrece ventaja demostrada para la misma pieza y servicio. No se recomienda ahora una línea completa de reciclaje ni un cabezal especializado sin esa comparación.
+
+## 11. De la tecnología al material y la configuración
+
+El [anexo de materiales imprimibles y taller](MATERIALES_IMPRIMIBLES_Y_TALLER.md) fija revisión/licencia de Trident y distingue planos con restricciones comerciales de apertura libre. Trident pasa a primera referencia de configuración, sin seleccionar kit ni comprar. El [estudio dedicado de material doméstico](MATERIAL_DOMESTICO_AJUSTABLE.md) prioriza almidón/celulosa para funciones acotadas y separa biosíntesis, formulación y conformado; ninguna ruta demuestra material universal o reposición gratuita.

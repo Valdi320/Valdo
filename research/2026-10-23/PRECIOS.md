@@ -1,10 +1,10 @@
 # Referencias económicas · 23/10/2026
 
-**Sin compras.** Observaciones de páginas comerciales o de los autores, consultadas el 23/10/2026. Los precios pueden cambiar. No se han seleccionado variantes, añadido productos a un carrito ni comprobado un presupuesto entregado en España. Los enlaces de cada fila son fuentes directas del vendedor o del proyecto.
+**Sin compras.** Observaciones de páginas comerciales o de los autores, consultadas el 23/10/2026. Los precios pueden cambiar. Se ha seleccionado una variante de Meltbro únicamente para leer el precio; no se han añadido productos a un carrito ni comprobado un presupuesto entregado en España. Los enlaces de cada fila son fuentes directas del vendedor o del proyecto.
 
 | Elemento | Precio visible o referencia | Tipo de dato y condiciones | Qué falta sumar o comprobar | Fuente |
 |---|---|---|---|---|
-| Copymaster3D Voron Trident 350 | 899 EUR | Precio anunciado; página indica IVA incluido y transporte aparte | No incluye Raspberry Pi ni piezas impresas; impuestos finales de destino, envío, herramientas y consumibles pendientes | [39](https://printbay-oberberg.de/products/copymaster3d-voron-trident-kit-350-x-350-x-250mm) |
+| Copymaster3D Voron Trident 350 | 899 EUR | Precio anunciado; página indica IVA incluido y transporte aparte | No incluye Raspberry Pi ni piezas impresas; aparece «Ausverkauft» junto a publicidad de envío rápido. No se confirma stock. Impuestos de destino, envío, herramientas y consumibles pendientes | [39](https://printbay-oberberg.de/products/copymaster3d-voron-trident-kit-350-x-350-x-250mm) |
 | LDO Voron Trident 300 Rev D | 1.320 EUR | Precio anunciado con impuestos; transporte al finalizar compra | No se confirma disponibilidad: aparece «Sold out» junto a controles de compra/recogida. Verificar piezas faltantes y configuración completa | [40](https://myrigs3d.com/collections/ldo-kits/products/ldo-kit-voron-trident-300-revd) |
 | Voron Trident 300, Meltbro | Desde 879,99 EUR | Precio base con IVA alemán del 19 %; transporte aparte | Raspberry y piezas impresas son opciones. No equivale a coste completo puesto en España ni al mismo kit de las filas anteriores | [41](https://meltbro.de/voron-trident-300mm-dreizack-komplettes-3d-drucker-kit-dragon-hotend-ptfe-kabel.html) |
 | Home Assistant Green | 179 EUR | Precio recomendado por el fabricante, impuestos aplicables incluidos en la referencia EUR; precio real depende de distribuidor | Radios/sensores/actuadores y transporte, según necesidad. Antes de comprar: evaluar hardware ya disponible | [42](https://www.home-assistant.io/green/) |
@@ -102,3 +102,10 @@ Chapa Alberts 10241120, 1.000 × 200 × 0,5 mm: **71,59 EUR con IVA** en BAUHAUS
 ## Sorbentes solares: precios de formato, no coste del agua
 
 Se registran sílice P-LAB S 50000 (1 kg, 17,45 EUR sin IVA), ligando Thermo Fisher 131750250 (25 g, 185 EUR en página alemana) y MOF-303 Ruixi R-M-5635 (1 g, 509 USD). Ninguno incluye un sistema completo; no se ha confirmado entrega y coste final español. Los formatos de investigación no fijan precio industrial ni coste de fabricación por lote. [Fuentes y exclusiones](AGUA_SOLAR_SORBENTES.md).
+
+
+## Taller y materiales ajustables
+
+Meltbro 1009167-100916704, variante con Raspberry y piezas impresas: **1.099,99 EUR con IVA alemán del 19 %**, frente a 879,99 EUR de base; sin porte ni impuesto final de destino confirmados. No es coste instalado. Rat Rig V-Core 4.1 muestra 908,10 EUR de cabecera en región Portugal, con electrónica opcional y paneles excluidos. No se adopta un precio español de Prusa de una página con región/moneda incoherentes. [Comparación y evidencia](MATERIALES_IMPRIMIBLES_Y_TALLER.md).
+
+La glicerina del anexo doméstico conserva un precio indexado, con apertura denegada y sin presupuesto completo de material propio. No se acredita ahorro por sintetizar, cultivar o formular material en casa. Los escenarios de piezas del anexo son umbrales hipotéticos, no amortización observada.

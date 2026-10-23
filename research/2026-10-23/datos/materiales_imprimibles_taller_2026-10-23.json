@@ -1,0 +1,441 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "documentación y lectura de configurador; sin compra, carrito, instalación, cultivos, fabricación o ensayos",
+  "fuentes_nuevas": [
+    {
+      "numero": 312,
+      "titulo": "Prusa · Guía comparativa de filamentos y requisitos de máquina",
+      "url": "https://help.prusa3d.com/filament-material-guide"
+    },
+    {
+      "numero": 313,
+      "titulo": "colorFabb · varioShore TPU, ajuste de densidad y suavidad; declaración del fabricante",
+      "url": "https://support.colorfabb.com/hc/en-150/articles/360003021858-VarioShore-TPU"
+    },
+    {
+      "numero": 314,
+      "titulo": "Avient · Dureza frente a flexión y efectos de medida, 01/01/2025",
+      "url": "https://www.avient.com/resources/knowledge-base/article/understanding-hardness"
+    },
+    {
+      "numero": 315,
+      "titulo": "Formlabs · Uso de Silicone 40A Resin: máquina, lavado y poscurado especializados",
+      "url": "https://formlabs.com/support/Using-Silicone-40A-Resin/"
+    },
+    {
+      "numero": 316,
+      "titulo": "WASP · Delta 2040 Clay, materiales y servicios; no auditoría de apertura",
+      "url": "https://www.3dwasp.com/en/clay-3d-printer-delta-wasp-2040-clay/"
+    },
+    {
+      "numero": 317,
+      "titulo": "WASP · Demostración histórica de proceso cerámico con secado/cocción/esmaltado, 2016",
+      "url": "https://www.3dwasp.com/en/londra-il-primo-ristorante-al-mondo-a-stampare-il-cibo-wasp-stampa-in-3d-piatti-e-bicchieri-in-porcellana/"
+    },
+    {
+      "numero": 318,
+      "titulo": "Forward AM · Flujo de impresión metálica; título de página indica Discontinued, no suministro vigente asegurado",
+      "url": "https://forward-am.com/gain-knowledge/ultrafuse-metal-solution-quick-start-guide/"
+    },
+    {
+      "numero": 319,
+      "titulo": "OSHWA · Definición de hardware abierto y alcance de documentación/libertades",
+      "url": "https://oshwa.org/definition/"
+    },
+    {
+      "numero": 320,
+      "titulo": "Voron Trident · README, revisión 7fcb325, tamaños y cabezal separado",
+      "url": "https://github.com/VoronDesign/Voron-Trident/blob/7fcb3257a3063225934d9608f82037aa6587d844/README.md"
+    },
+    {
+      "numero": 321,
+      "titulo": "Voron Trident · Licencia GPLv3 de la revisión consultada; no auditoría de todas las dependencias",
+      "url": "https://github.com/VoronDesign/Voron-Trident/blob/7fcb3257a3063225934d9608f82037aa6587d844/LICENSE"
+    },
+    {
+      "numero": 322,
+      "titulo": "Voron Trident · Árbol fijado no truncado, inspección de formatos; geometrías sin inspección íntegra",
+      "url": "https://api.github.com/repos/VoronDesign/Voron-Trident/git/trees/7fcb3257a3063225934d9608f82037aa6587d844?recursive=1"
+    },
+    {
+      "numero": 323,
+      "titulo": "Voron Stealthburner · Licencia GPLv3, revisión 8bcb9c2",
+      "url": "https://github.com/VoronDesign/Voron-Stealthburner/blob/8bcb9c246fac19d8ac03931ef97fa07c5e5f0f2b/LICENSE"
+    },
+    {
+      "numero": 324,
+      "titulo": "Rat Rig · V-Core 4.1: precio de cabecera, exclusiones y CC BY-NC-SA 4.0",
+      "url": "https://ratrig.com/products/rat-rig-v-core-4-1"
+    },
+    {
+      "numero": 325,
+      "titulo": "Prusa · CORE One+, ficha actualmente titulada Gen 2; no precio final español comprobado",
+      "url": "https://www.prusa3d.com/product/prusa-core-one-kit/"
+    },
+    {
+      "numero": 326,
+      "titulo": "Open Community Licence · Texto OCL v1.1, revisión 7469fcd; restricciones de replicación comercial",
+      "url": "https://github.com/OpenCommunityLicence/OpenCommunityLicence/blob/7469fcd602cc10c3e1c372e233743800b9c7b4fc/LICENSE"
+    },
+    {
+      "numero": 327,
+      "titulo": "Prusa · Alcance de publicación de firmware, electrónica y repuestos",
+      "url": "https://www.prusa3d.com/en/page/open-source-at-prusa-research_236812/"
+    },
+    {
+      "numero": 328,
+      "titulo": "Prusa · OCL v1.1 y versiones, 24/06/2026; no traslada licencia a todo archivo anterior",
+      "url": "https://blog.prusa3d.com/open-community-license-v1-1-the-new-plugin-system-more-examples-and-your-questions-answered_137202/"
+    },
+    {
+      "numero": 329,
+      "titulo": "Voron · FAQ de aprovisionamiento, BOM específica y arranque",
+      "url": "https://docs.vorondesign.com/sourcing_faq.html"
+    },
+    {
+      "numero": 330,
+      "titulo": "Voron · Mantenimiento y revisiones periódicas",
+      "url": "https://docs.vorondesign.com/maintenance.html"
+    },
+    {
+      "numero": 331,
+      "titulo": "Voron Print It Forward · Conjunto funcional y precios fechados enero 2023, no cotización actual",
+      "url": "https://pif.voron.dev/"
+    },
+    {
+      "numero": 332,
+      "titulo": "NIOSH · Publicación 2024-103, noviembre 2023, PDF; secciones de emisiones y controles",
+      "url": "https://www.cdc.gov/niosh/docs/2024-103/pdfs/2024-103.pdf"
+    },
+    {
+      "numero": 333,
+      "titulo": "Elkem, fabricante, explicación de clorosilanos y productos básicos; HTML accesible.",
+      "url": "https://www.elkem.com/es/products/silicones/chlorosilanes/"
+    },
+    {
+      "numero": 334,
+      "titulo": "Jefferson Rubber Works, fabricante, guía comparativa de elastómeros; HTML accesible. No usar sus tablas térmicas sin aclarar unidades.",
+      "url": "https://jeffersonrubber.com/resources/design-guide/"
+    },
+    {
+      "numero": 335,
+      "titulo": "Rhode Island School of Design, Nature Lab, colección de biomateriales, recetas demostrativas y límites de secado; HTML accesible, no vídeos ni documento Drive.",
+      "url": "https://naturelab.risd.edu/collections/biomaterials-natural-pigments-and-fabrication/"
+    },
+    {
+      "numero": 336,
+      "titulo": "HKU Labs/Pastoe, tutorial de almidón; HTML accesible, experiencia formativa sin propiedades normalizadas completas.",
+      "url": "https://labpastoe.gitbook.io/lab-pastoe/tutorials/bioplastics/starch"
+    },
+    {
+      "numero": 337,
+      "titulo": "Material Factors, extracción doméstica de almidón, experiencia del autor; HTML accesible.",
+      "url": "https://materialfactors.org/recipes/potato-starch"
+    },
+    {
+      "numero": 338,
+      "titulo": "Gurunathan et al., Scientific Reports, 01/05/2025, DOI10.1038/s41598-025-00221-0; HTML accesible; discrepancia verbal del resumen anotada.",
+      "url": "https://www.nature.com/articles/s41598-025-00221-0"
+    },
+    {
+      "numero": 339,
+      "titulo": "Nguyen et al., Journal of Materials Science: Materials in Engineering, 22/12/2025, DOI10.1186/s40712-025-00381-x; abstract y métodos HTML accesibles.",
+      "url": "https://link.springer.com/article/10.1186/s40712-025-00381-x"
+    },
+    {
+      "numero": 340,
+      "titulo": "Kulkarni et al., Cellulose, 13/02/2026, DOI10.1007/s10570-026-06970-z; métodos/resultados/costes HTML accesibles. Muestras a escala de laboratorio; cálculos económicos parciales.",
+      "url": "https://link.springer.com/article/10.1007/s10570-026-06970-z"
+    },
+    {
+      "numero": 341,
+      "titulo": "Kołodziejczyk et al., Cellulose, 03/12/2024 online, volumen2025, DOI10.1007/s10570-024-06265-1; preparación y comportamiento hídrico HTML accesibles. No se adopta como rendimiento una masa dudosa de preparación.",
+      "url": "https://link.springer.com/article/10.1007/s10570-024-06265-1"
+    },
+    {
+      "numero": 342,
+      "titulo": "Appels et al., Materials & Design161(2019)64–71, DOI10.1016/j.matdes.2018.11.027; solo resumen indexado, apertura403.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0264127518308347"
+    },
+    {
+      "numero": 343,
+      "titulo": "Fraunhofer IGB/CBP, investigación institucional sobre extracción de caucho e inulina; HTML accesible, sin coste doméstico total ni método abierto completo.",
+      "url": "https://www.cbp.fraunhofer.de/content/igb/en/research/chemical-and-biotechnological-processes/industrial-biotechnology/bioprocess-engineering/processing-of-renewable-raw-materials-and-residuals/latex-and-inulin-from-dandelion-roots.html"
+    },
+    {
+      "numero": 344,
+      "titulo": "RSC Advances2017, DOI10.1039/C7RA08554K, comparación de cauchos vulcanizados; contenido indexado, apertura403.",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2017/ra/c7ra08554k"
+    },
+    {
+      "numero": 345,
+      "titulo": "FAO, A Guide to the Seaweed Industry, capítulo5 de alginato; HTML accesible, información histórica de proceso, sin afirmar disponibilidad actual de equipos.",
+      "url": "https://www.fao.org/4/y4765e/y4765e08.htm"
+    },
+    {
+      "numero": 346,
+      "titulo": "Abdullah y Mohamad, Environmental Quality Management2024, DOI10.1002/tqem.22242; resumen e información de artículo, sin métodos íntegros.",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/tqem.22242"
+    },
+    {
+      "numero": 347,
+      "titulo": "Manjula-Basavanna et al., Nature Communications15,9179,12/11/2024, DOI10.1038/s41467-024-53052-4; abstract/introducción/inicio de resultados leídos; apertura posterior bloqueada por identidad. No eludida.",
+      "url": "https://www.nature.com/articles/s41467-024-53052-4"
+    },
+    {
+      "numero": 348,
+      "titulo": "Materiom, guía de contribución y condiciones de licencia; HTML accesible.",
+      "url": "https://www.materiom.org/contribute-guide"
+    },
+    {
+      "numero": 349,
+      "titulo": "Jabonarium, glicerina vegetal; precio/ficha indexados; apertura403.",
+      "url": "https://www.jabonariumshop.com/glicerina-liquida-vegetal"
+    },
+    {
+      "numero": 350,
+      "titulo": "Dow, fabricante, Silicone Resins and Intermediates Selection Guide, apartado Choosing a silicone resin; texto PDF accesible.",
+      "url": "https://www.dow.com/documents/25/25-799-01-silicone-resins-intermediates-selection-guide.pdf?iframe=true"
+    }
+  ],
+  "fuentes_agente_y_alcance": [
+    {
+      "id_local": "S1",
+      "titulo": "Elkem, fabricante, explicación de clorosilanos y productos básicos; HTML accesible.",
+      "url": "https://www.elkem.com/es/products/silicones/chlorosilanes/"
+    },
+    {
+      "id_local": "S2",
+      "titulo": "Jefferson Rubber Works, fabricante, guía comparativa de elastómeros; HTML accesible. No usar sus tablas térmicas sin aclarar unidades.",
+      "url": "https://jeffersonrubber.com/resources/design-guide/"
+    },
+    {
+      "id_local": "S3",
+      "titulo": "Rhode Island School of Design, Nature Lab, colección de biomateriales, recetas demostrativas y límites de secado; HTML accesible, no vídeos ni documento Drive.",
+      "url": "https://naturelab.risd.edu/collections/biomaterials-natural-pigments-and-fabrication/"
+    },
+    {
+      "id_local": "S4",
+      "titulo": "HKU Labs/Pastoe, tutorial de almidón; HTML accesible, experiencia formativa sin propiedades normalizadas completas.",
+      "url": "https://labpastoe.gitbook.io/lab-pastoe/tutorials/bioplastics/starch"
+    },
+    {
+      "id_local": "S5",
+      "titulo": "Material Factors, extracción doméstica de almidón, experiencia del autor; HTML accesible.",
+      "url": "https://materialfactors.org/recipes/potato-starch"
+    },
+    {
+      "id_local": "S6",
+      "titulo": "Gurunathan et al., Scientific Reports, 01/05/2025, DOI10.1038/s41598-025-00221-0; HTML accesible; discrepancia verbal del resumen anotada.",
+      "url": "https://www.nature.com/articles/s41598-025-00221-0"
+    },
+    {
+      "id_local": "S7",
+      "titulo": "Nguyen et al., Journal of Materials Science: Materials in Engineering, 22/12/2025, DOI10.1186/s40712-025-00381-x; abstract y métodos HTML accesibles.",
+      "url": "https://link.springer.com/article/10.1186/s40712-025-00381-x"
+    },
+    {
+      "id_local": "S8",
+      "titulo": "Kulkarni et al., Cellulose, 13/02/2026, DOI10.1007/s10570-026-06970-z; métodos/resultados/costes HTML accesibles. Muestras a escala de laboratorio; cálculos económicos parciales.",
+      "url": "https://link.springer.com/article/10.1007/s10570-026-06970-z"
+    },
+    {
+      "id_local": "S9",
+      "titulo": "Kołodziejczyk et al., Cellulose, 03/12/2024 online, volumen2025, DOI10.1007/s10570-024-06265-1; preparación y comportamiento hídrico HTML accesibles. No se adopta como rendimiento una masa dudosa de preparación.",
+      "url": "https://link.springer.com/article/10.1007/s10570-024-06265-1"
+    },
+    {
+      "id_local": "S10",
+      "titulo": "Appels et al., Materials & Design161(2019)64–71, DOI10.1016/j.matdes.2018.11.027; solo resumen indexado, apertura403.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0264127518308347"
+    },
+    {
+      "id_local": "S11",
+      "titulo": "Fraunhofer IGB/CBP, investigación institucional sobre extracción de caucho e inulina; HTML accesible, sin coste doméstico total ni método abierto completo.",
+      "url": "https://www.cbp.fraunhofer.de/content/igb/en/research/chemical-and-biotechnological-processes/industrial-biotechnology/bioprocess-engineering/processing-of-renewable-raw-materials-and-residuals/latex-and-inulin-from-dandelion-roots.html"
+    },
+    {
+      "id_local": "S12",
+      "titulo": "RSC Advances2017, DOI10.1039/C7RA08554K, comparación de cauchos vulcanizados; contenido indexado, apertura403.",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2017/ra/c7ra08554k"
+    },
+    {
+      "id_local": "S13",
+      "titulo": "FAO, A Guide to the Seaweed Industry, capítulo5 de alginato; HTML accesible, información histórica de proceso, sin afirmar disponibilidad actual de equipos.",
+      "url": "https://www.fao.org/4/y4765e/y4765e08.htm"
+    },
+    {
+      "id_local": "S14",
+      "titulo": "Abdullah y Mohamad, Environmental Quality Management2024, DOI10.1002/tqem.22242; resumen e información de artículo, sin métodos íntegros.",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/tqem.22242"
+    },
+    {
+      "id_local": "S15",
+      "titulo": "Manjula-Basavanna et al., Nature Communications15,9179,12/11/2024, DOI10.1038/s41467-024-53052-4; abstract/introducción/inicio de resultados leídos; apertura posterior bloqueada por identidad. No eludida.",
+      "url": "https://www.nature.com/articles/s41467-024-53052-4"
+    },
+    {
+      "id_local": "S16",
+      "titulo": "Materiom, guía de contribución y condiciones de licencia; HTML accesible.",
+      "url": "https://www.materiom.org/contribute-guide"
+    },
+    {
+      "id_local": "S17",
+      "titulo": "Jabonarium, glicerina vegetal; precio/ficha indexados; apertura403.",
+      "url": "https://www.jabonariumshop.com/glicerina-liquida-vegetal"
+    },
+    {
+      "id_local": "S18",
+      "titulo": "Dow, fabricante, Silicone Resins and Intermediates Selection Guide, apartado Choosing a silicone resin; texto PDF accesible.",
+      "url": "https://www.dow.com/documents/25/25-799-01-silicone-resins-intermediates-selection-guide.pdf?iframe=true"
+    }
+  ],
+  "principal_verifico_fuentes_clave": [
+    "guía de filamentos",
+    "varioShore",
+    "Formlabs Silicone 40A",
+    "celulosa de césped 2026, métodos/resultados/costes HTML",
+    "celulosa humedad 2024/2025",
+    "RISD",
+    "Fraunhofer",
+    "Materiom",
+    "licencias de máquinas y formatos del árbol"
+  ],
+  "Trident": {
+    "commit": "7fcb3257a3063225934d9608f82037aa6587d844",
+    "arbol_truncado": false,
+    "entradas": 247,
+    "archivos": 210,
+    "formatos_identificados": [
+      "F3D",
+      "STEP",
+      "STEP ZIP",
+      "STL",
+      "DXF",
+      "CFG",
+      "PDF"
+    ],
+    "licencia_archivo": "GPLv3",
+    "geometrias_manual_y_dependencias_auditados_integramente": false,
+    "tamanios_recomendados_README_mm": [
+      [
+        250,
+        250,
+        250
+      ],
+      [
+        300,
+        300,
+        250
+      ],
+      [
+        350,
+        350,
+        250
+      ]
+    ],
+    "Stealthburner_commit": "8bcb9c246fac19d8ac03931ef97fa07c5e5f0f2b",
+    "Stealthburner_licencia_archivo": "GPLv3",
+    "BOM_especifica_oficial_conciliada_con_kit_comercial": false
+  },
+  "variante_Meltbro": {
+    "url": "https://meltbro.de/voron-trident-300mm-dreizack-komplettes-3d-drucker-kit-dragon-hotend-ptfe-kabel.html",
+    "SKU": "1009167-100916704",
+    "seleccion_visible": "Mit Raspberry / Mit Druckteilen",
+    "EUR_IVA_aleman_19_incluido": "1099.99",
+    "EUR_base_sin_esos_extras": "879.99",
+    "diferencia_EUR": "220.00",
+    "stock_visible_unidades": 1,
+    "stock_no_reservado": true,
+    "transporte_impuesto_destino_y_total_instalado_ES_confirmados": false,
+    "peso_de_envio_no_usado_como_masa_real": true,
+    "captura_relativa": "datos/precio_trident_configurado_2026-10-23.png",
+    "captura_sha256": "8bfc8b6397680e2e4caf7cac17c4d2051b3dc40573147f44478dd027b513625f"
+  },
+  "alternativas": {
+    "RatRig_VCore4_1": {
+      "licencia_declarada_ficha": "CC BY-NC-SA 4.0",
+      "EUR_cabecera_impuestos_region_Portugal": "908.10",
+      "electronica_opcional": true,
+      "paneles_excluidos": true,
+      "masa_kit_300mm_kg_anunciada": 35,
+      "presupuesto_configurado_completo": false
+    },
+    "Prusa_CORE_One_ficha_Gen2": {
+      "masa_equipo_kg_anunciada": 22.5,
+      "precio_final_EUR_ES_no_verificado": true,
+      "licencia_CAD_segun_documentacion": "OCL, por archivo y versión",
+      "OCL_v1_1_texto_consultado_commit": "7469fcd602cc10c3e1c372e233743800b9c7b4fc",
+      "no_se_transfiere_v1_1_a_todos_los_CAD": true
+    }
+  },
+  "economia": {
+    "formula": "ceil(precio referencia / ahorro neto por pieza elegido)",
+    "precio_referencia_EUR": "1099.99",
+    "escenarios": [
+      {
+        "ahorro_neto_por_pieza_EUR_elegido": "2",
+        "piezas_para_recuperar_solo_precio_de_referencia": 550
+      },
+      {
+        "ahorro_neto_por_pieza_EUR_elegido": "5",
+        "piezas_para_recuperar_solo_precio_de_referencia": 220
+      },
+      {
+        "ahorro_neto_por_pieza_EUR_elegido": "10",
+        "piezas_para_recuperar_solo_precio_de_referencia": 110
+      }
+    ],
+    "amortizacion_y_ahorro_reales_demostrados": false,
+    "faltan": [
+      "inversión restante",
+      "material",
+      "energía",
+      "fallos",
+      "reposición",
+      "trabajo",
+      "demanda útil"
+    ]
+  },
+  "celulosa_cesped_2026": {
+    "DOI": "10.1007/s10570-026-06970-z",
+    "forma": "películas/membranas; no filamento FDM",
+    "rendimiento_seco_g_L": "12.05",
+    "dias": 15,
+    "temperatura_C": 30,
+    "volumen_por_vaso_ml": 40,
+    "replicas": 3,
+    "traccion_MPa": "34.73 ± 13.52",
+    "modulo_GPa": "2.39 ± 1.03",
+    "medio_L_por_kg_sin_perdidas_calculo_ilustrativo": "82.98755186721991701244813278",
+    "escalado_y_servicio_domestico_demostrados": false,
+    "coste_pieza_final_y_ahorro_domestico_demostrados": false
+  },
+  "decisiones": [
+    "FDM abierta, moldes y reparación convencional",
+    "Trident como referencia a configurar, sin compra ni kit seleccionado",
+    "almidón/celulosa para estudiar formulación local de piezas secas",
+    "celulosa bacteriana como producción de polímero investigable",
+    "gomas técnicas y silicona como funciones separadas"
+  ],
+  "unico_material_universal_domestico_demostrado": false,
+  "fuentes_lectura_parcial_se_conservan_como_parciales": true,
+  "limites_de_acceso_nuevos": [
+    "ScienceDirect S0264127518308347:403, solo resumen",
+    "RSC C7RA08554K:403, solo contenido indexado",
+    "Nature s41467-024-53052-4: lectura inicial parcial, posterior identidad bloqueada",
+    "Jabonarium glicerina:403, precio solo indexado",
+    "Nature s41467-026-76430-6:identidad bloqueada, no usada para prestaciones",
+    "Wiley10.1002/pen.70687:timeout, no usado",
+    "ScienceDirect S0141813023047785:403, no elusión",
+    "enlace Rat Rig DXF: error de lectura; no auditoría de archivos de esa máquina"
+  ],
+  "siguiente_evidencia": [
+    "pieza necesaria y condiciones de servicio",
+    "grado/receta y derechos exactos",
+    "presupuesto instalado y compatibilidad de versiones",
+    "balance material-agua-energía-trabajo",
+    "estabilidad húmedo/seco y carga acorde con la función"
+  ],
+  "gasto_cero_demostrado": false
+}
