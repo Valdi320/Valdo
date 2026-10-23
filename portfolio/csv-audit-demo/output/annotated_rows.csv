@@ -1,0 +1,6 @@
+id,name,city,amount,__audit_record,__audit_status,__audit_issues
+001,Alpha Bikes,Madrid,12.50,1,REVIEW,possible_same_name_review:name
+002,Beta Supplies,Barcelona,seven,2,REVIEW,duplicate_id_review:id;invalid_decimal:amount;possible_same_name_review:name
+002,Beta Supplies,Barcelona,7.00,3,REVIEW,duplicate_id_review:id;possible_same_name_review:name
+,Missing Id,Zaragoza,8.00,4,REVIEW,missing_required:id
+005,Alpha Bikes,Madrid,15.00,5,REVIEW,possible_same_name_review:name
