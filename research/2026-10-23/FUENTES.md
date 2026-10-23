@@ -125,6 +125,23 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 116. [Michigan Tech · Segundo registro del mismo trabajo con aviso de retirada del registro; interpretación pendiente](https://digitalcommons.mtu.edu/michigantech-p/2136/)
 117. [Mitutoyo · Catálogo técnico, resolución y exactitud en columnas distintas; extracto indexado](https://dev.mitutoyo.com/webfoo/wp-content/uploads/US-1005_Mitutoyo_Catalog.pdf)
 
+118. [Qwen · GGUF oficial Qwen3-8B: licencia y tamaños por cuantización](https://huggingface.co/Qwen/Qwen3-8B-GGUF/tree/main)
+119. [Home Assistant Core · Licencia Apache 2.0](https://github.com/home-assistant/core/blob/dev/LICENSE.md)
+120. [Home Assistant Green · Precio recomendado, instalación, consumo y hardware](https://www.home-assistant.io/green/)
+121. [ESPHome · Web server y recursos locales de la interfaz, versión consultada 2026.10.0](https://esphome.io/components/web_server/)
+122. [ESPHome · API nativa, cifrado y comportamiento sin conexión de cliente](https://esphome.io/components/api/)
+123. [ESPHome · Licencias distintas para runtime C++ y generador Python](https://github.com/esphome/esphome/blob/dev/LICENSE)
+124. [Home Assistant · Integración Ollama, control experimental y entidades expuestas](https://www.home-assistant.io/integrations/ollama/)
+125. [Home Assistant · Copias, restauración y migración](https://www.home-assistant.io/common-tasks/general/)
+126. [Home Assistant · Kit de emergencia y claves de copias cifradas](https://www.home-assistant.io/more-info/backup-emergency-kit)
+127. [Kiwix · Herramientas de consulta y servicio local de archivos ZIM, GPL-3.0](https://github.com/kiwix/kiwix-tools)
+128. [restic · Documentación de repositorios, integridad y restauración](https://restic.readthedocs.io/en/stable/)
+129. [restic · Licencia BSD 2-Clause](https://github.com/restic/restic/blob/master/LICENSE)
+130. [MNT Research · Hardware abierto, archivos y reparabilidad por componentes](https://mntre.com/open-hardware.html)
+131. [Olimex · TERES-A64-WHITE, kit modular, memoria y precio anunciado](https://www.olimex.com/Products/DIY-Laptop/KITS/TERES-A64-WHITE/open-source-hardware)
+132. [Olimex · Condiciones comerciales, impuestos y transporte por confirmar](https://www.olimex.com/wiki/GTC)
+133. [Nabu Casa · Recursos y ficha técnica de Home Assistant Green](https://support.nabucasa.com/hc/en-us/sections/24979866957981-Resources)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.

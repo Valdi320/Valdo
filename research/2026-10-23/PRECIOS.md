@@ -40,3 +40,8 @@ Se añaden [referencias de depósitos y análisis](AGUA_CAPTACION_CALIDAD.md) y 
 ## Avance de materiales y fabricación
 
 [Anexo de fabricación](MATERIALES_FABRICACION.md): Felfil anuncia 699 € por kit de extrusora, 1.399 € por extrusora y bobinador y 2.999 € por conjunto con trituradora; según condiciones, IVA incluido para consumidores UE y transporte adicional. No son costes de un taller completo. [Registro de precios y escenarios](datos/materiales_fabricacion_2026-10-23.json). Los costes Recyclebot de 2018 y Precious Plastic de contexto neerlandés no se tratan como presupuestos actuales españoles.
+
+
+## Avance de IA y control local
+
+[Anexo de IA y control](IA_CONOCIMIENTO_CONTROL_LOCAL.md): Green figura a 179 € como precio recomendado europeo con impuestos aplicables; TERES-A64-WHITE a 240 € como kit, con importe final, impuestos y envío pendientes. No se presupone equivalencia funcional ni que sean el mejor destino del capital. [Registro de esta entrega](datos/ia_control_local_2026-10-23.json). Se prioriza estudiar reutilización del hardware existente.

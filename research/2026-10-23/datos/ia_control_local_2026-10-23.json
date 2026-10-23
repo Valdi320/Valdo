@@ -1,0 +1,107 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "documentación y aritmética, sin despliegue nuevo o ensayo de inferencia",
+  "precios": [
+    {
+      "fuente": 120,
+      "nombre": "Home Assistant Green",
+      "eur": "179",
+      "tipo": "precio recomendado fabricante, no oferta entregada",
+      "iva": "precio EUR incluye impuestos aplicables según fabricante",
+      "pendiente": "vendedor, transporte, accesorios y destino"
+    },
+    {
+      "fuente": 131,
+      "nombre": "TERES-A64-WHITE",
+      "eur": "240",
+      "tipo": "precio de kit en ficha, sin montaje",
+      "iva": "total final e impuestos pendientes de confirmar para destino",
+      "pendiente": "transporte, impuestos y versión; no elegido como equipo LLM"
+    }
+  ],
+  "modelo_documental": {
+    "fuentes": [
+      6,
+      118
+    ],
+    "nombre": "Qwen3-8B",
+    "licencia_ficha": "Apache-2.0",
+    "parametros_anunciados": "8.2B",
+    "archivo": "Qwen3-8B-Q4_K_M.gguf",
+    "tamano_mostrado_gb_decimal": "5.03",
+    "descargado_en_esta_entrega": false,
+    "limite": "tamaño de archivo no equivale a RAM/VRAM total ni valida capacidad técnica"
+  },
+  "estado_local_observado_resumen_no_inventario_publico": {
+    "gpu_vram_clase_gb": 16,
+    "ram_clase_gb": 24,
+    "servidor_llama_observado": true,
+    "llamador_existente_revisado": true,
+    "inferencia_nueva": false,
+    "rendimiento_y_energia_medidos": false,
+    "limite": "no se publica configuración, credenciales, rutas, procesos o telemetría privada"
+  },
+  "escenarios_energia_elegidos": [
+    {
+      "escenario": "Control de referencia",
+      "potencia_elegida_w": 3,
+      "horas_dia": 24,
+      "kwh_dia": "0.072",
+      "kwh_ano_365_dias": "26.280"
+    },
+    {
+      "escenario": "Red local de referencia",
+      "potencia_elegida_w": 5,
+      "horas_dia": 24,
+      "kwh_dia": "0.12",
+      "kwh_ano_365_dias": "43.80"
+    },
+    {
+      "escenario": "PC de referencia en uso continuo",
+      "potencia_elegida_w": 80,
+      "horas_dia": 24,
+      "kwh_dia": "1.92",
+      "kwh_ano_365_dias": "700.80"
+    },
+    {
+      "escenario": "PC de referencia en carga continua",
+      "potencia_elegida_w": 200,
+      "horas_dia": 24,
+      "kwh_dia": "4.8",
+      "kwh_ano_365_dias": "1752.0"
+    },
+    {
+      "escenario": "PC de referencia una hora",
+      "potencia_elegida_w": 200,
+      "horas_dia": 1,
+      "kwh_dia": "0.2",
+      "kwh_ano_365_dias": "73.0"
+    },
+    {
+      "escenario": "PC de referencia dos horas",
+      "potencia_elegida_w": 200,
+      "horas_dia": 2,
+      "kwh_dia": "0.4",
+      "kwh_ano_365_dias": "146.0"
+    }
+  ],
+  "totales_hipoteticos": {
+    "control_red_y_pc_una_hora_kwh_dia": "0.392",
+    "control_red_y_pc_continuo_200w_kwh_dia": "4.992",
+    "supuesto": "PC sin consumo las horas restantes en el caso de una hora; no modelo real de reposo, pérdidas o arranque"
+  },
+  "limites": [
+    "No es consumo medido del PC o de una casa",
+    "No incluye pérdidas de alimentación, pantallas, discos, radios, sensores o actuadores salvo las potencias elegidas",
+    "No hay presupuesto instalado ni autonomía solar nueva calculada",
+    "No se ejecutaron pruebas, cambios de cliente, nuevos servicios o instalaciones"
+  ],
+  "pendientes": [
+    "medidas de consumo en enchufe bajo tarea y reposo",
+    "respuestas útiles con fuentes y errores de diagnóstico",
+    "memoria y latencia bajo carga permitida",
+    "funcionamiento real sin WAN y recuperación después de apagado",
+    "restauración en soporte sustituto",
+    "licencia y reproducibilidad por versión de hardware"
+  ]
+}
