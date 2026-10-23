@@ -122,7 +122,7 @@ Las referencias de precios se conservan en el documento adjunto. Se distingue pr
 
 Cada campaña deberá conservar fecha, fuentes, condiciones económicas, cambios respecto de la anterior y pendientes. Se publican únicamente textos propios, enlaces y datos no personales necesarios para la investigación. Las fuentes enlazadas conservan sus licencias. No se adjuntan archivos privados, credenciales ni el informe personalizado anterior. La licencia global de FDAA sigue pendiente según CONTRIBUTING.md; esta entrega no la cambia.
 
-**Estado de esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Los avances energéticos de esta misma fecha ya están anexados; siguen faltando medidas reales y presupuesto completo. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. Materiales y fabricación cuentan con un anexo de rutas, dependencias y escenarios; sigue sin demostrarse un ciclo material cerrado. IA local y control sin nube cuentan con un anexo de arquitectura, energía y recuperación; faltan medidas y funcionamiento reales. El siguiente bloque integrará subsistemas y costes de ciclo de vida.
+**Estado de esta edición:** investigación documental y cálculos, sin vivienda autónoma, prototipo físico o gasto cero demostrado. Los anexos de energía, agua, alimentación, vivienda, materiales e IA se cruzan en la [integración de servicios y costes](INTEGRACION_VIDA_COSTES.md). Faltan finca, necesidades medidas, funcionamiento y presupuesto completos. El siguiente bloque es ropa, calzado, higiene y movilidad.
 
 
 ### Avance energético de esta misma fecha
@@ -132,7 +132,7 @@ Se han añadido cuatro consultas reproducibles a PVGIS: dos montajes y dos escen
 
 ### Segundo avance energético de esta misma fecha
 
-Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. Materiales y fabricación cuentan con un anexo de rutas, dependencias y escenarios; sigue sin demostrarse un ciclo material cerrado. IA local y control sin nube cuentan con un anexo de arquitectura, energía y recuperación; faltan medidas y funcionamiento reales. El siguiente bloque integrará subsistemas y costes de ciclo de vida.
+Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada.
 
 
 ### Avance de agua y alimentación de esta misma fecha
@@ -153,3 +153,8 @@ Se incorpora [reciclaje y fabricación propia](MATERIALES_FABRICACION.md), con r
 ### Avance de IA local y control de esta misma fecha
 
 Se añade [IA, biblioteca y control local](IA_CONOCIMIENTO_CONTROL_LOCAL.md): separación entre asesoramiento y control, licencias, dependencias de red, restauración, referencias de hardware y escenarios de energía. La observación local fue de solo lectura y no valida rendimiento o calidad de inferencia. No se modificaron clientes, modelos, servicios o trabajadores.
+
+
+### Integración de servicios y ciclo de vida de esta misma fecha
+
+Se incorpora [vida cotidiana y costes](INTEGRACION_VIDA_COSTES.md): demanda parcial, calor, potencia simultánea, agua y cultivo, subtotal explícitamente incompleto y reposición hipotética. La matriz de cobertura mantiene pendientes servicios que los equipos estudiados no resuelven. No se acredita un precio total, plazo o porcentaje de autosuficiencia.

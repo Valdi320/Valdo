@@ -1,0 +1,160 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "integración documental y escenarios, no vivienda dimensionada o presupuesto completo",
+  "precios_nuevos": [
+    {
+      "fuente": 134,
+      "producto": "LAGAN 00572853, 126 L integrado",
+      "precio_visible_eur": "299",
+      "excluye": "mueble, herrajes indicados, entrega e instalación pendientes",
+      "energia_declarada_kwh_ano": 92
+    },
+    {
+      "fuente": 135,
+      "producto": "TILLREDA 80590155 una zona",
+      "precio_visible_eur": "34.99",
+      "potencia_declarada_w": 2000,
+      "excluye": "menaje compatible y condiciones finales de entrega"
+    }
+  ],
+  "cargas_de_referencia": [
+    {
+      "uso": "Frigorífico de referencia",
+      "origen": "92 kWh/año declarados en ficha [134], divididos por 365; no perfil diario medido",
+      "kwh_dia": "0.2520547945205479452054794521"
+    },
+    {
+      "uso": "Cocina",
+      "origen": "2.000 W de ficha [135] durante 0,5 h constantes elegidas",
+      "kwh_dia": "1"
+    },
+    {
+      "uso": "Iluminación",
+      "origen": "15 W durante 6 h elegidos",
+      "kwh_dia": "0.09"
+    },
+    {
+      "uso": "Teléfono",
+      "origen": "25 Wh/día elegidos, sin medición de cargador",
+      "kwh_dia": "0.025"
+    },
+    {
+      "uso": "Red local",
+      "origen": "5 W durante 24 h elegidos",
+      "kwh_dia": "0.12"
+    },
+    {
+      "uso": "Control",
+      "origen": "3 W durante 24 h elegidos; no medición propia",
+      "kwh_dia": "0.072"
+    },
+    {
+      "uso": "PC",
+      "origen": "200 W durante 1 h elegidos, apagado sin consumo restante en este modelo",
+      "kwh_dia": "0.2"
+    },
+    {
+      "uso": "Consumo propio inversor",
+      "origen": "11 W sin carga durante 24 h, referencia de ficha [54], contada como carga adicional ilustrativa",
+      "kwh_dia": "0.264"
+    }
+  ],
+  "calentamiento_agua_elegido": {
+    "litros": 50,
+    "densidad_elegida_kg_l": 1,
+    "cp_aproximado_kj_kg_k": "4.18",
+    "salto_temperatura_k": 30,
+    "kwh_calor": "1.741666666666666666666666667",
+    "conversion_electrica": "resistencia ideal en punto de uso, sin pérdidas de almacenamiento y distribución",
+    "no_es": "consumo personal, consigna de almacenamiento o diseño sanitario"
+  },
+  "calefaccion_elegida": {
+    "kwh_calor_dia": 20,
+    "cop_elegido": 2,
+    "kwh_electricos": "10",
+    "no_es": "demanda o COP de una vivienda real"
+  },
+  "escenarios_energia": [
+    {
+      "nombre": "A: usos parciales, sin ACS ni calefacción",
+      "kwh_dia": "2.023054794520547945205479452"
+    },
+    {
+      "nombre": "B: A más calentamiento de agua elegido",
+      "kwh_dia": "3.764721461187214611872146119"
+    },
+    {
+      "nombre": "C: B más calefacción elegida",
+      "kwh_dia": "13.76472146118721461187214612"
+    },
+    {
+      "nombre": "D: C más un lote hipotético de secado eléctrico",
+      "kwh_dia": "18.96472146118721461187214612"
+    }
+  ],
+  "coincidencia_potencias": {
+    "induccion_w": 2000,
+    "deshidratador_w": 650,
+    "suma_w": 2650,
+    "inversor_referencia_continuo_25c_w": 2400,
+    "margen_aritmetico_w": -250,
+    "limites": "sin otros consumos ni transitorios; no ensayo ni esquema de instalación"
+  },
+  "escenarios_pvgis_preexistentes": [
+    {
+      "archivo": "pvgis_sensibilidad_6kw_15kwh_5diario.json",
+      "consumo_diario_wh": 5000.0,
+      "f_e_anual": 0.32,
+      "f_e_diciembre": 1.02
+    },
+    {
+      "archivo": "pvgis_sensibilidad_6kw_15kwh_15diario.json",
+      "consumo_diario_wh": 15000.0,
+      "f_e_anual": 22.54,
+      "f_e_diciembre": 57.89
+    }
+  ],
+  "agua_escenario": {
+    "demanda_domestica_l_ano": 36500,
+    "riego_elegido_l_ano": 27000,
+    "suma_l_ano": 63500,
+    "captacion_100m2_bruta_l_ano": 25760,
+    "deficit_100m2_l_ano": 37740,
+    "captacion_200m2_bruta_l_ano": 51520,
+    "deficit_200m2_l_ano": 11980,
+    "limite": "media lluvia 1981-2010, coeficiente elegido; no serie conjunta con PVGIS o riego agronómico"
+  },
+  "subtotal_partidas_observadas_no_kit": {
+    "referencia_solar_no_validada_eur": "5886.29",
+    "nueve_depositos_nominales_eur": "2610",
+    "frigorifico_eur": "299",
+    "placa_eur": "34.99",
+    "suma_eur": "8830.28",
+    "exclusiones": "suelo, vivienda, permisos, instalación, agua segura, saneamiento, calor, electrodomésticos restantes, herramientas, logística, consumibles y otros gastos"
+  },
+  "reposicion_hipotetica_30_anos": {
+    "frontera": "intervalo [0,30), sin compra en año 30",
+    "baterias_iniciales_eur": "3264.27",
+    "baterias_reemplazo_anos": [
+      15
+    ],
+    "inversor_precio_eur": "685",
+    "inversor_reemplazo_anos": [
+      10,
+      20
+    ],
+    "frigorifico_precio_eur": "299",
+    "frigorifico_reemplazo_anos": [
+      12,
+      24
+    ],
+    "reposicion_parcial_eur": "5232.27",
+    "suma_con_subtotal_inicial_eur": "14062.55",
+    "limite": "fechas de reemplazo elegidas; no vida útil pronosticada; mismo precio, sin inflación o descuento; omite demás reposiciones y mantenimiento"
+  },
+  "incidencias_fuentes": [
+    "NIH B12 apertura 403: no eludida ni utilizada para consejo nutricional",
+    "EUR-Lex reglamento frigoríficos: comprobación de navegador; sin acceso al articulado; no se atribuyen plazos legales de repuestos",
+    "EPREL enlazado: sin contenido legible en esta herramienta; consumo atribuido a ficha del vendedor/fabricante, no auditoría propia de etiqueta"
+  ]
+}

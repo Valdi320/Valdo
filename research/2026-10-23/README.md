@@ -14,7 +14,12 @@ Primera entrega fechada para ampliar FDAA hacia vivienda, energía, agua, alimen
 - [Vivienda, emplazamiento, saneamiento y gastos que permanecen](VIVIENDA_EMPLAZAMIENTO_SANEAMIENTO.md)
 - [Materiales, reciclaje, fabricación y escenarios de coste](MATERIALES_FABRICACION.md)
 - [IA, conocimiento y control local: apertura, energía y recuperación](IA_CONOCIMIENTO_CONTROL_LOCAL.md)
+- [Integración de vida cotidiana, cargas, carencias y ciclo de vida](INTEGRACION_VIDA_COSTES.md)
 
-**Decisión provisional:** priorizar reparación, reducción de demanda y sistemas sencillos y mantenibles. Se ha avanzado en energía mediante diez consultas PVGIS totales, referencias de componentes y límites de reparación. Siguen pendientes consumo real, demanda térmica y presupuesto instalado. Se añaden escenarios de agua y alimentación, referencias de conservación y límites de acceso a fuentes. Siguen sin definirse una finca, fuente segura, dieta propia o sistema completo. Se añade la evaluación documental de vivienda y saneamiento, con obligaciones periódicas y límites de la fabricación abierta. Se añade la comparación de materiales, fabricación y metrología, con costes y balances de masa hipotéticos separados de resultados medidos. Se añade IA local, consulta documental y recuperación sin nube, con escenarios energéticos y límites por componente. El siguiente bloque integrará subsistemas y costes de ciclo de vida. La ventaja de un equipo cerrado tendrá que demostrarse por necesidad concreta antes de estudiar una implementación abierta propia.
+**Decisión provisional:** comprobar primero vivienda admisible, agua segura y demanda térmica. Medir necesidades, trabajo y reparación antes de comprar maquinaria o ampliar automatización.
+
+**Estado de la evidencia:** diez consultas PVGIS y anexos de agua, alimentación, vivienda, materiales e IA. La integración contrasta cargas, potencia simultánea y costes parciales con reposición hipotética. No hay finca seleccionada, sistema completo validado, dieta autónoma o presupuesto instalado. No se acredita gasto cero.
+
+**Continuación:** ropa, calzado, higiene y movilidad, además de cerrar medidas y datos pendientes de los subsistemas anteriores. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
 
 Se añade a la [especificación canónica](../../docs/PROYECTO_CANONICO.md) y a la [campaña anterior](../2026-10-13/README.md), sin reemplazarlas. No se publican datos domésticos privados ni se modifica la decisión pendiente sobre la licencia global del repositorio.

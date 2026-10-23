@@ -142,6 +142,13 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 132. [Olimex · Condiciones comerciales, impuestos y transporte por confirmar](https://www.olimex.com/wiki/GTC)
 133. [Nabu Casa · Recursos y ficha técnica de Home Assistant Green](https://support.nabucasa.com/hc/en-us/sections/24979866957981-Resources)
 
+134. [IKEA España · LAGAN 00572853, 126 L: precio y consumo anual declarado](https://www.ikea.com/es/es/p/lagan-frigorifico-integrado-00572853/)
+135. [IKEA España · TILLREDA 80590155, una zona: precio y potencia declarada](https://www.ikea.com/es/es/p/tillreda-placa-induccion-portatil-1-zona-blanco-80590155/)
+136. [IDAE · Consumo por usos residencial, definiciones, edición mayo 2026](https://informesweb.idae.es/consumo-usos-residencial/definiciones.php)
+137. [IDAE / ASIT · Guía Técnica de Energía Solar Térmica, demanda y mantenimiento; edición interna abril 2020](https://www.idae.es/sites/default/files/documentos/publicaciones_idae/guiasolartermica_idae-asit_v3.0_20210111_nipo.pdf)
+138. [OMS · Healthy diet, adecuación y diversidad, actualización 26/01/2026](https://www.who.int/news-room/fact-sheets/detail/healthy-diet)
+139. [AESAN · Alimentos refrigerados y congelados después de un apagón, 29/04/2025](https://aesan.gob.es/actualidad/actualidad-noticias/alimentos_refrigerados)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.

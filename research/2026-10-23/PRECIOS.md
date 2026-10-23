@@ -45,3 +45,8 @@ Se añaden [referencias de depósitos y análisis](AGUA_CAPTACION_CALIDAD.md) y 
 ## Avance de IA y control local
 
 [Anexo de IA y control](IA_CONOCIMIENTO_CONTROL_LOCAL.md): Green figura a 179 € como precio recomendado europeo con impuestos aplicables; TERES-A64-WHITE a 240 € como kit, con importe final, impuestos y envío pendientes. No se presupone equivalencia funcional ni que sean el mejor destino del capital. [Registro de esta entrega](datos/ia_control_local_2026-10-23.json). Se prioriza estudiar reutilización del hardware existente.
+
+
+## Integración de servicios y costes
+
+Se añaden dos referencias IKEA: frigorífico LAGAN 00572853 a 299 € y placa TILLREDA 80590155 a 34,99 €, sin pedido o instalación. El [anexo integrado](INTEGRACION_VIDA_COSTES.md) suma solo partidas identificadas: 8.830,28 € incompletos y 5.232,27 € de reposición parcial en fechas elegidas; ninguno es presupuesto o coste total de vivienda. [Datos y exclusiones](datos/integracion_vida_costes_2026-10-23.json).
