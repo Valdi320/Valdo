@@ -122,7 +122,7 @@ Las referencias de precios se conservan en el documento adjunto. Se distingue pr
 
 Cada campaña deberá conservar fecha, fuentes, condiciones económicas, cambios respecto de la anterior y pendientes. Se publican únicamente textos propios, enlaces y datos no personales necesarios para la investigación. Las fuentes enlazadas conservan sus licencias. No se adjuntan archivos privados, credenciales ni el informe personalizado anterior. La licencia global de FDAA sigue pendiente según CONTRIBUTING.md; esta entrega no la cambia.
 
-**Estado de esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Los avances energéticos de esta misma fecha ya están anexados; siguen faltando medidas reales y presupuesto completo. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. El siguiente bloque es materiales locales, metrología y cadenas de fabricación.
+**Estado de esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Los avances energéticos de esta misma fecha ya están anexados; siguen faltando medidas reales y presupuesto completo. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. Materiales y fabricación cuentan con un anexo de rutas, dependencias y escenarios; sigue sin demostrarse un ciclo material cerrado. El siguiente bloque es IA local, documentación y control sin nube.
 
 
 ### Avance energético de esta misma fecha
@@ -132,7 +132,7 @@ Se han añadido cuatro consultas reproducibles a PVGIS: dos montajes y dos escen
 
 ### Segundo avance energético de esta misma fecha
 
-Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. El siguiente bloque es materiales locales, metrología y cadenas de fabricación.
+Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. Materiales y fabricación cuentan con un anexo de rutas, dependencias y escenarios; sigue sin demostrarse un ciclo material cerrado. El siguiente bloque es IA local, documentación y control sin nube.
 
 
 ### Avance de agua y alimentación de esta misma fecha
@@ -143,3 +143,8 @@ Se incorporan [captación, reserva y calidad del agua](AGUA_CAPTACION_CALIDAD.md
 ### Avance de vivienda y saneamiento de esta misma fecha
 
 Se añade [vivienda, emplazamiento y saneamiento](VIVIENDA_EMPLAZAMIENTO_SANEAMIENTO.md): apertura por versión constructiva, permisos, gastos periódicos y referencias económicas. No hay finca seleccionada ni saneamiento autorizado o validado. La capacidad de fabricación propia no demuestra coste cero ni cierre de la cadena material.
+
+
+### Avance de materiales y fabricación de esta misma fecha
+
+Se incorpora [reciclaje y fabricación propia](MATERIALES_FABRICACION.md), con referencias comerciales diferenciadas de resultados de investigación y cálculos de recuperación de inversión y pérdidas de masa. Las licencias y prestaciones se comprueban por versión; no se supone que todo el equipo comercial actual sea reproducible por existir un repositorio antiguo. Sin compra, fabricación o medición propia.

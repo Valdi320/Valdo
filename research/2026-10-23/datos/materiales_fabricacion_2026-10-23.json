@@ -1,0 +1,118 @@
+{
+  "fecha": "2026-10-23",
+  "naturaleza": "escenarios aritméticos elegidos, no medidas o presupuesto",
+  "precios_observados": [
+    {
+      "fuente": 105,
+      "nombre": "Felfil Evo Complete Kit",
+      "eur": "699.00"
+    },
+    {
+      "fuente": 105,
+      "nombre": "Felfil Evo y Spooler+",
+      "eur": "1399.00"
+    },
+    {
+      "fuente": 105,
+      "nombre": "Felfil Evo, Spooler+ y Shredder+",
+      "eur": "2999.00"
+    }
+  ],
+  "condiciones_precio": {
+    "fuente": 109,
+    "iva": "incluido para consumidores UE según condiciones",
+    "transporte": "adicional, destino por confirmar",
+    "no_incluye_sistema_completo": "preparacion de residuo, instalaciones, extracción, secado, mantenimiento, control, impresora y espacio no presupuestados"
+  },
+  "recuperacion_simple": [
+    {
+      "demanda_elegida_kg_ano": 2,
+      "margen_neto_elegido_eur_kg": 10,
+      "inversion_elegida_eur": 3000,
+      "ahorro_anual_eur": 20,
+      "anos_recuperacion_simple": "150"
+    },
+    {
+      "demanda_elegida_kg_ano": 2,
+      "margen_neto_elegido_eur_kg": 20,
+      "inversion_elegida_eur": 3000,
+      "ahorro_anual_eur": 40,
+      "anos_recuperacion_simple": "75"
+    },
+    {
+      "demanda_elegida_kg_ano": 10,
+      "margen_neto_elegido_eur_kg": 10,
+      "inversion_elegida_eur": 3000,
+      "ahorro_anual_eur": 100,
+      "anos_recuperacion_simple": "30"
+    },
+    {
+      "demanda_elegida_kg_ano": 10,
+      "margen_neto_elegido_eur_kg": 20,
+      "inversion_elegida_eur": 3000,
+      "ahorro_anual_eur": 200,
+      "anos_recuperacion_simple": "15"
+    },
+    {
+      "demanda_elegida_kg_ano": 30,
+      "margen_neto_elegido_eur_kg": 10,
+      "inversion_elegida_eur": 3000,
+      "ahorro_anual_eur": 300,
+      "anos_recuperacion_simple": "10"
+    },
+    {
+      "demanda_elegida_kg_ano": 30,
+      "margen_neto_elegido_eur_kg": 20,
+      "inversion_elegida_eur": 3000,
+      "ahorro_anual_eur": 600,
+      "anos_recuperacion_simple": "5"
+    }
+  ],
+  "recirculacion_masica": [
+    {
+      "rendimiento_masa_elegido": "0.95",
+      "masa_inicial_kg": "10",
+      "numero_ciclos": 10,
+      "masa_restante_kg": "5.98736939238378906250",
+      "reposicion_para_mantener_10kg_por_ciclo_kg": "0.50"
+    },
+    {
+      "rendimiento_masa_elegido": "0.90",
+      "masa_inicial_kg": "10",
+      "numero_ciclos": 10,
+      "masa_restante_kg": "3.48678440100000000000",
+      "reposicion_para_mantener_10kg_por_ciclo_kg": "1.00"
+    },
+    {
+      "rendimiento_masa_elegido": "0.80",
+      "masa_inicial_kg": "10",
+      "numero_ciclos": 10,
+      "masa_restante_kg": "1.07374182400000000000",
+      "reposicion_para_mantener_10kg_por_ciclo_kg": "2.00"
+    }
+  ],
+  "limites_modelos": [
+    "No previsión de vida útil o ahorro real",
+    "Sin inflación, financiación ni valor residual",
+    "Margen neto elegido, no medido",
+    "No modela degradación química, mezcla, pérdidas variables o calidad de piezas",
+    "Rendimiento de masa no es porcentaje de autosuficiencia"
+  ],
+  "aritmetica_felfil_no_medida": {
+    "caudal_anunciado_g_h": [
+      100,
+      150
+    ],
+    "horas_por_kg_solo_extrusion": [
+      "6.666666666666666666666666667",
+      "10"
+    ]
+  },
+  "incidencias_fuentes": [
+    "PDF Recyclebot: herramienta web no procesa tamaño; descarga directa 403 y detenida; resumen accesible e índice parcial distinguidos",
+    "Carpeta License Felfil rechazada; no se elude ni se acredita licencia exacta del conjunto actual",
+    "Auroville 403: solo extracto indexado, sin lectura integral",
+    "PMC estudio PLA: comprobación de navegador; no se elude ni se presenta como revisión nueva",
+    "Dos registros MTU del mismo artículo con estado diferente; no se concluye retractación científica"
+  ]
+}

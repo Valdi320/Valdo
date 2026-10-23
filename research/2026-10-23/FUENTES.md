@@ -110,6 +110,21 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 102. [Open Source Ecology · Prensa de bloques de tierra: automatización parcial y precio histórico](https://wiki.opensourceecology.org/wiki/Automatic_Compressed_Earth_Brick_Press)
 103. [Open Source Ecology · Política de licencias, comprobar versión y archivos](https://wiki.opensourceecology.org/wiki/OSE_License)
 
+104. [Aalto / Woern et al. · RepRapable Recyclebot, HardwareX 2018: resumen y datos bibliográficos](https://research.aalto.fi/en/publications/reprapable-recyclebot-open-source-3-d-printable-extruder-for-conv/)
+105. [Felfil · Precios anunciados de kit y conjuntos, consulta 23/10/2026](https://felfil.com/)
+106. [Felfil · Conjunto Evo, Spooler+ y Shredder+, alcance y especificaciones](https://felfil.com/shop/bundle-felfil-evo-spooler-shredder/)
+107. [Felfil · Proyecto DIY, piezas especiales y documentación por versión](https://felfil.com/diy-filament-extruder/)
+108. [Felfil / CollettivoCocomeri · Repositorio Evo: contenido y fecha declarada del README](https://github.com/CollettivoCocomeri/Felfil-Evo)
+109. [Felfil · Condiciones de venta, IVA para consumidores UE y transporte](https://felfil.com/shipping-and-returns/)
+110. [Precious Plastic · Extrusion Machine 2.0: ficha y requisitos](https://onearmy.github.io/academy/build/extrusion)
+111. [Precious Plastic · Safety and Fumes: documentación del proyecto, sin adoptar garantías generales](https://onearmy.github.io/academy/plastic/safety)
+112. [USDA Forest Products Laboratory · Wood Handbook, edición revisada 2021](https://research.fs.usda.gov/fpl/wood-handbook)
+113. [USDA / Bergman · Secado, humedad y cambios dimensionales de madera, capítulo 13, 2021](https://research.fs.usda.gov/treesearch/62261)
+114. [Auroville Earth Institute · Bloques de tierra estabilizada; extracto indexado, apertura 403](https://www.earth-auroville.com/compressed_stabilised_earth_block_en.php)
+115. [Michigan Tech / Anzalone et al. · Registro de impresora metálica experimental, 2013](https://digitalcommons.mtu.edu/materials_fp/120/)
+116. [Michigan Tech · Segundo registro del mismo trabajo con aviso de retirada del registro; interpretación pendiente](https://digitalcommons.mtu.edu/michigantech-p/2136/)
+117. [Mitutoyo · Catálogo técnico, resolución y exactitud en columnas distintas; extracto indexado](https://dev.mitutoyo.com/webfoo/wp-content/uploads/US-1005_Mitutoyo_Catalog.pdf)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.

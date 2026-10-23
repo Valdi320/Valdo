@@ -35,3 +35,8 @@ Se añaden [referencias de depósitos y análisis](AGUA_CAPTACION_CALIDAD.md) y 
 ## Avance de vivienda y saneamiento
 
 [Véase el anexo de vivienda](VIVIENDA_EMPLAZAMIENTO_SANEAMIENTO.md) para una referencia portátil de 179 €, tarifas IAA 2026 y su alcance. No hay presupuesto de casa terminada ni sistema completo. El precio OSE 2012/2013 se identifica expresamente como histórico, no vigente. Datos en [registro de esta entrega](datos/vivienda_saneamiento_2026-10-23.json).
+
+
+## Avance de materiales y fabricación
+
+[Anexo de fabricación](MATERIALES_FABRICACION.md): Felfil anuncia 699 € por kit de extrusora, 1.399 € por extrusora y bobinador y 2.999 € por conjunto con trituradora; según condiciones, IVA incluido para consumidores UE y transporte adicional. No son costes de un taller completo. [Registro de precios y escenarios](datos/materiales_fabricacion_2026-10-23.json). Los costes Recyclebot de 2018 y Precious Plastic de contexto neerlandés no se tratan como presupuestos actuales españoles.
