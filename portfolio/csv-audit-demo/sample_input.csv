@@ -1,0 +1,6 @@
+id,name,city,amount
+001,Alpha Bikes,Madrid,12.50
+002,Beta Supplies,Barcelona,seven
+002,Beta Supplies,Barcelona,7.00
+,Missing Id,Zaragoza,8.00
+005,Alpha Bikes,Madrid,15.00
