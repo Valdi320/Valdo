@@ -70,3 +70,7 @@ El [anexo de aislamiento y repuestos](AISLAMIENTO_MATERIALES_REPUESTOS.md) regis
 ## Medición y mecanizado
 
 El [anexo de medición](MEDICION_MECANIZADO_PRECISION.md) añade el calibre 530-104 a 38,00 € sin IVA en TN-Tools y 52,99 € con IVA en HBM; un juego de 47 bloques a 219,99 € con IVA, sin certificado individual verificado; y la cabecera de StrongHold ONE a 1.259,00 € con impuestos en la región mostrada, sin configuración completa resuelta. Ninguna cifra representa un taller entregado y validado en España. La lista OLSK revisada contiene cantidades, sin precios. [Datos y exclusiones](datos/medicion_mecanizado_2026-10-23.json).
+
+## Afilado y consumibles de mantenimiento
+
+El [anexo de afilado](AFILADO_METALES_REUTILIZACION.md) recoge placas DMT de combinaciones distintas a 124,10 € y 194,50 €, con impuestos anunciados, y ACC150 de dos envases de 150 ml a 44,00 € en la última lectura (otra apertura mostró 43,00 €). No se consideran productos equivalentes o un conjunto compatible. El cálculo de 30 preparaciones nuevas de concentrado no indica número de afilados o gasto anual. [Precios, cantidades y exclusiones](datos/afilado_metales_2026-10-23.json).

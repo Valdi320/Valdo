@@ -13,7 +13,7 @@
 ### Autosostenimiento e investigación continua: 23 de octubre de 2026
 
 - **[Informe de autosostenimiento, 24 casos y plan de continuidad](research/2026-10-23/README.md)**: energía, agua, alimentación, fabricación y límites de dependencia industrial.
-- **[Precios consultados y exclusiones](research/2026-10-23/PRECIOS.md)** y **[217 referencias principales](research/2026-10-23/FUENTES.md)**. Sin compras ni prototipos nuevos; no se declara alcanzado un gasto cotidiano de cero euros.
+- **[Precios consultados y exclusiones](research/2026-10-23/PRECIOS.md)** y **[234 referencias principales](research/2026-10-23/FUENTES.md)**. Sin compras ni prototipos nuevos; no se declara alcanzado un gasto cotidiano de cero euros.
 
 ### Investigación ampliada: octubre de 2026
 

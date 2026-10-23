@@ -1,0 +1,147 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "documentación y aritmética; sin afilado, impresión, renderizado, fusión, instalación o compra",
+  "guia_abierta": {
+    "proyecto": "anorm/whetstone-guide",
+    "commit": "1655d779d0c1cbe2a2549eccb22e41d242b0da69",
+    "fuentes": [
+      218,
+      219,
+      220,
+      221
+    ],
+    "licencia": "CC-BY-SA-4.0",
+    "dependencia": "BOSL2, BSD-2-Clause según API GitHub",
+    "dependencia_incorporada_en_arbol_guia": false,
+    "fuente_SCAD_blob_sha": "57e606648a2f5fa444b6e4fd2ae15e9df124d25f",
+    "fuente_SCAD_bytes": 7258,
+    "parametros_por_defecto": {
+      "stone_height_mm": 28,
+      "stone_width_mm": 61,
+      "stone_length_mm": 180,
+      "base_edge_height_mm": 10,
+      "rail_d_mm": 15,
+      "guide_angle_1_grados": 20,
+      "hasta_cuatro_angulos": true
+    },
+    "revision_estatica": {
+      "expresion": "height = stone_height - base_edge_height - rail_d*0.1",
+      "height_original_mm": "16.5",
+      "height_si_solo_piedra9_5_mm": "-2.0",
+      "limite": "variable intermedia, sin render ni evaluación de geometría física; no prueba por sí sola fallo; compatibilidad de placa fina no acreditada"
+    },
+    "pendiente": [
+      "dependencia y revisión de biblioteca",
+      "adaptación de geometría",
+      "estabilidad",
+      "ángulo efectivo",
+      "material y duración"
+    ]
+  },
+  "precios_eur": [
+    {
+      "fuente": 226,
+      "producto": "DMT fina/extrafina, Nakatogi",
+      "precio": "124.10",
+      "impuestos": "incluidos según página",
+      "dimensiones_mm_anunciadas": [
+        203,
+        67,
+        9.5
+      ],
+      "granos_anunciados": [
+        600,
+        1200
+      ],
+      "limite": "referencia exacta fabricante y entrega pendientes"
+    },
+    {
+      "fuente": 227,
+      "producto": "DMT DuoSharp gruesa/fina con base, UTSET",
+      "precio": "194.50",
+      "impuestos": "incluidos según página",
+      "referencia_enlace": "W8FC-WB",
+      "limite": "combinación/base distinta; transporte pendiente; no comparativa equivalente"
+    },
+    {
+      "fuente": 228,
+      "producto": "ACC150 SKU TRMACC150, 2x150ml",
+      "ultima_lectura_precio": "44.00",
+      "otra_lectura_observada": "43.00",
+      "impuestos": "incluidos según ficha",
+      "limite": "variación entre consultas; no precio final confirmado"
+    }
+  ],
+  "concentrado": {
+    "fuente": 224,
+    "presentacion_total_ml": 300,
+    "concentrado_por_preparacion_ml": 10,
+    "agua_por_preparacion_ml": 250,
+    "preparaciones_nuevas_aritmeticas": "30",
+    "precio_referencia_elegido_eur": "44.00",
+    "coste_concentrado_por_preparacion_eur": "1.466666666666666666666666667",
+    "no_es": [
+      "número de afilados",
+      "coste anual",
+      "requisito para placas DMT",
+      "formulación de sustituto",
+      "duración infinita"
+    ],
+    "materiales_enumerados_fabricante": [
+      "ácido dodecanodioico",
+      "agua"
+    ],
+    "formulacion_completa_equivalente_abierto": null
+  },
+  "duracion": {
+    "fuente": 225,
+    "modelo_de_la_respuesta": "Tormek T-1",
+    "fecha_respuesta": "2024-10-02",
+    "alcance": "fabricante indica dependencia del uso y afinamiento progresivo; no extrapolar a T4/T8 o taller"
+  },
+  "metales": {
+    "S600_fuente": 229,
+    "grado": "EN HS6-5-2C / 1.3343",
+    "componentes_composicion_publicados": [
+      "C",
+      "Cr",
+      "Mo",
+      "V",
+      "W"
+    ],
+    "produccion_domestica_equivalente_demostrada": false,
+    "XRF_fuente": 230,
+    "XRF_limite": "generalmente no mide carbono; composición parcial no acredita tratamiento o propiedades",
+    "aluminio_fuente": 231,
+    "procesos_documentados": [
+      "selección por composición",
+      "pretratamiento",
+      "refinado según ruta",
+      "desgasificación y ajuste",
+      "gestión de residuos"
+    ],
+    "no_concluir": "refundición simple devuelve cualquier aleación a sus propiedades iniciales"
+  },
+  "sierras": {
+    "fuentes": [
+      232,
+      233
+    ],
+    "Silky": "hojas endurecidas por impulso no se reafilan con lima manual; no toda la marca",
+    "Bahco": "4211 endurecido frente a 4212 limable; no comparación de rendimiento o compra elegida"
+  },
+  "residuos": {
+    "fuente": 234,
+    "alcance": "resumen indexado de estudio de exposición en mantenimiento de metal duro; sin extrapolar concentraciones al hogar"
+  },
+  "limites_acceso": [
+    "Hudson M2: apertura 403, no se elude ni se usa como receta",
+    "PMID 8615327: resumen indexado; apertura sin cuerpo útil, no se revisa íntegro"
+  ],
+  "prioridades": [
+    "filos mantenibles adecuados a la función",
+    "conservar geometría y consumo real",
+    "reutilizar metal identificado antes de refundir",
+    "corrosión, uniones y materiales auxiliares"
+  ]
+}

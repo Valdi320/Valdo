@@ -181,3 +181,7 @@ El [anexo de materiales y reparación](AISLAMIENTO_MATERIALES_REPUESTOS.md) comp
 ### Medición y mecanizado de esta misma fecha
 
 El [anexo de precisión](MEDICION_MECANIZADO_PRECISION.md) separa resolución, medida y aptitud de una pieza. Compara PrintNC, OLSK y OpenFlexure con versiones y licencias concretas; incorpora la inspección de una lista original de componentes y precios de instrumentos. No se atribuye exactitud a una máquina a partir de sus pasos ni se declara cerrada la cadena de herramientas, patrones o materiales.
+
+### Afilado y reutilización de metales de esta misma fecha
+
+El [anexo de mantenimiento de herramientas](AFILADO_METALES_REUTILIZACION.md) identifica una guía paramétrica abierta y una adaptación pendiente para placas finas. Distingue filos reafilables de hojas endurecidas no limables; añade precios de abrasivos y un consumible de sistema comercial, sin prometer duración infinita. La revisión de metales conserva los límites de identificación, composición y tratamiento antes de atribuir propiedades al material recuperado.
