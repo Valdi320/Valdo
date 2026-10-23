@@ -82,3 +82,7 @@ El [anexo de corrosión y uniones](CORROSION_UNIONES_MATERIALES_AUXILIARES.md) r
 ## Juntas y materiales de moldeo
 
 El [anexo de piezas flexibles](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) registra EasyPlat ACQUA 900 g a 29,04 € con IVA y KWC Home Z.605.806 a 6,58 € con impuestos. Son materiales y funciones distintos, sin sustitución validada. El cabezal Prusa XL de silicona figura a 925 USD con región Estados Unidos, sin precio entregado en España o stock confirmados. Los 280 USD de HiPeristaltic y 35 USD de Phisik son costes aproximados publicados por proyectos, no ofertas actuales. El ejemplo propio de 0,122 € solo valora material consumido, exige comprar el kit completo y excluye útil y proceso. [Datos y exclusiones](datos/juntas_bombas_2026-10-23.json).
+
+## Bioproducción de silicona: presupuesto no disponible
+
+La [revisión biotecnológica](BIOPRODUCCION_SILICONA.md) no identifica un cultivo doméstico completo con producción y mantenimiento verificables. No se asigna precio ni coste cero a ese sistema hipotético. Los precios anteriores de silicona comercial y herramientas describen cadenas diferentes; un calendario de financiación de investigación tampoco equivale a una oferta de equipo.

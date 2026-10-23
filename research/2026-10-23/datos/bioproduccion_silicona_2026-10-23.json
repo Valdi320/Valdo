@@ -1,0 +1,180 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental; sin cultivos, modificaciones, síntesis, compras o ensayos físicos",
+  "pregunta": "criar y mantener formas biológicas que produzcan silicona útil",
+  "fuentes": [
+    {
+      "numero": 261,
+      "titulo": "Caltech · Bringing Silicon to Life, demostración de enlaces silicio-carbono, 24/11/2016",
+      "url": "https://www.caltech.edu/about/news/bringing-silicon-life-53049"
+    },
+    {
+      "numero": 262,
+      "titulo": "CaltechAUTHORS · Kan y colaboradores, 2016, registro del trabajo y derechos pendientes de evaluar",
+      "url": "https://authors.library.caltech.edu/records/54f1h-zr030"
+    },
+    {
+      "numero": 263,
+      "titulo": "Lu y Wong · Biocatálisis de polímeros de silicona, 13/02/2024; resumen indexado, apertura del editor 403",
+      "url": "https://pubs.rsc.org/en/content/articlelanding/2024/fd/d4fd00003j"
+    },
+    {
+      "numero": 264,
+      "titulo": "Lu y Wong · Distribución de productos en síntesis de PDMS, 2026; contenido indexado, apertura del editor 403",
+      "url": "https://pubs.rsc.org/en/content/articlelanding/2026/cy/d6cy00067c"
+    },
+    {
+      "numero": 265,
+      "titulo": "Wolf y colaboradores · Formación de siliconas mediada por silicateína-α, 2010; resumen indexado, apertura PubMed con CAPTCHA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20396816/"
+    },
+    {
+      "numero": 266,
+      "titulo": "Caltech · Degradación enzimática de enlaces silicio-carbono en metilsiloxanos, 25/01/2024",
+      "url": "https://www.caltech.edu/about/news/teaching-nature-to-break-man-made-chemical-bonds"
+    },
+    {
+      "numero": 267,
+      "titulo": "SKZ · Proyecto de reciclaje continuo de siliconas, anuncio 20/02/2026, financiación 2025–2028",
+      "url": "https://www.skz.de/en/newsarticle/continuous-recycling-of-silicone-elastomers"
+    },
+    {
+      "numero": 268,
+      "titulo": "WACKER · Comunicación 33 de 14/07/2022, biomethanol, balance de masas y pasos industriales",
+      "url": "https://www.wacker.com/cms/media/en/documents/pressrelease-pdf/pm2022/33_k2022_elastosil_eco_de.pdf"
+    }
+  ],
+  "distinciones": {
+    "silicio": "elemento Si",
+    "silice": "material inorgánico basado en SiO2, con formas biológicas hidratadas y otros componentes",
+    "silicona": "familia de organopolisiloxanos; PDMS es un ejemplo"
+  },
+  "hitos": [
+    {
+      "fuentes": [
+        261,
+        262
+      ],
+      "ano": 2016,
+      "demostrado": "proteína bacteriana modificada cataliza enlaces Si-C con reactivos proporcionados",
+      "no_demostrado": "cultivo doméstico que convierte recursos locales sencillos en silicona final",
+      "patente": "registro indica solicitud provisional en 2016; situación jurídica actual no auditada"
+    },
+    {
+      "fuente": 265,
+      "ano": 2010,
+      "demostrado_segun_resumen": "silicateína-α recombinante, asociada a Suberites domuncula, cataliza condensación de alcoxisilanos para formar PDMS en laboratorio",
+      "funcion_natural_descrita": "formación de estructuras de sílice",
+      "texto_integro_revisado": false
+    },
+    {
+      "fuente": 263,
+      "fecha_publicacion_segun_indice": "2024-02-13",
+      "autores": [
+        "Yuqing Lu",
+        "Lu Shin Wong"
+      ],
+      "doi": "10.1039/D4FD00003J",
+      "demostrado_segun_resumen": "silicateína-α cataliza PDMS desde precursores dialcoxisilanos en medio no acuoso",
+      "masa_molecular_aproximada_Da_publicada": [
+        1000,
+        2000
+      ],
+      "limite_observado": "degradación gradual tras exposición prolongada",
+      "licencia_articulo_segun_registro_indexado": "CC-BY-3.0",
+      "texto_integro_metodos_figuras_suplemento_auditados": false
+    },
+    {
+      "fuente": 264,
+      "ano": 2026,
+      "doi": "10.1039/D6CY00067C",
+      "demostrado_segun_contenido_indexado": "distribución de cadenas y oligómeros; crecimiento y degradación posteriores",
+      "no_inferir": [
+        "más tiempo produce siempre más material",
+        "elastómero final validado",
+        "rendimiento doméstico"
+      ],
+      "texto_integro_auditado": false
+    }
+  ],
+  "arquitecturas": [
+    {
+      "nombre": "organismo como productor de catalizador",
+      "flujo_conceptual": [
+        "producción de enzima",
+        "recuperación de enzima",
+        "reacción con materias preparadas",
+        "separación y formulación final"
+      ],
+      "cadena_local_completa_demostrada": false
+    },
+    {
+      "nombre": "cultivo que entrega material final desde recursos sencillos",
+      "cadena_domestica_integrada_demostrada": false,
+      "faltan": [
+        "ruta de precursores",
+        "balance material",
+        "recuperación",
+        "propiedades finales",
+        "estabilidad",
+        "mantenimiento"
+      ]
+    }
+  ],
+  "biobasado": {
+    "fuente": 268,
+    "fecha_documento": "2022-07-14",
+    "significado_en_fuente": "uso y asignación de biomethanol mediante balance de masas, conservando pasos industriales",
+    "equivale_a_organismo_productor_silicona": false,
+    "disponibilidad_comercial_actual_auditada": false
+  },
+  "reciclaje": {
+    "enzimatico": {
+      "fuente": 266,
+      "fecha_comunicacion": "2024-01-25",
+      "alcance": "ruptura facilitada de Si-C en ciertos metilsiloxanos volátiles",
+      "equivale_a_reponer_cualquier_junta": false
+    },
+    "SKZ": {
+      "fuente": 267,
+      "fecha_anuncio": "2026-02-20",
+      "financiacion_desde": "2025-08-01",
+      "financiacion_hasta": "2028-07-31",
+      "objetivo": "despolimerización continua en extrusor planetario para recuperar materias de nueva síntesis",
+      "2028_no_es": "fecha de equipo doméstico abierto o autosuficiencia personal",
+      "equipo_domestico_abierto_terminado_verificado": false
+    },
+    "recuperacion_domestica_cien_por_ciento_demostrada": false
+  },
+  "balance_domestico": {
+    "gramos_utiles_por_lote": null,
+    "tiempo_por_lote": null,
+    "coste_integral_eur": null,
+    "necesidades_nutrientes_reactivos_energia": null,
+    "reserva_y_reposicion_herramientas_demostradas": false,
+    "cultivo_productor_elegido": null
+  },
+  "investigacion_prioritaria": [
+    "origen local o reposición de precursores",
+    "calidad y propiedades del producto",
+    "balance de materiales y energía",
+    "estabilidad y mantenimiento",
+    "derechos y reproducibilidad"
+  ],
+  "limites_acceso": [
+    {
+      "recurso": "RSC D4FD00003J",
+      "resultado": "403; solo resumen indexado, no se elude"
+    },
+    {
+      "recurso": "RSC D6CY00067C",
+      "resultado": "403; contenido indexado, sin revisión íntegra ni elusión"
+    },
+    {
+      "recurso": "PubMed 20396816",
+      "resultado": "CAPTCHA; resumen indexado, no se elude"
+    }
+  ],
+  "fecha_independencia_total": null,
+  "autosuficiencia_completa_y_gasto_cero_demostrados": false
+}

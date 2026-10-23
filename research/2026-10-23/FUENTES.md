@@ -287,3 +287,12 @@ Referencias adicionales de detalle: [materiales Voron](https://docs.vorondesign.
 258. [Prusa · Cabezal de silicona XL de Filament2, precio USD con región Estados Unidos; disponibilidad no confirmada](https://www.prusa3d.com/es/producto/original-prusa-xl-silicone-printing-toolhead/)
 259. [Filament2 · Tubo de material líquido, tecnología declarada patentada y acceso anticipado](https://www.filament2.com/)
 260. [HiPeristaltic · Aviso específico de licencia del controlador HAL incluido](https://github.com/gunakkoc/HiPeristaltic/blob/db9a43589ec3b8e9f0624caa9871cc5c3a12e66a/firmware/STM32G0B1RET6_BIGTREETECH/STM32CubeProject/HiPeristaltic/Drivers/STM32G0xx_HAL_Driver/LICENSE.txt)
+
+261. [Caltech · Bringing Silicon to Life, demostración de enlaces silicio-carbono, 24/11/2016](https://www.caltech.edu/about/news/bringing-silicon-life-53049)
+262. [CaltechAUTHORS · Kan y colaboradores, 2016, registro del trabajo y derechos pendientes de evaluar](https://authors.library.caltech.edu/records/54f1h-zr030)
+263. [Lu y Wong · Biocatálisis de polímeros de silicona, 13/02/2024; resumen indexado, apertura del editor 403](https://pubs.rsc.org/en/content/articlelanding/2024/fd/d4fd00003j)
+264. [Lu y Wong · Distribución de productos en síntesis de PDMS, 2026; contenido indexado, apertura del editor 403](https://pubs.rsc.org/en/content/articlelanding/2026/cy/d6cy00067c)
+265. [Wolf y colaboradores · Formación de siliconas mediada por silicateína-α, 2010; resumen indexado, apertura PubMed con CAPTCHA](https://pubmed.ncbi.nlm.nih.gov/20396816/)
+266. [Caltech · Degradación enzimática de enlaces silicio-carbono en metilsiloxanos, 25/01/2024](https://www.caltech.edu/about/news/teaching-nature-to-break-man-made-chemical-bonds)
+267. [SKZ · Proyecto de reciclaje continuo de siliconas, anuncio 20/02/2026, financiación 2025–2028](https://www.skz.de/en/newsarticle/continuous-recycling-of-silicone-elastomers)
+268. [WACKER · Comunicación 33 de 14/07/2022, biomethanol, balance de masas y pasos industriales](https://www.wacker.com/cms/media/en/documents/pressrelease-pdf/pm2022/33_k2022_elastosil_eco_de.pdf)

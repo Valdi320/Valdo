@@ -193,3 +193,7 @@ El [anexo de durabilidad y uniones](CORROSION_UNIONES_MATERIALES_AUXILIARES.md) 
 ### Juntas y piezas flexibles de esta misma fecha
 
 El [anexo de juntas y bombas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) identifica moldeo de silicona con útiles impresos y una oferta anunciada de impresión directa. Separa forma, compuesto y aptitud sanitaria; revisa dos bombas con alcance y licencias distintos, y una diferencia entre tubo descrito y parámetros. El cálculo de material para una junta seca experimental no es un coste de recambio equivalente ni una pieza validada.
+
+### Bioproducción de silicona de esta misma fecha
+
+El [anexo biotecnológico](BIOPRODUCCION_SILICONA.md) identifica evidencia de enlaces Si-C y síntesis enzimática de PDMS. Distingue producir un catalizador de criar un organismo que entregue silicona final desde recursos locales. Los precursores preparados, formulación, recuperación y balance doméstico permanecen sin resolver. Los trabajos parcialmente accesibles se identifican como tales; no se promete un plazo de autosuficiencia.
