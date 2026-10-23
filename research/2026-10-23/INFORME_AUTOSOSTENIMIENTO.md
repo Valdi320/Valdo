@@ -209,3 +209,7 @@ El [anexo de agua del aire](AGUA_ATMOSFERICA_FABRICACION.md) distingue captació
 ### Cobre y decisión de fabricación de esta misma fecha
 
 El [anexo de almacenamiento](COBRE_ALMACENAMIENTO_AGUA.md) contrasta acción antimicrobiana, migración y escala. Una cesta minorista de chapas no equivale a recubrimiento industrial ni demuestra rentabilidad. Se mantiene prioridad a reserva apta y protegida. El [anexo de fabricación](MATERIALES_FABRICACION.md) recoge FDM abierta, moldes y taller convencional como arquitectura a comparar, con piezas, materiales y modelo aún pendientes; no se autoriza compra ni se acredita independencia de materias primas.
+
+### Sorción solar: cadena de materiales y balance térmico
+
+El [anexo de sorbentes](AGUA_SOLAR_SORBENTES.md) contrasta sílice disponible y MOF-303 con síntesis a escala publicada. Reacción acuosa no equivale a fabricación íntegra sin compras: siguen purificación, secado y control de propiedades. La sensibilidad de superficie usa irradiación, calor y rendimientos hipotéticos; no predice suministro. No se selecciona aún aparato ni se demuestra potabilidad o reposición cero.

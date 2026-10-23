@@ -98,3 +98,7 @@ Dhoop Solar DW-90: **2.995 EUR con IVA** en página pública, entrega y disponib
 ## Cobre y almacenamiento
 
 Chapa Alberts 10241120, 1.000 × 200 × 0,5 mm: **71,59 EUR con IVA** en BAUHAUS. Cubo ideal de 1.000 L: cubrir cinco o seis caras con 25 o 30 unidades suma **1.789,75–2.147,70 EUR solo en esas chapas**, sin mermas, trabajo, soporte, uniones, transporte o comprobaciones. No es oferta de electrodeposición ni mínimo de mercado; no se acredita aptitud sanitaria de esa chapa. El depósito de polietileno 25136176 sigue mostrando **290 EUR con IVA**, entrega y stock pendientes. No se comparan como sistemas sanitariamente equivalentes. [Anexo](COBRE_ALMACENAMIENTO_AGUA.md) y [datos](datos/cobre_almacenamiento_2026-10-23.json).
+
+## Sorbentes solares: precios de formato, no coste del agua
+
+Se registran sílice P-LAB S 50000 (1 kg, 17,45 EUR sin IVA), ligando Thermo Fisher 131750250 (25 g, 185 EUR en página alemana) y MOF-303 Ruixi R-M-5635 (1 g, 509 USD). Ninguno incluye un sistema completo; no se ha confirmado entrega y coste final español. Los formatos de investigación no fijan precio industrial ni coste de fabricación por lote. [Fuentes y exclusiones](AGUA_SOLAR_SORBENTES.md).

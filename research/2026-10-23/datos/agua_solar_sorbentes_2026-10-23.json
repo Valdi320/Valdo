@@ -1,0 +1,251 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental y sensibilidad energética; sin compra, síntesis, montaje o consumo de agua de ensayo",
+  "fuentes_nuevas": [
+    {
+      "numero": 303,
+      "titulo": "Gentile et al. · Sorción con sílice y calor de baja temperatura, Energy 2022; resumen indexado, texto íntegro 403",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0360544222011987"
+    },
+    {
+      "numero": 304,
+      "titulo": "Song et al. · Dispositivo MOF-303, Nature Water 2023; PDF del laboratorio, métodos páginas 7–8 revisados visualmente",
+      "url": "https://yaghi.cchem.berkeley.edu/pdfPublications/23MOFwaterdevice.pdf"
+    },
+    {
+      "numero": 305,
+      "titulo": "Zheng et al. · Síntesis y escalado de MOF-303, Nature Protocols; online 26/10/2022, DOI 10.1038/s41596-022-00756-w; secciones pertinentes y páginas 6,12,13 revisadas",
+      "url": "https://yaghi.berkeley.edu/pdfPublications/22ScaleUp.pdf"
+    },
+    {
+      "numero": 306,
+      "titulo": "P-LAB · Sílice S 50000 sin indicador, 1 kg; precio sin IVA y regeneración declarada",
+      "url": "https://www.p-lab.cz/silikagel-pro-exsikatory"
+    },
+    {
+      "numero": 307,
+      "titulo": "PENTA · Declaración de clasificación de peligros de sílice, 20/09/2024; no aprobación sanitaria ni curva de adsorción",
+      "url": "https://onlinefolders.abra.eu/PLAB/BL_25140_20240920_SILIKAGEL_pro_exikatory_bez_indik_~00000405Q.pdf"
+    },
+    {
+      "numero": 308,
+      "titulo": "Thermo Fisher · Ligando monohidrato 97 %, 25 g, 131750250; precio de página alemana",
+      "url": "https://www.thermofisher.com/order/catalog/product/de/en/131750250"
+    },
+    {
+      "numero": 309,
+      "titulo": "Ruixi · MOF-303 R-M-5635, formato 1 g; catálogo, no precio industrial",
+      "url": "https://www.ruixibiotech.com/pts/mof-303"
+    },
+    {
+      "numero": 310,
+      "titulo": "Bohlender · Envejecimiento por regeneración de gel de sílice; nota técnica comercial",
+      "url": "https://bohlender-americas.com/Technical-information/SICCO/Desiccant-and-humidity/Basics-on-the-Regeneration-of-Silica-Gel/"
+    },
+    {
+      "numero": 311,
+      "titulo": "Sorbtech · Regeneración y límites de reutilización, 03/10/2023; nota técnica comercial",
+      "url": "https://www.sorbtech.com/2023/10/silica-gel-desiccant-regeneration/"
+    }
+  ],
+  "procedencia_PDF": [
+    {
+      "archivo": "mof303-dispositivo-2023.pdf",
+      "fuente": 304,
+      "bytes": 2470554,
+      "sha256": "156ba3320ca3a286beb3da29fcfbeeef91571000e3a2916d29271730f377fa6f",
+      "paginas_revisadas_visualmente": [
+        7,
+        8
+      ],
+      "lectura_integra_y_suplementos_auditados": false
+    },
+    {
+      "archivo": "protocolo-mof303-2022.pdf",
+      "fuente": 305,
+      "bytes": 3418386,
+      "sha256": "000844690d0f34e7f0a7d123e73cc77164688df126e6b2af0ef32938054d7017",
+      "paginas_revisadas_visualmente": [
+        6,
+        12,
+        13
+      ],
+      "lectura_integra_y_suplementos_auditados": false
+    }
+  ],
+  "silice_experimento": {
+    "fuente": 303,
+    "nivel": "resumen indexado, no métodos completos",
+    "L_dia_por_m2_captacion_solar": [
+      1.5,
+      3.3
+    ],
+    "kWh_termicos_L": [
+      1,
+      3
+    ],
+    "regeneracion_max_C": 57,
+    "ambiente_C": [
+      20,
+      35
+    ],
+    "punto_rocio_C": [
+      2,
+      8
+    ],
+    "referencia_gel_equivalente_verificada": false
+  },
+  "MOF303": {
+    "fuente_dispositivo": 304,
+    "agua_g_kg_MOF_dia_Death_Valley": [
+      114,
+      210
+    ],
+    "agua_g_kg_MOF_dia_Berkeley": 285,
+    "fuente_sintesis": 305,
+    "lote_aproximado_kg": 3.5,
+    "reaccion_acuosa_no_cadena_solo_agua": true,
+    "insumos_y_operaciones_pendientes_de_autonomia": [
+      "ligando específico",
+      "otros reactivos",
+      "purificación con agua y etanol",
+      "secado",
+      "verificación de propiedades"
+    ],
+    "CAD_BOM_licencia_hardware_completos_auditados": false,
+    "precio_kg_industrial_verificado": false
+  },
+  "precios": [
+    {
+      "fuente": 306,
+      "SKU": "S 50000",
+      "cantidad_kg": 1,
+      "EUR_sin_IVA": "17.45",
+      "disponibilidad_orientativa": "2026-11-03",
+      "entrega_ES_confirmada": false
+    },
+    {
+      "fuente": 308,
+      "SKU": "131750250",
+      "cantidad_g": 25,
+      "EUR_pagina_Alemania": "185",
+      "precio_final_ES_confirmado": false
+    },
+    {
+      "fuente": 309,
+      "SKU": "R-M-5635",
+      "cantidad_g": 1,
+      "USD": "509",
+      "no_extrapolar_precio_industrial": true
+    }
+  ],
+  "vida_util_multianual_del_sistema_demostrada": false,
+  "sensibilidad_termica": {
+    "formula": "A=L*r/(H*eta)",
+    "PVGIS_original": "pvgis_sur35.json",
+    "magnitud_usada": "H(i)_d, irradiación en plano; no E_d eléctrico",
+    "escenarios": [
+      {
+        "mes": 12,
+        "irradiacion_kWh_m2_dia": "3.35",
+        "rendimiento_elegido_no_medido": "0.5",
+        "energia_especifica_kWh_termicos_L": "1",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "2.985074626865671641791044776"
+      },
+      {
+        "mes": 12,
+        "irradiacion_kWh_m2_dia": "3.35",
+        "rendimiento_elegido_no_medido": "0.5",
+        "energia_especifica_kWh_termicos_L": "3",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "8.955223880597014925373134328"
+      },
+      {
+        "mes": 12,
+        "irradiacion_kWh_m2_dia": "3.35",
+        "rendimiento_elegido_no_medido": "0.25",
+        "energia_especifica_kWh_termicos_L": "1",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "5.970149253731343283582089552"
+      },
+      {
+        "mes": 12,
+        "irradiacion_kWh_m2_dia": "3.35",
+        "rendimiento_elegido_no_medido": "0.25",
+        "energia_especifica_kWh_termicos_L": "3",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "17.91044776119402985074626866"
+      },
+      {
+        "mes": 7,
+        "irradiacion_kWh_m2_dia": "7.34",
+        "rendimiento_elegido_no_medido": "0.5",
+        "energia_especifica_kWh_termicos_L": "1",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "1.362397820163487738419618529"
+      },
+      {
+        "mes": 7,
+        "irradiacion_kWh_m2_dia": "7.34",
+        "rendimiento_elegido_no_medido": "0.5",
+        "energia_especifica_kWh_termicos_L": "3",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "4.087193460490463215258855586"
+      },
+      {
+        "mes": 7,
+        "irradiacion_kWh_m2_dia": "7.34",
+        "rendimiento_elegido_no_medido": "0.25",
+        "energia_especifica_kWh_termicos_L": "1",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "2.724795640326975476839237057"
+      },
+      {
+        "mes": 7,
+        "irradiacion_kWh_m2_dia": "7.34",
+        "rendimiento_elegido_no_medido": "0.25",
+        "energia_especifica_kWh_termicos_L": "3",
+        "servicio_L_dia_elegido": 5,
+        "superficie_m2": "8.174386920980926430517711172"
+      }
+    ],
+    "no_predice": [
+      "litros recogidos",
+      "temperatura alcanzable",
+      "agua adsorbida disponible",
+      "condensación",
+      "continuidad diaria",
+      "calidad",
+      "sistema instalado"
+    ],
+    "limites": "η elegido; consumo específico de otro clima; medias PVGIS, sin sombras cercanas ni emplazamiento futuro definido"
+  },
+  "accesos_limitados": [
+    {
+      "recurso": "ScienceDirect S0360544222011987",
+      "resultado": "403, sin métodos íntegros"
+    },
+    {
+      "recurso": "Zenodo 7990951",
+      "resultado": "inaccesible, suplemento no auditado"
+    },
+    {
+      "recurso": "Silica Gel Italia blanco 1 kg",
+      "resultado": "dos timeouts, sin confirmación de precio"
+    },
+    {
+      "recurso": "CTS sílice blanca",
+      "resultado": "CAPTCHA, no elusión"
+    }
+  ],
+  "decision": "comparar sílice por grado y MOF por cadena real; no seleccionar máquina ni síntesis doméstica",
+  "siguiente_evidencia": [
+    "grado y curva adsorción/desorción",
+    "CAD/BOM/licencia",
+    "datos horarios y emplazamiento",
+    "presupuesto instalado y reposición",
+    "mismo servicio comparado con lluvia"
+  ],
+  "gasto_cero_y_potabilidad_propia_demostrados": false
+}

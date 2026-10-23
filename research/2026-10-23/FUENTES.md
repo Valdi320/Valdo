@@ -333,3 +333,13 @@ Referencias adicionales de detalle: [materiales Voron](https://docs.vorondesign.
 300. [Georgia Southern · Registro y resumen de resina vegetal para fijar plata a cerámica, 2023](https://digitalcommons.georgiasouthern.edu/civil-eng-facpubs/83/)
 301. [EPA · Tecnologías para Legionella, alcance de la revisión e ionización cobre-plata](https://www.epa.gov/ground-water-and-drinking-water/technologies-legionella-control-premise-plumbing-systems)
 302. [Voron · Selección de materiales por función; ABS/ASA y límites de sustitución](https://docs.vorondesign.com/materials.html)
+
+303. [Gentile et al. · Sorción con sílice y calor de baja temperatura, Energy 2022; resumen indexado, texto íntegro 403](https://www.sciencedirect.com/science/article/pii/S0360544222011987)
+304. [Song et al. · Dispositivo MOF-303, Nature Water 2023; PDF del laboratorio, métodos páginas 7–8 revisados visualmente](https://yaghi.cchem.berkeley.edu/pdfPublications/23MOFwaterdevice.pdf)
+305. [Zheng et al. · Síntesis y escalado de MOF-303, Nature Protocols; online 26/10/2022, DOI 10.1038/s41596-022-00756-w; secciones pertinentes y páginas 6,12,13 revisadas](https://yaghi.berkeley.edu/pdfPublications/22ScaleUp.pdf)
+306. [P-LAB · Sílice S 50000 sin indicador, 1 kg; precio sin IVA y regeneración declarada](https://www.p-lab.cz/silikagel-pro-exsikatory)
+307. [PENTA · Declaración de clasificación de peligros de sílice, 20/09/2024; no aprobación sanitaria ni curva de adsorción](https://onlinefolders.abra.eu/PLAB/BL_25140_20240920_SILIKAGEL_pro_exikatory_bez_indik_~00000405Q.pdf)
+308. [Thermo Fisher · Ligando monohidrato 97 %, 25 g, 131750250; precio de página alemana](https://www.thermofisher.com/order/catalog/product/de/en/131750250)
+309. [Ruixi · MOF-303 R-M-5635, formato 1 g; catálogo, no precio industrial](https://www.ruixibiotech.com/pts/mof-303)
+310. [Bohlender · Envejecimiento por regeneración de gel de sílice; nota técnica comercial](https://bohlender-americas.com/Technical-information/SICCO/Desiccant-and-humidity/Basics-on-the-Regeneration-of-Silica-Gel/)
+311. [Sorbtech · Regeneración y límites de reutilización, 03/10/2023; nota técnica comercial](https://www.sorbtech.com/2023/10/silica-gel-desiccant-regeneration/)

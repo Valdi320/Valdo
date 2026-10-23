@@ -105,3 +105,7 @@ No se añaden consumos no incluidos en cada especificación, nuevas pérdidas de
 5. Si después se decide prototipar, comenzar por recogida y medidas sin consumo humano; validar tratamiento y almacenamiento antes de considerarlo fuente de bebida. Esta investigación no ejecuta ese ensayo.
 
 **Decisión actual:** incorporar el agua atmosférica como línea concreta del proyecto, con prioridad a sorción solar documentada y control modular abierto. Para Zaragoza se mantiene como complemento pendiente de demostrar. El suministro único, la potabilidad del equipo propio y el gasto cotidiano cero siguen sin acreditarse.
+
+### Ampliación: sílice, MOF y calor solar
+
+La [comparación por cadena de materiales](AGUA_SOLAR_SORBENTES.md) añade síntesis a escala y una sensibilidad térmica explícitamente hipotética. No sustituye datos horarios ni selecciona una máquina.

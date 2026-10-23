@@ -27,11 +27,12 @@ Primera entrega fechada para ampliar FDAA hacia vivienda, energía, agua, alimen
 - [Extrusión abierta de silicona: archivos, materiales y coste completo](EXTRUSION_ABIERTA_SILICONA.md)
 - [Agua del aire: fabricación abierta, energía y potabilidad](AGUA_ATMOSFERICA_FABRICACION.md)
 - [Cobre y almacenamiento de agua: beneficio, escala y coste](COBRE_ALMACENAMIENTO_AGUA.md)
+- [Agua solar con sorbentes: sílice, MOF, fabricación y escala](AGUA_SOLAR_SORBENTES.md)
 
 **Decisión provisional:** comprobar primero vivienda admisible, agua segura y demanda térmica. Para fabricación, comparar FDM abierta, moldes y taller convencional; no hay máquina elegida para compra. Para almacenamiento no se selecciona revestir de cobre una gran reserva. Medir necesidades, trabajo y reparación antes de comprar maquinaria o ampliar automatización.
 
 **Estado de la evidencia:** diez consultas PVGIS y anexos de agua, alimentación, vivienda, materiales, IA, ropa, higiene y movilidad. La integración contrasta cargas, potencia simultánea y costes parciales con reposición hipotética. No hay finca seleccionada, sistema completo validado, dieta autónoma o presupuesto instalado. No se acredita gasto cero.
 
-**Continuación:** definir piezas y requisitos del taller; verificar almacenamiento, materiales sanitarios y tratamiento para un servicio concreto. Agua atmosférica: método reproducible de sorción solar, materiales, serie climática horaria y comparación con lluvia para un mismo servicio. Siguen pendientes la pieza de silicona no crítica, precursores y la comparación de bomba/recambios frente a menor bombeo. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
+**Continuación:** definir piezas y requisitos del taller; verificar almacenamiento, materiales sanitarios y tratamiento para un servicio concreto. Agua atmosférica: elegir grado con curva de adsorción, comprobar CAD/BOM/licencia y presupuesto instalado; obtener serie climática horaria y comparar con lluvia para un mismo servicio. La sensibilidad térmica publicada no dimensiona un suministro. Siguen pendientes la pieza de silicona no crítica, precursores y la comparación de bomba/recambios frente a menor bombeo. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
 
 Se añade a la [especificación canónica](../../docs/PROYECTO_CANONICO.md) y a la [campaña anterior](../2026-10-13/README.md), sin reemplazarlas. No se publican datos domésticos privados ni se modifica la decisión pendiente sobre la licencia global del repositorio.
