@@ -1,0 +1,196 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental y cálculo propio; sin compra, intervención, ensayo físico o compatibilidad de piezas validada",
+  "escenario_pared": {
+    "superficie_m2_elegida": "20",
+    "U0_W_m2K_elegida": "1.5",
+    "deltaT_K_constante_elegido": "15",
+    "horas_elegidas": "24",
+    "lambda_W_mK_elegida": "0.040",
+    "formulas": [
+      "R0 = 1/U0",
+      "R_añadida = espesor/lambda",
+      "U = 1/(R0+R_añadida)",
+      "Q_kWh = U*area*deltaT*horas/1000"
+    ],
+    "casos": [
+      {
+        "espesor_m": "0",
+        "R_aislamiento_m2K_W": "0E+3",
+        "U_final_W_m2K": "1.500000000000000000000000000",
+        "calor_transmitido_kwh": "10.80000000000000000000000",
+        "calor_evitado_kwh": "0E-23",
+        "reduccion_conduccion_solo_pared_porcentaje": "0E-22"
+      },
+      {
+        "espesor_m": "0.02",
+        "R_aislamiento_m2K_W": "0.5",
+        "U_final_W_m2K": "0.8571428571428571428571428569",
+        "calor_transmitido_kwh": "6.17142857142857142857142857",
+        "calor_evitado_kwh": "4.62857142857142857142857143",
+        "reduccion_conduccion_solo_pared_porcentaje": "42.85714285714285714285714287"
+      },
+      {
+        "espesor_m": "0.1",
+        "R_aislamiento_m2K_W": "2.5",
+        "U_final_W_m2K": "0.3157894736842105263157894737",
+        "calor_transmitido_kwh": "2.273684210526315789473684211",
+        "calor_evitado_kwh": "8.526315789473684210526315789",
+        "reduccion_conduccion_solo_pared_porcentaje": "78.94736842105263157894736842"
+      }
+    ],
+    "COP_elegido_no_medido": "2",
+    "electricidad_evitada_caso100mm_COP2_kwh": "4.263157894736842105263157894",
+    "limites": [
+      "solo conducción ideal por una pared; no vivienda real",
+      "sin puentes térmicos, huecos, ventilación, infiltración o humedad",
+      "sin extrapolación anual o factura",
+      "no dimensiona calefacción"
+    ]
+  },
+  "materiales": [
+    {
+      "nombre": "CORKISOL",
+      "fuente": 185,
+      "lambda_D_W_mK": ".040",
+      "espesor_referencia_mm": 100,
+      "R_m2K_W": "2.5",
+      "fuego": "Euroclase E",
+      "limite": "ficha consultada inicialmente; reapertura 404; no identidad acreditada con placas de vendedores distintos"
+    },
+    {
+      "nombre": "ISOLENA lana suelta",
+      "fuentes": [
+        186,
+        187
+      ],
+      "lambda_D_W_mK": ".037",
+      "densidad_referencia_fabricante_kg_m3": 18,
+      "limite": "cardada y protegida; no transferible a lana local sin tratamiento; proceso no verificado abierto"
+    },
+    {
+      "nombre": "ISOCELL celulosa",
+      "fuente": 188,
+      "lambda_calculo_Austria_UE_W_mK": ".038",
+      "densidad_insuflado_kg_m3": [
+        28,
+        65
+      ],
+      "limite": "no usar valor de otra jurisdicción o de papel sin procesar; formulación por variante pendiente"
+    },
+    {
+      "nombre": "EcoCocon panel",
+      "fuente": 189,
+      "version": "2.2, 04/06/2026",
+      "lambda_panel_W_mK": ".0645",
+      "espesor_referencia_certificada_mm": 400,
+      "limite": "panel compuesto; no lambda de paja suelta; tabla sin revisión visual"
+    }
+  ],
+  "precios_eur_observados": [
+    {
+      "fuente": 193,
+      "nombre": "Abriga corcho expandido, fila 100 mm",
+      "unidad": "m2",
+      "precio": "60.48",
+      "IVA": "incluido según tabla",
+      "20m2_material_teorico": "1209.60",
+      "excluye": "embalajes, mermas, capas, fijaciones, transporte, trabajo y presupuesto final"
+    },
+    {
+      "fuente": 194,
+      "nombre": "Corkshop Aglocork 0206100 100mm",
+      "unidad": "caja 1.5m2",
+      "precio": "133.58",
+      "cabecera_m2": "89.06",
+      "IVA": "incluido según página",
+      "excluye": "confirmación de descuentos por volumen, transporte y montaje"
+    },
+    {
+      "fuente": 195,
+      "nombre": "HWS ISOLENA 05-LW-02_5",
+      "unidad": "paquete 2.5kg",
+      "precio": "36.89",
+      "IVA": "incluido según página",
+      "excluye": "envío, impuestos finales por destino y equivalencia de pared instalada"
+    }
+  ],
+  "pared_abierta": {
+    "proyecto": "Open Building Institute",
+    "modulo": "Insulated Wall 0.1",
+    "fuentes": [
+      191,
+      192
+    ],
+    "licencia_declarada_sitio": "CC-BY-SA",
+    "variante_exterior4x8ft": "autor declara prototipo, comprobación y uso",
+    "otras_anchuras_exteriores": "autor declara sin prototipo ni comprobación",
+    "pendiente": [
+      "descargar y leer CAD y licencias internas",
+      "presupuesto y peso",
+      "justificación del cerramiento completo y emplazamiento"
+    ]
+  },
+  "reparacion_termo": {
+    "referencia_prevista": {
+      "articulo": "92389709",
+      "fuente": 180,
+      "volumen_l": 100,
+      "potencia_W": 1500,
+      "control": "electrónico",
+      "resistencia": "sumergida",
+      "precio_eur": "209"
+    },
+    "otra_referencia_con_mismo_nombre": {
+      "articulo": "82005354",
+      "fuente": 196,
+      "volumen_l": 100,
+      "potencia_W": 1500,
+      "control": "mecánico",
+      "resistencia": "envainada",
+      "precio_eur": "229"
+    },
+    "candidatos_no_validados": [
+      {
+        "fuente": 197,
+        "referencia": "030363",
+        "precio_eur": "49.61",
+        "potencia_W": 2000,
+        "modelo_indicado": "EQ2 cuadrado 30L, código 931169",
+        "compatible_92389709": null
+      },
+      {
+        "fuente": 198,
+        "precio_eur": "39.99",
+        "potencia_W": 2000,
+        "modelo_indicado": "título 150L; descripción otros volúmenes sin artículo exacto",
+        "compatible_92389709": null
+      }
+    ],
+    "inventario_propuesto_no_despiece": [
+      "resistencia",
+      "junta",
+      "ánodo",
+      "control, sonda y limitador",
+      "válvula y conexiones",
+      "depósito y aislamiento"
+    ],
+    "manual_articulo92389709": "enlace falló; contenido no leído",
+    "no_concluir": [
+      "precio de reparación del 100L a partir de kits no identificados",
+      "fabricación propia acreditada de piezas críticas",
+      "intervalos de mantenimiento inventados"
+    ]
+  },
+  "limites_acceso": [
+    "ACERMI leído inicialmente, segunda apertura 404",
+    "EcoCocon texto web leído; descarga urllib 403; no se reintenta por otra vía ni se afirma revisión visual",
+    "Ecobioebro leído inicialmente, segunda apertura timeout",
+    "Manual del termo de referencia no leído"
+  ],
+  "siguiente_evidencia": [
+    "herramientas de medida y fabricación de precisión",
+    "referencias exactas y documentación de una reparación",
+    "cerramiento, clima, agua y presupuesto de emplazamiento concreto"
+  ]
+}

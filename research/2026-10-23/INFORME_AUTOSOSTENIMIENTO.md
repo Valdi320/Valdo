@@ -173,3 +173,7 @@ Se incorpora [almacenamiento, cauchos, lubricantes y electrónica](MATERIALES_CR
 ### Acumulación térmica de esta misma fecha
 
 Se incorpora [almacenamiento de calor y reducción de batería](CALOR_ALMACENAMIENTO_DEMANDA.md), con capacidades de agua, enfriamiento ideal y una condición explícita para ahorrar energía. Se comparan dos referencias comerciales sin asumir equivalencia ni apertura del hardware; compacto no significa portátil o reparable por el propietario. No hay elección de compra o instalación validada.
+
+### Aislamiento y repuestos de esta misma fecha
+
+El [anexo de materiales y reparación](AISLAMIENTO_MATERIALES_REPUESTOS.md) compara corcho, lana, celulosa y paneles de paja, separando materia prima local de producto comprobado. Añade un cálculo ideal de reducción de pérdidas y precios de material, sin presupuesto instalado. La búsqueda de piezas del termo detecta modelos diferentes con el mismo nombre y deja dos kits fuera del coste de reparación por falta de compatibilidad acreditada. Se incorpora una pared de diseño abierto como referencia, sin declararla vivienda validada.

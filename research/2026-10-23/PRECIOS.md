@@ -62,3 +62,7 @@ El [anexo de reposición](MATERIALES_CRITICOS_REPOSICION.md) conserva los costes
 ## Acumulación de calor
 
 El [anexo térmico](CALOR_ALMACENAMIENTO_DEMANDA.md) añade EQUATION EQ2 100L artículo 92389709 a 209 € y Thermino 150 ePlus a 1.500 GBP sin VAT / 1.800 GBP con VAT británico anunciado. No son capacidades equivalentes ni precios completos instalados en España; no se convierten divisas o se elige compra. [Datos, condiciones y supuestos](datos/calor_almacenamiento_2026-10-23.json).
+
+## Aislamiento y recambios que requieren identificación
+
+El [anexo de aislamiento y repuestos](AISLAMIENTO_MATERIALES_REPUESTOS.md) registra corcho de 100 mm a 60,48 €/m² en la tabla de Abriga, Aglocork a 133,58 € por caja de 1,5 m² y lana ISOLENA a 36,89 € por 2,5 kg. Son formatos y productos distintos; no equivalen a un cerramiento instalado. Los kits de termo de 49,61 € y 39,99 € se documentan como candidatos no validados y se excluyen del presupuesto del artículo 92389709. [Observaciones, impuestos y límites](datos/aislamiento_repuestos_2026-10-23.json).
