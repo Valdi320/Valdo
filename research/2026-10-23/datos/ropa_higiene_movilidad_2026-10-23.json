@@ -1,0 +1,119 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental y escenarios; sin compra, prototipo o medida propia",
+  "precios_observados": [
+    {
+      "fuente": 148,
+      "producto": "UDDARP 70525467 8 kg",
+      "precio_mostrado_eur": "499",
+      "energia_ponderada_kwh_100_ciclos": "63",
+      "agua_ponderada_l_ciclo": "48",
+      "masa_declarada_kg": 67,
+      "exclusiones": "entrega, instalación, disponibilidad y condiciones finales; no seleccionado para compra"
+    },
+    {
+      "fuente": 149,
+      "producto": "Alfa Style 40",
+      "precio_mostrado_eur": "250",
+      "exclusiones": "condiciones finales, consumibles, reparación y comparación con opciones abiertas"
+    },
+    {
+      "fuente": 154,
+      "producto": "E-ACTV 100 cuadro bajo 8893262",
+      "precio_mostrado_eur": "999.99",
+      "bateria_nominal_wh": 356,
+      "masa_declarada_LXL_kg": "22.9",
+      "exclusiones": "talla, entrega, disponibilidad, mantenimiento y ruta real; alcance comercial no adoptado como medida"
+    }
+  ],
+  "lavado_etiqueta_extrapolada": {
+    "ciclos_semana_elegidos": 2,
+    "semanas_ano_elegidas": 52,
+    "ciclos_ano": "104",
+    "kwh_ano": "65.52",
+    "litros_ano": "4992",
+    "kwh_dia_media_aritmetica": "0.1795068493150684931506849315",
+    "litros_dia_media_aritmetica": "13.67671232876712328767123288",
+    "limites": "valores ponderados de etiqueta, no ciclo a plena carga ni medida personal; evitar duplicación en demanda doméstica de agua"
+  },
+  "trabajo_elegido_por_colada": {
+    "minutos_caso_1": 20,
+    "minutos_caso_2": 45,
+    "horas_ano_caso_1": "34.66666666666666666666666667",
+    "horas_ano_caso_2": "78",
+    "diferencia_horas_ano": "43.33333333333333333333333333",
+    "limite": "tiempos hipotéticos; no comparación medida de lavado automático y manual"
+  },
+  "movilidad_escenarios": [
+    {
+      "km_ano_elegidos": 1000,
+      "wh_km_bateria_elegidos": 10,
+      "rendimiento_carga_elegido": "0.85",
+      "kwh_cargador_ano": "11.76470588235294117647058824"
+    },
+    {
+      "km_ano_elegidos": 1000,
+      "wh_km_bateria_elegidos": 20,
+      "rendimiento_carga_elegido": "0.85",
+      "kwh_cargador_ano": "23.52941176470588235294117647"
+    },
+    {
+      "km_ano_elegidos": 3000,
+      "wh_km_bateria_elegidos": 10,
+      "rendimiento_carga_elegido": "0.85",
+      "kwh_cargador_ano": "35.29411764705882352941176471"
+    },
+    {
+      "km_ano_elegidos": 3000,
+      "wh_km_bateria_elegidos": 20,
+      "rendimiento_carga_elegido": "0.85",
+      "kwh_cargador_ano": "70.58823529411764705882352941"
+    }
+  ],
+  "ruta_hipotetica": {
+    "km": 20,
+    "wh_km_elegidos": 20,
+    "energia_bateria_wh": 400,
+    "comparacion_nominal_wh": 356,
+    "limite": "no ruta ni consumo de E-ACTV 100 medidos; no estima autonomía útil real"
+  },
+  "licencias": [
+    {
+      "proyecto": "Seamly2D",
+      "alcance": "principal GPLv3+; componentes con licencias propias",
+      "fuente": 142
+    },
+    {
+      "proyecto": "MyGenWashy",
+      "alcance": "repositorio con GPL-3.0; controlador en desarrollo",
+      "fuentes": [
+        144,
+        145
+      ]
+    },
+    {
+      "proyecto": "Last Shoe",
+      "alcance": "discrepancia README CC BY-SA 4.0 frente a LICENSE CC0; sin resolver",
+      "fuentes": [
+        146,
+        147
+      ]
+    },
+    {
+      "proyecto": "VESC",
+      "alcance": "firmware GPL-3.0; no atribuir a todo hardware",
+      "fuente": 152
+    }
+  ],
+  "acceso_limitado": [
+    "FreeSewing actual en Codeberg: denegación robots; no accedido por otra vía",
+    "EPREL 1055096: sin contenido legible; datos atribuidos a ficha IKEA",
+    "Wisconsin Flax: contenido indexado consultado, apertura directa con tiempo agotado"
+  ],
+  "pendientes": [
+    "fibra y procesado local con agua, trabajo y rendimiento",
+    "higiene eficaz con ingredientes controlados y reposición propia",
+    "materiales de desgaste y fabricación de componentes de movilidad",
+    "porcentajes por función solo tras definir demanda, dependencias críticas y obtener resultados"
+  ]
+}

@@ -50,3 +50,7 @@ Se añaden [referencias de depósitos y análisis](AGUA_CAPTACION_CALIDAD.md) y 
 ## Integración de servicios y costes
 
 Se añaden dos referencias IKEA: frigorífico LAGAN 00572853 a 299 € y placa TILLREDA 80590155 a 34,99 €, sin pedido o instalación. El [anexo integrado](INTEGRACION_VIDA_COSTES.md) suma solo partidas identificadas: 8.830,28 € incompletos y 5.232,27 € de reposición parcial en fechas elegidas; ninguno es presupuesto o coste total de vivienda. [Datos y exclusiones](datos/integracion_vida_costes_2026-10-23.json).
+
+## Ropa lavado y movilidad
+
+Tres referencias comerciales nuevas: UDDARP 70525467 a 499 €, Alfa Style 40 a 250 € y E-ACTV 100 cuadro bajo 8893262 a 999,99 €. El [anexo de ropa e higiene](ROPA_HIGIENE_MOVILIDAD.md) identifica funciones, exclusiones y consumos de referencia. No hay elección de compra, presupuesto instalado o ventaja equivalente demostrada sobre una alternativa abierta. [Registro económico y escenarios](datos/ropa_higiene_movilidad_2026-10-23.json).

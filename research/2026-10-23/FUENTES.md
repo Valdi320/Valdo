@@ -158,3 +158,20 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 - Los enlaces web pueden cambiar. Las revisiones del repositorio conservan nuestra redacción y decisiones, pero no sustituyen archivar las versiones exactas de documentación que se utilicen al construir.
 
 Referencias adicionales de detalle: [materiales Voron](https://docs.vorondesign.com/materials.html), [microscopio OpenFlexure](https://openflexure.org/projects/microscope/), [proceso LibreSilicon](https://github.com/libresilicon/process). Los textos anteriores de la campaña del 13/10/2026 son antecedentes del proyecto y no se consideran automáticamente revalidados.
+
+140. [FreeSewing · Generación de patrones personalizados, sitio actual](https://freesewing.eu/)
+141. [FreeSewing · Repositorio GitHub archivado y aviso de traslado a Codeberg](https://github.com/freesewing/freesewing)
+142. [Seamly2D · Repositorio principal, función y licencias](https://github.com/FashionFreedom/Seamly2D)
+143. [AYAB · Manual 1.0 de tejido, pasos e intervención manual](https://manual.ayab-knitting.com/1.0/how_to_knit/basics/)
+144. [MyGenWashy · Controlador de lavadora y alcance del prototipo de 2025](https://github.com/mayermakes/MyGenWashy)
+145. [MyGenWashy · Archivo de licencia GPL-3.0](https://github.com/mayermakes/MyGenWashy/blob/main/LICENSE)
+146. [Last Shoe · Plataforma modular de calzado, talla y licencia indicada en README](https://github.com/les-original/last-shoe)
+147. [Last Shoe · LICENSE con CC0, distinto de la indicación del README](https://github.com/les-original/last-shoe/blob/main/LICENSE)
+148. [IKEA España · UDDARP 70525467, precio y datos ponderados de lavado](https://www.ikea.com/es/es/p/uddarp-lavadora-ikea-500-70525467/)
+149. [Alfa Hogar · Style 40, precio y clasificación anunciados](https://www.alfahogar.com/maquinas-de-coser/mecanicas/style-40/)
+150. [Umweltbundesamt · Lavado, dosificación y dureza del agua](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/waesche-waschen-waschmittel)
+151. [Consejo General de Dentistas · Límites de alternativas naturales al flúor, 12/05/2021](https://consejodentistas.es/ningun-remedio-natural-sustituye-al-fluor-en-la-prevencion-de-la-caries/)
+152. [VESC · Firmware de control de motores, código y licencia GPL-3.0](https://github.com/vedderb/bldc)
+153. [BOE · Reglamento General de Vehículos, anexo II, consulta de texto actualizado](https://www.boe.es/buscar/act.php?id=BOE-A-1999-1826)
+154. [Decathlon España · E-ACTV 100 cuadro bajo 8893262, precio, batería y condiciones de autonomía](https://www.decathlon.es/es/p/bicicleta-trekking-electrica-cuadro-bajo-e-actv-100-gris-perla/356245/c200m8893262)
+155. [University of Wisconsin Extension · Flax, cultivo y transformación; contenido indexado, apertura con tiempo agotado](https://cropsandsoils.extension.wisc.edu/flax/)
