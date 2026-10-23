@@ -122,7 +122,7 @@ Las referencias de precios se conservan en el documento adjunto. Se distingue pr
 
 Cada campaña deberá conservar fecha, fuentes, condiciones económicas, cambios respecto de la anterior y pendientes. Se publican únicamente textos propios, enlaces y datos no personales necesarios para la investigación. Las fuentes enlazadas conservan sus licencias. No se adjuntan archivos privados, credenciales ni el informe personalizado anterior. La licencia global de FDAA sigue pendiente según CONTRIBUTING.md; esta entrega no la cambia.
 
-**Estado de esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Los avances energéticos de esta misma fecha ya están anexados; siguen faltando medidas reales y presupuesto completo. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. El siguiente bloque independiente es vivienda, emplazamiento y saneamiento.
+**Estado de esta edición:** hay investigación, catálogo y referencias económicas; no hay nueva vivienda autónoma, prototipo físico ni coste cero demostrado. La meta continúa abierta. Los avances energéticos de esta misma fecha ya están anexados; siguen faltando medidas reales y presupuesto completo. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. El siguiente bloque es materiales locales, metrología y cadenas de fabricación.
 
 
 ### Avance energético de esta misma fecha
@@ -132,9 +132,14 @@ Se han añadido cuatro consultas reproducibles a PVGIS: dos montajes y dos escen
 
 ### Segundo avance energético de esta misma fecha
 
-Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. El siguiente bloque independiente es vivienda, emplazamiento y saneamiento.
+Se añaden seis escenarios de sensibilidad y una comparación de costes parciales, reposición y licencias. Véanse [ENERGIA_SENSIBILIDAD.md](ENERGIA_SENSIBILIDAD.md) y [ENERGIA_COSTES_REPARACION.md](ENERGIA_COSTES_REPARACION.md). Diez consultas PVGIS en total, con ocho escenarios aislados; no se declara autonomía energética alcanzada. Agua, alimentación y conservación cuentan ya con anexos de escenarios y precios, sin validación física. Vivienda, emplazamiento y saneamiento cuentan con evaluación documental; sigue pendiente una finca y presupuesto completos. El siguiente bloque es materiales locales, metrología y cadenas de fabricación.
 
 
 ### Avance de agua y alimentación de esta misma fecha
 
 Se incorporan [captación, reserva y calidad del agua](AGUA_CAPTACION_CALIDAD.md) y [alimentación, conservación y herramientas](ALIMENTACION_CONSERVACION.md), con supuestos numéricos guardados y límites de las fuentes consultadas. No se acredita abastecimiento continuo ni dieta autónoma. Siguen pendientes datos de finca, agua, cultivo y tareas. La investigación general continúa.
+
+
+### Avance de vivienda y saneamiento de esta misma fecha
+
+Se añade [vivienda, emplazamiento y saneamiento](VIVIENDA_EMPLAZAMIENTO_SANEAMIENTO.md): apertura por versión constructiva, permisos, gastos periódicos y referencias económicas. No hay finca seleccionada ni saneamiento autorizado o validado. La capacidad de fabricación propia no demuestra coste cero ni cierre de la cadena material.

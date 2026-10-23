@@ -95,6 +95,21 @@ Las fuentes principales proceden de autores, proyectos, fabricantes, vendedores,
 88. [Leroy Merlin / HOME HOME · Deshidratador H.Koenig DSY900, ficha comercial](https://www.leroymerlin.es/productos/h-koenig-dsy900-deshidratador-de-alimentos-6-bandejas-de-secado-extraibles-termostato-variable-de-35-a-75-c-pantalla-lcd-tactil-650w-89619231.html)
 89. [INE · Suministro y saneamiento del agua 2022, publicación actualizada en 2024](https://www.ine.es/dyngs/Prensa/ESSA2022.htm)
 
+90. [BOE · Ley de Urbanismo de Aragón, consolidación mostrada 31/12/2024, arts. 226-227](https://www.boe.es/buscar/act.php?id=BOA-d-2014-90410)
+91. [BOE · Haciendas Locales, IBI y exenciones, arts. 60-62](https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214)
+92. [BOE · Ley 7/2022 de residuos, art. 11.3-4](https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809)
+93. [BOE · Ley 8/2021 IMAR Aragón, arts. 32-33 y condiciones](https://www.boe.es/buscar/act.php?id=BOE-A-2022-289)
+94. [Gobierno de Aragón · IMAR: procedencia del agua y sujetos pasivos](https://www.aragon.es/-/elementos-integrantes-del-tributo)
+95. [WikiHouse · Skylark, repositorio, alcance y licencia CC BY-SA 4.0](https://github.com/wikihouseproject/Skylark)
+96. [WikiHouse · Condiciones de uso y licencias por archivo](https://www.wikihouse.cc/terms)
+97. [WikiHouse · Fases de diseño, fabricación, preparación y terminación](https://www.wikihouse.cc/process)
+98. [WikiHouse · Sistemas y proyectos, prestaciones anunciadas por versión](https://www.wikihouse.cc/product)
+99. [MITECO · SNCZI y límites de las zonas cartografiadas](https://www.miteco.gob.es/es/agua/temas/gestion-de-los-riesgos-de-inundacion/cnih/tras-huellas-agua/aprende/zona-inundable1.html)
+100. [TROBOLO · WandaGO P1YX1403, ficha, precio y mantenimiento anunciado](https://trobolo.com/es/products/wandago)
+101. [BOA · Tarifas IAA 2026 para recepción y tratamiento de vaciados, resolución publicada 24/04/2026](https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1444807950505)
+102. [Open Source Ecology · Prensa de bloques de tierra: automatización parcial y precio histórico](https://wiki.opensourceecology.org/wiki/Automatic_Compressed_Earth_Brick_Press)
+103. [Open Source Ecology · Política de licencias, comprobar versión y archivos](https://wiki.opensourceecology.org/wiki/OSE_License)
+
 ## Evidencia y límites de esta entrega
 
 - Para el catálogo se revisaron descripciones, repositorios y documentación pública. No se verificó físicamente cada BOM, licencia de dependencia, construcción o rendimiento.

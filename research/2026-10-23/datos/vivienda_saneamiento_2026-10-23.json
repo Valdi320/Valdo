@@ -1,0 +1,42 @@
+{
+  "fecha_consulta": "2026-10-23",
+  "estado": "referencias documentales y escenarios, sin compra ni sistema validado",
+  "precios": [
+    {
+      "fuente": 100,
+      "producto": "TROBOLO WandaGO P1YX1403",
+      "eur": "179.00",
+      "iva": "incluido en ficha",
+      "envio": "incluido anunciado; destino final pendiente",
+      "url": "https://trobolo.com/es/products/wandago"
+    }
+  ],
+  "tarifa_iaa_2026": {
+    "fuente": 101,
+    "admision_descarga_eur_cisterna": "75.70",
+    "tratamiento_eur_m3": "11.36",
+    "iva": "no incluido; aplicar el correspondiente",
+    "excluye": "vaciado en finca, transporte y desplazamiento",
+    "url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1444807950505"
+  },
+  "escenarios_elegidos_no_presupuesto": {
+    "descarga_m3": "3",
+    "importe_iaa_antes_iva_eur": "109.78",
+    "deposito_util_l": 1500,
+    "entrada_l_dia": 100,
+    "dias_hasta_lleno": 15
+  },
+  "precio_historico_no_vigente": {
+    "fuente": 102,
+    "ose_prensa_usd": 9000,
+    "periodo": "oferta 2012/2013",
+    "excluye": "unidad de potencia; no coste entregado España"
+  },
+  "pendientes": [
+    "coste vivienda terminada",
+    "presupuesto saneamiento completo",
+    "cuotas municipales",
+    "liquidacion IMAR caso real",
+    "archivos y licencias de cada version constructiva"
+  ]
+}

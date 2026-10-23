@@ -30,3 +30,8 @@
 ## Avance de agua y conservación
 
 Se añaden [referencias de depósitos y análisis](AGUA_CAPTACION_CALIDAD.md) y [un deshidratador comercial como referencia de coste](ALIMENTACION_CONSERVACION.md). No hay presupuesto instalado, tratamiento elegido ni fabricación propia validada. Véase también el registro de precios en datos/precios_agua_conservacion_2026-10-23.json.
+
+
+## Avance de vivienda y saneamiento
+
+[Véase el anexo de vivienda](VIVIENDA_EMPLAZAMIENTO_SANEAMIENTO.md) para una referencia portátil de 179 €, tarifas IAA 2026 y su alcance. No hay presupuesto de casa terminada ni sistema completo. El precio OSE 2012/2013 se identifica expresamente como histórico, no vigente. Datos en [registro de esta entrega](datos/vivienda_saneamiento_2026-10-23.json).
