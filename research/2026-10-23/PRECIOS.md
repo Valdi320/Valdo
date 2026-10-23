@@ -94,3 +94,7 @@ El [anexo de extrusión](EXTRUSION_ABIERTA_SILICONA.md) conserva 50–51 USD com
 ## Agua atmosférica
 
 Dhoop Solar DW-90: **2.995 EUR con IVA** en página pública, entrega y disponibilidad pendientes. La suma propia de los 17 rangos de la BOM WaterOfLife asciende a **98–206 USD con un Peltier** o **101–212 USD con dos**, comprando todos los elementos enumerados. No incluye entrega española, impuestos, instrumentación o validación de agua de consumo. No se equiparan capacidades, calidad ni precios de estas dos rutas. El coste de sorción solar reproducible queda pendiente. [Anexo](AGUA_ATMOSFERICA_FABRICACION.md) y [datos](datos/agua_atmosferica_2026-10-23.json).
+
+## Cobre y almacenamiento
+
+Chapa Alberts 10241120, 1.000 × 200 × 0,5 mm: **71,59 EUR con IVA** en BAUHAUS. Cubo ideal de 1.000 L: cubrir cinco o seis caras con 25 o 30 unidades suma **1.789,75–2.147,70 EUR solo en esas chapas**, sin mermas, trabajo, soporte, uniones, transporte o comprobaciones. No es oferta de electrodeposición ni mínimo de mercado; no se acredita aptitud sanitaria de esa chapa. El depósito de polietileno 25136176 sigue mostrando **290 EUR con IVA**, entrega y stock pendientes. No se comparan como sistemas sanitariamente equivalentes. [Anexo](COBRE_ALMACENAMIENTO_AGUA.md) y [datos](datos/cobre_almacenamiento_2026-10-23.json).

@@ -110,3 +110,21 @@ Las filas son una **matriz de trabajo**, no ocho procesos ya validados ni recome
 **[A]** No hay datos para fechar una microfábrica que reproduzca todos sus componentes, ni para afirmar que esperar un número de años lo resolverá. Una mejora relevante sería una cadena demostrada con materiales accesibles, repuestos reproducibles, calidad suficiente y mantenimiento asumible. Un anuncio o un CAD nuevo no cumplen por sí solos esos requisitos.
 
 **Siguiente bloque independiente:** IA local, documentación y control sin nube, junto con el mantenimiento del hardware que los ejecuta. Se conservará la distinción entre software libre, modelo reutilizable y ordenador fabricable. La meta completa continúa abierta y no hay compras o instalaciones.
+
+## 10. Elección provisional del taller, actualizada con la consulta del propietario
+
+**[P] Arquitectura elegida para comparar, no autorización de compra:** impresión FDM de diseño abierto y componentes comunes, acompañada por moldes y reparación convencional. Primero se definirán piezas y requisitos; siguen pendientes modelo, cesta instalada y comparación de coste y mantenimiento. No se denomina fábrica autosuficiente al conjunto.
+
+| Función | Ruta prioritaria de estudio | Dependencia que permanece |
+|---|---|---|
+| Carcasas, útiles y algunos repuestos rígidos | FDM con material elegido para la función | Filamento, energía, máquina, repuestos y verificación |
+| Piezas flexibles seleccionadas | Molde y colada compatibles; comparar con impresión directa cuando sea útil | Elastómero, preparación, curado, defectos y vida del molde |
+| Piezas grandes o con requisitos que el plástico no cubra | Madera y perfiles/metales existentes, trabajados con herramientas apropiadas | Estado/material, fijaciones, herramientas, medidas y espacio |
+| Recuperación de polímeros | Selección por familia y lote antes de adquirir línea de transformación | Flujo de residuo conocido, rendimiento útil y demanda suficiente |
+| Producción biológica o síntesis propia | Investigación por material y función | Insumos, acondicionamiento, propiedades, mantenimiento y reproducibilidad |
+
+**[D/I]** La documentación de Voron recomienda ABS/ASA para sus piezas funcionales y distingue excepciones; no considera PLA o PETG sustitutos generales para ese entorno. [302] Ese ejemplo muestra por qué “imprimible” y “repuesto válido” son decisiones distintas. No se traslada automáticamente la elección de material de una impresora a todos los aparatos de una vivienda.
+
+El [anexo de juntas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) conserva la evidencia de moldeo, las limitaciones de compatibilidad y un ejemplo geométrico no crítico. La documentación comercial de moldeo [255] no demuestra que FDM sirva para cualquier molde o precisión, ni abre la formulación de la silicona. Se comparará acabado y material por pieza antes de escoger otra máquina.
+
+**[I]** Fabricar la forma no equivale a sintetizar el material: imprimir plástico comprado o colar silicona comprada reduce dependencia de ciertos recambios, pero conserva la del insumo. La elección se revisará si una tecnología ofrece ventaja demostrada para la misma pieza y servicio. No se recomienda ahora una línea completa de reciclaje ni un cabezal especializado sin esa comparación.

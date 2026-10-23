@@ -205,3 +205,7 @@ El [anexo de extrusión](EXTRUSION_ABIERTA_SILICONA.md) verifica declaración CE
 ### Agua atmosférica y fabricación propia de esta misma fecha
 
 El [anexo de agua del aire](AGUA_ATMOSFERICA_FABRICACION.md) distingue captación, potabilidad y conservación; contrasta condiciones nominales con clima histórico y calcula la escala energética. Audita dos antecedentes públicos sin acreditar licencia integral o máquina potable reproducible. Mantiene abierta la sorción solar, con métodos pendientes de lectura. No se elige suministro único ni se compra equipo.
+
+### Cobre y decisión de fabricación de esta misma fecha
+
+El [anexo de almacenamiento](COBRE_ALMACENAMIENTO_AGUA.md) contrasta acción antimicrobiana, migración y escala. Una cesta minorista de chapas no equivale a recubrimiento industrial ni demuestra rentabilidad. Se mantiene prioridad a reserva apta y protegida. El [anexo de fabricación](MATERIALES_FABRICACION.md) recoge FDM abierta, moldes y taller convencional como arquitectura a comparar, con piezas, materiales y modelo aún pendientes; no se autoriza compra ni se acredita independencia de materias primas.

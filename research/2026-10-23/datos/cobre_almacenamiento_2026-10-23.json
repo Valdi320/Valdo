@@ -1,0 +1,255 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "investigación documental y aritmética; sin revestimiento, compra, experimentos o consumo de agua de ensayo",
+  "fuentes_nuevas": [
+    {
+      "numero": 291,
+      "titulo": "Sudha y colaboradores · Almacenamiento en cobre, 2012; contenido indexado, apertura PMC con CAPTCHA y PDF del editor con timeout",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3312355/"
+    },
+    {
+      "numero": 292,
+      "titulo": "Sudha y colaboradores · Dispositivo de cobre en recipiente, 2009; resumen indexado, apertura del editor 403",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0035920309000182"
+    },
+    {
+      "numero": 293,
+      "titulo": "OMS · Ficha vigente de cobre, valor guía y corrosión; PDF enlazado revisado en texto",
+      "url": "https://www.who.int/publications/m/item/chemical-fact-sheets--copper"
+    },
+    {
+      "numero": 294,
+      "titulo": "Estudio de superficies y aleaciones de cobre, 2019; contenido indexado, apertura PMC con CAPTCHA",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9072912/"
+    },
+    {
+      "numero": 295,
+      "titulo": "Smeltz y colaboradores · Dosis de cobre y biofilms, 2025; resumen leído en PubMed, no auditoría integral de métodos",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41262138/"
+    },
+    {
+      "numero": 296,
+      "titulo": "CDC · Safe Water Storage, recipiente y prevención de recontaminación",
+      "url": "https://www.cdc.gov/global-water-sanitation-hygiene/about/about-safe-water-storage.html"
+    },
+    {
+      "numero": 297,
+      "titulo": "BAUHAUS · Alberts 10241120, chapa de cobre 1.000 × 200 × 0,5 mm, precio con IVA",
+      "url": "https://www.bauhaus.es/chapas-lisas/alberts-chapa-lisa/p/10241120"
+    },
+    {
+      "numero": 298,
+      "titulo": "Astral · Vito con partículas de cobre en polímero; declaración comercial, informes completos no auditados",
+      "url": "https://www.astralpipes.com/water-tanks/vito-anti-viral-copper-shield/"
+    },
+    {
+      "numero": 299,
+      "titulo": "McMaster · Registro y resumen de filtros cerámicos con cobre y plata, 2017",
+      "url": "https://experts.mcmaster.ca/scholarly-works/1492376"
+    },
+    {
+      "numero": 300,
+      "titulo": "Georgia Southern · Registro y resumen de resina vegetal para fijar plata a cerámica, 2023",
+      "url": "https://digitalcommons.georgiasouthern.edu/civil-eng-facpubs/83/"
+    },
+    {
+      "numero": 301,
+      "titulo": "EPA · Tecnologías para Legionella, alcance de la revisión e ionización cobre-plata",
+      "url": "https://www.epa.gov/ground-water-and-drinking-water/technologies-legionella-control-premise-plumbing-systems"
+    },
+    {
+      "numero": 302,
+      "titulo": "Voron · Selección de materiales por función; ABS/ASA y límites de sustitución",
+      "url": "https://docs.vorondesign.com/materials.html"
+    }
+  ],
+  "fuentes_previas_reconsultadas": [
+    {
+      "numero": 72,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-628"
+    },
+    {
+      "numero": 85,
+      "url": "https://www.obramat.es/productos/deposito-de-agua-potable-1000-l-25136176.html"
+    }
+  ],
+  "ensayo_2012": {
+    "fuente": 291,
+    "lectura": "contenido indexado, no texto íntegro",
+    "horas": 16,
+    "bacterias_ensayadas_numero": 6,
+    "resultado_del_ensayo": "no recuperadas mediante cultivo",
+    "pH_inicial_aproximado": "7.83",
+    "Cu_mg_L": ".177",
+    "dispersion_publicada_mg_L": ".016",
+    "no_demuestra": [
+      "esterilidad universal",
+      "duración indefinida",
+      "potabilidad de un montaje propio",
+      "retirada de todos los contaminantes químicos"
+    ]
+  },
+  "criterios_calidad": {
+    "OMS_fuente": 293,
+    "RD_3_2023_fuente_previa": 72,
+    "cobre_mg_L": "2.0",
+    "no_es_dosis_de_desinfeccion": true,
+    "no_sustituye_resto_criterios_potabilidad": true
+  },
+  "contraste_microbiologia": {
+    "2019": {
+      "fuente": 294,
+      "lectura": "contenido indexado",
+      "aleacion_importa_y_hay_viables_no_cultivables": true,
+      "resultados_no_transferidos_a_deposito_propio": true
+    },
+    "2025": {
+      "fuente": 295,
+      "lectura": "resumen PubMed",
+      "sistema": "microcosmos de calentadores con biofilm",
+      "meses": 11,
+      "Cu_ug_L_maximo_recuentos_total_y_M_avium_en_ensayo": 250,
+      "no_equivale_a": [
+        "ensayo de tanque frío",
+        "diagnóstico clínico",
+        "dosis recomendada"
+      ]
+    }
+  },
+  "ejemplo_revestimiento_no_diseno": {
+    "capacidad_cubo_L_elegida": 1000,
+    "lado_interior_m": "1",
+    "fuente_chapa": 297,
+    "referencia": "Alberts 10241120",
+    "dimensiones_mm_anunciadas": [
+      1000,
+      200,
+      ".5"
+    ],
+    "area_chapa_m2": "0.2",
+    "precio_EUR_IVA_incluido": "71.59",
+    "aptitud_agua_consumo_y_stock_y_envio_verificados": false,
+    "masa_no_usada_para_dimensionar": true,
+    "escenarios": [
+      {
+        "caras_elegidas": 5,
+        "area_m2": "5",
+        "numero_chapas_sin_perdidas": 25,
+        "EUR_solo_chapas_IVA_incluido": "1789.75",
+        "horizonte_anios_elegido_no_vida_util": 20,
+        "ahorro_neto_anual_requerido_solo_chapas_EUR": "89.4875"
+      },
+      {
+        "caras_elegidas": 6,
+        "area_m2": "6",
+        "numero_chapas_sin_perdidas": 30,
+        "EUR_solo_chapas_IVA_incluido": "2147.70",
+        "horizonte_anios_elegido_no_vida_util": 20,
+        "ahorro_neto_anual_requerido_solo_chapas_EUR": "107.385"
+      }
+    ],
+    "excluye": [
+      "soporte",
+      "solapes",
+      "mermas",
+      "uniones",
+      "fijaciones",
+      "estanqueidad",
+      "trabajo",
+      "transporte",
+      "verificación sanitaria"
+    ],
+    "no_es": [
+      "cotización de electrodeposición",
+      "precio mínimo de mercado",
+      "propuesta de modificar depósito comercial",
+      "garantía de vida útil"
+    ],
+    "ahorro_real_de_mantenimiento_observado": null
+  },
+  "comparador_independiente": {
+    "fuente_previa": 85,
+    "referencia": "25136176",
+    "capacidad_L": 1000,
+    "EUR_IVA_incluido": "290",
+    "entrega_y_stock_verificados": false,
+    "equivalencia_sanitaria_demostrada": false
+  },
+  "geometria_propias_no_cinetica": {
+    "formula": "S/V = 6/lado para cubos completos",
+    "cubo_10L_lado_m": 0.2154434690031884,
+    "cubo_10L_S_V_menos1": 27.849533001676672,
+    "cubo_1000L_S_V_menos1": 6,
+    "relacion": 4.641588833612778,
+    "no_predice": [
+      "dosis",
+      "corrosión",
+      "velocidad de inactivación",
+      "cantidad apropiada de inserto"
+    ]
+  },
+  "mejoras_revisadas": [
+    {
+      "fuente": 292,
+      "linea": "inserto de cobre",
+      "nivel": "resumen de laboratorio; no diseño propio validado"
+    },
+    {
+      "fuente": 294,
+      "linea": "aleaciones",
+      "nivel": "contenido indexado; composición y uso importan"
+    },
+    {
+      "fuente": 298,
+      "linea": "cobre en polímero",
+      "nivel": "afirmación comercial, no superioridad demostrada",
+      "folleto_indexado_adicional": "https://www.astralpipes.com/wp-content/uploads/2023/03/Astral-Tanks-Leaflet-A4_vito.pdf"
+    },
+    {
+      "fuente": 299,
+      "linea": "cerámica con cobre/plata",
+      "nivel": "resumen institucional, desempeño desigual por microorganismo y fabricación"
+    },
+    {
+      "fuente": 300,
+      "linea": "resina vegetal para plata",
+      "nivel": "resumen institucional, 25 días no duración multianual"
+    },
+    {
+      "fuente": 301,
+      "linea": "ionización cobre-plata",
+      "nivel": "revisión institucional, no recomendación universal"
+    }
+  ],
+  "licencias_patentes_y_libertad_de_explotacion_auditadas": false,
+  "decision": "priorizar almacenamiento apto protegido y mantenible; cobre como línea controlada, no seleccionar revestimiento completo de gran reserva",
+  "limites_acceso": [
+    {
+      "recurso": "PMC3312355 y PMC9072912",
+      "resultado": "CAPTCHA, no elusión ni lectura íntegra"
+    },
+    {
+      "recurso": "BanglaJOL 11271/8237",
+      "resultado": "timeout; no lectura íntegra"
+    },
+    {
+      "recurso": "ScienceDirect S0035920309000182",
+      "resultado": "403, no elusión"
+    },
+    {
+      "recurso": "Inalcoa chapa cobre",
+      "resultado": "403; no utilizado para dimensión o peso"
+    },
+    {
+      "recurso": "MDPI 2073-4441/11/5/1108/xml",
+      "resultado": "429; no protocolo adoptado"
+    }
+  ],
+  "siguiente_evidencia": [
+    "agua y servicio definidos",
+    "material por referencia",
+    "migración y microbiología sostenidas",
+    "coste instalado y mantenimiento comparable"
+  ],
+  "gasto_cero_y_potabilidad_propia_demostrados": false
+}
