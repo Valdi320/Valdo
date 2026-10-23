@@ -1,0 +1,3 @@
+record_a,record_b,normalized_name,normalized_city,warning
+1,5,alpha bikes,madrid,REVIEW ONLY; not proven to be identical
+2,3,beta supplies,barcelona,REVIEW ONLY; not proven to be identical
