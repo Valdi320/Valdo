@@ -86,3 +86,7 @@ El [anexo de piezas flexibles](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) registr
 ## Bioproducción de silicona: presupuesto no disponible
 
 La [revisión biotecnológica](BIOPRODUCCION_SILICONA.md) no identifica un cultivo doméstico completo con producción y mantenimiento verificables. No se asigna precio ni coste cero a ese sistema hipotético. Los precios anteriores de silicona comercial y herramientas describen cadenas diferentes; un calendario de financiación de investigación tampoco equivale a una oferta de equipo.
+
+## Extrusión abierta y espesantes
+
+El [anexo de extrusión](EXTRUSION_ABIERTA_SILICONA.md) conserva 50–51 USD como coste orientativo publicado de Allstruder, sin presupuesto español instalado. THI-VEX 1 oz, peso anunciado 0,03 kg, figura a 4,70 GBP con IVA británico; entrega e impuestos finales españoles no calculados. No se suman como una cesta compatible ni se comparan directamente con un cabezal de dos componentes. Faltan impresora anfitriona, material, jeringas, boquillas, preparación, limpieza y rechazos. [Datos y exclusiones](datos/extrusion_silicona_2026-10-23.json).

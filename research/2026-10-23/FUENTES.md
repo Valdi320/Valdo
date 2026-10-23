@@ -296,3 +296,13 @@ Referencias adicionales de detalle: [materiales Voron](https://docs.vorondesign.
 266. [Caltech · Degradación enzimática de enlaces silicio-carbono en metilsiloxanos, 25/01/2024](https://www.caltech.edu/about/news/teaching-nature-to-break-man-made-chemical-bonds)
 267. [SKZ · Proyecto de reciclaje continuo de siliconas, anuncio 20/02/2026, financiación 2025–2028](https://www.skz.de/en/newsarticle/continuous-recycling-of-silicone-elastomers)
 268. [WACKER · Comunicación 33 de 14/07/2022, biomethanol, balance de masas y pasos industriales](https://www.wacker.com/cms/media/en/documents/pressrelease-pdf/pm2022/33_k2022_elastosil_eco_de.pdf)
+
+269. [Shiwarski Lab · Allstruder, arquitectura, componentes, coste orientativo y alcance de medidas](https://shiwarskilab.com/allstruder/)
+270. [Allstruder · README fijado, declaración CERN-OHL-P-2.0](https://github.com/hintonthomas/Allstruder/blob/809cda985a016ebdb54eb9294d0098ee85e7292d/README.md)
+271. [Allstruder · Árbol recursivo fijado, archivos y extensiones sin truncamiento](https://api.github.com/repos/hintonthomas/Allstruder/git/trees/809cda985a016ebdb54eb9294d0098ee85e7292d?recursive=1)
+272. [Allstruder · Cabecera de Pusher Block v1.3.STEP, AP214 y exportador](https://github.com/hintonthomas/Allstruder/blob/809cda985a016ebdb54eb9294d0098ee85e7292d/Building%20Allstruders/Main%20Parts%20-%20Default%20Configuration/STP/Pusher%20Block%20v1.3.STEP)
+273. [Allstruder · Assembly Panels, 24 páginas descargadas y revisadas visualmente como hoja de contacto](https://github.com/hintonthomas/Allstruder/blob/809cda985a016ebdb54eb9294d0098ee85e7292d/Assembly%20Panels.pdf)
+274. [Universidad de Florencia · From Casting to Printing, 13/03/2026; resumen indexado, apertura MDPI 429](https://www.mdpi.com/2076-3417/16/6/2764)
+275. [Smooth-On · THI-VEX, función, base de adición, incompatibilidades y almacenamiento](https://www.smooth-on.com/products/thi-vex/)
+276. [Bentley Advanced Materials · THI-VEX 1 oz, 0,03 kg y precio con IVA británico](https://www.benam.co.uk/thi-vex)
+277. [Bioprinter híbrida abierta · Resumen indexado, sellos de silicona y GPLv3; apertura PMC con CAPTCHA](https://pmc.ncbi.nlm.nih.gov/articles/PMC9123455/)

@@ -197,3 +197,7 @@ El [anexo de juntas y bombas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md) identifi
 ### Bioproducción de silicona de esta misma fecha
 
 El [anexo biotecnológico](BIOPRODUCCION_SILICONA.md) identifica evidencia de enlaces Si-C y síntesis enzimática de PDMS. Distingue producir un catalizador de criar un organismo que entregue silicona final desde recursos locales. Los precursores preparados, formulación, recuperación y balance doméstico permanecen sin resolver. Los trabajos parcialmente accesibles se identifican como tales; no se promete un plazo de autosuficiencia.
+
+### Extrusión abierta y silicona de esta misma fecha
+
+El [anexo de extrusión](EXTRUSION_ABIERTA_SILICONA.md) verifica declaración CERN-OHL-P-2.0 y archivos STEP de Allstruder, con límites de lectura y validación. Separa el coste orientativo del mecanismo del proceso completo y calcula cómo cambia la fuerza al variar el diámetro de jeringa. La evidencia de formulación e impresión de silicona no acredita una combinación propia lista ni producción local del polímero.

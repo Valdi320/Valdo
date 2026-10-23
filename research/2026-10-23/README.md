@@ -24,11 +24,12 @@ Primera entrega fechada para ampliar FDAA hacia vivienda, energía, agua, alimen
 - [Corrosión, uniones desmontables y materiales auxiliares](CORROSION_UNIONES_MATERIALES_AUXILIARES.md)
 - [Juntas, bombas y fabricación de piezas elastoméricas](JUNTAS_BOMBAS_FABRICACION_ELASTOMEROS.md)
 - [Bioproducción de silicona: organismos, enzimas y dependencias](BIOPRODUCCION_SILICONA.md)
+- [Extrusión abierta de silicona: archivos, materiales y coste completo](EXTRUSION_ABIERTA_SILICONA.md)
 
 **Decisión provisional:** comprobar primero vivienda admisible, agua segura y demanda térmica. Medir necesidades, trabajo y reparación antes de comprar maquinaria o ampliar automatización.
 
 **Estado de la evidencia:** diez consultas PVGIS y anexos de agua, alimentación, vivienda, materiales, IA, ropa, higiene y movilidad. La integración contrasta cargas, potencia simultánea y costes parciales con reposición hipotética. No hay finca seleccionada, sistema completo validado, dieta autónoma o presupuesto instalado. No se acredita gasto cero.
 
-**Continuación:** origen y reposición de precursores de silicona, y evidencia de extrusores abiertos. Sigue pendiente la comparación de una bomba concreta y sus recambios frente a menor necesidad de bombeo. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
+**Continuación:** especificar una pieza no crítica y comparar proceso completo de moldeo con extrusión abierta; investigar origen y reposición de precursores de silicona. Sigue pendiente la comparación de una bomba concreta y sus recambios frente a menor necesidad de bombeo. La ventaja de un producto cerrado deberá demostrarse para una función equivalente antes de aceptar la excepción a la prioridad abierta.
 
 Se añade a la [especificación canónica](../../docs/PROYECTO_CANONICO.md) y a la [campaña anterior](../2026-10-13/README.md), sin reemplazarlas. No se publican datos domésticos privados ni se modifica la decisión pendiente sobre la licencia global del repositorio.

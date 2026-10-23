@@ -1,0 +1,222 @@
+{
+  "fecha": "2026-10-23",
+  "estado": "revisión documental y visual, lectura parcial de CAD y aritmética; sin instalación, adaptación, impresión, mezcla o compras",
+  "fuentes": [
+    {
+      "numero": 269,
+      "titulo": "Shiwarski Lab · Allstruder, arquitectura, componentes, coste orientativo y alcance de medidas",
+      "url": "https://shiwarskilab.com/allstruder/"
+    },
+    {
+      "numero": 270,
+      "titulo": "Allstruder · README fijado, declaración CERN-OHL-P-2.0",
+      "url": "https://github.com/hintonthomas/Allstruder/blob/809cda985a016ebdb54eb9294d0098ee85e7292d/README.md"
+    },
+    {
+      "numero": 271,
+      "titulo": "Allstruder · Árbol recursivo fijado, archivos y extensiones sin truncamiento",
+      "url": "https://api.github.com/repos/hintonthomas/Allstruder/git/trees/809cda985a016ebdb54eb9294d0098ee85e7292d?recursive=1"
+    },
+    {
+      "numero": 272,
+      "titulo": "Allstruder · Cabecera de Pusher Block v1.3.STEP, AP214 y exportador",
+      "url": "https://github.com/hintonthomas/Allstruder/blob/809cda985a016ebdb54eb9294d0098ee85e7292d/Building%20Allstruders/Main%20Parts%20-%20Default%20Configuration/STP/Pusher%20Block%20v1.3.STEP"
+    },
+    {
+      "numero": 273,
+      "titulo": "Allstruder · Assembly Panels, 24 páginas descargadas y revisadas visualmente como hoja de contacto",
+      "url": "https://github.com/hintonthomas/Allstruder/blob/809cda985a016ebdb54eb9294d0098ee85e7292d/Assembly%20Panels.pdf"
+    },
+    {
+      "numero": 274,
+      "titulo": "Universidad de Florencia · From Casting to Printing, 13/03/2026; resumen indexado, apertura MDPI 429",
+      "url": "https://www.mdpi.com/2076-3417/16/6/2764"
+    },
+    {
+      "numero": 275,
+      "titulo": "Smooth-On · THI-VEX, función, base de adición, incompatibilidades y almacenamiento",
+      "url": "https://www.smooth-on.com/products/thi-vex/"
+    },
+    {
+      "numero": 276,
+      "titulo": "Bentley Advanced Materials · THI-VEX 1 oz, 0,03 kg y precio con IVA británico",
+      "url": "https://www.benam.co.uk/thi-vex"
+    },
+    {
+      "numero": 277,
+      "titulo": "Bioprinter híbrida abierta · Resumen indexado, sellos de silicona y GPLv3; apertura PMC con CAPTCHA",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9123455/"
+    }
+  ],
+  "Allstruder": {
+    "commit": "809cda985a016ebdb54eb9294d0098ee85e7292d",
+    "fecha_commit": "2026-08-04T09:52:11Z",
+    "fuentes": [
+      269,
+      270,
+      271,
+      272,
+      273
+    ],
+    "licencia_declarada_README": "CERN-OHL-P-2.0",
+    "archivo_LICENSE_separado_en_arbol": false,
+    "auditoria_juridica_integral": false,
+    "arbol": {
+      "entradas": 138,
+      "archivos": 104,
+      "truncado": false,
+      "extensiones": {
+        "stl": 51,
+        "step": 46,
+        "3mf": 5,
+        "pdf": 1,
+        "md": 1
+      }
+    },
+    "STEP_cabecera_leida": {
+      "path": "Building Allstruders/Main Parts - Default Configuration/STP/Pusher Block v1.3.STEP",
+      "blob_sha": "2a244f6aded7612cfe7f9cd360d3b75c98994ef2",
+      "formato": "STEP AP214",
+      "exportador_indicado": "SolidWorks 2024",
+      "geometria_abierta_medida_o_renderizada": false
+    },
+    "STEP_frame": {
+      "path": "Building Allstruders/Main Parts - Default Configuration/STP/Frame v1.3.STEP",
+      "blob_sha": "44c9912c186ce83e0a197e03c83785d47825d59a",
+      "respuesta_plugin_contenido": "vacía; no se afirma lectura"
+    },
+    "montaje": {
+      "archivo": "Assembly Panels.pdf",
+      "bytes": 2363826,
+      "paginas": 24,
+      "sha256": "0ef599e7e6b381ca55cd6ae600252aba905c1dcebe1ae5879c19b6feded44c01",
+      "revision_visual": "hoja de contacto de las 24 páginas",
+      "lista_materiales_valorada_extraida": false,
+      "no_acredita": [
+        "tolerancias verificadas",
+        "montaje real",
+        "lista completa por referencia"
+      ]
+    },
+    "componentes_comerciales_segun_laboratorio": [
+      "guía MGN9C",
+      "husillo Tr8x8 y tuerca",
+      "rodamientos 608",
+      "correa y poleas 2GT",
+      "motor",
+      "tornillería",
+      "jeringa y boquilla"
+    ],
+    "coste_USD_orientativo_proyecto": [
+      50,
+      51
+    ],
+    "precio_entregado_Espana": null,
+    "ensayo_mecanismo_declarado_laboratorio": {
+      "deformacion_hasta_um": 20,
+      "carga_calculada_N": 24,
+      "no_equivale_a": [
+        "fuerza máxima autorizada",
+        "tolerancia de pieza impresa",
+        "vida útil"
+      ]
+    },
+    "pagina_laboratorio_silicone_en_texto": false,
+    "impresion_silicona_propia_validada": false
+  },
+  "calculo_propio_no_ensayo": {
+    "formula_fuerza": "F = P * pi * d**2 / 4, unidades SI",
+    "formula_recorrido": "L = V / area",
+    "modelos": [
+      {
+        "diametro_interior_mm_elegido": 10,
+        "presion_bar_elegida": 2,
+        "fuerza_ideal_N": "15.707963267948965000000",
+        "volumen_mL_elegido": 1,
+        "recorrido_ideal_mm": "12.73239544735162782796339235"
+      },
+      {
+        "diametro_interior_mm_elegido": 20,
+        "presion_bar_elegida": 2,
+        "fuerza_ideal_N": "62.8318530717958600000",
+        "volumen_mL_elegido": 1,
+        "recorrido_ideal_mm": "3.183098861837906956990848088"
+      }
+    ],
+    "excluye": [
+      "fricción",
+      "deformación",
+      "boquilla",
+      "curado",
+      "tolerancias",
+      "validación del montaje"
+    ],
+    "presion_no_recomendada_para_operar": true,
+    "relacion_fuerza_al_duplicar_diametro": 4,
+    "relacion_recorrido_para_igual_volumen": "1/4"
+  },
+  "formulacion": {
+    "estudio_fuente": 274,
+    "fecha_publicacion_segun_indice": "2026-03-13",
+    "material_segun_resumen": "EcoFlex 00-50 con THI-VEX",
+    "equipo": "Lynxter S300X industrial",
+    "mejor_formulacion_entre_ensayadas_por_ciento_masa_segun_resumen": "4.0",
+    "base_exacta_porcentaje_metodos_mecanica_suplemento_auditados": false,
+    "receta_para_Allstruder_o_material_distinto": false,
+    "fabricante_aditivo_fuente": 275,
+    "base_adicion_ficha": "porcentaje del componente A",
+    "incompatibilidades_enumeradas": [
+      "Mold Max 40",
+      "Mold Max 60",
+      "Solaris"
+    ],
+    "fabricante_indica_almacenamiento_limitado": true,
+    "formulacion_quimica_completa_abierta_verificada": false,
+    "aprobacion_agua_potable": false
+  },
+  "demostracion_hibrida": {
+    "fuente": 277,
+    "equipo_descrito": "Prusa i3 MK3 con módulo de jeringa",
+    "licencia_segun_ficha_indexada": "GPLv3",
+    "ejemplo_segun_resumen": "cámara con sellos de silicona extruidos para integrar ventanas de vidrio",
+    "texto_integro_archivos_y_ensayo_presion_verificados": false
+  },
+  "precio_aditivo": {
+    "fuente": 276,
+    "producto": "THI-VEX 1 oz",
+    "peso_kg_anunciado": ".03",
+    "GBP_IVA_britanico_incluido": "4.70",
+    "envio_importacion_e_impuestos_Espana_calculados": false,
+    "cesta_completa_o_compatibilidad_validada": false
+  },
+  "decision": "candidato abierto para estudio; sin compra o adaptación elegida; comparar primero proceso completo con moldeo para piezas sencillas",
+  "limites_acceso": [
+    {
+      "recurso": "Allstruder LICENSE",
+      "resultado": "404; árbol y README sitúan la declaración en README, no se inventa archivo"
+    },
+    {
+      "recurso": "Allstruder Frame STEP con plugin",
+      "resultado": "contenido vacío; no se afirma lectura"
+    },
+    {
+      "recurso": "Allstruder Assembly PDF con navegador de investigación",
+      "resultado": "tipo application/octet-stream no soportado; lectura local del archivo público, no bloqueo de autorización"
+    },
+    {
+      "recurso": "MDPI 16/6/2764",
+      "resultado": "429; solo resumen indexado, sin elusión"
+    },
+    {
+      "recurso": "PMC9123455",
+      "resultado": "CAPTCHA; resumen indexado, no se elude"
+    }
+  ],
+  "continuacion": [
+    "especificación de pieza no crítica",
+    "referencias y presupuesto completo del proceso",
+    "compatibilidad y curado",
+    "origen y reposición de precursores"
+  ],
+  "fabricacion_local_de_silicona_y_gasto_cero_demostrados": false
+}
