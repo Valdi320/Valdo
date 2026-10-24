@@ -1,0 +1,84 @@
+MOT DANG JOB 38 — CORRECTED DELIVERY, PART 1 OF 5
+Entries 01-10 (10 of 50). Prepared from the original 22 Oct 2026 evidence set, unchanged.
+The dates are observation dates, not closure dates. See all five parts for the complete set.
+
+01. [R001] Central Kad Suan Keaw — CLOSED
+Mot Dang page: https://motdang.net/cm/p/central-kad-suan-keaw-7057867885.html
+Map business name: เซ็นทรัลกาดสวนแก้ว
+Business location: 21 Huay Kaew Rd, Suthep, Mueang Chiang Mai District, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%A5%E0%B8%81%E0%B8%B2%E0%B8%94%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7/@18.7965545,98.9400568,14z/data=!4m10!1m2!2m1!1sCentral+Kad+Suan+Kaew+Chiang+Mai!3m6!1s0x30da3b002c4fbd8d:0x9a726070673a3f34!8m2!3d18.7965545!4d98.9761057!15sCiBDZW50cmFsIEthZCBTdWFuIEthZXcgQ2hpYW5nIE1haZIBD3Nob3BwaW5nX2NlbnRlcuABAA!16s%2Fg%2F11yh4nwx8c?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:41:18.657Z
+Place identity notes: One place only. Do not also count the mall listing Kad Suan Kaew as a second place; source must be read as current map status, not the date of closure.
+02. [R002] บีทูเอส B2S (กาดสวนแก้ว) — CLOSED
+Mot Dang page: https://motdang.net/cm/p/b2s-17940.html
+Map business name: บีทูเอส
+Business location: 21 อาคารอุทยานการค้ากาดสวนแก้ว ชั้น 3 ยูนิต BE, 3136 Huay Kaew Rd, Suthep, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/%E0%B8%9A%E0%B8%B5%E0%B8%97%E0%B8%B9%E0%B9%80%E0%B8%AD%E0%B8%AA/@18.7962249,98.9735573,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a8ee47f2123:0x62d0347869bdced8!8m2!3d18.7962249!4d98.9761322!16s%2Fg%2F11h0s2ppn?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:43:59.390Z
+Place identity notes: Exact Kad Suan Kaew third-floor bookstore matched by branch address, chain website and phone. Current map closure marker is the evidence; old reviews are not presented as recent notices. Distinct retailer from the shopping centre.
+03. [R003] พรอมเมนาดา รีสอร์ท มอลล์ · Pharommenada Resort Mall — CLOSED
+Mot Dang page: https://motdang.net/cm/p/76062614718913955.html
+Map business name: Promenada Chiang Mai
+Business location: 192-193 Moo 2, Somphot Chiang Mai 700 Pi Rd, Tha Sala, Mueang Chiang Mai, Chiang Mai, Thailand
+Closure evidence: https://www.google.com/maps/place/Promenada+Chiang+Mai/@18.7658871,99.0339949,17z/data=!3m1!4b1!4m6!3m5!1s0x30da2f92904e1e09:0x6bf2838de804a854!8m2!3d18.7658871!4d99.0365698!16s%2Fg%2F1234brkb?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:49:15.045Z
+Place identity notes: Matched by name, street number, road, subdistrict, phone and website. Current map closure marker observed; no closure date inferred.
+04. [R004] Mimi's Garden — CLOSED
+Mot Dang page: https://motdang.net/cm/p/mimi-s-garden-899264646947831592.html
+Map business name: Mimis Garden
+Business location: Building B, Promenada Chiang Mai, 192-193 Somphot Chiang Mai 700 Pi Rd, Mueang Chiang Mai, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Mimis+Garden/@18.7659121,99.0351213,17z/data=!3m1!4b1!4m6!3m5!1s0x30da31c1668308cf:0x6e164cb24e0be64f!8m2!3d18.7659121!4d99.0376962!16s%2Fg%2F11gtg5ybgv?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:49:48.705Z
+Place identity notes: Specific former shop matched by name, Promenada building/address and exact phone. Closure of this location only; no date of closure inferred.
+05. [R005] Rimping Supermarket (ริมปิง) — CLOSED
+Mot Dang page: https://motdang.net/cm/p/rimping-supermarket-880080290349954490265.html
+Map business name: Rimping Supermarket Promenada branch
+Business location: 1st Floor, Building A, Promenada, 192 Moo 2, Tha Sala, Mueang Chiang Mai, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Rimping+Supermarket+Promenada+branch/@18.7671754,99.0342109,17z/data=!3m1!4b1!4m6!3m5!1s0x30da2f8d6435f6fd:0x88c1ea9e5ea5fea6!8m2!3d18.7671754!4d99.0367858!16s%2Fg%2F11ckr4k2v7?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T13:55:19.517Z
+Place identity notes: Matched by explicit Promenada branch name, location in Promenada and brand website. Phone values differ and are recorded, not asserted to match. Closed location, not a claim that the chain closed.
+06. [R006] Punspace Nimman — CLOSED
+Mot Dang page: https://motdang.net/cm/p/punspace-nimman-2505598103.html
+Map business name: Punspace Nimman
+Business location: 14 Siri Mangkalajarn Road Lane 11, Suthep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Punspace+Nimman/@18.7935205,98.9699085,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a889d9cf609:0x958a8f7924d5a5a1!8m2!3d18.7935205!4d98.9724834!16s%2Fg%2F11_r6j063?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:00:35.337Z
+Place identity notes: Matched by exact branch name and street number/soi. Closure of the Nimman location only, not other Punspace locations; no closure date inferred.
+07. [R007] brown cafe — CLOSED
+Mot Dang page: https://motdang.net/cm/p/brown-cafe-5411784121.html
+Map business name: Brown Café
+Business location: 7/3 Nimmana Haeminda Road Lane 9, Suthep, Mueang Chiang Mai, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Brown+Caf%C3%A9/@18.7976748,98.9679352,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a6271df9085:0xa73d15bdce42ae7c!8m2!3d18.7976748!4d98.9679352!16s%2Fg%2F11dxr0pm_7?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:05:58.624Z
+Place identity notes: Matched by café name, Nimman Soi 9 and nearby pin. Mot Dang has no street number or phone; do not claim a phone match. Current map closure marker; no closure date inferred.
+08. [R008] Chapter One — CLOSED
+Mot Dang page: https://motdang.net/cm/p/chapter-one-10677606512.html
+Map business name: Chapterone/cm
+Business location: 55/8 Room E Huay Kaew Road, Suthep, Chiang Mai 50200, Thailand
+Closure evidence: https://www.google.com/maps/place/Chapterone%2Fcm/@18.7973444,98.9720731,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3b22e9ddd15f:0x714868f2a645c3a3!8m2!3d18.7973444!4d98.974648!16s%2Fg%2F11hds_7pmf?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:06:34.986Z
+Place identity notes: Matched by ChapterOneCM name/handle and same location on Huay Kaew Road. Phone numbers differ and are retained as a discrepancy. Current map marker, not the secondary article, is closure evidence.
+09. [R009] Yen CNX — CLOSED
+Mot Dang page: https://motdang.net/cm/p/yen-cnx-010039474096063528510165.html
+Map business name: Yen.CNX
+Business location: 29 Koaklang Road, Wat Ket, Mueang Chiang Mai, Chiang Mai 50000, Thailand
+Closure evidence: https://www.google.com/maps/place/Yen.CNX/@18.760242,99.0013177,17z/data=!3m1!4b1!4m6!3m5!1s0x30da316af5dceff5:0xa56e395aee8ac504!8m2!3d18.760242!4d99.0038926!16s%2Fg%2F11rhvsc0vv?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:07:45.599Z
+Place identity notes: Matched by distinctive name and exact house number/road. Mot Dang says Nong Hoi while Maps says Wat Ket; retain the subdistrict discrepancy. No closure date inferred.
+10. [R010] Myst — CLOSED
+Mot Dang page: https://motdang.net/cm/p/myst-3217455861.html
+Map business name: Myst MAYA Chiang Mai
+Business location: 55/5 Huay Kaew Road, MAYA Lifestyle Shopping Center, Chang Phueak, Mueang Chiang Mai, Chiang Mai 50300, Thailand
+Closure evidence: https://www.google.com/maps/place/Myst+MAYA+Chiang+Mai/@18.8025171,98.964655,17z/data=!3m1!4b1!4m6!3m5!1s0x30da3a61c9338147:0xa3a085aa27de2bb0!8m2!3d18.8025171!4d98.9672299!16s%2Fg%2F11bz08_bck?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D
+Status shown: Cerrado permanentemente
+Observed UTC: 2026-10-21T14:08:55.189Z
+Place identity notes: Matched by name and location at MAYA (Mot Dang lists floor 6). Closure of this bar only, not the shopping centre; no closure date inferred.
