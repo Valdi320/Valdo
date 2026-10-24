@@ -1,0 +1,63 @@
+MOT DANG JOB 38 — 50-ENTRY RETRIEVAL INDEX
+Corrected delivery 24 October 2026. Source data observed 21–22 October 2026.
+No new closure dates claimed. Each part has 10 entries with original closure evidence URL, address, observation time, and matching notes.
+
+Part 1 (01-10): https://raw.githubusercontent.com/Valdi320/Valdo/deliveries/motdang-job38-20261022/freelance-deliveries/job38-resubmission-20261024/part-01-10.txt
+Part 2 (11-20): https://raw.githubusercontent.com/Valdi320/Valdo/deliveries/motdang-job38-20261022/freelance-deliveries/job38-resubmission-20261024/part-11-20.txt
+Part 3 (21-30): https://raw.githubusercontent.com/Valdi320/Valdo/deliveries/motdang-job38-20261022/freelance-deliveries/job38-resubmission-20261024/part-21-30.txt
+Part 4 (31-40): https://raw.githubusercontent.com/Valdi320/Valdo/deliveries/motdang-job38-20261022/freelance-deliveries/job38-resubmission-20261024/part-31-40.txt
+Part 5 (41-50): https://raw.githubusercontent.com/Valdi320/Valdo/deliveries/motdang-job38-20261022/freelance-deliveries/job38-resubmission-20261024/part-41-50.txt
+
+RECORD INDEX (one unique Mot Dang business URL per row):
+01. R001 | Central Kad Suan Keaw | https://motdang.net/cm/p/central-kad-suan-keaw-7057867885.html
+02. R002 | บีทูเอส B2S (กาดสวนแก้ว) | https://motdang.net/cm/p/b2s-17940.html
+03. R003 | พรอมเมนาดา รีสอร์ท มอลล์ · Pharommenada Resort Mall | https://motdang.net/cm/p/76062614718913955.html
+04. R004 | Mimi's Garden | https://motdang.net/cm/p/mimi-s-garden-899264646947831592.html
+05. R005 | Rimping Supermarket (ริมปิง) | https://motdang.net/cm/p/rimping-supermarket-880080290349954490265.html
+06. R006 | Punspace Nimman | https://motdang.net/cm/p/punspace-nimman-2505598103.html
+07. R007 | brown cafe | https://motdang.net/cm/p/brown-cafe-5411784121.html
+08. R008 | Chapter One | https://motdang.net/cm/p/chapter-one-10677606512.html
+09. R009 | Yen CNX | https://motdang.net/cm/p/yen-cnx-010039474096063528510165.html
+10. R010 | Myst | https://motdang.net/cm/p/myst-3217455861.html
+11. R011 | I'm Your Vegan | https://motdang.net/cm/p/i-m-your-vegan-9872196617.html
+12. R012 | Gateway | https://motdang.net/cm/p/gateway-5933370534.html
+13. R013 | Clay Studio Café | https://motdang.net/cm/p/clay-studio-caf-3440864915.html
+14. R014 | Kanjana Restaurant | https://motdang.net/cm/p/kanjana-restaurant-3864197358.html
+15. R016 | Imm Aim vegetarian restaurant | https://motdang.net/cm/p/imm-aim-vegetarian-restaurant-4519103091.html
+16. R018 | Bibie | https://motdang.net/cm/p/bibie-4596413943.html
+17. R019 | Full Moon Wellness | https://motdang.net/cr/p/full-moon-wellness-5750601590.html
+18. R020 | Forest Cafe | https://motdang.net/cr/p/forest-cafe-41848904048332650850.html
+19. R021 | Full Moon Bar | https://motdang.net/cm/p/full-moon-bar-1491288350.html
+20. R022 | Pentatonic Rock Bar | https://motdang.net/cm/p/pentatonic-rock-bar-4693594489.html
+21. R023 | Crazy german | https://motdang.net/cm/p/crazy-german-6354525386.html
+22. R024 | City Home Guesthouse | https://motdang.net/cr/p/city-home-guesthouse-484142603.html
+23. R025 | SS1254372 Cafe | https://motdang.net/cm/p/ss1254372-cafe-6860299486.html
+24. R026 | iberry garden | https://motdang.net/cm/p/iberry-garden-5340666521.html
+25. R027 | Little Story Cafe | https://motdang.net/cm/p/little-story-cafe-6163753685.html
+26. R028 | My Secret Cafe (also called My Secret Cafe in town) | https://motdang.net/cm/p/my-secret-cafe-3907871477.html
+27. R029 | peppermint coffee house | https://motdang.net/cm/p/peppermint-coffee-house-2055855118.html
+28. R030 | New Delhi Indian Restaurant | https://motdang.net/cm/p/new-delhi-indian-restaurant-10591363905.html
+29. R031 | Overstand | https://motdang.net/cm/p/overstand-3632320011.html
+30. R032 | Cooking Love | https://motdang.net/cm/p/cooking-love-3385473023.html
+31. R033 | THC Roof top bar | https://motdang.net/cm/p/thc-roof-top-bar-5203532421.html
+32. R034 | Looper Co. | https://motdang.net/cm/p/looper-co-6217577485.html
+33. R035 | Parallel Universe of Lunar 2 on the Hidden Moon | https://motdang.net/cm/p/parallel-universe-of-lunar-2-on-the-hidden-moon-5331035321.html
+34. R036 | Bus Bar | https://motdang.net/cm/p/bus-bar-3222795502.html
+35. R037 | We Didn’t Land On The Moon Since 1987 | https://motdang.net/cm/p/we-didn-t-land-on-the-moon-since-1987-9612879817.html
+36. R038 | The Roast | https://motdang.net/cr/p/the-roast-772907454.html
+37. R039 | Concept Yard | https://motdang.net/cr/p/concept-yard-960934932.html
+38. R040 | DaMa Cafe Chingrai | https://motdang.net/cr/p/dama-cafe-chingrai-4555833893.html
+39. R041 | Norn Nung Len | https://motdang.net/cr/p/norn-nung-len-6218636593.html
+40. R042 | East Bar | https://motdang.net/cm/p/east-bar-12441290001.html
+41. R043 | Ratana's Kitchen | https://motdang.net/cm/p/ratana-s-kitchen-1041248368.html
+42. R044 | Inter Bar | https://motdang.net/cm/p/inter-bar-1041255922.html
+43. R045 | คาเฟ่ เม้าท์ฟิวล์ | https://motdang.net/cm/p/cafe-mouthfeel-3897763597.html
+44. R046 | Coco Cafe | https://motdang.net/cm/p/coco-cafe-7023419521.html
+45. R047 | Coffee Plus | https://motdang.net/cm/p/coffee-plus-5626559221.html
+46. R048 | Brick House Hostel | https://motdang.net/cm/p/brick-house-hostel-578887285.html
+47. R049 | Deejai Backpackers | https://motdang.net/cm/p/deejai-backpackers-2638262561.html
+48. R050 | PM Guesthouse | https://motdang.net/cm/p/pm-guesthouse-4059564674.html
+49. R051 | Charoen Suan Aek | https://motdang.net/cm/p/charoen-suan-aek-6502039586.html
+50. R052 | Rasta Love Cafe' Chiangmai | https://motdang.net/cm/p/rasta-love-cafe-chiangmai-048753742815279107874.html
+
+For each record, open its part file above for the original source evidence and place identity notes.
