@@ -1,0 +1,55 @@
+name: CSV audit demo - reproducible QA
+on:
+  push:
+    branches:
+      - portfolio-csv-audit-demo
+    paths:
+      - 'portfolio/csv-audit-demo/**'
+      - '.github/workflows/csv-audit-demo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: portfolio/csv-audit-demo
+    steps:
+      - name: Check out public portfolio demonstration
+        uses: actions/checkout@v4
+      - name: Run standard-library unit tests
+        run: python3 -m unittest test_audit_csv.py -v
+      - name: Reproduce CSV audit and verify row preservation and SHA-256 evidence
+        run: |
+          python3 audit_csv.py sample_input.csv --outdir output --id id --name name --city city --required id,name,city --numeric amount
+          python3 - <<'PY'
+          import csv
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          source = root / "sample_input.csv"
+          output = root / "output"
+          receipt = json.loads((output / "receipt.json").read_text(encoding="utf-8"))
+          digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+
+          assert digest(source) == receipt["source_sha256"], "Input digest mismatch"
+          for filename, checksum in receipt["output_sha256"].items():
+              assert digest(output / filename) == checksum, f"Output digest mismatch: {filename}"
+          with source.open(encoding="utf-8", newline="") as file:
+              input_rows = list(csv.reader(file))
+          with (output / "annotated_rows.csv").open(encoding="utf-8", newline="") as file:
+              tagged_rows = list(csv.reader(file))
+          assert tagged_rows[0][:len(input_rows[0])] == input_rows[0], "Source header changed"
+          assert [r[:len(input_rows[0])] for r in tagged_rows[1:]] == input_rows[1:], "Source values or row order changed"
+          assert receipt["source_records"] == receipt["annotated_records"] == 5
+          assert sum(receipt["issues"].values()) == 8
+          assert receipt["candidate_pairs"] == 2
+          assert receipt["automatically_merged_or_deleted"] is False
+          print("PASS: source rows preserved; SHA-256 receipts match; 8 flags; 2 review-only pairs")
+          PY
