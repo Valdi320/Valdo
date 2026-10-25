@@ -10,6 +10,7 @@ const out=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const chapters=[
  ['README.md','resumen','Objetivo y decisión actual'],
+ ['16-suspension-reproducible.md','suspension-reproducible','16 · Fabricar la suspensión'],
  ['15-avance-coordinado-y-estudio-axial.md','avance-coordinado','15 · Avance conjunto y presupuesto axial'],
  ['cad/estudios/README.md','presupuesto-axial','CAD · Restricción axial publicada'],
  ['cad/REVISION.md','revision-servicio','CAD · Revisión de cargas y servicio'],
@@ -75,7 +76,7 @@ const html=`<!doctype html>
 @media(max-width:1000px){.layout{display:block;padding:0 16px;margin-top:18px}aside{position:static;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:6px 16px}aside strong{width:100%}aside a{padding:4px 0}.chapter{padding:26px 23px}.chapter h1{font-size:26px}body{font-size:16px}}
 @media print{body{background:white;font-size:10pt;line-height:1.4}header{background:white;color:#173143;padding:10mm 0;border-bottom:2px solid #087b7c}header p,header .eyebrow{color:#273c48}header h1{font-size:25pt}.layout{display:block;padding:0;margin:15px 0}aside{display:none}.chapter{border:0;border-radius:0;padding:0;margin:20px 0;break-before:page}.chapter:first-child{break-before:auto}.chapter h1{font-size:20pt}.chapter h2{font-size:15pt}table{min-width:0;font-size:8pt}.table-scroll{overflow:visible}th,td{padding:5px}h1,h2,h3{break-after:avoid}tr,figure{break-inside:avoid}a{color:inherit}footer{padding:0}.meta span{border-color:#a9bfc4}}
 </style></head><body>
-<header id="inicio"><div class="eyebrow">FDAA · Caso aplicado · Investigación mecánica</div><h1>Xiaomi X20 Pro<br>Base resistente y control abierto por fases</h1><p>Avance conjunto ChatGPT–Codex: cotas públicas, estudio axial FreeCAD, cargas y acceso de mantenimiento. Captura física opcional preparada para comprobaciones posteriores.</p><div class="meta"><span>D102GL · D102-JZEU</span><span>25 de octubre de 2026</span><span>Estudio v0.2 · Sin medidas internas ni validación física</span></div></header>
+<header id="inicio"><div class="eyebrow">FDAA · Caso aplicado · Investigación mecánica</div><h1>Xiaomi X20 Pro<br>Base resistente y control abierto por fases</h1><p>Nuevo requisito: fabricar también la función elástica de la suspensión. Comparación de lámina metálica, alambre y flexuras impresas, junto al estudio axial FreeCAD y la revisión de acceso coordinada con Codex.</p><div class="meta"><span>D102GL · D102-JZEU</span><span>25 de octubre de 2026</span><span>Estudio v0.2 · Suspensión propia en fase conceptual</span></div></header>
 <div class="layout"><aside aria-label="Índice"><strong>Contenido del dossier</strong>${toc}</aside><main>${body}</main></div>
 <footer>Investigación documental propia. Referencias y límites junto a cada hallazgo. Texto, figura y plantillas utilizables sin conexión; las fuentes externas requieren Internet. Proyecto: <a href="https://github.com/Valdi320/Valdo/tree/master/research/2026-10-25-xiaomi-x20-pro">Valdi320/Valdo · Xiaomi X20 Pro</a>.</footer>
 </body></html>`;

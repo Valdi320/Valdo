@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CERN-OHL-P-2.0 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1510" viewBox="0 0 1000 1510" role="img" aria-labelledby="titulo descripcion" lang="es">
+  <title id="titulo">Suspensión reproducible — concepto</title>
+  <desc id="descripcion">Esquema funcional sin escala de una suspensión con lámina elástica. La lámina está empotrada por su extremo izquierdo. Su posición libre se muestra discontinua; un contacto de un brazo con pivote independiente la flexiona hacia arriba. La lámina ejerce retorno hacia abajo sobre el brazo. Un segundo panel distingue núcleo estructural, soporte o cartucho sustituible y elemento elástico reemplazable. Retención, topes y guiado son funciones separadas. Extraer el cartucho con la energía contenida es un objetivo pendiente de diseño y prueba. No se muestra geometría real de Xiaomi ni dimensiones o cargas.</desc>
+  <metadata>SPDX-License-Identifier: CERN-OHL-P-2.0. Esquema original del proyecto X20 Pro abierto. No es un plano de fabricación.</metadata>
+  <defs>
+    <marker id="flecha-retorno" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L14 7L0 14Z" fill="#b13f28"/>
+    </marker>
+    <pattern id="rayado-fijo" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#d8e0e5"/>
+      <path d="M-3 3L3-3 M0 12L12 0 M9 15L15 9" stroke="#8293a0" stroke-width="1.5"/>
+    </pattern>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #173043; }
+      .title { font-size: 38px; font-weight: 700; }
+      .subtitle { font-size: 21px; }
+      .panel-title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 600; }
+      .body { font-size: 21px; }
+      .small { font-size: 19px; }
+      .muted { fill: #506675; }
+      .return-label { fill: #a23722; font-size: 22px; font-weight: 700; }
+      .leader { fill: none; stroke: #5a7180; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .card { fill: #ffffff; stroke: #c5d3dd; stroke-width: 1.8; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1510" fill="#eef3f7"/>
+  <text x="48" y="77" class="title">Suspensión reproducible — concepto</text>
+  <text x="48" y="120" class="subtitle">Esquema funcional sin escala · geometría y cargas pendientes</text>
+
+  <g id="funcion-lamina" role="group" aria-labelledby="titulo-funcion">
+    <rect x="48" y="158" width="904" height="552" rx="15" class="card"/>
+    <text id="titulo-funcion" x="72" y="203" class="panel-title">Cómo trabaja la lámina</text>
+    <text x="72" y="239" class="body muted">El brazo eleva el contacto; la lámina tiende a recuperar su forma.</text>
+
+    <g id="empotramiento" aria-label="Lámina sujeta por un extremo">
+      <text x="72" y="291" class="label">Extremo empotrado</text>
+      <path d="M182 302L182 337" class="leader"/>
+      <rect x="152" y="349" width="40" height="122" rx="2" fill="url(#rayado-fijo)" stroke="#596e7d" stroke-width="2"/>
+      <rect x="180" y="384" width="50" height="21" fill="#8496a3" stroke="#526977" stroke-width="2"/>
+      <rect x="180" y="415" width="50" height="21" fill="#8496a3" stroke="#526977" stroke-width="2"/>
+      <path d="M192 410H230" fill="none" stroke="#b67c23" stroke-width="10"/>
+    </g>
+
+    <g id="lamina-libre" aria-label="Posición libre de la lámina, sin flexión impuesta">
+      <path d="M232 410H690" fill="none" stroke="#8395a2" stroke-width="4" stroke-dasharray="12 9"/>
+      <text x="324" y="448" class="label muted">Posición libre</text>
+    </g>
+
+    <g id="lamina-flexionada" aria-label="Lámina flexionada hacia arriba por el contacto">
+      <path d="M230 410C380 410 530 370 680 330" fill="none" stroke="#8f601d" stroke-width="12" stroke-linecap="butt"/>
+      <path d="M230 410C380 410 530 370 680 330" fill="none" stroke="#efbe6a" stroke-width="8" stroke-linecap="butt"/>
+      <text x="378" y="294" class="label">Lámina flexionada</text>
+      <path d="M490 306L510 363" class="leader"/>
+    </g>
+
+    <g id="brazo-y-pivote" aria-label="Brazo que gira sobre un pivote independiente">
+      <!-- Contacto y brazo ilustrativos: no definen el recorrido completo ni el montaje real. -->
+      <rect x="825" y="347" width="50" height="66" rx="7" fill="#d8e0e5" stroke="#91a2af" stroke-width="2"/>
+      <path d="M685.15 349.32L850 380" fill="none" stroke="#566b7b" stroke-width="20" stroke-linecap="round"/>
+      <path d="M685.15 349.32L850 380" fill="none" stroke="#b6c4ce" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="685.15" cy="349.32" r="20" fill="#ffffff" stroke="#526977" stroke-width="4"/>
+      <circle cx="685.15" cy="349.32" r="5" fill="#526977"/>
+      <circle cx="850" cy="380" r="20" fill="#ffffff" stroke="#275b79" stroke-width="5"/>
+      <circle cx="850" cy="380" r="7" fill="#275b79"/>
+      <text x="790" y="313" class="label" text-anchor="middle">Brazo</text>
+      <path d="M790 324L785 357" class="leader"/>
+      <path d="M864 402L883 436L883 449" class="leader"/>
+      <text x="844" y="477" class="label" text-anchor="middle">Pivote</text>
+      <text x="844" y="505" class="body" text-anchor="middle">independiente</text>
+      <text x="650" y="277" class="small" text-anchor="middle">Contacto</text>
+      <path d="M651 286L675 321" class="leader"/>
+    </g>
+
+    <g id="fuerza-retorno" aria-label="Sentido de la fuerza de retorno de la lámina sobre el brazo, hacia abajo">
+      <path d="M692 375L711 446" fill="none" stroke="#b13f28" stroke-width="5" stroke-linecap="round" marker-end="url(#flecha-retorno)"/>
+      <path d="M704 453L676 482L634 482" fill="none" stroke="#b13f28" stroke-width="1.8"/>
+      <text x="500" y="512" class="return-label">Retorno hacia abajo</text>
+      <text x="500" y="540" class="body">sobre el brazo</text>
+    </g>
+
+    <line x1="72" y1="571" x2="928" y2="571" stroke="#d5e0e7" stroke-width="1.5"/>
+    <text x="72" y="606" class="body">El pivote guía el giro. La lámina aporta el retorno.</text>
+    <text x="72" y="636" class="body">Topes, guiado lateral y retención tienen funciones separadas.</text>
+    <text x="72" y="672" class="small muted">La flecha indica el sentido del retorno; no expresa una fuerza calculada.</text>
+  </g>
+
+  <g id="arquitectura-reparable" role="group" aria-labelledby="titulo-arquitectura">
+    <rect x="48" y="738" width="904" height="474" rx="15" class="card"/>
+    <text id="titulo-arquitectura" x="72" y="783" class="panel-title">Qué se sustituye y qué se conserva</text>
+    <text x="72" y="818" class="body muted">Arquitectura funcional; no es un despiece del Xiaomi.</text>
+
+    <g id="nucleo-estructural" aria-label="Núcleo que transmite las cargas">
+      <rect x="72" y="850" width="220" height="250" rx="10" fill="#e0e7ed" stroke="#758a9a" stroke-width="2"/>
+      <text x="182" y="906" class="label" text-anchor="middle">Núcleo</text>
+      <text x="182" y="936" class="label" text-anchor="middle">estructural</text>
+      <text x="182" y="993" class="body" text-anchor="middle">Transmite</text>
+      <text x="182" y="1023" class="body" text-anchor="middle">las cargas</text>
+    </g>
+
+    <g id="union-desmontable" aria-label="Unión desmontable entre núcleo y soporte">
+      <path d="M292 968H342 M292 982H342" fill="none" stroke="#647f91" stroke-width="3"/>
+      <path d="M310 956V994 M324 956V994" fill="none" stroke="#647f91" stroke-width="3"/>
+    </g>
+
+    <g id="soporte-sustituible" aria-label="Soporte o cartucho sustituible con componentes diferenciados">
+      <rect x="342" y="850" width="586" height="250" rx="10" fill="#edf6fa" stroke="#367496" stroke-width="2.5"/>
+      <text x="365" y="888" class="label">Soporte / cartucho sustituible</text>
+      <text x="365" y="921" class="small muted">Elementos diferenciados:</text>
+
+      <g id="elemento-elastico" aria-label="Lámina elástica fabricable y reemplazable">
+        <rect x="365" y="942" width="254" height="106" rx="8" fill="#f9e6c0" stroke="#c28d39" stroke-width="1.8"/>
+        <text x="492" y="981" class="label" text-anchor="middle">Lámina elástica</text>
+        <text x="492" y="1017" class="small" text-anchor="middle">Se fabrica y cambia</text>
+      </g>
+
+      <g id="pivote-guiado" aria-label="Pivote y guiado separados del elemento elástico">
+        <rect x="641" y="942" width="264" height="106" rx="8" fill="#dceaf1" stroke="#7797ab" stroke-width="1.8"/>
+        <text x="773" y="981" class="label" text-anchor="middle">Pivote y guiado</text>
+        <text x="773" y="1017" class="small" text-anchor="middle">Permiten el giro</text>
+      </g>
+
+      <text x="365" y="1079" class="small">Topes y retención: funciones propias.</text>
+    </g>
+
+    <text x="72" y="1143" class="body">El cartucho se une al núcleo mediante una unión desmontable.</text>
+    <text x="72" y="1175" class="body">Cambiar la lámina no debe exigir sustituir el núcleo.</text>
+  </g>
+
+  <g id="objetivo-energia" role="group" aria-labelledby="titulo-energia">
+    <rect x="48" y="1240" width="904" height="146" rx="12" fill="#fff5e9" stroke="#c49b62" stroke-width="1.8"/>
+    <text id="titulo-energia" x="72" y="1277" class="label">Objetivo pendiente: extracción con la energía contenida</text>
+    <text x="72" y="1312" class="body">El cartucho debe poder retirarse sin liberar la lámina de golpe.</text>
+    <text x="72" y="1345" class="body">Falta diseñar y verificar cómo se logra; no se ha resuelto aquí.</text>
+  </g>
+
+  <g id="alcance-y-licencia" aria-label="Límites del esquema y licencia">
+    <text x="48" y="1424" class="small muted">No reproduce geometría Xiaomi ni garantiza resistencia o vida útil.</text>
+    <text x="48" y="1454" class="small muted">No es un plano de fabricación. Contacto, recorrido y ajustes por definir.</text>
+    <text x="48" y="1486" class="small">Esquema original del proyecto · CERN-OHL-P-2.0</text>
+  </g>
+</svg>

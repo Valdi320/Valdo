@@ -4,7 +4,7 @@ El propietario ha solicitado publicar el diseño abierto. Esta decisión se apli
 
 | Material | Licencia / alcance |
 |---|---|
-| CAD propio de `cad/`, registro de interfaces, vistas y documentación original nueva de los capítulos 11–15; guía, definiciones y documentación de `capturas_rueda/` | [CERN-OHL-P-2.0](LICENSES/CERN-OHL-P-2.0.txt), variante permisiva para diseño de hardware y documentación de fuentes |
+| CAD propio de `cad/`, registro de interfaces, vistas y documentación original nueva de los capítulos 11–16; esquema propio `../assets/suspension_reproducible.svg` y su render PNG; guía, definiciones y documentación de `capturas_rueda/` | [CERN-OHL-P-2.0](LICENSES/CERN-OHL-P-2.0.txt), variante permisiva para diseño de hardware y documentación de fuentes |
 | Scripts Python, JavaScript y macros originales de esta carpeta y `capturas_rueda/`, fuentes HTML del formulario y `../scripts/build_report.mjs` | [MIT](LICENSES/MIT.txt), indicada en los scripts; HTML generado incluye guía con su licencia anterior |
 | Firmware, placas, mecanismos y diseños originales Xiaomi | No se concede ni se presupone ninguna licencia sobre esos materiales |
 | OOMWOO y otros proyectos referenciados | Mantienen su licencia y revisión de origen; no se ha incorporado geometría OOMWOO al modelo v0.1 |

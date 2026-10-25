@@ -10,6 +10,8 @@ El plan de «reparar primero y ampliar después» pertenece a una fase anterior 
 
 **Arquitectura elegida para desarrollar:** núcleo resistente propio y soportes funcionales reemplazables, evaluando caminos de carga metálicos y adaptadores pequeños. Se diseña alrededor de las interfaces del Xiaomi y se aprovechan las piezas o soluciones de OOMWOO que reduzcan trabajo. No hay evidencia suficiente para afirmar que sustituir la electrónica dentro de un chasis OOMWOO completo sea actualmente la opción más sencilla. La comparación detallada, archivos comprobados y condiciones que cambiarían esta decisión están en [09 — OOMWOO](09-oomwoo-comparacion.md).
 
+**Nuevo requisito de suspensión:** fabricar también el elemento elástico a partir de material especificado, sin depender de un muelle exclusivo. La primera candidata de estudio es una lámina metálica reemplazable en cartucho; alambre con útil abierto y flexuras impresas quedan como alternativas. El muelle disponible deja de ser una condición de avance. [16 — Suspensión reproducible](16-suspension-reproducible.md) recoge la comparación, el esquema y las comprobaciones pendientes.
+
 ## Qué ya está documentado
 
 - Arquitectura funcional, acceso, repuestos específicos y límites de compatibilidad del Pro. Un catálogo comercial no se trata como despiece oficial.
@@ -21,7 +23,7 @@ El plan de «reparar primero y ampliar después» pertenece a una fase anterior 
 
 **Ya existe un [proyecto FreeCAD nativo](cad/README.md), generado y reabierto con FreeCAD 1.1.4 en el PC.** Contiene la envolvente publicada, 13 registros de módulos, 14 interfaces y un estudio paramétrico independiente de cartucho. No contiene una base fabricable ni cotas internas medidas. No se ha fabricado un bastidor, ensayado una suspensión o validado un pinout. [Entrega y verificación](14-entrega-cad-y-siguiente-medicion.md).
 
-**Último avance coordinado:** se han integrado las aportaciones de Codex sobre cotas públicas, espacio axial y mantenimiento. El [estudio FreeCAD de presupuesto axial](cad/estudios/README.md) contrasta el pasador comercial de 38,5 mm con los 50 mm que necesita la disposición DEMO, y descarta esa combinación. La [revisión de servicio](cad/REVISION.md) concreta la extracción del cartucho con suspensión contenida. [Entrega conjunta y pruebas](15-avance-coordinado-y-estudio-axial.md).
+**Avance CAD coordinado:** se han integrado las aportaciones de Codex sobre cotas públicas, espacio axial y mantenimiento. El [estudio FreeCAD de presupuesto axial](cad/estudios/README.md) contrasta el pasador comercial de 38,5 mm con los 50 mm que necesita la disposición DEMO, y descarta esa combinación. La [revisión de servicio](cad/REVISION.md) concreta la extracción del cartucho con suspensión contenida. [Entrega conjunta y pruebas](15-avance-coordinado-y-estudio-axial.md). El nuevo requisito del capítulo 16 se ha comunicado por separado al compañero; no se presenta todavía como una revisión ejecutada del maestro CAD.
 
 La investigación pública precede a pedir medidas al propietario. La [captura con guía visual](capturas_rueda/README.md) es opcional para comprobar piezas posteriormente; no bloquea el CAD provisional.
 
@@ -49,7 +51,7 @@ El maestro es [cad/X20Pro_Base_Arquitectura.FCStd](cad/X20Pro_Base_Arquitectura.
 
 1. **Ensamblaje de volúmenes simplificados:** medidas exteriores y fijaciones de placa con cubierta, batería, turbina, ruedas y mopas, en un sistema de coordenadas común.
 2. **Comparación geométrica con el diseño principal de OOMWOO:** identificar qué base o piezas se pueden conservar y qué hay que reconstruir. No imprimir una carcasa grande para descubrirlo.
-3. **Piloto de suspensión en soporte propio:** conservar eje y movimiento, caracterizar el muelle disponible y comprobar fuerza frente a desplazamiento, retorno y retención.
+3. **Piloto de suspensión reproducible:** conservar las interfaces de movimiento, estudiar un elemento elástico fabricable y comprobar fuerza frente a desplazamiento, retorno, retención y estabilidad con el uso. Un muelle disponible puede aportar comparación, sin condicionar la solución.
 4. **Bastidor de presentación:** comprobar el conjunto completo sin energía antes de las pruebas funcionales definidas en el capítulo 07.
 
 Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las interfaces de la estación. Se buscan primero cotas y referencias públicas para avanzar con parámetros provisionales. La comprobación física posterior será dirigida a las incógnitas restantes; no exige volver a fotografiar indiscriminadamente todo el robot. El [inventario fotográfico](10-inventario-fotografico.md) especifica los huecos de evidencia.
@@ -73,6 +75,7 @@ Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las
 | [13 — Electrónica y control abierto](13-electronica-y-control-abierto.md) | Montajes, medidas M70–M89, software comprobado y apertura por fases. |
 | [14 — Entrega CAD](14-entrega-cad-y-siguiente-medicion.md) | Ejecución real, verificación, siguiente captura y coordinación de checkout. |
 | [15 — Avance coordinado](15-avance-coordinado-y-estudio-axial.md) | Aportaciones de ambos compañeros, presupuesto axial, servicio y comprobaciones de software. |
+| [16 — Suspensión reproducible](16-suspension-reproducible.md) | Fabricar la función elástica: lámina, alambre y opciones impresas; esquema, materiales, proceso y criterios de comprobación. |
 | [cad/](cad/README.md) | FCStd editable, macro, interfaces, STEP DEMO, vistas, licencia y validación. |
 | [cad/estudios/](cad/estudios/README.md) | Estudio nativo del pasador publicado y comparación con el DEMO; sin aprobación de fabricación. |
 | [capturas_rueda/](capturas_rueda/README.md) | Formulario opcional sin conexión, dibujos, JSON, validador y macro de documento independiente. |

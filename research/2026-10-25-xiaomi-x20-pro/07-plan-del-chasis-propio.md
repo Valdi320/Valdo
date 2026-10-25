@@ -1,6 +1,6 @@
 # 07 — Chasis propio: herramientas, ingeniería y ejecución
 
-**25 de octubre de 2026 · Plan V3, ampliado tras el encargo de base nueva y robot abierto; CAD inicial ejecutado.** Alcance: Xiaomi Robot Vacuum X20 Pro D102GL y su estación original. Este plan sustituye la prioridad anterior de reparar primero la carcasa existente. El objetivo actual es **recuperar los conjuntos aprovechables y diseñar una estructura nueva, resistente y mantenible**, sin exigir reutilizar soportes deteriorados.
+**25 de octubre de 2026 · Plan V4, con suspensión reproducible; CAD inicial ejecutado.** Alcance: Xiaomi Robot Vacuum X20 Pro D102GL y su estación original. Este plan sustituye la prioridad anterior de reparar primero la carcasa existente. El objetivo actual es **recuperar los conjuntos aprovechables y diseñar una estructura nueva, resistente y mantenible**, sin exigir reutilizar soportes deteriorados.
 
 La propuesta define trabajo y condiciones de aceptación. Las fotografías permiten identificar componentes y conexiones concretas, pero no constituyen pruebas eléctricas. Existe un CAD inicial nativo cuya editabilidad y cadena de guardado/exportación se han comprobado; todavía no hay dimensiones internas medidas, base de fabricación ni resistencia validada. El estado ejecutado está en [14 — Entrega CAD](14-entrega-cad-y-siguiente-medicion.md). Las fuentes describen herramientas y principios; las elecciones de arquitectura y pruebas son propuestas de ingeniería.
 
@@ -81,7 +81,7 @@ Cada módulo se representará mediante **volumen ocupado**, **interfaces de mont
 | Conjunto | Interfaces que controlan el diseño |
 |---|---|
 | Tracción y apoyo | Diámetro efectivo, separación de ruedas, pivotes, rueda loca, topes, despeje del suelo y retención de ejes. |
-| Suspensión | Anclajes, curva del muelle, recorrido, rozamiento y accionamiento del detector que realmente exista. |
+| Suspensión | Elemento elástico reproducible, curva de fuerza en rueda, recorrido, apoyos, rozamiento y accionamiento del detector que realmente exista. |
 | Sensores y placa | Posición, orientación, campo libre, ventanas, apoyos sin flexión y elementos de aislamiento o disipación identificados. |
 | Paragolpes | Movimiento, retorno, detectores y topes; no convertirlo en una pared rígida. |
 | Limpieza | Ejes y alturas de cepillos/mopas, elevación, bocas, depósito, juntas, extracción y camino de aire. |
@@ -123,15 +123,15 @@ Preferir asientos que repitan posición y fijaciones que sujeten, con pasadores,
 
 Pesar conjuntos y piezas fabricadas. Estudiar el reparto de apoyo con mopas levantadas y bajadas, la altura del chasis y la entrada a la estación. Si el original dañado no admite una referencia de carga fiable, declarar ese límite. No inventar un porcentaje de sobrepeso permitido.
 
-## 7. Muelle más grande y primera pieza piloto
+## 7. Suspensión reproducible y primera pieza piloto
 
-El muelle disponible es un candidato, no una pieza ya validada. Registrar longitud libre entre interiores de ojales, longitud exterior por separado, cuerpo, diámetro exterior, alambre y ganchos. Lee Spring distingue tensión inicial, constante, carga máxima y extensión admisible; dentro del intervalo elástico aplicable, la fuerza depende de la tensión inicial y del alargamiento [S12].
+El propietario exige poder fabricar también la solución elástica. Diseñar alrededor de un recambio exclusivo deja de ser la prioridad. El [capítulo 16](16-suspension-reproducible.md) estudia primero una lámina metálica reemplazable en cartucho, después un muelle de alambre con útil abierto y, como vía experimental, una flexura impresa. Material, proceso, CAD y comprobación forman parte del recambio.
 
-Obtener fuerza a varias longitudes de trabajo mediante especificación o instrumento adecuado. No estirar hasta deformarlo para descubrir su límite. Si carece de especificación, una comparación de fuerzas no demuestra vida a fatiga ni extensión máxima segura: esa incertidumbre debe resolverse antes de aprobar su uso.
+La especificación decisiva compara fuerza y desplazamiento de la rueda a lo largo del recorrido, con estabilidad bajo precarga y movimiento. La geometría de transmisión puede cambiar esa curva aunque se conserve el elemento elástico. Comprobar, cuando sea practicable, el movimiento con la fuerza elástica descargada de forma controlada y después ida/retorno del conjunto: así se distingue elasticidad de un pivote pinzado. Verificar holguras radial/axial, coaxialidad, retención y efecto del apriete; registrar detector y topes sin asumir su tipo.
 
-La prueba decisiva del conjunto compara fuerza y desplazamiento de la rueda, porque el anclaje cambia el brazo de palanca. Comprobar antes el movimiento sin muelle, cuando sea practicable, y después ida/retorno con el muelle: así se distingue elasticidad de un pivote pinzado. Verificar holguras radial/axial, coaxialidad, retención y efecto del apriete; registrar detector y topes sin asumir su tipo.
+El muelle más grande considerado anteriormente queda como candidato de comparación o prototipo, sin ser condición para avanzar. Si se ensaya un resorte helicoidal, registrar longitud libre entre interiores de ojales, longitud exterior, cuerpo, diámetro de alambre, extremos, fuerza y límites. Lee Spring distingue tensión inicial, constante y extensión admisible [S12]. Ni el parecido ni unas pocas medidas de fuerza demuestran su vida útil.
 
-Se puede sustituir solo un muelle si el comportamiento funcional resulta compatible; no se impone cambiar ambos. La primera pieza piloto será un soporte o útil propio que permita comprobar estos puntos **sin cargar el plástico roto**. Eso forma parte del chasis nuevo y no exige restaurar primero la carcasa vieja.
+La primera pieza piloto será un soporte o útil propio para comprobar función, montaje y proceso **sin cargar el plástico roto**. Separará guiado/retención, retorno elástico y topes. Se evalúa por lado y se comprueba el comportamiento conjunto, sin exigir que ambos elementos tengan la misma forma ni dar por equivalente una rueda a la otra. La documentación de material y fabricación debe permitir repetir la pieza y sustituirla sin rehacer el núcleo.
 
 ## 8. Herramientas físicas y fabricación de bajo coste
 
@@ -187,7 +187,7 @@ La IA puede organizar evidencia, buscar documentación, preparar tablas, modelos
 | Revisiones, cableado y estado funcional | Fotos y observaciones de esta unidad | Traslado de los conjuntos afectados. |
 | Estado de carcasas de precisión | Inspección localizada; sin desarmar innecesariamente | Prueba o reutilización de ese conjunto. |
 | Cotas y referencias originales | Medidas directas o referencias alternativas comprobadas | Fabricación de interfaces críticas. |
-| Fuerza y recorrido admisible del muelle nuevo | Especificación y comprobación adecuada | Aprobación de suspensión. |
+| Curva, recorrido, estabilidad y fabricación del elemento elástico propio | Especificación funcional, material/proceso y comprobación del cartucho; alternativas en 16 | Aprobación de suspensión reproducible; no bloquea el estudio provisional. |
 | Procesos y herramientas disponibles | Inventario del usuario y oferta concreta del taller | Material, divisiones y coste. |
 | Comandos y funciones acopladas | App/manual y comportamiento observado en montaje apto | Diseño del ensayo, no inventario inicial. |
 | Tolerancias, calor, radio, sellos y navegación final | Comprobaciones proporcionadas en prototipo | Aprobación para uso. |
