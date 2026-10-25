@@ -1,0 +1,33 @@
+id,subsistema,magnitud,unidad,nominal_catalogo,fuente_nominal,valor_medido,incertidumbre_o_rango,condicion_de_medida,referencias,instrumento,fecha,foto_o_dibujo,estado
+M01,suspension,Cuerpo de pertenencia de la fractura,texto,,,,,fijo/movil/gancho,,,,,pendiente
+M02,suspension,Extension de grieta,mm,,,,,descargado,,,,,pendiente
+M03,suspension,Polimero marcado,texto,,,,,marca legible,,,,,pendiente
+M04,pasador,Diametro real,mm,4,SKU 12584,,,medir en varias secciones,,,,,pendiente
+M05,pasador,Longitud real,mm,38.5,SKU 12584,,,incluir extremos y retencion,,,,,pendiente
+M06,apoyos,Separacion de apoyos,mm,,,,,mismo sistema de referencias,,,,,pendiente
+M07,apoyos,Diametro/alojamiento real,mm,,,,,anotar ovalidad y deformacion,,,,,pendiente
+M08,apoyos,Alineacion de apoyos,mm,,,,,metodo por definir,,,,,pendiente
+M09,apoyos,Ancho util de apoyo,mm,,,,,zona sana,,,,,pendiente
+M10,apoyos,Espesor de base sana,mm,,,,,comprobar cara posterior,,,,,pendiente
+M11,apoyos,Superficie disponible para reparto,mm,,,,,largo/ancho registrados por separado,,,,,pendiente
+M12,suspension,Posicion descargada,mm,,,,,bateria desconectada,,,,,pendiente
+M13,suspension,Posicion bajo peso normal,mm,,,,,robot montado,,,,,pendiente
+M14,suspension,Posicion de tope comprimido,mm,,,,,sin forzar,,,,,pendiente
+M15,suspension,Juego axial y radial,mm,,,,,distinguir flexion de holgura,,,,,pendiente
+M16,muelle,Diametro exterior,mm,6.2,SKU 37935,,,nominal comercial,,,,,pendiente
+M17,muelle,Longitud de cuerpo,mm,32,SKU 37935,,,nominal comercial,,,,,pendiente
+M18,muelle,Longitud total libre,mm,45,SKU 37935,,,nominal comercial aproximado,,,,,pendiente
+M19,muelle,Longitudes en estados de trabajo,mm,,,,,indicar estado y lado,,,,,pendiente
+M20,muelle,Coordenadas de anclajes,mm,,,,,tres ejes y referencia,,,,,pendiente
+M21,muelle,Fuerza a desplazamiento definido,N,,,,,solo si hace falta; no inferir de diametro,,,,,pendiente
+M22,deteccion,Actuacion y retorno rueda levantada,texto,,,,,disposicion real por confirmar,,,,,pendiente
+M23,cableado,Espacio barrido y longitud libre,mm,,,,,extremos de suspension,,,,,pendiente
+M24,fijaciones,Tornillos y acceso herramienta,texto,,,,,cabeza/longitud/destino,,,,,pendiente
+M25,rodadura,Diametro efectivo de rueda,mm,,,,,misma carga de referencia,,,,,pendiente
+M26,rodadura,Distancia entre planos medios de ruedas,mm,,,,,estado montado,,,,,pendiente
+M27,rodadura,Posicion y altura de rueda libre,mm,,,,,estado apoyado,,,,,pendiente
+M28,sensores,Posicion y orientacion de sensores,mm/grados,,,,,preservar soporte original,,,,,pendiente
+M29,mopas,Ejes alturas y recorrido de elevacion,mm,,,,,con platos originales,,,,,pendiente
+M30,acoplamiento,Contactos IR bocas y sellos,mm,,,,,robot y estacion como pareja,,,,,pendiente
+M31,estructura,Masa y distribucion de conjuntos,g,,,,,unidad real,,,,,pendiente
+M32,estructura,Envolvente y acceso de mantenimiento,mm,,,,,tapas cerradas y utiles reales,,,,,pendiente

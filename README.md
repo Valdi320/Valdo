@@ -18,6 +18,11 @@
 
 **Hallazgos que condicionan el diseño:** bancos NIST para montaje de conectores/tornillos, navegación con objetos movibles, necesidad de metrología calibrada, degradación de polímeros reciclados y cambios normativos en 2026. El hardware de referencia (RTX 4080 de 16 GB y 24 GB de RAM) **no cumple el mínimo de RAM de 32 GB publicado para Isaac Sim**; empezar con simulación más ligera. **No hay todavía hardware FDAA construido.**
 
+### Caso aplicado: Xiaomi X20 Pro — 25 de octubre de 2026
+
+- **[Investigación física, reparación y tres rutas de mejora](research/2026-10-25-xiaomi-x20-pro/README.md)**: arquitectura del D102GL, acceso a ruedas, repuestos con compatibilidad y precios documentados, metrología, CAD e impresión, conservando electrónica y firmware.
+- **[Plan de trabajo y mediciones pendientes](research/2026-10-25-xiaomi-x20-pro/04-plan-de-trabajo-y-mediciones.md)**: recuperar disponibilidad, desarrollar un apoyo sustituible y ampliar después a un chasis modular. No hay aún pieza fabricada ni CAD dimensional validado.
+
 ### Arquitectura propuesta
 
 | Sistema | Meta |
