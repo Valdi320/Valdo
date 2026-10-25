@@ -92,6 +92,14 @@ No se ha confirmado un depósito interno ni una toma de rellenado de agua en est
 
 **Masa/peso, retorno eléctrico y blindaje son conceptos distintos.** Registrar y conservar las uniones conductoras y aislantes observados. No conectar una pieza estructural nueva al negativo de batería ni a una supuesta masa por intuición. Una montura nueva tampoco debe flexionar la PCB. Las guías de ST y Espressif respaldan la importancia de montaje y entorno de antena, pero no identifican chips dentro de este robot ni proporcionan sus cotas [S09–S10].
 
+### Datos públicos para avanzar el primer CAD
+
+La reconstrucción inicial busca primero cotas del modelo exacto en documentación, recambios, despieces y CAD público. Las cotas publicadas pueden alimentar parámetros provisionales con fuente, unidad y estado PUBLICADO, sin esperar que el propietario mida la unidad. La columna nominal_catalogo conserva esos datos; valor_medido solo recibe una comprobación física real. Una estimación de imagen lleva método y límite propios, y no se convierte en medida directa cambiando su etiqueta.
+
+El registro único sigue siendo M01–M32, M40–M60 y M70–M89. Cada pregunta de grupo se desglosa en registros identificados cuando haya datos; no se abren series paralelas para el mismo pivote o fijación. Si una dimensión de catálogo no describe toda la pregunta, se documenta su alcance en lugar de rellenar una coordenada con ella. Por ejemplo, los 115 mm de cable publicados para las ruedas no son su recorrido libre de suspensión.
+
+El análisis axial del [capítulo 12](12-interfaces-mecanicas-y-estacion.md) aplica una cota pública al primer cartucho: el pasador de 38,5 mm no cubre los 50 mm de la disposición DEMO. El hueco del módulo y la retención se mantienen como incógnitas de diseño; no se reducen hasta conseguir que una suma encaje. La comprobación física de montaje, función y resistencia continúa siendo necesaria antes de aprobar una pieza para uso.
+
 ### Precisión suficiente sin falsa exactitud
 
 Por interfaz crítica, separar medida observada, nominal elegido y margen admisible por función. Considerar incertidumbre de medición, variación de fabricación y acumulación al ensamblar. Las piezas impresas no tienen una holgura universal: influyen geometría, orientación, material y proceso [S11].

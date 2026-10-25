@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>X20 Pro · captura de una rueda</title>
+<style>
+:root{--ink:#173440;--teal:#086f72;--line:#c9d9dc;--paper:#fff;--bg:#f4f5ef;--muted:#4c626a;--warn:#834315;--error:#a12731}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,sans-serif}header{padding:32px max(4vw,22px) 24px;background:var(--ink);color:#fff;border-bottom:6px solid #48bbb0}header p{max-width:800px;color:#d2e8e8;margin:12px 0}h1{font-size:clamp(28px,4vw,43px);line-height:1.12;margin:8px 0 16px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#95dfd5}h2{font-size:23px;line-height:1.25;margin:0 0 12px}h3{font-size:18px;margin:0 0 12px}.layout{max-width:1460px;margin:24px auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(350px,.95fr);gap:24px;padding:0 24px}main,aside{min-width:0}.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:25px;margin-bottom:20px}.lead{color:var(--muted);margin:0 0 20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.span2{grid-column:1/-1}label{display:block;font-weight:650;font-size:14px;margin-bottom:5px}input,select,textarea,button{font:inherit}input,select,textarea{width:100%;min-height:44px;border:1px solid #9eb6bd;border-radius:5px;padding:9px 11px;color:var(--ink);background:#fff}textarea{min-height:78px;resize:vertical}input:focus,textarea:focus,select:focus,button:focus-visible,summary:focus-visible{outline:3px solid #50bcb4;outline-offset:2px}input::placeholder,textarea::placeholder{color:#667b82;opacity:1}small,.help{display:block;color:var(--muted);font-size:13px;font-weight:400;margin:5px 0 0}.measure{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}.measure h3{margin-bottom:5px}.measure .code{font-size:12px;color:var(--teal);font-weight:700;margin-bottom:10px}.measure:focus-within{border-top-color:var(--teal)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}details{margin-top:16px}summary{cursor:pointer;color:var(--teal);font-weight:700;padding:8px 0}details>div{margin-top:10px}button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--teal);border-radius:6px;background:var(--teal);color:#fff;padding:9px 16px;text-decoration:none;font-weight:700;cursor:pointer}button.secondary,.button.secondary{background:#fff;color:var(--teal)}button:disabled{opacity:.55;cursor:not-allowed}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.file-label{display:inline-flex;font-size:16px;margin:0;cursor:pointer}.file-input{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}.aside-inner{position:sticky;top:18px}.figure-card{padding:12px}.figure-card svg{width:100%;height:auto;display:block}.figure-card figcaption{padding:12px;color:var(--muted);font-size:13px}.figure-card svg [data-highlight='yes']{filter:drop-shadow(0 0 3px #b1680d);stroke:#b1680d}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.badge{border:1px solid #aac8c8;border-radius:20px;background:#edf7f5;color:#14565a;padding:5px 11px;font-size:12px;font-weight:750}.badge.pending{background:#fff7e8;color:#784719;border-color:#dfc8a1}.badge.invalid{background:#fff0f1;color:var(--error);border-color:#dfb1b5}.list{padding-left:20px;margin:10px 0}.list li{margin:7px 0;font-size:14px}.errors{color:var(--error)}.notice{border-left:4px solid #c58e44;background:#fff8ed;padding:12px 15px;margin:14px 0;color:#674321}.saved{font-size:12px;color:var(--muted);min-height:20px}.status-text{min-height:24px;color:var(--teal);font-weight:650}footer{max-width:1420px;padding:0 24px 35px;margin:auto;font-size:13px;color:var(--muted)}a{color:var(--teal)}.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:1000px){.layout{grid-template-columns:1fr;padding:0 14px}.aside-inner{position:static}.card{padding:20px}.figure-card{padding:8px}aside{order:2}}@media(max-width:540px){.grid,.pair{grid-template-columns:1fr}.span2{grid-column:auto}header{padding:25px 20px}.card{padding:17px}}@media print{header{background:#fff;color:#173440;padding:0;border-bottom:2px solid #086f72}header p,.eyebrow{color:#173440}.layout{display:block;padding:0}main{display:none}.aside-inner{position:static}aside .card:not(.figure-card),footer,.actions{display:none}.figure-card{border:0}body{background:#fff}h1{font-size:22pt}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">Valdo · comprobación física opcional · captura 0.2</div><h1>Una rueda. Dos medidas para empezar.</h1><p>Cuando puedas comprobar la pieza, identifica el pasador y anota su diámetro y longitud. Puedes guardar una ficha incompleta. El CAD provisional avanza en paralelo con las cotas publicadas.</p></header>
+<div class="layout"><main>
+<form id="capture-form" novalidate>
+<section class="card"><h2>1. Identifica lo que vas a medir</h2><p class="lead">Asigna una etiqueta a cada pieza. La fecha y el instrumento describen la medición que has hecho.</p>
+<div class="grid">
+<div><label for="id_captura">Identificador de la ficha</label><input id="id_captura" data-bind="id_captura" value="CAPTURA_001" maxlength="64" spellcheck="false"><small>Letras sin tildes, cifras, guion o guion bajo.</small></div>
+<div><label for="origen">Origen de los datos</label><select id="origen" data-bind="origen"><option value="unidad_real">Mi unidad física</option><option value="prueba_software">Ejemplo de software · sin pieza real</option></select></div>
+<div><label for="pieza_pasador">Etiqueta del pasador</label><input id="pieza_pasador" data-bind="pieza_pasador" placeholder="Ej.: PASADOR_A"></div>
+<div><label for="pieza_rueda">Etiqueta de la rueda, si la conoces</label><input id="pieza_rueda" data-bind="pieza_rueda" placeholder="Ej.: RUEDA_A"><small>Una etiqueta distinta; el lado se identifica aparte.</small></div>
+<div><label for="fecha_medicion">Fecha de medición</label><input id="fecha_medicion" data-bind="fecha_medicion" type="date"></div>
+<div><label for="instrumento">Instrumento utilizado</label><input id="instrumento" data-bind="instrumento" placeholder="Tipo, identificación y resolución indicada"></div>
+<div class="span2"><label for="condicion">Condición en la que mides</label><input id="condicion" data-bind="condicion" placeholder="Pieza suelta, sin carga; sección y postura observables"></div>
+<div class="span2"><label for="evidencia_general">Referencia a la evidencia</label><textarea id="evidencia_general" data-bind="evidencia_general" placeholder="Nombre o número de foto/croquis, lectura observada y dónde se guarda"></textarea><small>Se guarda la referencia textual. Las fotos permanecen fuera de esta ficha.</small></div>
+<div><label for="seccion_pasador_forma">Sección del cuerpo del pasador</label><select id="seccion_pasador_forma" data-bind="seccion_pasador.forma"><option value="desconocida">Pendiente de comprobar</option><option value="circular">Circular</option><option value="otra">Otra forma</option></select></div>
+<div><label for="seccion_pasador_evidencia">Cómo identificas la sección</label><input id="seccion_pasador_evidencia" data-bind="seccion_pasador.evidencia" placeholder="Observación y referencia a foto o croquis"></div>
+</div></section>
+<section class="card"><h2>2. Mide el pasador</h2><p class="lead">Todas las longitudes están en milímetros. Selecciona «Medido» cuando tengas la lectura. El dibujo señala qué magnitud corresponde a cada campo.</p><div id="initial-measures"></div></section>
+<section class="card"><details id="later"><summary>3. Completar después: seis medidas de la rueda</summary><p class="help">Puedes exportar sin completar esta sección. No se reconstruyen agujeros ni caras que ya no existen.</p><div id="later-measures"></div></details></section>
+<section class="card"><details><summary>4. Correspondencia, daños y acceso</summary><div class="grid">
+<div><label for="lado_valor">Lado dentro del robot</label><select id="lado_valor" data-bind="lado.valor"><option value="desconocido">Sin identificar</option><option value="izquierdo">Izquierdo</option><option value="derecho">Derecho</option></select></div>
+<div><label for="lado_evidencia">Evidencia del lado</label><input id="lado_evidencia" data-bind="lado.evidencia" placeholder="Referencia al frontal y orientación de observación"></div>
+<div><label for="pareja_estado">¿Este pasador pertenece a esta rueda?</label><select id="pareja_estado" data-bind="pareja.estado"><option value="sin_confirmar">Sin confirmar</option><option value="confirmada">Confirmado</option><option value="no_corresponde">No corresponde</option></select></div>
+<div><label for="pareja_evidencia">Evidencia de la correspondencia</label><input id="pareja_evidencia" data-bind="pareja.evidencia" placeholder="Cómo se conservaron o identificaron juntos"></div>
+<div><label for="soporte_fijo">Soporte fijo en la base</label><select id="soporte_fijo" data-bind="danos.soporte_fijo" data-damage></select></div>
+<div><label for="pivote_movil">Zona del pivote en la pieza móvil</label><select id="pivote_movil" data-bind="danos.pivote_movil" data-damage></select></div>
+<div><label for="gancho_movil">Enganche del muelle en la pieza móvil</label><select id="gancho_movil" data-bind="danos.gancho_movil" data-damage></select></div>
+<div><label for="danos_nota">Descripción de los daños</label><textarea id="danos_nota" data-bind="danos.nota"></textarea></div>
+<div><label for="extraccion_direccion">Dirección de extracción observada</label><select id="extraccion_direccion" data-bind="extraccion.direccion"><option value="pendiente">Pendiente</option><option value="hacia_cara_a">Hacia cara A identificada</option><option value="hacia_cara_b">Hacia cara B identificada</option><option value="otra">Otra · describir debajo</option></select></div>
+<div><label for="extraccion_espacio">Espacio observado para extraer</label><input id="extraccion_espacio" data-bind="extraccion.espacio_observado" placeholder="Método y referencia; no una holgura supuesta"></div>
+<div class="span2"><label for="extraccion_obstaculos">Obstáculos que impiden extraer la pieza</label><textarea id="extraccion_obstaculos" data-bind="extraccion.obstaculos" placeholder="Qué hay que retirar, qué conexiones o piezas interfieren"></textarea></div>
+</div></details><div style="margin-top:18px"><label for="notas">Notas de esta ficha</label><textarea id="notas" data-bind="notas"></textarea></div></section>
+<section class="card"><h2>5. Guarda y continúa</h2><p>Descarga el JSON para conservar la captura o importarlo con <strong>importar_ficha.FCMacro</strong>. La macro crea un documento FreeCAD nuevo.</p><div class="actions"><button id="export" type="button">Descargar ficha JSON</button><label for="import-file" class="button secondary file-label">Abrir ficha JSON</label><input id="import-file" type="file" class="file-input" accept=".json,application/json"><button id="new-capture" type="button" class="secondary">Nueva ficha vacía</button></div><p id="file-status" class="status-text" role="status"></p><p id="draft-status" class="saved">El borrador se guarda en este navegador si permite almacenamiento local. Conserva también el JSON descargado.</p></section>
+</form></main>
+<aside><div class="aside-inner"><section class="card" aria-label="Estado de la captura"><div class="badges"><span id="record-badge" class="badge">Ficha guardable</span><span id="pin-badge" class="badge pending">Referencia del pasador pendiente</span><span class="badge pending">Sin aprobación de fabricación</span></div><p id="count" class="help"></p><div id="error-block" hidden><strong>Por completar o corregir</strong><ul id="errors" class="list errors"></ul></div><details><summary>Alcance y datos pendientes</summary><ul id="warnings" class="list"></ul></details></section>
+<figure class="card figure-card"><svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2180" viewBox="0 0 1600 2180" role="img" aria-labelledby="guide-title guide-desc">
+  <title id="guide-title">Guía de medida · sin escala</title>
+  <desc id="guide-desc">Ocho esquemas conceptuales para identificar las referencias de medida de un pasador, el cuerpo móvil del pivote, dos alojamientos independientes y una rueda. No reproducen la geometría Xiaomi, no incluyen cotas numéricas ni definen la orientación del módulo en el robot.</desc>
+  <defs>
+    <marker id="dimension-arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto-start-reverse" markerUnits="userSpaceOnUse" viewBox="0 0 12 12">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#0369a1"/>
+    </marker>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #172b3a; }
+      .page-title { font-size: 44px; font-weight: 700; }
+      .subtitle { font-size: 27px; font-weight: 500; }
+      .legend { font-size: 20px; fill: #42586a; }
+      .panel-background { fill: #ffffff; stroke: #bbcbd7; stroke-width: 2; }
+      .panel-title { font-size: 25px; font-weight: 700; }
+      .panel-kicker { font-size: 19px; fill: #52697b; }
+      .shape { fill: #e7edf2; stroke: #5a7082; stroke-width: 3; stroke-linejoin: round; }
+      .shape-light { fill: #f5f8fa; stroke: #5a7082; stroke-width: 3; stroke-linejoin: round; }
+      .opening { fill: #ffffff; stroke: #5a7082; stroke-width: 3; }
+      .axis { fill: none; stroke: #7a8e9e; stroke-width: 2; stroke-dasharray: 10 7; }
+      .extension { fill: none; stroke: #3294bf; stroke-width: 2; }
+      .dimension { fill: none; stroke: #0369a1; stroke-width: 3; marker-start: url(#dimension-arrow); marker-end: url(#dimension-arrow); }
+      .reference { fill: none; stroke: #0369a1; stroke-width: 5; stroke-linecap: round; }
+      .dim-label { font-size: 23px; font-weight: 700; fill: #0369a1; }
+      .part-label { font-size: 18px; font-weight: 700; fill: #42586a; }
+      .point-label { font-size: 24px; font-weight: 700; fill: #0369a1; }
+      .caption { font-size: 20px; }
+      .caution { font-size: 20px; font-weight: 700; fill: #7a3d0e; }
+      .caption-rule { stroke: #e0e8ee; stroke-width: 2; }
+      .footer { font-size: 20px; fill: #42586a; }
+      .measure-panel.is-highlighted .panel-background,
+      .measure-panel:target .panel-background { fill: #edf8ff; stroke: #0369a1; stroke-width: 5; }
+      .measure-panel.is-highlighted .panel-title,
+      .measure-panel:target .panel-title { fill: #0369a1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="2180" fill="#f1f5f8"/>
+  <text x="48" y="73" class="page-title">Guía de medida · sin escala</text>
+  <text x="48" y="119" class="subtitle">Esquema conceptual; no reproduce la geometría Xiaomi</text>
+  <text x="48" y="156" class="legend">Flechas azules: magnitud a medir · Contornos grises: referentes · Sin valores ni orientación global</text>
+
+  <!-- Cada grupo se puede resaltar mediante .is-highlighted o un selector CSS de su ID. -->
+  <g id="pin_d" class="measure-panel" transform="translate(48 192)" role="group" aria-labelledby="pin_d-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="pin_d-title" x="28" y="44" class="panel-title">Pasador · diámetro del cuerpo</text>
+    <text x="28" y="77" class="panel-kicker">Selecciona una sección regular y documenta su posición.</text>
+
+    <path class="shape" d="M 150 177 H 525 V 185 H 539 V 177 H 579 Q 608 177 608 209 Q 608 241 579 241 H 539 V 233 H 525 V 241 H 150 Z"/>
+    <rect x="115" y="160" width="35" height="98" rx="7" class="shape"/>
+    <line class="axis" x1="88" y1="209" x2="634" y2="209"/>
+    <rect x="349" y="177" width="22" height="64" fill="#bae6fd" opacity="0.85"/>
+    <line class="extension" x1="349" y1="150" x2="349" y2="269" stroke-dasharray="5 5"/>
+    <line class="extension" x1="371" y1="150" x2="371" y2="269" stroke-dasharray="5 5"/>
+    <line class="dimension" x1="360" y1="177" x2="360" y2="241"/>
+    <text x="360" y="136" text-anchor="middle" class="dim-label">D cuerpo</text>
+    <text x="132" y="289" text-anchor="middle" class="part-label">Cabeza</text>
+    <text x="533" y="289" text-anchor="middle" class="part-label">Ranura</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Mide el cuerpo, fuera de cabeza, ranura y daños.</text>
+    <text x="28" y="390" class="caption">Para repetir: misma sección y orientación.</text>
+    <text x="28" y="420" class="caption">Otras secciones se registran aparte.</text>
+  </g>
+
+  <g id="pin_l" class="measure-panel" transform="translate(814 192)" role="group" aria-labelledby="pin_l-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="pin_l-title" x="28" y="44" class="panel-title">Pasador · longitud total</text>
+    <text x="28" y="77" class="panel-kicker">Entre los dos extremos del pasador completo.</text>
+
+    <path class="shape" d="M 145 155 H 558 V 163 H 573 V 155 H 603 Q 632 155 632 187 Q 632 219 603 219 H 573 V 211 H 558 V 219 H 145 Z"/>
+    <rect x="106" y="138" width="39" height="98" rx="7" class="shape"/>
+    <line class="axis" x1="80" y1="187" x2="658" y2="187"/>
+    <line class="extension" x1="106" y1="128" x2="106" y2="296"/>
+    <line class="extension" x1="632" y1="154" x2="632" y2="296"/>
+    <line class="dimension" x1="106" y1="281" x2="632" y2="281"/>
+    <text x="369" y="266" text-anchor="middle" class="dim-label">L total</text>
+    <text x="106" y="116" text-anchor="middle" class="part-label">Extremo</text>
+    <text x="632" y="132" text-anchor="middle" class="part-label">Extremo</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Indica qué extremos estás incluyendo.</text>
+    <text x="28" y="390" class="caution">Longitud total ≠ longitud útil.</text>
+    <text x="28" y="420" class="caption">El espacio para apoyo y retención se estudia aparte.</text>
+  </g>
+
+  <g id="pivot_w" class="measure-panel" transform="translate(48 656)" role="group" aria-labelledby="pivot_w-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="pivot_w-title" x="28" y="44" class="panel-title">Pivote · ancho del cuerpo móvil</text>
+    <text x="28" y="77" class="panel-kicker">Caras A y B de la pieza móvil, junto al pivote.</text>
+
+    <path class="shape" d="M 200 130 H 535 V 220 L 491 260 H 244 L 200 220 Z"/>
+    <rect x="200" y="167" width="335" height="36" class="opening"/>
+    <line class="axis" x1="133" y1="185" x2="602" y2="185"/>
+    <line class="reference" x1="200" y1="130" x2="200" y2="165"/>
+    <line class="reference" x1="200" y1="205" x2="200" y2="220"/>
+    <line class="reference" x1="535" y1="130" x2="535" y2="165"/>
+    <line class="reference" x1="535" y1="205" x2="535" y2="220"/>
+    <text x="182" y="117" text-anchor="middle" class="point-label">A</text>
+    <text x="553" y="117" text-anchor="middle" class="point-label">B</text>
+    <text x="367" y="239" text-anchor="middle" class="part-label">CUERPO MÓVIL</text>
+    <line class="extension" x1="200" y1="225" x2="200" y2="310"/>
+    <line class="extension" x1="535" y1="225" x2="535" y2="310"/>
+    <line class="dimension" x1="200" y1="296" x2="535" y2="296"/>
+    <rect x="307" y="279" width="121" height="32" rx="7" fill="#ffffff"/>
+    <text x="367" y="303" text-anchor="middle" class="dim-label">A ↔ B</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Identifica ambas caras supervivientes en una foto.</text>
+    <text x="28" y="390" class="caution">No es la separación entre soportes fijos.</text>
+    <text x="28" y="420" class="caption">Si esas caras faltan: marca «no recuperable».</text>
+  </g>
+
+  <g id="axis_l" class="measure-panel" transform="translate(814 656)" role="group" aria-labelledby="axis_l-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="axis_l-title" x="28" y="44" class="panel-title">Pivote → rueda · distancia entre ejes</text>
+    <text x="28" y="77" class="panel-kicker">Localiza los dos ejes y explica el método empleado.</text>
+
+    <circle cx="205" cy="230" r="43" class="shape-light"/>
+    <circle cx="540" cy="156" r="43" class="shape-light"/>
+    <line class="axis" x1="147" y1="230" x2="263" y2="230"/>
+    <line class="axis" x1="205" y1="172" x2="205" y2="288"/>
+    <line class="axis" x1="482" y1="156" x2="598" y2="156"/>
+    <line class="axis" x1="540" y1="98" x2="540" y2="214"/>
+    <line class="dimension" x1="205" y1="230" x2="540" y2="156"/>
+    <circle cx="205" cy="230" r="4" fill="#0369a1"/>
+    <circle cx="540" cy="156" r="4" fill="#0369a1"/>
+    <text x="364" y="154" text-anchor="middle" class="dim-label">Distancia P → R</text>
+    <text x="205" y="310" text-anchor="middle" class="point-label">P · pivote</text>
+    <text x="540" y="252" text-anchor="middle" class="point-label">R · eje de rueda</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">La flecha une los ejes, no los bordes de las piezas.</text>
+    <text x="28" y="390" class="caption">La inclinación del dibujo es solo ilustrativa.</text>
+    <text x="28" y="420" class="caution">No determina orientación ni coordenadas X/Z.</text>
+  </g>
+
+  <g id="bore_a" class="measure-panel" transform="translate(48 1120)" role="group" aria-labelledby="bore_a-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="bore_a-title" x="28" y="44" class="panel-title">Alojamiento A · medida independiente</text>
+    <text x="28" y="77" class="panel-kicker">Identifica este alojamiento y la sección que mides.</text>
+
+    <rect x="210" y="103" width="318" height="207" rx="22" class="shape"/>
+    <circle cx="369" cy="206" r="70" class="opening"/>
+    <line class="axis" x1="369" y1="119" x2="369" y2="293"/>
+    <line class="dimension" x1="299" y1="206" x2="439" y2="206"/>
+    <text x="369" y="185" text-anchor="middle" class="dim-label">D alojamiento A</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Registra sección, orientación y parte fija o móvil.</text>
+    <text x="28" y="390" class="caption">Si está ovalado, anota la dirección medida.</text>
+    <text x="28" y="420" class="caution">No deduzcas un agujero perdido desde el pasador.</text>
+  </g>
+
+  <g id="bore_b" class="measure-panel" transform="translate(814 1120)" role="group" aria-labelledby="bore_b-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="bore_b-title" x="28" y="44" class="panel-title">Alojamiento B · medida independiente</text>
+    <text x="28" y="77" class="panel-kicker">Identifica este otro alojamiento por separado.</text>
+
+    <path class="shape" d="M 226 103 H 512 L 538 129 V 284 L 512 310 H 226 L 200 284 V 129 Z"/>
+    <circle cx="369" cy="206" r="85" class="opening"/>
+    <line class="axis" x1="369" y1="108" x2="369" y2="304"/>
+    <line class="dimension" x1="284" y1="206" x2="454" y2="206"/>
+    <text x="369" y="185" text-anchor="middle" class="dim-label">D alojamiento B</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Registra sección, orientación y parte fija o móvil.</text>
+    <text x="28" y="390" class="caption">La forma dibujada no demuestra forma ni tamaño.</text>
+    <text x="28" y="420" class="caution">No copies el valor de A por simetría.</text>
+  </g>
+
+  <g id="wheel_d" class="measure-panel" transform="translate(48 1584)" role="group" aria-labelledby="wheel_d-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="wheel_d-title" x="28" y="44" class="panel-title">Rueda · diámetro exterior sin carga</text>
+    <text x="28" y="77" class="panel-kicker">Vista lateral; sin apoyar peso sobre la rueda.</text>
+
+    <circle cx="369" cy="207" r="104" class="shape"/>
+    <circle cx="369" cy="207" r="78" class="shape-light"/>
+    <circle cx="369" cy="207" r="28" class="opening"/>
+    <line class="axis" x1="369" y1="92" x2="369" y2="322"/>
+    <line class="dimension" x1="265" y1="207" x2="473" y2="207"/>
+    <text x="369" y="170" text-anchor="middle" class="dim-label">D exterior</text>
+    <circle cx="265" cy="207" r="4" fill="#0369a1"/>
+    <circle cx="473" cy="207" r="4" fill="#0369a1"/>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Entre dos puntos exteriores opuestos de la rueda.</text>
+    <text x="28" y="390" class="caption">Registra zona y estado del neumático sin carga.</text>
+    <text x="28" y="420" class="caution">No es el diámetro efectivo de rodadura bajo peso.</text>
+  </g>
+
+  <g id="wheel_w" class="measure-panel" transform="translate(814 1584)" role="group" aria-labelledby="wheel_w-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="wheel_w-title" x="28" y="44" class="panel-title">Neumático · ancho exterior</text>
+    <text x="28" y="77" class="panel-kicker">Vista de perfil; delimita solo el neumático.</text>
+
+    <rect x="212" y="178" width="314" height="25" rx="4" class="shape-light"/>
+    <rect x="284" y="106" width="170" height="163" rx="15" class="shape"/>
+    <line x1="312" y1="116" x2="312" y2="259" stroke="#b4c3ce" stroke-width="3"/>
+    <line x1="426" y1="116" x2="426" y2="259" stroke="#b4c3ce" stroke-width="3"/>
+    <line class="axis" x1="190" y1="190.5" x2="548" y2="190.5"/>
+    <line class="reference" x1="284" y1="130" x2="284" y2="246"/>
+    <line class="reference" x1="454" y1="130" x2="454" y2="246"/>
+    <line class="extension" x1="284" y1="274" x2="284" y2="311"/>
+    <line class="extension" x1="454" y1="274" x2="454" y2="311"/>
+    <line class="dimension" x1="284" y1="296" x2="454" y2="296"/>
+    <text x="369" y="149" text-anchor="middle" class="part-label">NEUMÁTICO</text>
+    <rect x="324" y="279" width="90" height="32" rx="7" fill="#ffffff"/>
+    <text x="369" y="303" text-anchor="middle" class="dim-label">Ancho</text>
+    <text x="225" y="231" text-anchor="middle" class="part-label">Eje</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Entre las dos caras exteriores del neumático.</text>
+    <text x="28" y="390" class="caption">Excluye eje y carcasa del módulo.</text>
+    <text x="28" y="420" class="caution">No es el ancho completo ni el espacio de servicio.</text>
+  </g>
+
+  <text x="48" y="2072" class="footer">Identifica pieza, sección y referentes en una foto o croquis. Si no sobreviven, registra esa limitación.</text>
+  <text x="48" y="2106" class="footer">Los alojamientos A y B se identifican por separado: registra en cada uno su pertenencia fija o móvil.</text>
+  <text x="48" y="2140" class="footer">Una captura documenta evidencia; no aprueba fabricación ni coloca el módulo en el marco del robot.</text>
+</svg>
+<figcaption>Vista de la magnitud seleccionada · sin escala. Acerca el cursor o el foco a un campo para ver su referencia. Las letras A/B se asignan a las caras que realmente identifiques.</figcaption><div class="actions"><button class="secondary" id="show-guide" type="button">Ver guía completa</button><button class="secondary" id="print-guide" type="button">Imprimir guía</button></div></figure></div></aside></div>
+<footer>Trabajo sin conexión · versión 0.2 · no envía datos. Los valores declarados no acreditan resistencia, ajuste o correspondencia con el robot. Una referencia cilíndrica no reproduce los extremos, ranuras o retención del pasador. <a href="README.md">Guía de uso</a></footer>
+<script id="capture-spec" type="application/json">{"version_esquema": "0.2", "campos": [{"id": "pasador_diametro", "nombre": "Diámetro del cuerpo del pasador", "grupo": "pasador", "mediciones": "M04", "unidad": "mm", "referencia_sugerida": "Sección identificada del cuerpo del pasador, fuera de cabeza, ranura o extremo deformado", "guia": "Mide una sección concreta. Si repites, conserva la misma sección y orientación; registra otras secciones en otra ficha o en la nota.", "figura": "pin_d", "prioridad": "inicial"}, {"id": "pasador_longitud", "nombre": "Longitud total del pasador", "grupo": "pasador", "mediciones": "M05", "unidad": "mm", "referencia_sugerida": "Entre los dos extremos del pasador completo, indicando qué extremos se incluyen", "guia": "La longitud total no es automáticamente longitud útil para apoyos y retención.", "figura": "pin_l", "prioridad": "inicial"}, {"id": "movil_ancho_pivote", "nombre": "Ancho entre caras del cuerpo móvil en el pivote", "grupo": "rueda", "mediciones": "M41 o M42; no sustituye M06", "unidad": "mm", "referencia_sugerida": "Caras A y B supervivientes de la carcasa móvil junto al pivote, identificadas en foto o croquis", "guia": "No lo confundas con la separación original entre soportes fijos. Si las caras ya no existen, marca no recuperable.", "figura": "pivot_w", "prioridad": "posterior"}, {"id": "alojamiento_a_diametro", "nombre": "Diámetro del alojamiento A superviviente", "grupo": "rueda", "mediciones": "M07; M41 o M42", "unidad": "mm", "referencia_sugerida": "Alojamiento A identificado, con sección, orientación y pertenencia fija/móvil indicadas", "guia": "No deduzcas el diámetro de un agujero que ha desaparecido a partir del pasador. Si está ovalado, describe la dirección medida.", "figura": "bore_a", "prioridad": "posterior"}, {"id": "alojamiento_b_diametro", "nombre": "Diámetro del alojamiento B superviviente", "grupo": "rueda", "mediciones": "M07; M41 o M42", "unidad": "mm", "referencia_sugerida": "Alojamiento B identificado, con sección, orientación y pertenencia fija/móvil indicadas", "guia": "Se mide por separado; no se copia por simetría del alojamiento A.", "figura": "bore_b", "prioridad": "posterior"}, {"id": "pivote_eje_rueda_distancia", "nombre": "Distancia entre eje del pivote y eje de rueda", "grupo": "rueda", "mediciones": "M41 o M42", "unidad": "mm", "referencia_sugerida": "Entre ejes identificados del pivote y de la rueda, con método de localización de centros", "guia": "Esta distancia por sí sola no determina orientación ni coordenadas X/Z del módulo.", "figura": "axis_l", "prioridad": "posterior"}, {"id": "rueda_diametro_sin_carga", "nombre": "Diámetro exterior de rueda sin carga", "grupo": "rueda", "mediciones": "Envolvente local M41/M42; NO M25 efectivo", "unidad": "mm", "referencia_sugerida": "Dos puntos exteriores opuestos de rueda sin carga; indicar zona y estado del neumático", "guia": "Sirve como dato de volumen exterior. No se utiliza como diámetro efectivo de rodadura bajo peso.", "figura": "wheel_d", "prioridad": "posterior"}, {"id": "rueda_ancho_neumatico", "nombre": "Ancho exterior del neumático", "grupo": "rueda", "mediciones": "Envolvente local M41/M42", "unidad": "mm", "referencia_sugerida": "Entre caras exteriores del neumático, sin incluir carcasa ni eje", "guia": "No es el ancho completo del módulo ni una cota de espacio de mantenimiento.", "figura": "wheel_w", "prioridad": "posterior"}], "estados": ["pendiente", "medido", "estimado", "no_recuperable", "no_aplica"], "regla": "Una captura guarda evidencia; ninguna captura de esta revisión aprueba fabricación o coloca módulos en el marco del robot."}</script>
+<script>// SPDX-License-Identifier: MIT
+// Validación del formulario. FreeCAD vuelve a validar el archivo con Python.
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.X20Capture=factory();})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+const top=['version_esquema','id_captura','origen','fecha_medicion','instrumento','condicion','evidencia_general','pieza_rueda','pieza_pasador','lado','pareja','seccion_pasador','danos','extraccion','mediciones','notas','fabricacion_aprobada'];
+const recordKeys=['id','estado','valor_mm','lecturas_mm','incertidumbre_mm','referencias','evidencia','nota'];
+const object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
+const text=x=>typeof x==='string'&&x.trim().length>0;
+const number=x=>typeof x==='number'&&Number.isFinite(x);
+const sameKeys=(x,keys)=>object(x)&&Object.keys(x).length===keys.length&&keys.every(k=>Object.prototype.hasOwnProperty.call(x,k));
+function parseStrict(source){
+ if(typeof source!=='string'||source.length>200000)throw Error('La ficha supera 200000 caracteres o no es texto.');
+ source=source.replace(/^\uFEFF/,'');let i=0;
+ const ws=()=>{while(/[\t\r\n ]/.test(source[i]||'x'))i++;};
+ function str(){const start=i++;let escaped=false;for(;i<source.length;i++){const ch=source[i];if(!escaped&&ch==='"'){i++;return JSON.parse(source.slice(start,i));}if(!escaped&&ch==='\\')escaped=true;else escaped=false;}throw Error('Cadena JSON incompleta.');}
+ function value(depth){
+  if(depth>50)throw Error('Ficha demasiado anidada.');ws();const ch=source[i];
+  if(ch==='"')return str();
+  if(ch==='{'){
+   i++;ws();const out=Object.create(null),seen=new Set();if(source[i]==='}'){i++;return out;}
+   while(true){ws();if(source[i]!=='"')throw Error('Clave JSON no válida.');const k=str();if(seen.has(k))throw Error('Clave JSON duplicada: '+k);seen.add(k);ws();if(source[i++]!==':')throw Error('Falta dos puntos.');out[k]=value(depth+1);ws();const sep=source[i++];if(sep==='}')return out;if(sep!==',')throw Error('Objeto JSON incompleto.');}
+  }
+  if(ch==='['){i++;ws();const out=[];if(source[i]===']'){i++;return out;}while(true){out.push(value(depth+1));ws();const sep=source[i++];if(sep===']')return out;if(sep!==',')throw Error('Lista JSON incompleta.');}}
+  for(const [token,result] of [['true',true],['false',false],['null',null]])if(source.slice(i,i+token.length)===token){i+=token.length;return result;}
+  const m=source.slice(i).match(/^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?/);
+  if(m){i+=m[0].length;const n=Number(m[0]);if(!Number.isFinite(n))throw Error('Número JSON no finito.');return n;}
+  throw Error('Valor JSON no válido.');
+ }
+ const out=value(0);ws();if(i!==source.length)throw Error('Contenido sobrante después del JSON.');return out;
+}
+function emptyRecord(id){return {id,estado:'pendiente',valor_mm:null,lecturas_mm:[],incertidumbre_mm:null,referencias:'',evidencia:'',nota:''};}
+function emptyCapture(spec,id){return {version_esquema:'0.2',id_captura:id,origen:'unidad_real',fecha_medicion:'',instrumento:'',condicion:'',evidencia_general:'',pieza_rueda:'',pieza_pasador:'',lado:{valor:'desconocido',evidencia:''},pareja:{estado:'sin_confirmar',evidencia:''},seccion_pasador:{forma:'desconocida',evidencia:''},danos:{soporte_fijo:'desconocido',pivote_movil:'desconocido',gancho_movil:'desconocido',nota:''},extraccion:{direccion:'pendiente',espacio_observado:'',obstaculos:''},mediciones:spec.campos.map(x=>emptyRecord(x.id)),notas:'',fabricacion_aprobada:false};}
+function validate(data,spec){
+ const errores=[],avisos=[],r={errores,avisos,medidas_declaradas:0,puertas:{registro:false,pasador_local:false,soporte_fabricable:false,colocacion_global:false,fabricacion:false}};
+ const fail=s=>errores.push(s), fields=new Map(spec.campos.map(x=>[x.id,x]));
+ if(!object(data)){fail('La ficha debe ser un objeto JSON.');return r;}
+ if(!sameKeys(data,top))fail('La estructura de la ficha contiene campos ausentes o no reconocidos.');
+ if(data.version_esquema!=='0.2')fail('Versión de esquema no admitida; se requiere 0.2.');
+ if(typeof data.id_captura!=='string'||!(/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/).test(data.id_captura))fail('El ID requiere 1–64 letras, cifras, guiones o guiones bajos.');
+ if(!['unidad_real','prueba_software'].includes(data.origen))fail('Origen no admitido.');
+ if(data.fabricacion_aprobada!==false)fail('Esta ficha no puede aprobar fabricación.');
+ for(const key of ['fecha_medicion','instrumento','condicion','evidencia_general','pieza_rueda','pieza_pasador','notas'])if(typeof data[key]!=='string')fail(key+' debe ser texto.');
+ for(const [key,valueKey,values,unknown] of [['lado','valor',['desconocido','izquierdo','derecho'],'desconocido'],['pareja','estado',['sin_confirmar','confirmada','no_corresponde'],'sin_confirmar'],['seccion_pasador','forma',['desconocida','circular','otra'],'desconocida']]){
+  const x=data[key];if(!sameKeys(x,[valueKey,'evidencia'])){fail(key+': estructura no reconocida.');continue;}
+  if(!values.includes(x[valueKey]))fail(key+': valor no admitido.');
+  if(typeof x.evidencia!=='string')fail(key+': evidencia debe ser texto.');
+  if(x[valueKey]!==unknown&&!text(x.evidencia))fail(key+': describe cómo lo has identificado.');
+ }
+ if(data.pareja?.estado==='confirmada'&&!(text(data.pieza_rueda)&&text(data.pieza_pasador)))fail('Para confirmar la pareja hay que identificar rueda y pasador.');
+ if(text(data.pieza_rueda)&&text(data.pieza_pasador)&&data.pieza_rueda.trim().toLowerCase()===data.pieza_pasador.trim().toLowerCase())fail('Rueda y pasador son piezas distintas: asigna identificadores diferentes.');
+ if(!sameKeys(data.danos,['soporte_fijo','pivote_movil','gancho_movil','nota']))fail('Registro de daños incompleto.');
+ else{for(const k of ['soporte_fijo','pivote_movil','gancho_movil'])if(!['desconocido','presente_sin_dano_visible','danado','ausente'].includes(data.danos[k]))fail('Estado de daño no admitido: '+k);if(typeof data.danos.nota!=='string')fail('Nota de daños no válida.');}
+ if(!sameKeys(data.extraccion,['direccion','espacio_observado','obstaculos']))fail('Registro de extracción incompleto.');
+ else{if(!['pendiente','hacia_cara_a','hacia_cara_b','otra'].includes(data.extraccion.direccion))fail('Dirección no admitida.');for(const v of Object.values(data.extraccion))if(typeof v!=='string')fail('Extracción requiere textos.');}
+ if(!Array.isArray(data.mediciones)){fail('mediciones debe ser una lista.');return r;}
+ if(data.mediciones.length>fields.size)fail('Demasiados registros.');
+ const seen=new Set(),measured=new Set();
+ for(const m of data.mediciones){
+  if(!sameKeys(m,recordKeys)){fail('Registro de medida incompleto o desconocido.');continue;}
+  if(!fields.has(m.id)){fail('Magnitud no reconocida.');continue;}
+  if(seen.has(m.id))fail('Magnitud duplicada: '+m.id);seen.add(m.id);
+  const f=fields.get(m.id),label=f.nombre;
+  if(!spec.estados.includes(m.estado)){fail(label+': estado no admitido.');continue;}
+  for(const k of ['referencias','evidencia','nota'])if(typeof m[k]!=='string')fail(label+': '+k+' debe ser texto.');
+  let reads=m.lecturas_mm;
+  if(!Array.isArray(reads)||reads.length>20||reads.some(v=>!number(v)||v<=0)){fail(label+': lecturas positivas finitas, máximo 20.');reads=[];}
+  if(['pendiente','no_recuperable','no_aplica'].includes(m.estado)){
+   if(m.valor_mm!==null||reads.length||m.incertidumbre_mm!==null)fail(label+': un dato no disponible no puede llevar números.');
+   if(m.estado!=='pendiente'&&!text(m.nota))fail(label+': explica por qué no está disponible o no aplica.');
+   continue;
+  }
+  if(!number(m.valor_mm)||m.valor_mm<=0)fail(label+': longitud positiva en mm.');
+  if(m.incertidumbre_mm!==null&&(!number(m.incertidumbre_mm)||m.incertidumbre_mm<=0))fail(label+': incertidumbre positiva o vacía, no cero.');
+  if(!text(m.referencias))fail(label+': identifica los puntos, sección y orientación.');
+  if(!(text(m.evidencia)||text(data.evidencia_general)))fail(label+': falta una referencia a lectura, foto o croquis.');
+  if(m.estado==='estimado'){if(!text(m.nota))fail(label+': explica la estimación.');avisos.push(label+': estimación, no geometría medida.');}
+  else if(m.estado==='medido'){
+   measured.add(m.id);
+   if(reads.length&&number(m.valor_mm)&&(m.valor_mm<Math.min(...reads)||m.valor_mm>Math.max(...reads)))fail(label+': valor fuera de las repeticiones; revisa la sección/condición.');
+   if(m.incertidumbre_mm===null)avisos.push(label+': incertidumbre sin evaluar.');
+   if(!text(data[f.grupo==='pasador'?'pieza_pasador':'pieza_rueda']))fail(label+': identifica la pieza física.');
+  }
+ }
+ r.medidas_declaradas=measured.size;
+ if(measured.size){
+  if(!text(data.instrumento))fail('Indica el instrumento utilizado.');
+  if(!text(data.condicion))fail('Indica la condición de medida.');
+  const d=data.fecha_medicion;
+  let validDate=false;
+  if(typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)){const p=new Date(d+'T00:00:00Z');validDate=!isNaN(p)&&p.toISOString().slice(0,10)===d&&Number(d.slice(0,4))>=1;}
+  if(!validDate)fail('Indica una fecha de medición válida AAAA-MM-DD.');
+ }
+ if(data.origen==='prueba_software')avisos.push('Datos de prueba; no representan tu robot.');
+ if(data.lado?.valor==='desconocido')avisos.push('Lado pendiente; no se coloca el módulo en el robot.');
+ if(data.pareja?.estado!=='confirmada')avisos.push('La pertenencia del pasador a esta rueda no está confirmada.');
+ avisos.push('La ficha no reconstruye soportes, orientación global ni retención y no aprueba fabricación.');
+ r.puertas.registro=errores.length===0;
+ r.puertas.pasador_local=r.puertas.registro&&data.origen==='unidad_real'&&measured.has('pasador_diametro')&&measured.has('pasador_longitud')&&data.seccion_pasador?.forma==='circular';
+ return r;
+}
+return {emptyRecord,emptyCapture,validate,parseStrict};
+});
+</script>
+<script>// SPDX-License-Identifier: MIT
+// All inputs remain strings in the browser draft. Only explicit export creates numbers.
+(function(){
+'use strict';
+const spec=JSON.parse(document.getElementById('capture-spec').textContent);
+const api=X20Capture,form=document.getElementById('capture-form'),draftKey='valdo-x20-captura-0.2';
+const el=id=>document.getElementById(id), statusLabels={pendiente:'Pendiente',medido:'Medido',estimado:'Estimado · sin geometría',no_recuperable:'No recuperable',no_aplica:'No aplica'};
+function node(tag,text,attrs){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;for(const[k,v]of Object.entries(attrs||{}))n.setAttribute(k,v);return n;}
+function inputRow(parent,label,id,kind,attrs){const box=node('div'),l=node('label',label,{for:id}),n=node(kind||'input',undefined,{id,...(attrs||{})});box.append(l,n);parent.append(box);return n;}
+function options(select,values){for(const[value,label]of values)select.append(node('option',label,{value}));}
+for(const select of document.querySelectorAll('[data-damage]'))options(select,[['desconocido','Sin comprobar'],['presente_sin_dano_visible','Presente, sin daño visible'],['danado','Dañado'],['ausente','Ausente']]);
+for(const f of spec.campos){
+ const box=node('section',undefined,{class:'measure','data-field':f.id});box.append(node('h3',f.nombre),node('div',f.mediciones,{class:'code'}),node('p',f.guia,{class:'help'}));
+ const pair=node('div',undefined,{class:'pair',style:'margin-top:12px'});box.append(pair);
+ const st=inputRow(pair,'Estado',f.id+'__estado','select');options(st,spec.estados.map(s=>[s,statusLabels[s]]));
+ inputRow(pair,'Valor declarado · mm',f.id+'__valor_mm','input',{inputmode:'decimal',placeholder:'Sin dato',autocomplete:'off'});
+ const refs=inputRow(box,'Puntos o sección entre los que mides',f.id+'__referencias','textarea',{placeholder:f.referencia_sugerida});refs.rows=2;
+ const more=node('details');more.append(node('summary','Lecturas repetidas, incertidumbre y notas'));const grid=node('div',undefined,{class:'grid'});more.append(grid);box.append(more);
+ const reads=inputRow(grid,'Lecturas repetidas · mm',f.id+'__lecturas_mm','input',{placeholder:'Separadas por punto y coma',autocomplete:'off'});reads.parentElement.append(node('small','Misma sección y condición; no se calcula una media.'));
+ const unc=inputRow(grid,'Incertidumbre evaluada · mm',f.id+'__incertidumbre_mm','input',{inputmode:'decimal',placeholder:'Vacía si no se ha evaluado',autocomplete:'off'});unc.parentElement.append(node('small','La resolución del instrumento no es por sí sola la incertidumbre.'));
+ inputRow(grid,'Evidencia específica, si difiere de la general',f.id+'__evidencia','textarea');inputRow(grid,'Nota o motivo de ausencia / estimación',f.id+'__nota','textarea');
+ for(const n of box.querySelectorAll('input,select,textarea'))n.dataset.measure=f.id;
+ const highlight=()=>{
+  document.querySelectorAll('svg .is-highlighted').forEach(g=>g.classList.remove('is-highlighted'));
+  const target=el(f.figura);if(!target)return;target.classList.add('is-highlighted');
+  const svg=target.ownerSVGElement,shift=(target.getAttribute('transform')||'').match(/translate\((\d+)\s+(\d+)\)/);
+  if(shift){svg.setAttribute('viewBox',(Number(shift[1])-12)+' '+(Number(shift[2])-12)+' 762 464');svg.removeAttribute('height');svg.removeAttribute('width');svg.style.aspectRatio='762 / 464';}
+ };
+ box.addEventListener('focusin',highlight);box.addEventListener('pointerenter',highlight);
+ el(f.prioridad==='inicial'?'initial-measures':'later-measures').append(box);
+}
+const controls=[...form.querySelectorAll('input[id],textarea[id],select[id]')].filter(n=>n.type!=='file');
+function readPath(obj,path){return path.split('.').reduce((x,k)=>x[k],obj);}
+function writePath(obj,path,value){const parts=path.split('.'),last=parts.pop();let ptr=obj;for(const p of parts)ptr=ptr[p];ptr[last]=value;}
+function numeric(raw){const t=raw.trim();if(!t)return null;if(!/^[+]?(?:\d+(?:[.,]\d+)?|[.,]\d+)$/.test(t))return NaN;const v=Number(t.replace(',','.'));return Number.isFinite(v)?v:NaN;}
+function collect(){
+ const data=api.emptyCapture(spec,el('id_captura').value);
+ for(const n of form.querySelectorAll('[data-bind]'))writePath(data,n.dataset.bind,n.value);
+ for(const m of data.mediciones){for(const key of ['estado','referencias','evidencia','nota'])m[key]=el(m.id+'__'+key).value;m.valor_mm=numeric(el(m.id+'__valor_mm').value);m.incertidumbre_mm=numeric(el(m.id+'__incertidumbre_mm').value);const raw=el(m.id+'__lecturas_mm').value.trim();m.lecturas_mm=raw?raw.split(/[;\n]/).map(t=>t.trim()?numeric(t):NaN):[];}
+ return data;
+}
+function populate(data){
+ for(const n of form.querySelectorAll('[data-bind]'))n.value=readPath(data,n.dataset.bind);
+ const records=new Map(data.mediciones.map(m=>[m.id,m]));
+ for(const f of spec.campos){const m=records.get(f.id)||api.emptyRecord(f.id);for(const key of ['estado','referencias','evidencia','nota'])el(m.id+'__'+key).value=m[key];for(const key of ['valor_mm','incertidumbre_mm'])el(m.id+'__'+key).value=m[key]===null?'':String(m[key]).replace('.',',');el(m.id+'__lecturas_mm').value=m.lecturas_mm.map(n=>String(n).replace('.',',')).join('; ');}
+}
+function list(id,items){el(id).replaceChildren(...items.map(t=>node('li',t)));}
+function refresh(){
+ const data=collect(),result=api.validate(data,spec);list('errors',result.errores);list('warnings',result.avisos);el('error-block').hidden=!result.errores.length;
+ el('record-badge').textContent=result.puertas.registro?'Ficha guardable':'Revisar ficha';el('record-badge').className='badge'+(result.puertas.registro?'':' invalid');
+ el('pin-badge').textContent=result.puertas.pasador_local?'Referencia local del pasador disponible':'Referencia del pasador pendiente';el('pin-badge').className='badge'+(result.puertas.pasador_local?'':' pending');
+ el('count').textContent=result.medidas_declaradas+' de '+spec.campos.length+' magnitudes declaradas como medidas. Los huecos siguen sin dato.';
+ el('export').disabled=!result.puertas.registro;return {data,result};
+}
+function saveDraft(){
+ const raw=Object.fromEntries(controls.map(n=>[n.id,n.value]));
+ try{localStorage.setItem(draftKey,JSON.stringify({version:'0.2',raw}));el('draft-status').textContent='Borrador guardado en este navegador. Descarga también el JSON para conservar una copia.';}
+ catch(e){el('draft-status').textContent='Este navegador no ha permitido guardar el borrador. Descarga el JSON para conservar la ficha.';}
+}
+function loadDraft(){try{const raw=localStorage.getItem(draftKey);if(!raw)return;const d=JSON.parse(raw);if(d.version!=='0.2'||typeof d.raw!=='object'||d.raw===null)return;for(const n of controls)if(typeof d.raw[n.id]==='string'){const value=d.raw[n.id];if(n.tagName!=='SELECT'||[...n.options].some(o=>o.value===value))n.value=value;}el('draft-status').textContent='Borrador anterior recuperado de este navegador.';}catch(e){el('draft-status').textContent='No se ha podido recuperar un borrador. Puedes abrir un JSON guardado.';}}
+form.addEventListener('submit',event=>event.preventDefault());
+form.addEventListener('input',()=>{refresh();saveDraft();});form.addEventListener('change',()=>{refresh();saveDraft();});
+el('export').addEventListener('click',()=>{const {data,result}=refresh();if(!result.puertas.registro)return;const blob=new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=node('a',undefined,{href:url,download:data.id_captura+'.json'});document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);el('file-status').textContent='Ficha enviada a las descargas del navegador: '+data.id_captura+'.json';});
+el('import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>800000)throw Error('Archivo demasiado grande.');const data=api.parseStrict(await file.text()),result=api.validate(data,spec);if(!result.puertas.registro)throw Error(result.errores.join(' '));populate(data);refresh();saveDraft();el('file-status').textContent='Ficha cargada: '+data.id_captura;}catch(e){el('file-status').textContent='No se ha cargado la ficha: '+e.message;}finally{event.target.value='';}});
+el('new-capture').addEventListener('click',()=>{if(!confirm('¿Vaciar el formulario? Descarga antes la ficha si quieres conservarla.'))return;populate(api.emptyCapture(spec,'CAPTURA_001'));refresh();saveDraft();el('file-status').textContent='Ficha vacía. Las medidas anteriores no se han trasladado.';});
+const guide=document.querySelector('.figure-card svg');
+function fullGuide(){guide.setAttribute('viewBox','0 0 1600 2180');guide.style.aspectRatio='1600 / 2180';}
+el('show-guide').addEventListener('click',fullGuide);
+let previousView=null;
+window.addEventListener('beforeprint',()=>{previousView=[guide.getAttribute('viewBox'),guide.style.aspectRatio];fullGuide();});
+window.addEventListener('afterprint',()=>{if(previousView){guide.setAttribute('viewBox',previousView[0]);guide.style.aspectRatio=previousView[1];}});
+el('print-guide').addEventListener('click',()=>window.print());
+loadDraft();refresh();
+el('pasador_diametro__estado').dispatchEvent(new Event('focusin',{bubbles:true}));
+})();
+</script>
+</body></html>

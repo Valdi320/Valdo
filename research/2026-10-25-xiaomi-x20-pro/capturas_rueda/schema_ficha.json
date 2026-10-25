@@ -1,0 +1,339 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Captura local de rueda/pasador X20 Pro, v0.2",
+  "description": "Esquema estructural. validar_ficha.py aplica además procedencia, fecha, comparación de lecturas, identidad y puertas CAD. Este esquema no aprueba fabricación.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "condicion",
+    "danos",
+    "evidencia_general",
+    "extraccion",
+    "fabricacion_aprobada",
+    "fecha_medicion",
+    "id_captura",
+    "instrumento",
+    "lado",
+    "mediciones",
+    "notas",
+    "origen",
+    "pareja",
+    "pieza_pasador",
+    "pieza_rueda",
+    "seccion_pasador",
+    "version_esquema"
+  ],
+  "properties": {
+    "fecha_medicion": {
+      "type": "string"
+    },
+    "instrumento": {
+      "type": "string"
+    },
+    "condicion": {
+      "type": "string"
+    },
+    "evidencia_general": {
+      "type": "string"
+    },
+    "pieza_rueda": {
+      "type": "string"
+    },
+    "pieza_pasador": {
+      "type": "string"
+    },
+    "notas": {
+      "type": "string"
+    },
+    "version_esquema": {
+      "const": "0.2"
+    },
+    "id_captura": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"
+    },
+    "origen": {
+      "enum": [
+        "unidad_real",
+        "prueba_software"
+      ]
+    },
+    "fabricacion_aprobada": {
+      "const": false
+    },
+    "lado": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valor",
+        "evidencia"
+      ],
+      "properties": {
+        "valor": {
+          "enum": [
+            "desconocido",
+            "izquierdo",
+            "derecho"
+          ]
+        },
+        "evidencia": {
+          "type": "string"
+        }
+      }
+    },
+    "pareja": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "estado",
+        "evidencia"
+      ],
+      "properties": {
+        "estado": {
+          "enum": [
+            "sin_confirmar",
+            "confirmada",
+            "no_corresponde"
+          ]
+        },
+        "evidencia": {
+          "type": "string"
+        }
+      }
+    },
+    "seccion_pasador": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "forma",
+        "evidencia"
+      ],
+      "properties": {
+        "forma": {
+          "enum": [
+            "desconocida",
+            "circular",
+            "otra"
+          ]
+        },
+        "evidencia": {
+          "type": "string"
+        }
+      }
+    },
+    "mediciones": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/medicion"
+      }
+    },
+    "danos": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "soporte_fijo",
+        "pivote_movil",
+        "gancho_movil",
+        "nota"
+      ],
+      "properties": {
+        "soporte_fijo": {
+          "enum": [
+            "desconocido",
+            "presente_sin_dano_visible",
+            "danado",
+            "ausente"
+          ]
+        },
+        "pivote_movil": {
+          "enum": [
+            "desconocido",
+            "presente_sin_dano_visible",
+            "danado",
+            "ausente"
+          ]
+        },
+        "gancho_movil": {
+          "enum": [
+            "desconocido",
+            "presente_sin_dano_visible",
+            "danado",
+            "ausente"
+          ]
+        },
+        "nota": {
+          "type": "string"
+        }
+      }
+    },
+    "extraccion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direccion",
+        "espacio_observado",
+        "obstaculos"
+      ],
+      "properties": {
+        "direccion": {
+          "enum": [
+            "pendiente",
+            "hacia_cara_a",
+            "hacia_cara_b",
+            "otra"
+          ]
+        },
+        "espacio_observado": {
+          "type": "string"
+        },
+        "obstaculos": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "medicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "estado",
+        "evidencia",
+        "id",
+        "incertidumbre_mm",
+        "lecturas_mm",
+        "nota",
+        "referencias",
+        "valor_mm"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "pasador_diametro",
+            "pasador_longitud",
+            "movil_ancho_pivote",
+            "alojamiento_a_diametro",
+            "alojamiento_b_diametro",
+            "pivote_eje_rueda_distancia",
+            "rueda_diametro_sin_carga",
+            "rueda_ancho_neumatico"
+          ]
+        },
+        "estado": {
+          "enum": [
+            "pendiente",
+            "medido",
+            "estimado",
+            "no_recuperable",
+            "no_aplica"
+          ]
+        },
+        "valor_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "lecturas_mm": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "incertidumbre_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "referencias": {
+          "type": "string"
+        },
+        "evidencia": {
+          "type": "string"
+        },
+        "nota": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "estado": {
+                "enum": [
+                  "pendiente",
+                  "no_recuperable",
+                  "no_aplica"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "valor_mm": {
+                "type": "null"
+              },
+              "lecturas_mm": {
+                "maxItems": 0
+              },
+              "incertidumbre_mm": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "estado": {
+                "enum": [
+                  "medido",
+                  "estimado"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "valor_mm": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "referencias": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "estado": {
+                "enum": [
+                  "no_recuperable",
+                  "no_aplica",
+                  "estimado"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "nota": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

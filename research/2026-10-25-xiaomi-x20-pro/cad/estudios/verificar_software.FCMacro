@@ -1,0 +1,102 @@
+# SPDX-License-Identifier: MIT
+# Mismo núcleo de comprobación ejecutado; adaptación portátil con selector de carpeta.
+# Todos los valores del fixture son sintéticos. No cierra documentos ajenos.
+from pathlib import Path
+import sys,json,hashlib,traceback,tempfile
+from copy import deepcopy
+import FreeCAD as App
+from PySide import QtCore,QtWidgets
+folder=Path(globals().get("__file__","")).resolve().parent
+project=folder.parent.parent
+if not (project/"capturas_rueda"/"validar_ficha.py").is_file():
+    chosen=QtWidgets.QFileDialog.getExistingDirectory(None,"Carpeta del proyecto research/2026-10-25-xiaomi-x20-pro")
+    if not chosen:raise RuntimeError("Comprobación cancelada")
+    project=Path(chosen)
+locks=[]
+for directory in [project,project/"capturas_rueda",project/"cad",project.parents[1]/".git"]:
+    if directory.is_dir():
+        locks.extend(str(p) for p in directory.iterdir() if p.is_file() and (p.name.lower().endswith(".lock") or "cerrojo" in p.name.lower() or p.name.lower() in {"lock","bloqueo"}))
+if locks:raise RuntimeError("Cerrojo presente; no se ejecuta: "+", ".join(locks))
+root=Path(tempfile.mkdtemp(prefix="valdo-x20-validacion-"))
+sys.path[:0]=[str(project/"capturas_rueda"),str(project/"cad"/"estudios")]
+sys.dont_write_bytecode=True
+receipt={"version":"0.2","tipo":"VALIDACION DE SOFTWARE; no ensayos fisicos","checks":{}}
+master=project/"cad"/"X20Pro_Base_Arquitectura.FCStd"
+measure=master.parent.parent/"mediciones.csv"
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+receipt["master_antes"]=sha(master)
+receipt["mediciones_antes"]=sha(measure)
+created=[]
+def cell_mm(sheet,cell):
+    value=sheet.get(cell)
+    return value.Value if hasattr(value,"Value") else App.Units.Quantity(str(value)).Value
+
+def check(name,condition):
+    receipt["checks"][name]=bool(condition)
+    if not condition:raise AssertionError(name)
+try:
+    from validar_ficha import blank_capture,load_json
+    from importar_freecad import make_document,save_new_document
+    from crear_estudio_axial import create_document,save_new
+    data=load_json(project/"capturas_rueda"/"plantilla_rueda.json")
+    d,r=make_document(data);created.append(d.Name)
+    check("plantilla_sin_geometria",d.getObject("ReferenciaPasador") is None)
+    check("pendientes_permanecen_null",all(m["valor_mm"] is None for m in json.loads(d.AlcanceCaptura.DatosJSON)["mediciones"]))
+    check("plantilla_sin_aprobacion",not d.AlcanceCaptura.ValidacionFisica)
+    fixture=blank_capture("ENSAYO_SINTETICO_SIN_PIEZA")
+    fixture.update(origen="prueba_software",fecha_medicion="2026-10-25",instrumento="SINTETICO",condicion="NO HAY PIEZA FISICA",evidencia_general="FIXTURE DE SOFTWARE",pieza_pasador="TEST_PASADOR")
+    fixture["seccion_pasador"]={"forma":"circular","evidencia":"HIPOTESIS SINTETICA"}
+    for m in fixture["mediciones"]:
+        if m["id"] in ["pasador_diametro","pasador_longitud"]:
+            m.update(estado="medido",valor_mm=3.17 if m["id"]=="pasador_diametro" else 28.4,referencias="=1+1",nota="NUMEROS FICTICIOS, NO NOMINALES")
+    plain,r=make_document(fixture);created.append(plain.Name)
+    check("prueba_sin_opcion_no_genera_geometria",plain.getObject("ReferenciaPasador") is None)
+    t,r=make_document(fixture,ensayo_software=True);created.append(t.Name)
+    p=t.ReferenciaPasador
+    check("ensayo_explicito_marcado",p.EnsayoSoftware and not r["puertas"]["pasador_local"])
+    check("cilindro_ensayo_valido",p.Shape.isValid() and len(p.Shape.Solids)==1 and abs(p.Radius.Value-1.585)<1e-8 and abs(p.Height.Value-28.4)<1e-8)
+    receipt["texto_importado"]=str(t.MedicionesDeclaradas.getContents("F2"))
+    check("texto_no_se_ejecuta_como_expresion",str(t.MedicionesDeclaradas.get("F2"))!="2")
+    sample=root/"ENSAYO_NO_FABRICAR_2.FCStd"
+    save_new_document(t,sample)
+    try:
+        save_new_document(t,sample)
+        check("rechaza_sobrescritura",False)
+    except FileExistsError:check("rechaza_sobrescritura",True)
+    bad=deepcopy(fixture);bad["fabricacion_aprobada"]=True
+    docs=len(App.listDocuments())
+    try:
+        make_document(bad)
+        check("rechaza_invalido_antes_crear",False)
+    except ValueError:check("rechaza_invalido_antes_crear",len(App.listDocuments())==docs)
+    tname=t.Name; App.closeDocument(tname);created.remove(tname)
+    reopened=App.openDocument(str(sample));created.append(reopened.Name)
+    check("reabre_captura",reopened.ReferenciaPasador.Shape.isValid() and reopened.ReferenciaPasador.EnsayoSoftware and not reopened.AlcanceCaptura.ValidacionFisica)
+    ax=create_document();created.append(ax.Name)
+    check("axial_publicado",abs(ax.NominalPublicado.Height.Value-38.5)<1e-8 and abs(ax.NominalPublicado.Radius.Value-2)<1e-8)
+    check("axial_50",abs(ax.PasadorDemo.Height.Value-50)<1e-8)
+    check("axial_excesos",abs(cell_mm(ax.Presupuesto,"B9")-11.5)<1e-8 and abs(cell_mm(ax.Presupuesto,"B11")-3.5)<1e-8)
+    check("axial_7_solidos_validos",len([o for o in ax.Objects if hasattr(o,"Shape") and len(o.Shape.Solids)==1 and o.Shape.isValid()])==7)
+    ax.Presupuesto.set("B4","30 mm");ax.recompute()
+    check("axial_parametrico",abs(ax.PasadorDemo.Height.Value-54)<1e-8 and abs(ax.ApoyoB.Placement.Base.x-42)<1e-8)
+    ax.Presupuesto.set("B4","26 mm");ax.recompute()
+    axial_path=root/"X20Pro_Estudio_Axial_Publicado.FCStd"
+    save_new(ax,axial_path)
+    aname=ax.Name; App.closeDocument(aname);created.remove(aname)
+    ar=App.openDocument(str(axial_path));created.append(ar.Name)
+    check("axial_reabre",abs(ar.PasadorDemo.Height.Value-50)<1e-8 and not ar.Alcance.FabricacionAprobada)
+    receipt["freecad_version"]=App.Version()
+    receipt["axial_sha256"]=sha(axial_path)
+    receipt["ok"]=True
+except Exception:
+    receipt["ok"]=False
+    receipt["error"]=traceback.format_exc()
+finally:
+    receipt["master_despues"]=sha(master)
+    receipt["mediciones_despues"]=sha(measure)
+    receipt["checks"]["master_sin_cambios"]=receipt["master_antes"]==receipt["master_despues"]
+    receipt["checks"]["mediciones_sin_cambios"]=receipt["mediciones_antes"]==receipt["mediciones_despues"]
+    for name in created:
+        if name in App.listDocuments():App.closeDocument(name)
+    (root/"resultado_freecad_2.json").write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding="utf-8")
+    App.Console.PrintMessage("Resultado de software: "+str(root/"resultado_freecad_2.json")+"\n")

@@ -46,9 +46,11 @@ Se reconstruyen **interfaces útiles**. Un agujero intacto de módulo, su eje, u
 
 La posición local de una pieza y su posición dentro del robot son problemas distintos. Si se ha perdido la relación global, se marca como perdida y se intenta recuperar mediante contrapartes todavía unidas, un útil reproducible, medidas de otro D102GL o una posición nueva deliberada que requiera pruebas. La simetría y la foto comercial no la convierten en una cota OEM.
 
-### Paquete inicial de captura
+### Datos públicos primero; levantamiento cuando haya acceso físico
 
-No hace falta repetir las 18 fotos ni abrir conjuntos sanos. Para el primer cartucho, recoger lo siguiente con el robot sin energía y sin forzar piezas deterioradas:
+La búsqueda en fuentes públicas precede a una solicitud de medidas al propietario. Las referencias comerciales del pasador y del cableado permiten avanzar cálculos y parámetros provisionales; el capítulo 12 ya contrasta la longitud del pasador publicado con la disposición DEMO. Las incógnitas que no aparezcan en esas fuentes permanecen identificadas.
+
+La lista siguiente organiza una comprobación física posterior cuando haya acceso al conjunto; no exige que el propietario entregue todo este paquete para continuar el CAD. No hace falta repetir las 18 fotos ni abrir conjuntos sanos. Con el robot sin energía y sin forzar piezas deterioradas:
 
 1. **Orientación común:** vista cenital de lo que queda de la base, frontal marcado, regla en el plano y referencias intactas señaladas. Identificar qué relaciones todavía son rígidas; sirve para M40, no para extraer todas las alturas de una foto.
 2. **Una rueda completa, lado identificado:** ambas caras y perfil, detalle de su eje/pivote, pasador, zona móvil rota y enganche del muelle. Medidas directas de diámetro/longitud del pasador, ancho del alojamiento, separación de contracaras y relación pivote–eje de rueda. Evitar comprimir varias coordenadas en una única cifra. M41 y M04–M09.

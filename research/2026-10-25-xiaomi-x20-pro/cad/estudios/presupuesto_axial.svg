@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1310" viewBox="0 0 1600 1310" role="img" aria-labelledby="titulo descripcion" lang="es">
+  <title id="titulo">Presupuesto axial · una disposición que no cabe</title>
+  <desc id="descripcion">Comparación exacta de tres presupuestos de longitud con origen común y la misma escala gráfica. La disposición DEMO con salientes suma 4 más 8 más 26 más 8 más 4, igual a 50 milímetros. La disposición DEMO sin salientes suma 8 más 26 más 8, igual a 42 milímetros. La longitud nominal comercial del pasador SKU 12584 es 38,5 milímetros. Las diferencias son 11,5 y 3,5 milímetros. Son disposiciones ilustrativas, no geometría Xiaomi ni piezas aprobadas para fabricar.</desc>
+  <defs>
+    <marker id="flecha-diferencia" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 0,0 L 8,4 L 0,8 Z" fill="#a33e24"/>
+    </marker>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #152d40; }
+      .title { font-size: 44px; font-weight: 700; }
+      .subtitle { font-size: 24px; }
+      .row-title { font-size: 28px; font-weight: 700; }
+      .row-subtitle { font-size: 23px; }
+      .formula { font-size: 27px; font-weight: 600; }
+      .total { font-size: 30px; font-weight: 700; }
+      .segment-name { font-size: 21px; font-weight: 600; text-anchor: middle; }
+      .segment-value { font-size: 25px; font-weight: 700; text-anchor: middle; }
+      .light { fill: #ffffff; }
+      .note { font-size: 22px; }
+      .small { font-size: 20px; }
+      .source { font-size: 19px; }
+      .saliente { fill: #f1c27d; }
+      .apoyo { fill: #2f6b88; }
+      .hueco { fill: #dceaf2; }
+      .nominal { fill: #697586; }
+      .bar-outline { fill: none; stroke: #203e51; stroke-width: 2; }
+      .separator { stroke: #ffffff; stroke-width: 2; }
+      .difference { fill: none; stroke: #a33e24; stroke-width: 2.5; }
+      .difference-text { fill: #97351e; font-size: 25px; font-weight: 700; text-anchor: middle; stroke: #ffffff; stroke-width: 8; stroke-linejoin: round; paint-order: stroke fill; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1310" fill="#eef3f7"/>
+  <text x="64" y="87" class="title">Presupuesto axial · una disposición que no cabe</text>
+  <text x="64" y="132" class="subtitle">Comparación de longitudes; las bandas no representan la forma física de las piezas.</text>
+  <rect x="64" y="161" width="1472" height="56" rx="10" fill="#e0eaf2"/>
+  <text x="88" y="197" class="note">Mismo origen horizontal y escala común. Las alturas de las bandas no representan espesores.</text>
+
+  <!-- Escala gráfica de todas las bandas: 21 unidades SVG por mm; origen horizontal x = 330. -->
+  <rect x="48" y="236" width="1504" height="656" rx="16" fill="#ffffff" stroke="#cbd7e0" stroke-width="2"/>
+  <text x="330" y="274" class="small">0 · origen común</text>
+  <text x="1138.5" y="274" class="small" text-anchor="middle" fill="#97351e">38,5 mm · referencia nominal</text>
+  <line x1="330" y1="286" x2="330" y2="858" stroke="#95a7b5" stroke-width="2"/>
+
+  <!-- Referencia nominal bajo las bandas y rótulos, no tolerancia ni longitud útil garantizadas. -->
+  <g id="referencia-nominal" aria-label="Referencia vertical a 38,5 mm desde el origen">
+    <line x1="1138.5" y1="286" x2="1138.5" y2="858" stroke="#a33e24" stroke-width="2.5" stroke-dasharray="9 7"/>
+  </g>
+
+  <g id="demo-con-salientes" aria-label="Disposición DEMO con salientes: 50 mm">
+    <text x="76" y="353" class="row-title">DEMO</text>
+    <text x="76" y="386" class="row-subtitle">con salientes</text>
+    <text x="330" y="315" class="formula">4 + 8 + 26 + 8 + 4 = 50 mm</text>
+    <g id="bandas-demo-con-salientes" data-length-mm="50">
+      <rect x="330" y="337" width="84" height="66" class="saliente" data-length-mm="4"/>
+      <rect x="414" y="337" width="168" height="66" class="apoyo" data-length-mm="8"/>
+      <rect x="582" y="337" width="546" height="66" class="hueco" data-length-mm="26"/>
+      <rect x="1128" y="337" width="168" height="66" class="apoyo" data-length-mm="8"/>
+      <rect x="1296" y="337" width="84" height="66" class="saliente" data-length-mm="4"/>
+      <path d="M414 337V403 M582 337V403 M1128 337V403 M1296 337V403" class="separator"/>
+      <rect x="330" y="337" width="1050" height="66" class="bar-outline"/>
+      <text x="372" y="379" class="segment-value">4</text>
+      <text x="498" y="363" class="segment-name light">Apoyo</text>
+      <text x="498" y="391" class="segment-value light">8</text>
+      <text x="855" y="363" class="segment-name">Hueco</text>
+      <text x="855" y="391" class="segment-value">26</text>
+      <text x="1212" y="363" class="segment-name light">Apoyo</text>
+      <text x="1212" y="391" class="segment-value light">8</text>
+      <text x="1338" y="379" class="segment-value">4</text>
+    </g>
+    <text x="1403" y="381" class="total">50 mm</text>
+    <g id="diferencia-con-salientes" aria-label="Diferencia respecto al nominal: 11,5 mm" data-length-mm="11.5">
+      <path d="M1380 409V451 M1138.5 425V451" class="difference"/>
+      <line x1="1142.5" y1="441" x2="1376" y2="441" class="difference" marker-start="url(#flecha-diferencia)" marker-end="url(#flecha-diferencia)"/>
+      <text x="1259.25" y="482" class="difference-text">Exceso: 11,5 mm</text>
+    </g>
+  </g>
+
+  <g id="demo-sin-salientes" aria-label="Disposición DEMO sin salientes: 42 mm">
+    <text x="76" y="561" class="row-title">DEMO</text>
+    <text x="76" y="594" class="row-subtitle">sin salientes</text>
+    <text x="330" y="523" class="formula">8 + 26 + 8 = 42 mm</text>
+    <g id="bandas-demo-sin-salientes" data-length-mm="42">
+      <rect x="330" y="545" width="168" height="66" class="apoyo" data-length-mm="8"/>
+      <rect x="498" y="545" width="546" height="66" class="hueco" data-length-mm="26"/>
+      <rect x="1044" y="545" width="168" height="66" class="apoyo" data-length-mm="8"/>
+      <path d="M498 545V611 M1044 545V611" class="separator"/>
+      <rect x="330" y="545" width="882" height="66" class="bar-outline"/>
+      <text x="414" y="571" class="segment-name light">Apoyo</text>
+      <text x="414" y="599" class="segment-value light">8</text>
+      <text x="771" y="571" class="segment-name">Hueco</text>
+      <text x="771" y="599" class="segment-value">26</text>
+      <text x="1128" y="571" class="segment-name light">Apoyo</text>
+      <text x="1128" y="599" class="segment-value light">8</text>
+    </g>
+    <text x="1235" y="589" class="total">42 mm</text>
+    <g id="diferencia-sin-salientes" aria-label="Diferencia respecto al nominal: 3,5 mm" data-length-mm="3.5">
+      <path d="M1212 617V659 M1138.5 633V659" class="difference"/>
+      <line x1="1142.5" y1="649" x2="1208" y2="649" class="difference" marker-start="url(#flecha-diferencia)" marker-end="url(#flecha-diferencia)"/>
+      <text x="1175.25" y="690" class="difference-text">Exceso: 3,5 mm</text>
+    </g>
+  </g>
+
+  <g id="pasador-nominal" aria-label="Longitud total nominal comercial del pasador: 38,5 mm">
+    <text x="76" y="769" class="row-title">Pasador</text>
+    <text x="76" y="802" class="row-subtitle">publicado</text>
+    <text x="330" y="731" class="formula">Longitud total nominal comercial</text>
+    <rect x="330" y="753" width="808.5" height="66" class="nominal" data-length-mm="38.5"/>
+    <rect x="330" y="753" width="808.5" height="66" class="bar-outline"/>
+    <text x="734.25" y="796" class="segment-value light">SKU 12584</text>
+    <text x="1161.5" y="797" class="total">38,5 mm</text>
+  </g>
+
+  <g id="leyenda" aria-label="Leyenda de bandas">
+    <rect x="64" y="925" width="30" height="26" rx="3" class="saliente" stroke="#a67532"/>
+    <text x="108" y="947" class="note">Salientes DEMO</text>
+    <rect x="391" y="925" width="30" height="26" rx="3" class="apoyo"/>
+    <text x="435" y="947" class="note">Apoyos DEMO</text>
+    <rect x="715" y="925" width="30" height="26" rx="3" class="hueco" stroke="#94adbe"/>
+    <text x="759" y="947" class="note">Hueco DEMO</text>
+    <rect x="1042" y="925" width="30" height="26" rx="3" class="nominal"/>
+    <text x="1086" y="947" class="note">Pasador nominal publicado</text>
+  </g>
+
+  <g id="alcance" aria-label="Alcance y límites de la comparación">
+    <rect x="64" y="984" width="1472" height="195" rx="12" fill="#ffffff" stroke="#cbd7e0" stroke-width="2"/>
+    <text x="88" y="1025" class="note">Los tramos de 4, 8 y 26 mm son parámetros DEMO; no son medidas del Xiaomi.</text>
+    <text x="88" y="1064" class="note">38,5 mm es un nominal comercial, no una medida de esta unidad. Tolerancia y longitud útil no publicadas.</text>
+    <text x="88" y="1103" class="note">Son disposiciones ilustrativas; esta comparación no identifica un defecto del diseño original.</text>
+    <text x="88" y="1142" class="note" font-weight="700">Retención, ajustes y geometría funcional pendientes. No aprobado para fabricar.</text>
+  </g>
+
+  <g id="fuente" aria-label="Fuente comercial consultada el 25 de octubre de 2026">
+    <text x="64" y="1221" class="small">Fuente: PC:MediaStore · SKU 12584 · consulta 25-10-2026</text>
+    <a href="https://www.ep-mediastore-ab.de/rad-lager-splint-4x385-mm-stueck-p-12584.html">
+      <text x="64" y="1258" class="source" fill="#075d88" text-decoration="underline">https://www.ep-mediastore-ab.de/rad-lager-splint-4x385-mm-stueck-p-12584.html</text>
+    </a>
+  </g>
+</svg>

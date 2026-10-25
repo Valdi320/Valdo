@@ -1,0 +1,118 @@
+{
+  "version_esquema": "0.2",
+  "id_captura": "RUEDA_PENDIENTE",
+  "origen": "unidad_real",
+  "fecha_medicion": "",
+  "instrumento": "",
+  "condicion": "",
+  "evidencia_general": "",
+  "pieza_rueda": "",
+  "pieza_pasador": "",
+  "lado": {
+    "valor": "desconocido",
+    "evidencia": ""
+  },
+  "pareja": {
+    "estado": "sin_confirmar",
+    "evidencia": ""
+  },
+  "seccion_pasador": {
+    "forma": "desconocida",
+    "evidencia": ""
+  },
+  "danos": {
+    "soporte_fijo": "desconocido",
+    "pivote_movil": "desconocido",
+    "gancho_movil": "desconocido",
+    "nota": ""
+  },
+  "extraccion": {
+    "direccion": "pendiente",
+    "espacio_observado": "",
+    "obstaculos": ""
+  },
+  "mediciones": [
+    {
+      "id": "pasador_diametro",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "pasador_longitud",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "movil_ancho_pivote",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "alojamiento_a_diametro",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "alojamiento_b_diametro",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "pivote_eje_rueda_distancia",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "rueda_diametro_sin_carga",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    },
+    {
+      "id": "rueda_ancho_neumatico",
+      "estado": "pendiente",
+      "valor_mm": null,
+      "lecturas_mm": [],
+      "incertidumbre_mm": null,
+      "referencias": "",
+      "evidencia": "",
+      "nota": ""
+    }
+  ],
+  "notas": "",
+  "fabricacion_aprobada": false
+}

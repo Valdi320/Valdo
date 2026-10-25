@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2180" viewBox="0 0 1600 2180" role="img" aria-labelledby="guide-title guide-desc">
+  <title id="guide-title">Guía de medida · sin escala</title>
+  <desc id="guide-desc">Ocho esquemas conceptuales para identificar las referencias de medida de un pasador, el cuerpo móvil del pivote, dos alojamientos independientes y una rueda. No reproducen la geometría Xiaomi, no incluyen cotas numéricas ni definen la orientación del módulo en el robot.</desc>
+  <defs>
+    <marker id="dimension-arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto-start-reverse" markerUnits="userSpaceOnUse" viewBox="0 0 12 12">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#0369a1"/>
+    </marker>
+    <style>
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill: #172b3a; }
+      .page-title { font-size: 44px; font-weight: 700; }
+      .subtitle { font-size: 27px; font-weight: 500; }
+      .legend { font-size: 20px; fill: #42586a; }
+      .panel-background { fill: #ffffff; stroke: #bbcbd7; stroke-width: 2; }
+      .panel-title { font-size: 25px; font-weight: 700; }
+      .panel-kicker { font-size: 19px; fill: #52697b; }
+      .shape { fill: #e7edf2; stroke: #5a7082; stroke-width: 3; stroke-linejoin: round; }
+      .shape-light { fill: #f5f8fa; stroke: #5a7082; stroke-width: 3; stroke-linejoin: round; }
+      .opening { fill: #ffffff; stroke: #5a7082; stroke-width: 3; }
+      .axis { fill: none; stroke: #7a8e9e; stroke-width: 2; stroke-dasharray: 10 7; }
+      .extension { fill: none; stroke: #3294bf; stroke-width: 2; }
+      .dimension { fill: none; stroke: #0369a1; stroke-width: 3; marker-start: url(#dimension-arrow); marker-end: url(#dimension-arrow); }
+      .reference { fill: none; stroke: #0369a1; stroke-width: 5; stroke-linecap: round; }
+      .dim-label { font-size: 23px; font-weight: 700; fill: #0369a1; }
+      .part-label { font-size: 18px; font-weight: 700; fill: #42586a; }
+      .point-label { font-size: 24px; font-weight: 700; fill: #0369a1; }
+      .caption { font-size: 20px; }
+      .caution { font-size: 20px; font-weight: 700; fill: #7a3d0e; }
+      .caption-rule { stroke: #e0e8ee; stroke-width: 2; }
+      .footer { font-size: 20px; fill: #42586a; }
+      .measure-panel.is-highlighted .panel-background,
+      .measure-panel:target .panel-background { fill: #edf8ff; stroke: #0369a1; stroke-width: 5; }
+      .measure-panel.is-highlighted .panel-title,
+      .measure-panel:target .panel-title { fill: #0369a1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="2180" fill="#f1f5f8"/>
+  <text x="48" y="73" class="page-title">Guía de medida · sin escala</text>
+  <text x="48" y="119" class="subtitle">Esquema conceptual; no reproduce la geometría Xiaomi</text>
+  <text x="48" y="156" class="legend">Flechas azules: magnitud a medir · Contornos grises: referentes · Sin valores ni orientación global</text>
+
+  <!-- Cada grupo se puede resaltar mediante .is-highlighted o un selector CSS de su ID. -->
+  <g id="pin_d" class="measure-panel" transform="translate(48 192)" role="group" aria-labelledby="pin_d-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="pin_d-title" x="28" y="44" class="panel-title">Pasador · diámetro del cuerpo</text>
+    <text x="28" y="77" class="panel-kicker">Selecciona una sección regular y documenta su posición.</text>
+
+    <path class="shape" d="M 150 177 H 525 V 185 H 539 V 177 H 579 Q 608 177 608 209 Q 608 241 579 241 H 539 V 233 H 525 V 241 H 150 Z"/>
+    <rect x="115" y="160" width="35" height="98" rx="7" class="shape"/>
+    <line class="axis" x1="88" y1="209" x2="634" y2="209"/>
+    <rect x="349" y="177" width="22" height="64" fill="#bae6fd" opacity="0.85"/>
+    <line class="extension" x1="349" y1="150" x2="349" y2="269" stroke-dasharray="5 5"/>
+    <line class="extension" x1="371" y1="150" x2="371" y2="269" stroke-dasharray="5 5"/>
+    <line class="dimension" x1="360" y1="177" x2="360" y2="241"/>
+    <text x="360" y="136" text-anchor="middle" class="dim-label">D cuerpo</text>
+    <text x="132" y="289" text-anchor="middle" class="part-label">Cabeza</text>
+    <text x="533" y="289" text-anchor="middle" class="part-label">Ranura</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Mide el cuerpo, fuera de cabeza, ranura y daños.</text>
+    <text x="28" y="390" class="caption">Para repetir: misma sección y orientación.</text>
+    <text x="28" y="420" class="caption">Otras secciones se registran aparte.</text>
+  </g>
+
+  <g id="pin_l" class="measure-panel" transform="translate(814 192)" role="group" aria-labelledby="pin_l-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="pin_l-title" x="28" y="44" class="panel-title">Pasador · longitud total</text>
+    <text x="28" y="77" class="panel-kicker">Entre los dos extremos del pasador completo.</text>
+
+    <path class="shape" d="M 145 155 H 558 V 163 H 573 V 155 H 603 Q 632 155 632 187 Q 632 219 603 219 H 573 V 211 H 558 V 219 H 145 Z"/>
+    <rect x="106" y="138" width="39" height="98" rx="7" class="shape"/>
+    <line class="axis" x1="80" y1="187" x2="658" y2="187"/>
+    <line class="extension" x1="106" y1="128" x2="106" y2="296"/>
+    <line class="extension" x1="632" y1="154" x2="632" y2="296"/>
+    <line class="dimension" x1="106" y1="281" x2="632" y2="281"/>
+    <text x="369" y="266" text-anchor="middle" class="dim-label">L total</text>
+    <text x="106" y="116" text-anchor="middle" class="part-label">Extremo</text>
+    <text x="632" y="132" text-anchor="middle" class="part-label">Extremo</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Indica qué extremos estás incluyendo.</text>
+    <text x="28" y="390" class="caution">Longitud total ≠ longitud útil.</text>
+    <text x="28" y="420" class="caption">El espacio para apoyo y retención se estudia aparte.</text>
+  </g>
+
+  <g id="pivot_w" class="measure-panel" transform="translate(48 656)" role="group" aria-labelledby="pivot_w-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="pivot_w-title" x="28" y="44" class="panel-title">Pivote · ancho del cuerpo móvil</text>
+    <text x="28" y="77" class="panel-kicker">Caras A y B de la pieza móvil, junto al pivote.</text>
+
+    <path class="shape" d="M 200 130 H 535 V 220 L 491 260 H 244 L 200 220 Z"/>
+    <rect x="200" y="167" width="335" height="36" class="opening"/>
+    <line class="axis" x1="133" y1="185" x2="602" y2="185"/>
+    <line class="reference" x1="200" y1="130" x2="200" y2="165"/>
+    <line class="reference" x1="200" y1="205" x2="200" y2="220"/>
+    <line class="reference" x1="535" y1="130" x2="535" y2="165"/>
+    <line class="reference" x1="535" y1="205" x2="535" y2="220"/>
+    <text x="182" y="117" text-anchor="middle" class="point-label">A</text>
+    <text x="553" y="117" text-anchor="middle" class="point-label">B</text>
+    <text x="367" y="239" text-anchor="middle" class="part-label">CUERPO MÓVIL</text>
+    <line class="extension" x1="200" y1="225" x2="200" y2="310"/>
+    <line class="extension" x1="535" y1="225" x2="535" y2="310"/>
+    <line class="dimension" x1="200" y1="296" x2="535" y2="296"/>
+    <rect x="307" y="279" width="121" height="32" rx="7" fill="#ffffff"/>
+    <text x="367" y="303" text-anchor="middle" class="dim-label">A ↔ B</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Identifica ambas caras supervivientes en una foto.</text>
+    <text x="28" y="390" class="caution">No es la separación entre soportes fijos.</text>
+    <text x="28" y="420" class="caption">Si esas caras faltan: marca «no recuperable».</text>
+  </g>
+
+  <g id="axis_l" class="measure-panel" transform="translate(814 656)" role="group" aria-labelledby="axis_l-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="axis_l-title" x="28" y="44" class="panel-title">Pivote → rueda · distancia entre ejes</text>
+    <text x="28" y="77" class="panel-kicker">Localiza los dos ejes y explica el método empleado.</text>
+
+    <circle cx="205" cy="230" r="43" class="shape-light"/>
+    <circle cx="540" cy="156" r="43" class="shape-light"/>
+    <line class="axis" x1="147" y1="230" x2="263" y2="230"/>
+    <line class="axis" x1="205" y1="172" x2="205" y2="288"/>
+    <line class="axis" x1="482" y1="156" x2="598" y2="156"/>
+    <line class="axis" x1="540" y1="98" x2="540" y2="214"/>
+    <line class="dimension" x1="205" y1="230" x2="540" y2="156"/>
+    <circle cx="205" cy="230" r="4" fill="#0369a1"/>
+    <circle cx="540" cy="156" r="4" fill="#0369a1"/>
+    <text x="364" y="154" text-anchor="middle" class="dim-label">Distancia P → R</text>
+    <text x="205" y="310" text-anchor="middle" class="point-label">P · pivote</text>
+    <text x="540" y="252" text-anchor="middle" class="point-label">R · eje de rueda</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">La flecha une los ejes, no los bordes de las piezas.</text>
+    <text x="28" y="390" class="caption">La inclinación del dibujo es solo ilustrativa.</text>
+    <text x="28" y="420" class="caution">No determina orientación ni coordenadas X/Z.</text>
+  </g>
+
+  <g id="bore_a" class="measure-panel" transform="translate(48 1120)" role="group" aria-labelledby="bore_a-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="bore_a-title" x="28" y="44" class="panel-title">Alojamiento A · medida independiente</text>
+    <text x="28" y="77" class="panel-kicker">Identifica este alojamiento y la sección que mides.</text>
+
+    <rect x="210" y="103" width="318" height="207" rx="22" class="shape"/>
+    <circle cx="369" cy="206" r="70" class="opening"/>
+    <line class="axis" x1="369" y1="119" x2="369" y2="293"/>
+    <line class="dimension" x1="299" y1="206" x2="439" y2="206"/>
+    <text x="369" y="185" text-anchor="middle" class="dim-label">D alojamiento A</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Registra sección, orientación y parte fija o móvil.</text>
+    <text x="28" y="390" class="caption">Si está ovalado, anota la dirección medida.</text>
+    <text x="28" y="420" class="caution">No deduzcas un agujero perdido desde el pasador.</text>
+  </g>
+
+  <g id="bore_b" class="measure-panel" transform="translate(814 1120)" role="group" aria-labelledby="bore_b-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="bore_b-title" x="28" y="44" class="panel-title">Alojamiento B · medida independiente</text>
+    <text x="28" y="77" class="panel-kicker">Identifica este otro alojamiento por separado.</text>
+
+    <path class="shape" d="M 226 103 H 512 L 538 129 V 284 L 512 310 H 226 L 200 284 V 129 Z"/>
+    <circle cx="369" cy="206" r="85" class="opening"/>
+    <line class="axis" x1="369" y1="108" x2="369" y2="304"/>
+    <line class="dimension" x1="284" y1="206" x2="454" y2="206"/>
+    <text x="369" y="185" text-anchor="middle" class="dim-label">D alojamiento B</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Registra sección, orientación y parte fija o móvil.</text>
+    <text x="28" y="390" class="caption">La forma dibujada no demuestra forma ni tamaño.</text>
+    <text x="28" y="420" class="caution">No copies el valor de A por simetría.</text>
+  </g>
+
+  <g id="wheel_d" class="measure-panel" transform="translate(48 1584)" role="group" aria-labelledby="wheel_d-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="wheel_d-title" x="28" y="44" class="panel-title">Rueda · diámetro exterior sin carga</text>
+    <text x="28" y="77" class="panel-kicker">Vista lateral; sin apoyar peso sobre la rueda.</text>
+
+    <circle cx="369" cy="207" r="104" class="shape"/>
+    <circle cx="369" cy="207" r="78" class="shape-light"/>
+    <circle cx="369" cy="207" r="28" class="opening"/>
+    <line class="axis" x1="369" y1="92" x2="369" y2="322"/>
+    <line class="dimension" x1="265" y1="207" x2="473" y2="207"/>
+    <text x="369" y="170" text-anchor="middle" class="dim-label">D exterior</text>
+    <circle cx="265" cy="207" r="4" fill="#0369a1"/>
+    <circle cx="473" cy="207" r="4" fill="#0369a1"/>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Entre dos puntos exteriores opuestos de la rueda.</text>
+    <text x="28" y="390" class="caption">Registra zona y estado del neumático sin carga.</text>
+    <text x="28" y="420" class="caution">No es el diámetro efectivo de rodadura bajo peso.</text>
+  </g>
+
+  <g id="wheel_w" class="measure-panel" transform="translate(814 1584)" role="group" aria-labelledby="wheel_w-title">
+    <rect class="panel-background" width="738" height="440" rx="18"/>
+    <text id="wheel_w-title" x="28" y="44" class="panel-title">Neumático · ancho exterior</text>
+    <text x="28" y="77" class="panel-kicker">Vista de perfil; delimita solo el neumático.</text>
+
+    <rect x="212" y="178" width="314" height="25" rx="4" class="shape-light"/>
+    <rect x="284" y="106" width="170" height="163" rx="15" class="shape"/>
+    <line x1="312" y1="116" x2="312" y2="259" stroke="#b4c3ce" stroke-width="3"/>
+    <line x1="426" y1="116" x2="426" y2="259" stroke="#b4c3ce" stroke-width="3"/>
+    <line class="axis" x1="190" y1="190.5" x2="548" y2="190.5"/>
+    <line class="reference" x1="284" y1="130" x2="284" y2="246"/>
+    <line class="reference" x1="454" y1="130" x2="454" y2="246"/>
+    <line class="extension" x1="284" y1="274" x2="284" y2="311"/>
+    <line class="extension" x1="454" y1="274" x2="454" y2="311"/>
+    <line class="dimension" x1="284" y1="296" x2="454" y2="296"/>
+    <text x="369" y="149" text-anchor="middle" class="part-label">NEUMÁTICO</text>
+    <rect x="324" y="279" width="90" height="32" rx="7" fill="#ffffff"/>
+    <text x="369" y="303" text-anchor="middle" class="dim-label">Ancho</text>
+    <text x="225" y="231" text-anchor="middle" class="part-label">Eje</text>
+
+    <line x1="28" y1="326" x2="710" y2="326" class="caption-rule"/>
+    <text x="28" y="360" class="caption">Entre las dos caras exteriores del neumático.</text>
+    <text x="28" y="390" class="caption">Excluye eje y carcasa del módulo.</text>
+    <text x="28" y="420" class="caution">No es el ancho completo ni el espacio de servicio.</text>
+  </g>
+
+  <text x="48" y="2072" class="footer">Identifica pieza, sección y referentes en una foto o croquis. Si no sobreviven, registra esa limitación.</text>
+  <text x="48" y="2106" class="footer">Los alojamientos A y B se identifican por separado: registra en cada uno su pertenencia fija o móvil.</text>
+  <text x="48" y="2140" class="footer">Una captura documenta evidencia; no aprueba fabricación ni coloca el módulo en el marco del robot.</text>
+</svg>

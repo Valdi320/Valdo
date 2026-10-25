@@ -21,6 +21,10 @@ El plan de «reparar primero y ampliar después» pertenece a una fase anterior 
 
 **Ya existe un [proyecto FreeCAD nativo](cad/README.md), generado y reabierto con FreeCAD 1.1.4 en el PC.** Contiene la envolvente publicada, 13 registros de módulos, 14 interfaces y un estudio paramétrico independiente de cartucho. No contiene una base fabricable ni cotas internas medidas. No se ha fabricado un bastidor, ensayado una suspensión o validado un pinout. [Entrega y verificación](14-entrega-cad-y-siguiente-medicion.md).
 
+**Último avance coordinado:** se han integrado las aportaciones de Codex sobre cotas públicas, espacio axial y mantenimiento. El [estudio FreeCAD de presupuesto axial](cad/estudios/README.md) contrasta el pasador comercial de 38,5 mm con los 50 mm que necesita la disposición DEMO, y descarta esa combinación. La [revisión de servicio](cad/REVISION.md) concreta la extracción del cartucho con suspensión contenida. [Entrega conjunta y pruebas](15-avance-coordinado-y-estudio-axial.md).
+
+La investigación pública precede a pedir medidas al propietario. La [captura con guía visual](capturas_rueda/README.md) es opcional para comprobar piezas posteriormente; no bloquea el CAD provisional.
+
 ## Tres formas de aprovechar OOMWOO
 
 | Ruta | Aplicación al Xiaomi | Decisión actual |
@@ -48,7 +52,7 @@ El maestro es [cad/X20Pro_Base_Arquitectura.FCStd](cad/X20Pro_Base_Arquitectura.
 3. **Piloto de suspensión en soporte propio:** conservar eje y movimiento, caracterizar el muelle disponible y comprobar fuerza frente a desplazamiento, retorno y retención.
 4. **Bastidor de presentación:** comprobar el conjunto completo sin energía antes de las pruebas funcionales definidas en el capítulo 07.
 
-Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las interfaces de la estación. Para la siguiente fase hacen falta medidas dirigidas; no volver a fotografiar indiscriminadamente todo el robot. El [inventario fotográfico](10-inventario-fotografico.md) especifica los huecos de evidencia.
+Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las interfaces de la estación. Se buscan primero cotas y referencias públicas para avanzar con parámetros provisionales. La comprobación física posterior será dirigida a las incógnitas restantes; no exige volver a fotografiar indiscriminadamente todo el robot. El [inventario fotográfico](10-inventario-fotografico.md) especifica los huecos de evidencia.
 
 ## Guía de archivos
 
@@ -68,7 +72,10 @@ Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las
 | [12 — Mecanismos y estación](12-interfaces-mecanicas-y-estacion.md) | Rodadura, suspensión, limpieza, acoplamiento y medidas M40–M60. |
 | [13 — Electrónica y control abierto](13-electronica-y-control-abierto.md) | Montajes, medidas M70–M89, software comprobado y apertura por fases. |
 | [14 — Entrega CAD](14-entrega-cad-y-siguiente-medicion.md) | Ejecución real, verificación, siguiente captura y coordinación de checkout. |
+| [15 — Avance coordinado](15-avance-coordinado-y-estudio-axial.md) | Aportaciones de ambos compañeros, presupuesto axial, servicio y comprobaciones de software. |
 | [cad/](cad/README.md) | FCStd editable, macro, interfaces, STEP DEMO, vistas, licencia y validación. |
+| [cad/estudios/](cad/estudios/README.md) | Estudio nativo del pasador publicado y comparación con el DEMO; sin aprobación de fabricación. |
+| [capturas_rueda/](capturas_rueda/README.md) | Formulario opcional sin conexión, dibujos, JSON, validador y macro de documento independiente. |
 
 Datos reutilizables: [repuestos](repuestos.csv), [mediciones](mediciones.csv), [intervenciones](registro-intervenciones.csv), [módulos observados](electronica-modulos.csv), [conexiones](electronica-conexiones.csv) y [comandos/pruebas](comandos-pruebas.csv). Los campos desconocidos permanecen explícitos; ningún ensayo se registra como realizado por una revisión documental.
 

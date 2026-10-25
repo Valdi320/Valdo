@@ -112,6 +112,31 @@ El apoyo de desgaste y el anclaje del muelle deben poder reemplazarse sin sustit
 
 No se propone todavía un tornillo métrico concreto, espesor, aleación, material impreso ni número de nervios. Tampoco se llama al anclaje «fusible» sin conocer las cargas y el daño que causaría su fallo. La separación modular pretende facilitar reparación, no introducir una rotura deliberada.
 
+### 6.1.1 Longitud disponible del pasador: primera restricción calculable
+
+Se puede aplicar el nominal comercial **Ø4 × 38,5 mm** [S04] sin pedir una medida nueva. En el maestro CAD v0.1, la hoja `ParametrosDEMO` y la expresión `PasadorDEMO.Height` definen esta disposición ilustrativa:
+
+| Tramo axial del DEMO | Longitud |
+|---|---:|
+| Hueco entre apoyos | 26 mm |
+| Dos apoyos atravesados, 8 mm cada uno | 16 mm |
+| Dos salientes, 4 mm por extremo | 8 mm |
+| **Longitud total del pasador DEMO** | **50 mm** |
+| Pasador comercial publicado | 38,5 mm |
+| **Diferencia con esa disposición** | **11,5 mm** |
+
+La longitud 50 mm también está guardada en el objeto nativo del FCStd. Es una consecuencia de parámetros DEMO explícitos, no una medición del robot ni un fallo de la demostración. Incluso quitando ambos salientes, 26 + 16 = **42 mm**, todavía 3,5 mm por encima del nominal comercial. Por eso cambiar solamente el diámetro de 5 a 4 mm no adapta el cartucho.
+
+Para una disposición en la que el pasador atraviese por completo ambos apoyos, la condición axial necesaria es:
+
+`hueco libre + espesor atravesado del apoyo A + espesor atravesado del apoyo B + salientes reservados ≤ longitud disponible del pasador`
+
+Cada tramo se cuenta una sola vez. El hueco libre debe contener el ancho de la parte móvil y el juego axial que se diseñe. Arandelas o pestañas de casquillo que ocupen ese hueco se incluyen en su presupuesto. La longitud útil y la tolerancia del pasador no están publicadas; 38,5 mm es una referencia nominal de partida, no un límite de ajuste garantizado.
+
+Esta relación descarta combinaciones imposibles y permite comparar apoyos locales más estrechos con un respaldo ancho, o una retención que no necesite largos salientes. No prescribe adelgazar los apoyos: longitud de apoyo, presión de contacto, flexión y unión al respaldo se comprueban con las cargas y el material elegidos. Una tapa de retención externa ocupa espacio de servicio aunque no consuma longitud del pasador. Ninguna alternativa permite pinzar la carcasa móvil mediante el apriete.
+
+Se registran en M41/M42 el ancho y los apoyos, en M43 la extracción, y en M04/M05/M15 los datos y ajustes del pasador. Quedan sin resolver el ancho del módulo, la retención real y las tolerancias; no se inventa un hueco de rueda para cerrar la suma.
+
 ### 6.2 Limpieza y estación
 
 | Soporte nuevo propuesto | Qué debe localizar | Qué debe quedar accesible |

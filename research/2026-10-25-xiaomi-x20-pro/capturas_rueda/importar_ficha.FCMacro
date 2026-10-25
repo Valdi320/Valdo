@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+"""Abrir una ficha JSON y guardarla como un nuevo documento; no toca el maestro."""
+from pathlib import Path
+import sys
+from PySide import QtWidgets
+
+folder=Path(globals().get("__file__","")).resolve().parent
+if not (folder/"validar_ficha.py").is_file():
+    chosen=QtWidgets.QFileDialog.getExistingDirectory(None,"Carpeta capturas_rueda del proyecto")
+    if not chosen:raise RuntimeError("Importación cancelada")
+    folder=Path(chosen)
+sys.path.insert(0,str(folder))
+from validar_ficha import load_json,validate
+from importar_freecad import make_document,save_new_document
+
+source,_=QtWidgets.QFileDialog.getOpenFileName(None,"Seleccionar ficha de rueda","","Ficha JSON (*.json)")
+if not source:raise RuntimeError("Importación cancelada")
+try:
+    data=load_json(source)
+    check=validate(data)
+    if not check["puertas"]["registro"]:raise ValueError("\n".join(check["errores"]))
+    suggested=str(Path(source).with_name("Captura_"+data["id_captura"]+".FCStd"))
+    target,_=QtWidgets.QFileDialog.getSaveFileName(None,"Guardar documento NUEVO de captura",suggested,"FreeCAD (*.FCStd)")
+    if not target:raise RuntimeError("Importación cancelada")
+    if Path(target).exists():raise FileExistsError("Elige un nombre nuevo: no se sobrescribe el archivo existente.")
+    doc,check=make_document(data,Path(source).read_text(encoding="utf-8-sig"))
+    save_new_document(doc,target)
+    QtWidgets.QMessageBox.information(None,"Captura importada","Documento nuevo creado.\nReferencia del pasador: "+("disponible" if check["puertas"]["pasador_local"] else "pendiente; solo datos")+".\nSin colocación en el robot ni aprobación de fabricación.")
+except Exception as error:
+    QtWidgets.QMessageBox.warning(None,"No se ha completado la importación",str(error))
