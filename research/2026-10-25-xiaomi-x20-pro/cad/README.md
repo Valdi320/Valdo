@@ -1,8 +1,16 @@
 # CAD editable — X20 Pro abierto, base propia
 
-**Revisión 0.1 · 25-10-2026.** Abrir **[X20Pro_Base_Arquitectura.FCStd](X20Pro_Base_Arquitectura.FCStd)** en FreeCAD. Es el maestro editable del proyecto. FreeCAD **1.1.4** se ha instalado y ejecutado en el equipo del propietario mediante el paquete de usuario de Flathub.
+**Geometría del maestro: revisión 0.1; vínculos documentales actualizados el 25-10-2026.** Abrir **[X20Pro_Base_Arquitectura.FCStd](X20Pro_Base_Arquitectura.FCStd)** en FreeCAD. Es el maestro editable del proyecto. FreeCAD **1.1.4** se ha instalado y ejecutado en el equipo del propietario mediante el paquete de usuario de Flathub.
 
 Esta revisión contiene referencias e interfaces para empezar el diseño y un estudio independiente de cartucho. **Todavía no contiene una base adaptada a las medidas del robot ni piezas aprobadas para fabricar.** No se ha modelado un robot interior ficticio a partir de fotografías sin escala.
+
+La [actualización de coordinación](../coordinacion/revision_suspension_codex.md) comunica la preferencia posterior del propietario: las operaciones automatizadas nuevas de FreeCAD en el PC se ejecutarán sin interfaz gráfica. Las pruebas y capturas gráficas descritas en esta entrega son anteriores a recibir esa actualización; se conservan como evidencia de lo que se ejecutó.
+
+## Documentos de estudio actuales
+
+El [estudio comparativo de suspensión v0.3](suspension/README.md) es otro FCStd: compara lámina y alambre, dos estados del brazo y una extracción conceptual. Tiene 23 comprobaciones nativas de software superadas y geometría propia sin cotas físicas validadas. Los [estudios de implantación](estudios/README.md) recogen la restricción axial y la aportación del asiento desmontable. Mantener estos documentos separados evita interpretar sus coordenadas gráficas como posiciones internas del Xiaomi.
+
+El maestro incorpora **IF02→M15 por lado** y **IF04→IF13/M55/M60** tanto en [interfaces.json](interfaces.json) como en sus registros nativos. Se verificaron las cinco propiedades modificadas, la arista IF04→IF13 y la conservación íntegra de formas, mapas y demás datos ajenos al cambio. La reapertura nativa confirmó los vínculos. [Resultado y procedimiento](suspension/validacion_software.json). La comprobación original de v0.1 que se cita más abajo es histórica y conserva su hash original.
 
 ## Qué contiene
 
@@ -44,7 +52,7 @@ No hay complementos externos, mallas opacas ni un `Proxy` Python ejecutable del 
 
 ## Reproducir la revisión inicial
 
-`scripts/crear_modelo.py` construye **solo v0.1**. `crear_proyecto.FCMacro` permite escoger una carpeta nueva y ejecutarlo desde FreeCAD. La estructura de `cad/` y el CSV `../electronica-modulos.csv` deben conservarse juntos.
+`scripts/crear_modelo.py` construye **la geometría v0.1**, leyendo el registro de interfaces vigente. La revisión actual del script añade también sus vínculos y procedencia documental. `crear_proyecto.FCMacro` permite escoger una carpeta nueva y ejecutarlo desde FreeCAD. La estructura de `cad/` y el CSV `../electronica-modulos.csv` deben conservarse juntos.
 
 El generador se niega a sobrescribir un FCStd existente. Para continuar el proyecto se edita el maestro. Regenerar v0.1 no sustituye las modificaciones posteriores del CAD. El render requiere el contexto gráfico de escritorio; un proceso sin OpenGL puede construir sólidos y producir una captura en blanco.
 

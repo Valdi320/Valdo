@@ -8,12 +8,12 @@ SOURCE = "https://www.ep-mediastore-ab.de/rad-lager-splint-4x385-mm-stueck-p-125
 def create_document():
     import FreeCAD as App
     doc = App.newDocument("EstudioAxialX20")
-    doc.Label = "X20 Pro · presupuesto axial · PUBLICADO + DEMO · NO FABRICAR"
+    doc.Label = "X20 Pro · presupuesto axial · fuente y escenarios · NO FABRICAR"
     doc.Comment = "Comparación documental, no medidas de la unidad, ajuste, retención o resistencia validados."
     info = doc.addObject("App::FeaturePython", "Alcance")
     info.Label = "LEER · procedencia y límites"
     for key,value in {
-        "Revision":"0.2 / 2026-10-25",
+        "Revision":"0.3 / 2026-10-25",
         "FuenteNominal":SOURCE,
         "EstadoNominal":"PUBLICADO por vendedor SKU12584; diámetro y longitud total nominales. Tolerancia y longitud útil desconocidas.",
         "FuenteDEMO":"X20Pro_Base_Arquitectura.FCStd v0.1 / ParametrosDEMO. No representa geometría Xiaomi medida.",
@@ -23,24 +23,28 @@ def create_document():
         "LimiteTramos":"Las bandas son un diagrama longitudinal; no son apoyos diseñados ni sólidos candidatos a imprimir.",
         "Decision":"Descartar la disposición DEMO de 50 mm si se pretende usar un pasador nominal de 38,5 mm. No reducir hueco real desconocido para forzar encaje.",
         "Pendiente":"Ancho móvil, longitud útil, retención, tolerancias, cargas, materiales y acceso de extracción.",
-        "Edicion":"Cambiar una celda explora una hipótesis. No cambia la fuente ni convierte el nuevo valor en cota publicada o medida.",
+        "Edicion":"B2/B3 son escenarios inicialmente vinculados a DiametroFuente/LongitudFuente. Editarlos explora hipótesis y no cambia esos nominales conservados en Alcance. B4–B7 parten del DEMO; ninguna edición acredita una medida.",
     }.items():
         info.addProperty("App::PropertyString",key,"Estudio")
         setattr(info,key,value)
+    for name,value in [("DiametroFuente",4.0),("LongitudFuente",38.5)]:
+        info.addProperty("App::PropertyLength",name,"Nominales de fuente")
+        setattr(info,name,value)
+        info.setEditorMode(name,1)
     info.addProperty("App::PropertyBool","FabricacionAprobada","Estudio")
     info.FabricacionAprobada=False
     sheet=doc.addObject("Spreadsheet::Sheet","Presupuesto")
     sheet.Label="Presupuesto axial · valores y fórmulas editables"
     rows=[
         ("Concepto","Valor mm","Estado","Procedencia / alcance"),
-        ("Diámetro nominal comercial","4 mm","PUBLICADO","SKU12584; sin tolerancia publicada"),
-        ("Longitud total nominal comercial","38.5 mm","PUBLICADO","SKU12584; no garantiza longitud útil"),
+        ("Diámetro del pasador de escenario","=Alcance.DiametroFuente","ESCENARIO","Parte del nominal de fuente; editar explora hipótesis"),
+        ("Longitud total del pasador de escenario","=Alcance.LongitudFuente","ESCENARIO","Parte del nominal de fuente; no garantiza longitud útil"),
         ("Hueco del DEMO","26 mm","DEMO","Ilustración v0.1; no ancho medido de rueda"),
         ("Espesor de cada apoyo del DEMO","8 mm","DEMO","Ilustración; no elección resistente"),
         ("Saliente en cada extremo del DEMO","4 mm","DEMO","Ilustración; no retención definida"),
         ("Diámetro del pasador DEMO","5 mm","DEMO","Ilustración v0.1"),
         ("Longitud que necesita esa disposición","=B4 + 2 * B5 + 2 * B6","CALCULADO","Sólo disposición indicada"),
-        ("Exceso respecto al nominal publicado","=B8 - B3","CALCULADO","Positivo: esa disposición no cabe"),
+        ("Exceso respecto al pasador de escenario","=B8 - B3","CALCULADO","Positivo: esa disposición no cabe"),
         ("Longitud DEMO sin ambos salientes","=B4 + 2 * B5","CALCULADO","No afirma una retención factible"),
         ("Exceso incluso sin salientes","=B10 - B3","CALCULADO","Positivo: tampoco cabe esa disposición"),
     ]
@@ -48,10 +52,10 @@ def create_document():
         for col,value in zip("ABCD",values):sheet.set(col+str(row),value)
     sheet.setStyle("A1:D1","bold","add")
     for col,width in [("A",360),("B",170),("C",145),("D",420)]:sheet.setColumnWidth(col,width)
-    for cell,alias in [("B2","DiametroPublicado"),("B3","LongitudPublicada"),("B4","HuecoDemo"),("B5","ApoyoDemo"),("B6","SalienteDemo"),("B7","DiametroDemo"),("B8","LongitudDemo"),("B9","ExcesoDemo"),("B10","SinSalientes"),("B11","ExcesoSinSalientes")]:sheet.setAlias(cell,alias)
+    for cell,alias in [("B2","DiametroEscenario"),("B3","LongitudEscenario"),("B4","HuecoDemo"),("B5","ApoyoDemo"),("B6","SalienteDemo"),("B7","DiametroDemo"),("B8","LongitudDemo"),("B9","ExcesoDemo"),("B10","SinSalientes"),("B11","ExcesoSinSalientes")]:sheet.setAlias(cell,alias)
     for name,label,radius,height,y,color in [
-        ("NominalPublicado","PUBLICADO · cilindro simplificado Ø4 × 38,5 mm","Presupuesto.DiametroPublicado / 2","Presupuesto.LongitudPublicada",0,(0.80,0.57,0.20)),
-        ("PasadorDemo","DEMO · cilindro ilustrativo Ø5 × 50 mm","Presupuesto.DiametroDemo / 2","Presupuesto.LongitudDemo",14,(0.65,0.25,0.29)),
+        ("NominalPublicado","Pasador de escenario · dimensiones en Presupuesto","Presupuesto.DiametroEscenario / 2","Presupuesto.LongitudEscenario",0,(0.80,0.57,0.20)),
+        ("PasadorDemo","Pasador DEMO · dimensiones calculadas en Presupuesto","Presupuesto.DiametroDemo / 2","Presupuesto.LongitudDemo",14,(0.65,0.25,0.29)),
     ]:
         obj=doc.addObject("Part::Cylinder",name);obj.Label=label
         obj.setExpression("Radius",radius);obj.setExpression("Height",height)

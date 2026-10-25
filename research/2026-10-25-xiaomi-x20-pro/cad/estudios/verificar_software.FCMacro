@@ -20,12 +20,10 @@ if locks:raise RuntimeError("Cerrojo presente; no se ejecuta: "+", ".join(locks)
 root=Path(tempfile.mkdtemp(prefix="valdo-x20-validacion-"))
 sys.path[:0]=[str(project/"capturas_rueda"),str(project/"cad"/"estudios")]
 sys.dont_write_bytecode=True
-receipt={"version":"0.2","tipo":"VALIDACION DE SOFTWARE; no ensayos fisicos","checks":{}}
+receipt={"version":"0.3","tipo":"VALIDACION DE SOFTWARE; no ensayos fisicos","checks":{}}
 master=project/"cad"/"X20Pro_Base_Arquitectura.FCStd"
 measure=master.parent.parent/"mediciones.csv"
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
-receipt["master_antes"]=sha(master)
-receipt["mediciones_antes"]=sha(measure)
 created=[]
 def cell_mm(sheet,cell):
     value=sheet.get(cell)
@@ -35,6 +33,8 @@ def check(name,condition):
     receipt["checks"][name]=bool(condition)
     if not condition:raise AssertionError(name)
 try:
+    receipt["master_antes"]=sha(master)
+    receipt["mediciones_antes"]=sha(measure)
     from validar_ficha import blank_capture,load_json
     from importar_freecad import make_document,save_new_document
     from crear_estudio_axial import create_document,save_new
@@ -73,13 +73,25 @@ try:
     reopened=App.openDocument(str(sample));created.append(reopened.Name)
     check("reabre_captura",reopened.ReferenciaPasador.Shape.isValid() and reopened.ReferenciaPasador.EnsayoSoftware and not reopened.AlcanceCaptura.ValidacionFisica)
     ax=create_document();created.append(ax.Name)
-    check("axial_publicado",abs(ax.NominalPublicado.Height.Value-38.5)<1e-8 and abs(ax.NominalPublicado.Radius.Value-2)<1e-8)
+    check("axial_fuente_publicada",abs(ax.Alcance.DiametroFuente.Value-4)<1e-8 and abs(ax.Alcance.LongitudFuente.Value-38.5)<1e-8)
+    check("axial_escenario_inicial",abs(ax.NominalPublicado.Height.Value-38.5)<1e-8 and abs(ax.NominalPublicado.Radius.Value-2)<1e-8)
     check("axial_50",abs(ax.PasadorDemo.Height.Value-50)<1e-8)
     check("axial_excesos",abs(cell_mm(ax.Presupuesto,"B9")-11.5)<1e-8 and abs(cell_mm(ax.Presupuesto,"B11")-3.5)<1e-8)
     check("axial_7_solidos_validos",len([o for o in ax.Objects if hasattr(o,"Shape") and len(o.Shape.Solids)==1 and o.Shape.isValid()])==7)
     ax.Presupuesto.set("B4","30 mm");ax.recompute()
     check("axial_parametrico",abs(ax.PasadorDemo.Height.Value-54)<1e-8 and abs(ax.ApoyoB.Placement.Base.x-42)<1e-8)
     ax.Presupuesto.set("B4","26 mm");ax.recompute()
+    ax.Presupuesto.set("B2","4.4 mm");ax.Presupuesto.set("B3","41 mm");ax.recompute()
+    check("axial_escenario_editable",abs(ax.NominalPublicado.Radius.Value-2.2)<1e-8 and abs(ax.NominalPublicado.Height.Value-41)<1e-8)
+    check("axial_fuente_no_cambia",abs(ax.Alcance.DiametroFuente.Value-4)<1e-8 and abs(ax.Alcance.LongitudFuente.Value-38.5)<1e-8)
+    check("axial_hipotesis_no_publicada",all(str(ax.Presupuesto.get(cell))=="ESCENARIO" for cell in ["C2","C3"]) and "PUBLICADO" not in ax.NominalPublicado.Label.upper())
+    scenario_path=root/"ESCENARIO_EDITADO_NO_FABRICAR.FCStd"
+    save_new(ax,scenario_path)
+    aname=ax.Name; App.closeDocument(aname);created.remove(aname)
+    ax=App.openDocument(str(scenario_path));created.append(ax.Name)
+    check("axial_reabre_separacion_fuente_escenario",abs(ax.NominalPublicado.Radius.Value-2.2)<1e-8 and abs(ax.NominalPublicado.Height.Value-41)<1e-8 and abs(ax.Alcance.DiametroFuente.Value-4)<1e-8 and abs(ax.Alcance.LongitudFuente.Value-38.5)<1e-8 and all(str(ax.Presupuesto.get(cell))=="ESCENARIO" for cell in ["C2","C3"]) and "PUBLICADO" not in ax.NominalPublicado.Label.upper() and not ax.Alcance.FabricacionAprobada)
+    ax.Presupuesto.set("B2","=Alcance.DiametroFuente");ax.Presupuesto.set("B3","=Alcance.LongitudFuente");ax.recompute()
+    check("axial_restauracion_vinculos_fuente",abs(ax.NominalPublicado.Radius.Value-2)<1e-8 and abs(ax.NominalPublicado.Height.Value-38.5)<1e-8 and "Alcance.DiametroFuente" in ax.Presupuesto.getContents("B2") and "Alcance.LongitudFuente" in ax.Presupuesto.getContents("B3"))
     axial_path=root/"X20Pro_Estudio_Axial_Publicado.FCStd"
     save_new(ax,axial_path)
     aname=ax.Name; App.closeDocument(aname);created.remove(aname)
@@ -92,11 +104,18 @@ except Exception:
     receipt["ok"]=False
     receipt["error"]=traceback.format_exc()
 finally:
-    receipt["master_despues"]=sha(master)
-    receipt["mediciones_despues"]=sha(measure)
-    receipt["checks"]["master_sin_cambios"]=receipt["master_antes"]==receipt["master_despues"]
-    receipt["checks"]["mediciones_sin_cambios"]=receipt["mediciones_antes"]==receipt["mediciones_despues"]
+    for name,path in [("master",master),("mediciones",measure)]:
+        try:
+            receipt[name+"_despues"]=sha(path)
+            receipt["checks"][name+"_sin_cambios"]=receipt.get(name+"_antes")==receipt[name+"_despues"]
+        except Exception:
+            receipt["checks"][name+"_sin_cambios"]=False
+            receipt.setdefault("errores_finales",[]).append(traceback.format_exc())
     for name in created:
-        if name in App.listDocuments():App.closeDocument(name)
+        try:
+            if name in App.listDocuments():App.closeDocument(name)
+        except Exception:
+            receipt.setdefault("errores_finales",[]).append(traceback.format_exc())
+    receipt["ok"]=bool(receipt.get("ok",False) and not receipt.get("errores_finales") and all(receipt["checks"].values()))
     (root/"resultado_freecad_2.json").write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding="utf-8")
     App.Console.PrintMessage("Resultado de software: "+str(root/"resultado_freecad_2.json")+"\n")

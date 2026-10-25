@@ -23,7 +23,9 @@ El plan de «reparar primero y ampliar después» pertenece a una fase anterior 
 
 **Ya existe un [proyecto FreeCAD nativo](cad/README.md), generado y reabierto con FreeCAD 1.1.4 en el PC.** Contiene la envolvente publicada, 13 registros de módulos, 14 interfaces y un estudio paramétrico independiente de cartucho. No contiene una base fabricable ni cotas internas medidas. No se ha fabricado un bastidor, ensayado una suspensión o validado un pinout. [Entrega y verificación](14-entrega-cad-y-siguiente-medicion.md).
 
-**Avance CAD coordinado:** se han integrado las aportaciones de Codex sobre cotas públicas, espacio axial y mantenimiento. El [estudio FreeCAD de presupuesto axial](cad/estudios/README.md) contrasta el pasador comercial de 38,5 mm con los 50 mm que necesita la disposición DEMO, y descarta esa combinación. La [revisión de servicio](cad/REVISION.md) concreta la extracción del cartucho con suspensión contenida. [Entrega conjunta y pruebas](15-avance-coordinado-y-estudio-axial.md). El nuevo requisito del capítulo 16 se ha comunicado por separado al compañero; no se presenta todavía como una revisión ejecutada del maestro CAD.
+**Nuevo avance CAD coordinado:** el [estudio de suspensión v0.3](cad/suspension/README.md) compara lámina y alambre sobre un mismo marco de asiento, pivote y brazo. Incluye ángulo editable y una escena de extracción; ha superado 23 comprobaciones de funcionamiento del CAD en FreeCAD 1.1.4. El maestro incorpora conjuntamente en JSON y propiedades nativas IF02→M15 por lado e IF04→IF13/M55/M60, conservando su geometría v0.1. La [entrega 17](17-cartucho-parametrico-y-vinculos.md) reúne resultados, revisión y próximos pasos. Ninguno de estos archivos aprueba fabricación o resistencia física.
+
+El [estudio de presupuesto axial](cad/estudios/README.md) conserva la restricción del pasador comercial de 38,5 mm frente a disposiciones DEMO más anchas. La [revisión de servicio](cad/REVISION.md) exige que retirar el cartucho mantenga contenida la suspensión. La aportación posterior de Codex estudia el asiento desmontable y cierres de servicio manuales; las fijaciones de asiento, elemento elástico y pivote se tratan por separado. Las entregas [15](15-avance-coordinado-y-estudio-axial.md) y [16](16-suspension-reproducible.md) mantienen el historial de decisiones.
 
 La investigación pública precede a pedir medidas al propietario. La [captura con guía visual](capturas_rueda/README.md) es opcional para comprobar piezas posteriormente; no bloquea el CAD provisional.
 
@@ -76,8 +78,10 @@ Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las
 | [14 — Entrega CAD](14-entrega-cad-y-siguiente-medicion.md) | Ejecución real, verificación, siguiente captura y coordinación de checkout. |
 | [15 — Avance coordinado](15-avance-coordinado-y-estudio-axial.md) | Aportaciones de ambos compañeros, presupuesto axial, servicio y comprobaciones de software. |
 | [16 — Suspensión reproducible](16-suspension-reproducible.md) | Fabricar la función elástica: lámina, alambre y opciones impresas; esquema, materiales, proceso y criterios de comprobación. |
+| [17 — Cartucho paramétrico](17-cartucho-parametrico-y-vinculos.md) | Comparación nativa de suspensión, asiento, vínculos del maestro, resultados de software y condiciones físicas pendientes. |
 | [cad/](cad/README.md) | FCStd editable, macro, interfaces, STEP DEMO, vistas, licencia y validación. |
 | [cad/estudios/](cad/estudios/README.md) | Estudio nativo del pasador publicado y comparación con el DEMO; sin aprobación de fabricación. |
+| [cad/suspension/](cad/suspension/README.md) | FCStd paramétrico de lámina/alambre, cuatro vistas, generador, revisión mecánica y registro de comprobación. |
 | [capturas_rueda/](capturas_rueda/README.md) | Formulario opcional sin conexión, dibujos, JSON, validador y macro de documento independiente. |
 
 Datos reutilizables: [repuestos](repuestos.csv), [mediciones](mediciones.csv), [intervenciones](registro-intervenciones.csv), [módulos observados](electronica-modulos.csv), [conexiones](electronica-conexiones.csv) y [comandos/pruebas](comandos-pruebas.csv). Los campos desconocidos permanecen explícitos; ningún ensayo se registra como realizado por una revisión documental.

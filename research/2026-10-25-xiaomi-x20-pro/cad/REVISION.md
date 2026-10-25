@@ -84,3 +84,11 @@ La necesidad de contener la suspensión durante el servicio deriva de que el mue
 El registro v0.1 y sus propiedades nativas conservan su estado publicado. Estos dos vínculos quedan señalados para incorporarlos juntos en la siguiente revisión del maestro; no se consideran corregidos por figurar en esta nota.
 
 Las tolerancias, cargas, deformaciones admisibles y vida objetivo siguen sin definir. Las condiciones de la tabla son compromisos verificables del diseño futuro; ninguna figura como superada. Para evaluar reparabilidad se registrarán las piezas y fijaciones realmente retiradas, los reajustes necesarios y el resultado tras reinstalar. Esa evidencia podrá mostrar si el cartucho evita desmontar conjuntos ajenos; una imagen de despiece no lo demuestra.
+
+## Cierre documental de los vínculos y nueva revisión de suspensión
+
+25-10-2026, entrega 17. Los dos vínculos señalados en el apartado anterior **ya están incorporados conjuntamente** a `interfaces.json` y al maestro nativo: IF02 incluye M15 por lado; IF04 incluye M55/M60 y una propiedad nativa `Relaciones` hacia IF13. Se añade la procedencia de ambos cambios. La nota anterior se conserva como historial de la revisión que los detectó.
+
+La migración se realizó sobre copias. El XML de metadatos fue generado por FreeCAD y comprobado contra las cinco propiedades autorizadas y su única dependencia nueva; todos los demás miembros del maestro, incluidas formas, mapas y vista, se conservaron íntegros. La copia final se abrió en FreeCAD 1.1.4, sin recalcular ni guardar, y mostró los vínculos correctos. El registro está en [suspension/validacion_software.json](suspension/validacion_software.json). La revisión geométrica continúa siendo 0.1, y las medidas y ensayos físicos continúan pendientes.
+
+El nuevo [estudio de suspensión](suspension/README.md) y su [revisión mecánica](suspension/REVISION_MECANICA.md) convierten parte de estas funciones en una comparación editable. No demuestran contención de energía: mordaza, retén de pivote y fijación al núcleo deberán seguir siendo uniones independientes. El recorrido ilustrado del cartucho no es el barrido verificado del módulo completo.

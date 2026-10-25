@@ -1,5 +1,5 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "tipo": "VALIDACION DE SOFTWARE; no ensayos fisicos",
   "checks": {
     "plantilla_sin_geometria": true,
@@ -12,11 +12,17 @@
     "rechaza_sobrescritura": true,
     "rechaza_invalido_antes_crear": true,
     "reabre_captura": true,
-    "axial_publicado": true,
+    "axial_fuente_publicada": true,
+    "axial_escenario_inicial": true,
     "axial_50": true,
     "axial_excesos": true,
     "axial_7_solidos_validos": true,
     "axial_parametrico": true,
+    "axial_escenario_editable": true,
+    "axial_fuente_no_cambia": true,
+    "axial_hipotesis_no_publicada": true,
+    "axial_reabre_separacion_fuente_escenario": true,
+    "axial_restauracion_vinculos_fuente": true,
     "axial_reabre": true,
     "master_sin_cambios": true,
     "mediciones_sin_cambios": true
@@ -34,9 +40,71 @@
     "(HEAD detached at 1.1.4)",
     "4fd3bf320d9566a27e60069fc8387448aaa3a094"
   ],
-  "axial_sha256": "91f05497616d88b7b3e554be69b4eb19b91a735d35220a7e45c56bfbcc2e1a71",
+  "axial_sha256": "15a31b511f215d820b37c6b8c97b3b79b4e7ce58187b13e7c9d849f7dbfb2ac0",
   "ok": true,
   "master_despues": "1aa0a2d4a6c3b89c4475ee857c19d5b38912199f60006ce2265fcc41d411f6aa",
   "mediciones_despues": "cc3365fe43e180eaa2e1739b346521be456e75a9a85c1d69f18a3a472160b077",
-  "observacion": "Primer intento del arnés interrumpido al acceder al nombre de un documento ya cerrado; se corrigió el arnés. El importador había pasado sus comprobaciones previas. Segundo intento completo correcto. No se midió ni se ensayó ninguna pieza física."
+  "archivo_entregado": {
+    "checks": {
+      "nativo_siete_solidos": true,
+      "nativo_fuente_conservada": true,
+      "nativo_fuente_solo_lectura": true,
+      "nativo_fuente_enlazada": true,
+      "nativo_etiquetas_sin_cotas_fijas": true,
+      "nativo_escenario_editado": true
+    },
+    "ok": true,
+    "sha256": "e19c43337acc615e59393d36f3fe3e49868d708d5ae53a56000b671b5a0fc7da"
+  },
+  "control_negativo_copia": {
+    "resultado_global": false,
+    "master_sin_cambios": false,
+    "mediciones_sin_cambios": true,
+    "resto_checks_correctos": true
+  },
+  "observacion": "Revisión 0.3: comprobador, fuente y escenarios guardados/reabiertos, y archivo nativo entregado. El control negativo altera únicamente un maestro descartable en copia: el resultado global pasa correctamente a falso. Ninguna validación física.",
+  "historico": [
+    {
+      "version": "0.2",
+      "tipo": "VALIDACION DE SOFTWARE; no ensayos fisicos",
+      "checks": {
+        "plantilla_sin_geometria": true,
+        "pendientes_permanecen_null": true,
+        "plantilla_sin_aprobacion": true,
+        "prueba_sin_opcion_no_genera_geometria": true,
+        "ensayo_explicito_marcado": true,
+        "cilindro_ensayo_valido": true,
+        "texto_no_se_ejecuta_como_expresion": true,
+        "rechaza_sobrescritura": true,
+        "rechaza_invalido_antes_crear": true,
+        "reabre_captura": true,
+        "axial_publicado": true,
+        "axial_50": true,
+        "axial_excesos": true,
+        "axial_7_solidos_validos": true,
+        "axial_parametrico": true,
+        "axial_reabre": true,
+        "master_sin_cambios": true,
+        "mediciones_sin_cambios": true
+      },
+      "master_antes": "1aa0a2d4a6c3b89c4475ee857c19d5b38912199f60006ce2265fcc41d411f6aa",
+      "mediciones_antes": "cc3365fe43e180eaa2e1739b346521be456e75a9a85c1d69f18a3a472160b077",
+      "texto_importado": "'=1+1",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "45039 (Git)",
+        "https://github.com/FreeCAD/FreeCAD.git",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 1.1.4)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "axial_sha256": "91f05497616d88b7b3e554be69b4eb19b91a735d35220a7e45c56bfbcc2e1a71",
+      "ok": true,
+      "master_despues": "1aa0a2d4a6c3b89c4475ee857c19d5b38912199f60006ce2265fcc41d411f6aa",
+      "mediciones_despues": "cc3365fe43e180eaa2e1739b346521be456e75a9a85c1d69f18a3a472160b077",
+      "observacion": "Primer intento del arnés interrumpido al acceder al nombre de un documento ya cerrado; se corrigió el arnés. El importador había pasado sus comprobaciones previas. Segundo intento completo correcto. No se midió ni se ensayó ninguna pieza física."
+    }
+  ]
 }

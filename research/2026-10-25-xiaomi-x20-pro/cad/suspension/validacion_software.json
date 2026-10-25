@@ -1,0 +1,172 @@
+{
+  "fecha": "2026-10-25",
+  "revision_estudio": "0.3",
+  "tipo": "Comprobaciones nativas de software y conservación de archivos; no validación física",
+  "validacion_fisica": false,
+  "fabricacion_aprobada": false,
+  "entorno": {
+    "freecad": [
+      "1",
+      "1",
+      "4",
+      "45039 (Git)",
+      "https://github.com/FreeCAD/FreeCAD.git",
+      "2026/09/28 13:46:34",
+      "(HEAD detached at 1.1.4)",
+      "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+    ],
+    "ejecucion": "FreeCAD gráfico de escritorio en el PC del propietario; salidas temporales separadas; cerrojos comprobados"
+  },
+  "estudio": {
+    "archivo": "X20Pro_Suspension_Conceptual.FCStd",
+    "sha256": "a6558e9570e649203275e4bb97c1b21a2759aac40f5bb8eff0e82c2b9f27097e",
+    "sha256_modelo_pruebas": "a076ffde6d0e540bfefc971d9126db0dbe4a83004f054ba9ff330d10f3c43965",
+    "sha256_generador_pruebas": "278dabc1b79f593626345f5c73b25b07abab1dd4a09a6065ffebec94ee8caffa",
+    "sha256_generador_final": "377160dc098708e65aba962d57ca843336afc77f10fda45e5ebd8a8f74f9089e",
+    "comprobaciones": {
+      "sin_errores_de_objetos": true,
+      "formas_no_nulas_y_validas": true,
+      "fabricacion_no_aprobada": true,
+      "pasador_nominal": true,
+      "presupuesto_inicial_40": true,
+      "margen_inicial_menos_1_5": true,
+      "presupuesto_alternativo_42": true,
+      "angulo_nativo_15": true,
+      "extremo_alambre_coincide_con_marcador": true,
+      "alambre_se_alarga_en_muestra": true,
+      "angulo_editable_20": true,
+      "marcador_movil_responde": true,
+      "referencia_permanece_fija": true,
+      "extremo_alambre_sigue_marcador": true,
+      "sector_sigue_angulo": true,
+      "apoyo_responde_un_mm": true,
+      "presupuesto_responde_42": true,
+      "pasador_conserva_nominal": true,
+      "cartucho_extraido_diez_mm": true,
+      "pasador_viaja_con_cartucho": true,
+      "nucleo_permanece_fijo": true,
+      "reapertura_con_valores_restaurados": true,
+      "reapertura_sin_aprobacion": true
+    },
+    "numero_comprobaciones": 23,
+    "objetos_totales": 223,
+    "objetos_con_shape_comprobados": 199,
+    "nota_recuento": "Incluye auxiliares de booleanas y contenedores; no equivale a piezas físicas.",
+    "errores_objetos": [],
+    "formas_invalidas": [],
+    "longitudes_ilustrativas_alambre_mm": {
+      "referencia": 72.69112738154499,
+      "muestra": 75.90739284849194
+    },
+    "fuerza_calculada": false,
+    "presentacion_final": {
+      "procedimiento": "conservar_presentacion.py copia solamente las dos visibilidades de anotaciones y cámara desde un guardado nativo; mantiene todo Document.xml y los demás miembros de la fuente probada.",
+      "miembros_cambiados": [
+        "GuiDocument.xml"
+      ],
+      "miembros_identicos": 516,
+      "archivos_brep_y_mapa_identicos": 121,
+      "reapertura_nativa_correcta": true,
+      "comprobaciones_reapertura": [
+        "223 objetos",
+        "FabricacionAprobada=False",
+        "Dos rótulos ocultos"
+      ],
+      "vistas": {
+        "suspension_comparativa.png": {
+          "archivo": "vistas/suspension_comparativa.png",
+          "sha256": "e514b76b6bb94ff58de4ea8fdae70cc64e5b64b521e6e5959f2d6c92857bbaea",
+          "bytes": 42318,
+          "origen": "resultado_vistas_finales.json",
+          "inspeccion_visual": "Completa, sin rótulos superpuestos ni recorte observado."
+        },
+        "suspension_lamina.png": {
+          "archivo": "vistas/suspension_lamina.png",
+          "sha256": "83f94996470ff8e83c5b148221aa539e4eb790f16f907fe0b423def4b922fcc6",
+          "bytes": 44864,
+          "origen": "resultado_vistas_finales.json",
+          "inspeccion_visual": "Completa, sin rótulos superpuestos ni recorte observado."
+        },
+        "suspension_alambre.png": {
+          "archivo": "vistas/suspension_alambre.png",
+          "sha256": "54c471a90f0a9cb287309b9c8e4de24a59d61da76e9d52ea3cb26ef93a887da3",
+          "bytes": 46931,
+          "origen": "resultado_presentacion_2.json",
+          "inspeccion_visual": "Completa, sin rótulos superpuestos ni recorte observado."
+        },
+        "extraccion_conceptual.png": {
+          "archivo": "vistas/extraccion_conceptual.png",
+          "sha256": "197c3fd828218264930ed734cd71b407d1a0a3d48851f93a9e9ca87bc80f1ab9",
+          "bytes": 45620,
+          "origen": "resultado_presentacion_2.json",
+          "inspeccion_visual": "Completa, sin rótulos superpuestos ni recorte observado."
+        }
+      },
+      "limitacion_render": "Se observó recorte gráfico intermitente en PNG. Se entregan cuatro capturas completas seleccionadas e inspeccionadas de dos exportaciones de la misma geometría. saveImage sin excepción no garantiza una imagen íntegra; revisar futuras capturas."
+    },
+    "ok": true
+  },
+  "actualizacion_maestro": {
+    "archivo": "../X20Pro_Base_Arquitectura.FCStd",
+    "sha256_anterior": "1aa0a2d4a6c3b89c4475ee857c19d5b38912199f60006ce2265fcc41d411f6aa",
+    "sha256_final": "e5f9639d385a90b0a2369297c331ecd5522fdb0ad85a14d27189c8bb015dc4a5",
+    "revision_geometrica": "0.1, conservada",
+    "numero_objetos": 83,
+    "procedimiento": "actualizar_maestro.py: apply y finalize en copia nativa; conservative_copy toma literalmente el Document.xml generado por FreeCAD tras validar los cinco cambios y su única arista; conserva los otros miembros del original.",
+    "verificacion": {
+      "changed": [
+        "IF02.Medidas",
+        "IF02.ProcedenciaVinculos",
+        "IF04.Medidas",
+        "IF04.Relaciones",
+        "IF04.ProcedenciaVinculos"
+      ],
+      "protected_properties_equal": true,
+      "object_ids_and_types_equal": true,
+      "serialized_geometry_equal": true,
+      "physical_validation": false
+    },
+    "miembros_conservados": 167,
+    "archivos_brep_y_mapa_conservados": 51,
+    "document_xml_nativo_sin_reconstruccion": true,
+    "reapertura_nativa": {
+      "ok": true,
+      "objetos": 83,
+      "IF02_M15_por_lado": true,
+      "IF04_IF13_M55_M60": true,
+      "errores_objetos": [],
+      "sha256": "e5f9639d385a90b0a2369297c331ecd5522fdb0ad85a14d27189c8bb015dc4a5"
+    },
+    "mediciones_csv_sha256_conservado": "a412be7db3f88f291d6347f49281aac6d586bc6eadf9f85087efc45bfc14c588",
+    "evidencia_fisica_nueva": false,
+    "ok": true
+  },
+  "aportacion_codex": {
+    "revision_axial": "8f751b431aaf4c2016c5e194fa5614565f1deff0",
+    "revision_asiento": "710510eb866ee5c5ae2886ef1e212d91419c2516",
+    "registros": [
+      "../estudios/validacion_software.json",
+      "../estudios/validacion_asiento.json"
+    ],
+    "comprobaciones_atribuidas_a": "Codex en su checkout; los registros conservan sus hashes y su base histórica.",
+    "integracion": "Patches revisados y aplicados en orden; hashes nativos contrastados con los registros, XML e imágenes inspeccionados. No se repitieron las pruebas ajenas."
+  },
+  "incidencias_resueltas": [
+    "Part::Line no admite Flat Lines; se corrigió antes de completar las 23 comprobaciones.",
+    "Se usa la cantidad angular directamente para evitar doble conversión.",
+    "La revisión mecánica corrigió un segmento de alambre que atravesaba el brazo mediante un offset visual solidario, aplicado también a las expresiones.",
+    "Los guardados nativos pueden normalizar BREP y datos. Las entregas conservan los miembros protegidos íntegros y se abren nativamente; no se relajaron los comparadores.",
+    "Se cargó pivy.coin antes de obtener el nodo de cámara. El recorte gráfico intermitente se documenta como limitación separada."
+  ],
+  "pendientes_fisicos": [
+    "Dimensiones y contrapartes por lado",
+    "Unión al módulo móvil conservado",
+    "Material y proceso del elemento elástico",
+    "Contacto y curva fuerza/posición",
+    "Retención, topes y descarga controlada",
+    "Barrido del conjunto, cables y detector",
+    "Repetibilidad y resistencia del asiento",
+    "Fatiga y pruebas con estación"
+  ],
+  "ok": true
+}

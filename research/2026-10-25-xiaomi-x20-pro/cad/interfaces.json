@@ -24,10 +24,11 @@
       "id": "IF02",
       "nombre": "Rueda derecha ↔ cartucho fijo",
       "modulos": "Segundo módulo de rueda por inventariar",
-      "medidas": "M04–M09 por lado; M42; M43",
+      "medidas": "M04–M09 por lado; M15 por lado; M42; M43",
       "requisito": "Mismo criterio de servicio con geometría independiente",
       "falta": "Referencias propias de derecha; cable; topes; apoyos conservados",
-      "evidencia": "Relato del propietario y fotos generales; faltan detalles del lado"
+      "evidencia": "Relato del propietario y fotos generales; faltan detalles del lado",
+      "procedencia_vinculos": "cad/REVISION.md · Dos vínculos por incorporar al actualizar conjuntamente registro y CAD · 2026-10-25: IF02 → M15 por lado; comprobación independiente, pendiente."
     },
     {
       "id": "IF03",
@@ -42,10 +43,12 @@
       "id": "IF04",
       "nombre": "Cartuchos y caster ↔ núcleo resistente",
       "modulos": "Ambas ruedas; rueda loca",
-      "medidas": "M25–M27; M40–M45; M59",
+      "medidas": "M25–M27; M40–M45; M55; M59; M60",
       "requisito": "Geometría global y reparto de cargas reproducibles",
       "falta": "Posición global de pivotes, vía, altura, apoyo delantero, masa y centro de gravedad",
-      "evidencia": "Interfaces presentes en fotos, sin escala"
+      "evidencia": "Interfaces presentes en fotos, sin escala",
+      "relaciones": ["IF13"],
+      "procedencia_vinculos": "cad/REVISION.md · Dos vínculos por incorporar al actualizar conjuntamente registro y CAD · 2026-10-25: IF04 → IF13 / M55 / M60; requisitos vinculados, sin nueva medida ni validación."
     },
     {
       "id": "IF05",

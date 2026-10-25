@@ -4,7 +4,7 @@ El propietario ha solicitado publicar el diseño abierto. Esta decisión se apli
 
 | Material | Licencia / alcance |
 |---|---|
-| CAD propio de `cad/`, registro de interfaces, vistas y documentación original nueva de los capítulos 11–16; esquema propio `../assets/suspension_reproducible.svg` y su render PNG; guía, definiciones y documentación de `capturas_rueda/` | [CERN-OHL-P-2.0](LICENSES/CERN-OHL-P-2.0.txt), variante permisiva para diseño de hardware y documentación de fuentes |
+| CAD propio de `cad/`, incluidos los estudios de `estudios/` y `suspension/`, registro de interfaces, vistas y documentación original nueva de los capítulos 11–17; esquema propio `../assets/suspension_reproducible.svg` y su render PNG; guía, definiciones y documentación de `capturas_rueda/` | [CERN-OHL-P-2.0](LICENSES/CERN-OHL-P-2.0.txt), variante permisiva para diseño de hardware y documentación de fuentes |
 | Scripts Python, JavaScript y macros originales de esta carpeta y `capturas_rueda/`, fuentes HTML del formulario y `../scripts/build_report.mjs` | [MIT](LICENSES/MIT.txt), indicada en los scripts; HTML generado incluye guía con su licencia anterior |
 | Firmware, placas, mecanismos y diseños originales Xiaomi | No se concede ni se presupone ninguna licencia sobre esos materiales |
 | OOMWOO y otros proyectos referenciados | Mantienen su licencia y revisión de origen; no se ha incorporado geometría OOMWOO al modelo v0.1 |
@@ -14,6 +14,8 @@ El propietario ha solicitado publicar el diseño abierto. Esta decisión se apli
 Copyright de la aportación original: 2026, Valdi320 / colaboradores del proyecto Valdo, en la medida en que corresponda. No se atribuye autoría del producto Xiaomi ni respaldo de sus fabricantes.
 
 La fuente editable preferida del diseño es `X20Pro_Base_Arquitectura.FCStd`, acompañada del registro de interfaces y este historial Git. El script reproduce la revisión inicial; no sustituye las ediciones posteriores del maestro. El STEP es un derivado del estudio conceptual y conserva su aviso de no fabricación.
+
+Los documentos independientes de suspensión y asiento son sus propias fuentes editables de estudio. Sus scripts reproducen revisiones iniciales identificadas; una captura PNG o un presupuesto axial no sustituyen esos documentos ni convierten sus hipótesis en cotas del producto original. Las referencias de catálogos de cierres se utilizan para estudiar funciones; no se han importado ni relicenciado sus planos.
 
 La elección de licencia no valida la seguridad, la resistencia, la compatibilidad ni la condición de robot completamente abierto. La electrónica original sigue conservando dependencias cerradas. Tampoco implica una certificación de hardware abierto.
 

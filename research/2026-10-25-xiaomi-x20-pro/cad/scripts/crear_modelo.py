@@ -129,11 +129,22 @@ def build(cad_dir, output_dir=None, render=True):
             "Pendientes": module["pendientes"],
         })
     for item in interfaces["interfaces"]:
-        note(doc, functional, item["id"], item["id"] + " · " + item["nombre"], {
+        obj = note(doc, functional, item["id"], item["id"] + " · " + item["nombre"], {
             "Modulos": item["modulos"], "Medidas": item["medidas"],
             "Estado": "PENDIENTE", "Requisito": item["requisito"],
             "DatoAusente": item["falta"], "Evidencia": item["evidencia"],
         })
+        if "procedencia_vinculos" in item:
+            text_prop(obj, "ProcedenciaVinculos", item["procedencia_vinculos"], "VinculosDocumentales")
+    # Resolver por ID interno cuando todas las interfaces ya existen.
+    for item in interfaces["interfaces"]:
+        if "relaciones" in item:
+            targets = [doc.getObject(target_id) for target_id in item["relaciones"]]
+            if any(target is None for target in targets):
+                raise ValueError("Interfaz relacionada inexistente: " + item["id"])
+            obj = doc.getObject(item["id"])
+            obj.addProperty("App::PropertyLinkList", "Relaciones", "VinculosDocumentales")
+            obj.Relaciones = targets
     for code, label, requirement in [
         ("SERV01", "Ruedas y pasadores", "Extraer cassette, conector y pasador sin retirar placa principal; medir M43"),
         ("SERV02", "Batería y electrónica", "Acceso a desconexión y bandejas; conservar aislamiento, conectores y radio; medir M70–M89"),

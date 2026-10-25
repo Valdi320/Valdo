@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "tipo": "Geometría de asiento DEMO; sin ensayos físicos",
+  "checks": {
+    "documento_sin_errores": true,
+    "cuatro_piezas_solidas_validas": true,
+    "apoyos_centros_correctos": true,
+    "pines_en_posicion": true,
+    "montaje_sin_interpenetracion": true,
+    "tres_superficies_apoyo": true,
+    "ranura_permite_variacion_u_2mm": true,
+    "ranura_restringe_transversal_v": true,
+    "perfil_inferior_unico": true,
+    "placa_es_extrusion_de_seccion_constante": true,
+    "barrido_continuo_valido": true,
+    "barrido_continuo_libre_de_nucleo": true,
+    "cada_tornillo_instalado_bloquea_salida": true,
+    "tornillos_apartados_fuera_del_barrido": true,
+    "desenganche_con_margen_nominal_1mm": true,
+    "reabre_en_pose_montada": true
+  },
+  "contacto_solidos": {
+    "area": 0.0,
+    "caras": 0,
+    "volumen": 0.0
+  },
+  "areas_contacto_caras_mm2": [
+    79.99999999999999,
+    79.99999999999999,
+    79.99999999999999
+  ],
+  "archivo_sha256": "15fd7ecc952c4a7b93e1f004249b3d8bacb332fa0f3bc14fb97ddda952fdd9d7",
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "45039 (Git)",
+    "https://github.com/FreeCAD/FreeCAD.git",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 1.1.4)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "barrido": {
+    "metodo": "Se verifica sección constante por diferencias volumétricas con su reconstrucción; se extruye la cara inferior perforada a espesor+elevación y se comprueba intersección volumétrica con núcleo y fijaciones retiradas",
+    "espesor_mm_demo": 6.0,
+    "elevacion_mm_demo": 6.0,
+    "altura_barrido_mm_demo": 12.0,
+    "margen_sobre_puntas_mm_demo": 1,
+    "incluye": "Únicamente placa del asiento; no cartucho, suspensión, cable ni retirada de tornillos"
+  },
+  "limitaciones": "Todos los números son DEMO. No roscas, unión hembra, resistencia, montaje en Xiaomi ni repetibilidad validados. Pines integrales en este esquema; reemplazo y raíz pendientes.",
+  "archivos_preservados": {
+    "cad/X20Pro_Base_Arquitectura.FCStd": true,
+    "mediciones.csv": true
+  },
+  "ok": true,
+  "observacion": "Registro final completado tras corregir el arnés: el contacto superficial se evalúa entre caras, no por intersección de sólidos; el nombre del documento se conserva antes de cerrarlo. Los valores negativos de la hoja se expresan como fórmulas. Comprobación final ejecutada tras resultado LIBRE del cerrojo. Sin ensayos físicos."
+}
