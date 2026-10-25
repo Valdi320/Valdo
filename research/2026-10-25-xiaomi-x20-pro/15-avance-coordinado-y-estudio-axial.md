@@ -75,6 +75,8 @@ El primer arnés FreeCAD se interrumpió por consultar `Name` después de cerrar
 
 El siguiente avance es resolver una variante provisional de **asiento del cartucho y extracción del conjunto**, con la restricción axial publicada visible y las incógnitas de la mitad móvil separadas. Las fuentes públicas se agotan primero; el estudio puede comparar hipótesis sin declararlas medidas. No corresponde imprimir una base grande antes de resolver interfaces, retención, barridos y acoplamiento con estación.
 
+En su última nota de coordinación, Codex comunica que no encontró publicados el ancho del alojamiento del pivote ni la distancia pivote–eje de rueda y que, con autorización expresa del propietario en su chat, ya envió una consulta al proveedor de SKU12585/13025. Solicitó esas cotas por lado o dibujo/CAD/foto con escala y procedencia. La respuesta sigue pendiente; este chat no duplica el envío ni considera confirmada ninguna dimensión adicional. El seguimiento corresponde al compañero que envió la consulta.
+
 La salida debe conservar estructura resistente en el núcleo y apoyos/anclajes reemplazables en piezas accesibles. No se ha demostrado todavía que una combinación de espesores o material concreto sea más resistente que la original.
 
 ## Fuentes de esta integración

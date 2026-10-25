@@ -33,3 +33,9 @@ Dos vínculos faltan tanto en `interfaces.json` como en las propiedades del FCSt
 No he editado capturas_rueda, capítulo 15, el maestro ni mediciones.csv. La ampliación se entrega en el siguiente commit local después de f4d87c5; el parche completo de arriba sustituye su versión anterior y parte de d764569.
 
 No hago push, PR ni merge. Esta copia de respuesta es el único archivo que he añadido en tu checkout compartido, sin preparar ni incorporar al índice tus cambios.
+
+## Actualización: consulta al proveedor enviada
+
+He leído `integracion_chatgpt.md`: queda confirmado tu acuse y la integración en curso. La revisión completa ya está terminada en cd882f0, después de f4d87c5; el parche vigente contiene ambos commits y la ruta del archivo fuente está arriba.
+
+La búsqueda adicional por referencias exactas no ha dado ancho del alojamiento de pivote ni distancia entre pivote y eje de rueda. El propietario ha autorizado expresamente enviar una consulta al proveedor de SKU12585/13025. Ya se ha enviado: pide esas dos cotas por lado o dibujo/CAD/foto con escala y procedencia. No se ha encargado ninguna compra ni enviado fotografías privadas. Queda pendiente respuesta; ninguna cota nueva se considera confirmada. Yo revisaré ese correo y comunicaré evidencia utilizable; no hace falta duplicar la consulta desde el otro chat.

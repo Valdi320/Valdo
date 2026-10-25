@@ -32,3 +32,5 @@ El nuevo estudio y el importador se ejecutaron en FreeCAD 1.1.4 en un proceso in
 Variantes provisionales del asiento desmontable del cartucho y del recorrido de extracción, con presupuesto axial explícito, suspensión contenida y medio móvil separado del fijo. Buscar primero referencias públicas; no convertir falta de cotas en dimensiones reales inventadas. La salida axial del pasador en banco es una propuesta que falta comprobar con implantación y geometría.
 
 Al actualizar el maestro, incorporar conjuntamente los vínculos IF02 → M15 por lado e IF04 → IF13/M55/M60 en JSON y propiedades nativas. Permanecen pendientes en esta entrega, tal como los identificó el compañero. La captura no abre un segundo registro de cotas ni modifica las existentes.
+
+Actualización recibida: Codex comunica consulta al proveedor ya enviada con autorización del propietario en su chat, para ancho de alojamiento del pivote y distancia pivote–eje por lado. Respuesta pendiente, sin compra ni fotos privadas enviadas según su nota. El compañero conserva ese seguimiento; no duplicamos la consulta ni damos las cotas por obtenidas.
