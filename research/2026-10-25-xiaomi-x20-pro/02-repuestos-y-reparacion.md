@@ -124,7 +124,7 @@ Se distinguieron estos resultados de los realmente útiles:
 
 [Experiencia con fotos de un X20 Pro con muelle suelto](https://www.reddit.com/r/RobotVacuums/comments/1t2604u/need_help_with_my_xiaomi_x20_pro_one_wheel_stays/): acredita un caso particular y permite observar el conjunto; no acredita una reparación validada, frecuencia de fallos ni la avería concreta del usuario.
 
-**Recomendación de ingeniería, todavía no diseño validado:** para reducir coste y mejorar mantenibilidad conviene explorar primero una reparación local reemplazable que distribuya la carga sobre material sano, conservando eje, carrera y muelle originales. Solo tras identificar la pieza rota puede decidirse si basta una placa de respaldo/soporte mecánico o hace falta una carcasa nueva. No hay evidencia para prometer que una brida, abrazadera o pegamento por sí solos mantendrán la alineación durante servicio.
+**Alternativa de la fase inicial, todavía no diseño validado:** una reparación local reemplazable puede distribuir la carga sobre material sano, conservando eje, carrera y muelle adecuados. El propietario ha descartado continuar reparando la carcasa original; esta opción queda como referencia y el plan vigente es [07 — Chasis propio](07-plan-del-chasis-propio.md). No hay evidencia para prometer que una brida, abrazadera o pegamento por sí solos mantendrán la alineación durante servicio.
 
 ### Qué falta medir o fotografiar
 

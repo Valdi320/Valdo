@@ -1,5 +1,7 @@
 # Plan de trabajo: mejorar sin inmovilizar el robot durante el diseño
 
+> **Plan anterior, sustituido el 25-10-2026.** El propietario ha decidido construir un chasis nuevo y no continuar reparando el original. Este capítulo se conserva como referencia de la primera investigación; sus condiciones de «restaurar primero» no gobiernan el proyecto actual. Consultar [07 — Plan del chasis propio](07-plan-del-chasis-propio.md).
+
 Fecha: 25/10/2026. Todas las acciones de esta página son **propuestas de ingeniería (E4)**. La investigación pública ha terminado; las mediciones y pruebas de la unidad real siguen pendientes.
 
 ## 1. Resolver la incógnita que bloquea el diseño

@@ -1,5 +1,7 @@
 # Xiaomi Robot Vacuum X20 Pro D102GL: arquitectura física y acceso para reparación
 
+> **Alcance actualizado:** el propietario ha descartado reparar la carcasa original. Las rutas de intervención localizada de este capítulo se conservan como antecedentes; el proyecto vigente está en [07 — Chasis propio](07-plan-del-chasis-propio.md), con la unidad ya desmontada.
+
 Fecha de revisión: 2026-10-25. Alcance: conservar electrónica, firmware, sensores, actuadores e interfaces originales; preparar reparaciones y soportes sustituibles con la menor indisponibilidad posible. Este documento no es un manual de servicio del fabricante ni un plano de fabricación validado.
 
 ## 1. Conclusiones que condicionan el proyecto

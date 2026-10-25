@@ -52,7 +52,7 @@ Arquitectura propuesta para el CAD:
 
 Es una propuesta, no una afirmación sobre la distribución interna exacta del X20 Pro. Conviene evitar una única impresión grande de cuya integridad dependan todas las orejetas: una rotura local debería obligar a reemplazar un soporte pequeño. A la vez, dividir demasiado el chasis añade uniones, holguras y acumulación de errores; el núcleo que mantiene la alineación debe ser estable.
 
-Para conservar el robot disponible, documentar durante una apertura programada, cerrar el aparato y diseñar fuera de él. Comprobar los primeros prototipos con una plantilla o módulo de repuesto, si se dispone de él. El trasplante completo se deja para cuando el chasis de prueba ya encaje. No hace falta comprar una impresora para decidir la viabilidad: un primer soporte puede encargarse con el material y la orientación especificados.
+La estrategia inicial de documentar y cerrar el robot para seguir usándolo queda sustituida por la decisión del propietario de abandonar la carcasa dañada. Los prototipos se comprobarán en un soporte propio o útil de presentación; no es necesario restaurar antes el chasis original. El trasplante se prepara con el bastidor de prueba y los conjuntos retenidos. No hace falta comprar una impresora para decidir la viabilidad: un primer soporte puede encargarse con el material y la orientación especificados. El plan vigente está en [07 — Chasis propio](07-plan-del-chasis-propio.md).
 
 ## 3. Medición económica: qué se necesita realmente
 
@@ -152,11 +152,13 @@ No se fija aquí una cifra arbitraria de ciclos o días que convierta un prototi
 
 ## 7. Qué aporta OOMWOO y qué archivos existen realmente
 
+**Actualización:** la auditoría detallada del diseño principal y del experimento de CAD automático, con las implicaciones para esta unidad Xiaomi, está en [09 — Comparación OOMWOO](09-oomwoo-comparacion.md). Las conclusiones de ese capítulo prevalecen sobre esta primera revisión.
+
 OOMWOO es útil como ejemplo de proceso y organización: adquirir componentes comerciales, documentarlos, reconstruir CAD y diseñar alojamientos imprimibles. Su artículo de diseño muestra piezas físicas y explica cambios realizados después de prototipos; no equivale a un conjunto terminado compatible con este Xiaomi. [F14]
 
 En la consulta actual, su web indica que aún no está listo para construir y distingue tareas de navegación/acoplamiento simuladas de prototipos mecánicos. Las instrucciones de montaje del repositorio siguen identificadas como provisionales. [F15, F16]
 
-El repositorio `makerspet/oomwoo-cad` contiene archivos Fusion y STEP reales: conjuntos de chasis, cajas de engranajes y modelos de componentes comerciales, incluido `lib/roborock/OOM-W01-drive-wheel-assembly.stp`. La inspección del árbol público no encontró STL. No hay evidencia de que ese módulo Roborock coincida dimensionalmente con el X20 Pro. [F17] La existencia de CAD es útil para estudiar cómo organizar subconjuntos, no para imprimir directamente un recambio Xiaomi.
+El repositorio `makerspet/oomwoo-cad` contiene CAD nativo Fusion del chasis principal, STEP de subconjuntos y modelos de componentes comerciales, incluido `lib/roborock/OOM-W01-drive-wheel-assembly.stp`. El STEP del robot completo pertenece a un experimento distinto con errores reconocidos; no es una exportación validada del chasis principal. La inspección del árbol público no encontró STL. No hay evidencia de que ese módulo Roborock coincida dimensionalmente con el X20 Pro. [F17] La existencia de CAD es útil para estudiar cómo organizar subconjuntos, no para imprimir directamente un recambio Xiaomi.
 
 Otros proyectos comprobados durante esta investigación:
 
