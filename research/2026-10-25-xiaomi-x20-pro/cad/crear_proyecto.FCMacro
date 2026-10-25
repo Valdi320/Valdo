@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+"""Reproduce v0.1 en una carpeta nueva; el maestro existente nunca se sobrescribe."""
+from pathlib import Path
+import sys
+import FreeCAD as App
+from PySide import QtWidgets
+
+candidate = Path(globals().get("__file__", "")).resolve().parent
+if not (candidate / "scripts" / "crear_modelo.py").is_file():
+    chosen = QtWidgets.QFileDialog.getExistingDirectory(None, "Carpeta cad que contiene scripts/crear_modelo.py")
+    if not chosen:
+        raise RuntimeError("No se seleccionó la carpeta del proyecto")
+    candidate = Path(chosen)
+chosen_out = QtWidgets.QFileDialog.getExistingDirectory(None, "Carpeta nueva para reproducir v0.1 (no sobrescribe el maestro)")
+if not chosen_out:
+    raise RuntimeError("No se seleccionó una carpeta de salida")
+sys.path.insert(0, str(candidate / "scripts"))
+from crear_modelo import build
+result = build(candidate, Path(chosen_out), render=True)
+App.Console.PrintMessage("CAD inicial creado. Estado: NO FABRICAR.\n")

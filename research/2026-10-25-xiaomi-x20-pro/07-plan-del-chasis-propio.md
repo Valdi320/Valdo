@@ -1,14 +1,16 @@
 # 07 — Chasis propio: herramientas, ingeniería y ejecución
 
-**25 de octubre de 2026 · Plan V2, revisión documental cerrada provisionalmente tras cuatro rondas.** Alcance: Xiaomi Robot Vacuum X20 Pro D102GL y su estación original. Este plan sustituye la prioridad anterior de reparar primero la carcasa existente. El objetivo actual es **recuperar los conjuntos aprovechables y diseñar una estructura nueva, resistente y mantenible**, sin exigir reutilizar soportes deteriorados.
+**25 de octubre de 2026 · Plan V3, ampliado tras el encargo de base nueva y robot abierto; CAD inicial ejecutado.** Alcance: Xiaomi Robot Vacuum X20 Pro D102GL y su estación original. Este plan sustituye la prioridad anterior de reparar primero la carcasa existente. El objetivo actual es **recuperar los conjuntos aprovechables y diseñar una estructura nueva, resistente y mantenible**, sin exigir reutilizar soportes deteriorados.
 
-La propuesta define trabajo y condiciones de aceptación. Las fotografías permiten identificar componentes y conexiones concretas, pero no constituyen pruebas eléctricas. No hay todavía dimensiones de fabricación, un CAD validado o una promesa de vida útil. Las fuentes describen herramientas y principios; las elecciones de arquitectura y pruebas son propuestas de ingeniería.
+La propuesta define trabajo y condiciones de aceptación. Las fotografías permiten identificar componentes y conexiones concretas, pero no constituyen pruebas eléctricas. Existe un CAD inicial nativo cuya editabilidad y cadena de guardado/exportación se han comprobado; todavía no hay dimensiones internas medidas, base de fabricación ni resistencia validada. El estado ejecutado está en [14 — Entrega CAD](14-entrega-cad-y-siguiente-medicion.md). Las fuentes describen herramientas y principios; las elecciones de arquitectura y pruebas son propuestas de ingeniería.
 
 ## 1. Decisión principal
 
-Adoptar un flujo pequeño: **inventario y medidas → FreeCAD → pieza piloto → bastidor → integración funcional**. Conservar firmware, placas, arneses, batería cerrada y módulos que se comprueben aprovechables. El esquema electrónico completo, los protocolos internos y una controladora nueva no son dependencias iniciales.
+Adoptar un flujo pequeño: **inventario y medidas → FreeCAD → pieza piloto → bastidor → integración funcional**. Conservar inicialmente firmware, placas, arneses, batería cerrada y módulos que se comprueben aprovechables. El objetivo final es control abierto: esta conservación no obliga a mantener siempre la placa principal cerrada. La arquitectura reserva una bandeja intercambiable separada del bastidor; las etapas y vías comprobadas están en [13](13-electronica-y-control-abierto.md). El esquema electrónico completo, los protocolos internos y una controladora nueva no son dependencias iniciales.
 
 La primera versión busca conservar navegación, aspiración, cepillos, suspensión, detección, mopas y las funciones de estación presentes en este Pro. Xiaomi documenta un sistema que combina esos modos y automatismos [S01]. No se supone que exista un modo de servicio capaz de accionar cada motor por separado. Controlar nuestro diseño mecánico no equivale a controlar el firmware original.
+
+La arquitectura elegida para desarrollar separa un núcleo resistente propio de cartuchos de rueda, bandejas, conductos y tapas sustituibles. Se evalúa una estructura híbrida con metal donde aporte valor; no se fija aleación o espesor antes de la implantación. Los fragmentos descartados no son necesarios: se miden interfaces y contrapartes supervivientes.
 
 La robustez se perseguirá con caminos de carga adecuados, geometría, uniones y proceso de fabricación comprobados. La reparabilidad se comprobará retirando y reponiendo módulos: el objetivo propuesto es poder acceder a ruedas, batería y electrónica sin desmontar conjuntos ajenos cuando el espacio real lo permita. No se promete un número de minutos antes de diseñar el acceso.
 
@@ -49,7 +51,7 @@ FreeCAD documenta parámetros, ensamblajes, Python y formatos FCStd/STEP/STL [S0
 
 La primera vía a comprobar es el paquete gráfico estable de FreeCAD en Flathub, siguiendo la preferencia de Bazzite por Flatpak para aplicaciones gráficas [S04–S05]. No hace falta cambiar de sistema operativo ni alterar su imagen base.
 
-Antes de depender de esa instalación: crear una pieza sencilla, cambiar una cota, guardar, reabrir, exportar STEP y reabrir la exportación; contrastar unidades y una dimensión. Probar una macro mínima solo si se va a usar automatización. Registrar versión y distribución utilizadas. Estas comprobaciones locales siguen pendientes; no se ha instalado software durante la planificación.
+Antes de depender de esa instalación: crear una pieza sencilla, cambiar una cota, guardar, reabrir, exportar STEP y reabrir la exportación; contrastar unidades y una dimensión. Probar una macro mínima solo si se va a usar automatización. Registrar versión y distribución utilizadas. La ejecución se completó con FreeCAD 1.1.4 de Flathub: se creó y reabrió el FCStd, se modificó una cota DEMO comprobando dependencias y se exportó/reimportó STEP. Se inspeccionaron vistas generadas con el contexto gráfico del escritorio. Registro en `cad/validacion_cad.json`. Esto verifica archivos y editabilidad; no encaje, resistencia ni geometría del ejemplar.
 
 La automatización inicial se ejecutará mediante las macros y Python de FreeCAD. No suponer que un paquete pip instala FreeCAD ni que el Python del sistema puede importar automáticamente los módulos de su Flatpak. Si aparece una limitación concreta, resolver acceso al directorio del proyecto o evaluar una distribución oficial alternativa. No ampliar permisos o cambiar de empaquetado por anticipado.
 
@@ -66,7 +68,7 @@ La automatización inicial se ejecutará mediante las macros y Python de FreeCAD
 | COLMAP/fotogrametría u OpenCV | Resolver una geometría que no sea práctico medir directamente | Opcionales. Escala, oclusiones y reflejos deben verificarse contra cotas independientes. Comprobar la distribución y aceleración disponibles antes de depender de ellas. |
 | FEM/CalculiX | Comparar dos decisiones estructurales con cargas y materiales suficientemente conocidos | Después de definir el problema. Un resultado numérico con material genérico no demuestra fatiga o fluencia de una impresión. |
 | Escáner 3D, osciloscopio o cámara térmica | Una incertidumbre concreta que el instrumental sencillo no pueda resolver | Sin compra inicial. Buscar préstamo o servicio puntual si llega a justificarse. |
-| ROS, simulador robótico completo, firmware propio o PCB nueva | Un objetivo posterior de control que el sistema original impida | Fuera de la primera versión. No son requisitos del trasplante. |
+| ROS, simulador robótico completo, firmware propio o PCB nueva | Objetivo explícito posterior de control abierto | Fuera de la primera base mecánica; preparar interfaces y bandeja sustituible ahora. Elegir herramientas cuando se caracterice la electrónica, sin depender de un root no demostrado. |
 
 Las herramientas opcionales representan alternativas de trabajo, no una lista de instalación. Su criterio de entrada es una pregunta y una comprobación que justifiquen tiempo y coste. Los proyectos oficiales de CadQuery, OpenSCAD, Blender, MeshLab, CloudCompare, COLMAP y OpenCV se incluyen en las fuentes [S14].
 

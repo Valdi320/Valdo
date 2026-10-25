@@ -1,0 +1,7 @@
+{
+  "name": "x20-pro-dossier-builder",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "node build_report.mjs"},
+  "dependencies": {"marked": "17.0.5"}
+}

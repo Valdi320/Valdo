@@ -1,14 +1,14 @@
-# Xiaomi X20 Pro: chasis propio, electrónica conservada
+# Xiaomi X20 Pro: base propia, reparación modular y control abierto por fases
 
 **Investigación actualizada el 25 de octubre de 2026.** Equipo: Xiaomi Robot Vacuum X20 Pro, D102GL, con estación europea D102-JZEU. Caso del proyecto [Fábrica Doméstica Autónoma Abierta](https://github.com/Valdi320/Valdo).
 
 ## Objetivo vigente
 
-El propietario ha decidido **abandonar la reparación de la carcasa original**, ya desmontada, debido a las roturas que observa. El trabajo actual consiste en recuperar los conjuntos aprovechables y diseñar una estructura nueva, resistente y fácil de mantener, con presupuesto limitado. Se conservan inicialmente electrónica, firmware, batería cerrada, arneses y estación originales.
+El propietario ha decidido **abandonar la reparación de la carcasa original**, ya desmontada, debido a las roturas que observa. El trabajo actual consiste en recuperar los conjuntos aprovechables y diseñar una estructura nueva, resistente y fácil de mantener, con presupuesto limitado. Se conservan inicialmente electrónica, firmware, batería cerrada, arneses y estación originales. El objetivo final incluye control abierto; la etapa con firmware Xiaomi es provisional. Los fragmentos rotos ya no están y no son una dependencia del diseño nuevo.
 
 El plan de «reparar primero y ampliar después» pertenece a una fase anterior y **ya no es un requisito**. Los capítulos de repuestos y reparación siguen siendo referencias útiles para piezas concretas; la ejecución vigente está en [07 — Plan del chasis propio](07-plan-del-chasis-propio.md).
 
-**Recomendación provisional:** diseñar alrededor de las interfaces del Xiaomi y aprovechar las piezas o soluciones de OOMWOO que reduzcan trabajo. No hay evidencia suficiente para afirmar que sustituir la electrónica dentro de un chasis OOMWOO completo sea actualmente la opción más sencilla. La comparación detallada, archivos comprobados y condiciones que cambiarían esta decisión están en [09 — OOMWOO](09-oomwoo-comparacion.md).
+**Arquitectura elegida para desarrollar:** núcleo resistente propio y soportes funcionales reemplazables, evaluando caminos de carga metálicos y adaptadores pequeños. Se diseña alrededor de las interfaces del Xiaomi y se aprovechan las piezas o soluciones de OOMWOO que reduzcan trabajo. No hay evidencia suficiente para afirmar que sustituir la electrónica dentro de un chasis OOMWOO completo sea actualmente la opción más sencilla. La comparación detallada, archivos comprobados y condiciones que cambiarían esta decisión están en [09 — OOMWOO](09-oomwoo-comparacion.md).
 
 ## Qué ya está documentado
 
@@ -19,7 +19,7 @@ El plan de «reparar primero y ampliar después» pertenece a una fase anterior 
 - Inspección de **18 fotografías únicas** de esta unidad. Las fotos confirman referencias y distribución de varios conjuntos; no su funcionamiento, materiales ni medidas. [10 — Inventario observado](10-inventario-fotografico.md).
 - Auditoría de archivos reales de OOMWOO, distinguiendo el diseño principal de su experimento de CAD automático. Su estado se comprueba en fuentes originales, no en imágenes promocionales.
 
-No se ha fabricado un bastidor, ensayado una suspensión, validado un pinout ni producido CAD dimensional de esta unidad. La documentación permite empezar de forma ordenada; no es todavía una especificación de fabricación.
+**Ya existe un [proyecto FreeCAD nativo](cad/README.md), generado y reabierto con FreeCAD 1.1.4 en el PC.** Contiene la envolvente publicada, 13 registros de módulos, 14 interfaces y un estudio paramétrico independiente de cartucho. No contiene una base fabricable ni cotas internas medidas. No se ha fabricado un bastidor, ensayado una suspensión o validado un pinout. [Entrega y verificación](14-entrega-cad-y-siguiente-medicion.md).
 
 ## Tres formas de aprovechar OOMWOO
 
@@ -39,7 +39,9 @@ Los apoyos dañados pueden reconstruirse. Las carcasas que sitúan engranajes, c
 
 El nuevo chasis debe mantener o verificar geometría de rodadura, orientación de sensores, movimiento del paragolpes, alturas de limpieza y acoplamiento con la estación. La electrónica original no garantiza que el firmware se adapte a cualquier distribución nueva.
 
-## Próxima entrega física y datos que necesita
+## CAD entregado y siguiente avance físico
+
+El maestro es [cad/X20Pro_Base_Arquitectura.FCStd](cad/X20Pro_Base_Arquitectura.FCStd). La propuesta estructural está en 11, la geometría funcional en 12 y la transición de control en 13. La [guía 14](14-entrega-cad-y-siguiente-medicion.md) delimita qué se ha ejecutado y qué requiere medir.
 
 1. **Ensamblaje de volúmenes simplificados:** medidas exteriores y fijaciones de placa con cubierta, batería, turbina, ruedas y mopas, en un sistema de coordenadas común.
 2. **Comparación geométrica con el diseño principal de OOMWOO:** identificar qué base o piezas se pueden conservar y qué hay que reconstruir. No imprimir una carcasa grande para descubrirlo.
@@ -62,6 +64,11 @@ Las fotos recibidas no incluyen escala metrológica suficiente ni documentan las
 | [08 — Refutaciones](08-refutaciones-y-decisiones.md) | Objeciones, cambios y criterio de cierre de la planificación. |
 | [09 — OOMWOO](09-oomwoo-comparacion.md) | Auditoría de archivos y comparación para el trasplante. |
 | [10 — Fotos de la unidad](10-inventario-fotografico.md) | Observaciones verificables por identificador, sin publicar fotos ni seriales. |
+| [11 — Base resistente](11-base-resistente-y-reconstruccion.md) | Reconstrucción sin fragmentos, estructura e interfaces reemplazables. |
+| [12 — Mecanismos y estación](12-interfaces-mecanicas-y-estacion.md) | Rodadura, suspensión, limpieza, acoplamiento y medidas M40–M60. |
+| [13 — Electrónica y control abierto](13-electronica-y-control-abierto.md) | Montajes, medidas M70–M89, software comprobado y apertura por fases. |
+| [14 — Entrega CAD](14-entrega-cad-y-siguiente-medicion.md) | Ejecución real, verificación, siguiente captura y coordinación de checkout. |
+| [cad/](cad/README.md) | FCStd editable, macro, interfaces, STEP DEMO, vistas, licencia y validación. |
 
 Datos reutilizables: [repuestos](repuestos.csv), [mediciones](mediciones.csv), [intervenciones](registro-intervenciones.csv), [módulos observados](electronica-modulos.csv), [conexiones](electronica-conexiones.csv) y [comandos/pruebas](comandos-pruebas.csv). Los campos desconocidos permanecen explícitos; ningún ensayo se registra como realizado por una revisión documental.
 
@@ -73,4 +80,4 @@ No se ha determinado la composición o causa de fragilidad de los plásticos de 
 
 El coste de fabricación se cotizará cuando haya piezas, proceso y revisiones definidos. El software gratuito no elimina material, herrajes, portes ni iteraciones. No hace falta comprar impresora, escáner o una controladora para completar la primera comparación CAD.
 
-Control dimensional significa disponer de geometría editable, medidas, ajustes y piezas reproducibles. No equivale a independencia del firmware ni a durabilidad probada. Las fotos originales se conservan aparte del repositorio público; el dossier cita sus identificadores. Los archivos ajenos se enlazan a sus fuentes y revisiones.
+Control dimensional significa disponer de geometría editable, medidas, ajustes y piezas reproducibles. No equivale a independencia del firmware ni a durabilidad probada. El control abierto es un objetivo posterior explícito: la bandeja de electrónica debe permitir una sustitución localizada si no se puede abrir la placa original. Valetudo no incluye oficialmente D102GL; las integraciones de alto nivel no son un controlador de motores abierto. Véanse fuentes y límites en 13. Las fotos originales se conservan aparte del repositorio público; el dossier cita sus identificadores. Los archivos ajenos se enlazan a sus fuentes y revisiones.

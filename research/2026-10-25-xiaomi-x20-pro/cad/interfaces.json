@@ -1,0 +1,141 @@
+{
+  "revision": "0.1",
+  "fecha": "2026-10-25",
+  "estado": "Registro de requisitos; sin dimensiones internas medidas",
+  "sistema_referencia": {
+    "convencion": "X avance, Y izquierda, Z arriba",
+    "origen_cad": "Centro del límite inferior de la envolvente publicada abstracta",
+    "relacion_suelo": null,
+    "relacion_ejes_rodadura": null,
+    "transformacion_a_unidad": "PENDIENTE M40",
+    "advertencia": "Ningún null o pendiente debe convertirse en cero como cota real"
+  },
+  "interfaces": [
+    {
+      "id": "IF01",
+      "nombre": "Rueda izquierda ↔ cartucho fijo",
+      "modulos": "Rueda izquierda por identificar; MOD009 lado pendiente",
+      "medidas": "M04–M09; M15; M41; M43",
+      "requisito": "Apoyo, giro libre, retención y extracción local del pivote",
+      "falta": "Caras, ejes, donde gira el pasador, fijación y holgura; no copiar por simetría",
+      "evidencia": "F006/F008/F018; estado actual requiere inspección"
+    },
+    {
+      "id": "IF02",
+      "nombre": "Rueda derecha ↔ cartucho fijo",
+      "modulos": "Segundo módulo de rueda por inventariar",
+      "medidas": "M04–M09 por lado; M42; M43",
+      "requisito": "Mismo criterio de servicio con geometría independiente",
+      "falta": "Referencias propias de derecha; cable; topes; apoyos conservados",
+      "evidencia": "Relato del propietario y fotos generales; faltan detalles del lado"
+    },
+    {
+      "id": "IF03",
+      "nombre": "Muelles: anclajes fijos y móviles separados",
+      "modulos": "Ambas ruedas; muelle conservado y sustituto",
+      "medidas": "M16–M22; M44; M84",
+      "requisito": "Fuerza de rueda frente a recorrido, retorno, detección y límites compatibles",
+      "falta": "Tensión inicial, constante, recorrido, geometría real, parte móvil rota y retención; mayor longitud no prueba equivalencia",
+      "evidencia": "Relato del propietario; nominal comercial solo orientativo"
+    },
+    {
+      "id": "IF04",
+      "nombre": "Cartuchos y caster ↔ núcleo resistente",
+      "modulos": "Ambas ruedas; rueda loca",
+      "medidas": "M25–M27; M40–M45; M59",
+      "requisito": "Geometría global y reparto de cargas reproducibles",
+      "falta": "Posición global de pivotes, vía, altura, apoyo delantero, masa y centro de gravedad",
+      "evidencia": "Interfaces presentes en fotos, sin escala"
+    },
+    {
+      "id": "IF05",
+      "nombre": "Placa principal ↔ bandeja aislante",
+      "modulos": "MOD002; MOD003",
+      "medidas": "M70–M74; M86; M87; M89",
+      "requisito": "Apoyar placa y mandos sin usar PCB como estructura; retirar bandeja sin desmontar limpieza",
+      "falta": "Contorno, fijaciones, alturas de pila, volumen conectores, aislamiento, disipación, radio y posible IMU",
+      "evidencia": "F011/F013"
+    },
+    {
+      "id": "IF06",
+      "nombre": "Batería ↔ cuna y acceso",
+      "modulos": "MOD001",
+      "medidas": "M76; M77; M85; M89",
+      "requisito": "Pack cerrado retenido sin presión localizada; desconexión y salida accesibles",
+      "falta": "Dimensiones, masa, fijación, pareja de conector, zona de cable y estado físico",
+      "evidencia": "F001/F018"
+    },
+    {
+      "id": "IF07",
+      "nombre": "LDS ↔ puente superior",
+      "modulos": "MOD013",
+      "medidas": "M28; M78; M79; M85",
+      "requisito": "Mantener orientación, altura y campo libre con soporte independiente de tapa",
+      "falta": "Patrón, plano, altura al marco, abertura y conector externo",
+      "evidencia": "F014/F017/F018"
+    },
+    {
+      "id": "IF08",
+      "nombre": "Frontal óptico ↔ paragolpes móvil",
+      "modulos": "MOD010; MOD011",
+      "medidas": "M28; M80; M81; M85",
+      "requisito": "Ventanas, relación óptica y retorno del paragolpes sin tensión de flex",
+      "falta": "Posiciones relativas, apoyos, recorrido, zonas de flexión, orientación y fijación al marco",
+      "evidencia": "F014–F016"
+    },
+    {
+      "id": "IF09",
+      "nombre": "Otros sensores ↔ suelo / ventanas",
+      "modulos": "Sensores de desnivel, pared y detección por identificar",
+      "medidas": "M28; M83; M84",
+      "requisito": "Campos y detección conservados; no tapar ni cambiar orientación sin validar",
+      "falta": "Inventario, soportes y coordenadas; ninguna deducción de pinout por número de hilos",
+      "evidencia": "Documentación Xiaomi y fotos parciales"
+    },
+    {
+      "id": "IF10",
+      "nombre": "Cepillo y lateral ↔ base y suelo",
+      "modulos": "MOD006; caja de cepillo; accionamiento lateral",
+      "medidas": "M46–M48; M58",
+      "requisito": "Altura, movimiento, aire y acceso inferior de mantenimiento",
+      "falta": "Patrones, planos, apoyos, transmisión, sello y barridos",
+      "evidencia": "F004/F013/F018; ficha comercial 73385"
+    },
+    {
+      "id": "IF11",
+      "nombre": "Mopas ↔ base / suelo / bandeja",
+      "modulos": "MOD007; MOD008; platos y paños",
+      "medidas": "M29; M49–M51; M56; M60",
+      "requisito": "Ejes, elevación, limpieza y extracción compatibles con estación",
+      "falta": "Lados, planos, patrones, alturas y envolventes; no usar 130 mm comercial como ajuste",
+      "evidencia": "F005/F009/F010/F018"
+    },
+    {
+      "id": "IF12",
+      "nombre": "Depósito y turbina ↔ circuito de aire",
+      "modulos": "MOD005; depósito; juntas; pieza tubular de función pendiente",
+      "medidas": "M52–M54; M58; M88",
+      "requisito": "Apoyos y sellos desmontables; continuidad de aspiración y vaciado",
+      "falta": "Bocas, sección, juntas y función de pieza negra superior; no atribuir autovaciado sin inspección",
+      "evidencia": "F002/F018 y contraparte física del depósito"
+    },
+    {
+      "id": "IF13",
+      "nombre": "Robot ↔ estación original",
+      "modulos": "MOD012 probable; estación D102-JZEU",
+      "medidas": "M30; M54–M57; M60; M82",
+      "requisito": "Aproximación, apoyo, contactos, IR, vaciado, lavado y secado según estado real",
+      "falta": "Referencias de rampas, contactos, sellos y bandeja en posturas funcionales; cotas exteriores no bastan",
+      "evidencia": "Ficha oficial y conjunto F012; estación aún sin levantamiento"
+    },
+    {
+      "id": "IF14",
+      "nombre": "Arneses ↔ estructura y servicio",
+      "modulos": "Todos los conjuntos conservados",
+      "medidas": "M23; M24; M73–M75; M77; M81; M84–M86; M88; M89",
+      "requisito": "Conservar pares y recorrido con alivio de tracción, aislamiento y extracción local",
+      "falta": "Mapa completo, longitudes libres, conectores, zonas de movimiento y aislamiento frente a metal",
+      "evidencia": "Tres relaciones observadas en electronica-conexiones.csv; resto pendiente"
+    }
+  ]
+}

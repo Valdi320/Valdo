@@ -1,0 +1,35 @@
+{
+  "revision": "0.1",
+  "freecad_version": "1.1.4",
+  "physical_validation": false,
+  "manufacturing_ready": false,
+  "measured_internal_dimensions": 0,
+  "module_records": 13,
+  "interface_records": 14,
+  "checks": [
+    "Sólidos finales y envolvente: no nulos, válidos y un sólido cada uno",
+    "Envolvente publicada: 350 × 350 × 97 mm; no es validación de base",
+    "Hueco DEMO 26→30→26 mm: apoyo B, placa y pasador responden +4 mm y vuelven",
+    "FCStd guardado y reabierto: inventario y volúmenes coinciden",
+    "Vistas nativas de escritorio inspeccionadas: sólidos legibles, aviso DEMO y separación de envolvente",
+    "Corregida ruta nativa .Placement.Base.x; DEMO X mínimo 250 > envolvente X máximo 175 mm",
+    "Tras corregir posición: relación paramétrica y guardar/reabrir comprobados",
+    "STEP reimportado con CadQuery/OCP: 7 sólidos válidos; límites [250,328]×[0,62]×[0,29] mm"
+  ],
+  "export_step": {
+    "file": "exportacion/DEMO_cartucho_NO_FABRICAR.step",
+    "purpose": "Intercambio del estudio, nunca fabricación",
+    "solids": 7
+  },
+  "sha256_fcstd": "1aa0a2d4a6c3b89c4475ee857c19d5b38912199f60006ce2265fcc41d411f6aa",
+  "sha256_step": "19ae961f4cdc1dfbf39c048ef618f5f954ca9704bb4b673347cd8dd0112a29bd",
+  "render_context": "FreeCAD GUI de escritorio; capturas inspeccionadas visualmente por el coordinador",
+  "visual_review": {
+    "result": "apta para explicar estudio conceptual",
+    "images": [
+      "vistas/DEMO_cartucho_NO_FABRICAR.png",
+      "vistas/referencias_y_estudio.png"
+    ],
+    "not_physical_validation": true
+  }
+}

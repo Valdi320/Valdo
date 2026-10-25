@@ -111,3 +111,8 @@ Para comparar una base propia con la base principal de OOMWOO basta inicialmente
 El inventario y CAD preliminar pueden avanzar con lo recibido. Los detalles adicionales se piden por interfaz que vaya a diseñarse o moverse, evitando desmontar por sistema conjuntos sanos. Las plantillas [módulos](electronica-modulos.csv) y [conexiones](electronica-conexiones.csv) contienen los primeros datos observados; sus campos pendientes no son mediciones inferidas.
 
 **Relación con el plan:** [07 — Chasis propio](07-plan-del-chasis-propio.md); [09 — Comparación con OOMWOO](09-oomwoo-comparacion.md). Las observaciones de este capítulo proceden de fotografías del propietario; las consecuencias de diseño se presentan como razonamiento técnico, no como resultados de ensayo.
+
+
+## Observación incorporada por la investigación de base
+
+En F018, junto al hueco grande de la carcasa superior blanca, se ve una pieza negra de aspecto tubular fijada a esa carcasa. Su función no se identifica con fiabilidad en la fotografía. Se registra como contraparte superviviente a inspeccionar (IF12/M53), sin atribuirle autovaciado ni descartar toda la carcasa superior como estética. El LDS que permanece montado también requiere conservar su interfaz geométrica.

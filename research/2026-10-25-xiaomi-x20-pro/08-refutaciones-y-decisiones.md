@@ -70,3 +70,20 @@ Se reabrirá una decisión cuando una medida, avería o prueba la contradiga. Se
 ## 6. Límite del cierre
 
 **El plan ha convergido documentalmente; el diseño físico aún tiene que ganarse su validación.** El resultado de las cuatro rondas es una forma de trabajar con menos supuestos ocultos y menos gasto prematuro. La resistencia y la facilidad de reparar se demostrarán mediante piezas fabricadas, medidas, usadas y desmontadas, con revisiones trazables.
+
+
+## Revisión adicional — base nueva y CAD ejecutado, 25-10-2026
+
+El propietario amplió el objetivo a robot abierto y decidió comenzar por sustituir la base. Las cuatro rondas anteriores se conservan como historial; no congelan un alcance que el propietario ha cambiado. Se asignaron tres frentes: estructura/reconstrucción, geometría funcional y electrónica/control. Los resultados se integran en 11–13.
+
+| Objeción nueva | Cambio o resolución | Límite restante |
+|---|---|---|
+| Los fragmentos ya no existen | Diseñar desde caras, agujeros, ejes y contrapartes supervivientes | Algunas posiciones globales pueden requerir referencia adicional exacta |
+| Una base monolítica puede volver a invalidarse por un pequeño anclaje | Núcleo resistente separado de cartuchos, apoyos y tapas | Partición, coste y rigidez con uniones por comprobar |
+| Dos apoyos fijos no reparan el gancho o alojamiento móvil roto | Interfaz móvil explícita en IF01/IF03 y LimitesCartucho | Inspección y medición M41–M44 |
+| Un CAD atractivo podría inventar un interior preciso | No hay cajas ficticias de módulos; solo metadatos pendientes, envolvente publicada y DEMO separado | Implantación real pendiente de medidas |
+| Una macro no demuestra que exista un archivo editable | Se ejecutó FreeCAD 1.1.4, guardó/reabrió el FCStd y probó cambio paramétrico | Solo validación de cadena CAD |
+| La captura podía aparentar posición de montaje | Se detectó y corrigió ruta nativa .Placement.Base.x; DEMO situado fuera y comprobado | No asignar esa posición al robot |
+| Conservar firmware se confundía con robot abierto final | Etapas A–D; bandeja de electrónica reemplazable y dependencias cerradas inventariadas | No hay driver Pro listo ni root soportado demostrado |
+
+La revisión independiente del código y las interfaces no encontró un bloqueo mecánico adicional para entregar v0.1 como estudio, y rechazó añadir rueda, muelle, retenes o sensores ficticios para completar su aspecto. El criterio de avance es aportar medidas útiles; repetir objeciones generales sin datos nuevos no sustituye ese paso.
