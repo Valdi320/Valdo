@@ -1,6 +1,23 @@
 # Traceable CSV Audit — Public Portfolio Demonstration
 
+[![Independent QA checks](https://github.com/Valdi320/Valdo/actions/workflows/csv-audit-demo.yml/badge.svg?branch=portfolio-csv-audit-demo)](https://github.com/Valdi320/Valdo/actions/workflows/csv-audit-demo.yml)
+
 **A fully AI-produced, synthetic Python demonstration.** This is not paid client work, not a claim of prior freelance experience, and contains no real customer or private project data. Technical production and verification were carried out by AI with Python 3.
+
+**For buyers:** This sample illustrates a narrowly scoped, review-only CSV preflight: detect invalid or missing values, highlight repeated identifiers and possible duplicate rows, preserve source records, and supply a machine-verifiable processing receipt. **No automatic data deletion or identity decisions.**
+
+### What a buyer can inspect in under a minute
+
+| Deliverable | What it demonstrates |
+| --- | --- |
+| [Sample CSV](sample_input.csv) → [Annotated rows](output/annotated_rows.csv) | The same five original records, in source order, with review flags added. |
+| [Exception log](output/exceptions.csv) | Eight flags, each mapped to a source row and field. |
+| [Candidate duplicate pairs](output/candidate_duplicates.csv) | Two possible matching pairs, explicitly **unconfirmed**. |
+| [Human-readable findings](output/report.md) | Counts, issue types, limitations, and warnings. |
+| [Receipt with SHA-256 evidence](output/receipt.json) | Row reconciliation, configured rules, and source/output checksums. |
+| [Source code](audit_csv.py) + [automated tests](test_audit_csv.py) | Reproducible standard-library Python implementation. |
+
+**Independent verification:** [GitHub Actions completed successfully on 24 October 2026](https://github.com/Valdi320/Valdo/actions/runs/40077295514), running the six tests and independently reconciling source rows, checksums, eight flags and two pairs. This is a verification of the synthetic sample, **not** a certification of production fitness or a client's data.
 
 ## Reproducible results (verified 23 October 2026)
 
