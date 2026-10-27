@@ -1,0 +1,29 @@
+{
+  "changed_fields_or_invalid_numeric": 2,
+  "compared_fields": [
+    "label",
+    "stock",
+    "price"
+  ],
+  "description": "Synthetic, review-only comparison. No data cleaned, merged or deleted.",
+  "exception_rows": 4,
+  "key": "sku",
+  "new_rows": 6,
+  "new_sha256": "d5520aa172763f5e969efce2793fd56de7873cba4d75bd61dfcfa37165151c3a",
+  "numeric_fields": [
+    "stock",
+    "price"
+  ],
+  "old_rows": 6,
+  "old_sha256": "7092d8e0ebada8a817d16314d2453595df47c8bfd1e1f0142aa92af4c699859b",
+  "only_new": 1,
+  "only_old": 1,
+  "output_sha256": {
+    "changes.csv": "a851f7473b11f777fd0d0b1ba964149217ac6d7f65fa643e961823bde0a7c33c",
+    "exceptions.csv": "a25ec00a508aafc104177fa0998eb0933a9d8ec2527c4abcbd58344a72e66c3c",
+    "only_new.csv": "4ea16048addb7c7ea299d3ba6087cca411f0e228d3f538a58e18d64178a4b8b2",
+    "only_old.csv": "bfea12c38648ab85d4f2dc8c0a436d531e8c381c6a0e4882f7b116bc05635cdb"
+  },
+  "unambiguous_pairs": 3,
+  "unchanged_pairs": 1
+}
