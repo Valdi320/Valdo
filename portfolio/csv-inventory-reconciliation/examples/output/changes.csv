@@ -1,0 +1,3 @@
+sku,field,old_value,new_value,flag
+0001,stock,12,10,value_changed
+0003,price,7.20,invalid,invalid_numeric
