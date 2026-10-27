@@ -1,0 +1,5 @@
+side,source_row,sku,flag
+old,4,0004,duplicate_key
+old,5,0004,duplicate_key
+new,5,0007,duplicate_key
+new,6,0007,duplicate_key
