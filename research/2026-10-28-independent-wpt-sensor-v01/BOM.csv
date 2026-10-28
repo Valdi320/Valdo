@@ -1,0 +1,14 @@
+reference,description,qty,choice,unit_price_eur,evidence,conditions
+BENCH_PSU,Isolated current-limited low-voltage supply,1,TBD,,not_purchased,no lithium or dock
+TX_DRIVER,Regulated WPT TX with independent normally-OFF cutoff,1,TBD,,unselected,derate and fault-test before energizing
+TX_COIL,TX winding and ferrite matched to driver,1,TBD,,unselected,unknown size offset and EMI
+RX_COIL,RX winding and ferrite matched to TX,1,TBD,,unselected,unknown gap tolerance and ageing
+RX_RECTIFIER,Rectifier and 5V output regulator rated 0.3A+,1,TBD,,unselected,no direct connection to MCU until surge qualified
+OVERCURRENT,Hardware current limit with independent shutdown,1,TBD,,unselected,not a radio watchdog
+THERMAL,Temperature sensing and independent comparator/cutoff,2,TBD,,unselected,one TX and one RX location
+FOD,Foreign-object detection including thermal verification,1,TBD,,unselected,metal dirt water offset and tolerance tests needed
+MCU_SENSOR,ESP-NOW capable sensor MCU and replaceable module,1,TBD,,unselected,measure awake/sleep and peak draw
+MCU_HOST,Compatible local radio host MCU/interface,1,TBD,,candidate,no assumption of OOMWOO PCB allocation
+LOAD_50OHM,Non-inductive resistive dummy 50 ohm rated >=2W,1,TBD,,candidate,nominal 0.5W at 5V
+LOAD_16_7OHM,Non-inductive resistive dummy 16.7 ohm rated >=5W,1,TBD,,candidate,nominal 1.5W at 5V
+MEASUREMENT,Voltage/current logging and calibrated thermocouple,1,TBD,,candidate,calibration and data capture required
