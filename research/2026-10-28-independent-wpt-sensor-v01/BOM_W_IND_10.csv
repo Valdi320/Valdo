@@ -1,0 +1,9 @@
+item,qty,subsystem,part,Diotronic_ref,Diotronic_price_vat_EUR,local_stock_minimum,alternative,alternative_price_vat_EUR,decision,notes
+1,1,bench,TX_DC_power_meter,UNKNOWN,UNKNOWN,UNKNOWN,TME_Mouser_DigiKey,UNKNOWN,FUTURE,calibration_missing
+2,1,bench,RX_DC_power_meter,UNKNOWN,UNKNOWN,UNKNOWN,TME_Mouser_DigiKey,UNKNOWN,FUTURE,do_not_use_unverified_RF_as_meter
+3,1,bench,isolated_5V_supply,UNKNOWN,UNKNOWN,UNKNOWN,SPECIALIST,UNKNOWN,BLOCKED,no_Li_ion
+4,1,bench,dummy_resistive_load,UNKNOWN,UNKNOWN,UNKNOWN,Diotronic_or_specialist,UNKNOWN,FUTURE,thermal_rating_missing
+5,2,thermal,NTC_Eaton_NRNE104F3950B1F_candidate,UNKNOWN,UNKNOWN,UNKNOWN,DigiKey_TME_Mouser,UNKNOWN,REVIEW,prior_W_IND_07_only_no_new_quote
+6,2,tx_cut,normally_OFF_independent_cut,UNKNOWN,UNKNOWN,UNKNOWN,SPECIALIST,UNKNOWN,BLOCKED,no_physical_validation
+7,1,tx_FOD,local_real_FOD_pretransfer_and_run,UNKNOWN,UNKNOWN,UNKNOWN,SPECIALIST,UNKNOWN,BLOCKED,algorithm_not_a_detector
+8,TBD,prototype,resistors_and_connectors,UNKNOWN,UNKNOWN,UNKNOWN,Diotronic_TME_Mouser_DigiKey,UNKNOWN,AUXILIARY,check_SKU_IVA_stock_min_qty
