@@ -1,0 +1,28 @@
+name: wpt-sensor-v01-python
+on:
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/**'
+      - '.github/workflows/wpt-sensor-v01.yml'
+  push:
+    branches:
+      - 'w/independent-sensor-wpt-link-20261028'
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/**'
+      - '.github/workflows/wpt-sensor-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout (pinned action)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Run pure-Python synthetic tests
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m py_compile w_link.py power_screen.py test_w_link.py
+          python3 -m unittest -v test_w_link
