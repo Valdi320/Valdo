@@ -8,8 +8,8 @@ def pair():
     p=dict(fixture="fixture",coils="pair",load="dummy",
            provenance="synthetic",uin_w=.04,uout_w=.03,
            xy_x_mm=0.,xy_y_mm=0.,gap_mm=4.,ambient_c=25.)
-    return (Observation("reference",2.,1.,**p),
-            Observation("candidate",2.12,1.,**p))
+    return (Observation("reference",pin_w=2.,pout_w=1.,**p),
+            Observation("candidate",pin_w=2.12,pout_w=1.,**p))
 
 def run(base=None,evt=None,**kw):
     b,c=pair()
