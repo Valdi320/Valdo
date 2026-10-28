@@ -1,0 +1,24 @@
+part_id,qty,part_or_class,unit_eur_ex_vat,source,decision,qualification_missing
+HOST_TEST_SUPPLY,1,Isolated low-voltage current-limited bench supply,,BOM pending,BENCH_ONLY,supply and independent hard cutoff
+TX_CTRL,1,Regulated WPT transmitter with documented independent FOD and thermal,,vendor TBD,REQUIRED_UNSELECTED,documentation firmware rights price stock
+TX_COIL_FERRITE,1,Matched TX coil and ferrite,,vendor TBD,REQUIRED_UNSELECTED,measured Q offset EMI heating
+RX_COIL_FERRITE,1,Matched RX coil and ferrite,,vendor TBD,REQUIRED_UNSELECTED,mated coil pair validated
+RX_RECTIFIER,1,Matched receiver rectifier and 5V regulated output,,vendor TBD,REQUIRED_UNSELECTED,5V 0.3A rail start stop and ripple
+RX_UVLO,1,Normally-off low-rail monitor and output gate,,vendor TBD,REQUIRED_UNSELECTED,return from brownout must be safe
+TX_CURRENT,1,Independent current limitation and sense,,vendor TBD,REQUIRED_UNSELECTED,short transient open load and shutdown
+TX_FOD,1,Foreign object fault detection and direct autonomous cut,,vendor TBD,REQUIRED_UNSELECTED,metal water dust FOD calibration
+TX_TEMP,1,TX thermal sensor and comparator,,vendor TBD,REQUIRED_UNSELECTED,threshold and thermal rise bench
+RX_TEMP,1,RX thermal sensor and comparator,,vendor TBD,REQUIRED_UNSELECTED,fault TX/RX both
+TX_CUTOFF_A,1,Normally-off electrical cut A,,vendor TBD,REQUIRED_UNSELECTED,brownout broken gate welded on
+TX_CUTOFF_B,1,Independent normally-off electrical cut B,,vendor TBD,REQUIRED_UNSELECTED,common-cause fault assessment
+RF_SENSOR,1,Encrypted-unicast compatible MCU sensor candidate,,espressif/esp-now,REQUIRED_UNSELECTED,current profiling real key provisioning
+RF_HOST,1,Host compatible MCU or RF interface,,espressif/esp-now,REQUIRED_UNSELECTED,radio latency and antenna
+BULK_SMALL,1,Local bulk/filter capacitance without 150ms requirement,,vendor TBD,REQUIRED_UNSELECTED,startup ripple and measured energy
+SUPERCAP_EATON_KW_0P22,0,Eaton KW-5R5C224-R 0.22F 5.5V 50ohm ESR,3.25,https://es.farnell.com/eaton-electronics/kw-5r5c224-r/conden-0-22f-5-5v-super-radial/dp/2302171,REJECTED,50ohm ESR invalid even for assumed 0.4W; price excludes VAT
+BUCKBOOST_EXAMPLE,0,Pololu S13V10F5 5V regulator 2.8-22V in,,https://www.pololu.com/product/4083,UNSELECTED_EXAMPLE,10-20mA typical idle current and real efficiency
+R_LOAD_50_OHM,1,50ohm noninductive resistance >=2W,,vendor TBD,BENCH_ONLY,5V 0.5W
+R_LOAD_16P7_OHM,1,16.7ohm noninductive resistance >=5W,,vendor TBD,BENCH_ONLY,5V 1.5W
+THERMAL_LOGGER,1,Independent calibrated temperature logger,,vendor TBD,BENCH_ONLY,TX RX metal heat
+POWER_LOGGER,1,Isolated/differential voltage and current logger,,vendor TBD,BENCH_ONLY,Pin Pout and transients
+ESR_METER,1,Capacitance/ESR instrument matched test frequency,,vendor TBD,BENCH_ONLY,ESR capacitance temp and frequency
+WIRED_FALLBACK,1,Positive-latch serviceable wired harness for cost comparison,,vendor TBD,FALLBACK_UNSELECTED,rated current and replacement ease
