@@ -24,6 +24,6 @@ jobs:
       - name: Run pure-Python synthetic tests
         run: |
           cd research/2026-10-28-independent-wpt-sensor-v01
-          python3 -m py_compile w_link.py power_screen.py test_w_link.py hold_up_envelope.py test_hold_up_envelope.py power_restart_gate.py test_power_restart_gate.py
-          python3 -m unittest -v test_w_link test_hold_up_envelope test_power_restart_gate
+          python3 -m py_compile w_link.py power_screen.py test_w_link.py hold_up_envelope.py test_hold_up_envelope.py power_restart_gate.py test_power_restart_gate.py durable_epoch_store.py test_durable_epoch_store.py
+          python3 -m unittest -v test_w_link test_hold_up_envelope test_power_restart_gate test_durable_epoch_store
           python3 hold_up_envelope.py
