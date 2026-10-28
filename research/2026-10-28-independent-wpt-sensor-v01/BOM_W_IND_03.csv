@@ -1,0 +1,12 @@
+item,qty,unit_price_eur_ex_vat,owner,status,requirements_or_source
+PWR_GOOD_SUPERVISOR,1,,W,UNSELECTED,"Independent low-voltage rail monitor, verify hysteresis and sample gap <=20ms"
+TX_TEMP_FOD_SENSE,1,,W,UNSELECTED,"Independent thermal and foreign-object hardware signal, no radio dependency"
+RX_RAIL_GATE,1,,W,UNSELECTED,"Normally-off regulated receiver rail; UVLO and inrush validation"
+TX_HW_CUTOFF,2,,W,UNSELECTED,"Independent normally-off physical cuts, common-cause and weld analysis"
+NONVOLATILE_EPOCH_JOURNAL,1,,W,BLOCKING,"Atomic durable monotonic per-node claim across sudden power removal, verify wear/endurance"
+LOCAL_COMMISSION_INPUT,1,,W,UNSELECTED,"Real authenticated service enable, never network bool"
+RF_MCU_HOST_AND_NODE,2,,W,UNSELECTED,"Encrypted unicast ESP-NOW peers or OpenThread transceivers, keys/provisioning"
+WPT_REGULATED_MATCHED_TX_RX,1,,W,UNSELECTED,"Matched coils+rectifier+TX with documented FOD/temp, offset/EMI/cost"
+SENSOR_DUMMY_LOAD_0P4W,1,,W,FUTURE_BENCH,"Non-inductive resistor with appropriate voltage/thermal margins, no battery"
+TEST_INSTRUMENTATION,1,,W,FUTURE_BENCH,"Isolated voltage/current/temperature logger for supply drop and leakage"
+WIRED_REFERENCE_HARNESS,1,,W,ALTERNATIVE,"Replaceable positive-lock connector; comparative economics and fatigue"
