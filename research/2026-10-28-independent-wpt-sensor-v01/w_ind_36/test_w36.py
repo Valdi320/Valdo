@@ -26,6 +26,9 @@ class W36(unittest.TestCase):
                          [("1","CLK"),("2","D"),("3","Q_N"),("4","GND"),("5","Q"),
                           ("6","CLR_N"),("7","PRE_N"),("8","VCC")])
 
+    def test_ground_return_is_not_second_power_source(self):
+        self.assertEqual(d.SPECS["MON_SOURCE"][2][1][2], "passive")
+
     def test_dedicated_latches_and_supervisors(self):
         e=gate.EXPECTED
         for case,required in {

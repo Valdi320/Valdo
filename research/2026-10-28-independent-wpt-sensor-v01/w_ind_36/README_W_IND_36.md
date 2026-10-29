@@ -54,3 +54,7 @@ Pinouts contrastados con hojas **TI TPS3840 SNVSB03E**, **SN74LVC1G08 SCES217AA 
 ## Siguiente paso técnico
 
 Auditar y cualificar ELÉCTRICAMENTE el POR/CLR y los EN bajo retorno parásito, pulsadores rebotando y fallos de carga (SPICE/hojas TI), conectar la alarma **INA301** a una acción autónoma de corte sin radio y separar protección térmica/FOD TX. Tras ello definir huellas, DRC y eventual banco resistivo aislado sólo con seguridad y autorización específica. Sin litio/motores/estación.
+
+### Incidencia ERC W36-01 resuelta dentro del hito
+
+El primer CI nativo de 30/10 señaló **un error real de ERC**: dos fuentes ficticias J1/J5 compartían el retorno y ambos pines se declararon erróneamente `power_out`. Se corrigió **sólo** J5.RETURN a `passive`, manteniendo las dos fuentes de 5V y 3,3V separadas por etiqueta y el retorno común. Test de regresión añadido; no se ha suprimido ninguna regla ERC. La ejecución final y netlist nativo mandan sobre el test sintético.

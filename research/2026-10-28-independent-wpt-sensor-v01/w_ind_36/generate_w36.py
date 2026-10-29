@@ -57,7 +57,7 @@ base.SPECS.update({
     ], 8, 5, False),
     "MON_SOURCE": ("J", "EXT_3V3_RAIL_NOT_QUALIFIED", [
         p(1, "3V3", "power_out", 10.16, 2.54, 180),
-        p(2, "RETURN", "power_out", 10.16, -2.54, 180),
+        p(2, "RETURN", "passive", 10.16, -2.54, 180),
     ], 8, 7, False),
 })
 base.INSTANCES = [x for x in base.INSTANCES if x[0] not in ("J3", "J4")]
