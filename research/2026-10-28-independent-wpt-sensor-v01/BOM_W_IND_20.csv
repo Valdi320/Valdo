@@ -1,0 +1,5 @@
+item,added_qty,Diotronic_ref,price_inc_VAT,Diotronic_local_stock,alternative,alternative_price_inc_VAT,availability,reason
+Project_KiCad_lib,0,not_applicable,0,not_applicable,VALDO_GitHub,0,published,software_artifact_only
+TPS22918DBVR_unqualified_existing,0,not_verified,pending,pending,TME_Mouser_DigiKey,pending,pending,no_new_parts
+Resistors_R1_R4_existing,0,not_verified,pending,pending,Diotronic_or_TME,pending,pending,no_purchase
+FOD_temp_cut_protection,0,not_selected,pending,pending,manufacturer_traceable,pending,pending,still_missing_safety_qualification

@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "VALDO") (type "KiCad") (uri "${KIPRJMOD}/VALDO.kicad_sym") (options "") (descr "Original VALDO unqualified WPT symbols"))
+)

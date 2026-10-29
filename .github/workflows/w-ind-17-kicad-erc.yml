@@ -21,7 +21,7 @@ jobs:
       - name: Regressions for the ERC attestation
         run: |
           cd research/2026-10-28-independent-wpt-sensor-v01
-          python3 -m unittest -v test_w_ind_17_erc_gate test_w_ind_18_erc_policy
+          python3 -m unittest -v test_w_ind_17_erc_gate test_w_ind_18_erc_policy test_w_ind_20_symbol_library
       - name: Native KiCad 9.0.2 ERC in official ephemeral container
         shell: bash
         run: |
