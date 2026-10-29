@@ -4,6 +4,7 @@ import json
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from w_ind_17_erc_gate import evaluate
 from w_ind_18_erc_policy import check_evidence, main
 
@@ -66,7 +67,8 @@ class TestBlockingCI(unittest.TestCase):
                 report,att=fixtures(n);att["source_schematic"]=str(sch)
                 (d/"erc.json").write_text(json.dumps(report))
                 (d/"att.json").write_text(json.dumps(att))
-                self.assertEqual(main(["--erc",str(d/"erc.json"),"--attestation",str(d/"att.json"),"--schematic",str(sch)]),expected)
+                with patch.dict("os.environ", {"GITHUB_SHA": SHA}):
+                    self.assertEqual(main(["--erc",str(d/"erc.json"),"--attestation",str(d/"att.json"),"--schematic",str(sch)]),expected)
     def test_missing_files_fail_closed(self):
         self.assertEqual(main(["--erc","/unavailable/erc.json","--attestation","/unavailable/att.json",
                                "--schematic","/unavailable/sch.kicad_sch"]),2)
