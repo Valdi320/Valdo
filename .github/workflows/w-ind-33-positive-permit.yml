@@ -1,0 +1,46 @@
+name: W-IND-33 symbolic local rearm gate (NOT HARDWARE APPROVAL)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_33/**'
+      - '.github/workflows/w-ind-33-positive-permit.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_33/**'
+      - '.github/workflows/w-ind-33-positive-permit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  digital-positive-permit-contract:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run original digital tests and reproducible negative fault cases
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_33
+          python3 -m unittest -v test_w33_positive_permit.py
+          mkdir -p evidence
+          python3 w33_positive_permit.py > evidence/W33_FAULTS_AND_UNQUALIFIED_ENVELOPE.json
+          python3 - <<'PY'
+          import json
+          p='evidence/W33_FAULTS_AND_UNQUALIFIED_ENVELOPE.json'
+          result=json.load(open(p))
+          assert result['model']['cases']==64
+          assert result['model']['unsafe_logic_counterexamples']==9
+          assert result['model']['hardware_power_authorized'] is False
+          assert result['interface_is_not_connected_to_w32'] is True
+          PY
+      - name: Archive digital evidence NOT hardware qualification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W-IND-33-symbolic-unsafe-fault-cases
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_33/evidence/
+          if-no-files-found: warn
+          retention-days: 30
