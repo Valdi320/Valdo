@@ -6,28 +6,28 @@
 
 W-IND-13 demostró que dos cortes pueden fallar simultáneamente por un ENABLE común. Este hito propone observar individualmente dos cortes hipotéticos **sin alimentar una bobina**:
 
-\`\`\`text
+```text
 VIN=5V -- R_A -- MID -- R_B -- TX -- 1kOhm -- GND
                   |
                 22kOhm
                   |
                  GND
 SONDA=5V -- 10kOhm -- MID (únicamente segunda fase)
-\`\`\`
+```
 
 1. **Fase pasiva:** ambos cortes solicitados OFF, la sonda ausente; se exige MID y TX bajos. Un corte A soldado sube MID y se DENIEGA antes de aplicar la sonda.
 2. **Fase activa de microsonda resistiva:** tras fase 1 sin anomalías, una resistencia de 10kOhm inyecta una corriente **calculada** como máximo de 0,611mA a 5,5V/9kOhm. Se exige MID alto y TX bajo; un corte B soldado arrastra ambos nodos hacia la descarga TX.
-3. **Fail-closed:** entrada ausente, monitor sin calificar, umbral ambiguo, sonda o alimentación fuera de rangos → HOLD. Ningún resultado permite habilitar una potencia real: siempre \`hardware_approved=False\`, \`covers_esd_body_diodes=False\`, \`proves_real_fod=False\`.
+3. **Fail-closed:** entrada ausente, monitor sin calificar, umbral ambiguo, sonda o alimentación fuera de rangos → HOLD. Ningún resultado permite habilitar una potencia real: siempre `hardware_approved=False`, `covers_esd_body_diodes=False`, `proves_real_fod=False`.
 
 ## Modelo y pruebas reproducibles
 
-Archivos: \`tx_offline_diagnostics.py\` (matriz DC de conductancias 2x2; admite carga resistiva y una hipotética ruta auxiliar) y \`test_tx_offline_diagnostics.py\` (**18 pruebas deterministas**). Ejecutar en \`research/2026-10-28-independent-wpt-sensor-v01/\`:
+Archivos: `tx_offline_diagnostics.py` (matriz DC de conductancias 2x2; admite carga resistiva y una hipotética ruta auxiliar) y `test_tx_offline_diagnostics.py` (**18 pruebas deterministas**). Ejecutar en `research/2026-10-28-independent-wpt-sensor-v01/`:
 
-\`\`\`shell
+```shell
 python3 -m py_compile tx_offline_diagnostics.py test_tx_offline_diagnostics.py
 python3 -m unittest -v test_tx_offline_diagnostics
 python3 tx_offline_diagnostics.py
-\`\`\`
+```
 
 La matriz de esquinas recorre **192 configuraciones** (VIN 4,5/5/5,5V; sonda 4,5/5,5V; R_MID ±20%; R_TX ±10%; R_PROBE ±10%; estado OFF ficticio 1MOhm/100MOhm; precisión supuesta 0/80mV) y cuatro estados cada una = **768 decisiones sintéticas**. También comprueba leyes de Kirchhoff, ambos cortes soldados, monitor ausente, AUX, brownout, entradas inválidas, límite de corriente y degradación.
 
@@ -45,7 +45,7 @@ Ejemplo sintético (VIN 5V, cortes OFF 100MOhm, soldadura modelada 0,1Ohm): sano
 | Motores y bombas | No WPT por defecto | Corrientes/picos/eficiencia reales; mantener conector reparable |
 | Mecánica C/OOMWOO | Sin cambios ni compatibilidad presumida | Validación por sus propietarios |
 
-**Grandes ausencias:** transitorios y capacitancias, diodos corporales/ESD/GPIO, fallo de un sensor atascado, resistencias reales de apagado, deriva térmica, sonda cortocircuitada, alimentaciones auxiliares, susceptibilidad RF, FOD real, calor de metal, detección de humedad, fallos comunes y corte físico. No se ha construido ni alimentado ningún circuito. \`kicad-cli\` y \`ngspice\` no están instalados en el PC conectado, por lo que **no** se alegan pruebas ERC/SPICE.
+**Grandes ausencias:** transitorios y capacitancias, diodos corporales/ESD/GPIO, fallo de un sensor atascado, resistencias reales de apagado, deriva térmica, sonda cortocircuitada, alimentaciones auxiliares, susceptibilidad RF, FOD real, calor de metal, detección de humedad, fallos comunes y corte físico. No se ha construido ni alimentado ningún circuito. `kicad-cli` y `ngspice` no están instalados en el PC conectado, por lo que **no** se alegan pruebas ERC/SPICE.
 
 ## Fuentes oficiales revisadas y autores (29/10/2026)
 
@@ -61,6 +61,6 @@ Se revisaron documentos maestros locales 00_DECISION, 19-alternativas, D22, cont
 
 ## BOM y abastecimiento
 
-\`BOM_W_IND_14.csv\`: Diotronic auxiliar **10kOhm 1W 5%** SKU 10351, web **0,15€ IVA incluido** con mínimo cinco; y bolsa **25×1kOhm 1206 1/4W** SKU BSMD1025025, web **1,00€ IVA incluido**. Precio, mínimo, referencia y existencia de tienda física, portes, sustitutos o cotizaciones TME/Mouser/DigiKey **no comprobados**. Resistencia 22k, dos dispositivos de corte, monitores, FOD, térmica y PCB sin SKU aprobado; no compras.
+`BOM_W_IND_14.csv`: Diotronic auxiliar **10kOhm 1W 5%** SKU 10351, web **0,15€ IVA incluido** con mínimo cinco; y bolsa **25×1kOhm 1206 1/4W** SKU BSMD1025025, web **1,00€ IVA incluido**. Precio, mínimo, referencia y existencia de tienda física, portes, sustitutos o cotizaciones TME/Mouser/DigiKey **no comprobados**. Resistencia 22k, dos dispositivos de corte, monitores, FOD, térmica y PCB sin SKU aprobado; no compras.
 
 **Siguiente hito**: esquemático pin a pin real con alimentación independiente de supervisores, protección de sonda ante cortos/ESD, retorno inverso y FOD local, ERC/SPICE y revisión de fallo único. Banco resistivo aislado únicamente con autorización explícita y sin batería o estación.
