@@ -39,8 +39,15 @@ jobs:
             -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
             -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
             -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$DIR" "$IMAGE" \
-            kicad-cli sch erc --format json --severity-all \
-            --exit-code-violations --output "build_w_ind_17/erc.json" "W_IND_15_TX_DUAL_CUT_UNQUALIFIED.kicad_sch"
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01#g" \
+                sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              test -s /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all \
+                --exit-code-violations --output build_w_ind_17/erc.json \
+                W_IND_15_TX_DUAL_CUT_UNQUALIFIED.kicad_sch
+            '
           RC=$?
           set -e
           test -s "$OUT/erc.json"
