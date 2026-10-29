@@ -1,0 +1,5 @@
+ref,funcion,unidad,cantidad_actual,cantidad_nueva,fuente_fabricante,Diotronic_auxiliar,alternativa_TME_Mouser_DigiKey,precio_final_IVA_EUR,MOQ,stock_tienda_Zaragoza,motivo_estado
+U1-U2,TPS22918DBVR corte conceptual de la variante W21,uds,2,0,TI TPS22918 Rev C,pendiente de consulta,pendiente de comprobacion,pendiente,pendiente,pendiente,NO APTO para aislamiento inverso; sin compras
+J1,Fuente 5 V de banco declarativa no fisica,uds,1,0,simbolo propio sin BOM,no aplicable,fuente de laboratorio real pendiente,no aplicable,no aplicable,no aplicable,No existe fuente fisica validada
+REV_PROTECT,Tecnologia futura bloqueo inverso bidireccional,uds,0,0,candidato SIN part number,pendiente fichas y trazabilidad,pendiente evaluacion,no cotizable,no determinado,pendiente,No seleccionar sin seguridad y prueba
+FOD_OC_TEMP,Proteccion FOD sobrecorriente y termica autonoma,uds,0,0,arquitectura pendiente,solo pasivos no criticos si equivalentes,fabricante y distribuidor trazable pendientes,no cotizable,no determinado,pendiente,Indispensable para una fase posterior NO implementada

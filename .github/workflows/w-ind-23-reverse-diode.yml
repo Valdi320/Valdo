@@ -1,0 +1,68 @@
+name: W-IND-23 native KiCad semiconductor reverse path BLOCKER (not safety approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_23/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - '.github/workflows/w-ind-23-reverse-diode.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_23/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - '.github/workflows/w-ind-23-reverse-diode.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  known-reverse-body-diode-blocker:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: 17 deliberately synthetic regression tests
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_23
+          python3 -m unittest -v test_reverse_path_gate
+      - name: Export actual KiCad 9.0.2 native netlist
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          DIR=research/2026-10-28-independent-wpt-sensor-v01/w_ind_21
+          OUT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_23/native_out
+          mkdir -p "$OUT"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$DIR" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_21#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              test -s /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch export netlist --format kicadxml \
+                -o /repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_23/native_out/w21.native.xml \
+                W_IND_21_TX_BENCH_DECLARED.kicad_sch
+            '
+          test -s "$OUT/w21.native.xml"
+      - name: Confirm native body-diode backfeed blocker, never hardware approval
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIR=research/2026-10-28-independent-wpt-sensor-v01/w_ind_23
+          python3 "$DIR/reverse_path_gate.py" \
+            "$DIR/native_out/w21.native.xml" \
+            --report "$DIR/native_out/attestation.json" --expect-known-blocker
+          grep -q '"power_on_allowed": false' "$DIR/native_out/attestation.json"
+          echo '::warning::EXPECTED BLOCKER CONFIRMED: TPS22918 VOUT->VIN body-diode path. Do NOT power or fabricate.'
+      - name: Always archive true native XML and finding
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-23-native-reverse-diode-blocker
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_23/native_out/
+          if-no-files-found: warn
+          retention-days: 30
