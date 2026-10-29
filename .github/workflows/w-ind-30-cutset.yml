@@ -1,0 +1,34 @@
+name: W-IND-30 directional cutset (software-only)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_30/**'
+      - '.github/workflows/w-ind-30-cutset.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_30/**'
+      - '.github/workflows/w-ind-30-cutset.yml'
+jobs:
+  cutset:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Deterministic fault matrix and regression
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_30
+        run: |
+          python3 -m unittest -v w30_cutset
+          python3 w30_cutset.py --json > evidence.json
+          python3 -m json.tool evidence.json > /dev/null
+      - name: Archive digital-only fault evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w-ind-30-digital-cutset
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_30/evidence.json
+          if-no-files-found: warn
