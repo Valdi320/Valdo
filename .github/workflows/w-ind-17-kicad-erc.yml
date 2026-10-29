@@ -1,0 +1,57 @@
+name: W-IND-17 actual KiCad ERC (not electrical safety approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/**'
+      - '.github/workflows/w-ind-17-kicad-erc.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/**'
+      - '.github/workflows/w-ind-17-kicad-erc.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  erc-real-kicad:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regressions for the ERC attestation
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest -v test_w_ind_17_erc_gate
+      - name: Native KiCad 9.0.2 ERC in official ephemeral container
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          DIR=research/2026-10-28-independent-wpt-sensor-v01
+          SCH="$DIR/W_IND_15_TX_DUAL_CUT_UNQUALIFIED.kicad_sch"
+          OUT="$DIR/build_w_ind_17"
+          mkdir -p "$OUT"
+          docker pull "$IMAGE"
+          VERSION="$(docker run --rm "$IMAGE" kicad-cli version)"
+          echo "KiCad: $VERSION"
+          set +e
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -v "$GITHUB_WORKSPACE:/repo" -w /repo "$IMAGE" \
+            kicad-cli sch erc --format json --severity-all \
+            --exit-code-violations --output "$OUT/erc.json" "$SCH"
+          RC=$?
+          set -e
+          test -s "$OUT/erc.json"
+          python3 "$DIR/w_ind_17_erc_gate.py" \
+            --rc "$RC" --report "$OUT/erc.json" \
+            --schematic "$SCH" --version "$VERSION" \
+            --out "$OUT/attestation.json"
+          echo "::notice::This ERC records defects only. No authorization to energize, build or charge."
+      - name: Archive original JSON and attestation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-17-erc
+          path: research/2026-10-28-independent-wpt-sensor-v01/build_w_ind_17/
+          if-no-files-found: warn
+          retention-days: 30

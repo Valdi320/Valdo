@@ -1,0 +1,7 @@
+ref,qty,component,function,Diotronic_source,Diotronic_price_EUR_VAT,Diotronic_stock_local,alternative_source,alternative_price_EUR_VAT,MOQ,reason,qualification
+QA-W17,0,Official KiCad CLI 9.0.2,Ephemeral GitHub CI ERC,Not applicable,0,Not applicable,KiCad Docker Hub,0,0,Software-only checker,SOFTWARE_ONLY
+U1-U2,2,TPS22918DBVR,Conceptual 5V switches,Pending,UNKNOWN,UNVERIFIED,TI/TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,TI lists no current limiting; not safety-qualified,NOT_SELECTED
+R1,1,22k resistor,MID bleeder concept,Pending,UNKNOWN,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,Not selected,NOT_SELECTED
+R2,1,1k resistor,TX output bleeder concept,Pending,UNKNOWN,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,Not selected,NOT_SELECTED
+R3-R4,2,100k resistor,Enable pulls low,Pending,UNKNOWN,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,Not independent supervisors,NOT_SELECTED
+FOD_THERMAL_OC_REVERSE,TBD,Unselected critical hardware,FOD thermal current reverse safeguards,Pending,UNKNOWN,UNVERIFIED,Qualified manufacturers/TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,No reviewed circuit or local stock,NOT_SELECTED
