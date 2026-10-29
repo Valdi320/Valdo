@@ -9,9 +9,19 @@ from pathlib import Path
 def evaluate(code, report):
     if code not in (0, 5):
         raise ValueError("KiCad invocation error, not an ERC verdict")
-    if not isinstance(report, dict) or not isinstance(report.get("violations"), list):
-        raise ValueError("invalid or missing KiCad JSON violations")
-    violations = report["violations"]
+    # Real KiCad 9.0.2 writes ERC findings PER SHEET, not at report root.
+    if not isinstance(report, dict) or report.get("$schema") != "https://schemas.kicad.org/erc.v1.json":
+        raise ValueError("unrecognized KiCad ERC JSON schema")
+    sheets = report.get("sheets")
+    if not isinstance(sheets, list) or not sheets:
+        raise ValueError("invalid or missing KiCad sheets array")
+    violations = []
+    for sheet in sheets:
+        if not isinstance(sheet, dict) or not isinstance(sheet.get("violations"), list):
+            raise ValueError("invalid KiCad sheet violations")
+        if not isinstance(sheet.get("path"), str) or not sheet["path"]:
+            raise ValueError("invalid KiCad sheet path")
+        violations.extend(sheet["violations"])
     if any(not isinstance(v, dict) for v in violations):
         raise ValueError("invalid violation entry")
     if (code == 0) != (len(violations) == 0):
