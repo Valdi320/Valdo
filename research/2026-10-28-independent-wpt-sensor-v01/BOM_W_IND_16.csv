@@ -1,0 +1,9 @@
+ref,qty,component,function,Diotronic_source,Diotronic_price_EUR_VAT,Diotronic_stock_local,alternative_source,alternative_price_EUR_VAT,MOQ,reason,qualification
+QA-W16,0,Python stdlib,Static KiCad graph audit,Not applicable,0,Not applicable,Not applicable,0,0,No components added,SOFTWARE_ONLY
+U1-U2,2,TPS22918DBVR,Conceptual 5V switches,Pending,UNKNOWN,UNVERIFIED,TI/Mouser/DigiKey/TME,UNKNOWN,UNVERIFIED,No independent safety proof,NOT_SELECTED
+R1,1,22k resistor,MID bleeder,Pending,UNKNOWN,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,Hypothetical value,NOT_SELECTED
+R2,1,1k resistor,TX bleeder,BSMD1025025 previous listing,1.00 per 25pcs historic not rechecked,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,25 historically,No quote or stock guarantee,NOT_SELECTED
+R3-R4,2,100k resistor,EN pull-downs,Pending,UNKNOWN,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,Hypothetical values,NOT_SELECTED
+FOD,1,Unspecified physical FOD,Foreign object protection,Pending,UNKNOWN,UNVERIFIED,TI/Mouser/DigiKey/TME,UNKNOWN,UNVERIFIED,Documented physical protection required,MISSING
+THERM,2,Unspecified thermal cutoffs,Independent overtemperature,Pending,UNKNOWN,UNVERIFIED,TI/Mouser/DigiKey/TME,UNKNOWN,UNVERIFIED,Independent circuit required,MISSING
+FUSE,1,Unspecified eFuse or other breaker,Overcurrent/backfeed,Pending,UNKNOWN,UNVERIFIED,TI/Mouser/DigiKey/TME,UNKNOWN,UNVERIFIED,Independently qualified cutoff required,MISSING
