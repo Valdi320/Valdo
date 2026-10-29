@@ -1,0 +1,5 @@
+item,qty_status,manufacturer_part,source_diotronic_or_alternative,url,units_without_vat_eur,units_with_21pct_vat_eur,stock_at_supplier_snapshot,stock_at_diotronic_zaragoza,minimum_order,final_shipping_vat_verified,decision
+B0,0_reference,TI TPS22918DBVR,TI old comparison,https://www.ti.com/product/TPS22918,unknown,unknown,not_checked,unknown,unknown,no,NO reverse-block assurance
+B1,1_proposed_NOT_BOUGHT,TI TPS25210ARPWR,DigiKey ES vs Diotronic auxiliary,https://www.digikey.es/en/products/detail/texas-instruments/TPS25210ARPWR/14124025,1.07,1.2947,2409 in catalog snapshot,unverified,1 unit cut-tape listed,no shipping not quoted,Review-only reverse block; ILIM floor 0.5A
+B2,1_alternative_NOT_BOUGHT,TI TPS259474ARPWR,TI and Mouser/TME/DigiKey compare pending,https://www.ti.com/product/TPS25947,unknown,unknown,unverified,unverified,unverified,no,Alternative higher VIN; ILIM floor 0.5A
+B3,not_selected,Independent FOD thermal overcurrent cutoff,Diotronic passive or traceable specialist,unqualified,unknown,unknown,unverified,unverified,unverified,no,REQUIRED BEFORE POWER
