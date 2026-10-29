@@ -1,4 +1,4 @@
-name: W-IND-17 actual KiCad ERC (not electrical safety approval)
+name: W-IND-18 blocking KiCad ERC (not hardware safety approval)
 on:
   push:
     branches: [w/independent-sensor-wpt-link-20261028]
@@ -21,7 +21,7 @@ jobs:
       - name: Regressions for the ERC attestation
         run: |
           cd research/2026-10-28-independent-wpt-sensor-v01
-          python3 -m unittest -v test_w_ind_17_erc_gate
+          python3 -m unittest -v test_w_ind_17_erc_gate test_w_ind_18_erc_policy
       - name: Native KiCad 9.0.2 ERC in official ephemeral container
         shell: bash
         run: |
@@ -57,3 +57,13 @@ jobs:
           path: research/2026-10-28-independent-wpt-sensor-v01/build_w_ind_17/
           if-no-files-found: warn
           retention-days: 30
+      - name: Block PR on uncorrected native ERC findings (W-IND-18)
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIR=research/2026-10-28-independent-wpt-sensor-v01
+          python3 "$DIR/w_ind_18_erc_policy.py" \
+            --erc "$DIR/build_w_ind_17/erc.json" \
+            --attestation "$DIR/build_w_ind_17/attestation.json" \
+            --schematic "$DIR/W_IND_15_TX_DUAL_CUT_UNQUALIFIED.kicad_sch"
