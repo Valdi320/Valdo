@@ -84,7 +84,10 @@ class BenchSource(unittest.TestCase):
     def test_output_bypass_tamper(self):
         self.assertTrue(audit(self.source.replace('(label "TX_5V_CUT" (at 147.32 58.42 0)', '(label "VIN_5V" (at 147.32 58.42 0)', 1)))
     def test_source_pin_number_tamper(self):
-        self.assertTrue(audit(self.source.replace('(number "2" (effects (font (size 1.27 1.27)))))', '(number "9" (effects (font (size 1.27 1.27)))))', 1)))
+        marker = '(symbol "BENCH_ISO_5V_SOURCE_1_1"'
+        first, second = self.source.split(marker, 1)
+        tampered = first + marker + second.replace('(number "2"', '(number "9"', 1)
+        self.assertTrue(audit(tampered))
     def test_pin_names_and_symbol_registration(self):
         self.assertIn('(symbol "BENCH_ISO_5V_SOURCE"', self.library)
         self.assertIn("KIPRJMOD",self.table)
