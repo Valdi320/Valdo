@@ -24,8 +24,8 @@ jobs:
       - name: Run pure-Python synthetic tests
         run: |
           cd research/2026-10-28-independent-wpt-sensor-v01
-          python3 -m py_compile w_link.py power_screen.py test_w_link.py hold_up_envelope.py test_hold_up_envelope.py power_restart_gate.py test_power_restart_gate.py durable_epoch_store.py test_durable_epoch_store.py wpt_pair_screen.py test_wpt_pair_screen.py rx_efuse_screen.py test_rx_efuse_screen.py tx_thermal_window.py test_tx_thermal_window.py tx_cut_power_screen.py test_tx_cut_power_screen.py tx_variant_screen.py test_tx_variant_screen.py fod_uncertainty_gate.py test_fod_uncertainty_gate.py standby_energy_screen.py test_standby_energy_screen.py tx_backfeed_screen.py test_tx_backfeed_screen.py tx_common_cause_audit.py test_tx_common_cause_audit.py tx_offline_diagnostics.py test_tx_offline_diagnostics.py test_w_ind_15_pin_contract.py sch_graph_audit.py test_w_ind_16_schematic_reality.py
-          python3 -m unittest -v test_w_link test_hold_up_envelope test_power_restart_gate test_durable_epoch_store test_wpt_pair_screen test_rx_efuse_screen test_tx_thermal_window test_tx_cut_power_screen test_tx_variant_screen test_fod_uncertainty_gate test_standby_energy_screen test_tx_backfeed_screen test_tx_common_cause_audit test_tx_offline_diagnostics test_w_ind_15_pin_contract test_w_ind_16_schematic_reality
+          python3 -m py_compile w_link.py power_screen.py test_w_link.py hold_up_envelope.py test_hold_up_envelope.py power_restart_gate.py test_power_restart_gate.py durable_epoch_store.py test_durable_epoch_store.py wpt_pair_screen.py test_wpt_pair_screen.py rx_efuse_screen.py test_rx_efuse_screen.py tx_thermal_window.py test_tx_thermal_window.py tx_cut_power_screen.py test_tx_cut_power_screen.py tx_variant_screen.py test_tx_variant_screen.py fod_uncertainty_gate.py test_fod_uncertainty_gate.py standby_energy_screen.py test_standby_energy_screen.py tx_backfeed_screen.py test_tx_backfeed_screen.py tx_common_cause_audit.py test_tx_common_cause_audit.py tx_offline_diagnostics.py test_tx_offline_diagnostics.py test_w_ind_15_pin_contract.py sch_graph_audit.py test_w_ind_16_schematic_reality.py w_ind_19_thermal_rail_gate.py test_w_ind_19_thermal_rail_gate.py
+          python3 -m unittest -v test_w_link test_hold_up_envelope test_power_restart_gate test_durable_epoch_store test_wpt_pair_screen test_rx_efuse_screen test_tx_thermal_window test_tx_cut_power_screen test_tx_variant_screen test_fod_uncertainty_gate test_standby_energy_screen test_tx_backfeed_screen test_tx_common_cause_audit test_tx_offline_diagnostics test_w_ind_15_pin_contract test_w_ind_16_schematic_reality test_w_ind_19_thermal_rail_gate
           python3 hold_up_envelope.py
           python3 rx_efuse_screen.py
           python3 tx_thermal_window.py
@@ -37,3 +37,4 @@ jobs:
           python3 tx_common_cause_audit.py
           python3 tx_offline_diagnostics.py
           python3 sch_graph_audit.py
+          python3 w_ind_19_thermal_rail_gate.py
