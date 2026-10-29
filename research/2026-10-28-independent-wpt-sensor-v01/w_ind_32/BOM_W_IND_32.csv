@@ -8,5 +8,5 @@ C1,RX,100nF ceramic tentative,1,Decoupling,NO_REFERENCE_VERIFIED,PENDING,PENDING
 RPD1+RPD2,RX,10kohm pulldown tentative,2,Default-low EN when external drives absent,NO_REFERENCE_VERIFIED,PENDING,PENDING,Diotronic/TME/Mouser,PENDING,PENDING,Not proof of OFF with powered but defective driver
 RILM1+RILM2,RX,RILM TBD,2,EFuse trip threshold,NO_REFERENCE_VERIFIED,PENDING,PENDING,TI/TME/Mouser,PENDING,PENDING,No safe ILIM selected; 500mA minimum cannot independently detect 400mA
 CIT1+CIT2,RX,ITIMER capacitor TBD,2,Circuit breaker timing,NO_REFERENCE_VERIFIED,PENDING,PENDING,TME/Mouser/DigiKey,PENDING,PENDING,Not dimensioned
-J1+J2+J3+J4+J5,BENCH,Declared symbolic sources boundaries and telemetry,0,Not physical connectors,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,Only schematic interface labels
+J1+J2+J3+J4,BENCH,Declared symbolic sources boundaries and telemetry,0,Not physical connectors,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,Only schematic interface labels
 FUTURE,RX_TX,FOD thermal positive permit POR and reverse-feed qualification,0,Missing physical safety chain,CRITICAL_TRACEABILITY_REQUIRED,PENDING,PENDING,Manufacturer/TME/Mouser/DigiKey,PENDING,PENDING,No substitute until manufacturer evidence and availability

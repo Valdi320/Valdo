@@ -23,7 +23,6 @@ SPECS = {
  'SOURCE': ('J', 'DECLARED_BENCH_5V_NOT_REAL', [p(1,'5V','power_out',10.16,2.54,180),p(2,'RTN','power_out',10.16,-2.54,180)],7,7,False),
  'LOAD': ('J', 'DECLARED_RESISTOR_LOAD_NOT_REAL', [p(1,'IN','passive',-10.16,2.54,0),p(2,'RTN','passive',-10.16,-2.54,0)],7,7,False),
  'PERMIT': ('J', 'EXTERNAL_PERMIT_DRIVER_NOT_BUILT', [p(1,'PERMIT','passive',10.16,2.54,180),p(2,'GND','passive',10.16,-2.54,180)],7,7,False),
- 'STATUS': ('J', 'MONITOR_READ_ONLY_NOT_SAFETY', [p(1,'ALERT_N','passive',-10.16,2.54,0),p(2,'GND','passive',-10.16,-2.54,0)],7,7,False),
  'SHUNT': ('R', '0R1_4WIRE_TBD', [p(1,'PWR_IN','passive',-12.7,5.08,0),p(2,'PWR_OUT','passive',12.7,5.08,180),p(3,'K_PLUS','passive',-12.7,-5.08,0),p(4,'K_MINUS','passive',12.7,-5.08,180)],9,9,True),
  'INA301A1_DGK': ('U','INA301A1IDGKR', [p(1,'VS','power_in',-12.7,10.16,0),p(2,'OUT','output',12.7,-5.08,180),p(3,'LIMIT','input',12.7,10.16,180),p(4,'GND','power_in',-12.7,-10.16,0),p(5,'RESET','input',12.7,0,180),p(6,'ALERT_N','open_collector',12.7,5.08,180),p(7,'IN-','input',-12.7,0,0),p(8,'IN+','input',-12.7,5.08,0)],9,13,True),
  'TPS259470_RPW10': ('U','TPS259470LRPWR', [
@@ -48,7 +47,6 @@ INSTANCES = [
  ('U3','TPS259470_RPW10',177.8,111.76,'TPS259470LRPWR'),
  ('J3','PERMIT',22.86,156.21,'PERMIT_A_EXTERNAL_UNQUALIFIED'),
  ('J4','PERMIT',22.86,182.88,'PERMIT_B_EXTERNAL_UNQUALIFIED'),
- ('J5','STATUS',223.54,53.34,'MONITOR_READ_ONLY_NOT_SAFETY'),
  ('RPD1','R',68.58,161.29,'10k_PULLDOWN_A'),('RPD2','R',121.92,161.29,'10k_PULLDOWN_B'),
  ('RILM1','R',147.32,149.86,'RILM_A_TBD'),('RILM2','R',195.58,149.86,'RILM_B_TBD'),
  ('CIT1','C',147.32,177.8,'CIT_A_TBD'),('CIT2','C',195.58,177.8,'CIT_B_TBD'),
@@ -56,14 +54,14 @@ INSTANCES = [
 
 NETS = {
  'RX5_SOURCE':[('J1','1'),('RSH1','1'),('U1','1'),('U1','5'),('R2','1'),('C1','1')],
- 'GND':[('J1','2'),('J2','2'),('J3','2'),('J4','2'),('J5','2'),('U1','4'),('U2','8'),('U3','8'),('R1','2'),('C1','2'),('RPD1','2'),('RPD2','2'),('RILM1','2'),('RILM2','2'),('CIT1','2'),('CIT2','2'),('U2','2'),('U3','2')],
+ 'GND':[('J1','2'),('J2','2'),('J3','2'),('J4','2'),('U1','4'),('U2','8'),('U3','8'),('R1','2'),('C1','2'),('RPD1','2'),('RPD2','2'),('RILM1','2'),('RILM2','2'),('CIT1','2'),('CIT2','2'),('U2','2'),('U3','2')],
  'RX5_POST_SHUNT':[('RSH1','2'),('U2','5')],
  'RX5_BETWEEN_CUTS':[('U2','6'),('U3','5')],
  'RX5_LOAD':[('U3','6'),('J2','1')],
  'KELVIN_PLUS':[('RSH1','3'),('U1','8')],
  'KELVIN_MINUS':[('RSH1','4'),('U1','7')],
  'LIMIT':[('R1','1'),('U1','3')],
- 'ALERT_N_READ_ONLY':[('U1','6'),('R2','2'),('J5','1')],
+ 'ALERT_N_READ_ONLY':[('U1','6'),('R2','2')],
  'PERMIT_A_UNQUALIFIED':[('J3','1'),('RPD1','1'),('U2','1')],
  'PERMIT_B_UNQUALIFIED':[('J4','1'),('RPD2','1'),('U3','1')],
  'ILM_A':[('U2','9'),('RILM1','1')],
