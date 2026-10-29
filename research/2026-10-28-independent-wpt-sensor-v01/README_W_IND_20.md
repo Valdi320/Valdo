@@ -21,3 +21,5 @@
 **BOM:** 0 unidades físicas nuevas, 0 € gastados. Diotronic auxiliar para pasivos cuando se verifique referencia, MOQ, IVA total y stock Zaragoza; TME, Mouser, DigiKey alternativas no cotizadas para este hito sin nuevos componentes. FOD/thermal/cortes no homologados; no fabricar, imprimir, comprar, conectar ni energizar nada.
 
 **Próximo paso:** circuito KiCad con fuente aislada, pines y retorno reales, FOD y protección térmica/corte independiente, verificar ERC y simulación antes de cualquier ensayo resistivo con autorización.
+
+**Corrección del intento inicial:** el primer ERC del commit 7075ef51 todavía reportó 9 infracciones (6 avisos de biblioteca), porque el contenedor arrancaba desde la raíz del repositorio y no cargaba la tabla local del directorio del esquema. Se corrige el directorio de trabajo del contenedor al propio directorio del esquema, manteniendo el reporte de prueba original como evidencia y el bloqueo de errores. Confirmar resultado de esta corrección exclusivamente con ERC real del commit posterior; no atribuir reducción sin medición del verificador.
