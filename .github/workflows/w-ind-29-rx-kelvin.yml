@@ -1,0 +1,65 @@
+name: W-IND-29 receiver Kelvin schematic (REVIEW ONLY - NO POWER APPROVAL)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_29/**'
+      - '.github/workflows/w-ind-29-rx-kelvin.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_29/**'
+      - '.github/workflows/w-ind-29-rx-kelvin.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-rx-kelvin-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate original KiCad schematic and run 29 synthetic fault tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_29
+          python3 generate_w29.py
+          python3 generate_w29.py --verify
+          python3 -m unittest -v test_w29
+      - name: KiCad 9.0.2 native ERC and netlist with independent strict topology gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          ROOT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_29
+          mkdir -p "$ROOT/native_out"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$ROOT" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0 native_out
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_29#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all --exit-code-violations -o native_out/w29_erc.json W29_RX_KELVIN_MONITOR_ONLY.kicad_sch
+              kicad-cli sch export netlist --format kicadxml -o native_out/w29_native.xml W29_RX_KELVIN_MONITOR_ONLY.kicad_sch
+            '
+          test -s "$ROOT/native_out/w29_native.xml"
+          python3 "$ROOT/netlist_gate_w29.py" "$ROOT/native_out/w29_native.xml" --output "$ROOT/native_out/w29_attestation.json"
+          echo "::notice::Pass only means topology review, not WPT protection, hardware operation, or lithium approval."
+      - name: Archive generated editable KiCad and native evidence even if blocked
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W-IND-29-native-RX-Kelvin-review
+          path: |
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_29/*.kicad_sch
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_29/*.kicad_sym
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_29/sym-lib-table
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_29/native_out/
+          if-no-files-found: warn
+          retention-days: 30
