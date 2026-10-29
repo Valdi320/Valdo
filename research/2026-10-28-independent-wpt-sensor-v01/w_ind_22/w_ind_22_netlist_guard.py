@@ -22,6 +22,17 @@ EXPECTED_NETS = {
     "EN_B": {"U2.3", "R4.1"},
     "GND": {"J1.2", "U1.2", "U2.2", "R1.2", "R2.2", "R3.2", "R4.2"},
 }
+# KiCad 9.0.2 prefixes schematic-scope local nets with one leading '/'.
+# Its four intentionally unconnected pin stubs are exported as synthetic
+# singleton nets. Both properties MUST be checked, not silently discarded.
+EXPECTED_UNCONNECTED = {
+    "unconnected-(U1-CT-Pad4)": {"U1.4"},
+    "unconnected-(U1-QOD-Pad5)": {"U1.5"},
+    "unconnected-(U2-CT-Pad4)": {"U2.4"},
+    "unconnected-(U2-QOD-Pad5)": {"U2.5"},
+}
+EXPECTED_NATIVE_NETS = {"/" + name: pins for name, pins in EXPECTED_NETS.items()}
+EXPECTED_NATIVE_NETS.update(EXPECTED_UNCONNECTED)
 EXPECTED_REFS = {"J1", "U1", "U2", "R1", "R2", "R3", "R4"}
 EXPECTED_VALUES = {
     "J1": "BENCH_SOURCE_DECLARATION_ONLY",
@@ -87,14 +98,14 @@ def audit_netlist(xml_bytes: bytes) -> dict:
         for ref, value in EXPECTED_VALUES.items():
             if ref in parts and parts[ref] != value:
                 errors.append(f"{ref} value changed from locked W-IND-21 contract")
-        for name in sorted(EXPECTED_NETS.keys() | nets.keys()):
-            if name not in EXPECTED_NETS:
+        for name in sorted(EXPECTED_NATIVE_NETS.keys() | nets.keys()):
+            if name not in EXPECTED_NATIVE_NETS:
                 errors.append(f"unreviewed electrical net: {name}")
             elif name not in nets:
                 errors.append(f"missing reviewed net: {name}")
-            elif nets[name] != EXPECTED_NETS[name]:
-                missing = sorted(EXPECTED_NETS[name] - nets[name])
-                extra = sorted(nets[name] - EXPECTED_NETS[name])
+            elif nets[name] != EXPECTED_NATIVE_NETS[name]:
+                missing = sorted(EXPECTED_NATIVE_NETS[name] - nets[name])
+                extra = sorted(nets[name] - EXPECTED_NATIVE_NETS[name])
                 errors.append(f"{name} pins changed: missing={missing}, extra={extra}")
         if duplicate_pin_occurrences:
             errors.append("duplicate pin memberships: " + ", ".join(sorted(set(duplicate_pin_occurrences))))

@@ -5,7 +5,7 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 
-from w_ind_22_netlist_guard import EXPECTED_NETS, EXPECTED_VALUES, audit_netlist, main
+from w_ind_22_netlist_guard import EXPECTED_NETS, EXPECTED_UNCONNECTED, EXPECTED_VALUES, audit_netlist, main
 
 
 def fixture() -> ET.Element:
@@ -16,8 +16,13 @@ def fixture() -> ET.Element:
         ET.SubElement(comp, "value").text = value
     nets = ET.SubElement(root, "nets")
     for i, (name, pins) in enumerate(EXPECTED_NETS.items(), 1):
-        net = ET.SubElement(nets, "net", code=str(i), name=name)
+        net = ET.SubElement(nets, "net", code=str(i), name="/" + name)
         for item in sorted(pins):
+            ref, pin = item.rsplit(".", 1)
+            ET.SubElement(net, "node", ref=ref, pin=pin)
+    for i, (name, pins) in enumerate(EXPECTED_UNCONNECTED.items(), 7):
+        net = ET.SubElement(nets, "net", code=str(i), name=name)
+        for item in pins:
             ref, pin = item.rsplit(".", 1)
             ET.SubElement(net, "node", ref=ref, pin=pin)
     return root
@@ -28,7 +33,7 @@ def xml(root):
 
 
 def net(root, name):
-    return next(n for n in root.find("nets") if n.get("name") == name)
+    return next(n for n in root.find("nets") if n.get("name") == "/" + name)
 
 
 def mutate_node(root, name, ref, pin, replacement=None):
@@ -153,6 +158,27 @@ class NativeNetlistGuard(unittest.TestCase):
 
     def test_missing_nodes_rejected(self):
         self.root.find("nets").clear()
+        self.fails()
+
+    def test_missing_expected_nc_stub(self):
+        nc = next(n for n in self.root.find("nets") if n.get("name") == "unconnected-(U1-CT-Pad4)")
+        self.root.find("nets").remove(nc)
+        self.fails()
+
+    def test_unexpected_nc_stub_pin(self):
+        nc = next(n for n in self.root.find("nets") if n.get("name") == "unconnected-(U1-QOD-Pad5)")
+        nc[0].set("pin", "6")
+        self.fails()
+
+    def test_nc_stub_rewired_to_gnd(self):
+        nc = next(n for n in self.root.find("nets") if n.get("name") == "unconnected-(U2-CT-Pad4)")
+        self.root.find("nets").remove(nc)
+        ET.SubElement(net(self.root, "GND"), "node", ref="U2", pin="4")
+        self.fails()
+
+    def test_extra_nc_stub_not_silently_ignored(self):
+        n = ET.SubElement(self.root.find("nets"), "net", name="unconnected-(U3-CT-Pad4)")
+        ET.SubElement(n, "node", ref="U3", pin="4")
         self.fails()
 
     def test_command_writes_blocked_attestation(self):
