@@ -1,0 +1,31 @@
+{
+  "actual_w36_kicad_modified": false,
+  "assumed_sample_period_ms": 10,
+  "battery_or_dock_connected": false,
+  "both_press_samples": 2,
+  "both_release_samples": 2,
+  "finding": "W36 abstract digital model allows both enabled at first healthy sample if both buttons are already high; release-before-press is not enforced",
+  "good_samples": 3,
+  "hardware_tested": false,
+  "safe_to_energize": false,
+  "schema": "VALDO-W-IND-37-REARM-GUARD-V1",
+  "short_trace_exhaustive_checked": 65536,
+  "software_model_only": true,
+  "w36_baseline_expected": {
+    "first_good_sample": [
+      true,
+      true
+    ],
+    "initial": [
+      false,
+      false
+    ]
+  },
+  "w37_held_on_cold_boot": {
+    "ever_enabled": false,
+    "samples": 12
+  },
+  "w37_release_then_press": {
+    "enabled_after_fresh_sequence": true
+  }
+}
