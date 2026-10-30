@@ -65,12 +65,12 @@ class LeakageTests(unittest.TestCase):
         self.assertFalse(data["hardware_safety_proven"])
         self.assertFalse(data["hardware_power_authorized"])
         self.assertFalse(data["w44_kicad_modified"])
-        self.assertIn("does NOT",data["IMPORTANT"] if False else "does NOT")
+        self.assertIn("None of these figures guarantees",data["IMPORTANT"])
     def test_deterministic_csv_and_json(self):
         data=results()
         self.assertEqual(to_csv(data),to_csv(results()))
         self.assertEqual(json.dumps(data,sort_keys=True),json.dumps(results(),sort_keys=True))
-        self.assertIn("NOT",data["IMPORTANT"])
+        self.assertIn("No receiver VIL",data["IMPORTANT"])
 
 if __name__=="__main__":
     unittest.main()
