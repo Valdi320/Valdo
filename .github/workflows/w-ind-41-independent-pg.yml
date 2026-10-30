@@ -1,0 +1,47 @@
+name: W-IND-41 independent-rail supervisor screen (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_41/**'
+      - '.github/workflows/w-ind-41-independent-pg.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_41/**'
+      - '.github/workflows/w-ind-41-independent-pg.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w41-independent-pg:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Corner and adversarial digital tests (no physical power)
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_41
+          python3 -m unittest -v test_w41
+          python3 w41_independent_pg.py --out W41_EVIDENCE.json > /dev/null
+          python3 - <<'PY'
+          import json
+          r=json.load(open('W41_EVIDENCE.json'))
+          assert r['safe_to_energize'] is False
+          assert r['hardware_tested'] is False
+          assert r['input_leakage_stress_is_TEXAS_INSTRUMENTS_SPEC'] is False
+          assert r['dividers']['62k_10k_1pct']['stress_pass']
+          assert not r['dividers']['620k_100k_1pct']['stress_pass']
+          assert r['fault_cases']['rail_3v3_lost_relay_wire_open']['unsafe_if_3v3_dead']
+          PY
+      - name: Save clearly synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W41-ANALYTICAL-RAIL-SUPERVISION-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_41/W41_EVIDENCE.json
+          if-no-files-found: warn
+          retention-days: 30
