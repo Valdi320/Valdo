@@ -1,0 +1,45 @@
+name: W-IND-56 ABBA metrology consistency (synthetic)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_56/**'
+      - '.github/workflows/w-ind-56-abba.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_56/**'
+      - '.github/workflows/w-ind-56-abba.yml'
+permissions:
+  contents: read
+jobs:
+  w56-synthetic-consistency:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run adversarial ABBA tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_56 -p 'test_w56.py' -v
+      - name: Generate and validate strictly synthetic evidence
+        run: |
+          mkdir -p /tmp/w56-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_56/w56_abba_gate.py --demo --out /tmp/w56-evidence/W56_SYNTHETIC_NOT_HARDWARE.json
+          python3 - <<'PY'
+          import json
+          from decimal import Decimal
+          with open('/tmp/w56-evidence/W56_SYNTHETIC_NOT_HARDWARE.json') as f:
+              d=json.load(f)
+          assert d['milestone']=='W-IND-56'
+          assert d['passage_count']==4 and d['meter_switches']==2
+          assert Decimal(d['eta_abba_percent'])==80
+          assert Decimal(d['center_residual_rho'])==1
+          assert not d['blockers']
+          assert d['source_kind']=='SYNTHETIC' and d['physical_measurements']==0
+          assert d['added_robots_parts_eur']=='0'
+          for x in ('hardware_approved','energization_approved','lithium_dock_approved','local_cutoff_qualified'):
+              assert d[x] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W56-ABBA-21TESTS-SYNTHETIC-ONLY
+          path: /tmp/w56-evidence/W56_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error
