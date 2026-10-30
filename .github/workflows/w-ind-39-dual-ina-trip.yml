@@ -1,0 +1,62 @@
+name: W-IND-39 independent comparator paths (UNPOWERED)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_39/**'
+      - '.github/workflows/w-ind-39-dual-ina-trip.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_39/**'
+      - '.github/workflows/w-ind-39-dual-ina-trip.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w39-dual-monitor-kicad:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build candidate and test 64 digital faults + topology mutants
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_39
+          python3 generate_w39.py
+          python3 generate_w39.py --verify
+          python3 -m unittest -v test_w39
+          python3 fault_model_w39.py --out native_out/w39_faults.json
+      - name: KiCad 9 native ERC and exact pin/net audit
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          ROOT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_39
+          mkdir -p "$ROOT/native_out"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$ROOT" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0 native_out
+              sed "s#[$]{KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_39#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all --exit-code-violations -o native_out/w39_erc.json W39_RX_DUAL_INA301_INCOMPLETE.kicad_sch
+              kicad-cli sch export netlist --format kicadxml -o native_out/w39_native.xml W39_RX_DUAL_INA301_INCOMPLETE.kicad_sch
+            '
+          python3 "$ROOT/netlist_gate_w39.py" "$ROOT/native_out/w39_native.xml" --out "$ROOT/native_out/w39_gate.json"
+      - name: Evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W39-DUAL-INA-DRAFT-KICAD-UNPOWERED
+          path: |
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_39/*.kicad_sch
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_39/*.kicad_sym
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_39/sym-lib-table
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_39/native_out/
+          if-no-files-found: warn
+          retention-days: 30
