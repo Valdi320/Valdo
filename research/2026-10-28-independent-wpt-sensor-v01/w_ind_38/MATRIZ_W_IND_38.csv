@@ -1,0 +1,7 @@
+alternative;trip_route;benefit;unmitigated_risk;decision;source_kind
+W36 current monitor only;NONE;existing components;RX 400mA hypothetical event does not cut;REJECT for cutoff;own prior KiCad
+W38 INA301 to TPS3840 MR_N;U1.6-U4.4-U4.1-U10_U11-U7_U8-U2_U3;one wiring change and existing components;INA301 loss may look healthy and single U4 common-mode;ACCEPT for digital experiment ONLY;TI pin datasheets and KiCad native gate
+Wire open-drain ALERT_N to EN directly;ALERT to EN;low parts;wrong polarity or fail-open power loss;REJECT;polarity reasoning
+Radio-only shutdown;ALERT then RF to EN;remote diagnosis;RF loss delays critical stop;REJECT safety;architecture contract
+W34 EOL window plus separate monitor supply supervision;future comparator and PG;detects open/short and supply loss;not built;NEXT PRIORITY;digital specification only
+W37 guarded physical release-and-press rearm;future POR/debounce/CLR;prevents held-on-boot rearms;not built;NEXT GATE;synthetic test only
