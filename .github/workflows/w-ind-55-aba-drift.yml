@@ -1,0 +1,46 @@
+name: W-IND-55 ABA meter drift screening (synthetic only)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_55/**'
+      - '.github/workflows/w-ind-55-aba-drift.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_55/**'
+      - '.github/workflows/w-ind-55-aba-drift.yml'
+permissions:
+  contents: read
+jobs:
+  w55-aba-drift-math:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test original synthetic ABA fault-injection
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_55 -p 'test_w55.py' -v
+      - name: Reproduce evidence without hardware approval
+        run: |
+          mkdir -p /tmp/w55-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_55/w55_aba_drift_gate.py --demo --out /tmp/w55-evidence/W55_SYNTHETIC_NOT_HARDWARE.json
+          python3 - <<'PY'
+          import json
+          from decimal import Decimal
+          with open('/tmp/w55-evidence/W55_SYNTHETIC_NOT_HARDWARE.json') as f:
+              a=json.load(f)
+          assert Decimal(a['eta_aba_percent']) == 80
+          assert a['passage_count'] == 3
+          assert Decimal(a['endpoint_drift_nominal_percent']) == 0
+          assert Decimal(a['endpoint_drift_worst_percent']) < 2
+          assert not a['candidate_for_external_metrology_review']
+          assert not a['hardware_approved'] and not a['energization_approved']
+          assert not a['lithium_dock_approved'] and not a['local_cutoff_qualified']
+          assert a['physical_measurements'] == 0
+          assert a['added_robots_parts_eur'] == '0'
+          assert a['source_kind'] == 'SYNTHETIC'
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W55-ABA-20TESTS-SYNTHETIC-NOT-HARDWARE
+          path: /tmp/w55-evidence/W55_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error
