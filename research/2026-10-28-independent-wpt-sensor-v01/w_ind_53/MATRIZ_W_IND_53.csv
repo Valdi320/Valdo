@@ -1,0 +1,8 @@
+alternative,bench_catalog_cost_iva_eur,extra_per_final_robot_eur,benefit,decision,evidence_class,blockers
+"Trust uncalibrated INA219 bus voltage",7.26,0,"Low acquisition cost but unknown voltage bias contaminates WPT efficiency",REJECT,MANUFACTURER_PLUS_VENDOR,"Actual module error and I2C unknown"
+"Two reused INA219 + W53 independent operating-point holdout",7.26,0,"Rejects voltage scale/offset errors without any new per-robot hardware",ADOPT_DIGITAL_ONLY,SYNTHETIC_33_TESTS_PASS,"Real reference and real TX/RX readings missing"
+"TME complete dual INA260 boards",53.60,0,"Offered alternative with integrated resistor",DEFER,CATALOG_SNAPSHOT,"Reference calibration shipping and per-board quality still required"
+"Assume DT-830B is traceable reference",0,0,"Zero cash cost with existing meter",REJECT_UNQUALIFIED,UNKNOWN,"Accuracy calibration date and burden/input impedance not established"
+"Diotronic auxiliary parts as exact equivalent",UNKNOWN,0,"Local service and repair",DEFER,STOCK_NOT_VERIFIED,"Exact SKU IVA MOQ local store stock and spec not established"
+"Wireless power for all small sensors",UNKNOWN,UNKNOWN,"Possible connector avoidance",REJECT_BY_DEFAULT,NO_MEASUREMENT,"Cost idle loss FOD offset moisture EMI and cuts untested"
+"Dock lithium inductive charging",UNKNOWN,UNKNOWN,"Could avoid external charging contacts",SEPARATE_SAFETY_PROJECT,NO_MEASUREMENT,"BMS charger autonomous cut FOD thermal validation and authorization needed"
