@@ -1,0 +1,47 @@
+name: W-IND-40 shared-fault audit (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_40/**'
+      - '.github/workflows/w-ind-40-common-mode.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_40/**'
+      - '.github/workflows/w-ind-40-common-mode.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w40-common-mode:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unpowered, standard-library-only fault audit
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_40
+          python3 -m unittest -v test_w40_common_mode
+          python3 w40_common_mode.py --out W40_EVIDENCE.json
+          python3 - <<'PY'
+          import json
+          report=json.load(open('W40_EVIDENCE.json'))
+          assert report['safe_to_energize'] is False
+          assert report['hardware_qualified'] is False
+          assert report['physical_measurements'] == 0
+          assert report['faults_enumerated'] == 14
+          assert report['designs']['W39_two_INA_same_shunt_rail']['rail_failure_unsafe'] is True
+          assert report['designs']['PG_3v3_supplied_independently_HYPOTHETICAL']['rail_failure_unsafe'] is False
+          PY
+      - name: Retain synthetic evidence (never physical acceptance)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W40-FAULT-TREE-SYNTHETIC-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_40/W40_EVIDENCE.json
+          if-no-files-found: warn
+          retention-days: 30
