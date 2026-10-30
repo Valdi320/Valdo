@@ -1,0 +1,10 @@
+Alternativa,Problema,Decision,Evidencia_tipo,Limites,Siguiente_verificacion
+R4 47k,HEALTH RX,NO_CALIFICADO,"6/9 fallos en estres sintetico 60uA","Condicion fabricante VDS -50V no equivale 5V",Fuga real+VIL receptor
+R4 10k,HEALTH RX,NO_CALIFICADO,"3/9 fallos en estres sintetico","Limite OFF 0.4V supuesto",Fuga real+VIL receptor
+R4 4k7,HEALTH RX,CANDIDATO_CONDICIONADO,"0/9 fallos; 5.373mW ideal ON","No arregla cortocircuito a +5V ni POR",Modelo analogico+receptor y corte independiente
+R4 2k2,HEALTH RX,RESERVA,"0/9 fallos; 11.478mW ideal ON","Mayor perdida a 5V",Comparar potencia real
+Dock Li-ion,DOCK,NO_TRABAJAR,"BMS y bateria desconectados","FOD termica y seguridad sin verificar",Proceso autorizado independiente
+Sensor WPT,ENERGIA DISTRIBUIDA,PILOTO_DIGITAL,"0.4W medio 1.5W pico hipotesis","Sin bobina medida ni controlador aprobado",Banco resistivo aislado solo con autorizacion
+ESP-NOW,RF DATOS,CANDIDATO,"API RF del autor Apache-2.0","ACK CRC secuencia timeout privacidad sin integrar",Emulacion autenticada sin paro critico
+OpenThread,RF DATOS,ALTERNATIVA,"Red Thread BSD-3","Consumo y topologia aun sin elegir",Comparacion RF
+WISP,ENERGIA MINIMA,SECUNDARIO,"Sensor RFID BSD-2","No motores ni carga",Solo si hay microsensor adecuado
