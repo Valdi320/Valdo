@@ -1,0 +1,10 @@
+option,added_cost_eur,detects_stale,CNVR_OVF,needs_measurement_of_real_shunt,can_act_as_electrical_cut,decision,explanation
+ignore_CNVR_and_use_W48_only,0,NO,NO,YES,NO,REJECT,"timestamps alone can validate stale register samples"
+single_shot_raw_INA219_with_W50,0_incremental,MODEL_ONLY,MODEL_ONLY,YES,NO,CANDIDATE,"freshness and overflow checked before calculating synthetic efficiency; real driver missing"
+continuous_mode_poll_CNVR_without_rearm,0,NO,PARTIAL,YES,NO,REJECT,"CNVR remains set until Power read/reconfiguration; cannot assert a fresh sample"
+add_INA260_to_each_sensor,>0_unquoted,DEPENDS_ON_DRIVER,DEPENDS_ON_DRIVER,YES,NO,DEFER,"adds cost to production modules, no proven need"
+WPT_every_sensor,>0_unquoted,NO,NO,YES,NO,REJECT_AS_DEFAULT,"cable repair usually cheaper; FOD thermal independent cutoff and EMI not solved"
+RF_ESP_NOW_data_only,not_part_of_W50,NA,NA,NA,NO,PREFERRED_CANDIDATE,"app ACK CRC seq timeout privacy recovery still to integrate and test"
+RF_OpenThread_data_only,not_part_of_W50,NA,NA,NA,NO,ALTERNATIVE,"higher topology/hardware cost for one low-power sensor not yet justified"
+WISP5_RFID_microsensor,not_part_of_W50,NA,NA,NA,NO,DEFER,"reader and energy constraints unqualified"
+charging_dock,not_part_of_W50,NA,NA,NA,NO,SEPARATE_HAZARD,"FOD thermal power cutoff charger BMS not verified; lithium disconnected"
