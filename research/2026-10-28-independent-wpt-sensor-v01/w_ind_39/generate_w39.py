@@ -25,10 +25,10 @@ assert all(ref not in {x[0] for x in b.INSTANCES}
 # Their own independent ALERT_N signals drive the TWO existing voltage
 # supervisors' separate manual-reset pins. No wired-OR on different rails.
 b.INSTANCES += [
-    ("U12", "INA301A1_DGK", 395.0, 111.76, "INA301A1IDGKR"),
-    ("R3", "R", 385.0, 180.34, "10k_ALERT_B_PULLUP_5V_TBD"),
-    ("R4", "R", 408.0, 180.34, "8k66_LIMIT_B_TBD"),
-    ("C7", "C", 385.0, 226.06, "100nF_U12_TBD"),
+    ("U12", "INA301A1_DGK", 393.70, 111.76, "INA301A1IDGKR"),
+    ("R3", "R", 384.81, 180.34, "10k_ALERT_B_PULLUP_5V_TBD"),
+    ("R4", "R", 407.67, 180.34, "8k66_LIMIT_B_TBD"),
+    ("C7", "C", 384.81, 226.06, "100nF_U12_TBD"),
 ]
 b.NETS["MON_3V3_EXTERNAL"] += [("U12", "1"), ("U12", "5"), ("C7", "1")]
 b.NETS["RX5_SOURCE"] += [("R3", "1")]

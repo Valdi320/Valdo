@@ -33,6 +33,14 @@ class W39(unittest.TestCase):
     def test_every_pin_once(self):
         pins=[(r,p) for v in d.NETS.values() for r,p in v] + d.NC
         self.assertEqual(len(pins),len(set(pins)))
+    def test_new_components_on_native_kicad_connection_grid(self):
+        # Previously caught by KiCad 9.0.2 ERC: four endpoints off 1.27mm grid.
+        for ref, _, x, y, _ in d.INSTANCES:
+            if ref in ("U12", "R3", "R4", "C7"):
+                with self.subTest(ref=ref):
+                    self.assertAlmostEqual(x/1.27, round(x/1.27), places=6)
+                    self.assertAlmostEqual(y/1.27, round(y/1.27), places=6)
+
     def test_deterministic_generator(self):
         a=d.files()
         self.assertEqual(a,d.files())
