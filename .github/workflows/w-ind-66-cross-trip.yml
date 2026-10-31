@@ -1,0 +1,43 @@
+name: W66 TX cross-trip model regression (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/tx_thermal_window.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_66/**'
+      - '.github/workflows/w-ind-66-cross-trip.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/tx_thermal_window.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_66/**'
+      - '.github/workflows/w-ind-66-cross-trip.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cross-trip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W07 regressions and W66 unilateral fault injection
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest -v test_tx_thermal_window
+          python3 -m unittest discover -s w_ind_66 -p 'test_w66.py' -v
+      - name: Produce and check synthetic evidence from actual source
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_66.w66_demo > W66_CROSS_TRIP_SYNTHETIC.json
+          python3 -c 'import json;d=json.load(open("W66_CROSS_TRIP_SYNTHETIC.json"));assert d["evidence_type"]=="SYNTHETIC_BOOLEAN_MODEL_ONLY" and not d["hardware_approved"] and d["physical_tests"]==0; assert not d["weld_a_hot_a"]["fault_energized"] and not d["weld_b_hot_b"]["fault_energized"];assert d["weld_a_hot_a"]["latches_both_off"] and d["weld_b_hot_b"]["latches_both_off"];assert d["double_weld_unresolved"]["fault_energized"]'
+      - name: Archive evidence even on test failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W66-CROSS-TRIP-SYNTHETIC-NO-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/W66_CROSS_TRIP_SYNTHETIC.json
+          if-no-files-found: warn
+          retention-days: 30

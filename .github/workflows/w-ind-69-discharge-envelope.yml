@@ -1,0 +1,56 @@
+name: W69 multiple-node post-cut discharge (SYNTHETIC)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_69/**'
+      - '.github/workflows/w-ind-69-discharge-envelope.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_69/**'
+      - '.github/workflows/w-ind-69-discharge-envelope.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-envelope:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W69 tests and W68 regression
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_69 -p 'test_w69.py' -v
+          python3 -m unittest discover -s w_ind_68 -p 'test_w68.py' -v
+      - name: Generate and verify independent reproducible evidence
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_69.w69_demo > w_ind_69/W69_EVIDENCE_REPRODUCED.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('w_ind_69')
+          a=json.loads((p/'W69_EVIDENCE_SYNTHETIC.json').read_text())
+          b=json.loads((p/'W69_EVIDENCE_REPRODUCED.json').read_text())
+          assert a['milestone']==b['milestone']=='W-IND-69'
+          assert b['measurement_type']=='SYNTHETIC_UPPER_BOUND_NOT_HARDWARE'
+          for name in ('single_ideal_rc','open_bleeder_one_hour','hidden_second_node','backfeed_unknown'):
+              x=b[name]
+              assert not x['hardware_approved'] and x['physical_tests']==0 and not x['lithium_connected']
+          assert b['single_ideal_rc']['classification']=='BELOW_HYPOTHETICAL_SCREEN_NOT_SAFE'
+          assert b['open_bleeder_one_hour']['classification']=='OPEN_BLEEDER_FAULT'
+          assert b['hidden_second_node']['classification']=='RESIDUAL_ABOVE_HYPOTHETICAL_SCREEN'
+          assert b['backfeed_unknown']['total_energy_upper_j'] is None
+          PY
+      - name: Archive synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W69-DISCHARGE-FAULT-SYNTHETIC-NO-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_69/W69_EVIDENCE_REPRODUCED.json
+          if-no-files-found: warn
+          retention-days: 30

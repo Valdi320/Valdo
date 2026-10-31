@@ -1,0 +1,6 @@
+sector,elemento,referencia,unidades_nuevas,coste_pagado_eur,diotronic_referencia,diotronic_precio_iva_eur,diotronic_stock_zaragoza,tme_mouser_digikey_alternativa,precio_alternativo_iva_eur,disponibilidad_alternativa,motivo_estado
+W71,verificador Python original,estandar biblioteca Python,0,0,NO_APLICA,NO_APLICA,NO_APLICA,NO_APLICA,NO_APLICA,NO_APLICA,software de revisión sin compra
+W21,R2 pasiva de descarga 1k,SOLO ESQUEMA sin potencia nominal aprobada,0,0,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,no sustituir ni pedir sin C real y tolerancia
+W21,interruptor de carga dual,TPS22918DBVR TI NO-FOD NO-OC,0,0,NO_CALIFICADO,PENDIENTE,PENDIENTE,TI fabricante o distribuidor autorizado,PENDIENTE,PENDIENTE,material histórico en esquema no se compra
+futuro,descarga independiente y medición,FUTURO_NO_SELECCIONADO,0,0,PENDIENTE,PENDIENTE,PENDIENTE,distribuidor trazable datasheet exigido,PENDIENTE,PENDIENTE,no existe diseño validado
+futuro,TX RX bobinas y regulador,FUTURO_NO_SELECCIONADO,0,0,PENDIENTE,PENDIENTE,PENDIENTE,TME Mouser DigiKey por estudiar,PENDIENTE,PENDIENTE,stock catalogo no demuestra adecuación

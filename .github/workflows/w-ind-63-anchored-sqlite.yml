@@ -1,0 +1,37 @@
+name: W63 anchored SQLite epoch journal (SYNTHETIC ANCHOR ONLY)
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_63/**'
+      - '.github/workflows/w-ind-63-anchored-sqlite.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_63/**'
+      - '.github/workflows/w-ind-63-anchored-sqlite.yml'
+  workflow_dispatch:
+jobs:
+  sqlite-journal-synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W63/W62/W61/W60/base adversarial regression
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -v -s w_ind_63 -p 'test_w63.py'
+          python3 -m unittest discover -v -s w_ind_62 -p 'test_w62.py'
+          python3 -m unittest discover -v -s w_ind_61 -p 'test_w61.py'
+          python3 -m unittest discover -v -s w_ind_60 -p 'test_w60.py'
+          python3 -m unittest -v test_w_link
+      - name: Reproducible JSON with explicit safety flags
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_63/w63_demo.py > W63_SQLITE_SYNTHETIC_ANCHOR.json
+          python3 -c 'import json; d=json.load(open("W63_SQLITE_SYNTHETIC_ANCHOR.json")); assert d["evidence_type"] == "SYNTHETIC_ANCHOR_PLUS_REAL_TEMP_SQLITE_FILE" and d["rollback_snapshot_detected"] and d["injected_anchor_db_commit_gap_detected"] and d["duplicate_denied_after_object_restart"] and not d["hardware_approved"] and not d["real_antirollback_anchor_proven"] and not d["battery_or_BMS_connected"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W63-SQLITE-WITH-FAKE-ANCHOR-NOT-HARDWARE-APPROVED
+          path: W63_SQLITE_SYNTHETIC_ANCHOR.json

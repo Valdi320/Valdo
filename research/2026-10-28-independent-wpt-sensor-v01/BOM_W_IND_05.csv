@@ -1,0 +1,16 @@
+subsystem,item,quantity,eu_vat_incl_min_eur,eu_vat_incl_max_eur,availability_2026_10_28,owner_or_licence,source_url,qualification
+module_WPT_option_A,DFRobot DFR0362 TX+RX matched kit,1,9.50,9.50,106 external stock published,DFRobot,https://opencircuit.es/producto/wireless-charging-module-5v-1a,DOCUMENT_ONLY_NOT_APPROVED
+module_WPT_option_B_TX,Adafruit Qi transmitter 2162,1,28.75,39.25,external supplier and conflicting quote,Adafruit,https://opencircuit.es/producto/universal-qi-wireless-charging-transmitter,DOCUMENT_ONLY_NOT_APPROVED
+module_WPT_option_B_RX,Adafruit Qi receiver 1901 BQ51013B,1,23.25,23.25,external warehouse,Adafruit/TI,https://opencircuit.es/producto/universal-qi-wireless-receiver-module,DOCUMENT_ONLY_NOT_APPROVED
+procurement,Spain delivery starting price at single chosen merchant,1,12.50,,from only not checkout,Opencircuit,https://opencircuit.es/producto/wireless-charging-module-5v-1a,UNCONFIRMED
+source,5V DC electrically isolated low-voltage supply with current limit,1,,,not selected,W,none,BLOCKER
+protection,TX independent normally OFF cutoff with safe startup and welded-contact analysis,1,,,not selected,W,none,BLOCKER
+protection,TX metal-FOD protection genuinely qualified at installation level,1,,,not selected,W,none,BLOCKER
+protection,TX independent thermal sensor and comparator,1,,,not selected,W,none,BLOCKER
+protection,receiver short/overcurrent/brownout protection,1,,,not selected,W,none,BLOCKER
+protection,metal/water/soil handling and EMI qualification,1,,,not selected,W,none,BLOCKER
+sensor_noncritical,5V 0.4W avg 1.5W peak sensor module,1,,,hypothetical not selected,W,none,ASSUMPTION
+radio,encrypted authenticated ESP-NOW pair 2 MCUs or OpenThread alternative,2,,,not selected,Espressif Apache2/OpenThread BSD3,https://github.com/espressif/esp-now,REQUIRES_REAL_CRYPTO
+service,robust replaceable wired fallback controlled by C,1,,,not selected,C,none,REFERENCE
+measurement,isolated resistor load current thermal RF EMI instrumentation,1,,,not purchased or used,W,none,FUTURE_BENCH_GATED
+lithium,independent NEW dock battery charger BMS,0,,,deferred and disconnected,NEW_ROBOT,none,NOT_PART_OF_THIS_HITO

@@ -1,0 +1,7 @@
+option,cost_new_robot_eur,bench_catalog_cost_eur,benefit,decision,evidence_class,blockers
+"Continue trusting nominal INA219 datasheet with cheap 0.1ohm module",0,7.26,"Quick but potentially misleading efficiency",REJECT,MANUFACTURER_PLUS_VENDOR,"Actual part and shunt accuracy unknown"
+"Three-point offline zero/span/holdout gate for reusable TX and RX meters",0,7.26,"Detects gross scale/offset/polarity and quantified validation mismatch",ADOPT_DIGITAL_ONLY,SOFTWARE_TESTED,"Requires external current reference certificate, calibration and real samples"
+"Add two more expensive INA260 boards without validating reference",0,21.90,"Some internal resistor uncertainties differ",DEFER,WEB_CATALOG_SNAPSHOT,"Shipping, real error, calibration and availability unresolved"
+"Diotronic equivalent current sense module",0,UNKNOWN,"May allow local quick repair",DEFER,STOCK_NOT_VERIFIED,"Part number, tolerance, MOQ and final IVA price unavailable"
+"WPT for every production sensor",UNKNOWN,UNKNOWN,"Potentially fewer connectors",REJECT_BY_DEFAULT,NOT_MEASURED,"Higher cost/losses; FOD/temperature/offset/EMI/dual independent cut unproven"
+"Dock inductive lithium charging",UNKNOWN,UNKNOWN,"Potentially less contact wear at dock",OUT_OF_SCOPE_FOR_BENCH,SPECIFICATION_ONLY,"BMS/charger FOD safety qualification and authorization required"

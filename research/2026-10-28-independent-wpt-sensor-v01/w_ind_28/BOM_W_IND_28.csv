@@ -1,0 +1,5 @@
+mpn_or_block,diotronic_auxiliary,alternative,vat_eur_previous_snapshot,minimum_quantity,local_stock,selection_limit
+INA301A1IDGKR,pending,DigiKey/TME,3.35,pending,not_verified,RX sense candidate only
+WSL2512R1000FEA,pending,TME,0.64,1,not_verified,cheap shunt layout error unknown
+Y44880R10000F9R,pending,Farnell,19.51,1,not_verified,4-terminal alternative cost prohibitive
+TX independent eFuse/FOD/temperature/PGOOD,pending,Mouser/DigiKey/TME,pending,pending,not_verified,protection not designed

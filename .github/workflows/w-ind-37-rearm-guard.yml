@@ -1,0 +1,35 @@
+name: W-IND-37 release-before-press gate (DIGITAL ONLY)
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_37/**'
+      - '.github/workflows/w-ind-37-rearm-guard.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_37/**'
+      - '.github/workflows/w-ind-37-rearm-guard.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  digital-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: W37 regression plus W36 baseline reference
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_37
+          python3 -m unittest -v test_w37.py
+      - name: Generate reproducible NO HARDWARE evidence
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_37
+          python3 w37_rearm_guard.py --report "$GITHUB_WORKSPACE/W37_EVIDENCE.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: W37-rearm-synthetic-only
+          path: W37_EVIDENCE.json
+          if-no-files-found: error

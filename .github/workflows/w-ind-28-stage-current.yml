@@ -1,0 +1,34 @@
+name: W-IND-28 stage-aware WPT current envelope (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_28/**'
+      - '.github/workflows/w-ind-28-stage-current.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_28/**'
+      - '.github/workflows/w-ind-28-stage-current.yml'
+permissions:
+  contents: read
+jobs:
+  reject-cross-stage-threshold:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests and conservation envelope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_28
+          python3 -m unittest -v test_stage_current_envelope
+          python3 stage_current_envelope.py > W_IND_28_EVIDENCE.json
+      - name: Archive synthetic output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W-IND-28-TX-RX-current-envelope
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_28/W_IND_28_EVIDENCE.json
+          if-no-files-found: warn

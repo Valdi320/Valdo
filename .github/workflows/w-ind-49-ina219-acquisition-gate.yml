@@ -1,0 +1,32 @@
+name: W-IND-49 low-cost INA219 acquisition timing (synthetic; NO physical approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_49/**'
+      - '.github/workflows/w-ind-49-ina219-acquisition-gate.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_49/**'
+      - '.github/workflows/w-ind-49-ina219-acquisition-gate.yml'
+  workflow_dispatch:
+jobs:
+  synthetic-meter-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run 34 deterministic stdlib tests
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_49
+        run: python3 -m unittest -v test_w49
+      - name: Generate reproducible synthetic evidence
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_49
+        run: python3 w49_ina219_acquisition_gate.py --demo --out W49_SYNTHETIC_NOT_HARDWARE.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W49-INA219-34-TESTS-SYNTHETIC-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_49/W49_SYNTHETIC_NOT_HARDWARE.json

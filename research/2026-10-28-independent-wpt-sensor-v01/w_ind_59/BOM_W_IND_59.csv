@@ -1,0 +1,7 @@
+item,qty,role,source_diotronic_or_alternative,unit_price_eur_vat_included,quantity_minimum,stock_local_20261030,final_delivered_price_eur,choice_reason,classification
+W59 Python checker,1,original offline code,Valdi320/Valdo W scope,0,1,not_applicable,0,No physical component added to robot,VERIFIED_COST_ZERO
+INA219 mounted Satkit,2,future non-energized independent metrology candidate,Diotronic unknown / ManoMano Satkit listing,2.42,unknown,not_verified,unknown,IVA status and local stock shipping need confirmation; prior historic pair 7.26 EUR,ONLINE_CATALOG_UNQUALIFIED
+INA219AIDCNR bare IC,2,alternative for custom PCB not equivalent to finished board,Diotronic unknown / DigiKey TI,2.2506,1 DigiKey,not_verified,unknown,IC only: calibration resistor PCB labour shipping and remaining BOM missing,CATALOG_PRICE_NOT_COMPLETE
+Independent isolated reference source,1,future low-voltage dummy-bench only,Diotronic unknown / TME Mouser DigiKey manufacturer,unknown,unknown,not_verified,unknown,No selected model or documented safety; no energization authorized,BLOCKED
+Independent voltage reference meter,1,future independent traceable patterns,Diotronic unknown / manufacturer specialist,unknown,unknown,not_verified,unknown,Needs proven accuracy calibration and traceability,BLOCKED
+Wire resistive load and fuse,1,future guarded dummy-bench only,Diotronic auxiliary / TME Mouser DigiKey,unknown,unknown,not_verified,unknown,Must dimension protections before physical tests,BLOCKED

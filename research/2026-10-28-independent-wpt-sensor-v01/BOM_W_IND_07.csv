@@ -1,0 +1,11 @@
+block,component_or_function,quantity,manufacturer_reference,Diotronic_option,Diotronic_unit_EUR_inc_VAT,Diotronic_stock_local,alternate_supplier,alternate_unit_EUR_inc_VAT,alternate_stock_observation,selection_status,evidence_and_limits
+TX_thermal_A_B,NTC 10k B3950,2,Eaton NRNE104F3950B1F,Exact equivalent unverified,,NOT_CHECKED,DigiKey Spain,0.242,762 listed 2026-10-28 CANNOT CONFIRM LOCAL,PROVISIONAL,https://www.digikey.es/es/products/detail/eaton-electronics-division/NRNE104F3950B1F/16909098
+TX_thermal_A_B,Pull-up 10k 1 percent,2,TBD,Generic resistor query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,UNQUALIFIED,Need certified tolerance tempco and provenance
+TX_thermal_A_B,Window comparator lower/upper,4,TI TLV3211 candidate only,Exact active comparator query pending,,NOT_CHECKED,Mouser DigiKey,,NOT_CHECKED,UNQUALIFIED,https://www.ti.com/product/TLV3211 ; comparator polarity and POR need schematic review
+TX_thermal_A_B,Reference and supervisor rails independent,2,TBD,Query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,BLOCKED,Common cause and supply fallback unproven
+TX_cut_A_B,Normally-off independent DC cutoff,2,TBD,Query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,BLOCKED,Switch leakage dissipation stuck-on response and gate drive unqualified
+TX_cut_A_B,Latch/reset physical circuit,2,TBD,Query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,BLOCKED,Must not auto-rearm upon undervoltage or fault recovery
+TX_watchdog_A_B,Independent watchdog monitor,2,TI TPS3430 reference only,Query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,UNQUALIFIED,https://www.ti.com/product/TPS3430 ; SET disable hazard
+TX_FOD_A_B,Independent metal detection/thermal qualification,2,TBD,Query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,CRITICAL_BLOCK,No effective FOD sensor selected or calibrated
+TX_monitor_A_B,Input current and offset/moisture detection,2,TBD,Query pending,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,BLOCKED,No bench characterization
+TX_BENCH,Isolated SELV low energy resistive dummy load,1,TBD,Check local test components,,NOT_CHECKED,TME Mouser DigiKey,,NOT_CHECKED,NOT_AUTHORIZED,Must obtain formal safety process and user permission before physical testing

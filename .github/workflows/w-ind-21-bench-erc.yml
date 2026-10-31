@@ -1,0 +1,67 @@
+name: W-IND-21 isolated bench supply declaration ERC (NOT hardware approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - '.github/workflows/w-ind-21-bench-erc.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - '.github/workflows/w-ind-21-bench-erc.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w-ind-21-kicad-erc:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: W-IND-21 structural regression
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_21
+          python3 -m unittest -v test_w_ind_21_bench_source
+      - name: KiCad 9.0.2 native ERC for declared isolated testbench source
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          DIR=research/2026-10-28-independent-wpt-sensor-v01/w_ind_21
+          mkdir -p "$DIR/erc_out"
+          docker pull "$IMAGE"
+          VERSION="$(docker run --rm "$IMAGE" kicad-cli version)"
+          echo "Native KiCad: $VERSION"
+          set +e
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$DIR" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_21#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              test -s /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all \
+                --exit-code-violations --output erc_out/erc.json \
+                W_IND_21_TX_BENCH_DECLARED.kicad_sch
+            '
+          RC=$?
+          set -e
+          test -s "$DIR/erc_out/erc.json"
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_17_erc_gate.py \
+            --rc "$RC" --report "$DIR/erc_out/erc.json" \
+            --schematic "$DIR/W_IND_21_TX_BENCH_DECLARED.kicad_sch" --version "$VERSION" \
+            --out "$DIR/erc_out/attestation.json"
+          if [ "$RC" -ne 0 ]; then
+            echo "::error::Native ERC is NOT clean for the candidate."
+            exit "$RC"
+          fi
+          echo "::notice::ERC-zero is digital connectivity only; NO physical safety authorization."
+      - name: Save native ERC report including failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-21-bench-erc
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/erc_out/
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,29 @@
+name: W-IND-48 cheap bench metrology (synthetic)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_48/**'
+      - '.github/workflows/w-ind-48-meter-gate.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_48/**'
+      - '.github/workflows/w-ind-48-meter-gate.yml'
+jobs:
+  synthetic-meter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run original finite checks
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_48
+          python3 -m unittest -v test_w48
+          python3 w48_meter_gate.py --demo --out W48_SYNTHETIC_NOT_HARDWARE.json
+          python3 -c 'import json; d=json.load(open("W48_SYNTHETIC_NOT_HARDWARE.json")); assert not d["hardware_approved"] and d["evidence_class"] == "synthetic"'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W48-SYNTHETIC-ENERGY-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_48/W48_SYNTHETIC_NOT_HARDWARE.json

@@ -1,0 +1,49 @@
+name: W-IND-43 POR hysteresis / OUTB positive-health (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_43/**'
+      - '.github/workflows/w-ind-43-por-hysteresis-health.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_43/**'
+      - '.github/workflows/w-ind-43-por-hysteresis-health.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  negative-fault-injection-model:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests and finite-state fault injection
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_43
+          python3 -m unittest -v test_w43
+          python3 w43_por_gate.py --out W43_EVIDENCE.json
+          python3 - <<'PY'
+          import json
+          x=json.load(open('W43_EVIDENCE.json'))
+          assert x['cases']==1536
+          assert x['unsafe_possible_cases']>0
+          assert x['legacy_w41_failing_bad_rail_margin_v']<0
+          assert x['candidate_min_bad_rail_margin_v']>0
+          assert x['candidate_min_good_rail_margin_v']>0
+          assert x['release_for_bench_or_hardware'] is False
+          assert x['lithium_or_real_power_energized'] is False
+          assert x['third_party_designs_copied'] is False
+          PY
+      - name: Archive synthetic evidence (NOT electrical approval)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W43-POR-HYSTERESIS-1536-SYNTHETIC-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_43/W43_EVIDENCE.json
+          if-no-files-found: warn
+          retention-days: 30

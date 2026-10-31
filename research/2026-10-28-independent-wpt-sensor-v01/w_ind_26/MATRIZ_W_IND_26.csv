@@ -1,0 +1,6 @@
+architecture,offset_accuracy,overtemp_behaviour,reverse_blocking,autonomous_cutoff,bom_status,decision
+TPS2521 only,No sub500mA current threshold,Not assessed,Claimed healthy by TI,NO,Prior estimate only,REJECT_AS_ONLY_CUTOFF
+TPS2521 plus INA301A1 plus 8.66k,Conditional static 300 vs 400mA using REAL A1 max offset 125uV,Comparator temp offset unknown + extra 10mV hypothetical,Only healthy eFuse RCB not proven common faults,NO,INA301 plus R_LIMIT priced partial shunt unselected,RESEARCH_KICAD_NOT_READY
+TPS2521 plus old W25 0.7V hypothetical threshold,Wrong A1 offset 35uV was A3; limit resistor omitted,Unqualified,Only healthy eFuse,NO,Obsolete for selection,REPLACE_MODEL_WITH_W26
+Normally_OFF protected cable module,Unknown until selected protection,Measured once assembled,Depends connector and power stage,NO,Total cost not yet known,RETAIN_LOW_COST_FALLBACK
+WPT raw unregulated transmitter,No measured FOD or thermal,Unknown,Unknown,NO,No verified BOM,REJECT_FOR_PILOT

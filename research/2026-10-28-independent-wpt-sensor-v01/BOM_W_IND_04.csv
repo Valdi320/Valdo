@@ -1,0 +1,12 @@
+subsystem,item,qty,status,price_eur,licence_or_owner,notes
+journal,Python sqlite3 stdlib,1,HOST_SOFTWARE_IMPLEMENTED,0,Python PSF,SQLite in stdlib no extra package
+journal,POSIX host NVM,1,REQUIRED_UNSELECTED,,Hardware TBD,Must honor flush and resist rollback
+journal,MCU durable flash/FRAM port,1,NOT_IMPLEMENTED,,W,Need NVM endurance and brownout bench
+journal,Independent antirollback root,1,NOT_IMPLEMENTED,,W,Hardware security boundary TBD
+radio,ESP-NOW paired encrypted MCU,2,CANDIDATE_UNSELECTED,,Espressif Apache-2 reference,LMK and identity authorization missing
+radio,OpenThread IEEE802.15.4 alternative,0,ALTERNATIVE,,OpenThread BSD-3 reference,Do not use two stacks by default
+wpt,Regulated inductive TX/RX 5V pair,1,BLOCKING_UNSELECTED,,Vendor TBD,Offset efficiency EMI FOD thermal needed
+wpt,Independent normally OFF cutoff,1,BLOCKING_UNSELECTED,,Vendor TBD,Must not depend on radio
+wpt,Independent FOD current and thermal,1,BLOCKING_UNSELECTED,,Vendor TBD,Physical wetness metal and heating tests
+dock,New robot battery BMS dock,0,DEFERRED_DISCONNECTED,,NEW robot owner,NO OEM and no lithium test
+service,Wired positive-lock fallback,1,REFERENCE_UNPRICED,,C dimensions not W,Alternative if WPT too costly

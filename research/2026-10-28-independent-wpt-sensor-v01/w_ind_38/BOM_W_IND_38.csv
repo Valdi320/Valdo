@@ -1,0 +1,8 @@
+ref;qty;function;Diotronic_auxiliary;alternative_supplier;EUR_VAT_and_checkout;MOQ;stock_Zaragoza;stock_alternative;decision_and_reason
+R2;1;10k ALERT_N pullup relocated to MON_3V3;Diotronic 10351 axial catalog historical 0.15 EUR VAT MOQ5 incompatible with 0805;TME Yageo RC0805FR-0710KL;0.07 EUR VAT historic web not checkout;1 historical TME;UNVERIFIED;UNVERIFIED;REUSE existing part no added cost
+U1;1;INA301A1IDGKR current monitor;No exact critical stock verified;TI DigiKey Mouser TME;PENDING;PENDING;UNVERIFIED;UNVERIFIED;REUSE_unqualified supply-loss weakness
+U4;1;TPS3840PL28DBVR MR_N local reset;No exact critical stock verified;TI DigiKey Mouser TME;PENDING;PENDING;UNVERIFIED;UNVERIFIED;REUSE_unqualified common-mode supervisor
+U9;1;TPS3840PL42DBVR 5V supervisor;No exact critical stock verified;DigiKey Spain;0.847 EUR VAT historic excluding shipping;1 historic;UNVERIFIED;UNVERIFIED;REUSE with MR_N left NC
+U7_U8;2;SN74LVC1G74DCUR local DFF;No exact critical stock verified;TI DigiKey Mouser TME;PENDING;PENDING;UNVERIFIED;UNVERIFIED;REUSE unqualified bounce and POR
+U10_U11;2;SN74LVC1G08DBVR AND CLR path;No exact critical stock verified;TI DigiKey Mouser TME;PENDING;PENDING;UNVERIFIED;UNVERIFIED;REUSE no extra gates
+U2_U3;2;TPS259470LRPWR reverse blockers;No exact critical stock verified;TI DigiKey Mouser TME;PENDING;PENDING;UNVERIFIED;UNVERIFIED;REUSE 0.5A minimum current limit not sufficient alone

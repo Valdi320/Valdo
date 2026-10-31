@@ -1,0 +1,82 @@
+name: W-IND-70 native KiCad inventory audit (HW explicitly BLOCKED)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_22/**'
+      - '.github/workflows/w-ind-70-storage-inventory.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_22/**'
+      - '.github/workflows/w-ind-70-storage-inventory.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-storage-inventory:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Original W70 synthetic adversarial tests and W22 regressions
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_70 -p 'test_w70.py' -v
+          cd w_ind_22
+          python3 -m unittest -v test_w_ind_22_netlist_guard
+      - name: Export real W21 source with KiCad CLI 9.0.2 (not a physical test)
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          DIR=research/2026-10-28-independent-wpt-sensor-v01/w_ind_21
+          OUT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/native_out
+          mkdir -p "$OUT"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$DIR" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_21#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              test -s /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch export netlist --format kicadxml \
+                -o /repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/native_out/w21.native.xml \
+                W_IND_21_TX_BENCH_DECLARED.kicad_sch
+            '
+          test -s "$OUT/w21.native.xml"
+      - name: Fail-closed audit of actual exported W21 current and storage inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_70.w70_native_storage_gate \
+            w_ind_70/native_out/w21.native.xml \
+            --report w_ind_70/native_out/w70_review.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('w_ind_70/native_out/w70_review.json')
+          d=json.loads(p.read_text())
+          assert d['status']=='BLOCKED_EXTERNAL_TX_STORAGE_UNCHARACTERIZED'
+          assert d['topology_exact_w22'] is True
+          assert d['physical_tests']==0
+          assert d['hardware_approved'] is False
+          assert d['residual_discharge_qualified'] is False
+          print('REVIEW_PASS: real KiCad netlist analyzed; discharge and all hardware remain BLOCKED')
+          PY
+      - name: Preserve original KiCad XML and SHA-derived JSON evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-70-kicad-xml-and-blocked-inventory
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/native_out/
+          if-no-files-found: warn
+          retention-days: 30

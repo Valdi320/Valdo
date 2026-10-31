@@ -1,0 +1,35 @@
+name: W-IND-45 leakage stress - SYNTHETIC NO HARDWARE
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_45/**'
+      - '.github/workflows/w-ind-45-leakage-stress.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_45/**'
+      - '.github/workflows/w-ind-45-leakage-stress.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original W45 model and produce evidence
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_45
+          python3 -m unittest -v test_w45
+          python3 w45_leakage_screen.py --out evidence/W45_SYNTHETIC_NOT_HARDWARE.json --csv evidence/tabla.csv
+          python3 -m json.tool evidence/W45_SYNTHETIC_NOT_HARDWARE.json >/dev/null
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W45-36-SYNTHETIC-CASES-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_45/evidence/
+          if-no-files-found: error

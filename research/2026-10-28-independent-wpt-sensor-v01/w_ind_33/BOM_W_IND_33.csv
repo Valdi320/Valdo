@@ -1,0 +1,11 @@
+referencia,cantidad,componente,funcion,Diotronic_auxiliar,alternativa,precio_con_IVA,Moq_stock_verificado,decision
+U3 U4,2,TPS3839K50DBZR TI,Sup 4.38 V,Pendiente precio y stock Zaragoza,TME Mouser DigiKey exactos,PENDIENTE,PENDIENTE,Proteccion critica trazable
+U1 U2,2,SN74LVC1G74DCUR TI,Rearme DFF independiente,Pendiente precio y stock Zaragoza,RS ES paquete 25 23.10 EUR IVA,PENDIENTE para compra de solo 2,RS muestra pack 25 sin prueba stock tienda,No comprar
+D1 D2,2,BAT54 Schottky package TBD,CLR activa-baja alarma,Pendiente ficha equivalente,TME Mouser DigiKey segun VF IR,PENDIENTE,PENDIENTE,No sustituir sin dossier
+R serie A B,2,10k SMD,Resistencia limitacion RESET,Pendiente stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,Tolerancias pendientes
+R CLR A B,2,100k SMD,Pulldown clear,Pendiente stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,Fuga diodo por validar
+R EN A B,2,10k SMD,Pulldown habilitacion,Pendiente stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,No calificado
+R CLK,1,100k SMD,Pulldown reloj,Pendiente stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,Rebote pendiente
+R ALERT,1,10k SMD,Pullup alerta,Pendiente stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,Contar tambien W32 R2
+SW local,1,pulsador 2 pines TBD,Rearme fisico,Pendiente precio y stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,Durabilidad y debounce pendientes
+C desacoplo,4,100nF ceramico TBD,Alimentacion local,Pendiente precio y stock Zaragoza,TME Mouser DigiKey,PENDIENTE,PENDIENTE,Voltaje huella y TCR pendientes

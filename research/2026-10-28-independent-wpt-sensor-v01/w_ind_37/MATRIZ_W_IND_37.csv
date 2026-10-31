@@ -1,0 +1,7 @@
+id;alternativa;defecto_que_cubre;evidencia;resultado;limites;siguiente_puerta
+W37-A;W36 digital actual;Botones altos al primer PG;W36.Rearm().step(True True True True) da True True;RECHAZAR_POR_LAGUNA;Solo modelo no circuito;No confundir ERC con seguridad
+W37-B;Sólo RC y Schmitt;Bordes rebote parcial;TI SN74LVC1G17;INSUFICIENTE_SOLO;No registra liberación tras PG;Secuenciador independiente
+W37-C;PG estable liberación pulsación;Arranque retenido espurios;15 tests y 65536 trazas sintéticas;ESPECIFICACION_DIGITAL;KiCad W36 no actualizado;ERC netlist SPICE transitorios
+W37-D;Rearmar sólo por ESP-NOW;Dependencia radio;Contrato WPT_DATOS_V01;PROHIBIDO;RF no parada crítica;Parada local
+W37-E;WPT sencillo sin FOD;Alimentación inductiva;D22 y estudio autor Belbin;NO_ELEGIDO;Sin pérdidas ni calor medidos;Piloto y cable sustituible
+W37-F;Dock carga litio;Li-ion;Decisión 28-10-2026;FUERA_DE_AMBITO;Estación batería BMS desconectadas;Revisión de seguridad aparte

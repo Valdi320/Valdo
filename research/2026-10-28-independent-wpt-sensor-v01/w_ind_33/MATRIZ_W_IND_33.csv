@@ -1,0 +1,8 @@
+opcion,ganancia,limitacion,decision
+SUP RESET conectado directamente a EN,Simple,Auto-arranque al retornar VDD,RECHAZADO
+W32 EN externa y ALERT solo telemetria,Topologia reversa,No corta 400mA automaticamente,NO APROBADO
+W33 doble SUP y FF CLR positiva mas SW local,POR con rearme solo por pulso local en modelo,No analogica ni integrada ni monitor power-good,REVISAR_DIGITAL
+Schottky OR de ALERT a CLR,Evita union push-pull RESET,Sin comprobar VF fugas ni fallo monitor,NO_APROBADO
+Cable corto reparable,Sin energia WPT en reposo,Comparar desgaste y costes,BASELINE
+ESP-NOW / OpenThread RF,Telemetria local con ACK,No alimentacion ni stop critico,SEPARADO
+Dock litio,No intervenido,BMS y FOD no validados,BLOQUEADO

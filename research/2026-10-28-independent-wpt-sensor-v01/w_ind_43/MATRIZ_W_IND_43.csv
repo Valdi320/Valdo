@@ -1,0 +1,7 @@
+opcion;hecho_verificable;ventaja;riesgo_principal;estado;dato_tipo;decision
+W41 divisor 62k/10k;Vfall_min 2.6775 V bajo 1pct y +/-1uA;reutiliza piezas;no garantiza apagado a 2.700V por histeresis;RECHAZADO;calculo hipotetico + umbral fabricante;no volver a aprobar por Vrise solo
+W43 divisor 63k4/10k E96;Vfall_min 2.7292 V y Vrise_max 3.0811 V;corrige un contraejemplo con 2 resistencias;perdida de margen a +/-1.5uA y EMI;CANDIDATO;modelo matematico + maximos/minimos fabricante;no comprar hasta cualificar tolerancias reales
+W43 OUTB mas P-MOS;OUTB hunde LOW con rail correcto;generacion HEALTH activo con transistor discreto;por debajo POR salida indeterminada y MOS sin calificar;CANDIDATO SIN KICAD;modelo ideal + datasheet TPS3700;priorizar solo si no añade mas riesgos
+W42 OUTA drenador abierto con pullup;salida flotante aparenta sano;menos componentes;linea abierta no detectable;RECHAZADO;modelo ideal W42;no implementarlo
+Supervisor push pull dedicado;familias TI TPS37 TPS3704-Q1;podria generar health activo;SKU umbrales POR coste no seleccionados;PENDIENTE;investigacion;comparar con W43 con datasheets antes de elegir
+Cable retenido reparable;interfaz fisica accesible;menos conversiones y fallos de potencia;contacto requiere mantenimiento;ALTERNATIVA BASE;no medido;comparar coste total real antes de WPT

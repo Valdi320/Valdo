@@ -1,0 +1,7 @@
+option,detects_alias_or_swapped_in_offline_model,physical_safety_proven,incremental_robot_hardware_eur,bom_status,decision,reason
+Only address ACK on 0x40 and 0x41,NO,NO,0,NOT_A_SAFETY_PROOF,REJECT_AS_IDENTITY_EVIDENCE,Two logical addresses are not physical topology proof
+W57 W58 I2C capture alone,NO,NO,0,SYNTHETIC_ONLY,KEEP_AS_TRANSPORT_ONLY,Byte order and timestamps do not prove physical role
+W59 three phase independent reference response matrix,YES_IN_SYNTHETIC_ATTACKS,NO,0,INSTRUMENTATION_TO_VERIFY,ADOPT_AS_ADDITIONAL_OFFLINE_GATE,Rejects alias swap frozen and gain errors in simulated input
+Single calibrated DMM moved sequentially,UNCERTAIN,NO,unknown,COST_AND_LATENCY_UNVERIFIED,DEFER,Manual uncertainty and ordering not measured
+Physical isolated independent dual channel challenge,UNMEASURED,NO,unknown,SAFETY_AND_QUOTATION_PENDING,REQUIRE_AUTHORIZATION_FIRST,Future independent reference with battery/BMS and dock disconnected
+WPT distributed sensor,UNMEASURED,NO,unknown,FOD_THERMAL_EMI_CUTOFF_UNVERIFIED,DEFER,No replacement of cheap cable on synthetic evidence

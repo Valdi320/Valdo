@@ -1,0 +1,15 @@
+Escenario;Problema;Resultado solo digital;Seguridad/decisión
+ESP-NOW unicast con LMK 16 bytes y PMK explicita;Datos RF;CANDIDATO PARA BANCO;No acredita clave instalada ni radio real
+ESP-NOW sin LMK o PMK explicita;Datos RF;RECHAZADO;No aceptar texto claro ni PMK predeterminada
+ESP-NOW broadcast/multicast;Datos RF;RECHAZADO;CCMP nativo no cifra multicast
+ESP-NOW callback MAC como ACK aplicativo;Datos RF;RECHAZADO;ACK de aplicación obligatorio
+ESP-NOW CCMP más AES-GCM aplicativo W64;Datos RF;CANDIDATO DIGITAL CON ALERTA;Protección de extremo a extremo pero época persistente física sin acreditar
+OpenThread con seguridad del enlace solamente;Datos RF;RECHAZADO;No equivaler salto a cifrado de aplicación
+OpenThread con AES-GCM aplicativo W64;Datos RF;CANDIDATO DIGITAL CON ALERTA;MTU y hardware 802.15.4 pendientes
+Radio habilitando cortes críticos;Datos y seguridad;RECHAZADO;Corte local físico independiente y normalmente apagado
+Trama W 22 B contra W64 54 B;Datos RF;44 contra 108 B DATA+ACK;Bytes aplicativos solamente no energía ni tiempo de aire
+Mazo de cables sustituible;Potencia módulo;BASE PROVISIONAL ECONÓMICA;W47 no demuestra vida útil física
+WPT sencillo mark-belbin GPL-3.0;Potencia módulo;SOLO REFERENCIA DEL AUTOR;FOD y control no equivalentes ni cualificados
+WPT regulado con FOD térmica y corte;Potencia módulo;BLOQUEADO HASTA ENSAYO;Offset EMI temperatura y seguridad sin medir
+Dock de carga inductiva;Estación y litio;BLOQUEADO;No batería no BMS no estación energizada
+WISP5 BSD-2-Clause;Microsensores;POSPUESTO;No implica potencia para motores ni datos ESP-NOW

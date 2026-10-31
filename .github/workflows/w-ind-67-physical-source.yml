@@ -1,0 +1,45 @@
+name: W67 physical-supply versus monitor-permission gate (SYNTHETIC)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/tx_cut_power_screen.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/test_tx_cut_power_screen.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_67/**'
+      - '.github/workflows/w-ind-67-physical-source.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/tx_cut_power_screen.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/test_tx_cut_power_screen.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_67/**'
+      - '.github/workflows/w-ind-67-physical-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  power-source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Original W08 regressions and W67 adversarial tests
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest -v test_tx_cut_power_screen
+          python3 -m unittest discover -s w_ind_67 -p 'test_w67.py' -v
+      - name: Reproduce and assert synthetic provenance
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_67.w67_demo > W67_SOURCE_PERMISSION_SYNTHETIC.json
+          python3 -c 'import json;d=json.load(open("W67_SOURCE_PERMISSION_SYNTHETIC.json"));assert d["evidence_type"]=="SYNTHETIC_DC_TOPOLOGY_ONLY" and not d["hardware_approved"] and d["physical_tests"]==0 and not d["externally_powered"];assert d["source_monitor_deny_both_welded"]["possible_TX_energized"] and not d["source_monitor_deny_both_welded"]["permission_granted"];assert not d["physical_source_absent_both_welded"]["possible_TX_energized"];assert d["source_monitor_deny_welded_qod"]["possible_sustained_QOD_shunt"];assert not d["source_monitor_deny_healthy_switches"]["possible_TX_energized"]'
+      - name: Archive evidence, even if a test fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W67-SOURCE-PERMISSION-SYNTHETIC-NO-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/W67_SOURCE_PERMISSION_SYNTHETIC.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,46 @@
+name: W-IND-54 crossed INA219 meters (synthetic only)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_54/**'
+      - '.github/workflows/w-ind-54-crossed-meter.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_54/**'
+      - '.github/workflows/w-ind-54-crossed-meter.yml'
+permissions:
+  contents: read
+jobs:
+  w54-crossed-meter-math:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Original synthetic fault-injection tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_54 -p 'test_w54.py' -v
+      - name: Reproduce mathematical evidence and enforce no-hardware signoff
+        run: |
+          mkdir -p /tmp/w54-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_54/w54_crossed_meter.py --demo --out /tmp/w54-evidence/W54_SYNTHETIC_NOT_HARDWARE.json
+          python3 - <<'PY'
+          import json
+          from decimal import Decimal
+          with open('/tmp/w54-evidence/W54_SYNTHETIC_NOT_HARDWARE.json') as f:
+              a=json.load(f)
+          assert Decimal(a['eta_cross_percent']) == Decimal(80)
+          assert Decimal(a['eta_ab_percent']) < 70
+          assert Decimal(a['eta_ba_percent']) > 90
+          assert not a['hardware_approved']
+          assert not a['candidate_for_metrology_review']
+          assert not a['lithium_dock_approved']
+          assert not a['wpt_energization_approved']
+          assert a['physical_bench_measurements'] == 0
+          assert a['added_meter_count'] == 0
+          assert a['battery_bms_dock_disconnected']
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W54-CROSSOVER-12TESTS-SYNTHETIC-NOT-HARDWARE
+          path: /tmp/w54-evidence/W54_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error

@@ -1,0 +1,46 @@
+name: W-IND-24 eFuse datasheet screen (not hardware approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_24/**'
+      - '.github/workflows/w-ind-24-efuse-screen.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_24/**'
+      - '.github/workflows/w-ind-24-efuse-screen.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  datasheet-only-no-power:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Original regression tests
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_24
+          python3 -m unittest -v test_reverse_block_qualification
+      - name: Attest strictly non-approved candidate screen
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_24
+          python3 reverse_block_qualification.py > qualification.json
+          python3 - <<'PY'
+          import json
+          p=json.load(open("qualification.json",encoding="utf8"))
+          assert p["hardware_approved"] is False and len(p["candidates"])==3
+          assert all(not x["power_on_allowed"] and not x["hardware_approved"] for x in p["candidates"])
+          assert all(x["assumed_fault_below_configurable_limit_floor"] for x in p["candidates"])
+          print("DIGITAL DATASHEET SCREEN ONLY; REAL POWER NOT AUTHORIZED")
+          PY
+      - name: Archive model output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-24-digital-efuse-envelope
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_24/qualification.json
+          if-no-files-found: warn
+          retention-days: 30

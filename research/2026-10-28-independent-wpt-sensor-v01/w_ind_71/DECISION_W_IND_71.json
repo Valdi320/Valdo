@@ -1,0 +1,31 @@
+{
+  "milestone": "W-IND-71",
+  "date": "2026-10-31",
+  "test_kind": "digital native KiCad 9.0.2 plus synthetic math",
+  "objective": "prove whether one fixed passive R satisfies both assumed standby and ideal decay targets",
+  "schematic_node": "/TX_5V_CUT",
+  "bleeder_ref": "R2",
+  "bleeder_nom_ohm": 1000,
+  "source": "W21 native KiCad via W22/W70",
+  "assumptions_not_measured": {
+    "voltage_max_v": 5.5,
+    "capacitor_nom_f": 0.0001,
+    "capacitor_tolerance": 0.2,
+    "resistor_tolerance": 0.05,
+    "threshold_v": 0.5,
+    "time_target_s": 0.25,
+    "loss_budget_w": 0.005
+  },
+  "candidate_decision": "NO passive-only resistor meets both hypothetical targets; do not alter R2; screen active discharge ONLY after external TX C/L characterized",
+  "hardware_approved": false,
+  "physical_tests": 0,
+  "licensing": "original VALDO W only; external projects cited but not copied",
+  "bom": "BOM_W_IND_71.csv",
+  "known_blockers": [
+    "uncharacterized off-board TX capacitance and inductance",
+    "FOD temperature reverse feed EMI independent cutoff not physically qualified",
+    "W18 historical native KiCad ERC has 3 errors",
+    "Diotronic/TME/Mouser/DigiKey prices and stock not verified"
+  ],
+  "next": "qualify TX actual source/storage, then design independent discharge and safe isolated resistive bench procedure"
+}

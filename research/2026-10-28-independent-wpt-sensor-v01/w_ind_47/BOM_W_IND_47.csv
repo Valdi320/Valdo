@@ -1,0 +1,7 @@
+item,option,sku_or_ref,qty_per_link,unit_eur_inc_vat,minimum_shipping_eur_inc_vat,availability_web,stock_zaragoza_verified,MOQ_verified,source_url,classification,decision_or_missing
+TX_RX_WPT_pair,WPT,DFRobot_DFR0362,1,9.92,3.95,listed_in_stock,NO,1_web,https://tienda.bricogeek.com/fuentes-de-alimentacion/899-cargador-inalambrico-5v-1a.html,advertised_2026_10_30,EXPERIMENT_ONLY_NO_FOD_OR_INDEPENDENT_CUT
+5_conductor_mated_harness,WIRED,Adafruit_5089,1,4.50,12.50,external_warehouse_100_listed,NO,1_web,https://opencircuit.es/producto/2.0mm-pitch-5-pin-cable-matching-pair-jst-ph,advertised_2026_10_30,BASELINE_SERVICE_LIFETIME_UNVERIFIED
+PH_housing_only,DIOTRONIC_AUX,PHR2,1,0.18,,catalog_available,NO,UNVERIFIED,https://diotronic.com/serie-ph/13930-conector-hembra-ph-p-2-00-2v,incomplete_assembly,CRIMP_CONTACTS_AND_CABLE_MISSING
+PH_2pin_header_only,DIOTRONIC_AUX,B2BPHKS,1,0.36,,catalog_listed,NO,UNVERIFIED,https://diotronic.com/1290-serie-ph,incomplete_assembly,PCB_AND_CRIMP_TOOL_MISSING
+radio_and_application_security,WPT_REQUIRED,ESP_NOW_OR_OPENTHREAD,1,UNPRICED,,UNKNOWN,NO,UNKNOWN,https://github.com/espressif/esp-now,incomplete_safety_and_data,ACK_CRC_SEQ_TIMEOUT_PRIVACY_RECOVERY_MISSING
+physical_FOD_thermal_independent_cut,WPT_REQUIRED,NOT_SELECTED,1,UNPRICED,,UNKNOWN,NO,UNKNOWN,https://wiki.dfrobot.com/dfr0362,incomplete_safety,DO_NOT_ENERGIZE

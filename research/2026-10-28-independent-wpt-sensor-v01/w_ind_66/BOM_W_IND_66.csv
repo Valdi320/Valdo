@@ -1,0 +1,7 @@
+Bloque;Referencia o función;Cantidad;Diotronic / alternativa;Precio IVA;Stock tienda Zaragoza;MOQ;Decisión
+Código lógico W66;Borrado de ambos latches;1;Propio W;0 EUR incremental;No aplica;No aplica;Solo simulación
+NTC;Eaton NRNE104F3950B1F 10k B3950;2;Diotronic pendiente / DigiKey;0.242 EUR/ud histórico 28-10, vigente PENDIENTE;PENDIENTE;PENDIENTE;Candidato sin curva térmica validada
+Ventanas;Comparadores independientes;4 funciones;Diotronic pendiente / TME-Mouser-DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;Selección crítica requiere datasheet
+Latch;Enclavamiento físico autónomo;2;Diotronic pendiente / distribuidor trazable;PENDIENTE;PENDIENTE;PENDIENTE;No hay circuito aprobado
+Corte;Dos cortes normalmente OFF;2;Distribuidor trazable / Diotronic solo si idéntico;PENDIENTE;PENDIENTE;PENDIENTE;Dos soldaduras cerradas aún peligrosas
+FOD;Metal-agua-corriente/supervisor;PENDIENTE;Fabricante-TME-Mouser-DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;Sin detectores aprobados ni pruebas

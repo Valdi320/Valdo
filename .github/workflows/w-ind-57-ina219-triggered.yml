@@ -1,0 +1,31 @@
+name: W57 INA219 two-trigger synthetic capture
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_57/**'
+      - '.github/workflows/w-ind-57-ina219-triggered.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_57/**'
+      - '.github/workflows/w-ind-57-ina219-triggered.yml'
+  workflow_dispatch:
+jobs:
+  synthetic-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests, synthetic faults
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_57 -p 'test_w57.py' -v
+      - name: Regenerate machine-readable evidence (not hardware)
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_57/w57_i2c_capture.py --demo --out W57_SYNTHETIC_NOT_HARDWARE.json
+          python3 -c 'import json; d=json.load(open("W57_SYNTHETIC_NOT_HARDWARE.json")); assert d["physical_measurements"]==0 and not d["hardware_approved"] and not d["efficiency_qualified"] and d["conversion_windows_overlap"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W57-SYNTHETIC-NOT-HARDWARE
+          path: W57_SYNTHETIC_NOT_HARDWARE.json

@@ -1,0 +1,44 @@
+name: W65 RF policy and byte-budget gate (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_65/**'
+      - '.github/workflows/w-ind-65-rf-policy.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_65/**'
+      - '.github/workflows/w-ind-65-rf-policy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rf-configuration-and-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Existing W64 cryptography dependency pinned
+        run: python3 -m pip install cryptography==46.0.4
+      - name: Run W65 digital tests against W-link and W64
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_65 -p 'test_w65.py' -v
+          python3 -m unittest discover -s w_ind_64 -p 'test_w64.py' -v
+          python3 -c 'from w_link import FRAME_LEN; from w_ind_64.w64_aead import WIRE_LEN; assert (FRAME_LEN,WIRE_LEN)==(22,54)'
+      - name: Produce and verify NON-PHYSICAL JSON
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_65.w65_demo > W65_RF_SYNTHETIC.json
+          python3 -c 'import json;d=json.load(open("W65_RF_SYNTHETIC.json"));assert d["evidence_type"]=="SYNTHETIC_RF_POLICY_ONLY" and not d["hardware_approved"] and not d["physical_radio_measured"] and not d["battery_or_BMS_connected"]; assert d["profiles"]["esp_now_native_ccmp"]["bench_candidate"] and not d["profiles"]["esp_now_no_lmk"]["bench_candidate"] and not d["profiles"]["esp_now_default_pmk"]["bench_candidate"] and not d["profiles"]["esp_now_broadcast"]["bench_candidate"] and not d["profiles"]["esp_now_mac_ack_is_app_ack"]["bench_candidate"]; assert d["application_payload_bytes"]["native_ccmp"]["data_plus_ack_bytes_nominal"]==44 and d["application_payload_bytes"]["app_aead_or_dual"]["data_plus_ack_bytes_nominal"]==108'
+      - name: Archive reproducible synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W65-FAIL-CLOSED-RF-SYNTHETIC-NO-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/W65_RF_SYNTHETIC.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,6 @@
+Bloque;Componente y autor;Unidades;Diotronic ref o alternativa;Precio final EUR IVA y portes;Stock local;MOQ;Razón
+W64 software;AES-256-GCM cryptography 46.0.4 (Apache-2.0 o BSD-3-Clause);1 dependencia Python en CI;No aplica;0 EUR componentes incrementales, no implica coste total cero;No aplica;No aplica;Confidencialidad digital testeable sin radio
+Plataforma RF;ESP-NOW Espressif o hardware OpenThread;0 elegido;Diotronic PENDIENTE, especializado TME/Mouser/DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;Elegir por presupuesto, CCMP, privacidad, latencia y seguridad
+Ancla antirrollback y claves;Hardware seguro trazable NO ELEGIDO;0 adquirido;Diotronic solo si trazabilidad/datasheet;PENDIENTE;PENDIENTE;PENDIENTE;Ineludible antes de afirmar nonce único real
+WPT sensor 0,4W hipotético;Bobinas TX RX regulación FOD y doble corte;0 elegido;Diotronic pasivos auxiliares / TME Mouser DigiKey para seguridad;PENDIENTE;PENDIENTE;PENDIENTE;No energizar ni comprar sin ensayos/autorización
+Cable sustituible;Cable con retención para comparación;0 adquirido;Diotronic auxiliar / alternativa por verificar;PENDIENTE;PENDIENTE;PENDIENTE;Referencia económica antes de eliminar cables

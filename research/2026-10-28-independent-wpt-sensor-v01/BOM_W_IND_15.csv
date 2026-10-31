@@ -1,0 +1,10 @@
+ref,qty,component,function,source,EUR_VAT,stock_or_minimum,alternative,qualification
+U1-U2,2,TPS22918DBVR SOT-23-6,Two series 5V-only load switch candidates,Texas Instruments/Mouser/DigiKey/TME pending,,Price and stock not checked,Other documented switches to compare,UNQUALIFIED not independently safe
+R1,1,22kOhm resistor,MID bleed,Diotronic pending,,No exact SKU or local stock verified,TME/Mouser/DigiKey pending,Hypothetical diagnostic value
+R2,1,1kOhm 1206 0.25W,TX bleed,Diotronic BSMD1025025,1.00 per 25-piece bag,Web listing from prior W-IND-14; local inventory unknown,TME/Mouser/DigiKey pending,Check load dissipation and discharge
+R3-R4,2,100kOhm resistors,Independent EN default pull-downs,Diotronic pending,,No exact SKU or local stock verified,TME/Mouser/DigiKey pending,Must verify ON threshold and brownout behavior
+FOD,1,Unspecified physical foreign object detection circuit,Local TX FOD hardware,Mouser/DigiKey/TME pending,,Not selected,Diotronic only if documented equivalent,MANDATORY MISSING
+THERM,2,Unspecified independent temperature cutoffs,Overtemperature independent of radio,Diotronic/TME pending,,Not selected,Mouser/DigiKey,MANDATORY MISSING
+FUSE,1,Unspecified eFuse or current cutoff,Overcurrent and reverse backfeed cutoff,Mouser/DigiKey/TME pending,,Not selected,Diotronic only if documented equivalent,MANDATORY MISSING
+CONNECTORS,2,Unspecified isolating bench connectors,Manual supply/output isolation,Diotronic auxiliary pending,,No local stock verified,TME pending,MANDATORY MISSING
+CAPS,2,Unspecified input bypass capacitors,TI recommended local decoupling,Diotronic auxiliary pending,,No stock/spec chosen,TME pending,MANDATORY MISSING
