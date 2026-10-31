@@ -118,18 +118,13 @@ class TxInterlock:
         rising_reset = local_reset and not self._previous_reset
         self._previous_reset = local_reset
         ok_a, ok_b = a.clear(), b.clear()
-        if not supply_present or not local_request:
+        # W66 / Codex A01 diagnosis: either monitor's fault must drop BOTH
+        # latches. Otherwise a welded cut on the faulted side leaves TX ON.
+        # Never rearm until BOTH monitors are clear and a NEW local reset edge.
+        if not supply_present or not local_request or not (ok_a and ok_b):
             self._latched_a = self._latched_b = False
-        else:
-            if not ok_a:
-                self._latched_a = False
-            if not ok_b:
-                self._latched_b = False
-            if rising_reset:
-                if ok_a:
-                    self._latched_a = True
-                if ok_b:
-                    self._latched_b = True
+        elif rising_reset:
+            self._latched_a = self._latched_b = True
         command_a = local_request and supply_present and ok_a and self._latched_a
         command_b = local_request and supply_present and ok_b and self._latched_b
         effective_a = (True if cut_a_fault == 'welded_closed' else
