@@ -1,0 +1,8 @@
+Bloque,Referencia,Funcion,Valor_o_modelo,Estado,Diotronic_referencia_o_alternativa,Precio_final_IVA_EUR,Disponibilidad_Zaragoza,MOQ,Comparacion_TME_Mouser_DigiKey_y_fabricante,Motivo
+Auditoria digital,W70,Software nuevo,Python estandar,IMPLEMENTADO_SIN_PIEZA,N/A,0_no_compra,N/A,N/A,N/A,Sin hardware adicional
+Esquema antiguo W21,R1,Descarga MID,22k_nominal_NO_CUALIFICADO,EXISTENTE_EN_DIBUJO,Diotronic pasivo equivalente condicionado,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,No atribuir a salida TX
+Esquema antiguo W21,R2,Descarga TX_5V_CUT,1k_nominal_NO_CUALIFICADO,EXISTENTE_EN_DIBUJO,Diotronic pasivo equivalente condicionado,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,Unico bleeder TX representado no ensayado
+Esquema antiguo W21,R3_R4,Pull-down EN_A_EN_B,100k_cada_uno_NO_CUALIFICADO,EXISTENTE_EN_DIBUJO,Diotronic pasivo equivalente condicionado,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,No reemplazan bleeder ni corte
+Esquema antiguo W21,U1_U2,Cortes sin bloqueo inverso demostrado,TPS22918DBVR,EXISTENTE_EN_DIBUJO_NO_APROBADO,TI a traves de TME_Mouser_DigiKey,PENDIENTE,PENDIENTE,PENDIENTE,Consultar datasheet TI y distribuidor trazable,No apto como FOD ni garantia RCB
+Futuro TX externo,COILS_C_L,Acoplamiento y almacenamiento,DESCONOCIDO,AUSENTE_EN_ESQUEMA,Diotronic solo si cumple trazabilidad; fabricante especialista,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,No asumir capacitancia cero
+Futuro banco,MONITOR_INDEPENDIENTE,Temperatura FOD y corte autonomo,DESCONOCIDO,NO_SELECCIONADO,Distribuidor especializado y fabricante,PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,Seguridad no reemplazable por radio
