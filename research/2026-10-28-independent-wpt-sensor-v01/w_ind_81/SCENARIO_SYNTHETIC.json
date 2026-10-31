@@ -1,0 +1,27 @@
+{
+  "sensor_kind": "synthetic_noncritical",
+  "sensor_floor_v": "3.00",
+  "trip_lower_bound_v": "3.08",
+  "effective_cap_min_uf": "10",
+  "sensor_peak_power_mw": "20",
+  "fall_delay": {
+    "value_us": "18",
+    "evidence_class": "manufacturer_typical",
+    "source": "https://www.ti.com/document-viewer/TPS3890/datasheet/specifications",
+    "conditions": "TI TPS3890 t_PD(f): VDD 3.3V, CT open, 5 percent overdrive, typical; no listed maximum"
+  },
+  "cut_delay": {
+    "value_us": "40",
+    "evidence_class": "hypothesis",
+    "source": "",
+    "conditions": "Invented for synthetic model; no part chosen"
+  },
+  "trip_bound_source_class": "hypothesis",
+  "cap_bound_source_class": "hypothesis",
+  "peak_power_source_class": "hypothesis",
+  "independent_monitor_supply_verified": false,
+  "normally_off_cut_verified": false,
+  "reverse_isolation_verified": false,
+  "latch_retention_verified": false,
+  "battery_connected": false
+}

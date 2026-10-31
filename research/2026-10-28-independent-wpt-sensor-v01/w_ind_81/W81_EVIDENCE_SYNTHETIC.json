@@ -1,0 +1,28 @@
+{
+  "battery_bms_dock_authorized": false,
+  "blockers": [
+    "NO_QUALIFIED_FALLING_PROPAGATION_MAX",
+    "NO_QUALIFIED_CUT_PROPAGATION_MAX",
+    "RAIL_CAP_AND_POWER_BOUNDS_HYPOTHETICAL",
+    "MONITOR_LATCH_CUT_AND_REVERSE_NOT_VERIFIED",
+    "WPT_FOD_TEMP_EMI_OFFSET_WETNESS_NOT_MEASURED",
+    "ACTUAL_POWER_TO_RX_AND_DOCK_BMS_NOT_QUALIFIED"
+  ],
+  "conditional_min_effective_cap_uf_IF_200us_detector_AND_40us_cut_MAX": "19.736842",
+  "critical_stop_authorized": false,
+  "cut_delay_evidence_class": "hypothesis",
+  "cut_delay_us": "40.000000",
+  "decision": "BLOCK: typical is not worst-case delay; keep repairable cable baseline",
+  "design_selected": false,
+  "documented_delay_pair": false,
+  "fall_delay_evidence_class": "manufacturer_typical",
+  "fall_delay_us": "18.000000",
+  "hardware_approved": false,
+  "hold_up_us_conditional_on_hypotheses": "121.600000",
+  "manufacturer_bounded_delay_fits_ideal_reserve": null,
+  "model": "W81_IDEAL_CAPACITOR_ENERGY_AND_PROVENANCE_ONLY",
+  "naive_delay_sum_us_NOT_A_GUARANTEED_MAX": "58.000000",
+  "naive_typical_based_timing_seems_to_fit": true,
+  "physical_trials_authorized": false,
+  "safe_acceptance_blocked": true
+}

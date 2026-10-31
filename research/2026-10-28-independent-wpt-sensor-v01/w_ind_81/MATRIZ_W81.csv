@@ -1,0 +1,9 @@
+ID,decision,documented_or_assumed,evidence,blocker,next_gate
+W81-01,TPS3890 adjustable supervisor remains candidate not selected,TI author datasheet,18us typical at VDD3.3V 5% overdrive not max,NO_QUALIFIED_FALLING_PROPAGATION_MAX,Get worst-case falling response across supply and temperature
+W81-02,Ideal cap reserve conditional only,synthetic model,10uF effective 3.08V trip 3.0V floor 20mW peak gives 121.6us,RAIL_CAP_AND_POWER_BOUNDS_HYPOTHETICAL,Verify real bias/temperature/aging capacitance and draw
+W81-03,Naive typical-based 58us is not accepted,synthetic 40us cut + manufacturer typical 18us,No manufacturer max for falling or cut,NO_QUALIFIED_CUT_PROPAGATION_MAX,Qualify complete local hardware trip-to-off time
+W81-04,Counterfactual 200+40us asks 19.736842uF effective,synthetic assumptions not author,Not a selected capacitor,ACTUAL_POWER_TO_RX_AND_DOCK_BMS_NOT_QUALIFIED,Measured sensor and RX rails after approval
+W81-05,Full electrical safety approval impossible,unverified hardware,Independent monitor supply latch cut backfeed FOD EMI thermal wetness unknown,MONITOR_LATCH_CUT_AND_REVERSE_NOT_VERIFIED,Physical test protocol authorization first
+W81-06,Cable remains baseline,system decision,Unproven WPT standby loaded-power and repairs,NO_REAL_WPT_ENERGY_TEST,Compare full cost efficiency and maintenance including Diotronic and alternatives
+W81-07,Radio remains separate from power,system decision,ESP-NOW vs OpenThread RF and WISP RFID microsensors,NO_RF_HARDWARE_INTEGRATION,Application ACK CRC seq epoch timeout private keys recovery no critical stop
+W81-08,Dock charging remains separate and blocked,system boundary,No battery or BMS connected or charged,DOCK_BATTERY_BMS_OUT_OF_SCOPE,Distinct safety-qualified dock plan

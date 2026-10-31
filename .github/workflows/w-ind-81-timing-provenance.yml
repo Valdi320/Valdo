@@ -1,0 +1,33 @@
+name: W-IND-81 timing provenance and ideal energy envelope
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_81/**'
+      - '.github/workflows/w-ind-81-timing-provenance.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_81/**'
+      - '.github/workflows/w-ind-81-timing-provenance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-timing-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate 31 adversarial tests and byte-identical synthetic evidence
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_81
+        run: |
+          python3 -m unittest -v test_w81.py
+          python3 w81_timing_provenance.py --input SCENARIO_SYNTHETIC.json --output W81_REGENERATED.json
+          cmp W81_EVIDENCE_SYNTHETIC.json W81_REGENERATED.json
+          python3 -c "import json; r=json.load(open('W81_REGENERATED.json')); assert r['hold_up_us_conditional_on_hypotheses']=='121.600000'; assert not r['hardware_approved']; assert 'NO_QUALIFIED_FALLING_PROPAGATION_MAX' in r['blockers']"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w81-synthetic-timing-provenance-not-hardware
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_81/W81_REGENERATED.json
