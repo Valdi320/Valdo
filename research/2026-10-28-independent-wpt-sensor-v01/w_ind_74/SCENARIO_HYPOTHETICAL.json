@@ -1,0 +1,33 @@
+{
+  "schema": "VALDO_W74_SENSOR_ENERGY_V1",
+  "sensor": {
+    "function": "noncritical_removable_sensor",
+    "rail_V": 3.3,
+    "active_W": 0.02,
+    "sleep_W": 0.001,
+    "active_fraction": 0.1,
+    "peak_W": 0.1,
+    "motor_or_pump": false,
+    "radio_for_critical_stop": false,
+    "battery_or_bms_connected": false
+  },
+  "wpt": {
+    "dc_efficiency_fraction": 0.5,
+    "tx_fixed_overhead_W": 0.1,
+    "rx_peak_rating_W": 0.2,
+    "tx_input_limit_W": 0.4
+  },
+  "wire": {
+    "loop_resistance_ohm": 0.2,
+    "fixed_overhead_W": 0.0
+  },
+  "criteria": {
+    "max_extra_Wh_per_day": 0.5,
+    "max_peak_dissipation_W": 0.25,
+    "max_wired_drop_percent": 5.0
+  },
+  "evidence": {
+    "source_kind": "SYNTHETIC_HYPOTHESIS",
+    "physical_bench_authorized": false
+  }
+}
