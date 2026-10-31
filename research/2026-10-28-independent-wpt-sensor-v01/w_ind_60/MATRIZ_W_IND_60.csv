@@ -1,0 +1,12 @@
+option,ACK_lost_after_DATA_accepted,authenticated_peer_real,radio_physical_test,source_cost_status,decision,reason
+Reject all duplicate DATA as old W code,FALSE_FAIL,NO,NO,0 new hardware but poor reliability,REPLACE,Sender falsely fails after valid application delivery
+Re ACK any duplicate indefinitely,UNBOUNDED_RECOVERY,NO,NO,Not cost qualified,REJECT,Unbounded response and ambiguous replay window
+Re ACK exact last authenticated DATA at most twice in 240ms,RECOVERS_SYNTHETIC,NO,NO,0 marginal code components,ADOPT_W60,No re delivery no freshness extension no critical permissions
+Trust ESP NOW send callback as delivery,NO,NO,NO,No new components,REJECT,MAC acknowledgement not application acceptance
+ESP NOW with W60 and authenticated encrypted peer,TO_TEST,NOT_YET,NO,RF modules and shipping unknown,CANDIDATE,Short range ESP compatible but real crypto power and retries need bench
+OpenThread 802.15.4 with same W60 envelope,TO_TEST,NOT_YET,NO,Thread hardware and shipping unknown,ALTERNATIVE,Mesh overhead and topological benefit not yet justified
+WISP5 RFID microsensor power with no battery,NOT_APPLICABLE,NOT_APPLICABLE,NO,Reader and tag costs unknown,DEFER,Only micro sensors not full robot or 1.5W continuous ESP node
+Simple open loop WPT power,NOT_APPLICABLE,NOT_APPLICABLE,NO,Hardware cost unknown,REJECT_FOR_INITIAL_INTEGRATION,No independently demonstrated FOD thermal offset or cutoff
+Regulated WPT plus independent normally OFF cuts,NOT_APPLICABLE,NOT_APPLICABLE,NO,Hardware cost unknown,DEFER_UNTIL_MEASURED,Only future resistive bench and protected sensor pilot
+Serviceable cable with connector,NOT_APPLICABLE,NOT_APPLICABLE,NO,Hardware cost unknown,RETAIN_BASELINE,May be cheaper more robust and maintainable than RF WPT
+Lithium dock charging,NOT_APPLICABLE,NOT_APPLICABLE,NO,Not quoted,BLOCKED,No battery BMS station connection permitted

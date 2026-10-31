@@ -12,6 +12,9 @@ ACK = 2
 BODY = struct.Struct("!2sBBHIIIH")
 FRAME_LEN = BODY.size + 2
 MAX_SEQ = 0xFFFFFFFF
+# Offline telemetry screening policy: 3 sends total (initial + at most 2 re-ACKs).
+MAX_DUPLICATE_ACKS = 2
+MAX_DUPLICATE_AGE_MS = 240
 
 
 def crc16_ccitt(data: bytes) -> int:
@@ -81,6 +84,8 @@ class ModuleReceiver:
         self.last_ms = None
         self.last_clock_ms = None
         self.latched_fault = True
+        self._last_data_packet = None
+        self._duplicate_acks_remaining = 0
 
     def commission_local(self, session: int, now_ms: int) -> None:
         if not isinstance(session, int) or not 0 < session <= MAX_SEQ or now_ms < 0:
@@ -88,6 +93,8 @@ class ModuleReceiver:
         self.session = session
         self.last_seq = 0
         self.last_ms = None
+        self._last_data_packet = None
+        self._duplicate_acks_remaining = 0
         self.last_clock_ms = now_ms
         self.latched_fault = False
 
@@ -95,7 +102,7 @@ class ModuleReceiver:
         self.latched_fault = True
 
     def _clock(self, now_ms: int) -> bool:
-        if not isinstance(now_ms, int) or now_ms < 0:
+        if type(now_ms) is not int or now_ms < 0:
             self.fault()
             return False
         if self.last_clock_ms is not None and now_ms < self.last_clock_ms:
@@ -121,17 +128,31 @@ class ModuleReceiver:
             return None
         if self.last_ms is not None and now_ms - self.last_ms > self.timeout_ms:
             self.fault()
-        if self.latched_fault or not authenticated_transport or self.session is None:
+        if self.latched_fault or authenticated_transport is not True or self.session is None:
             return None
         try:
             frame = Frame.decode(packet)
         except (ValueError, TypeError, struct.error):
             return None
         if (frame.kind != DATA or frame.node_id != self.node_id
-                or frame.session != self.session or frame.seq <= self.last_seq):
+                or frame.session != self.session):
+            return None
+        if frame.seq <= self.last_seq:
+            # Lost application ACK: retransmission is identical to the already
+            # accepted frame. Re-ACK at most twice, within a fixed window,
+            # WITHOUT re-delivery or extending the safety-independent freshness.
+            if (frame.seq == self.last_seq and self.last_ms is not None
+                    and now_ms - self.last_ms <= MAX_DUPLICATE_AGE_MS
+                    and self._duplicate_acks_remaining > 0
+                    and type(packet) is bytes and packet == self._last_data_packet):
+                self._duplicate_acks_remaining -= 1
+                return Frame(ACK, self.node_id, self.session, frame.seq,
+                             ack_seq=frame.seq).encode()
             return None
         self.last_seq = frame.seq
         self.last_ms = now_ms
+        self._last_data_packet = bytes(packet)
+        self._duplicate_acks_remaining = MAX_DUPLICATE_ACKS
         return Frame(ACK, self.node_id, self.session, frame.seq, ack_seq=frame.seq).encode()
 
 

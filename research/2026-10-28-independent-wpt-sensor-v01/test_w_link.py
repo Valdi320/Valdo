@@ -75,8 +75,10 @@ class TestReceiver(unittest.TestCase):
         self.assertFalse(self.rx.fresh(10))
 
     def test_replayed_and_reordered(self):
-        self.assertIsNotNone(self.rx.receive(self.msg(2), 10, authenticated_transport=True))
-        self.assertIsNone(self.rx.receive(self.msg(2), 11, authenticated_transport=True))
+        packet = self.msg(2)
+        ack = self.rx.receive(packet, 10, authenticated_transport=True)
+        # Same authenticated bytes may be re-ACKed after a lost ACK; never re-delivered.
+        self.assertEqual(self.rx.receive(packet, 11, authenticated_transport=True), ack)
         self.assertIsNone(self.rx.receive(self.msg(1), 12, authenticated_transport=True))
         self.assertEqual(self.rx.last_ms, 10)
 

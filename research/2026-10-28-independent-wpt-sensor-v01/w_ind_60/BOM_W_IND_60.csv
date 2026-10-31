@@ -1,0 +1,7 @@
+item,qty,application,Diotronic_or_alternative,price_eur_VAT_included,MOQ,local_stock,shipping_final_eur,decision,provenance
+W60 original software change,1,app ACK re-ACK bounded cache,No hardware supplier,0,1,not_applicable,0,ADOPT software only,VERIFIED_INCREMENTAL_ZERO
+ESP32 RF module,2,candidate telemetry transceivers,Diotronic auxiliary unknown / TME Mouser DigiKey manufacturer,unknown,unknown,not_verified,unknown,DEFER model pairing keys radio tests,UNQUOTED_HARDWARE
+Thread compatible 802.15.4 module,2,alternative network,Diotronic unknown / specialist documented modules,unknown,unknown,not_verified,unknown,DEFER until topology/energy justified,UNQUOTED_HARDWARE
+WPT regulated matched TX RX pair,1,optional pilot energy 5V 0.4W nominal 1.5W peak,Diotronic unknown / specialist OEM datasheet traceable,unknown,unknown,not_verified,unknown,BLOCKED FOD thermal current independent cut unproven,UNQUALIFIED
+Local hardware independent cutoff and FOD thermal,1,non-RF safety path,Diotronic not sole / TME Mouser DigiKey manufacturer,unknown,unknown,not_verified,unknown,BLOCKED requires datasheet ERC physical validation,SAFETY_CRITICAL
+Serviceable wired fallback,1,low cost removable pilot baseline,Diotronic auxiliary connectors passive / TME Mouser DigiKey,unknown,unknown,not_verified,unknown,RETAIN as baseline until real costs,UNQUOTED_HARDWARE

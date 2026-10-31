@@ -1,0 +1,38 @@
+name: W60 bounded idempotent app ACK (SYNTHETIC ONLY)
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_link.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/test_w_link.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_60/**'
+      - '.github/workflows/w-ind-60-ack-recovery.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_link.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/test_w_link.py'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_60/**'
+      - '.github/workflows/w-ind-60-ack-recovery.yml'
+  workflow_dispatch:
+jobs:
+  ack-loss-offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Existing telemetry regressions and new fault injections
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest -v test_w_link
+          python3 -m unittest discover -v -s w_ind_60 -p 'test_w60.py'
+      - name: Generate and validate explicitly synthetic evidence
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_60/w60_ack_demo.py > W60_SYNTHETIC_ACK_NO_RADIO.json
+          python3 -c 'import json; d=json.load(open("W60_SYNTHETIC_ACK_NO_RADIO.json")); assert d["source_kind"]=="SYNTHETIC_ONLY" and d["lost_ack_recovered"] and d["freshness_unchanged_after_retransmission"] and d["duplicate_ack_limit_enforced"] and not d["radio_tested"] and not d["hardware_approved"] and not d["battery_or_dock_tested"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W60-BOUNDED-APP-ACK-SYNTHETIC-NO-RADIO
+          path: W60_SYNTHETIC_ACK_NO_RADIO.json
