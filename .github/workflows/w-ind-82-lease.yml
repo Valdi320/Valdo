@@ -1,0 +1,35 @@
+name: W-IND-82 synthetic brownout telemetry lease
+on:
+  push:
+    branches:
+      - 'w/independent-sensor-wpt-link-20261028'
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_82/**'
+      - '.github/workflows/w-ind-82-lease.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_82/**'
+      - '.github/workflows/w-ind-82-lease.yml'
+permissions:
+  contents: read
+jobs:
+  model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Adversarial W82 tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_82 -p 'test_w82_lease.py' -v
+      - name: Byte-exact synthetic evidence
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_82/demo.py > w82-synthetic-evidence.json
+          diff -u research/2026-10-28-independent-wpt-sensor-v01/w_ind_82/expected.json w82-synthetic-evidence.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w82-synthetic-lease-evidence
+          path: w82-synthetic-evidence.json
+          if-no-files-found: warn
