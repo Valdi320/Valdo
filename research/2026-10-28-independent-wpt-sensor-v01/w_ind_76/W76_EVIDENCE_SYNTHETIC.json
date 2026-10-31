@@ -1,6 +1,6 @@
 {
   "all_phases_labeled_bench_measured": false,
-  "assumed_cycle_seconds": 30,
+  "assumed_cycle_seconds": 30.0,
   "blockers": [
     "CYCLE_REPRESENTATIVENESS_UNVERIFIED",
     "ENERGY_BUDGET_EXCEEDED",
@@ -15,6 +15,6 @@
   "rx_min_phase_mean_lower_bound_mw": 2.9,
   "safety_tests_completed_by_model": false,
   "status": "BLOCKED",
-  "tx_conservative_upper_mean_mw": 33,
-  "tx_mean_mw": 33
+  "tx_conservative_upper_mean_mw": 33.0,
+  "tx_mean_mw": 33.0
 }
