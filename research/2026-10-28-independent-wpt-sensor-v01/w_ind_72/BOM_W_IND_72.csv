@@ -1,0 +1,7 @@
+item,tipo,cantidad_modelada,cantidad_comprada,referencia_especificacion,Diotronic_auxiliar_o_alternativa,precio_final_IVA_EUR,stock_local_Zaragoza,MOQ,alternativa_profesional,razon_eleccion_y_estado
+W21 R2,resistencia_siempre_conectada,1,0,"1000 ohm; tolerancia ±5% HIPOTESIS",Diotronic solo auxiliar tras equivalencia,pendiente,pendiente,pendiente,TME/Mouser/DigiKey,"Ya dibujada en W21; NO se cambia"
+Resistor_750R,candidato_resistencia_conmutada,1,0,"750 ohm ±5%; potencia y pulso por cualificar",Diotronic pasivos si valida stock,pendiente,pendiente,pendiente,TME/Mouser/DigiKey,"SOLO parametro digital; no seleccionar sin tension y calor"
+SW_active,candidato_interruptor,1,0,"normally OFF; VDS ID Ron fuga cortos y control independiente por seleccionar",Diotronic no preferente para seguridad critica,pendiente,pendiente,pendiente,Mouser/DigiKey/fabricante,"No cualificado; doble soldadura peligrosa"
+Detector_rail,candidato_monitor,1,0,"alimentado independientemente de rail cortado; seguridad no validada",Diotronic no preferente para seguridad critica,pendiente,pendiente,pendiente,TME/Mouser/DigiKey/fabricante,"No construido; prevenir lecturas obsoletas"
+FOD_thermal_cut,candidato_proteccion,1,0,"FOD temperatura offset EMI y corte autonomo",Diotronic no preferente para seguridad critica,pendiente,pendiente,pendiente,Mouser/DigiKey/fabricante,"Requiere datasheet y trazabilidad"
+CPU_software,analisis_digital,1,0,"Python estandar sin materiales hardware",no aplica,0,No_aplica,No_aplica,no aplica,"Entregado digital; cero hardware"
