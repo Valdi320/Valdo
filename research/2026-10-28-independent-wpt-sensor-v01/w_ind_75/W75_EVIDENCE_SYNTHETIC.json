@@ -14,7 +14,7 @@
   "maximum_loaded_tx_mw_for_budget": 23.733333333,
   "physical_tests_performed_by_this_tool": false,
   "standby_is_loaded_evidence": false,
-  "standby_no_receiver_mw": 5,
+  "standby_no_receiver_mw": 5.0,
   "status": "BLOCKED",
   "wired_ideal_floor_wh_day": 0.0696
 }
