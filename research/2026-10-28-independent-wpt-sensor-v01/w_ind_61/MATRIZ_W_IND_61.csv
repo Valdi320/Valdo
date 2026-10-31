@@ -1,0 +1,9 @@
+Opción;Autenticación DATA ACK;Confidencialidad;Energía;Implementación disponible;Resultado;Evidencia;Limitación
+CRC16 sin autenticación;NO;NO;Radio independiente;W60 anterior;RECHAZAR como autenticación;DATA o ACK con CRC recomputado puede ser falso;CRC no es secreto
+HMAC-SHA256 truncado 16 B con HKDF por sesión;SI bajo clave protegida y epoch fresco;NO;Radio independiente;W61 software original;CANDIDATO solo digital;29 pruebas sintéticas/RFC5869;Falta provisión y revocación seguras y pruebas RF reales
+ESP-NOW solo MAC send callback;NO ACK aplicación garantizado;Depende configuración de cifrado;NO alimenta módulos;Biblioteca autor Apache-2.0;NO suficiente;Espressif ESP-IDF manual;Claves y emparejamiento reales pendientes
+OpenThread con seguridad de enlace;Depende implementación aplicación;Depende red/clave;NO alimenta módulos;Autor BSD-3-Clause;ALTERNATIVA RF;Código oficial HEAD 4f909842;Más stack/RAM y hardware 802.15.4 por justificar
+Cable protegido sustituible;No requiere RF para dicho enlace;Según acceso físico;SI mediante conductor;Candidato baseline;PREFERIR hasta evidencia de coste/fiabilidad;W47 comparativa previa;No elimina físicamente el cable
+WPT sencillo lazo abierto;Datos fuera banda;NO aplica;SI potencia condicionada;Referencia externa GPL-3.0;NO aprobado;Belbin datos del autor;FOD térmica y corte independiente ausentes
+WPT regulado con FOD y doble corte;Datos fuera banda;NO aplica;SI potencia condicionada;Especificación sin hardware;INVESTIGAR;W32-W42 modelos conceptuales;Temperatura offset eficiencia EMI sin medidas
+WISP5 RFID;Depende lector/arquitectura;Depende aplicación;Microenergía obtenida del lector;BSD-2-Clause;SOLO microsensores;Docs autores;No probado 0.4 W continuo

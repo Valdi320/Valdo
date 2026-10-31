@@ -1,0 +1,35 @@
+name: W61 authenticated app frames (SYNTHETIC ONLY)
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_61/**'
+      - '.github/workflows/w-ind-61-authenticated-link.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_61/**'
+      - '.github/workflows/w-ind-61-authenticated-link.yml'
+  workflow_dispatch:
+jobs:
+  app-auth-offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Auth W61 + existing W60/W base tests
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest -v test_w_link
+          python3 -m unittest discover -v -s w_ind_60 -p 'test_w60.py'
+          python3 -m unittest discover -v -s w_ind_61 -p 'test_w61.py'
+      - name: Emit and assert synthetic evidence
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_61/w61_demo.py > W61_SYNTHETIC_AUTH_NO_RADIO.json
+          python3 -c 'import json; d=json.load(open("W61_SYNTHETIC_AUTH_NO_RADIO.json")); assert d["evidence_type"]=="SYNTHETIC_ONLY" and d["tampered_or_forged_ack_rejected"] and d["lost_ack_recovered_authentic"] and d["duplicate_did_not_refresh_freshness"] and d["envelope_bytes"]==38 and not d["real_radio_used"] and not d["hardware_approved"] and not d["encryption_implemented"] and not d["key_storage_provisioned"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W61-HMAC-FORGED-ACK-REJECTION-SYNTHETIC-NO-RADIO
+          path: W61_SYNTHETIC_AUTH_NO_RADIO.json

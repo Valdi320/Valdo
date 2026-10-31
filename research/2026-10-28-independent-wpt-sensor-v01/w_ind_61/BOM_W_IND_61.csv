@@ -1,0 +1,7 @@
+Item;Categoría;Cantidad;Proveedor Diotronic;Alternativa proveedor;Precio Diotronic IVA;Precio alternativa IVA;Stock Zaragoza verificado;MOQ verificado;Motivo y estado
+Código HMAC/HKDF Python;Software original reutilizable;1;No aplica;Python stdlib;0 € coste incremental;0 € coste incremental;No aplica;No aplica;Modelo/bench digital, port a MCU pendiente
+Microcontrolador y radio 2.4 GHz;Hardware NO seleccionado;2 nodos candidatos;Sin referencia validada;TME/Mouser/DigiKey/fabricante por cotizar;Pendiente;Pendiente;NO;NO;Requiere medición de consumo RAM CPU compatibilidad ESP-NOW o Thread
+Almacenamiento seguro y entropía epoch;Hardware/servicio crítico no seleccionado;2;No apto sin trazabilidad;Fabricante y distribuidores especializados;Pendiente;Pendiente;NO;NO;No hay provisión ni antirrepetición persistente; no comprar
+Acoplador WPT y bobinas;Potencia distribuida no aprobada;1 par hipotético;Pendiente equivalencia;TME/Mouser/DigiKey por evaluar;Pendiente;Pendiente;NO;NO;FOD y temperatura independientes sin validar; baseline cable
+Cable sustituible con bloqueo;Alternativa económica;1;Pendiente SKU y existencias;Fabricante/Mouser/TME/DigiKey;Pendiente;Pendiente;NO;NO;Mantener por defecto hasta demostrar ventaja WPT
+Dock/BMS/litio;Fuera del hito;0;No aplica;No aplica;No aplica;No aplica;No aplica;No aplica;Desconectados y sin autorización
