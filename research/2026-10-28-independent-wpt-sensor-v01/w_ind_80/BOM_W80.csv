@@ -1,0 +1,7 @@
+Role,Reference,Quantity,Diotronic local stock verified,Diotronic unit EUR incl VAT,Alternative supplier,Alternative unit EUR incl VAT,MOQ verified,Availability verified,Decision and traceability
+Fixed supervisor candidate,TPS3840PL28DBVR,1,NO,PENDING,TI / TME / Mouser / DigiKey,PENDING,NO,NO,REJECT for hypothetical 3.0 V floor; max tolerance documented by TI
+Related non-equivalent catalog comparator,TPS3840DL28DBVR,0,NO,PENDING,DigiKey Spain,1.02850 excluding transport,1 listed by catalog,Online listing only not Zaragoza,Open drain not PL push pull; do NOT substitute; no purchase
+Adjustable supervisor alternative,TBD,1,NO,PENDING,TME / Mouser / DigiKey / manufacturer,PENDING,NO,NO,Not selected; require traceable full electrical datasheet
+Independent OFF latch and cutoff,TBD,1,NO,PENDING,Manufacturer / specialist distributor,PENDING,NO,NO,Independent hardware qualification pending
+Regulated low-power WPT TX/RX,TBD,1 pair,NO,PENDING,Manufacturer / specialist distributor,PENDING,NO,NO,Need real loaded 1-20mW TX and RX curves and FOD thermal EMI
+Serviceable wired fallback,TBD,1,NO,PENDING,Diotronic / TME / generic,PENDING,NO,NO,Retain until full-life costs and performance verified

@@ -1,0 +1,10 @@
+Option,Static floor protection,No false trip at minimum normal rail,Grid member,Decision,Origin and limits
+TPS3840 nominal 2.8 V,FAIL,YES,YES,REJECT for hypothetical 3.00 V floor,Manufacturer threshold tolerance + synthetic rail/floor
+TPS3840 nominal 3.0 V,FAIL,YES,YES,REJECT for hypothetical 3.00 V floor,Manufacturer threshold tolerance + synthetic rail/floor
+TPS3840 nominal 3.1 V,YES,FAIL,YES,REJECT for 3.30 V plus or minus 5 percent rail,Manufacturer threshold tolerance + synthetic rail/floor
+Illustrative nominal 3.05 V,YES,YES,NO,NOT A CATALOG OPTION and not qualified,Mathematical counterexample not claimed SKU
+Adjustable independent supervisor,UNKNOWN,UNKNOWN,UNKNOWN,RESEARCH and verify maximum thresholds and latch,Not selected
+Short repairable harness,NOT APPLICABLE,NOT APPLICABLE,NOT APPLICABLE,BASELINE retained,Cost pending
+Dock WPT and lithium charge,UNKNOWN,UNKNOWN,UNKNOWN,OUT OF SCOPE for this hito,Separate safety and BMS validation
+ESP-NOW versus OpenThread,NOT APPLICABLE,NOT APPLICABLE,NOT APPLICABLE,COMMUNICATION ONLY separate from power,ACK CRC seq epoch timeout
+WISP5 RFID harvesting,UNKNOWN,UNKNOWN,UNKNOWN,MICROSENSORS ONLY if measured budget justifies,Do not use for continuous module by default
