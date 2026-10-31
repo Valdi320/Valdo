@@ -1,0 +1,21 @@
+{
+  "blockers": [
+    "INTER_SAMPLE_VOLTAGE_MAY_FALL_BELOW_MIN",
+    "SLEW_BOUND_NOT_INDEPENDENTLY_CHARACTERIZED",
+    "TRACE_NOT_BENCH_MEASURED"
+  ],
+  "conditional_inter_sample_lower_v": 2.95,
+  "conservative_max_gap_s": 0.01,
+  "critical_stop_authorized": false,
+  "derivation": "Lipschitz bound, with endpoint voltage error and interval timestamp uncertainty; contingent on independently proven global slew bound",
+  "hardware_approved": false,
+  "instantaneous_voltage_proven": false,
+  "lowest_observed_v": 3.3,
+  "nominal_max_gap_s": 0.01,
+  "physical_measures_authenticated": false,
+  "samples": 3,
+  "slew_bound_evidence": "hypothesis",
+  "source_kind": "synthetic",
+  "status": "BLOCKED",
+  "voltage_threshold_v": 3.0
+}
