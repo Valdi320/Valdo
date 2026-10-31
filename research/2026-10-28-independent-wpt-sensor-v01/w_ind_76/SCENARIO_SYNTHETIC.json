@@ -1,0 +1,25 @@
+{
+  "description": "HYPOTHETICAL 30-second cycle; no component or laboratory data",
+  "sensor_continuous_mw": 2.9,
+  "max_extra_wh_day": 0.5,
+  "cycle_seconds": 30,
+  "cycle_representative": false,
+  "phases": [
+    {
+      "name": "steady",
+      "seconds": 29.5,
+      "tx_input_mw": 20,
+      "rx_output_mw": 2.9,
+      "relative_error_pct": 0,
+      "source_kind": "synthetic"
+    },
+    {
+      "name": "brief_power_spike",
+      "seconds": 0.5,
+      "tx_input_mw": 800,
+      "rx_output_mw": 2.9,
+      "relative_error_pct": 0,
+      "source_kind": "synthetic"
+    }
+  ]
+}

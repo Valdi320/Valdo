@@ -1,0 +1,33 @@
+name: W-IND-76 full-cycle synthetic energy gate
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_76/**'
+      - '.github/workflows/w-ind-76-cycle-energy.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_76/**'
+      - '.github/workflows/w-ind-76-cycle-energy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cycle-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Synthetic cycle tests and reproducible JSON
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_76
+        run: |
+          python3 -m unittest -v test_w76.py
+          python3 w76_cycle_gate.py --input SCENARIO_SYNTHETIC.json --output W76_REGENERATED.json
+          cmp W76_EVIDENCE_SYNTHETIC.json W76_REGENERATED.json
+      - name: Archive reproducible evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: w76-synthetic-cycle-evidence
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_76/W76_REGENERATED.json
