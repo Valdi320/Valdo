@@ -1,0 +1,39 @@
+name: W64 application AESGCM telemetry (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_64/**'
+      - '.github/workflows/w-ind-64-aead-telemetry.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_64/**'
+      - '.github/workflows/w-ind-64-aead-telemetry.yml'
+  workflow_dispatch:
+jobs:
+  aead-digital-regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin audited crypto dependency
+        run: python3 -m pip install cryptography==46.0.4
+      - name: W64 + W63 W62 W61 W60 and base regression
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_64 -p 'test_w64.py' -v
+          python3 -m unittest discover -s w_ind_63 -p 'test_w63.py' -v
+          python3 -m unittest discover -s w_ind_62 -p 'test_w62.py' -v
+          python3 -m unittest discover -s w_ind_61 -p 'test_w61.py' -v
+          python3 -m unittest discover -s w_ind_60 -p 'test_w60.py' -v
+          python3 -m unittest -v test_w_link
+      - name: Produce and verify SYNTHETIC JSON
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_64/w64_demo.py > W64_AESGCM_SYNTHETIC.json
+          python3 -c 'import json; d=json.load(open("W64_AESGCM_SYNTHETIC.json")); assert d["evidence_type"]=="SYNTHETIC_AESGCM_SOFTWARE_ONLY" and d["wire_bytes"]==54 and d["valid_ack_accepted"] and d["tampered_ack_rejected"] and d["retry_byte_identical"] and d["duplicate_does_not_refresh_freshness"] and not d["hardware_approved"] and not d["real_antirollback_anchor_proven"] and not d["battery_or_BMS_connected"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W64-AESGCM-NO-PHYSICAL-RADIO-NOT-HARDWARE-APPROVED
+          path: W64_AESGCM_SYNTHETIC.json
