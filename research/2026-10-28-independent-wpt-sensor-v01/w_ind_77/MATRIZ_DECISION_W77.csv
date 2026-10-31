@@ -1,0 +1,9 @@
+problema,criterio,resultado,limitacion,decision
+Cable de sensor sustituible,Referencia ideal 2.9 mW y sin gastos inductivos,0.0696 Wh/dia ideal,Supuesto sin coste mantenimiento ni perdidas,BASELINE_REPARABLE
+TX con potencia media,Media hipotetica 20 mW y +0.4104 Wh/dia,ENERGIA_PASA_TECHO_0_5Wh,No verifica que RX siga alimentado,BLOQUEAR_COMO_UNICO_CRITERIO
+W77 minima de tension RX,Minimo inventado 2.5V frente a umbral ficticio 3.0V,FALLA_EN_VENTANA_100ms,No simula electronica real ni prueba brownout,BLOQUEAR_HASTA_MEDICION
+Muestreo puntual TX,Un dato instantaneo no integra transitorios,PUEDE_OMITIR_PICOS,Sin instrumento integrador no demuestra presupuesto,RECHAZAR_PASO_DIGITAL
+Captura integrada TX y minimos RX,Intervalos sin huecos 3 ciclos minimo y calibraciones verificadas,SOLO_PANTALLA_DIGITAL,Entre muestras puede haber microcortes de alta frecuencia,REQUIERE_BANCO_AUTORIZADO
+WPT regulado ST de muy baja carga,Curvas con RX real 1-20mW FOD temperatura EMI y corte,FALTA_DATOS_Y_MEDIDA,Precio stock reparabilidad sin confirmar,NO_ELEGIR_HARDWARE
+ESP-NOW vs OpenThread,ACK aplicacion CRC seq timeout privacidad recuperacion,PENDIENTE_VALIDACION_RF,Sin potencia o parada fisica por radio,NO_CONFUNDIR_CAPAS
+WISP5,Microsensores pasivos RFID con lector compatible,RESERVA_INVESTIGACION,No continuidad de consumo para robot ni motores,NO_PRIORIZAR

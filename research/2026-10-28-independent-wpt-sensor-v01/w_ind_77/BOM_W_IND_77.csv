@@ -1,0 +1,7 @@
+funcion,referencia,cantidad_añadida,Diotronic_auxiliar_ref_precio_stock,alternativa_TME_Mouser_DigiKey_fabricante,precio_final_EUR_con_IVA_y_portes,MOQ,stock_tienda_zaragoza_verificado,eleccion_y_motivo
+Herramienta reproducible,Python 3 biblioteca estandar,0,No aplica,Github Actions y Python local,0,No aplica,No aplica,Software sin compras
+TX WPT referencia documental,STWBC86JR,0,PENDIENTE confirmar referencia precio stock,TME Mouser DigiKey ST PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,No seleccionar sin energia integrada con receptor 1-20mW FOD temperatura corte independiente
+RX WPT referencia documental,STWLC38JRM,0,PENDIENTE confirmar referencia precio stock,TME Mouser DigiKey ST PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,No seleccionar sin minimos de tension transitorios ni pruebas de offset y desgaste
+Captura de minima tension RX,Equipo de laboratorio por seleccionar,0,PENDIENTE NO asumir stock,TME Mouser DigiKey fabricante PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,Requiere banda y gatillo certificados para transitorios reales; NO compra
+Integracion energia TX,Equipo de laboratorio por seleccionar,0,PENDIENTE NO asumir stock,TME Mouser DigiKey fabricante PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,Medir energia real en fases de enlace; no punto estable
+Pasivos y resistores carga artificial,Sin parte cualificada,0,Diotronic AUXILIAR sujeto a ficha stock IVA,TME Mouser DigiKey fabricante PENDIENTE,PENDIENTE,PENDIENTE,PENDIENTE,No crear bancada ni energizar sin autorizacion
