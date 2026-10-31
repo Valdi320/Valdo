@@ -1,0 +1,7 @@
+option,provenance,advantage,limit,decision
+"W68 single ideal RC","Digital analytical",Simple correct RC for one qualified path,"Unmodelled second node or open bleeder gives false confidence",RETAIN_AS_REFERENCE
+"W69 independent nodes upper bound and open fault","Digital analytical + adversarial tests","Prevents hidden energy in independent second node and failed resistor","Requires topology and real worst-case C/V/R; no physical approval",IMPLEMENT_DIGITAL_ONLY
+"Treat no 5V or ACK timeout as zero energy","No evidence","None","Incorrect when storage or backfeed remains",REJECT
+"Hide W18 ERC errors using arbitrary PWR_FLAG","No source/return proof","Would make CI appear green","Electrically misleading and conceals blockers",REJECT
+"Instrumented discharge+FOD+independent cut","No hardware built","Potential real safety case","Must qualify source return and protect from reverse current/thermal/EMI",BLOCKED_HARDWARE
+"Keep wiring for low-power sensor until WPT characterized","Architecture candidate","Low BOM risk and repairability","No cable eliminated",PREFERRED_FALLBACK
