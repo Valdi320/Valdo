@@ -1,0 +1,7 @@
+option,addresses_false_safe,autonomous_physical_cut_proven,incremental_parts_eur,known_limit,decision
+"W08: source_ok used as voltage",no,no,0,"Conflates status with supply; dangerous under welded switches",REJECT
+"W67 strict separate supply_present",yes,no,0,"DC boolean model only; no stored energy / backfeed",IMPLEMENT_DIGITAL_ONLY
+"Normally-off dual independent safety chain",potential,no,UNQUOTED,"Requires design, FOD/thermal and real IEC review",BLOCK_PHYSICAL
+"Commercial regulated WPT with documented FOD",potential,no,UNQUOTED,"No physical matching/EMI/temperature/offset tests",REVIEW
+"Replaceable reinforced cable",not_applicable,not_applicable,UNQUOTED,"No wireless-power benefit; likely cheaper baseline",FALLBACK
+"ESP-NOW or OpenThread data",not_applicable,no,UNQUOTED,"CRC ACK seq privacy timeout; no power/critical stop",DATA_ONLY

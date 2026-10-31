@@ -79,7 +79,8 @@ class PowerCutTests(unittest.TestCase):
         self.assertTrue(o.supply_to_qod_b)
 
     def test_source_absent_has_no_forward_supply(self):
-        o = evaluate(Interlocks(), Switch(Fault.CLOSED, True), Switch(Fault.CLOSED, True))
+        o = evaluate(Interlocks(), Switch(Fault.CLOSED, True),
+                     Switch(Fault.CLOSED, True), supply_present=False)
         self.assertFalse(o.supply_to_tx)
         self.assertFalse(o.any_sustained_qod_shunt)
 

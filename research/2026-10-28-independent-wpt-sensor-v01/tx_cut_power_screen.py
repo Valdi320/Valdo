@@ -37,8 +37,16 @@ class Interlocks:
     watchdog_b_ok: bool = False
 
     def permitted(self) -> bool:
-        """Synthetic analog permit. FOD proven_clear has NO real sensor yet."""
-        return all(vars(self).values())
+        """Reject coerced permissions; permission is not rail presence.
+
+        All fields are synthetic monitor decisions (FOD is unqualified).
+        Strings, integers and missing/unknown values must fail closed.
+        """
+        flags = vars(self)
+        bad = [name for name, value in flags.items() if type(value) is not bool]
+        if bad:
+            raise ValueError("non-boolean interlock(s): " + ", ".join(bad))
+        return all(flags.values())
 
 
 @dataclass(frozen=True)
@@ -74,11 +82,25 @@ class Result:
         return self.supply_to_qod_a or self.supply_to_qod_b
 
 
-def evaluate(interlocks: Interlocks, a: Switch, b: Switch) -> Result:
-    """Idealized DC topology; no switch resistance or parasitic leakage."""
+def evaluate(interlocks: Interlocks, a: Switch, b: Switch, *,
+             supply_present: bool = True) -> Result:
+    """Ideal DC topology: physical voltage is NOT a monitor permission.
+
+    Conservative True default: an untrusted source monitor cannot erase
+    possible energization through welded-closed switches. Explicit False
+    assumes independent proof of absent forward supply; stored charge,
+    reverse-feed and transients are NOT modeled and remain unsafe to infer.
+    """
+    if not isinstance(interlocks, Interlocks) or not isinstance(a, Switch) or not isinstance(b, Switch):
+        raise TypeError("expected Interlocks and two Switch instances")
+    if type(supply_present) is not bool:
+        raise ValueError("supply_present must be an exact boolean")
+    for switch in (a, b):
+        if type(switch.fault) is not Fault or type(switch.qod_connected) is not bool:
+            raise ValueError("switch fault and QOD must have exact types")
     cmd = interlocks.permitted()
     a_closed, b_closed = a.pass_closed(cmd), b.pass_closed(cmd)
-    source = interlocks.source_ok
+    source = supply_present
     return Result(
         cmd, a_closed, b_closed,
         source and a_closed and b_closed,
