@@ -1,0 +1,32 @@
+name: W-IND-83 RF pulse energy (synthetic)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_83/**'
+      - '.github/workflows/w-ind-83-radio-energy.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_83/**'
+      - '.github/workflows/w-ind-83-radio-energy.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-energy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Deterministic adversarial tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_83 -p 'test_*.py' -v
+      - name: Reproducibility check
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_83/w83_energy.py > /tmp/w83-evidence.json
+          cmp /tmp/w83-evidence.json research/2026-10-28-independent-wpt-sensor-v01/w_ind_83/expected.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w83-synthetic-energy-evidence
+          path: /tmp/w83-evidence.json
+          if-no-files-found: error
