@@ -128,9 +128,61 @@ class GateTests(unittest.TestCase):
         self.assertIsNone(b.receive(self.pkt(100),300,authenticated_transport=True))
 
     def test_seq_duplicate_on_same_epoch(self):
+        """Same authenticated DATA may recover a lost ACK, never a fresh reading."""
         self.stable();self.arm()
-        self.assertIsNotNone(self.g.receive(self.pkt(seq=1),100,authenticated_transport=True))
-        self.assertIsNone(self.g.receive(self.pkt(seq=1),100,authenticated_transport=True))
+        packet = self.pkt(seq=1)
+        ack = self.g.receive(packet,100,authenticated_transport=True)
+        self.assertIsNotNone(ack)
+        self.assertEqual(self.g.rx.last_seq,1)
+        self.assertEqual(self.g.rx.last_ms,100)
+        # Two bounded re-ACKs, no second data delivery or freshness refresh.
+        for when in (110,120):
+            self.sample(when)
+            self.assertEqual(self.g.receive(packet,when,authenticated_transport=True),ack)
+            self.assertEqual(self.g.rx.last_seq,1)
+            self.assertEqual(self.g.rx.last_ms,100)
+        self.sample(130)
+        self.assertIsNone(self.g.receive(packet,130,authenticated_transport=True))
+        self.assertEqual(self.g.rx.last_ms,100)
+
+    def test_duplicate_nonboolean_auth_cannot_spend_reack_budget(self):
+        self.stable();self.arm()
+        packet=self.pkt(seq=1)
+        ack=self.g.receive(packet,100,authenticated_transport=True)
+        self.assertIsNotNone(ack)
+        self.sample(110)
+        for bad in ("true", "false", 1, None):
+            self.assertIsNone(self.g.receive(packet,110,authenticated_transport=bad))
+        self.assertEqual(self.g.receive(packet,110,authenticated_transport=True),ack)
+        self.sample(120)
+        self.assertEqual(self.g.receive(packet,120,authenticated_transport=True),ack)
+        self.sample(130)
+        self.assertIsNone(self.g.receive(packet,130,authenticated_transport=True))
+
+    def test_changed_data_same_sequence_does_not_gain_ack(self):
+        self.stable();self.arm()
+        packet=self.pkt(seq=1)
+        ack=self.g.receive(packet,100,authenticated_transport=True)
+        self.assertIsNotNone(ack)
+        changed=Frame(DATA,7,100,1,value_milli=401).encode()
+        self.sample(110)
+        self.assertIsNone(self.g.receive(changed,110,authenticated_transport=True))
+        self.assertEqual(self.g.receive(packet,110,authenticated_transport=True),ack)
+        self.assertEqual(self.g.rx.last_ms,100)
+
+    def test_duplicate_ack_never_extends_250ms_telemetry_lease(self):
+        self.stable();self.arm()
+        packet=self.pkt(seq=1)
+        ack=self.g.receive(packet,100,authenticated_transport=True)
+        self.assertIsNotNone(ack)
+        for t in range(110,351,10):
+            self.sample(t)
+            if t==120:
+                self.assertEqual(self.g.receive(packet,t,authenticated_transport=True),ack)
+        self.assertTrue(self.g.fresh(350))
+        self.assertFalse(self.g.fresh(351))
+        self.assertFalse(self.g.armed)
+        self.assertIsNone(self.g.receive(packet,351,authenticated_transport=True))
 
     def test_settle_ms_not_optional(self):
         self.sample(0);self.assertFalse(self.arm(t=0))
