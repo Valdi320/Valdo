@@ -127,8 +127,13 @@ class ModuleReceiver:
         return self.fresh(now_ms)
 
     def fresh(self, now_ms: int) -> bool:
+        # Public freshness queries are clock observations too. Without this,
+        # fresh(200) followed by fresh(20) could revive old data as "fresh".
+        # Noninteger queries remain nonmutating False (legacy W95 contract).
+        if type(now_ms) is not int or not self._clock(now_ms):
+            return False
         return (not self.latched_fault and self.session is not None
-                and self.last_ms is not None and type(now_ms) is int
+                and self.last_ms is not None
                 and now_ms >= self.last_ms and now_ms - self.last_ms <= self.timeout_ms)
 
     def receive(self, packet: bytes, now_ms: int, *, authenticated_transport: bool) -> bytes | None:

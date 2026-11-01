@@ -1,0 +1,7 @@
+element,role,diotronic_reference_or_source,alternative,price_final_IVA_EUR,availability_local_Zaragoza,MOQ,decision_reason,evidence_class
+W98 Python protocol patch and tests,telemetry data validation,not applicable,not applicable,0.00,not applicable,0,No new hardware needed,own software commit
+First low-power sensor actual load,power consumer,not selected,TME or DigiKey or manufacturer,PENDIENTE,NO_VERIFICADA,PENDIENTE,Need measured consumption before selecting,unselected hypothesis
+Regulated WPT RX+TX pair,modular power,no suitable part verified,TME/Mouser/DigiKey with datasheet,PENDIENTE,NO_VERIFICADA,PENDIENTE,Require FOD thermal offset EMI and cutoff documented,unselected hardware
+Independent electrical thermal/FOD cut,hardware safety,no traceable part verified,specialist manufacturer or distributor,PENDIENTE,NO_VERIFICADA,PENDIENTE,Safety source and failure modes must be independently qualified,unselected hardware
+Resistive dummy load and isolated source,only for future approved bench,Diotronic auxiliary candidate,TME/Mouser/DigiKey,PENDIENTE,NO_VERIFICADA,PENDIENTE,No purchase or power application authorized,unselected hardware
+Serviceable passive connectors,testable wired baseline,Diotronic auxiliary candidate,TME/JST/Harwin factory terminated,PENDIENTE,NO_VERIFICADA,PENDIENTE,Retain replaceable wired comparison,unselected hardware

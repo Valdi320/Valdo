@@ -496,3 +496,100 @@ class TestW97RecommissionBoundary(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestFreshnessMonotonicW98(unittest.TestCase):
+    """W98: direct freshness queries must not turn the receiver clock backwards."""
+
+    @staticmethod
+    def receiver():
+        rx = ModuleReceiver(7, timeout_ms=250)
+        rx.commission_local(123, 0)
+        return rx
+
+    @staticmethod
+    def packet(seq=1, session=123):
+        return Frame(DATA, 7, session, seq, value_milli=400).encode()
+
+    def test_two_direct_queries_cannot_rewind_telemetry(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        self.assertTrue(rx.fresh(200))
+        self.assertEqual(rx.last_clock_ms, 200)
+        self.assertFalse(rx.fresh(20))
+        self.assertTrue(rx.latched_fault)
+        self.assertEqual(rx.last_ms, 10)
+
+    def test_prior_tick_is_respected_by_direct_fresh(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        self.assertTrue(rx.tick(200))
+        self.assertFalse(rx.fresh(20))
+        self.assertTrue(rx.latched_fault)
+        self.assertFalse(rx.tick(201))
+
+    def test_prior_receive_is_respected_by_direct_fresh(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        rx.receive(self.packet(seq=2), 100, authenticated_transport=True)
+        self.assertFalse(rx.fresh(50))
+        self.assertTrue(rx.latched_fault)
+        self.assertIsNone(rx.receive(self.packet(seq=3), 101, authenticated_transport=True))
+
+    def test_clock_probe_without_data_blocks_backdated_commission(self):
+        rx = self.receiver()
+        self.assertFalse(rx.fresh(20))
+        self.assertEqual(rx.last_clock_ms, 20)
+        with self.assertRaises(ValueError):
+            rx.commission_local(124, 19)
+        self.assertEqual(rx.session, 123)
+        self.assertFalse(rx.latched_fault)
+
+    def test_backward_clock_requires_new_epoch_to_recover(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        rx.fresh(100)
+        self.assertFalse(rx.fresh(20))
+        self.assertIsNone(rx.receive(self.packet(seq=2), 101, authenticated_transport=True))
+        rx.commission_local(124, 110)
+        self.assertIsNone(rx.receive(self.packet(seq=2), 111, authenticated_transport=True))
+        self.assertIsNotNone(rx.receive(self.packet(seq=1, session=124), 111,
+                                        authenticated_transport=True))
+        self.assertTrue(rx.fresh(111))
+
+    def test_valid_equal_forward_timestamp_preserves_ack(self):
+        rx = self.receiver()
+        packet = self.packet()
+        ack = rx.receive(packet, 10, authenticated_transport=True)
+        self.assertIsNotNone(ack)
+        self.assertTrue(rx.fresh(10))
+        self.assertTrue(rx.fresh(10))
+        self.assertEqual(rx.receive(packet, 10, authenticated_transport=True), ack)
+        self.assertTrue(rx.fresh(260))
+        self.assertFalse(rx.fresh(261))
+        self.assertEqual(rx.last_ms, 10)
+
+    def test_malformed_queries_remain_false_without_latch(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        for value in (True, False, None, 10.0, float("nan"), float("inf"), "10", object()):
+            with self.subTest(value=repr(value)):
+                self.assertFalse(rx.fresh(value))
+                self.assertFalse(rx.latched_fault)
+                self.assertEqual(rx.last_clock_ms, 10)
+        self.assertTrue(rx.fresh(11))
+
+    def test_negative_integer_clock_latches_failure(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        self.assertFalse(rx.fresh(-1))
+        self.assertTrue(rx.latched_fault)
+        self.assertFalse(rx.fresh(11))
+
+    def test_stale_query_then_rewind_does_not_resurrect(self):
+        rx = self.receiver()
+        rx.receive(self.packet(), 10, authenticated_transport=True)
+        self.assertFalse(rx.fresh(500))
+        self.assertFalse(rx.fresh(20))
+        self.assertTrue(rx.latched_fault)
+        self.assertFalse(rx.fresh(501))
