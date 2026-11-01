@@ -693,3 +693,75 @@ class TestSenderMonotonicClockW99(unittest.TestCase):
         self.assertTrue(tx.accept_ack(second_ack, 61, authenticated_transport=True))
         self.assertEqual(tx.last_clock_ms, 61)
         self.assertEqual((tx.acked, tx.failed), (1, 0))
+
+
+# W-IND-100: query-only watchdog must latch the actual expired data deadline.
+class TestReceiverDeadlineLatchW100(unittest.TestCase):
+    """No tick() dependency for receiver diagnostic deadline containment."""
+
+    def live(self):
+        rx = ModuleReceiver(7, timeout_ms=250)
+        rx.commission_local(123, 0)
+        packet = Frame(DATA, 7, 123, 1, value_milli=55).encode()
+        self.assertIsNotNone(rx.receive(packet, 10, authenticated_transport=True))
+        return rx, packet
+
+    def test_exact_deadline_is_still_fresh(self):
+        rx, _ = self.live()
+        self.assertTrue(rx.fresh(260))
+        self.assertFalse(rx.latched_fault)
+        self.assertEqual(rx.last_ms, 10)
+
+    def test_first_expired_query_latches_without_tick(self):
+        rx, _ = self.live()
+        self.assertFalse(rx.fresh(261))
+        self.assertTrue(rx.latched_fault)
+        self.assertEqual(rx.last_clock_ms, 261)
+        self.assertEqual(rx.last_ms, 10)
+
+    def test_next_message_cannot_recover_query_expiry(self):
+        rx, _ = self.live()
+        self.assertFalse(rx.fresh(261))
+        next_packet = Frame(DATA, 7, 123, 2, value_milli=56).encode()
+        self.assertIsNone(rx.receive(next_packet, 262, authenticated_transport=True))
+        self.assertEqual(rx.last_seq, 1)
+        self.assertTrue(rx.latched_fault)
+
+    def test_same_session_recommission_cannot_clear_expired_query(self):
+        rx, _ = self.live()
+        rx.fresh(261)
+        with self.assertRaises(ValueError):
+            rx.commission_local(123, 262)
+        self.assertTrue(rx.latched_fault)
+
+    def test_new_local_session_recovers_after_query_expiry(self):
+        rx, _ = self.live()
+        rx.fresh(261)
+        rx.commission_local(124, 262)
+        self.assertFalse(rx.latched_fault)
+        new_packet = Frame(DATA, 7, 124, 1, value_milli=57).encode()
+        self.assertIsNotNone(rx.receive(new_packet, 263, authenticated_transport=True))
+        self.assertTrue(rx.fresh(263))
+
+    def test_duplicate_ack_cannot_revive_expired_lease(self):
+        rx, packet = self.live()
+        self.assertFalse(rx.fresh(261))
+        self.assertIsNone(rx.receive(packet, 262, authenticated_transport=True))
+        self.assertEqual(rx.last_seq, 1)
+        self.assertFalse(rx.fresh(263))
+
+    def test_malformed_nonnumeric_queries_keep_legacy_nonmutating_contract(self):
+        rx, _ = self.live()
+        for invalid in (True, 10.0, float("nan"), None, "261"):
+            with self.subTest(invalid=repr(invalid)):
+                self.assertFalse(rx.fresh(invalid))
+                self.assertFalse(rx.latched_fault)
+                self.assertEqual(rx.last_clock_ms, 10)
+        self.assertTrue(rx.fresh(11))
+
+    def test_never_received_packet_remains_uncommissioned_for_data_health(self):
+        rx = ModuleReceiver(7, timeout_ms=250)
+        rx.commission_local(123, 0)
+        self.assertFalse(rx.fresh(1000))
+        self.assertFalse(rx.latched_fault)
+        self.assertIsNone(rx.last_ms)

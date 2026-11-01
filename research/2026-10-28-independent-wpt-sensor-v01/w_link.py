@@ -132,6 +132,11 @@ class ModuleReceiver:
         # Noninteger queries remain nonmutating False (legacy W95 contract).
         if type(now_ms) is not int or not self._clock(now_ms):
             return False
+        # A freshness query is an actual deadline observation, not a harmless
+        # snapshot. Without the latch, clients that call fresh() but not tick()
+        # would expose a stale/expired link as an unlatched receiver state.
+        if self.last_ms is not None and now_ms - self.last_ms > self.timeout_ms:
+            self.fault()
         return (not self.latched_fault and self.session is not None
                 and self.last_ms is not None
                 and now_ms >= self.last_ms and now_ms - self.last_ms <= self.timeout_ms)

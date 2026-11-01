@@ -1,0 +1,6 @@
+alternativa,beneficio,limite,evidencia,decision
+Dejar fresh sin latch,consulta barata pero estado ambiguo,incumple enclavamiento de expiracion,fuente W99 antes de cambio,rechazada
+Latching solo via tick,menos efectos colaterales,requiere invocacion adicional no garantizada,control digital actual antes de parche,rechazada
+Latching al detectar caducidad desde fresh,consistencia de estado y rearme obligatorio,no garantiza autentificacion o watchdog hardware,8 tests digitales mas CI post-publicacion,adoptada solo para telemetria experimental
+WPT regulada para micro-sensor,elimina conector de potencia,eficiencia FOD EMI y temperatura pendientes,hipotesis sin medidas,no aprobada
+Cable reparable,menor complejidad y menor riesgo,requiere conector,base de comparacion,no retirarlo
