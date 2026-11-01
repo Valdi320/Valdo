@@ -1,0 +1,26 @@
+name: W-IND-86 manufacturer NFC field-sweep screening (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_86/**'
+      - '.github/workflows/w-ind-86-field-sweep.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_86/**'
+      - '.github/workflows/w-ind-86-field-sweep.yml'
+jobs:
+  field_sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unit tests digital only
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_86 -p 'test_*.py' -v
+      - name: Compare deterministic JSON report
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_86/w86_field_sweep.py > /tmp/w86.json
+          cmp /tmp/w86.json research/2026-10-28-independent-wpt-sensor-v01/w_ind_86/expected.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w86-st-author-points-digital-only
+          path: /tmp/w86.json

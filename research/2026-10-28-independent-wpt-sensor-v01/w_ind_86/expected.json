@@ -1,0 +1,89 @@
+{
+  "conditional_point_AM10_0_5": {
+    "am": "AM10",
+    "author_power_mW": "0.36",
+    "author_voltage_V": "3.6",
+    "field_A_per_m_rms": "0.5",
+    "hardware_release": "BLOCKED",
+    "hypothetical_useful_mW": "0.288",
+    "point_meets_both_assumptions": false,
+    "power_meets_assumption": false,
+    "provenance": "manufacturer_characterization_point_not_guaranteed",
+    "voltage_meets_assumption": true
+  },
+  "conditional_point_AM10_3": {
+    "am": "AM10",
+    "author_power_mW": "4.069",
+    "author_voltage_V": "3.13",
+    "field_A_per_m_rms": "3",
+    "hardware_release": "BLOCKED",
+    "hypothetical_useful_mW": "3.2552",
+    "point_meets_both_assumptions": false,
+    "power_meets_assumption": true,
+    "provenance": "manufacturer_characterization_point_not_guaranteed",
+    "voltage_meets_assumption": false
+  },
+  "contrast_3A": {
+    "AM100_power_mW": "2.907",
+    "AM10_power_mW": "4.069",
+    "AM10_vs_AM100_power_ratio": "1.399724802201582387340901273",
+    "both_rf_inventory_guaranteed_in_robot": false,
+    "field_A_per_m_rms": "3",
+    "higher_power_at_this_author_point": "AM10"
+  },
+  "critical_weak_field": {
+    "AM100_power_mW": "2.31",
+    "AM10_power_mW": "0.36",
+    "AM10_vs_AM100_power_ratio": "0.1558441558441558441558441558",
+    "both_rf_inventory_guaranteed_in_robot": false,
+    "field_A_per_m_rms": "0.5",
+    "higher_power_at_this_author_point": "AM100"
+  },
+  "hardware_release": "BLOCKED",
+  "hypothetical_case": {
+    "converter_vin_min_v": "3.3",
+    "efficiency": "0.8",
+    "sensor_mw": "2.9"
+  },
+  "manufacturer_revision": "AN4913 Rev 2, June 2021, Tables 4 and 5, p.7",
+  "measured_by_us": false,
+  "milestone": "W-IND-86",
+  "no_guaranteed_field_or_converter_characterization": true,
+  "nonuniform_modulation_benefit": true,
+  "observed_power_ranking": {
+    "AM10": 8,
+    "AM100": 2,
+    "EQUAL": 1
+  },
+  "radio_app_ack_privacy_and_recovery_qualified": false,
+  "reader_input_watts_known": false,
+  "sampled_author_points_count": 22,
+  "source": "https://www.st.com/resource/en/application_note/an4913-energy-harvesting-delivery-impact-on-st25dvi2c-series-behaviour-during-rf-communication-stmicroelectronics.pdf#page=7",
+  "temperature_FOD_EMI_moisture_offset_cutoff_qualified": false,
+  "window_AM100_0_5_to_3": {
+    "am": "AM100",
+    "continuum_certified": false,
+    "field_window_sampled_endpoints": [
+      "0.5",
+      "3"
+    ],
+    "hardware_release": "BLOCKED",
+    "lowest_observed_voltage_V": "3.23",
+    "sampled_points": 6,
+    "sampled_points_meeting_both": 0,
+    "worst_observed_power_mW": "2.303"
+  },
+  "window_AM10_0_5_to_3": {
+    "am": "AM10",
+    "continuum_certified": false,
+    "field_window_sampled_endpoints": [
+      "0.5",
+      "3"
+    ],
+    "hardware_release": "BLOCKED",
+    "lowest_observed_voltage_V": "3.13",
+    "sampled_points": 6,
+    "sampled_points_meeting_both": 0,
+    "worst_observed_power_mW": "0.36"
+  }
+}
