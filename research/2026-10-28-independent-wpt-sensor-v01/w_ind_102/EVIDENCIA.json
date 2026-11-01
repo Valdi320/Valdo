@@ -2,7 +2,7 @@
   "schema": "valdo.w_ind_102.evidence.v1",
   "milestone": "W-IND-102",
   "baseline_head": "da8660e32d9322baa2b8ac6abd65ab3b74109074",
-  "status": "PUBLISHED_CODE_AND_ANALYSIS_CI_PENDING",
+  "status": "PUBLISHED_GENERAL_CI_PASS_HARDWARE_BLOCKED",
   "classification": "manufacturer_data_analysis_and_analytical_calculation_only",
   "expected_results": {
     "points": 22,
@@ -25,5 +25,17 @@
   "hardware_approved": false,
   "third_party_code_or_cad_copied": false,
   "third_party_repositories_modified": false,
-  "oomwoo_or_pr79_modified": false
+  "oomwoo_or_pr79_modified": false,
+  "commit": "33d9126708922b9859631a8fa44b7b61a4d26fcf",
+  "ci": {
+    "general_run": 41335129954,
+    "general_url": "https://github.com/Valdi320/Valdo/actions/runs/41335129954",
+    "pull_request_run": 41335125190,
+    "pull_request_url": "https://github.com/Valdi320/Valdo/actions/runs/41335125190",
+    "artifact_id": 13094249814,
+    "artifact_url": "https://github.com/Valdi320/Valdo/actions/runs/41335129954/artifacts/13094249814",
+    "w18_erc_run": 41335125189,
+    "w18_erc_url": "https://github.com/Valdi320/Valdo/actions/runs/41335125189",
+    "w18_erc_status": "FAIL_EXPECTED_UNQUALIFIED_W_IND_15_3_PREEXISTING_VIOLATIONS"
+  }
 }

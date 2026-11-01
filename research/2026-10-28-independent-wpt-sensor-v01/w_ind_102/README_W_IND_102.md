@@ -33,6 +33,12 @@ El V_EH del ST25DV64KC es analógico/no regulado y pasa a alta impedancia si el 
 
 ESP-NOW y OpenThread son **transporte de datos, no alimentación**. En cualquiera: ACK de aplicación, CRC, número de secuencia, timeout, reintentos acotados, autenticación/cifrado y recuperación local. La parada crítica debe ser cableada/local y fail-safe; jamás depender de radio.
 
+## Verificación CI (commit 33d912670892)
+
+- [CI general WPT PASS](https://github.com/Valdi320/Valdo/actions/runs/41335129954) y [CI de PR PASS](https://github.com/Valdi320/Valdo/actions/runs/41335125190): los 15 tests nuevos y las regresiones del workflow terminan correctamente.
+- [JSON reproducible generado por CI](https://github.com/Valdi320/Valdo/actions/runs/41335129954/artifacts/13094249814).
+- El gate nativo W18 sigue separado: [ERC FAIL](https://github.com/Valdi320/Valdo/actions/runs/41335125189), 3 violaciones históricas del esquema W-IND-15 no cualificado. No se ha desactivado ni convertido en aprobación de hardware.
+
 ## Evidencia y reproducibilidad
 
 - Datos transcritos de ST AN4913 Rev. 2, tablas 4–5; la tabla 1 enumera ST25DV64KC. La validación recalcula P_EH = V_EH × I_EH, exige 22 puntos únicos, 11 por modulación y la malla H=0,5…5,5 A/m.
