@@ -187,6 +187,20 @@ class AckTracker:
         self.pending = None
         self.acked = 0
         self.failed = 0
+        # Global sender clock checkpoint, including failed/unauthenticated ACK observations.
+        self.last_clock_ms = None
+
+    def _clock(self, now_ms: int) -> bool:
+        """Refuse a reversed or malformed local monotonic timestamp across frames.
+
+        Application telemetry only: caller supplies a trusted local monotonic clock.
+        This is NOT hardware fault containment, secure time or a power interlock.
+        """
+        if (type(now_ms) is not int or now_ms < 0
+                or (self.last_clock_ms is not None and now_ms < self.last_clock_ms)):
+            return False
+        self.last_clock_ms = now_ms
+        return True
 
     def start(self, value_milli: int, now_ms: int) -> bytes:
         if self.pending is not None:
@@ -195,6 +209,9 @@ class AckTracker:
             raise ValueError("sequence exhausted or invalid time")
         frame = Frame(DATA, self.node_id, self.session, self.next_seq, value_milli=value_milli)
         packet = frame.encode()
+        # Check AFTER encoding to avoid clock/sequence mutation on invalid payload.
+        if not self._clock(now_ms):
+            raise ValueError("sender clock rollback across frames")
         self.pending = {"frame": packet, "seq": self.next_seq,
                         "start": now_ms, "last": now_ms, "attempts": 1}
         self.next_seq += 1
@@ -204,7 +221,7 @@ class AckTracker:
         p = self.pending
         if p is None:
             return None
-        if type(now_ms) is not int or now_ms < 0 or now_ms < p["last"] or now_ms - p["start"] >= self.expiry_ms:
+        if not self._clock(now_ms) or now_ms < p["last"] or now_ms - p["start"] >= self.expiry_ms:
             self.failed += 1
             self.pending = None
             return None
@@ -218,7 +235,7 @@ class AckTracker:
         p = self.pending
         if p is None:
             return False
-        if (type(now_ms) is not int or now_ms < p["last"] or
+        if (not self._clock(now_ms) or now_ms < p["last"] or
                 now_ms - p["start"] >= self.expiry_ms):
             self.failed += 1
             self.pending = None

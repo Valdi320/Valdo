@@ -593,3 +593,103 @@ class TestFreshnessMonotonicW98(unittest.TestCase):
         self.assertFalse(rx.fresh(20))
         self.assertTrue(rx.latched_fault)
         self.assertFalse(rx.fresh(501))
+
+
+# W-IND-99: cross-frame sender clock rollback regression.
+
+class TestSenderMonotonicClockW99(unittest.TestCase):
+    """W99: sender cannot reset an ACK lease by rewinding time across frames."""
+
+    @staticmethod
+    def valid_ack(seq):
+        return Frame(ACK, 7, 123, seq, ack_seq=seq).encode()
+
+    def test_rewind_between_acked_frames_rejected_without_sequence_use(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 100)
+        self.assertTrue(tx.accept_ack(self.valid_ack(1), 200, authenticated_transport=True))
+        with self.assertRaises(ValueError):
+            tx.start(66, 10)
+        self.assertEqual(tx.next_seq, 2)
+        self.assertIsNone(tx.pending)
+        self.assertEqual(tx.last_clock_ms, 200)
+
+    def test_malformed_authenticated_ack_advances_clock_observation(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 0)
+        self.assertFalse(tx.accept_ack(b"BAD_ACK", 150, authenticated_transport=True))
+        self.assertEqual(tx.last_clock_ms, 150)
+        self.assertIsNone(tx.retry(60))  # Would retransmit before W99.
+        self.assertIsNone(tx.pending)
+        self.assertEqual(tx.failed, 1)
+
+    def test_unauthenticated_ack_observation_cannot_be_rewound(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 0)
+        self.assertFalse(tx.accept_ack(self.valid_ack(1), 150, authenticated_transport=False))
+        self.assertIsNone(tx.retry(60))
+        self.assertEqual(tx.failed, 1)
+        self.assertEqual(tx.acked, 0)
+
+    def test_auth_valid_ack_after_bad_packet_needs_forward_clock(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 0)
+        tx.accept_ack(b"BAD", 100, authenticated_transport=True)
+        self.assertFalse(tx.accept_ack(self.valid_ack(1), 99, authenticated_transport=True))
+        self.assertIsNone(tx.pending)
+        self.assertEqual((tx.acked, tx.failed), (0, 1))
+
+    def test_clock_checkpoint_cannot_be_reset_by_new_message(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 100)
+        tx.accept_ack(self.valid_ack(1), 110, authenticated_transport=True)
+        with self.assertRaises(ValueError):
+            tx.start(22, 109)
+        self.assertEqual(tx.last_clock_ms, 110)
+        self.assertEqual(tx.next_seq, 2)
+
+    def test_forward_recovery_after_rejected_start_never_reuses_sequence(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 100)
+        tx.accept_ack(self.valid_ack(1), 110, authenticated_transport=True)
+        with self.assertRaises(ValueError):
+            tx.start(22, 99)
+        self.assertEqual(Frame.decode(tx.start(22, 111)).seq, 2)
+        self.assertEqual(tx.next_seq, 3)
+
+    def test_equal_timestamp_is_permitted(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 20)
+        self.assertTrue(tx.accept_ack(self.valid_ack(1), 20, authenticated_transport=True))
+        self.assertEqual(Frame.decode(tx.start(56, 20)).seq, 2)
+
+    def test_invalid_payload_does_not_advance_global_clock(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 20)
+        self.assertTrue(tx.accept_ack(self.valid_ack(1), 21, authenticated_transport=True))
+        with self.assertRaises(ValueError):
+            tx.start(True, 500)
+        self.assertEqual(tx.last_clock_ms, 21)
+        self.assertEqual(tx.next_seq, 2)
+        self.assertEqual(Frame.decode(tx.start(56, 22)).seq, 2)
+
+    def test_invalid_time_never_rewinds_checkpoint(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 40)
+        self.assertIsNone(tx.retry(float("nan")))
+        self.assertEqual(tx.last_clock_ms, 40)
+        self.assertEqual((tx.failed, tx.pending), (1, None))
+
+    def test_forward_lost_ack_retransmission_still_works(self):
+        tx = AckTracker(7, 123)
+        rx = ModuleReceiver(7)
+        rx.commission_local(123, 0)
+        frame = tx.start(55, 0)
+        first_ack = rx.receive(frame, 1, authenticated_transport=True)
+        self.assertFalse(tx.accept_ack(b"BAD", 2, authenticated_transport=True))
+        self.assertEqual(tx.retry(60), frame)
+        second_ack = rx.receive(frame, 60, authenticated_transport=True)
+        self.assertEqual(first_ack, second_ack)
+        self.assertTrue(tx.accept_ack(second_ack, 61, authenticated_transport=True))
+        self.assertEqual(tx.last_clock_ms, 61)
+        self.assertEqual((tx.acked, tx.failed), (1, 0))

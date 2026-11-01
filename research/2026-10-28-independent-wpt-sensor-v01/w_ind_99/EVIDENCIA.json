@@ -1,0 +1,30 @@
+{
+  "milestone": "W-IND-99",
+  "date": "2026-11-01",
+  "scope": "Valdo own W non-safety telemetry",
+  "baseline_commit": "bf254b1cfca2778d68ecb852ce0b9fb8dcb5b560",
+  "method": "source patch plus deterministic unittest in existing CI",
+  "new_test_class": "test_w_link.TestSenderMonotonicClockW99",
+  "new_test_methods": 10,
+  "counterexamples": [
+    "start(55,100); valid ACK(1) at 200; start(66,10) must ValueError and preserve seq=2",
+    "start(55,0); bad/unauth ACK at 150; retry(60) must cancel pending"
+  ],
+  "commands": [
+    "python3 -B -m unittest -v test_w_link.TestSenderMonotonicClockW99",
+    "python3 -B -m unittest -v test_w_link"
+  ],
+  "hardware_tests": 0,
+  "radio_tests": 0,
+  "lithium_connected": false,
+  "purchases": 0,
+  "security_limit": "authenticated_transport boolean is a TEST STUB; CRC is not cryptographic auth; local monotonic time trusted; no fail-safe physical cutoff",
+  "external_sha": {
+    "simple_wireless_power": "7c7858c0dd7040801b6f191df1396115560218f0",
+    "wisp5_hw": "08332bc398aa3350d351ef2aaac163f8007cffda",
+    "wisp5_640kHz": "604eee2dffaeba3a270de61cf3dae887a33309c2",
+    "esp_now": "c3b5f9be245f1a80db9cb938600566aa6a8dd1e5",
+    "openthread": "c6872259f4194fb76c7d333bda209343e8c88e71",
+    "oomwoo": "f01a1b295f462da5ab8d5f021a3f741cbd2b47df"
+  }
+}
