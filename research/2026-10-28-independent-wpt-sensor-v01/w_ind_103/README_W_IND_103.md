@@ -35,7 +35,7 @@ python3 -m unittest -v w_ind_102.test_w_ind_102 w_ind_103.test_w_ind_103
 python3 -m w_ind_103.w_ind_103 --out w_ind_103/RESULTADO_CI.json
 ```
 
-W-IND-103 adds 11 deterministic test methods (with subtests covering each analog field and malformed type). The existing W-IND-102 tests remain in the same workflow. The GitHub Actions artifact is generated from the exact branch commit; no test result is claimed until that run completes.
+W-IND-103 adds 11 deterministic test methods (with subtests covering each analog field and malformed type). The existing W-IND-102 tests remain in the same workflow. Verified on code commit 89383ee877b76bc2314a84e651064808c5b125d2: push CI [41338852079](https://github.com/Valdi320/Valdo/actions/runs/41338852079) and PR CI [41338856536](https://github.com/Valdi320/Valdo/actions/runs/41338856536) both PASS, with 527/527 tests. Reproducible evidence artifacts: [push JSON](https://github.com/Valdi320/Valdo/actions/runs/41338852079/artifacts/13096696003) and [PR JSON](https://github.com/Valdi320/Valdo/actions/runs/41338856536/artifacts/13096980312). Separate native W-IND-18 ERC remains FAIL with 3 violations; no hardware approval.
 
 ## Architecture decision remains separate
 
