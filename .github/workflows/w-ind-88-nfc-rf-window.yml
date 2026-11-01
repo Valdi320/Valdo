@@ -1,16 +1,18 @@
-name: W-IND-88 + W-IND-89 + W-IND-90 NFC digital audit
+name: W-IND-88 + W-IND-89 + W-IND-90 + W-IND-91 NFC digital audit
 on:
   push:
     paths:
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/**'
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_89/**'
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_90/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_91/**'
       - '.github/workflows/w-ind-88-nfc-rf-window.yml'
   pull_request:
     paths:
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/**'
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_89/**'
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_90/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_91/**'
       - '.github/workflows/w-ind-88-nfc-rf-window.yml'
 jobs:
   rf_window:
@@ -18,12 +20,13 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Regression W88 W89 and original W90 priced bench audit
+      - name: Regression W88 W89 W90 and original W91 tag-power-source isolation tests
         run: |
           python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_88 -p 'test_*.py' -v
           python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_89 -p 'test_*.py' -v
           python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_90 -p 'test_*.py' -v
-      - name: Verify deterministic W88 W89 W90 evidence SHA256
+          python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_91 -p 'test_*.py' -v
+      - name: Verify deterministic W88 W89 W90 W91 evidence SHA256
         run: |
           python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/w88_nfc_rf_window.py > /tmp/w88.json
           sha256sum -c research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/expected.sha256
@@ -31,10 +34,13 @@ jobs:
           sha256sum -c research/2026-10-28-independent-wpt-sensor-v01/w_ind_89/expected.sha256
           python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_90/w90_bench_bom.py > /tmp/w90.json
           sha256sum -c research/2026-10-28-independent-wpt-sensor-v01/w_ind_90/expected.sha256
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_91/w91_nfc_source_gate.py > /tmp/w91.json
+          sha256sum -c research/2026-10-28-independent-wpt-sensor-v01/w_ind_91/expected.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: w88-w89-w90-digital-only-nfc-evidence
+          name: w88-w89-w90-w91-digital-only-nfc-evidence
           path: |
             /tmp/w88.json
             /tmp/w89.json
             /tmp/w90.json
+            /tmp/w91.json
