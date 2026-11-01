@@ -207,7 +207,7 @@ class AckTracker:
             self.failed += 1
             self.pending = None
             return False
-        if not authenticated_transport:
+        if authenticated_transport is not True:
             return False
         try:
             frame = Frame.decode(packet)

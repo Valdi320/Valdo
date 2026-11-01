@@ -5,10 +5,14 @@ on:
       - w/independent-sensor-wpt-link-20261028
     paths:
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_61/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_93/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_link.py'
       - '.github/workflows/w-ind-61-authenticated-link.yml'
   pull_request:
     paths:
       - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_61/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_93/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_link.py'
       - '.github/workflows/w-ind-61-authenticated-link.yml'
   workflow_dispatch:
 jobs:
@@ -25,11 +29,19 @@ jobs:
           python3 -m unittest -v test_w_link
           python3 -m unittest discover -v -s w_ind_60 -p 'test_w60.py'
           python3 -m unittest discover -v -s w_ind_61 -p 'test_w61.py'
+          python3 -m unittest discover -v -s w_ind_93 -p 'test_w93*.py'
       - name: Emit and assert synthetic evidence
         run: |
           python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_61/w61_demo.py > W61_SYNTHETIC_AUTH_NO_RADIO.json
           python3 -c 'import json; d=json.load(open("W61_SYNTHETIC_AUTH_NO_RADIO.json")); assert d["evidence_type"]=="SYNTHETIC_ONLY" and d["tampered_or_forged_ack_rejected"] and d["lost_ack_recovered_authentic"] and d["duplicate_did_not_refresh_freshness"] and d["envelope_bytes"]==38 and not d["real_radio_used"] and not d["hardware_approved"] and not d["encryption_implemented"] and not d["key_storage_provisioned"]'
+      - name: W93 strict ACK flag synthetic evidence
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_93/w93_demo.py > W93_SYNTHETIC_STRICT_ACK.json
+          python3 -c 'import json; d=json.load(open("W93_SYNTHETIC_STRICT_ACK.json")); assert d["evidence_type"]=="SYNTHETIC_ONLY" and len(d["rejected_truthy_non_boolean_cases"])==7 and d["accepted_explicit_true_flag"] and not d["accepted_string_false_flag"] and d["hardware_release"]=="BLOCKED" and not d["real_radio_used"] and not d["cryptography_performed"]'
+          sha256sum W93_SYNTHETIC_STRICT_ACK.json
       - uses: actions/upload-artifact@v4
         with:
-          name: W61-HMAC-FORGED-ACK-REJECTION-SYNTHETIC-NO-RADIO
-          path: W61_SYNTHETIC_AUTH_NO_RADIO.json
+          name: W61-W93-STRICT-ACK-REGRESSION-SYNTHETIC-NO-RADIO
+          path: |
+            W61_SYNTHETIC_AUTH_NO_RADIO.json
+            W93_SYNTHETIC_STRICT_ACK.json
