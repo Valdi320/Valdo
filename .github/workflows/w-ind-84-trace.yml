@@ -1,0 +1,32 @@
+name: W-IND-84 WPT RF trace evidence (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_84/**'
+      - '.github/workflows/w-ind-84-trace.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_84/**'
+      - '.github/workflows/w-ind-84-trace.yml'
+permissions:
+  contents: read
+jobs:
+  evidence-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Adversarial deterministic unit tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_84 -p 'test_*.py' -v
+      - name: Byte-exact evidence reproduction
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_84/w84_trace_gate.py > /tmp/w84-evidence.json
+          cmp /tmp/w84-evidence.json research/2026-10-28-independent-wpt-sensor-v01/w_ind_84/expected.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w84-digital-only-synthetic-evidence
+          path: /tmp/w84-evidence.json
+          if-no-files-found: error

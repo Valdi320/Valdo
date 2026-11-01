@@ -1,0 +1,35 @@
+{
+  "apparent_cycle_efficiency_pct": "16.500",
+  "case_id": "SYNTHETIC_W84_DEMO",
+  "duration_us": 5000,
+  "evidence_eligible": false,
+  "guarded_sampled_rail_mv": "3280.000",
+  "hardware_release": "BLOCKED",
+  "max_observed_gap_us": 1000,
+  "minimum_sampled_rail_mv": "3300.000",
+  "provenance": "synthetic",
+  "reject_reasons": [
+    "not_own_bench_measurement"
+  ],
+  "rf_observation_phases": [
+    "ack",
+    "rx",
+    "sleep",
+    "tx",
+    "wake"
+  ],
+  "rx_output_energy_uj": "16.500",
+  "sample_count": 6,
+  "tx_input_energy_uj": "100.000",
+  "unverified": [
+    "subsample_brownouts",
+    "FOD_real",
+    "thermal_real",
+    "EMI_real",
+    "offset_real",
+    "independent_cutoff",
+    "water_ingress",
+    "battery_BMS_dock",
+    "radio_privacy_and_application_ACK"
+  ]
+}
