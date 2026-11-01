@@ -9,6 +9,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -27,8 +28,41 @@ CAPACITANCE_RETENTION = 0.50
 
 
 def validate_rows(rows: list[dict]) -> None:
+    """Validate the complete manufacturer table before any power calculation.
+
+    Exact numeric types exclude bool; finite checks prevent NaN/Inf from
+    bypassing ordinary comparisons and poisoning extrema or JSON evidence.
+    """
     if len(rows) != 22:
         raise ValueError("expected 22 AN4913 points")
+    required = ("am_percent", "h_a_per_m_rms", "v_eh_v", "i_eh_ma", "p_eh_mw")
+    numeric_fields = required[1:]
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise ValueError(f"row {index} must be a mapping")
+        missing = [field for field in required if field not in row]
+        if missing:
+            raise ValueError(f"row {index} missing fields: {', '.join(missing)}")
+        am = row["am_percent"]
+        if type(am) is not int or am not in (10, 100):
+            raise ValueError(f"row {index} AM must be exact integer 10 or 100")
+        for field in numeric_fields:
+            value = row[field]
+            if type(value) not in (int, float):
+                raise ValueError(f"row {index} {field} must be numeric")
+            try:
+                finite = math.isfinite(float(value))
+            except (OverflowError, TypeError, ValueError):
+                finite = False
+            if not finite:
+                raise ValueError(f"row {index} {field} must be finite")
+            if value <= 0:
+                raise ValueError(f"row {index} {field} must be positive")
+        product = row["v_eh_v"] * row["i_eh_ma"]
+        if not math.isfinite(product):
+            raise ValueError(f"row {index} V_EH*I_EH overflowed")
+        if abs(product - row["p_eh_mw"]) > 0.0051:
+            raise ValueError(f"row {index} P_EH != V_EH * I_EH")
     for am in (10, 100):
         group = [r for r in rows if r["am_percent"] == am]
         if len(group) != 11:
