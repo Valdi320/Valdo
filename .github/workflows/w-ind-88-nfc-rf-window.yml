@@ -1,0 +1,26 @@
+name: W-IND-88 NFC RF-window/retry reservoir screen (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/**'
+      - '.github/workflows/w-ind-88-nfc-rf-window.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/**'
+      - '.github/workflows/w-ind-88-nfc-rf-window.yml'
+jobs:
+  rf_window:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run adversarial window tests against existing original W86 source
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_88 -p 'test_*.py' -v
+      - name: Verify reproducible JSON SHA256 (model only)
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/w88_nfc_rf_window.py > /tmp/w88.json
+          sha256sum -c research/2026-10-28-independent-wpt-sensor-v01/w_ind_88/expected.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w88-digital-only-nfc-rf-blackout-energy
+          path: /tmp/w88.json
