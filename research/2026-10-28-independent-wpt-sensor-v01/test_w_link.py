@@ -300,5 +300,89 @@ class TestPowerScreen(unittest.TestCase):
             hold_up_farads(1, 1, 3, 4)
 
 
+
+class TestW96StrictProtocolNumbers(unittest.TestCase):
+    """W96: no boolean/float identities or non-finite watchdog policy."""
+
+    def test_frame_boolean_message_kind_rejected(self):
+        with self.assertRaises(ValueError):
+            Frame(True, 7, 123, 1, value_milli=55).encode()
+
+    def test_frame_boolean_node_session_and_sequence_rejected(self):
+        frames = (Frame(DATA, True, 123, 1),
+                  Frame(DATA, 7, True, 1),
+                  Frame(DATA, 7, 123, True))
+        for frame in frames:
+            with self.subTest(frame=repr(frame)):
+                with self.assertRaises(ValueError):
+                    frame.encode()
+
+    def test_frame_ack_sequence_and_value_bool_rejected(self):
+        for frame in (Frame(ACK, 7, 123, 1, ack_seq=True),
+                      Frame(DATA, 7, 123, 1, value_milli=True)):
+            with self.subTest(frame=repr(frame)):
+                with self.assertRaises(ValueError):
+                    frame.encode()
+
+    def test_frame_node_fraction_is_rejected_without_packing_exception(self):
+        for node in (7.0, float("nan"), float("inf"), "7", None):
+            with self.subTest(node=repr(node)):
+                with self.assertRaises(ValueError):
+                    Frame(DATA, node, 123, 1).encode()
+
+    def test_receiver_refuses_noninteger_ids_and_watchdog(self):
+        for node, timeout in ((True, 250), (7.0, 250), (7, True),
+                              (7, False), (7, 250.0), (7, float("inf")),
+                              (7, float("nan")), (7, "250"), (7, None)):
+            with self.subTest(node=repr(node), timeout=repr(timeout)):
+                with self.assertRaises(ValueError):
+                    ModuleReceiver(node, timeout)
+
+    def test_receiver_commission_bool_session_does_not_mutate(self):
+        rx = ModuleReceiver(7)
+        with self.assertRaises(ValueError):
+            rx.commission_local(True, 0)
+        self.assertIsNone(rx.session)
+        self.assertTrue(rx.latched_fault)
+        self.assertIsNone(rx.last_ms)
+
+    def test_sender_refuses_boolean_and_float_peer_identifiers(self):
+        for node, session in ((True, 123), (7, True), (7.0, 123),
+                              (7, 123.0), (7, float("nan"))):
+            with self.subTest(node=repr(node), session=repr(session)):
+                with self.assertRaises(ValueError):
+                    AckTracker(node, session)
+
+    def test_sender_refuses_noninteger_retry_expiry_and_attempts(self):
+        for kwargs in ({"retry_ms": True}, {"retry_ms": 60.0},
+                       {"expiry_ms": True}, {"expiry_ms": 240.0},
+                       {"max_attempts": True}, {"max_attempts": 3.0},
+                       {"max_attempts": float("nan")},
+                       {"max_attempts": float("inf")}):
+            with self.subTest(policy=repr(kwargs)):
+                with self.assertRaises(ValueError):
+                    AckTracker(7, 123, **kwargs)
+
+    def test_invalid_value_does_not_consume_sender_sequence(self):
+        tx = AckTracker(7, 123)
+        with self.assertRaises(ValueError):
+            tx.start(True, 0)
+        self.assertEqual(tx.next_seq, 1)
+        self.assertIsNone(tx.pending)
+
+    def test_valid_integer_wire_and_lost_ack_recovery_unchanged(self):
+        tx = AckTracker(7, 123)
+        rx = ModuleReceiver(7, timeout_ms=250)
+        rx.commission_local(123, 0)
+        data = tx.start(55, 0)
+        self.assertEqual(Frame.decode(data), Frame(DATA, 7, 123, 1, value_milli=55))
+        first = rx.receive(data, 1, authenticated_transport=True)
+        self.assertEqual(tx.retry(60), data)
+        second = rx.receive(data, 60, authenticated_transport=True)
+        self.assertEqual(first, second)
+        self.assertTrue(tx.accept_ack(second, 60, authenticated_transport=True))
+        self.assertEqual(rx.last_ms, 1)
+        self.assertEqual((tx.acked, tx.failed), (1, 0))
+
 if __name__ == "__main__":
     unittest.main()

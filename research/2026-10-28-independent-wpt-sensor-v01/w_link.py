@@ -36,12 +36,12 @@ class Frame:
     value_milli: int = 0
 
     def encode(self) -> bytes:
-        if self.kind not in (DATA, ACK):
+        if type(self.kind) is not int or self.kind not in (DATA, ACK):
             raise ValueError("invalid kind")
         for value, limit in ((self.node_id, 0xFFFF), (self.session, MAX_SEQ),
                              (self.seq, MAX_SEQ), (self.ack_seq, MAX_SEQ),
                              (self.value_milli, 0xFFFF)):
-            if not isinstance(value, int) or not 0 <= value <= limit:
+            if type(value) is not int or not 0 <= value <= limit:
                 raise ValueError("invalid numeric field")
         if self.session == 0 or self.seq == 0:
             raise ValueError("session and sequence must be nonzero")
@@ -75,7 +75,8 @@ class ModuleReceiver:
     """
 
     def __init__(self, node_id: int, timeout_ms: int = 250):
-        if not 0 <= node_id <= 0xFFFF or timeout_ms <= 0:
+        if (type(node_id) is not int or type(timeout_ms) is not int
+                or not 0 <= node_id <= 0xFFFF or timeout_ms <= 0):
             raise ValueError("invalid receiver configuration")
         self.node_id = node_id
         self.timeout_ms = timeout_ms
@@ -88,7 +89,7 @@ class ModuleReceiver:
         self._duplicate_acks_remaining = 0
 
     def commission_local(self, session: int, now_ms: int) -> None:
-        if not isinstance(session, int) or not 0 < session <= MAX_SEQ or type(now_ms) is not int or now_ms < 0:
+        if type(session) is not int or not 0 < session <= MAX_SEQ or type(now_ms) is not int or now_ms < 0:
             raise ValueError("invalid commissioning")
         self.session = session
         self.last_seq = 0
@@ -161,9 +162,12 @@ class AckTracker:
 
     def __init__(self, node_id: int, session: int, retry_ms: int = 60,
                  expiry_ms: int = 240, max_attempts: int = 3):
-        if not 0 <= node_id <= 0xFFFF or not 0 < session <= MAX_SEQ:
+        if (type(node_id) is not int or type(session) is not int
+                or not 0 <= node_id <= 0xFFFF or not 0 < session <= MAX_SEQ):
             raise ValueError("invalid peer")
-        if not 0 < retry_ms < expiry_ms or max_attempts < 1:
+        if (type(retry_ms) is not int or type(expiry_ms) is not int
+                or type(max_attempts) is not int or not 0 < retry_ms < expiry_ms
+                or max_attempts < 1):
             raise ValueError("invalid timing")
         self.node_id, self.session = node_id, session
         self.retry_ms, self.expiry_ms, self.max_attempts = retry_ms, expiry_ms, max_attempts

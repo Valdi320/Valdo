@@ -1,0 +1,20 @@
+{
+  "milestone": "W-IND-96",
+  "created": "2026-11-01",
+  "source_kind": "SOFTWARE_SINTETICO",
+  "origin": "original Valdo W source, no third-party code",
+  "hardware_tested": false,
+  "battery_or_bms_connected": false,
+  "coil_or_dock_energized": false,
+  "radio_tested": false,
+  "tests_expected_new_methods": 10,
+  "ci_status_at_authoring": "PENDING_VERIFY_AFTER_PUSH",
+  "reproduce": [
+    "cd research/2026-10-28-independent-wpt-sensor-v01",
+    "python3 -m unittest -v test_w_link",
+    "python3 -m unittest discover -s w_ind_60 -p 'test_w60.py' -v",
+    "python3 -m unittest discover -s w_ind_61 -p 'test_w61.py' -v"
+  ],
+  "safety": "Lab-only protocol validation. Cannot stop motors or charge lithium. FOD, EMI, thermal, cutoff and real RF untested.",
+  "supplier_note": "Diotronic Zaragoza auxiliary; stock/MOQ/VAT unverified; no purchases"
+}
