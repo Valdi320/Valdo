@@ -1,0 +1,26 @@
+name: W-IND-87 NFC duty and buffer screen (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_87/**'
+      - '.github/workflows/w-ind-87-nfc-duty.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_87/**'
+      - '.github/workflows/w-ind-87-nfc-duty.yml'
+jobs:
+  nfc_duty:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test analytic gate against original ST-point reader W86
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_87 -p 'test_*.py' -v
+      - name: Verify byte-reproducible report SHA256 (no bench data)
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_87/w87_nfc_duty_gate.py > /tmp/w87.json
+          sha256sum -c research/2026-10-28-independent-wpt-sensor-v01/w_ind_87/expected.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w87-digital-only-nfc-duty-data
+          path: /tmp/w87.json
