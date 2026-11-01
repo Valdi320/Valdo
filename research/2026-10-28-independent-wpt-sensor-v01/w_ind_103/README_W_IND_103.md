@@ -32,10 +32,10 @@ From `research/2026-10-28-independent-wpt-sensor-v01`:
 ```sh
 python3 -m py_compile w_ind_102/w_ind_102.py w_ind_103/w_ind_103.py w_ind_103/test_w_ind_103.py
 python3 -m unittest -v w_ind_102.test_w_ind_102 w_ind_103.test_w_ind_103
-python3 w_ind_103/w_ind_103.py --out w_ind_103/RESULTADO_CI.json
+python3 -m w_ind_103.w_ind_103 --out w_ind_103/RESULTADO_CI.json
 ```
 
-W-IND-103 adds 10 deterministic test methods (with subtests covering each analog field and malformed type). The existing W-IND-102 tests remain in the same workflow. The GitHub Actions artifact is generated from the exact branch commit; no test result is claimed until that run completes.
+W-IND-103 adds 11 deterministic test methods (with subtests covering each analog field and malformed type). The existing W-IND-102 tests remain in the same workflow. The GitHub Actions artifact is generated from the exact branch commit; no test result is claimed until that run completes.
 
 ## Architecture decision remains separate
 

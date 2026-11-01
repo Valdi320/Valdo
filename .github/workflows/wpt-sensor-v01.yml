@@ -39,7 +39,7 @@ jobs:
           python3 sch_graph_audit.py
           python3 w_ind_19_thermal_rail_gate.py
           python3 w_ind_102/w_ind_102.py --out w_ind_102/RESULTADO_CI.json
-          python3 w_ind_103/w_ind_103.py --out w_ind_103/RESULTADO_CI.json
+          python3 -m w_ind_103.w_ind_103 --out w_ind_103/RESULTADO_CI.json
       - name: Upload W-IND-102 reproducible evidence
         uses: actions/upload-artifact@v4
         with:

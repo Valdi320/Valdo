@@ -3,7 +3,7 @@
   "milestone": "W-IND-103",
   "classification": "SOFTWARE_DATA_VALIDATION_ONLY",
   "baseline_head": "be2dbbbcdd3d6f8f00e49065c222ed737c7d5b31",
-  "status": "REPRODUCED_LOCALLY_CI_REQUIRED",
+  "status": "BASELINE_DEFECT_REPRODUCED_CI_VERIFICATION_PENDING",
   "baseline_false_acceptance_cases": [
     {
       "case": "p_eh_mw=NaN",
@@ -17,7 +17,7 @@
     }
   ],
   "valid_manufacturer_points": 22,
-  "expected_new_test_methods": 10,
+  "expected_new_test_methods": 11,
   "physical_measurements": 0,
   "electromagnetic_simulations": 0,
   "battery_bms_dock_connected": false,
