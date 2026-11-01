@@ -91,6 +91,13 @@ class ModuleReceiver:
     def commission_local(self, session: int, now_ms: int) -> None:
         if type(session) is not int or not 0 < session <= MAX_SEQ or type(now_ms) is not int or now_ms < 0:
             raise ValueError("invalid commissioning")
+        # Reject local epoch reuse before touching receiver state. A new process
+        # still needs a DURABLE monotonic journal (see PowerFencedTelemetry).
+        if self.session is not None and session <= self.session:
+            raise ValueError("recommissioning epoch must strictly increase")
+        # Local recommissioning must not disguise a backwards/restarted clock.
+        if self.last_clock_ms is not None and now_ms < self.last_clock_ms:
+            raise ValueError("recommissioning clock rollback")
         self.session = session
         self.last_seq = 0
         self.last_ms = None

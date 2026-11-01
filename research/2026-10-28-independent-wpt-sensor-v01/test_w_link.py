@@ -384,5 +384,115 @@ class TestW96StrictProtocolNumbers(unittest.TestCase):
         self.assertEqual(rx.last_ms, 1)
         self.assertEqual((tx.acked, tx.failed), (1, 0))
 
+
+# W-IND-97: local epoch/clock rollback cannot reopen stale telemetry.
+def w97_packet(session, seq=1, value=400):
+    return Frame(DATA, 7, session, seq, value_milli=value).encode()
+
+class TestW97RecommissionBoundary(unittest.TestCase):
+    def new_receiver(self):
+        rx = ModuleReceiver(7)
+        rx.commission_local(123, 0)
+        return rx
+
+    def test_same_epoch_rejected_before_first_data(self):
+        rx = self.new_receiver()
+        with self.assertRaises(ValueError):
+            rx.commission_local(123, 1)
+        self.assertEqual(rx.session, 123)
+        self.assertEqual(rx.last_clock_ms, 0)
+        self.assertFalse(rx.latched_fault)
+
+    def test_same_epoch_cannot_clear_fault_and_reaccept_old_data(self):
+        rx = self.new_receiver()
+        self.assertIsNotNone(rx.receive(w97_packet(123), 10, authenticated_transport=True))
+        rx.fault()
+        with self.assertRaises(ValueError):
+            rx.commission_local(123, 20)
+        self.assertTrue(rx.latched_fault)
+        self.assertEqual((rx.session, rx.last_seq, rx.last_ms), (123, 1, 10))
+        self.assertIsNone(rx.receive(w97_packet(123), 21, authenticated_transport=True))
+
+    def test_older_epoch_cannot_roll_back_or_replay(self):
+        rx = self.new_receiver()
+        rx.commission_local(124, 10)
+        rx.fault()
+        with self.assertRaises(ValueError):
+            rx.commission_local(123, 11)
+        self.assertEqual(rx.session, 124)
+        self.assertTrue(rx.latched_fault)
+        self.assertIsNone(rx.receive(w97_packet(123), 12, authenticated_transport=True))
+
+    def test_clock_rollback_recommission_rejected_without_mutation(self):
+        rx = self.new_receiver()
+        rx.tick(30)
+        rx.fault()
+        with self.assertRaises(ValueError):
+            rx.commission_local(124, 29)
+        self.assertEqual(rx.session, 123)
+        self.assertEqual(rx.last_clock_ms, 30)
+        self.assertTrue(rx.latched_fault)
+
+    def test_clock_rollback_cannot_reopen_telemetry_lease(self):
+        rx = self.new_receiver()
+        rx.receive(w97_packet(123), 10, authenticated_transport=True)
+        rx.tick(200)
+        rx.fault()
+        with self.assertRaises(ValueError):
+            rx.commission_local(124, 50)
+        self.assertFalse(rx.fresh(50))
+        self.assertEqual(rx.last_ms, 10)
+        self.assertEqual(rx.last_clock_ms, 200)
+
+    def test_forward_epoch_and_time_still_recover_locally(self):
+        rx = self.new_receiver()
+        rx.receive(w97_packet(123), 10, authenticated_transport=True)
+        rx.fault()
+        rx.commission_local(124, 20)
+        self.assertFalse(rx.latched_fault)
+        self.assertIsNone(rx.receive(w97_packet(123), 21, authenticated_transport=True))
+        self.assertIsNotNone(rx.receive(w97_packet(124), 22, authenticated_transport=True))
+        self.assertTrue(rx.fresh(22))
+
+    def test_equal_time_allows_new_epoch_not_old_one(self):
+        rx = self.new_receiver()
+        rx.tick(20)
+        rx.fault()
+        rx.commission_local(124, 20)
+        self.assertEqual((rx.session, rx.last_clock_ms), (124, 20))
+        with self.assertRaises(ValueError):
+            rx.commission_local(124, 20)
+
+    def test_max_epoch_exhaustion_fails_closed(self):
+        rx = ModuleReceiver(7)
+        rx.commission_local(MAX_SEQ, 0)
+        rx.fault()
+        with self.assertRaises(ValueError):
+            rx.commission_local(MAX_SEQ, 1)
+        with self.assertRaises(ValueError):
+            rx.commission_local(MAX_SEQ + 1, 1)
+        self.assertTrue(rx.latched_fault)
+
+    def test_invalid_recommission_preserves_ack_budget_and_clock(self):
+        rx = self.new_receiver()
+        data = w97_packet(123)
+        self.assertIsNotNone(rx.receive(data, 10, authenticated_transport=True))
+        budget = rx._duplicate_acks_remaining
+        with self.assertRaises(ValueError):
+            rx.commission_local(123, 11)
+        self.assertEqual(rx._duplicate_acks_remaining, budget)
+        self.assertEqual(rx.last_ms, 10)
+        self.assertEqual(rx.last_clock_ms, 10)
+
+    def test_new_object_still_needs_durable_journal(self):
+        # Counterexample by design: a new object has no trusted persistent epoch.
+        first = self.new_receiver()
+        restarted = ModuleReceiver(7)
+        restarted.commission_local(123, 0)
+        self.assertEqual(first.session, restarted.session)
+        # Not a protection result: use durable_epoch_store with PowerFencedTelemetry.
+
+
+
 if __name__ == "__main__":
     unittest.main()
