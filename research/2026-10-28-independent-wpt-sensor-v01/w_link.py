@@ -88,7 +88,7 @@ class ModuleReceiver:
         self._duplicate_acks_remaining = 0
 
     def commission_local(self, session: int, now_ms: int) -> None:
-        if not isinstance(session, int) or not 0 < session <= MAX_SEQ or now_ms < 0:
+        if not isinstance(session, int) or not 0 < session <= MAX_SEQ or type(now_ms) is not int or now_ms < 0:
             raise ValueError("invalid commissioning")
         self.session = session
         self.last_seq = 0
@@ -120,7 +120,7 @@ class ModuleReceiver:
 
     def fresh(self, now_ms: int) -> bool:
         return (not self.latched_fault and self.session is not None
-                and self.last_ms is not None and isinstance(now_ms, int)
+                and self.last_ms is not None and type(now_ms) is int
                 and now_ms >= self.last_ms and now_ms - self.last_ms <= self.timeout_ms)
 
     def receive(self, packet: bytes, now_ms: int, *, authenticated_transport: bool) -> bytes | None:
@@ -175,7 +175,7 @@ class AckTracker:
     def start(self, value_milli: int, now_ms: int) -> bytes:
         if self.pending is not None:
             raise RuntimeError("one outstanding frame maximum")
-        if self.next_seq > MAX_SEQ or not isinstance(now_ms, int) or now_ms < 0:
+        if self.next_seq > MAX_SEQ or type(now_ms) is not int or now_ms < 0:
             raise ValueError("sequence exhausted or invalid time")
         frame = Frame(DATA, self.node_id, self.session, self.next_seq, value_milli=value_milli)
         packet = frame.encode()
@@ -188,7 +188,7 @@ class AckTracker:
         p = self.pending
         if p is None:
             return None
-        if now_ms < p["last"] or now_ms - p["start"] >= self.expiry_ms:
+        if type(now_ms) is not int or now_ms < 0 or now_ms < p["last"] or now_ms - p["start"] >= self.expiry_ms:
             self.failed += 1
             self.pending = None
             return None
@@ -202,7 +202,7 @@ class AckTracker:
         p = self.pending
         if p is None:
             return False
-        if (not isinstance(now_ms, int) or now_ms < p["last"] or
+        if (type(now_ms) is not int or now_ms < p["last"] or
                 now_ms - p["start"] >= self.expiry_ms):
             self.failed += 1
             self.pending = None

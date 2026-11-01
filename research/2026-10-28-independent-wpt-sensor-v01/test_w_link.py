@@ -173,6 +173,104 @@ class TestReliableTelemetry(unittest.TestCase):
             self.tx.start(1, 1)
 
 
+
+class TestClockBoundary(unittest.TestCase):
+    """W95: malformed timestamps never retransmit, ACK, or certify freshness."""
+
+    def test_start_rejects_noninteger_time_without_sequence_consumption(self):
+        for t in (True, False, 0.0, 10.0, float("nan"), float("inf"),
+                  float("-inf"), "100", None, object()):
+            with self.subTest(clock=repr(t)):
+                tx = AckTracker(7, 123)
+                with self.assertRaises(ValueError):
+                    tx.start(55, t)
+                self.assertEqual(tx.next_seq, 1)
+                self.assertIsNone(tx.pending)
+                self.assertEqual(tx.failed, 0)
+
+    def test_retry_invalid_time_fails_closed_without_emitting_packet(self):
+        for t in (True, False, 0.0, 60.0, float("nan"), float("inf"),
+                  float("-inf"), "60", None, object()):
+            with self.subTest(clock=repr(t)):
+                tx = AckTracker(7, 123)
+                tx.start(55, 0)
+                self.assertIsNone(tx.retry(t))
+                self.assertIsNone(tx.pending)
+                self.assertEqual(tx.failed, 1)
+                self.assertEqual(tx.acked, 0)
+
+    def test_rejected_nan_retry_cannot_later_be_acknowledged(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 0)
+        ack = Frame(ACK, 7, 123, 1, ack_seq=1).encode()
+        self.assertIsNone(tx.retry(float("nan")))
+        self.assertFalse(tx.accept_ack(ack, 60, authenticated_transport=True))
+        self.assertEqual((tx.failed, tx.acked), (1, 0))
+
+    def test_ack_boolean_timestamp_cannot_confirm_pending_message(self):
+        for t in (True, False):
+            with self.subTest(clock=t):
+                tx = AckTracker(7, 123)
+                tx.start(55, 0)
+                ack = Frame(ACK, 7, 123, 1, ack_seq=1).encode()
+                self.assertFalse(tx.accept_ack(ack, t, authenticated_transport=True))
+                self.assertEqual((tx.failed, tx.acked), (1, 0))
+                self.assertIsNone(tx.pending)
+
+    def test_ack_nonfinite_or_nonnumeric_timestamp_never_confirms(self):
+        for t in (float("nan"), float("inf"), None, "60", object()):
+            with self.subTest(clock=repr(t)):
+                tx = AckTracker(7, 123)
+                tx.start(55, 0)
+                ack = Frame(ACK, 7, 123, 1, ack_seq=1).encode()
+                self.assertFalse(tx.accept_ack(ack, t, authenticated_transport=True))
+                self.assertEqual((tx.failed, tx.acked), (1, 0))
+                self.assertIsNone(tx.pending)
+
+    def test_commission_bad_time_rejected_before_receiver_mutation(self):
+        for t in (True, False, 0.0, float("nan"), float("inf"), None, "0"):
+            with self.subTest(clock=repr(t)):
+                rx = ModuleReceiver(7)
+                with self.assertRaises(ValueError):
+                    rx.commission_local(123, t)
+                self.assertIsNone(rx.session)
+                self.assertTrue(rx.latched_fault)
+
+    def test_receiver_freshness_rejects_boolean_timestamp(self):
+        rx = ModuleReceiver(7)
+        rx.commission_local(123, 0)
+        packet = Frame(DATA, 7, 123, 1, value_milli=55).encode()
+        self.assertIsNotNone(rx.receive(packet, 0, authenticated_transport=True))
+        self.assertFalse(rx.fresh(True))
+        self.assertFalse(rx.fresh(False))
+        self.assertTrue(rx.fresh(1))
+        self.assertEqual(rx.last_ms, 0)
+
+    def test_valid_integer_clock_keeps_lost_ack_recovery(self):
+        tx = AckTracker(7, 123)
+        rx = ModuleReceiver(7)
+        rx.commission_local(123, 0)
+        packet = tx.start(55, 0)
+        original = rx.receive(packet, 1, authenticated_transport=True)
+        resent = tx.retry(60)
+        self.assertEqual(resent, packet)
+        recovered = rx.receive(resent, 60, authenticated_transport=True)
+        self.assertEqual(original, recovered)
+        self.assertTrue(tx.accept_ack(recovered, 60, authenticated_transport=True))
+        self.assertEqual((tx.failed, tx.acked), (0, 1))
+        self.assertEqual(rx.last_ms, 1)
+
+    def test_sender_restarts_new_sequence_after_rejected_bad_time(self):
+        tx = AckTracker(7, 123)
+        tx.start(55, 0)
+        self.assertIsNone(tx.retry(float("nan")))
+        packet = tx.start(56, 100)
+        self.assertEqual(Frame.decode(packet).seq, 2)
+        ack = Frame(ACK, 7, 123, 2, ack_seq=2).encode()
+        self.assertTrue(tx.accept_ack(ack, 101, authenticated_transport=True))
+        self.assertEqual((tx.failed, tx.acked), (1, 1))
+
+
 class TestPowerScreen(unittest.TestCase):
     def test_nominal_and_offset(self):
         a = screen(5, 0.3, 0.75, 1.0)
