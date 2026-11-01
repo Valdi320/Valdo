@@ -1,0 +1,58 @@
+{
+  "EH_voltage_is_unregulated_and_absent_if_field_insufficient": true,
+  "RF_communication_guaranteed_while_EH": false,
+  "assumed_effective_cap_uf": "330.000",
+  "assumed_efficiency_pct": "80.00",
+  "assumed_floor_v": "3.000",
+  "assumed_load_mw": "2.900",
+  "assumed_outage_ms": "100.000",
+  "assumed_rail_v": "3.300",
+  "conditional_ideal_cap_pass": true,
+  "dock_BMS_motors_safety": "NOT_IN_SCOPE",
+  "hardware_release": "BLOCKED",
+  "ideal_cap_min_uf": "306.878",
+  "input_provenance": "two_observed_author_fixture_points_plus_explicit_hypotheses",
+  "manufacturer_fixture_cases": [
+    {
+      "assumed_output_margin_mw": "-0.5744",
+      "assumed_regulated_output_mw": "2.3256",
+      "author_p_eh_mw": "2.907",
+      "author_v_eh_v": "3.23",
+      "conditional_static_budget_pass": false,
+      "direct_rail_voltage_inadequate": true,
+      "field_arms": "3",
+      "guaranteed_power_or_rf_data": false,
+      "ideal_efficiency_needed_pct": "99.759",
+      "origin": "manufacturer_test_fixture_not_our_own_measurement",
+      "point_id": "ST_AM100_H3",
+      "reader_am_pct": 100
+    },
+    {
+      "assumed_output_margin_mw": "+0.3552",
+      "assumed_regulated_output_mw": "3.2552",
+      "author_p_eh_mw": "4.069",
+      "author_v_eh_v": "3.13",
+      "conditional_static_budget_pass": true,
+      "direct_rail_voltage_inadequate": true,
+      "field_arms": "3",
+      "guaranteed_power_or_rf_data": false,
+      "ideal_efficiency_needed_pct": "71.271",
+      "origin": "manufacturer_test_fixture_not_our_own_measurement",
+      "point_id": "ST_AM10_H3",
+      "reader_am_pct": 10
+    }
+  ],
+  "missing_evidence": [
+    "reader_field_coupling_in_robot_unverified",
+    "rf_data_during_energy_harvesting_unverified",
+    "FOD_temperature_and_independent_cutout_unverified",
+    "actual_5V_or_3V3_regulator_curve_unverified",
+    "capacitor_ESR_leakage_aging_unverified",
+    "full_reader_antenna_cost_and_consumption_unverified",
+    "no_own_energized_hardware_or_bench_measurement"
+  ],
+  "requires_active_NFC_reader_not_an_ESP_NOW_radio": true,
+  "scope": "optional_noncritical_low_power_service_sensor_only",
+  "source_power": "STMicroelectronics AN4913 Rev2 June 2021, p7, Table 4/5; ISO class 1 antenna, 13.6MHz tuning, RF inventory response test",
+  "source_unregulated_and_rf_caution": "STMicroelectronics DS13519 Rev8 July 2024 p49 section 5.5.2"
+}

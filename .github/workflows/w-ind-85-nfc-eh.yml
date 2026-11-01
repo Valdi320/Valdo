@@ -1,0 +1,26 @@
+name: W-IND-85 NFC energy harvesting manufacturer point gate (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_85/**'
+      - '.github/workflows/w-ind-85-nfc-eh.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_85/**'
+      - '.github/workflows/w-ind-85-nfc-eh.yml'
+jobs:
+  nfc_harvesting_gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python unit tests (no physical tests)
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_85 -p 'test_*.py' -v
+      - name: Deterministic JSON proof
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_85/w85_nfc_eh_gate.py > /tmp/w85-evidence.json
+          cmp /tmp/w85-evidence.json research/2026-10-28-independent-wpt-sensor-v01/w_ind_85/expected.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w85-digital-only-evidence
+          path: /tmp/w85-evidence.json
