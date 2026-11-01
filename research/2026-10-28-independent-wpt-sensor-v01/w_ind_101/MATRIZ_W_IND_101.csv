@@ -1,0 +1,7 @@
+dimension,option_A,option_B,decision_2026_11_01,evidence,unverified_gate
+Thermal input type,Implicit float conversion,Exact numeric finite input,Choose B for abstract WNTC ratio,13 regression tests and 43 prior PASS,Actual ADC calibration and comparator hysteresis
+Thermal window,Unbounded limits,Finite 0<=low<high<=1,Choose B for abstract window,Reproduced false accepts before patch,PCB supply and rail-domain integrity
+Dock,Repairable contacts,WPT regulated independent safety,Undecided,No measurements,Li-ion/BMS disconnect physical FOD
+Module power,Protected cable,WPT 5V low load,Undecided,Load .4W average 1.5W peak HYPOTHETICAL,Efficiency/off-axis EMI and cutoff
+Radio,ESP-NOW external authenticated app ACK,OpenThread protected network stack,Undecided,No real RF metrics,Privacy RF latency and recovery
+Microsensor,Wired passive,WISP5 RFID,Secondary only,External BSD-2 design,Energy budget and duty cycle

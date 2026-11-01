@@ -1,0 +1,47 @@
+{
+  "milestone": "W-IND-101",
+  "date": "2026-11-01",
+  "scope": "own VALDO W-only digital TX thermal monitor",
+  "baseline_git_sha": "bc186bb2988ca85d7ae8731464ca785ec674bc75",
+  "baseline_module_blob_sha": "e94bb74b568851e545bfd50df0ba0089c421b2ba",
+  "bug": "convertible/nonfinite thermistor ratios and thresholds accepted as valid in abstract interlock",
+  "old_examples": [
+    "window_clear('0.5') == True",
+    "window_clear(0.5, high=float('inf')) == True",
+    "TxInterlock with both assumed healthy channels and string reading could report energized=True"
+  ],
+  "new_tests": 13,
+  "existing_targeted_tests": 43,
+  "local_reproduction": {
+    "host": "User Linux PC, isolated own staging only",
+    "command": "python3 -B -m unittest discover -v",
+    "baseline_total": 56,
+    "baseline_failures": 16,
+    "baseline_errors": 1,
+    "patched_total": 56,
+    "patched_passed": 56,
+    "patched_failures": 0,
+    "patched_errors": 0
+  },
+  "github_ci": "PENDING_AT_CREATION; inspect exact published SHA workflow",
+  "hardware_tests": 0,
+  "wpt_real_efficiency_measured": false,
+  "physical_fod_verified": false,
+  "independent_cut_verified": false,
+  "hardware_approved": false,
+  "battery_BMS_connected": false,
+  "real_TX_energized": false,
+  "new_bom_parts": 0,
+  "incremental_hardware_eur": 0,
+  "diotronic_local_inventory_verified": false,
+  "diotronic_final_inc_vat_verified": false,
+  "external_repos": {
+    "belbin": "master 7c7858c0 unchanged GPL-3.0",
+    "wisp_hw": "master 08332bc3 unchanged BSD-2",
+    "wisp_fw": "640kHz 604eee2d diverged +68/-11 BSD-2",
+    "esp_now": "master c3b5f9be unchanged Apache-2",
+    "openthread": "main c6872259 +21 BSD-3"
+  },
+  "known_erc_violations": 3,
+  "third_party_code_copied": false
+}

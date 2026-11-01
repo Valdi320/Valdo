@@ -32,13 +32,14 @@ def ntc_ratio(temp_c: float, *, r25_ohm: float = 10000.0,
 def window_clear(ratio: float | None, low: float = LOW_RATIO,
                  high: float = HIGH_RATIO) -> bool:
     """Open (ratio 1), short (0), missing/invalid must fail OFF."""
-    if ratio is None or isinstance(ratio, bool):
+    # Sensor input and comparator limits must be literal finite numbers.
+    # float("0.5"), Decimal, custom __float__ and bool are NOT ADC evidence;
+    # malformed limits may otherwise disable an open/short-wire window.
+    if any(type(x) not in (int, float) for x in (ratio, low, high)):
         return False
-    try:
-        x = float(ratio)
-    except (ValueError, TypeError, OverflowError):
-        return False
-    return isfinite(x) and 0 <= x <= 1 and low < x < high
+    x, lo, hi = float(ratio), float(low), float(high)
+    return (isfinite(x) and isfinite(lo) and isfinite(hi)
+            and 0 <= lo < hi <= 1 and lo < x < hi)
 
 
 def corner_sweep(temp_c: float) -> tuple[float, ...]:
