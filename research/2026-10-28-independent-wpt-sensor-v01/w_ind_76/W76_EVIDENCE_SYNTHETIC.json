@@ -1,0 +1,20 @@
+{
+  "all_phases_labeled_bench_measured": false,
+  "assumed_cycle_seconds": 30.0,
+  "blockers": [
+    "CYCLE_REPRESENTATIVENESS_UNVERIFIED",
+    "ENERGY_BUDGET_EXCEEDED",
+    "NO_COMPLETE_BENCH_MEASURED_CYCLE"
+  ],
+  "evidence_scope": "cycle-energy mathematical screen only; phase means do not prove instantaneous sensor continuity",
+  "extra_wh_day_conservative": 0.7224,
+  "extra_wh_day_nominal": 0.7224,
+  "hardware_approved": false,
+  "max_tx_mean_mw_for_budget": 23.733333333,
+  "rx_mean_mw": 2.9,
+  "rx_min_phase_mean_lower_bound_mw": 2.9,
+  "safety_tests_completed_by_model": false,
+  "status": "BLOCKED",
+  "tx_conservative_upper_mean_mw": 33.0,
+  "tx_mean_mw": 33.0
+}

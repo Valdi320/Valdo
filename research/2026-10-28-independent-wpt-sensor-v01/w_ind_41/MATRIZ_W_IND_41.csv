@@ -1,0 +1,9 @@
+opcion,beneficio_modelado,limite,decision
+INA301_tercero_shunt_3v3_comun,ninguna cobertura de shunt/rail compartido,coste extra y fallo comun,descartar
+TPS3700_desde_3v3_supervisado,umbral de subtension,muere junto al rail,descartar
+TPS3700_desde_5v_con_62k_10k,PASS hipotetico para 2.70 y 3.135V,OUTA abierto y backfeed no resueltos,proseguir solo diseno
+TPS3700_desde_5v_con_620k_100k,misma razon nominal menor consumo,FAIL stress ficticio +/-1uA,descartar bajo stress
+TPS3700_desde_5v_con_68k_10k,umbral nominal 3.12V,FAIL por falso corte extremo,descartar
+cable_conector_reparable,sin perdida WPT ni nueva RF,ensayo de servicio pendiente,conservar alternativa
+dock_litio,ningun beneficio del hito,bateria y BMS fuera,prohibido
+ESP_NOW_y_OpenThread,datos RF independientes,ACK CRC secuencia timeout privacidad por probar,nunca parada critica

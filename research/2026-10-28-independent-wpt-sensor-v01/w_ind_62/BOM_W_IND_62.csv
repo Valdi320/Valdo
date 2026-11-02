@@ -1,0 +1,7 @@
+Item;Dominio;Cantidad;Diotronic/ref/precio IVA/stock Zaragoza/MOQ;Alternativa/ref/precio IVA/stock/MOQ;Elección y evidencia
+Código EpochIssuer original Python stdlib;Datos sin RF;1;No aplica/0 EUR/No aplica/No aplica;Software propio/0 EUR/No aplica/No aplica;No añade componentes al robot
+Memoria atómica persistente con antirollback;Seguridad sesión NO aprobada;1 por dispositivo;Sin referencia/pendiente/no verificado/no verificado;Fabricante y TME-Mouser-DigiKey/pendiente/no verificado/no verificado;Sin pieza seleccionada ni pruebas power-fail
+CSPRNG y secretos;Seguridad NO aprobada;1 por dispositivo;Sin referencia/pendiente/no verificado/no verificado;Fabricante o distribuidor especializado/pendiente/no verificado/no verificado;No hay aprovisionamiento real
+Radio 2.4 GHz o 802.15.4;Datos;2 por enlace;Sin referencia/pendiente/no verificado/no verificado;Espressif o TME-Mouser-DigiKey/pendiente/no verificado/no verificado;ESP-NOW contra OpenThread por estudiar
+Bobinas y control WPT-FOD-EMI-térmico-corte;Potencia distribuida;1 par hipotético;Sin referencia/pendiente/no verificado/no verificado;TME-Mouser-DigiKey fabricante/pendiente/no verificado/no verificado;No elegido ni energizado: cable sustituible es baseline
+Batería BMS dock;Carga;0;No aplica;No aplica;Diferidos sin intervención

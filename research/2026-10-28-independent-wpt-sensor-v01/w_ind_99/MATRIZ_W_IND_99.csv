@@ -1,0 +1,10 @@
+Area,Alternative,Evidence,Decision,Remaining block
+Radio sender,Per-frame ACK timestamps only,Reproduced synthetic clock rewind after completed ACK,REJECT,May create backdated ACK lease
+Radio sender,Monotonic clock checkpoint across frames,Ten deterministic tests specified in test_w_link.py,ACCEPT FOR SYNTHETIC TESTS ONLY,No real RF secure time or reboot persistence
+RF lower layer,ESP-NOW,Manufacturer requires app-level ACK,COMPARE,Measure ESP hardware latency privacy and delivery
+RF lower layer,OpenThread,Upstream main 21 commits ahead of 28 Oct ref,COMPARE,Measure Thread RAM latency recovery hardware
+RF microsensor,WISP5 RFID harvesting,Upstream BSD designs and firmware branch divergent,DEFER,Power budget and reader still unknown
+Dock,Simple open-loop WPT,Author measured 81.3 percent in own setup only,REJECT for product,FOD temperature and autonomous cutoff unqualified
+Dock,Regulated WPT with fail-closed electrical protection,Requirements only,DEFER,Hypothetical no bench data or Li-ion charge approval
+Module supply,Serviceable cable,Reference architecture,KEEP,No measured WPT superiority
+Module supply,Regulated inductive hypothetical 0.3W,Screening only,TEST GATE,Offset FOD EMI thermal cost and efficiency missing

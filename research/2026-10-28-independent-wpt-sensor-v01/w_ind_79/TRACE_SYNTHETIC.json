@@ -1,0 +1,13 @@
+{
+  "source_kind": "synthetic",
+  "rx_min_v": 3.0,
+  "assumed_response_max_us": 200,
+  "response_evidence": "hypothesis",
+  "monitor_claims": {"independent_supply": false, "sticky_fault_memory": false, "hardware_cut_independent_of_radio": false},
+  "sample_times_us": [0, 10000],
+  "trace": [
+    {"start_us": 0, "end_us": 4000, "rx_v": 3.3, "monitor_supply_ok": true},
+    {"start_us": 4000, "end_us": 5000, "rx_v": 2.5, "monitor_supply_ok": true},
+    {"start_us": 5000, "end_us": 10000, "rx_v": 3.3, "monitor_supply_ok": true}
+  ]
+}

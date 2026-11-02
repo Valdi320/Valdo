@@ -1,0 +1,8 @@
+item,reference,qty,source_Diotronic_or_alternative,unit_price_eur_IVA,subtotal_eur_IVA,availability_status,MOQ,stock_Diotronic_Zaragoza,delivered_price_verified,decision_reason
+new_hardware_W50,none,0,software_original,0,0,NOT_APPLICABLE,0,NOT_APPLICABLE,NOT_APPLICABLE,"zero additional components; analysis only"
+paired_assembled_meter_existing_W49,INA219_breakout_100mohm,2,Diotronic:PENDING / Berrybase:W49_historical,3.70_HISTORICAL,7.40_HISTORICAL,NOT_REVERIFIED,1_HISTORICAL,NO,NO,"previous catalog observation; vendor grade shunt calibration and delivery not verified; no purchase"
+bare_chip_reference,TI_INA219BIDCNR,2,Diotronic:PENDING / DigiKey_ES,2.15380,4.30760,DIGIKEY_CATALOG_NOT_RESERVED,1,NO,NO,"bare chip not assembled board; needs shunt PCB assembly; source https://www.digikey.es/es/products/detail/texas-instruments/INA219BIDCNR/2596849"
+reusable_host,existing_Linux_PC,1,REUSE,0,0,OWNED,1,NOT_APPLICABLE,NOT_APPLICABLE,"metadata and offline tests; no expensive chip per sensor"
+wpt_pair_candidate,DFRobot_DFR0362,0,Diotronic:PENDING / DigiKey_TME_Mouser:VERIFY,UNQUOTED,0,NOT_QUALIFIED,UNKNOWN,NO,NO,"not bought and not part of W50; FOD cuts thermal and EMI unqualified"
+resistor_and_cable_bench,passives_tbd,0,Diotronic_if_equivalent / TME:Mouser:DigiKey_compare_pending,UNQUOTED,0,NOT_QUALIFIED,UNKNOWN,NO,NO,"local only after exact value tolerance MOQ IVA and complete delivered cost check"
+independent_cut_FOD_thermal,controller_tbd,0,Diotronic:PENDING / traced_TME:Mouser:DigiKey,UNQUOTED,0,NOT_QUALIFIED,UNKNOWN,NO,NO,"datasheet and traceability mandatory; cannot energize without review"

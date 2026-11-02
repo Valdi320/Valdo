@@ -1,0 +1,42 @@
+name: W68 residual energy after cutoff (SYNTHETIC)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_68/**'
+      - '.github/workflows/w-ind-68-residual-energy.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_68/**'
+      - '.github/workflows/w-ind-68-residual-energy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  residual-rc-synthetic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W68 plus W67/W08 real-repository regression
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_68 -p 'test_w68.py' -v
+          python3 -m unittest discover -s w_ind_67 -p 'test_w67.py' -v
+          python3 -m unittest -v test_tx_cut_power_screen
+      - name: Reproduce explicitly hypothetical result
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_68.w68_demo > W68_RESIDUAL_SYNTHETIC.json
+          python3 -c 'import json; d=json.load(open("W68_RESIDUAL_SYNTHETIC.json")); assert d["evidence_type"]=="SYNTHETIC_RC_TOPOLOGY_ONLY" and not d["hardware_approved"] and d["physical_tests"]==0 and not d["lithium_connected"]; assert d["source_disconnected_cap_still_charged"]["classification"]=="RESIDUAL_ABOVE_HYPOTHETICAL_SCREEN"; assert not d["source_disconnected_after_500ms"]["hardware_approved"]; assert d["reverse_feed_not_excluded"]["classification"]=="BACKFEED_NOT_EXCLUDED"'
+      - name: Archive reproducible synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W68-RESIDUAL-RC-SYNTHETIC-NO-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/W68_RESIDUAL_SYNTHETIC.json
+          if-no-files-found: warn
+          retention-days: 30

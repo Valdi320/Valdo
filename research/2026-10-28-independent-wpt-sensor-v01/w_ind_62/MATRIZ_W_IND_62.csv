@@ -1,0 +1,13 @@
+Opción;Reutilización tras reboot;Privacidad;Alimentación;Decisión;Evidencia/límite
+W61 sin reserva;Vulnerable con clave+epoch repetidos;NO;Radio no alimenta;Rechazar para desplegar;Código W61 autentica pero reinicia secuencias
+W62 con FakeLedger RAM;Bloquea solo reinicio de objetos mientras vive la memoria;NO;Radio no alimenta;Solo TEST;23 ensayos digitales
+W62 más NVM duradera antirrollback;Previene bajo contrato verificado;NO;Radio no alimenta;Candidato condicionado;NVM y brownout físico NO probados
+Flash o fichero ordinario;No garantiza antirollback ante restauración;NO;Radio no alimenta;Rechazar como prueba de seguridad;Falta ancla monotónica
+Rekey con dos nonces y CSPRNG;Potencialmente con entropía validada;NO sin cifrado;Radio no alimenta;Alternativa futura;No implementado
+ESP-NOW;ACK aplicación y HMAC externos;Depende cifrado;Solo datos;Candidato;Sin radios físicas
+OpenThread;Requiere contrato aplicación;Depende red;Solo datos;Alternativa;Coste RAM y 802.15.4 sin medir
+WISP5 RFID;Solo microsensores;Depende diseño;Micropotencia;No piloto 0.4W;No energía continua demostrada
+Cable con bloqueo;No requiere RF;Según uso;Sí entrega potencia;Baseline económica;Sin coste final comparado
+WPT abierto lazo simple;No aplica;No aplica;Condicionada;No aprobar;FOD calor offset EMI corte pendientes
+WPT regulado con doble corte;No aplica;No aplica;Condicionada;Investigar;Sin pruebas físicas de seguridad
+Dock y litio;No aplica;No aplica;Carga;Diferido;BMS desconectado

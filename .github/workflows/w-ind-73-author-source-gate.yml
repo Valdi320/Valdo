@@ -1,0 +1,47 @@
+name: W-IND-73 external TX source inventory (not hardware)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_73/**'
+      - '.github/workflows/w-ind-73-author-source-gate.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_73/**'
+      - '.github/workflows/w-ind-73-author-source-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-bound-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Offline adversarial parsing tests and immutable author data audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_73
+          python3 -m unittest -v test_w73.py
+          mkdir -p ci_evidence
+          python3 w73_source_inventory.py --fetch-pinned --out ci_evidence/W73_PINNED_AUTHOR_TX_AUDIT.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          evidence=json.loads(Path('ci_evidence/W73_PINNED_AUTHOR_TX_AUDIT.json').read_text())
+          expected=json.loads(Path('W73_EXPECTED_SOURCE_FACTS.json').read_text())
+          for k in ('source_commit','netlist_git_blob_sha1','bom_git_blob_sha1','netlist_capacitors','legacy_bom_capacitors','missing_from_legacy_bom','bus_capacitance_nominal_uF'):
+              assert evidence[k] == expected[k], (k, evidence[k], expected[k])
+          assert evidence['rf_series_bank']['nominal_parallel_nF']==expected['rf_bank_nominal_nF']
+          assert evidence['conditional_energy_at_HD'][-1]['joule_nominal_if_all_at_that_voltage']==expected['energy_if_all_at_24v_J']
+          assert evidence['hardware_approved'] is False and evidence['measurement_performed'] is False
+          assert evidence['topology_status']=='SOURCE_VERIFIED_NOT_HARDWARE_APPROVED'
+          assert len(evidence['blockers'])>=5
+          print('W73 source-pinned author netlist/BOM audit PASS (not physical qualification)')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-73-author-source-only-not-hardware
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_73/ci_evidence/*.json
+          if-no-files-found: error

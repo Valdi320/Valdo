@@ -1,0 +1,37 @@
+name: W-IND-46 local open-drain contract (synthetic unpowered)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_46/**'
+      - '.github/workflows/w-ind-46-open-drain-contract.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_46/**'
+      - '.github/workflows/w-ind-46-open-drain-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w46-model-no-hardware:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Strict diagnostic contract and adversarial logical cases
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_46
+          python3 -m unittest -v test_w46
+          python3 w46_diagnostic_model.py --out W46_SYNTHETIC_ONLY.json
+      - name: Preserve reproducible NOT-HARDWARE evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W46-SYNTHETIC-LOCAL-OD-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_46/W46_SYNTHETIC_ONLY.json
+          if-no-files-found: warn
+          retention-days: 30

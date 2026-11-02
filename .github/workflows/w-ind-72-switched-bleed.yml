@@ -1,0 +1,50 @@
+name: W-IND-72 switched bleed decision (synthetic only)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_72/**'
+      - '.github/workflows/w-ind-72-switched-bleed.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_72/**'
+      - '.github/workflows/w-ind-72-switched-bleed.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-decision-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: W72 tests and digital evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_72 -p 'test_w72.py' -v
+          mkdir -p w_ind_72/ci_evidence
+          python3 -m w_ind_72.w72_switched_discharge --report w_ind_72/ci_evidence/W72_W21_R2_RETAINED.json
+          python3 -m w_ind_72.w72_switched_discharge --no-w21-r2 --report w_ind_72/ci_evidence/W72_FUTURE_HYPOTHESIS.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('w_ind_72/ci_evidence')
+          a=json.loads((base/'W72_W21_R2_RETAINED.json').read_text())
+          b=json.loads((base/'W72_FUTURE_HYPOTHESIS.json').read_text())
+          expected=json.loads(Path('w_ind_72/W72_SYNTHETIC_COMPARISON.json').read_text())
+          for row in (a,b):
+              assert row['hardware_approved'] is False and row['may_energize'] is False
+              assert row['physical_tests']==0
+          for v,d in ((a,expected['w21_r2_retained']),(b,expected['future_r2_not_present_only_hypothesis'])):
+              m=v['bounded_ideal_metrics']
+              assert abs(m['max_known_steady_on_w']-d['max_steady_on_w'])<1e-12
+              assert abs(m['max_decay_s']-d['max_decay_s'])<1e-10
+              assert m['standby_within_assumed_budget'] is d['standby_target_met']
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-72-hypothetical-results-not-hardware
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_72/ci_evidence/*.json
+          if-no-files-found: error

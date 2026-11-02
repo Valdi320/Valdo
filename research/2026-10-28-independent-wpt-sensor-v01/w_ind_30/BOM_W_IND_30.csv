@@ -1,0 +1,11 @@
+ref,domain,candidate,qty,role,Diotronic_auxiliary,alternative_supplier,price_EUR_incl_IVA,minimum_order,Zaragoza_local_stock_verified,qualification
+U_A+U_B,RX,TI TPS25947 exact variant UNSELECTED,2,Conceptual normally OFF bidirectional blocking,Exact reference/traceability pending,TME/Mouser/DigiKey,Pending,Pending,NO,500mA minimum ILIM cannot detect RX 400mA fault
+U_MON,RX,TI INA301A1IDGKR,1,External Kelvin current monitor,Exact reference pending,TME/Mouser/DigiKey,Pending,Pending,NO,W29 monitor only - cutoff not demonstrated
+RSH,RX,Four-terminal 0.1ohm shunt UNSELECTED,1,Separate power/sense,Diotronic exact part unverified,TME/Mouser/DigiKey,Pending,Pending,NO,Footprint and tolerances not qualified
+U_PG,RX,Independent power-good/POR UNSELECTED,1,Fail OFF on supply loss,Only with documented traceable part,TME/Mouser/DigiKey,Pending,Pending,NO,Brownout cutoff circuit unbuilt
+NTC_A+NTC_B,RX-TX,Qualified NTC UNSELECTED,2,Local temperature interlock,Diotronic equivalent passive candidate,TME/Mouser/DigiKey,Pending,Pending,NO,Threshold and open/short behavior unproven
+U_FOD,TX,Independent FOD circuitry UNSELECTED,1,Foreign object protection,Only qualified traceable part,TME/Mouser/DigiKey,Pending,Pending,NO,No real FOD proof
+R_GATE,RX,Pull-down gate circuitry UNSELECTED,4,Normally OFF at boot,Diotronic passive equivalent only,TME/Mouser/DigiKey,Pending,Pending,NO,Electrical values and gate drive pending
+COILS,Module WPT,Matched TX/RX pair UNSELECTED,1,Contactless removable sensor supply,Diotronic only if documented equivalent,Vendor/TME/Mouser/DigiKey,Pending,Pending,NO,Gap heat FOD EMI and service unknown
+RADIO,Data,ESP-NOW or OpenThread UNSELECTED,1,ACK CRC sequence timeout telemetry,Diotronic auxiliary if supported board,TME/Mouser/DigiKey,Pending,Pending,NO,No wireless stop/rearm
+BATTERY-BMS,Charge dock,OUT OF SCOPE,0,No lithium trials,NOT APPLICABLE,NOT APPLICABLE,NOT APPLICABLE,NOT APPLICABLE,NO,Battery fully disconnected

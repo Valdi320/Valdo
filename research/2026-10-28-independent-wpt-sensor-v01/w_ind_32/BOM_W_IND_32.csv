@@ -1,0 +1,12 @@
+ref,subsystem,component_exact_or_placeholder,qty,role,Diotronic_reference,Diotronic_local_stock,Diotronic_price_inc_IVA_eur,alternative_supplier,alternative_price_inc_IVA_eur,MOQ,status_and_reason
+U2+U3,RX,TI TPS259470LRPWR (RPW10 2x2mm),2,True reverse-blocking switches and serial cut topology,NO_REFERENCE_VERIFIED,PENDING,PENDING,TI/TME/Mouser/DigiKey,PENDING,PENDING,Manufacturer documented; EN driving missing; QFN not home-repairable individually
+U1,RX,TI INA301A1IDGKR,1,Local receiver current monitor,NO_REFERENCE_VERIFIED,PENDING,PENDING,DigiKey/TME/Mouser,3.35 HISTORICAL W31 QUOTE NOT REVERIFIED,1 HISTORICAL,ALERT-only; independent shutoff absent
+RSH1,RX,4 terminal 0.1 ohm Kelvin shunt UNSELECTED,1,Measurement,NO_REFERENCE_VERIFIED,PENDING,PENDING,TME/Mouser/DigiKey,PENDING,PENDING,Footprint and tolerance unknown
+R1,RX,8.66kohm 1% tentative,1,INA301 LIMIT,NO_REFERENCE_VERIFIED,PENDING,PENDING,Diotronic/TME/Mouser,PENDING,PENDING,Tolerance current threshold requalification pending
+R2,RX,10kohm pullup 1% tentative,1,INA301 read-only ALERT,NO_REFERENCE_VERIFIED,PENDING,PENDING,Diotronic/TME/Mouser,PENDING,PENDING,Pullup does NOT prove INA301 supplied
+C1,RX,100nF ceramic tentative,1,Decoupling,NO_REFERENCE_VERIFIED,PENDING,PENDING,Diotronic/TME/Mouser,PENDING,PENDING,Voltage rating/placement pending
+RPD1+RPD2,RX,10kohm pulldown tentative,2,Default-low EN when external drives absent,NO_REFERENCE_VERIFIED,PENDING,PENDING,Diotronic/TME/Mouser,PENDING,PENDING,Not proof of OFF with powered but defective driver
+RILM1+RILM2,RX,RILM TBD,2,EFuse trip threshold,NO_REFERENCE_VERIFIED,PENDING,PENDING,TI/TME/Mouser,PENDING,PENDING,No safe ILIM selected; 500mA minimum cannot independently detect 400mA
+CIT1+CIT2,RX,ITIMER capacitor TBD,2,Circuit breaker timing,NO_REFERENCE_VERIFIED,PENDING,PENDING,TME/Mouser/DigiKey,PENDING,PENDING,Not dimensioned
+J1+J2+J3+J4,BENCH,Declared symbolic sources boundaries and telemetry,0,Not physical connectors,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,Only schematic interface labels
+FUTURE,RX_TX,FOD thermal positive permit POR and reverse-feed qualification,0,Missing physical safety chain,CRITICAL_TRACEABILITY_REQUIRED,PENDING,PENDING,Manufacturer/TME/Mouser/DigiKey,PENDING,PENDING,No substitute until manufacturer evidence and availability

@@ -1,0 +1,6 @@
+funcion,referencia,unidades,fuente_diotronic,alternativas,precio_final_con_IVA_EUR,MOQ,stock_tienda_zaragoza,stock_online,decision_y_motivo
+Herramienta digital,Python 3 biblioteca estandar,0,No aplica,Local y GitHub Actions,0,No aplica,No aplica,No aplica,Sin hardware adicional ni coste de compra
+TX WPT documental,STWBC86JR,0,Pendiente referencia stock precio TME,Pendiente TME Mouser DigiKey ST,Pendiente,Pendiente,Pendiente,Pendiente,NO COMPRAR; activo pero sin curva global TX/RX para 1-20mW y encapsulado WLCSP fino
+RX WPT documental,STWLC38JRM,0,Pendiente referencia stock precio TME,Pendiente TME Mouser DigiKey ST,Pendiente,Pendiente,Pendiente,Pendiente,NO COMPRAR; activo pero sin demostracion de consumo de sistema ni acoplamiento
+Proteccion de corte y FOD,Componente sin seleccionar,0,Pendiente,TME Mouser DigiKey y fabricantes,Pendiente,Pendiente,Pendiente,Pendiente,Exigir datasheet trazabilidad seguridad y test antes de especificar
+Resistencia de carga ficticia,Sin valor aprobado,0,Apoyo auxiliar en caso de futuro ensayo,TME Mouser DigiKey,Pendiente,Pendiente,Pendiente,Pendiente,No ensayar fisicamente sin seguridad/autorizacion

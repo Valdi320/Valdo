@@ -1,0 +1,16 @@
+{
+  "source_kind": "TI family headline specs and synthetic sensor requirements; NOT a measured WPT module",
+  "normal_rail_nominal_v": "3.30",
+  "normal_rail_fractional_tolerance": "0.05",
+  "sensor_floor_v": "3.00",
+  "supervisor_nominal_threshold_min_v": "1.60",
+  "supervisor_nominal_threshold_max_v": "4.90",
+  "supervisor_nominal_threshold_step_v": "0.10",
+  "supervisor_fractional_threshold_tolerance": "0.015",
+  "illustrative_thresholds_v": [
+    "2.80",
+    "3.00",
+    "3.10",
+    "3.05"
+  ]
+}

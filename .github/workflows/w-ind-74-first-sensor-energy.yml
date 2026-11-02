@@ -1,0 +1,47 @@
+name: W-IND-74 first sensor contactless energy gate (synthetic only)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_74/**'
+      - '.github/workflows/w-ind-74-first-sensor-energy.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_74/**'
+      - '.github/workflows/w-ind-74-first-sensor-energy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproducible-hypothesis-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Strict parameter, fault-injection and energy-budget tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_74
+          python3 -m unittest -v test_w74.py
+          mkdir -p ci_evidence
+          python3 w74_energy_gate.py --input SCENARIO_HYPOTHETICAL.json --output ci_evidence/W74_EVIDENCE_SYNTHETIC.json
+          cmp -s ci_evidence/W74_EVIDENCE_SYNTHETIC.json W74_EVIDENCE_SYNTHETIC.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('ci_evidence/W74_EVIDENCE_SYNTHETIC.json').read_text())
+          assert s['source_kind']=='SYNTHETIC_HYPOTHESIS'
+          assert s['decision']=='NO_GO_UNDER_HYPOTHESES'
+          assert s['failed_hypothetical_gates']==['WPT_EXCESS_DAILY_ENERGY']
+          assert 0.017 < s['max_tx_fixed_overhead_W_for_daily_budget'] < 0.018
+          assert s['wpt_to_wired_energy_ratio'] > 36
+          assert s['hardware_approved'] is False and s['physical_tests_performed'] is False
+          assert s['battery_or_bms_connected'] is False
+          print('W74 digital model reproducible; NOT a WPT product approval')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-74-hypothetical-only-not-measured
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_74/ci_evidence/*.json
+          if-no-files-found: error

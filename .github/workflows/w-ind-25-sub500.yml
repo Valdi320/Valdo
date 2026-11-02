@@ -1,0 +1,49 @@
+name: W-IND-25 conditional sub-500mA analog trip screen
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_25/**'
+      - '.github/workflows/w-ind-25-sub500.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_25/**'
+      - '.github/workflows/w-ind-25-sub500.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  conditional-arithmetic-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Corner and fault regressions (not hardware tests)
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_25
+          python3 -m unittest -v test_sub500_trip_window
+      - name: Export and assert hardware approval is FALSE
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_25
+          python3 sub500_trip_window.py > results.json
+          python3 - <<'PY'
+          import json
+          d=json.load(open('results.json',encoding='utf-8'))
+          s=d['screen']
+          assert s['threshold_window_exists_in_hypothetical_box']
+          assert s['fault_detect_margin_mv_assumed'] > 0
+          assert not s['effective_threshold_tolerance_verified']
+          assert not s['cutoff_path_schematic_verified']
+          assert not d['hardware_approved'] and not d['power_on_allowed']
+          print('CONDITIONAL DIGITAL SCREEN PASS; PHYSICAL APPROVAL DENIED')
+          PY
+      - name: Archive reproducible arithmetic (no board design)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-25-conditional-analog-envelope
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_25/results.json
+          if-no-files-found: warn
+          retention-days: 30

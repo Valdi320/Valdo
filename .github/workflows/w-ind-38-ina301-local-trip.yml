@@ -1,0 +1,61 @@
+name: W-IND-38 INA301 local trip to dual cut (UNPOWERED)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_38/**'
+      - '.github/workflows/w-ind-38-ina301-local-trip.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_38/**'
+      - '.github/workflows/w-ind-38-ina301-local-trip.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w38-unpowered-native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate editable draft and run synthetic tests
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_38
+          python3 generate_w38.py
+          python3 generate_w38.py --verify
+          python3 -m unittest -v test_w38
+      - name: KiCad 9 native ERC + XML exact-net verification
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          ROOT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_38
+          mkdir -p "$ROOT/native_out"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$ROOT" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0 native_out
+              sed "s#[$]{KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_38#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all --exit-code-violations -o native_out/w38_erc.json W38_RX_INA301_TO_DUAL_CUT_INCOMPLETE.kicad_sch
+              kicad-cli sch export netlist --format kicadxml -o native_out/w38_native.xml W38_RX_INA301_TO_DUAL_CUT_INCOMPLETE.kicad_sch
+            '
+          python3 "$ROOT/netlist_gate_w38.py" "$ROOT/native_out/w38_native.xml" --out "$ROOT/native_out/w38_gate.json"
+      - name: Archive schematic and checks (even if blocked)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W38-INA301-MR-UNPOWERED-KICAD
+          path: |
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_38/*.kicad_sch
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_38/*.kicad_sym
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_38/sym-lib-table
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_38/native_out/
+          if-no-files-found: warn
+          retention-days: 30

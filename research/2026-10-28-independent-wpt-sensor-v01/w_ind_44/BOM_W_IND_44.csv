@@ -1,0 +1,9 @@
+referencia;cantidad;componente;Diotronic_fuente_auxiliar;alternativa_documentada;precio_unitario_IVA_EUR;MOQ;stock_web;stock_local_Zaragoza;motivo;seguridad_pendiente
+U1;1;TPS3700DDCR DDC-6;NO_VERIFICADO;TI / DigiKey ES / Mouser ES / TME;2.6741 instantanea historica W41 no vigente;PENDIENTE;PENDIENTE;PENDIENTE;monitor rail INB y OUTB activo solo en estado sano;POR debajo 0.8V undefined / fallo abierto / trazabilidad
+Q1;1;onsemi BSS84LT1G SOT-23-3;NO_VERIFICADO;onsemi / DigiKey ES / Mouser / TME;PENDIENTE (BSS84 distinto listado 0.4114 IVA no transferible);PENDIENTE;PENDIENTE;PENDIENTE;conmutar salud positiva desde OUTB drenador abierto;pinout huella cuerpo diodo RDSon fuga VGS SOA
+R1;1;63.4k 1pct 0805 provisional;NO_VERIFICADO;TME ROYALOHM 0805S8F6342T5E / DigiKey / Mouser;PENDIENTE;100 segun ficha TME PL sin confirmacion en ES;TME PL web mostraba 2300 cache NO actual;PENDIENTE;umbral W43 corregido por histeresis;variacion temperatura ±1uA era hipotesis
+R2;1;10k 1pct 0805 provisional;NO_VERIFICADO;TME / Mouser / DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;divisor INB;resistencia tolerancias y montaje
+R3;1;22k 1pct 0805 provisional;NO_VERIFICADO;TME / Mouser / DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;OFF normal por puerta al source;fuga/hot plug/POR
+R4;1;47k 1pct 0805 provisional;NO_VERIFICADO;TME / Mouser / DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;pull-down receptor tras conector;VIH/VIL receptor y backfeed
+C1;1;100nF desacoplo provisional;NO_VERIFICADO;TME / Mouser / DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;VDD del TPS3700;ESR tensión dieléctrico montaje y distancia
+J1_J2_J3;3;interfaces de banco declaradas no conectores elegidos;NO_VERIFICADO;Harwin / JST / TME / Diotronic;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;separar 5V 3V3 HEALTH y GND;no reducir cables sin medir retorno/fragilidad

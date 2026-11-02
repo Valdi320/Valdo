@@ -1,0 +1,203 @@
+{
+  "milestone": "W-IND-15",
+  "scope": "new-independent-robot/W-only",
+  "status": "UNQUALIFIED_PIN_LEVEL_REFERENCE_NOT_FOR_BUILD",
+  "manufacturer": "Texas Instruments",
+  "mpn": "TPS22918DBVR",
+  "supply": "5V nominal only, never 12V dock",
+  "package": "DBV / SOT-23-6",
+  "pinmap": {
+    "1": "VIN",
+    "2": "GND",
+    "3": "ON",
+    "4": "CT",
+    "5": "QOD",
+    "6": "VOUT"
+  },
+  "switch_pin_endpoints_mm": {
+    "U1": {
+      "1": [
+        "VIN_5V",
+        66.04,
+        58.42
+      ],
+      "2": [
+        "GND",
+        76.2,
+        73.66
+      ],
+      "3": [
+        "EN_A",
+        66.04,
+        68.58
+      ],
+      "4": [
+        "NC",
+        81.28,
+        73.66
+      ],
+      "5": [
+        "NC",
+        86.36,
+        68.58
+      ],
+      "6": [
+        "MID",
+        86.36,
+        58.42
+      ]
+    },
+    "U2": {
+      "1": [
+        "MID",
+        127,
+        58.42
+      ],
+      "2": [
+        "GND",
+        137.16,
+        73.66
+      ],
+      "3": [
+        "EN_B",
+        127,
+        68.58
+      ],
+      "4": [
+        "NC",
+        142.24,
+        73.66
+      ],
+      "5": [
+        "NC",
+        147.32,
+        68.58
+      ],
+      "6": [
+        "TX_5V_CUT",
+        147.32,
+        58.42
+      ]
+    }
+  },
+  "resistors": {
+    "R1": {
+      "value": "22k",
+      "x": 104.14,
+      "y": 86.36,
+      "pins": {
+        "1": [
+          "MID",
+          104.14,
+          81.28
+        ],
+        "2": [
+          "GND",
+          104.14,
+          91.44
+        ]
+      }
+    },
+    "R2": {
+      "value": "1k",
+      "x": 163.83,
+      "y": 86.36,
+      "pins": {
+        "1": [
+          "TX_5V_CUT",
+          163.83,
+          81.28
+        ],
+        "2": [
+          "GND",
+          163.83,
+          91.44
+        ]
+      }
+    },
+    "R3": {
+      "value": "100k",
+      "x": 55.88,
+      "y": 86.36,
+      "pins": {
+        "1": [
+          "EN_A",
+          55.88,
+          81.28
+        ],
+        "2": [
+          "GND",
+          55.88,
+          91.44
+        ]
+      }
+    },
+    "R4": {
+      "value": "100k",
+      "x": 116.84,
+      "y": 86.36,
+      "pins": {
+        "1": [
+          "EN_B",
+          116.84,
+          81.28
+        ],
+        "2": [
+          "GND",
+          116.84,
+          91.44
+        ]
+      }
+    }
+  },
+  "intentional_no_connect": [
+    "U1.4",
+    "U1.5",
+    "U2.4",
+    "U2.5"
+  ],
+  "expected_nets": {
+    "VIN_5V": [
+      "U1.1"
+    ],
+    "MID": [
+      "U1.6",
+      "U2.1",
+      "R1.1"
+    ],
+    "TX_5V_CUT": [
+      "U2.6",
+      "R2.1"
+    ],
+    "GND": [
+      "U1.2",
+      "U2.2",
+      "R1.2",
+      "R2.2",
+      "R3.2",
+      "R4.2"
+    ],
+    "EN_A": [
+      "U1.3",
+      "R3.1"
+    ],
+    "EN_B": [
+      "U2.3",
+      "R4.1"
+    ]
+  },
+  "cut_controls_independent_physically": "UNPROVEN",
+  "real_metal_fod": "MISSING",
+  "thermal_sensor": "MISSING",
+  "reverse_blocking": "UNKNOWN",
+  "overcurrent_protection": "MISSING",
+  "battery_BMS_dock": "DISCONNECTED",
+  "hardware_approved": false,
+  "KiCad_ERC_run": false,
+  "SPICE_run": false,
+  "upstream_owner_credit": {
+    "TPS22918": "Texas Instruments datasheet",
+    "schematic_symbols": "VALDO original manually authored"
+  },
+  "source": "https://www.ti.com/product/TPS22918"
+}

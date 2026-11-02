@@ -1,0 +1,42 @@
+name: W-IND-26 INA301 A1 LIMIT resistor arithmetic (NOT hardware approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_26/**'
+      - '.github/workflows/w-ind-26-limit.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_26/**'
+      - '.github/workflows/w-ind-26-limit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  model-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python independent tests, no third-party dependencies
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_26
+          python3 -m unittest -v test_limit_resistor_envelope
+      - name: Generate reproducible conditional model result and prevent safety mislabeling
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_26
+          python3 limit_resistor_envelope.py > result.json
+          python3 - <<'PY'
+          import json
+          with open("result.json",encoding="utf-8") as f: s=json.load(f)["result"]
+          assert s["hypothetical_window_positive"]
+          assert not s["hardware_approved"] and not s["power_on_allowed"]
+          assert s["physical_measurements"] == 0
+          assert not s["shunt_mpn_qualified"] and not s["comparator_overtemperature_offset_qualified"]
+          assert s["max_a1_input_offset_25c_uv"] == 125.0
+          PY
+      - name: Publish only digital evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-26-conditional-limit-calculation
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_26/result.json

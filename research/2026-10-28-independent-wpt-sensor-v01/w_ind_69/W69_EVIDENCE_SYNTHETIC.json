@@ -1,0 +1,15 @@
+{
+  "assumptions": [
+    "only physically isolated non-recharging capacitors",
+    "Rmax/Cmax/Vmax are declared hypothetical bounds",
+    "single-open fault model",
+    "screen thresholds are NOT safety limits"
+  ],
+  "milestone": "W-IND-69",
+  "measurement_type": "SYNTHETIC_UPPER_BOUND_NOT_HARDWARE",
+  "evidence_type": "SYNTHETIC_INDEPENDENT_RC_UPPER_BOUND",
+  "reference": "The canonical evidence is freshly emitted by: python3 -m w_ind_69.w69_demo",
+  "physical_tests": 0,
+  "hardware_approved": false,
+  "lithium_connected": false
+}

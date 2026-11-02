@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "VALDO") (type "KiCad") (uri "${KIPRJMOD}/VALDO.kicad_sym") (options "") (descr "W-IND-21 source declared, unqualified"))
+)

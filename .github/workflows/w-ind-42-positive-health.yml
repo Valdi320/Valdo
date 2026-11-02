@@ -1,0 +1,49 @@
+name: W-IND-42 positive health line fault-model (SYNTHETIC ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_42/**'
+      - '.github/workflows/w-ind-42-positive-health.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_42/**'
+      - '.github/workflows/w-ind-42-positive-health.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  positive-health-synthetic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests and exhaustive finite-state counterexamples
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_42
+          python3 -m unittest -v test_w42
+          python3 w42_positive_health.py --out W42_EVIDENCE.json
+          python3 - <<'PY'
+          import json
+          x=json.load(open('W42_EVIDENCE.json'))
+          d=x['enumerated_topologies']
+          assert d['od_fault_low_pullup']['enumerated_cases']==128
+          assert d['pp_health_high_pulldown']['enumerated_cases']==128
+          assert d['od_fault_low_pullup']['unsafe_requests_3v3_bad']==6
+          assert d['pp_health_high_pulldown']['unsafe_requests_3v3_bad']==3
+          assert x['safe_to_energize'] is False
+          assert x['actual_bench_tested'] is False
+          assert x['not_compatible_with_unmodified_tps3700_outa'] is True
+          PY
+      - name: Store explicitly synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W42-POSITIVE-HEALTH-256-LOGIC-CASES-NOT-HARDWARE
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_42/W42_EVIDENCE.json
+          if-no-files-found: warn
+          retention-days: 30

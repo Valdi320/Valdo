@@ -1,0 +1,85 @@
+name: W-IND-71 native W21 bleeder feasibility audit (NOT hardware approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_71/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_22/**'
+      - '.github/workflows/w-ind-71-bleed-pareto.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_71/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_70/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_21/**'
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_22/**'
+      - '.github/workflows/w-ind-71-bleed-pareto.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-w21-bleeder-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: W71 synthetic constraints and W70/W22 adversarial regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest discover -s w_ind_71 -p 'test_w71.py' -v
+          python3 -m unittest discover -s w_ind_70 -p 'test_w70.py' -v
+          ( cd w_ind_22 && python3 -m unittest -v test_w_ind_22_netlist_guard )
+      - name: Native KiCad 9.0.2 W21 XML export (no actual hardware)
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          DIR=research/2026-10-28-independent-wpt-sensor-v01/w_ind_21
+          OUT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_71/native_out
+          mkdir -p "$OUT"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$DIR" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_21#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              test -s /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch export netlist --format kicadxml \
+                -o /repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_71/native_out/w21.native.xml \
+                W_IND_21_TX_BENCH_DECLARED.kicad_sch
+            '
+          test -s "$OUT/w21.native.xml"
+      - name: Native XML exact topology and hypothetical no-go proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m w_ind_71.w71_bleed_feasibility \
+            w_ind_71/native_out/w21.native.xml \
+            --report w_ind_71/native_out/w71_review.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('w_ind_71/native_out/w71_review.json').read_text())
+          assert d['w22_exact_netlist']
+          assert d['status']=='BLOCKED_PASSIVE_CONSTRAINTS_INCOMPATIBLE'
+          assert not d['any_fixed_passive_resistor_meets_both_assumptions']
+          assert not d['hardware_approved']
+          assert not d['power_on_allowed']
+          assert d['physical_tests']==0
+          print('REVIEW PASS; no passive R meets assumed targets; HARDWARE BLOCKED')
+          PY
+      - name: Archive native KiCad XML and source-hashed numerical report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-71-native-xml-ideal-rc-blocked-review
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_71/native_out/
+          if-no-files-found: warn
+          retention-days: 30

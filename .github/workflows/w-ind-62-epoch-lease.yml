@@ -1,0 +1,36 @@
+name: W62 fail-closed epoch lease (SYNTHETIC ONLY)
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_62/**'
+      - '.github/workflows/w-ind-62-epoch-lease.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_62/**'
+      - '.github/workflows/w-ind-62-epoch-lease.yml'
+  workflow_dispatch:
+jobs:
+  epoch-lease-offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W62 plus W61/W60/W base regressions
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01
+          python3 -m unittest -v test_w_link
+          python3 -m unittest discover -v -s w_ind_60 -p 'test_w60.py'
+          python3 -m unittest discover -v -s w_ind_61 -p 'test_w61.py'
+          python3 -m unittest discover -v -s w_ind_62 -p 'test_w62.py'
+      - name: Emit synthetic evidence
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_62/w62_demo.py > W62_SYNTHETIC_EPOCH_REPLAY_GUARD.json
+          python3 -c 'import json; d=json.load(open("W62_SYNTHETIC_EPOCH_REPLAY_GUARD.json")); assert d["evidence_type"]=="SYNTHETIC_ONLY" and d["same_epoch_recommission_rejected"] and d["captured_old_data_rejected_after_new_epoch"] and d["new_epoch_authenticated_ack_accepted"] and not d["hardware_approved"] and not d["antirollback_hardware_validated"] and not d["entropy_source_qualified"] and not d["radio_tested"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W62-EPOCH-REPLAY-GUARD-SYNTHETIC-NO-NVM-NO-RADIO
+          path: W62_SYNTHETIC_EPOCH_REPLAY_GUARD.json

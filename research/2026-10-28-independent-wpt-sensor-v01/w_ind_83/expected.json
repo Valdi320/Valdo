@@ -1,0 +1,33 @@
+{
+  "baseline_idling_mw": "2.9",
+  "hypothetical_rx_output_mw": "20",
+  "hypothetical_tx_ms": "10",
+  "model": "W-IND-83",
+  "reference_radio": "ESP32-C3 Table 5-7 335mA RF mode",
+  "result": {
+    "approved_for_hardware": false,
+    "assumed_delivered_rx_mw": "20",
+    "average_required_mw": "47.004000",
+    "cycle_net_energy_j": "-0.006751",
+    "cycle_unsustainable_indefinitely": true,
+    "evidence_class": "synthetic_ideal_envelope_only",
+    "first_brownout_pulse": 2,
+    "max_capacitor_energy_j": "0.014175",
+    "min_effective_cap_for_one_pulse_f": "0.011486772486772486772486772486772",
+    "pulse_history": [
+      {
+        "above_floor": true,
+        "after_j": "0.003320",
+        "before_j": "0.014175",
+        "pulse": 1
+      },
+      {
+        "above_floor": false,
+        "after_j": "-0.003431",
+        "before_j": "0.007424",
+        "pulse": 2
+      }
+    ]
+  },
+  "source": "https://documentation.espressif.com/esp32-c3_datasheet_en.html"
+}

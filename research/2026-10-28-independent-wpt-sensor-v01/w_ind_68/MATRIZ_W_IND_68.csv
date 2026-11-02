@@ -1,0 +1,7 @@
+option,tested_provenance,benefit,limitation,decision
+"W67 supply_present=False implies supply_to_tx=False","DIGITAL W67","Correct for forward DC path","Cannot conclude capacitor or backfeed empty","KEEP, BUT NEVER CALL SAFE"
+"W68 downstream RC residual gate","DIGITAL SYNTHETIC","Detects charged TX node after source removed and blocks unknown backfeed/capacitance","Ideal R and C, no hardware, arbitrary thresholds","IMPLEMENTED DIGITAL ONLY"
+"Remove bleeder or assume QOD is always safe","NONE","Fewer parts","Charge may remain, QOD can cause sustained short under welded switch","REJECT"
+"Qualified independently monitored discharge + cut","NONE","Potential real mitigation","Part/thermal/FOD/EMI/backfeed tests required","HARDWARE BLOCKED"
+"Cable/rail for first 0.4W hypothetical sensor","ARCHITECTURE CANDIDATE","Cheap and serviceable fallback","Connector remains; no total cable deletion","HOLD"
+"ESP-NOW vs OpenThread link","SOFTWARE POLICY ONLY","Telemetry without signal flex","Never transmits power or runs critical stop","SEPARATE DECISION"

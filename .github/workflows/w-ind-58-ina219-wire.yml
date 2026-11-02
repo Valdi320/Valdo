@@ -1,0 +1,31 @@
+name: W58 INA219 byte-order contract (synthetic)
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_58/**'
+      - '.github/workflows/w-ind-58-ina219-wire.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_58/**'
+      - '.github/workflows/w-ind-58-ina219-wire.yml'
+  workflow_dispatch:
+jobs:
+  byte-order-synthetic-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W58 byte-order and W57 capture integration tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_58 -p 'test_w58.py' -v
+      - name: Reproduce synthetic-only byte trace
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_58/w58_ina219_wire.py > W58_SYNTHETIC_NOT_HARDWARE.json
+          python3 -c 'import json; d=json.load(open("W58_SYNTHETIC_NOT_HARDWARE.json")); assert d["first_config_write_hex"]=="000663" and d["physical_measurements"]==0 and not d["hardware_approved"] and not d["physical_i2c_implemented"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W58-SYNTHETIC-BYTES-NOT-HARDWARE
+          path: W58_SYNTHETIC_NOT_HARDWARE.json

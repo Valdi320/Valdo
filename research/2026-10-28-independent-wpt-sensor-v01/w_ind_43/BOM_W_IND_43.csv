@@ -1,0 +1,8 @@
+ref;cantidad;valor_o_componente;fuente_Diotronic_o_alternativa;precio_unitario_iva_EUR;MOQ_confirmado;stock_web_verificado;stock_Zaragoza_verificado;razon;pendiente_seguridad
+U_PG;1;TI TPS3700DDCR como W41 no aprobado;DigiKey ES / TI / Diotronic auxiliar;2.6741;1 segun instantanea W41;instantanea W41 2026-10-30;NO;salida OUTB drena puerta solo en estado sano;POR OUTB cuando VDD bajo funcionamiento y pinout sin validar
+Q_HEALTH;1;onsemi BSS84 P-MOS solo candidato;RS ES / Mouser TME y Diotronic pendientes;0.358;10 paquete RS;listado RS 2026-10-30 no reservado;NO;convertir sink OUTB en HEALTH high activamente conducido;VGS RDSon temperatura SOA encapsulado y fuga sin cualificar
+R_TOP;1;63.4k ohm 1pct E96;Diotronic auxiliar / TME Mouser DigiKey pendientes;PENDIENTE;PENDIENTE;PENDIENTE;NO;corrige histeresis fall W41;variacion con temperatura EMI y errores de corriente no verificados
+R_BOTTOM;1;10k ohm 1pct;Diotronic auxiliar / TME Mouser DigiKey pendientes;PENDIENTE;PENDIENTE;PENDIENTE;NO;divisor INB menos;no sustituir por 5pct de catalogo
+R_GATE;1;22k ohm 1pct;Diotronic auxiliar / TME Mouser DigiKey pendientes;PENDIENTE;PENDIENTE;PENDIENTE;NO;pull gate a source cuando OUTB se abre;calificar POR y backfeed
+R_RECEIVER;1;47k ohm 1pct;Diotronic auxiliar / TME Mouser DigiKey pendientes;PENDIENTE;PENDIENTE;PENDIENTE;NO;HEALTH_IN OFF ante cable abierto;leakage y umbral del input receptor no cualificados
+J_HEALTH;1;interfaz modular con retention solo concepto;Diotronic auxiliar / Harwin JST TME pendientes;PENDIENTE;PENDIENTE;PENDIENTE;NO;conexion desmontable o acoplamiento sin contactos segun coste;no fijar geometria C ni pintar WPT como cable eliminado

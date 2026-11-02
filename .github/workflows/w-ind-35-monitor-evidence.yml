@@ -1,0 +1,32 @@
+name: W-IND-35 monitor VDD evidence contract (digital only)
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_35/**'
+      - '.github/workflows/w-ind-35-monitor-evidence.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_35/**'
+      - '.github/workflows/w-ind-35-monitor-evidence.yml'
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run synthetic contract regression (NOT safety approval)
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_35
+          python3 -m unittest -v test_w35_bench_contract.py
+          python3 w35_bench_contract.py --demo > w35_synthetic_evidence.json
+          python3 -m json.tool w35_synthetic_evidence.json >/dev/null
+      - name: Preserve transparent synthetic output
+        uses: actions/upload-artifact@v4
+        with:
+          name: w35-synthetic-only-NO-HARDWARE-APPROVAL
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_35/w35_synthetic_evidence.json

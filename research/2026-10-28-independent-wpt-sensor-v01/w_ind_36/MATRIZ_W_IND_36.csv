@@ -1,0 +1,10 @@
+problem;candidate;digital_result;physical_safety_status;cost_repairability;decision
+3V3_monitor;TPS3840PL28 + DFF CLR;2.8V threshold tolerance envelope 2.758..2.842V;No supply source or powered startup testing;PCB replacement or specialist SOT23 solder;CANDIDATE_NOT_APPROVED
+5V_monitor;TPS3840PL44 threshold;Only 34mV hypothetical margin to 4.5V minimum;Not tested with real WPT;Similar unit cost but small margin;REJECT_FOR_FIRST_CANDIDATE
+5V_monitor;TPS3840PL42 threshold;237mV hypothetical margin to 4.5V minimum;Not tested with offset or transients;DigiKey Spain €0.847 incl VAT snapshot + freight;STUDY_CANDIDATE
+double_cut_enable;2 independent PG combiners + 2 DFFs + 2 AND eFuse EN;Each rail fault model resets both without automatic restart;Single failed output and shared rail still require fault analysis;4 extra AND parts + 2 DFFs cost not qualified;TOPOLOGY_ONLY
+double_cut_enable;2 direct pullups or GPIO radio;Could power up automatically when PG/MCU unpowered;No safety approval;Fewer parts but unacceptable hazard;REJECT
+dock_charge;charge lithium over WPT;No chemistry or BMS/dock requirements established;Battery/charger physically disconnected;Not priced;DEFER
+module_power;regulated WPT low-power RX vs fixed short cable;Prior 5V sensor is hypothetical and no measured efficiency;Both options lack comparative lifetime tests;WPT costs unknown;KEEP_WIRED_REFERENCE
+radio_data;ESP-NOW or OpenThread;Both need end-to-end ACK CRC sequence freshness privacy and recovery;No physical watchdog via radio;No price or radio platform selection;DEFER_SEPARATELY
+microsensor;WISP5 RFID;Only extremely low-power sporadic sensing in author work;Does not meet continuous 5V rail;Reader extra cost;RESEARCH_ONLY

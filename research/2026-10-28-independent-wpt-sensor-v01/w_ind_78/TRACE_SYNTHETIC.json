@@ -1,0 +1,15 @@
+{
+  "rx_required_min_v": 3.0,
+  "voltage_uncertainty_v": 0.05,
+  "timestamp_uncertainty_s": 0.0,
+  "slew_bound_v_per_s": 60.0,
+  "max_nominal_sample_gap_s": 0.01,
+  "capture_duration_s": 0.02,
+  "source_kind": "synthetic",
+  "slew_bound_evidence": "hypothesis",
+  "samples": [
+    {"t_s": 0.0, "v_rx_v": 3.3},
+    {"t_s": 0.01, "v_rx_v": 3.3},
+    {"t_s": 0.02, "v_rx_v": 3.3}
+  ]
+}

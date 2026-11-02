@@ -1,0 +1,8 @@
+ref,domain,part_or_symbol,qty,role,Diotronic_auxiliary,alternative,price_eur_incl_VAT,MOQ,Zaragoza_stock_verified,decision
+U1,RX sensor,TI INA301A1IDGKR,1,INA301 A1 8-pin monitor,Dio exact reference pending,DigiKey Spain/TME/Mouser,"3.35 historical estimate from W28; no new quote",pending,NO,Vendor-traceable datasheet but unqualified as safety cutoff
+RSH1,RX sensor,Generic 4-terminal 0.1ohm Kelvin shunt,1,Separate current path and sense pins,Dio no verified exact part,Mouser/TME/DigiKey four-terminal resistor,pending,pending,NO,Generic symbol not footprint or approved part; do not substitute two-terminal WSL2512
+R1,RX sensor,8.66kohm 1percent resistor,1,INA301 LIMIT reference,Dio passives pending,TME/Mouser/DigiKey,pending,pending,NO,Nominal only tolerances/temp to qualify
+R2,RX sensor,10kohm 1percent resistor,1,Monitor-only ALERT open-drain pullup,Dio passives pending,TME/Mouser/DigiKey,pending,pending,NO,No independent power cutoff
+J1,RX source,Symbolic 5V declared source,0,Simulation schematic ONLY,not_applicable,not_applicable,not_applicable,not_applicable,NO,No physical source or BMS connected
+J2,RX load,Symbolic resistor load boundary,0,Simulation schematic ONLY,not_applicable,not_applicable,not_applicable,not_applicable,NO,No power-on approval
+FUTURE,TX and dock,FOD and thermal independent cutoff and reverse protection,0,Not selected,Dio only with traceable docs,Manufacturer/Mouser/DigiKey/TME,pending,pending,NO,Critical safety items not yet qualified or approved

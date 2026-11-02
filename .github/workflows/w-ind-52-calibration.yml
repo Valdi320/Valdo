@@ -1,0 +1,40 @@
+name: W-IND-52 current-meter three-point calibration gate (SYNTHETIC)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_52/**'
+      - '.github/workflows/w-ind-52-calibration.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_52/**'
+      - '.github/workflows/w-ind-52-calibration.yml'
+permissions:
+  contents: read
+jobs:
+  current-meter-calibration-w52:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: 32 deterministic calibration tests, synthetic only
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_52 -p 'test_w52.py' -v
+      - name: Generate reject/accept model evidence (NOT real hardware)
+        run: |
+          mkdir -p /tmp/w52-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_52/w52_calibration_gate.py --demo --out /tmp/w52-evidence/W52_SYNTHETIC_NOT_HARDWARE.json
+          python3 - <<'PY'
+          import json
+          a=json.load(open('/tmp/w52-evidence/W52_SYNTHETIC_NOT_HARDWARE.json'))
+          assert a['evidence_kind']=='SYNTHETIC-CALIBRATION-CONTRACT-NOT-HARDWARE'
+          assert a['hardware_approved'] is False
+          assert a['tx']['pass_conditional_model'] is True
+          assert a['tx']['bench_metrology_candidate'] is False
+          assert a['bad_rx_holdout_example']['pass_conditional_model'] is False
+          assert a['efficiency_metrology_approved'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W52-THREE-POINT-CALIBRATION-32TESTS-SYNTHETIC-NOT-HARDWARE
+          path: /tmp/w52-evidence/W52_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error

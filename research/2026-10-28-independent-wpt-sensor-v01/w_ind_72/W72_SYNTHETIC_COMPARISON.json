@@ -1,0 +1,30 @@
+{
+  "milestone": "W-IND-72",
+  "date": "2026-10-31",
+  "provenance": "SYNTHETIC_MATH_NOT_MEASUREMENT",
+  "hardware_approved": false,
+  "may_energize": false,
+  "physical_tests": 0,
+  "w21_r2_retained": {
+    "max_steady_on_w": 0.032397605263157894,
+    "max_decay_s": 0.1304208424828927,
+    "standby_target_met": false,
+    "hardware_approved": false
+  },
+  "future_r2_not_present_only_hypothesis": {
+    "max_steady_on_w": 0.0005555,
+    "max_decay_s": 0.2294785776068041,
+    "standby_target_met": true,
+    "hardware_approved": false
+  },
+  "unresolved": [
+    "actual_TX_capacitances",
+    "actual_inductive_tank",
+    "independent_cut",
+    "thermal",
+    "FOD",
+    "EMI",
+    "reverse_feed",
+    "cost_and_stock_Zaragoza"
+  ]
+}

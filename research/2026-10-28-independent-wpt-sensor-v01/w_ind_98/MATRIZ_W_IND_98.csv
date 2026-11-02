@@ -1,0 +1,10 @@
+interface,alternative,state,reproducible_basis,required_measurable_gate,limit
+module telemetry,Python W98 monotonic public fresh query,SOFTWARE_PATCH_ONLY,9 deterministic unit tests plus existing GitHub suite,real radio with authenticated app ACK loss and clock reboot,No physical safety
+module low power,replaceable locked cable,BASELINE,known practical removable link,compare physical cost and contact cycles,Wired still reference
+module low power,regulated coil pair with independent thermal FOD cutoff,CANDIDATE_ONLY,0.3W assumed pilot load,measured TX/RX input output and offset temperature EMI and independent disconnect,No board approved
+module low power,simple open-loop coil,REJECT_FOR_NOW,author demonstration lacks regulator and protections,real controlled safety design,Never substitute for proof
+dock,regulated isolated inductive charger,BLOCKED_NOT_TESTED,no lithium charging or station testing allowed,formal battery BMS safety and FOD wetness temperature and thermal runaway process,Dock separate from module
+telemetry,ESP-NOW local RF,CANDIDATE_ONLY,Espressif source identical to pinned HEAD,MAC callback plus APP ACK CRC sequence cryptographic peer auth retry expiry power cost,Radio not a power source
+telemetry,OpenThread local RF,ALTERNATIVE_NOT_INSTALLED,source advanced 21 commits vs pinned,device power RAM commissioning routing and ACK tests,Do not install both by default
+microsensor,WISP5 RFID harvesting,DEFER_ONLY,firmware 640kHz branch diverged,verified microjoule budget and reader net consumption,Not 0.3W powered sensor proof
+motors/pumps,WPT per motor,NOT_DEFAULT,no measured peak or continuous load,physical power loss and thermal/duty data,Wired and local safety preferred

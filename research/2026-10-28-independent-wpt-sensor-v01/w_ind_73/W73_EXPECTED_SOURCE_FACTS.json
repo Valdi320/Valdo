@@ -1,0 +1,14 @@
+{
+  "evidence_kind": "AUTHOR_SOURCE_AUDIT_NOT_HARDWARE",
+  "source_commit": "7c7858c0dd7040801b6f191df1396115560218f0",
+  "netlist_git_blob_sha1": "d4ef7e2c2c9588abcc2f28c6a775715108f2e523",
+  "bom_git_blob_sha1": "04f274dfa46810d655ae2d9783cb96ad1f17bc27",
+  "netlist_capacitors": 37,
+  "legacy_bom_capacitors": 33,
+  "missing_from_legacy_bom": ["C35", "C36", "C37", "C38"],
+  "bus_capacitance_nominal_uF": 1320.0,
+  "rf_bank_nominal_nF": 400.0,
+  "energy_if_all_at_24v_J": 0.38016,
+  "hardware_approved": false,
+  "measurement_performed": false
+}

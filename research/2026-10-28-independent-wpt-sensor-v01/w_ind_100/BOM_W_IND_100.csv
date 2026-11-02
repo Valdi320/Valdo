@@ -1,0 +1,5 @@
+elemento,cantidad,Diotronic_ref_y_precio_IVA,Diotronic_stock_Zaragoza,alternativa,precio_IVA_alternativa,disponibilidad_alternativa,seleccion_motivo
+Correccion Python y 8 pruebas,0,no procede,no procede,git rama VALDO W,0 EUR,no procede,sin nuevo componente
+Receptor NFC de evaluacion,0,no verificado,pendiente,ST X-NUCLEO-NFC07A1 en distribuidor autorizado,pendiente de revalidar,pendiente,sin compra ni potencia externa acreditada
+Lector NFC de evaluacion,0,no verificado,pendiente,ST X-NUCLEO-NFC08A1 en distribuidor autorizado,pendiente de revalidar,pendiente,no decidido para estacion
+Proteccion FOD y corte autonomo,0,no calificado,pendiente,TME/Mouser/DigiKey con ficha tecnica y trazabilidad,pendiente,pendiente,requisito de seguridad antes de energizar

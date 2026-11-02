@@ -1,0 +1,9 @@
+Criterio,Alternativa,Resultado_W70,Nivel_evidencia,Decision
+Nodo de descarga,R1 en MID,No descarga directamente TX tras U2,XML KiCad native export sujeto CI,BLOQUEAR atribucion como bleeder TX
+Nodo de descarga,R2 en TX_5V_CUT,1k nominal trazable; capacitancia y carga real ausentes,XML KiCad native export sujeto CI,CONSERVAR dibujo sin aprobar hardware
+Almacenamiento,Sin condensadores en W21,NO demuestra almacenamiento nulo; carga externa desconocida,Auditoria topologica,NO CALIFICAR descarga
+Coste energetico,R2 1k frente 10k,25mW frente 2.5mW y 0.230s frente 2.303s bajo 100uF hipotesis,Calculo analitico sintetico,NO cambiar R2
+Proteccion,WPT simple vs regulado,No hay datos FOD temp offset EMI cortacircuito independientes,Requisitos pendientes,NO energizar
+Carga dock,Bateria BMS desconectados,No hay cargador calificado,Sin ensayo,Posponer
+Datos,ESP-NOW frente OpenThread,Alternativas radio con ACK CRC secuencia timeout privacidad,Referencias de autor,No unir a corte critico
+WISP5,Sensores RFID,Intermitencia y lector no justificados,Referencia del autor,Posponer

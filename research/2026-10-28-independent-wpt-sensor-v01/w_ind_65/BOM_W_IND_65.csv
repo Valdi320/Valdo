@@ -1,0 +1,9 @@
+Bloque;Componente;Unidades de candidato;Proveedor;Referencia;Precio con IVA por ud EUR;Stock web;Stock tienda Zaragoza;MOQ;Puesta en Zaragoza;Eleccion / limite
+Software W65;Validador original Python;1;VALDO propio;w65_rf_policy.py;0 componentes incrementales;No aplica;No aplica;No aplica;No aplica;No demuestra hardware RF
+ESP-NOW;Modulo ESP32-C3-WROOM-02-N4 SMD no dev board;1 hipotetica;Diotronic auxiliar;Pendiente referencia equivalente;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;No cambiar arquitectura por tienda local
+ESP-NOW;Modulo ESP32-C3-WROOM-02-N4 SMD no dev board;1 hipotetica;TME;ESP32-C3-WROOM-02-N4;~3.43 referencia con IVA 21% web 31-10-2026;Listado web no reservado;No verificado;1 anunciado;PENDIENTE envio PCB regulador etc;Candidato a comparar no seleccionado
+ESP-NOW;Modulo ESP32-C3-WROOM-02-N4 SMD no dev board;1 hipotetica;DigiKey;14553031;~3.49690 referencia con IVA 21% web 31-10-2026;Listado web no reservado;No verificado;1 anunciado;PENDIENTE envio PCB regulador etc;Alternativa trazable
+ESP-NOW;Modulo ESP32-C3-WROOM-02-N4 SMD no dev board;1 hipotetica;Mouser;356-ESP32C3WROOM02N4;PENDIENTE (~3.13 precio catalogo antes IVA);Listado web no reservado;No verificado;1 anunciado;PENDIENTE IVA envio PCB y extras;Comparar solo precio final equivalente
+OpenThread;Modulo radio 802.15.4 sin elegir;0;Diotronic / TME / DigiKey / Mouser;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;No justificada malla ni paquete
+Proteccion electrica WPT;Controlador con FOD termica y corte independiente sin elegir;0;Distribuidor tecnico trazable;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;Datasheet proteccion y pruebas necesarias
+Dock inductivo;Bobinas TX RX y fuente aislada sin elegir;0;Diotronic auxiliar / fabricante especializado;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;Fuera de W65 bateria/BMS no conectar

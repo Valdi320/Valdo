@@ -1,0 +1,6 @@
+Alternativa;Ventaja;Riesgo/limitación;Estado
+Latches W07 independientes;No lógica cruzada;A caliente + A soldado deja B ON;RECHAZADA
+Ambos latches trip por cualquier fallo;Sin HW incremental en simulación;Corte B eléctrico no verificado;W66 IMPLEMENTADO SOFTWARE
+Cruce autónomo con dos cortes físicos;Objetivo de fallo simple;Diseño/medición/ERC pendientes;BLOQUEADO HARDWARE
+Control de parada mediante RF;Ninguna funcional;Pérdida de comunicaciones;PROHIBIDO
+Cable desmontable protegido;Economía y sin pérdidas inductivas;Contactos durante servicio;FALLBACK

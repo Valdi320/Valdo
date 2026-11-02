@@ -1,0 +1,65 @@
+name: W-IND-36 dual rail supervisory local-rearm (INCOMPLETE - NO POWER APPROVAL)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_36/**'
+      - '.github/workflows/w-ind-36-dual-pg-local-rearm.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_36/**'
+      - '.github/workflows/w-ind-36-dual-pg-local-rearm.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rx-supervisory-native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate editable KiCad assets and execute synthetic mutation and rail failure checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_36
+          python3 generate_w36.py
+          python3 generate_w36.py --verify
+          python3 -m unittest -v test_w36
+      - name: Native KiCad 9.0.2 ERC XML and independent topology verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          ROOT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_36
+          mkdir -p "$ROOT/native_out"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$ROOT" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0 native_out
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_36#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all --exit-code-violations -o native_out/w36_erc.json W36_RX_DUAL_PG_LOCAL_REARM_INCOMPLETE.kicad_sch
+              kicad-cli sch export netlist --format kicadxml -o native_out/w36_native.xml W36_RX_DUAL_PG_LOCAL_REARM_INCOMPLETE.kicad_sch
+            '
+          test -s "$ROOT/native_out/w36_native.xml"
+          python3 "$ROOT/netlist_gate_w36.py" "$ROOT/native_out/w36_native.xml" --out "$ROOT/native_out/w36_gate.json"
+          echo '::notice::Topology only; current/FOD/thermal cutoff and hardware POR are NOT qualified'
+      - name: Archive editable KiCad outputs and native evidence even if blocked
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W-IND-36-dual-supervisors-local-rearm-INCOMPLETE
+          path: |
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_36/*.kicad_sch
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_36/*.kicad_sym
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_36/sym-lib-table
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_36/native_out/
+          if-no-files-found: warn
+          retention-days: 30

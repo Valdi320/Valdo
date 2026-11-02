@@ -1,0 +1,41 @@
+name: W-IND-53 dual INA219 bus-voltage holdout (SYNTHETIC ONLY)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_53/**'
+      - '.github/workflows/w-ind-53-voltage-calibration.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_53/**'
+      - '.github/workflows/w-ind-53-voltage-calibration.yml'
+permissions:
+  contents: read
+jobs:
+  bus-voltage-calibration-w53:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Synthetic adversarial voltage calibration tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_53 -p 'test_w53.py' -v
+      - name: Evidence and explicit no-hardware signoff
+        run: |
+          mkdir -p /tmp/w53-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_53/w53_bus_voltage_gate.py --demo --out /tmp/w53-evidence/W53_SYNTHETIC_NOT_HARDWARE.json
+          python3 - <<'PY'
+          import json
+          a=json.load(open('/tmp/w53-evidence/W53_SYNTHETIC_NOT_HARDWARE.json'))
+          assert a['evidence_kind']=='SYNTHETIC-BUS-VOLTAGE-CALIBRATION-NOT-HARDWARE'
+          assert a['hardware_approved'] is False
+          assert a['efficiency_metrology_approved'] is False
+          assert a['tx']['pass_conditional_model'] and a['rx']['pass_conditional_model']
+          assert not a['voltage_pair_bench_candidate']
+          assert not a['bad_rx_holdout_example']['pass_conditional_model']
+          assert a['battery_BMS_dock_disconnected']
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W53-VOLTAGE-33TESTS-SYNTHETIC-NOT-HARDWARE
+          path: /tmp/w53-evidence/W53_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error

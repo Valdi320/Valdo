@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "LIFECYCLE_NOT_ACTIVE",
+    "LOADED_POWER_UNKNOWN",
+    "RADIO_APP_GATES_UNVERIFIED",
+    "SAFETY_GATES_UNVERIFIED"
+  ],
+  "candidate": "Renesas P9235A-R + P9027LP-R - DOCUMENT ONLY (obsolete)",
+  "evidence_class": "SYNTHETIC_OR_DOCUMENT_SCREEN_ONLY",
+  "excess_wh_day": null,
+  "hardware_approved": false,
+  "loaded_input_wh_day": null,
+  "loaded_link_efficiency": null,
+  "maximum_loaded_tx_mw_for_budget": 23.733333333,
+  "physical_tests_performed_by_this_tool": false,
+  "standby_is_loaded_evidence": false,
+  "standby_no_receiver_mw": 5.0,
+  "status": "BLOCKED",
+  "wired_ideal_floor_wh_day": 0.0696
+}

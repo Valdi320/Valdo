@@ -1,0 +1,31 @@
+name: W75 vendor-state loaded-power gate
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_75/**'
+      - '.github/workflows/w-ind-75-vendor-state.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_75/**'
+      - '.github/workflows/w-ind-75-vendor-state.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W75 original deterministic tests
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_75
+        run: |
+          python3 -m unittest -v test_w75.py
+          python3 w75_vendor_state_gate.py --input SCENARIO_VENDOR_DOCUMENT_ONLY.json --output generated.json
+          cmp generated.json W75_EVIDENCE_SYNTHETIC.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w75-synthetic-vendor-state-audit
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_75/generated.json

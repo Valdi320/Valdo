@@ -1,0 +1,5 @@
+ref,qty,component,function,Diotronic_source,Diotronic_price_EUR_VAT,Diotronic_stock_local,alternative_source,alternative_price_EUR_VAT,MOQ,reason,qualification
+QA-W18,0,Python 3 and KiCad CI gate,Block GitHub PR on real ERC findings,Not applicable,0,Not applicable,GitHub Actions/KiCad 9.0.2,0,0,No added hardware,SOFTWARE_ONLY
+U1-U2,2,TPS22918DBVR conceptual switch,Previously selected for unqualified schematic,Pending,UNKNOWN,UNVERIFIED,TI/TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,No current limiting or independent safety approval,NOT_SELECTED
+R1-R4,4,22k+1k+2x100k resistors,Existing conceptual bleeders and enable pulls,Pending,UNKNOWN,UNVERIFIED,TME/Mouser/DigiKey,UNKNOWN,UNVERIFIED,Only existing conceptual parts,NOT_SELECTED
+FOD_THERMAL_OC_REVERSE,TBD,Critical safety elements not selected,Metal/heat/overcurrent/reverse protections,Pending,UNKNOWN,UNVERIFIED,Manufacturer-traceable suppliers,UNKNOWN,UNVERIFIED,No parts ordered or independently qualified,NOT_SELECTED

@@ -1,0 +1,37 @@
+{
+  "assumed_response_max_us": 200,
+  "blockers": [
+    "INDEPENDENT_POWER_LATCH_OR_CUT_UNQUALIFIED",
+    "NO_BENCH_TRACE",
+    "RESPONSE_TIME_NOT_QUALIFIED"
+  ],
+  "critical_stop_authorized": false,
+  "hardware_approved": false,
+  "hidden_events_between_samples": 1,
+  "ideal_model_capture_count": 1,
+  "monitor_claims": {
+    "hardware_cut_independent_of_radio": false,
+    "independent_supply": false,
+    "sticky_fault_memory": false
+  },
+  "note": "idealized event source and latency; physical comparator maximum delay, rail survival and sticky latch remain unproven",
+  "observed_samples_all_above_threshold": true,
+  "physical_evidence_authenticated": false,
+  "real_pulse_capture_proven": false,
+  "response_evidence": "hypothesis",
+  "samples_v": [
+    3.3,
+    3.3
+  ],
+  "source_kind": "synthetic",
+  "status": "BLOCKED",
+  "undervoltage_events": [
+    {
+      "captured_in_ideal_model": true,
+      "duration_us": 1000,
+      "end_us": 5000,
+      "monitor_survived": true,
+      "start_us": 4000
+    }
+  ]
+}

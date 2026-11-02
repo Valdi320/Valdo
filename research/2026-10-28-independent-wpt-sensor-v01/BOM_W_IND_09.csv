@@ -1,0 +1,9 @@
+item,quantity,part,role,owner_source,Diotronic_reference_stock,alternative_price_eur_per_unit_incl_vat,price_basis,selection_status,limitation
+1,1,TPS22950CDDCR,5V RX current limit and reverse blocking partial candidate,TI TPS22950 SLVSFJ2B,UNKNOWN,0.90508,Mouser 0.748 EUR plus assumed 21pct IVA excluding shipping,INVESTIGATE,auto retry and fixed QOD no hardware acceptance
+2,0,TPS22950LDDCR,Latch variant compared only,TI TPS22950 Table5,UNKNOWN,,Not quoted,REJECT_0_4A_RCB,min ILIM 0.5A typical and no RCB
+3,0,TPS22950CQDDCRQ1,Automotive C variant compared only,TI TPS22950 Table5,UNKNOWN,0.968,DigiKey Spain single unit including VAT no shipping,REJECT_0_4A,min ILIM 0.5A typical and auto retry
+4,0,TPS22918DBVR,Prior TX cutoff comparison,TI TPS22918,UNKNOWN,,W-IND-08 estimate outdated check again,UNAPPROVED,no ILIM or RCB two independent cuts unverified
+5,0,TPS259630DDAR,Existing RX eFuse candidate from W-IND-06,TI TPS2596,UNKNOWN,1.1011,W-IND-06 price historical exclude shipping,KEEP_PARALLEL,not qualified for full physical WPT cutoff
+6,TBD,Analog latch and dual independently isolated cut,Hardwired TX independent shutdown,TBD,UNKNOWN,,No exact part selected,BLOCKER,not implemented real PCB
+7,TBD,Independent FOD and two thermal sensors,TX foreign object and thermal fault handling,TBD,UNKNOWN,,No exact part selected,BLOCKER,no real sensing or validation
+8,TBD,Resistors and removable connectors,Serviceable local prototyping,TBD,Diotronic AUXILIARY exact parts/stock/min qty TBD,,Compare with TME Mouser DigiKey,RESEARCH,never assume store stock

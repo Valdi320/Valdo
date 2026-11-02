@@ -1,0 +1,41 @@
+{
+  "schema": "valdo.w_ind_102.evidence.v1",
+  "milestone": "W-IND-102",
+  "baseline_head": "da8660e32d9322baa2b8ac6abd65ab3b74109074",
+  "status": "PUBLISHED_GENERAL_CI_PASS_HARDWARE_BLOCKED",
+  "classification": "manufacturer_data_analysis_and_analytical_calculation_only",
+  "expected_results": {
+    "points": 22,
+    "max_am100_mw": 8.64,
+    "max_am10_mw": 12.593,
+    "pilot_400mw_shortfall_factor": 31.763678,
+    "pilot_1500mw_shortfall_factor": 119.113793,
+    "micro_target_average_mw": 0.25,
+    "minimum_reference_at_h_ge_1_mw": 1.035,
+    "minimum_reference_margin_factor": 4.14,
+    "illustrative_nominal_buffer_uf": 36.284
+  },
+  "reproducible_commands": [
+    "python3 -m unittest -v w_ind_102.test_w_ind_102",
+    "python3 w_ind_102/w_ind_102.py --out w_ind_102/RESULTADO_CI.json"
+  ],
+  "physical_measurements": 0,
+  "simulated_electromagnetic_runs": 0,
+  "battery_bms_dock_connected": false,
+  "hardware_approved": false,
+  "third_party_code_or_cad_copied": false,
+  "third_party_repositories_modified": false,
+  "oomwoo_or_pr79_modified": false,
+  "commit": "33d9126708922b9859631a8fa44b7b61a4d26fcf",
+  "ci": {
+    "general_run": 41335129954,
+    "general_url": "https://github.com/Valdi320/Valdo/actions/runs/41335129954",
+    "pull_request_run": 41335125190,
+    "pull_request_url": "https://github.com/Valdi320/Valdo/actions/runs/41335125190",
+    "artifact_id": 13094249814,
+    "artifact_url": "https://github.com/Valdi320/Valdo/actions/runs/41335129954/artifacts/13094249814",
+    "w18_erc_run": 41335125189,
+    "w18_erc_url": "https://github.com/Valdi320/Valdo/actions/runs/41335125189",
+    "w18_erc_status": "FAIL_EXPECTED_UNQUALIFIED_W_IND_15_3_PREEXISTING_VIOLATIONS"
+  }
+}

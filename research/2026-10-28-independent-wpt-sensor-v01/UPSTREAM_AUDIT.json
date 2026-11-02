@@ -1,0 +1,72 @@
+{
+  "checked_date": "2026-10-28",
+  "method": "GitHub repository branch refs, compare API, commits, releases, PRs; no external code copied",
+  "external": [
+    {
+      "repository": "mark-belbin/simple-wireless-power",
+      "owner": "mark-belbin",
+      "license": "GPL-3.0",
+      "branch": "master",
+      "prior": "7c7858c0dd7040801b6f191df1396115560218f0",
+      "head": "7c7858c0dd7040801b6f191df1396115560218f0",
+      "pr": "https://github.com/mark-belbin/simple-wireless-power/pull/1",
+      "changed": false
+    },
+    {
+      "repository": "wisp/wisp5-hw",
+      "owner": "wisp",
+      "license": "BSD-2-Clause",
+      "branch": "master",
+      "prior": "08332bc398aa3350d351ef2aaac163f8007cffda",
+      "head": "08332bc398aa3350d351ef2aaac163f8007cffda",
+      "pr": "https://github.com/wisp/wisp5-hw/pull/1",
+      "changed": false
+    },
+    {
+      "repository": "wisp/wisp5",
+      "owner": "wisp",
+      "license": "BSD-2-Clause",
+      "branch": "640kHz",
+      "prior": "d978a6978ad23ccd6c44dd55430973b04a3d4a9b",
+      "head": "604eee2dffaeba3a270de61cf3dae887a33309c2",
+      "compare": {
+        "status": "diverged",
+        "ahead": 68,
+        "behind": 11,
+        "merge_base": "f82432218e323524895fff963031172ef979ebd7"
+      },
+      "pr": "https://github.com/wisp/wisp5/pull/38",
+      "changed": true
+    },
+    {
+      "repository": "espressif/esp-now",
+      "owner": "espressif",
+      "license": "Apache-2.0",
+      "branch": "master",
+      "prior": "c3b5f9be245f1a80db9cb938600566aa6a8dd1e5",
+      "head": "c3b5f9be245f1a80db9cb938600566aa6a8dd1e5",
+      "pr": "https://github.com/espressif/esp-now/pull/153",
+      "changed": false
+    },
+    {
+      "repository": "openthread/openthread",
+      "owner": "openthread",
+      "license": "BSD-3-Clause",
+      "branch": "main",
+      "prior": "7009584dadc20cf20c20a6062f357dd572ba6885",
+      "head": "7009584dadc20cf20c20a6062f357dd572ba6885",
+      "pr": "https://github.com/openthread/openthread/pull/13802",
+      "release": "https://github.com/openthread/openthread/releases/tag/v2026.10.0",
+      "changed": false
+    }
+  ],
+  "oomwoo": {
+    "repo": "makerspet/oomwoo",
+    "head": "1c2bd43abcf74288afcf2d8b64514cc325f9b905",
+    "firmware_previous": "33ee70d5453c6ee26a867523f411a6071ef1af53",
+    "firmware_head": "e8f0f1752ba84d3d14a8ce2f2e7b537caa23d45e",
+    "compare": "ahead 1; docs/SPEC.md only; front IR receiver pins+baffle; no WPT impact",
+    "avoid_pr": "https://github.com/makerspet/oomwoo/pull/79"
+  },
+  "caveats": "refs describe queried branch, not all branches; WISP divergent must not fast forward; inspect third party LICENSE in exact source before importing"
+}

@@ -1,0 +1,5 @@
+Component,Qty,Diotronic reference or alternative,Price EUR VAT included,Local stock verified,Alternative distributor,Selection reasoning
+W99 Python-only logic patch,1,No physical purchase,0.00,Not applicable,Not applicable,Original software fix on existing host code
+Existing optional sensor coil/controller,0 new,Diotronic candidate not specified,PENDING,NO,TME / Mouser / DigiKey / manufacturer,No WPT PCB approved or ordered; safety traceability required
+Existing optional RF evaluation board,0 new,Diotronic candidate not specified,PENDING,NO,TME / Mouser / DigiKey / manufacturer,No hardware purchase; no RF measurement claimed
+Existing wired fallback,0 new,Serviceable cable unchanged,PENDING,NO,Local generic parts or TME,Retain until physical comparative evidence

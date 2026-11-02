@@ -1,0 +1,31 @@
+name: W59 INA219 channel mapping synthetic-only
+on:
+  push:
+    branches:
+      - w/independent-sensor-wpt-link-20261028
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_59/**'
+      - '.github/workflows/w-ind-59-channel-mapping.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_59/**'
+      - '.github/workflows/w-ind-59-channel-mapping.yml'
+  workflow_dispatch:
+jobs:
+  mapping-synthetic-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W59 tests including W57 W58 injected integration
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_59 -p 'test_w59.py' -v
+      - name: Generate honest untrusted offline evidence
+        run: |
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_59/w59_mapping_gate.py > W59_SYNTHETIC_NOT_HARDWARE.json
+          python3 -c 'import json; d=json.load(open("W59_SYNTHETIC_NOT_HARDWARE.json")); assert d["synthetic_valid"]["pattern_pass"] and not d["synthetic_alias"]["pattern_pass"] and not d["synthetic_swapped"]["pattern_pass"]; assert all(not v["hardware_approved"] and not v["meter_identity_proven"] and v["physical_measurements_performed_by_this_software"]==0 for v in d.values())'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W59-THREE-CHALLENGE-SYNTHETIC-NOT-HARDWARE
+          path: W59_SYNTHETIC_NOT_HARDWARE.json

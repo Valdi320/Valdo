@@ -1,0 +1,72 @@
+{
+  "schema": "wpt-pair-v1",
+  "as_of": "2026-10-28",
+  "price_status": "Snapshots conflict for Adafruit TX2162 (EUR 28.75 versus EUR 39.25); re-check checkout before purchase. Shipping is FROM, not guaranteed.",
+  "shipping_eur_from": "12.50",
+  "free_shipping_threshold_eur": "150.00",
+  "shipping_url": "https://opencircuit.es/producto/wireless-charging-module-5v-1a",
+  "pilot": {
+    "voltage_v": 5,
+    "mean_power_w": 0.4,
+    "peak_power_w": 1.5,
+    "gap_screen_mm": 4,
+    "scope": "noncritical replaceable sensor, hypothetical"
+  },
+  "candidates": [
+    {
+      "id": "dfrobot-dfr0362-pair",
+      "vendor": "DFRobot",
+      "tx_model": "DFR0362 TX included",
+      "rx_model": "DFR0362 RX included",
+      "seller_url": "https://opencircuit.es/producto/wireless-charging-module-5v-1a",
+      "manufacturer_url": "https://wiki.dfrobot.com/dfr0362/",
+      "output_nominal_v": 5,
+      "rx_rating_a": 1,
+      "gap_min_mm": 2,
+      "gap_max_mm": 10,
+      "prices_eur_vat_incl": [
+        "9.50"
+      ],
+      "seller_stock": "106 units EXTERNAL warehouse; listed 5-7 days (28/10/2026 snapshot)",
+      "vendor_pair_compatibility_claimed": true,
+      "tx_fod_physical_verified": false,
+      "tx_thermal_cut_physical_verified": false,
+      "independent_cut_physical_verified": false,
+      "limitations": [
+        "no evidenced TX metal-FOD or autonomous cutoff",
+        "no measured output at XY offset; 90pct is best-claimed, not guaranteed efficiency",
+        "fragile coil leads explicitly warned by https://tienda.bricogeek.com/fuentes-de-alimentacion/899-cargador-inalambrico-5v-1a.html",
+        "alternate Spain vendor BricoGeek currently says SIN STOCK; Opencircuit external warehouse not delivery confirmed"
+      ]
+    },
+    {
+      "id": "adafruit-qi-2162-plus-1901",
+      "vendor": "Adafruit",
+      "tx_model": "2162 Qi transmitter",
+      "rx_model": "1901 Qi receiver with BQ51013B",
+      "seller_url": "https://opencircuit.es/producto/universal-qi-wireless-charging-transmitter",
+      "manufacturer_url": "https://www.ti.com/product/BQ51013B",
+      "receiver_url": "https://opencircuit.es/producto/universal-qi-wireless-receiver-module",
+      "output_nominal_v": 5,
+      "rx_rating_a": 0.5,
+      "gap_min_mm": 2,
+      "gap_max_mm": 8,
+      "prices_eur_vat_incl": [
+        "52.00",
+        "62.50"
+      ],
+      "seller_stock": "TX external supplier/warehouse (up to 10-30d), RX external warehouse (10-12d); not guaranteed",
+      "vendor_pair_compatibility_claimed": true,
+      "tx_fod_physical_verified": false,
+      "tx_thermal_cut_physical_verified": false,
+      "independent_cut_physical_verified": false,
+      "limitations": [
+        "Price pair = TX EUR28.75 archived page /39.25 more recent page plus RX EUR23.25; source snapshots disagree",
+        "Qi compatibility claim is NOT a tested assembled TX/RX pairing",
+        "TI BQ51013B RX FOD reporting and thermal shutdown do NOT demonstrate physical transmitter cutoff",
+        "Adafruit TX 2162 no independent normally-off cutoff evidenced",
+        "2-8mm published TX range does not prove full power at gap/offset"
+      ]
+    }
+  ]
+}

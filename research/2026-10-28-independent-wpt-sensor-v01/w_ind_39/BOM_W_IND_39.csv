@@ -1,0 +1,6 @@
+ref;qty;function;Diotronic_auxiliary;alternative_supplier;EUR_VAT_included;MOQ;stock_Diotronic_Zaragoza;stock_alternative;choice_and_limits
+U12;1;INA301A1IDGKR segunda vigilancia corriente;sin ficha exacta ni stock local verificado;DigiKey España https://www.digikey.es/es/products/detail/texas-instruments/INA301A1IDGKR/6571979;3.35 EUR estimacion IVA 21% sin transporte al 30-10-2026;1 cinta cortada;PENDIENTE;4225 web no reservado en consulta 30-10-2026;ESTUDIO solo: duplicacion parcial sobre shunt comun
+R3;1;pullup 10k para U9 MR_N al 5V;Diotronic 10351 axial precio historico 0.15 EUR IVA MOQ5 NO compatible PCB SMD;TME Yageo RC0805FR-0710KL;0.07 EUR IVA web historico sin checkout;1 historico;PENDIENTE;PENDIENTE;0805 candidato y margen analogico sin cualificar
+R4;1;resistencia limite segunda INA301 8k66 hipotetica;sin SKU local comprobado;TME Mouser DigiKey 0805 tolerancia por fijar;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;no elegir antes de umbral real y derating
+C7;1;desacoplo U12 100nF X7R candidato;Diotronic pasivo equivalente pendiente de SKU;TME Mouser DigiKey;PENDIENTE;PENDIENTE;PENDIENTE;PENDIENTE;ESR tensiones y layout sin validar
+RSH1;0 adicional;resistencia Kelvin comun existente W38;no cambiar;proveedor W38 sin calificar;0 incremental;NO APLICA;NO APLICA;NO APLICA;single-point de fallo aun compartido

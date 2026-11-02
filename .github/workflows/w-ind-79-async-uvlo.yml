@@ -1,0 +1,32 @@
+name: W-IND-79 asynchronous UVLO digital latch model
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_79/**'
+      - '.github/workflows/w-ind-79-async-uvlo.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_79/**'
+      - '.github/workflows/w-ind-79-async-uvlo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  uvlo-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test asynchronous UVLO events and reproduce synthetic JSON
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_79
+        run: |
+          python3 -m unittest -v test_w79.py
+          python3 w79_async_uvlo_gate.py --input TRACE_SYNTHETIC.json --output W79_REGENERATED.json
+          cmp W79_EVIDENCE_SYNTHETIC.json W79_REGENERATED.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w79-synthetic-uvlo-trace
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_79/W79_REGENERATED.json

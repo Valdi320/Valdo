@@ -1,0 +1,6 @@
+item,cantidad,ref_preliminar,funcion,diotronic_fuente_y_precio_iva,diotronic_stock_zaragoza,alternativa_precio_iva,alternativa_stock_MOQ,razon_y_limite
+IC1,1,TI TPS3700DDCR,supervision 3v3 desde 5v,SKU precio no verificados,pendiente,DigiKey ESP 2.6741 EUR por unidad catalogo 30-10,web snapshot MOQ1 no actual,TI VDD 1.8-18V y OUTA open drain NO aprobado
+R_TOP,1,62k 1pct SMD,divisor,Diotronic axial 62k 5pct ref 6235025 0.02 EUR NO EQUIVALENTE,pendiente,TME Mouser DigiKey precio pendiente,stock y MOQ pendientes,requiere 1pct SMD y trazabilidad
+R_BOT,1,10k 1pct SMD,divisor,Diotronic referencia exacta no verificada,pendiente,TME Mouser DigiKey precio pendiente,stock y MOQ pendientes,requiere 1pct SMD y trazabilidad
+R_EN,pendiente,pullups/pulldowns EN,corte por defecto OFF,Diotronic sujeto a equivalencia,pendiente,distribuidor especializado precio pendiente,pendiente,no seleccionar sin esquema y limites de corriente
+SUP_5V,1 por validar,supervisor 5V pre-corte,fuente de permiso seguro,Diotronic sin referencia calificada,pendiente,TI/TME/Mouser/DigiKey pendiente,pendiente,independencia real POR y backfeed por probar

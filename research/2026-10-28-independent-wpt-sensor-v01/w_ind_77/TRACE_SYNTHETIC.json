@@ -1,0 +1,52 @@
+{
+  "description": "SYNTHETIC only: a 100-ms undervoltage window invisible to W76 phase-mean RX-power screening",
+  "cycle_seconds": 30,
+  "sensor_reference_mw": 2.9,
+  "rx_required_min_v": 3.0,
+  "max_extra_wh_day": 0.5,
+  "max_observation_gap_ms": 10,
+  "minimum_cycles_required": 3,
+  "cycles_observed": 1,
+  "acquisition_claims": {
+    "monotonic_clock": false,
+    "simultaneous_tx_rx": false,
+    "tx_meter_calibrated": false,
+    "rx_meter_calibrated": false,
+    "cycle_representative": false
+  },
+  "windows": [
+    {
+      "start_s": 0,
+      "end_s": 9.9,
+      "tx_integrated_mj": 198,
+      "tx_relative_uncertainty_pct": 0,
+      "rx_observed_min_v": 3.3,
+      "rx_voltage_uncertainty_v": 0,
+      "rx_max_sample_gap_ms": 5,
+      "tx_capture_mode": "energy_integrator",
+      "source_kind": "synthetic"
+    },
+    {
+      "start_s": 9.9,
+      "end_s": 10,
+      "tx_integrated_mj": 2,
+      "tx_relative_uncertainty_pct": 0,
+      "rx_observed_min_v": 2.5,
+      "rx_voltage_uncertainty_v": 0,
+      "rx_max_sample_gap_ms": 5,
+      "tx_capture_mode": "energy_integrator",
+      "source_kind": "synthetic"
+    },
+    {
+      "start_s": 10,
+      "end_s": 30,
+      "tx_integrated_mj": 400,
+      "tx_relative_uncertainty_pct": 0,
+      "rx_observed_min_v": 3.3,
+      "rx_voltage_uncertainty_v": 0,
+      "rx_max_sample_gap_ms": 5,
+      "tx_capture_mode": "energy_integrator",
+      "source_kind": "synthetic"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+item,quantity,part,function,manufacturer_source,Diotronic_status,alternative_source,unit_eur_incl_vat,availability,qualification
+1,2,TI TPS22918DBVR,High side cutoff A and B QOD unconnected,https://www.ti.com/product/TPS22918,No exact equivalent or stock verified,DigiKey Spain TPS22918DBVR,0.5687,0 observed at DigiKey; shipping omitted,Only 1-5.5V and up to 2A candidate; FOD external
+2,2,100kOhm resistor generic candidate,Independent ON pulldowns TBD,TBD,Diotronic stock min order and price pending,TME or Mouser,,,Determine leakage and ON input thresholds
+3,1,1kOhm resistor >=0.25W candidate,Output passive bleeder,TBD,Diotronic stock min order and price pending,TME or Mouser,,,Hypothetical RC with <=100uF; real TX energy unknown
+4,1,Isolated 5V bench DC source,Low power laboratory source,TBD,Not selected,Specialist provider,,,No purchase or energization authorized
+5,1,FOD metal/offset detector TBD,TX foreign object independent detection,TBD,No matching reference confirmed,Specialist provider,,,BLOCKER
+6,2,Analog comparator plus watchdog latch TBD,Independent hardwired thermal FOD inhibit channels,TBD,No matching reference confirmed,TME or Mouser,,,BLOCKER
+7,1,Input and reverse current protection TBD,Overcurrent voltage and reverse feed,TBD,No matching reference confirmed,Specialist provider,,,BLOCKER

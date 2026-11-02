@@ -1,0 +1,19 @@
+{
+  "milestone": "W-IND-100",
+  "date": "2026-11-01",
+  "base_sha": "7dbb4bf4678a5fcc9664950e32823f8c6307c79e",
+  "scope": "VALDO W only, experimental telemetry",
+  "logical_bug_before": "fresh(261) false but latched_fault false after valid last_ms=10 timeout_ms=250",
+  "expected_after": "fresh(261) false and latched_fault true, new session required",
+  "new_tests": 8,
+  "tests_status": "PENDING_GITHUB_CI_AT_COMMIT",
+  "run_commands": [
+    "python3 -B -m unittest -v test_w_link.TestReceiverDeadlineLatchW100",
+    "python3 -B -m unittest -v test_w_link"
+  ],
+  "physical_measurements": 0,
+  "battery_connected": false,
+  "external_code_copied": false,
+  "diotronic_stock_verified": false,
+  "known_erc_violations": 3
+}

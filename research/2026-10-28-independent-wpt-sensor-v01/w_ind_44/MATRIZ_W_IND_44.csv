@@ -1,0 +1,7 @@
+alternativa;comparacion verificable;beneficio;riesgo mayor;estado;tipo evidencia;decision
+W43 texto OUTB-PMOS;solo contrato ideal sin netlist fisica;coste CAD nulo;pinout y SRC DRAIN sin auditar;ANTERIOR;modelo logico;se conserva como especificacion
+W44 KiCad aislado OUTB-PMOS;10 componentes 6 redes y 25 pines identificados al exportar KiCad;captura de errores de conexion antes de construir;POR undefined y salud cortocircuitada a 5V;CANDIDATO SOLO DIGITAL;generador propio + ERC KiCad + XML netlist condicionados a CI;no conectar a eFuse ni alimentar
+W44 diodo cuerpo PMOS invertido;test detecta Q1 source y drain intercambiados en red;evita error grave de montaje;no demuestra encapsulado ni dV/dt;BLOQUEO SI FALLA;verificacion conectividad;prohibir fabricar
+W44 falso HEALTH con VDD por debajo POR;W43 sintetico puede solicitar ON cuando TPS3700 indeterminado;demuestra limite especifico;ningun corte independiente garantizado;BLOQUEO SEGURIDAD;modelo ideal W43 no test real;supervisor POR independiente + fail-closed
+W44 HEALTH corto a +5V;W43 sintetico muestra ON potencial;diagnostico de fallo comun sin esconderlo;linea unica no detecta cortos a positivo;BLOQUEO SEGURIDAD;modelo ideal;considerar retorno activo dual e independencia real
+Arnes retenido reparable;comparativa real sin coste ni tiempo medidos;menos piezas y perdidas;contacto mecanico;ALTERNATIVA BASE;pendiente medicion;no declarar WPT como mejor sin medir

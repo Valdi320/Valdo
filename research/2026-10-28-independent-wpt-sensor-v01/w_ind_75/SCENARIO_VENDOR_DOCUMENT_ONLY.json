@@ -1,0 +1,43 @@
+{
+  "module_kind": "noncritical_readonly_sensor",
+  "vendor": "Renesas P9235A-R + P9027LP-R - DOCUMENT ONLY (obsolete)",
+  "lifecycle": "obsolete",
+  "sensor_mean_mw": 2.9,
+  "max_extra_wh_day": 0.5,
+  "standby": {
+    "condition": "no_receiver",
+    "voltage_v": 5,
+    "current_ma": 1,
+    "source_kind": "manufacturer_claim",
+    "source_url": "https://www.renesas.com/en/products/p9235a-r"
+  },
+  "loaded": {
+    "tx_input_mw": null,
+    "rx_output_mw": null,
+    "source_kind": "unknown",
+    "gap_mm": null,
+    "offset_mm": null,
+    "coil_temp_c": null
+  },
+  "safety": {
+    "fod": "unknown",
+    "thermal_cut": "unknown",
+    "independent_cut": "unknown",
+    "emi": "unknown",
+    "offset_scan": "unknown",
+    "reverse_current": "unknown",
+    "residual_discharge": "unknown",
+    "wetness": "unknown"
+  },
+  "radio": {
+    "application_ack": false,
+    "crc": false,
+    "sequence": false,
+    "timeout": false,
+    "privacy": false,
+    "local_fail_safe": false
+  },
+  "battery_or_bms_connected": false,
+  "motor_or_pump": false,
+  "critical_radio_stop": false
+}

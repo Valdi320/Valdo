@@ -1,0 +1,7 @@
+option,result,evidence,limits,approved_to_power
+TX use RX 346.4mA trip,REJECTED,synthetic 55-90pct efficiency envelope,healthy TX input reaches 545mA,false
+RX INA301 + Kelvin shunt,CANDIDATE,nominal 300-400mA window,local cutoff and rail loss unproven,false
+TX independent cutoff with own limit,REQUIRED,TX current stage separation,hardware and actual eta unmeasured,false
+FOD thermal reverse blocking,REQUIRED,independent of radio,not built,false
+ESP-NOW or OpenThread,DATA ONLY,application ACK CRC and timeout,not safety cutoff,false
+Dock charge or motor WPT,OUT OF SCOPE,separate unmeasured loads,lithium disallowed,false

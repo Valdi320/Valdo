@@ -1,0 +1,38 @@
+name: W-IND-51 assembled dual meter cost and shunt screen (SYNTHETIC)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_51/**'
+      - '.github/workflows/w-ind-51-assembled-meter.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_51/**'
+      - '.github/workflows/w-ind-51-assembled-meter.yml'
+permissions:
+  contents: read
+jobs:
+  cost-and-metrology-w51:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: 32 synthetic deterministic tests; no hardware
+        run: python3 -m unittest discover -v -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_51 -p 'test_w51.py'
+      - name: Generate explicit non-hardware evidence
+        run: |
+          mkdir -p /tmp/w51-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_51/w51_cost_metrology_gate.py --demo --out /tmp/w51-evidence/W51_SYNTHETIC_NOT_HARDWARE.json
+          python3 - <<'PY'
+          import json
+          a=json.load(open('/tmp/w51-evidence/W51_SYNTHETIC_NOT_HARDWARE.json'))
+          assert a['hardware_approved'] is False
+          assert a['evidence_kind']=='SYNTHETIC-CATALOG-NOT-HARDWARE'
+          assert len(a['offers']) == 5
+          assert all(not x['ready_for_cost_comparison'] for x in a['offers'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W51-COST-SHUNT-32-TESTS-SYNTHETIC-NOT-HARDWARE
+          path: /tmp/w51-evidence/W51_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error

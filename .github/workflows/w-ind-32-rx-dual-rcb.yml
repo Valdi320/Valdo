@@ -1,0 +1,65 @@
+name: W-IND-32 receiver dual RCB topology (INCOMPLETE - NO POWER APPROVAL)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_32/**'
+      - '.github/workflows/w-ind-32-rx-dual-rcb.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_32/**'
+      - '.github/workflows/w-ind-32-rx-dual-rcb.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rx-dual-rcb-native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate editable KiCad assets and execute 38 synthetic mutation checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_32
+          python3 generate_w32.py
+          python3 generate_w32.py --verify
+          python3 -m unittest -v test_w32
+      - name: Native KiCad 9.0.2 ERC XML and independent topology verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          ROOT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_32
+          mkdir -p "$ROOT/native_out"
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$ROOT" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0 native_out
+              sed "s#\${KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_32#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all --exit-code-violations -o native_out/w32_erc.json W32_RX_DUAL_RCB_INCOMPLETE.kicad_sch
+              kicad-cli sch export netlist --format kicadxml -o native_out/w32_native.xml W32_RX_DUAL_RCB_INCOMPLETE.kicad_sch
+            '
+          test -s "$ROOT/native_out/w32_native.xml"
+          python3 "$ROOT/netlist_gate_w32.py" "$ROOT/native_out/w32_native.xml" --out "$ROOT/native_out/w32_gate.json"
+          echo '::notice::Topology only; permits and autonomous safety hardware are NOT implemented'
+      - name: Archive editable KiCad outputs and native evidence even if blocked
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W-IND-32-incomplete-native-RX-cut-topology
+          path: |
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_32/*.kicad_sch
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_32/*.kicad_sym
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_32/sym-lib-table
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_32/native_out/
+          if-no-files-found: warn
+          retention-days: 30

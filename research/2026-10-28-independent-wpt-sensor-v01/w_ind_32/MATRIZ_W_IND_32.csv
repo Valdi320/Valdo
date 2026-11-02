@@ -1,0 +1,9 @@
+alternative,advantage,evidence,blocking_condition,decision
+Two TPS259470LRPWR serial IN-OUT and own EN pulldown,Manufacturer says true RCB with back-to-back FETs; native KiCad netlist can be checked,TI datasheet product plus original schematic and mutant tests,EN drivers and current/temp/FOD cutoff still absent; silicon behavior not bench tested,ONLY TOPOLOGY REVIEW
+Single TPS259470LRPWR,Cheaper/simpler with manufacturer RCB,TI product page,Single welded/bridged cut defeats one channel and 500mA min cannot detect 400mA fault,NOT SELECTED
+INA301 ALERT open-drain directly wired EN,Minimal discrete parts but unsafe permission sense,W31 digital anti-pattern; TI open-drain description,Loss of monitor supply may leave pullup high,REJECT
+WPT simple source without FOD and local cutoff,Parts reduced,Mark Belbin published demo GPL3 not imported,No independent FOD/temp/inrush regulation,REJECT FOR PILOT
+Control regulated low-power WPT with autonomous RX/TX cuts,Potential no fragile power contacts,Current design ONLY connectivity not regulator,Requires measured coils efficiency offsets FOD thermal EMI costs,RESEARCH ONLY
+Removable wired sensor module,Known service concept and lower part count,No physical measured candidate yet,Unknown motion/repair total cost; retain as reference,FALLBACK
+ESP-NOW versus OpenThread,Radio data separate from power and emergency stop,Producer docs and W01 simulated protocol,No authenticated RF board validated; ack app+CRC+sequence+timeouts required,POSTPONE RADIO SELECTION
+WISP5 passive RFID,Microsensor bursts without battery,Creator repo BSD2,Not suitable as continuous 0.4W power source without characterization,SECONDARY

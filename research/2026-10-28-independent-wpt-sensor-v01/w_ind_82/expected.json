@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "event": "SESSION_READY",
+      "t_ms": 1,
+      "valid": false
+    },
+    {
+      "event": "FRESH_DATA",
+      "t_ms": 2,
+      "valid": true
+    },
+    {
+      "event": "DUPLICATE_ACK_ONLY",
+      "t_ms": 62,
+      "valid": true
+    },
+    {
+      "event": "LEASE_EXPIRED",
+      "t_ms": 253,
+      "valid": false
+    },
+    {
+      "event": "BLOCK_SESSION",
+      "t_ms": 253,
+      "valid": false
+    },
+    {
+      "event": "SESSION_READY",
+      "t_ms": 255,
+      "valid": false
+    },
+    {
+      "event": "FRESH_DATA",
+      "t_ms": 256,
+      "valid": true
+    }
+  ],
+  "evidence": "synthetic-python-only",
+  "hardware_approved": false,
+  "model": "W-IND-82",
+  "packet_bytes": 66
+}

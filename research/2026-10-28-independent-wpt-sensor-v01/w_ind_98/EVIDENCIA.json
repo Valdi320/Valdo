@@ -1,0 +1,53 @@
+{
+  "milestone": "W-IND-98",
+  "date": "2026-11-01",
+  "kind": "synthetic_python_protocol",
+  "parent_sha": "d1084fa2df446f30149ec3c2f9d120c497c7350b",
+  "root": "research/2026-10-28-independent-wpt-sensor-v01/",
+  "files": [
+    "w_link.py",
+    "test_w_link.py",
+    "w_ind_98/README_W_IND_98.md",
+    "w_ind_98/MATRIZ_W_IND_98.csv",
+    "w_ind_98/BOM_W_IND_98.csv",
+    "w_ind_98/EVIDENCIA.json"
+  ],
+  "defect": {
+    "condition": "receive DATA at 10ms; fresh(200ms); fresh(20ms)",
+    "prepatch_expected": "True then True (replayed freshness accepted despite clock rewind)",
+    "postpatch_expected": "True then False, latched_fault=True",
+    "pure_software": true
+  },
+  "change": "ModuleReceiver.fresh validates exact int and observes _clock before reporting freshness; invalid noninteger remains nonmutating False",
+  "tests": {
+    "new_methods": 9,
+    "command": "cd research/2026-10-28-independent-wpt-sensor-v01 && python3 -B -m unittest -v test_w_link.TestFreshnessMonotonicW98",
+    "full_suite": "python3 -B -m unittest -v test_w_link test_power_restart_gate",
+    "ci_workflow": ".github/workflows/wpt-sensor-v01.yml",
+    "ci_result": "Verify after branch publication"
+  },
+  "upstream_head": {
+    "simple_wireless_power": "7c7858c0dd7040801b6f191df1396115560218f0",
+    "wisp5_hw": "08332bc398aa3350d351ef2aaac163f8007cffda",
+    "wisp5_firmware_640kHz": "604eee2dffaeba3a270de61cf3dae887a33309c2",
+    "esp_now": "c3b5f9be245f1a80db9cb938600566aa6a8dd1e5",
+    "openthread": "c6872259f4194fb76c7d333bda209343e8c88e71",
+    "oomwoo_main": "f01a1b295f462da5ab8d5f021a3f741cbd2b47df"
+  },
+  "limitations": [
+    "no hardware",
+    "no battery/BMS/dock",
+    "transport_authenticated boolean stub, not crypto",
+    "W18 3 pre-existing ERC violations and build prohibition",
+    "Diotronic local availability/MOQ/final IVA not verified"
+  ],
+  "hardware_purchases": 0,
+  "physical_tests": 0,
+  "erc_approved": false,
+  "paths_not_touched": [
+    "OOMWOO",
+    "PR#79",
+    "Xiaomi OEM",
+    "other worker checkout"
+  ]
+}

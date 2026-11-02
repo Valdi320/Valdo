@@ -1,0 +1,11 @@
+criterio;W38_un_monitor;W39_dos_monitor;decision
+fallo_silencioso_U1;NO_CUBIERTO;CUBIERTO_EN_MODELO_CON_U12_OK;W39 ventaja digital
+alert_U1_abierto;NO_CUBIERTO;CUBIERTO_EN_MODELO_CON_U12_OK;W39 ventaja digital
+U4_MR_no_corta;NO_CUBIERTO;CUBIERTO_EN_MODELO_CON_U9_OK;W39 ventaja digital
+shunt_puenteado;NO_CUBIERTO;NO_CUBIERTO;bloqueo de seguridad
+alimentacion_3V3_comun;NO_CUALIFICADA;NO_CUALIFICADA;bloqueo
+FOD_thermal_offset_EMI;NO_CUALIFICADO;NO_CUALIFICADO;bloqueo
+rearme_W37_fisico;NO_CONSTRUIDO;NO_CONSTRUIDO;bloqueo
+coste_incremental_iva_sin_portes;0 EUR nuevo;3.35 EUR mas pasivos sin presupuesto cerrado;mejorar coste antes de elegir
+reparacion_local;SMD_candidato;SMD_candidato_mas_piezas;ninguna placa montada
+estado;SOLO_DIGITAL;SOLO_DIGITAL;no energizar

@@ -1,0 +1,10 @@
+ref,block,qty,illustrative_part,Diotronic_or_supplier,unit_price_EUR_VAT,stock_or_MOQ,alternative_supplier,verification,decision
+R_PROBE,Limited MID probe,1,"10 kOhm 1 W 5% through-hole",Diotronic 10351,0.15,"Web minimum 5; local branch unknown",TME/Mouser/DigiKey pending,"Web listing https://diotronic.com/resistencias-de-carbono-1w/16309-resistencia-10k-5-1w; tolerance requires test",Prototype candidate only
+R_TX_BLEED,TX discharge,1,"1 kOhm 1206 1/4W 5%",Diotronic BSMD1025025,"1.00 per bag of 25","Web bag of 25; local branch unknown",TME/Mouser/DigiKey pending,"https://diotronic.com/resistencias-smd-1206/10614-bolsa-25-res-smd-1k-5-1-4w",Prototype candidate only
+R_MID_BLEED,MID discharge,1,"22 kOhm +/-20% hypothetical window",Exact SKU unverified,,"No verified exact Diotronic reference",TME/Mouser/DigiKey pending,"Need continuous voltage/current/power and tolerance qualification",Not selected
+SW_A,Normally-OFF TX isolation A,1,"Switch with specified reverse/block parasitics",No exact Diotronic match verified,,Unknown,TME/Mouser/DigiKey pending,"Need datasheet/PCB/ERC and failure modes",Not selected
+SW_B,Independent TX isolation B,1,"Independent switch with reverse/block parasitics",No exact Diotronic match verified,,Unknown,TME/Mouser/DigiKey pending,"No common EN/latch single-point failure",Not selected
+MON_MID,MID voltage sensing,1,"Monitor + input ESD and own supply",No exact Diotronic match verified,,Unknown,TME/Mouser/DigiKey pending,"Assumed +/-0.08 V unvalidated",Not selected
+MON_TX,TX voltage sensing,1,"Independent monitor + input ESD",No exact Diotronic match verified,,Unknown,TME/Mouser/DigiKey pending,"Cannot backfeed TX",Not selected
+FOD,Foreign object detection,1,"Independent TX metal detection",No exact Diotronic match verified,,Unknown,TME/Mouser/DigiKey pending,"Must measure foreign-object temperatures independently",Mandatory missing
+THERM,Independent thermal supervision,2,"Thermal sensors with open/short detection",No exact Diotronic match verified,,Unknown,TME/Mouser/DigiKey pending,"Qualified trip and latch; no RF dependence",Mandatory missing

@@ -1,0 +1,26 @@
+{
+  "blockers": [
+    "NOT_ALL_WINDOWS_BENCH_MEASURED",
+    "OBSERVED_RX_VOLTAGE_BELOW_ILLUSTRATIVE_MIN",
+    "TOO_FEW_CYCLES",
+    "UNVERIFIED_CYCLE_REPRESENTATIVE",
+    "UNVERIFIED_MONOTONIC_CLOCK",
+    "UNVERIFIED_RX_METER_CALIBRATED",
+    "UNVERIFIED_SIMULTANEOUS_TX_RX",
+    "UNVERIFIED_TX_METER_CALIBRATED"
+  ],
+  "coverage_seconds": 30.0,
+  "extra_wh_day_conservative": 0.4104,
+  "extra_wh_day_nominal": 0.4104,
+  "hardware_approved": false,
+  "instantaneous_continuity_proven": false,
+  "physical_measurements_verified_by_software": false,
+  "rx_max_observed_sample_gap_ms": 5.0,
+  "rx_observed_lower_voltage_v": 2.5,
+  "safety_cuts_proven": false,
+  "scope": "reported integrated TX energy and observed RX minima only; intervals between observations remain unproven",
+  "status": "BLOCKED",
+  "tx_conservative_upper_mean_mw": 20.0,
+  "tx_mean_mw": 20.0,
+  "windows": 3
+}

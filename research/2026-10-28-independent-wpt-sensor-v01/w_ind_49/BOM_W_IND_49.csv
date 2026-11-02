@@ -1,0 +1,9 @@
+item,reference,qty,source,unit_price_eur,price_includes_iva,subtotal_eur,availability,MOQ,zaragoza_stock_verified,final_delivered_price_verified,decision_and_limit
+assembled_100mohm_candidate,INA219_Berrybase_breakout,2,Berrybase,3.70,YES,7.40,web_available,1,NO,NO,lowest_catalog_100mohm_pair_grade_shunt_calibration_and_shipping_unverified
+assembled_100mohm_documented,Soldered_333066,2,Soldered,7.50,UNVERIFIED,15.00,10plus_web,UNVERIFIED,NO,NO,more_traceable_100mohm_board_shipping_VAT_review
+assembled_10mohm_high_current,DFRobot_SEN0291,2,DigiKey_ES,7.1511,YES,14.3022,362_web_at_check,1,NO,NO,8A_design_requires_manual_calibration_at_80mA_not_preferred
+bare_ic_only,TI_INA219BIDCNR,2,DigiKey_ES,2.1538,YES,4.3076,web_catalog,1,NO,NO,NOT_BOARD_needs_shunt_PCB_soldering_calibration_shipping
+local_20A_not_suitable,ACS712_VMA323,2,Diotronic,9.56,YES,19.12,web_catalog_available,UNVERIFIED,NO,NO,20A_100mVperA_80mA_only_8mV_output
+passives_wiring_shunt,tbd,1,Diotronic_or_TME,UNQUOTED,UNVERIFIED,UNQUOTED,UNKNOWN,UNKNOWN,NO,NO,buy_local_only_if_verified_spec_stock_MOQ_final_VAT_price
+safety_protection,tbd,1,TME_Mouser_DigiKey_traced,UNQUOTED,UNVERIFIED,UNQUOTED,UNKNOWN,UNKNOWN,NO,NO,independent_cutoff_FOD_temp_no_selection_no_purchase
+reuse_linux_logger,already_owned_PC,1,Reuse,0.00,NA,0.00,OWNED,NA,NA,NA,software_only_not_measuring_hardware

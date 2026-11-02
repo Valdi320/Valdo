@@ -1,0 +1,6 @@
+id;cantidad;referencia;uso;Diotronic_auxiliar;alternativa;precio_IVA_EUR_unidad;MOQ;stock_local_Zaragoza;stock_web_alternativa;eleccion;razon
+W36 existente;2;SN74LVC1G74DCUR;Latches W36;Sin SKU Diotronic confirmado;TI TME Mouser DigiKey;PENDIENTE;PENDIENTE;NO_VERIFICADO;PENDIENTE;SOLO_REFERENCIA;No modificar esquema ni fabricar
+W36 existente;2;TPS3840PL28DBVR y TPS3840PL42DBVR;Supervisión PG;Sin SKU Diotronic confirmado;TI DigiKey TME;PL42 0.847 orientativo;PL42 1;NO_VERIFICADO;WEB_W36_NO_RESERVADO;SOLO_REFERENCIA;Falta cualificación transitoria
+W37 candidato;2;SN74LVC1G17DBVR;Schmitt opcional para pulsadores;Sin SKU Diotronic verificado;TME España y TI;0.15 catálogo con IVA;1;NO_VERIFICADO;12552 WEB SIN RESERVA;NO_SELECCIONADO;No implementa memoria liberación
+W37 candidato;2;LOCAL_BUTTON_TBD;Botones locales reparables;Diotronic auxiliar con ficha equivalente;TME Mouser;PENDIENTE;PENDIENTE;NO_VERIFICADO;PENDIENTE;NO_SELECCIONADO;Rebote ciclos humedad por verificar
+W37 añadido;0;NINGUNO;Solo especificación y Python;No aplica;No aplica;0;0;No aplica;No aplica;SIN_COMPRA;Sin PCB y sin ensayos físicos

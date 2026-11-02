@@ -1,0 +1,31 @@
+name: W-IND-50 INA219 freshness SYNTHETIC (not hardware)
+on:
+  push:
+    branches: ['w/independent-sensor-wpt-link-20261028']
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_50/**'
+      - '.github/workflows/w-ind-50-ina219-freshness.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_50/**'
+      - '.github/workflows/w-ind-50-ina219-freshness.yml'
+permissions:
+  contents: read
+jobs:
+  test-w50:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: 42 deterministic, synthetic Python tests
+        run: python3 -m unittest discover -s research/2026-10-28-independent-wpt-sensor-v01/w_ind_50 -p 'test_w50.py' -v
+      - name: Produce explicit non-hardware evidence
+        run: |
+          mkdir -p /tmp/w50-evidence
+          python3 research/2026-10-28-independent-wpt-sensor-v01/w_ind_50/w50_ina219_freshness.py --demo --out /tmp/w50-evidence/W50_SYNTHETIC_NOT_HARDWARE.json
+          grep -q '"hardware_approved": false' /tmp/w50-evidence/W50_SYNTHETIC_NOT_HARDWARE.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W50-INA219-CNVR-OVF-6-NEGATIVES-SYNTHETIC-NOT-HARDWARE
+          path: /tmp/w50-evidence/W50_SYNTHETIC_NOT_HARDWARE.json
+          if-no-files-found: error

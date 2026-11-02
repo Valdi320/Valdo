@@ -1,0 +1,7 @@
+option,price_1_unit_ex_vat_eur,interface,resistance_and_tcr,static_window_5mohm_or_assumption,physical_comparator_cutoff_proof,decision
+Vishay WSL2512R1000FEA,TME_0.53,2_terminal_2512,0.1ohm_1pct_75ppm,13.36656mV false trip margin at ASSUMED 5mohm,NO,LOW_COST_BENCH_CANDIDATE_ONLY
+Vishay WSL2512R1000FEA with 8mohm parasitic,TME_0.53,2_terminal_2512,0.1ohm_1pct_75ppm,-4.66944mV false trip margin FAILURE,NO,REJECT_8_MOHM_CORNER
+VPG Y44880R10000F9R,Farnell_16.12,TRUE_4_terminal_2512,0.1ohm_1pct_5ppm,47.33436mV false trip margin with ASSUMED 0.05mohm,NO,ALTERNATIVE_IF_MEASURED_ECONOMICS_JUSTIFY
+Legacy unqualified 0.1ohm_W26,UNKNOWN,Unselected,0.1ohm_assumed_1pct_200ppm,35.91156mV with 0mohm erroneously not established physical,NO,REPLACE_UNSELECTED_SPEC_NOT_HISTORIC_EVIDENCE
+Protected wired sensor module,UNKNOWN,Serviceable_connector,Current sensing optional,No WPT pad/coil losses established,NO,MAINTAIN_FALLBACK
+Dock lithium charge,UNKNOWN,Separate docking architecture,Not a 5V 0.4W sensor,NOT_APPLICABLE,NO,DEFER_AND_KEEP_BATTERY_DISCONNECTED

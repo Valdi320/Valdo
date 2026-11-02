@@ -1,0 +1,10 @@
+problem,option,decision,evidence,limits_and_next_gate
+RX current backfeed,Two ideal normally OFF reverse-blocking cuts,CONCEPT ONLY,Directed paths evaluated with 512 combinations,Select exact parts and prove reverse leakage/POR
+RX single power switch fault,Single weld or stuck enable under trip,IDEAL MODEL PASS,Zero forward path misses for modeled subset,Common cause and real driver not evaluated
+RX bypass or two welds,Direct bypass and dual faults,UNSAFE,375 of 512 combinations unsafe when off,Need physical path separation and independent fused upstream
+RX overcurrent,INA301 plus externally driven RCB,MONITOR ONLY,346.4mA hypothetical receiver trip vs minimum 500mA eFuse ILIM,Build real normally OFF cut and verify tolerance
+TX overcurrent,Separate TX measurement,FUTURE,W28 rejects use of RX current threshold on TX,Define actual current/thermal/FOD budget
+Dock,Regulated lithium charge station,DISCONNECTED,No trials allowed,BMS charger independent review
+Radio,ESP-NOW or OpenThread,ALTERNATIVES,HEAD and licenses reviewed,Data ACK auth CRC sequence timeout replay testing pending
+WISP,Rfid micropower,DEFER,No demonstrated continuous watt-scale harvesting,Measure viable duty cycles
+Service,Mechanical connector comparator,COMPARE,No credible maintenance cost data,Life-cost and gap tests

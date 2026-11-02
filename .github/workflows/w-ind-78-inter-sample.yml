@@ -1,0 +1,32 @@
+name: W-IND-78 conservative inter-sample voltage bound
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_78/**'
+      - '.github/workflows/w-ind-78-inter-sample.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_78/**'
+      - '.github/workflows/w-ind-78-inter-sample.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-rx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W78 synthetic adversarial tests and evidence
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_78
+        run: |
+          python3 -m unittest -v test_w78.py
+          python3 w78_inter_sample_gate.py --input TRACE_SYNTHETIC.json --output W78_REGENERATED.json
+          cmp W78_EVIDENCE_SYNTHETIC.json W78_REGENERATED.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w78-synthetic-inter-sample-guard
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_78/W78_REGENERATED.json

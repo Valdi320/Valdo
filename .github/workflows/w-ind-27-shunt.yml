@@ -1,0 +1,29 @@
+name: W-IND-27 shunt/layout bounded arithmetic
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_27/**'
+      - '.github/workflows/w-ind-27-shunt.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_27/**'
+      - '.github/workflows/w-ind-27-shunt.yml'
+permissions:
+  contents: read
+jobs:
+  static-sensitivity-not-hardware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run 20 synthetic adversarial tests
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_27
+          python -m unittest -v test_shunt_kelvin_screen
+          python shunt_kelvin_screen.py > W_IND_27_EVIDENCE.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: W-IND-27-synthetic-shunt-evidence
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_27/W_IND_27_EVIDENCE.json

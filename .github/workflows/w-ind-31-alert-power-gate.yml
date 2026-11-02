@@ -1,0 +1,34 @@
+name: W-IND-31 INA301 ALERT fail-off screen (digital only)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_31/**'
+      - '.github/workflows/w-ind-31-alert-power-gate.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_31/**'
+      - '.github/workflows/w-ind-31-alert-power-gate.yml'
+jobs:
+  alert-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reproduce anti-pattern and 256 idealized fault cases
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_31
+        run: |
+          python3 -m unittest -v w31_alert_power_gate
+          python3 w31_alert_power_gate.py > evidence.json
+          python3 -m json.tool evidence.json > /dev/null
+      - name: Archive digital-only results (NOT safety certification)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w-ind-31-digital-alert-power-gate
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_31/evidence.json
+          if-no-files-found: warn

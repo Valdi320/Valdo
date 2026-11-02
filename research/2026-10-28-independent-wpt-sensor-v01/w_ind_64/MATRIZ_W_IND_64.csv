@@ -1,0 +1,10 @@
+ID;Problema;Alternativa;Evidencia;Decisión;Límites
+W64-A;Privacidad;W61 HMAC sin cifrar;Código previo publicado y test de visibilidad;Insuficiente si los datos son privados;W61 sigue válido solo cuando privacidad no requerida
+W64-B;Privacidad;AES-256-GCM W64;26 tests digitales locales sintéticos;Candidato experimental;Sin radio real, un nonce único seguro requiere ancla externa
+W64-C;Privacidad;ESP-NOW CCMP del fabricante;Documentación Espressif;Priorizar evaluación antes de cifrar dos veces;Sólo bajo condiciones de cifrado unicast y LMK
+W64-D;Datos;OpenThread;BSD-3-Clause del autor;Alternativa de hardware 802.15.4;Coste y desempeño por medir
+W64-E;Potencia;Cable reemplazable;Referencia mecánica conceptual;Comparador por defecto;Sin coste puesto Zaragoza contrastado
+W64-F;Potencia;WPT simple Mark Belbin GPL-3.0;Datos del autor;Referencia no integrada;FOD calor EMI offset y doble corte sin aprobar
+W64-G;Potencia;WPT regulado módulo 0,4W;Requisito hipotético no medición;Pendiente banco resistivo aislado;Sin bobina, regulación ni protección calificada
+W64-H;Dock;WPT cargador litio;0 ensayos físicos;Bloqueado;Batería y BMS desconectados
+W64-I;Microenergía;WISP5 RFID;Autor BSD-2-Clause;No priorizar;Lector y autonomía sin justificar

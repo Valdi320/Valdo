@@ -1,0 +1,6 @@
+item,qty,role,mpn_or_requirement,source_Diotronic,alternative_supplier,price_inc_IVA_EUR,minimum_order,local_stock_Zaragoza,decision
+Additional hardware,0,W101 software-only thermal parser correction,No additional hardware,N/A,N/A,0,0,N/A,No acquisition
+Existing model thermistor candidate,2,Hypothetical dual NTC analog window,Eaton NRNE104F3950B1F,Exact match not checked,DigiKey or TME or Mouser,Pending,Pending,Unverified,Not selected / physical test forbidden
+Existing model window comparators,4,Two threshold functions per channel,TI TLV3211 candidate only,Technical equivalence not checked,TME or Mouser or DigiKey,Pending,Pending,Unverified,No qualified comparator circuit
+Existing model independent power cuts,2,Normally-off series TX cutoff,TPS22918DBVR W15 reference only,Not checked,TME or Mouser or DigiKey,Pending,Pending,Unverified,Unqualified and W18 ERC fails
+Metal FOD detector,0,Independent foreign metal detection,Not selected,No traceable qualified part,TME or Mouser or DigiKey,Pending,Pending,Unverified,Missing blocks physical approval

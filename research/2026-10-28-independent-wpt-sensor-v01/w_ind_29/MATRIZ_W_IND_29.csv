@@ -1,0 +1,10 @@
+choice,domain,decision,evidence,limitation,next_gate
+Simple inductive unregulated (GPL-3.0 Mark Belbin),module supply,REFERENCE_ONLY,Author published results,No local FOD regulation or coil measurement,Compare vendor design but do not copy code/CAD without license analysis
+Regulated induction plus RX Kelvin,low-power sensor,W29_REVIEW_ONLY,Original KiCad generator and synthetic pin-mutation tests,No RX autonomous cut and no proven actual efficiency,Native ERC/XML then real safety/power design
+Retained fixed cable / service plug,low-power sensor,COMPARATOR,Established inexpensive supply option,Service cycle length and price not yet quantified,Life-cost plus reliability comparison
+TX input shunt at old 346.4mA,RX versus TX,REJECT,W28 efficiency 55to90pct model,False trips at normal input and misses low-efficiency faults,Set independent TX ranges
+Lithium charge dock,dock,DISCONNECTED,Historical master decision,No BMS charge process authorized,Separate regulated charger safety and explicit authorization
+ESP-NOW,radio data,CANDIDATE,Espressif Apache-2.0,Needs ACK CRC sequence crypto and measured recoveries; power unchanged,Isolated radio tests
+OpenThread,radio data,ALTERNATIVE,OpenThread BSD-3 +14 commits since pin,Complex flash/storage and commissioning unqualified,Compare on low-cost hardware
+WISP5,microsensors,DEFER,RFID BSD-2 designs,1.5W continuous pilot not proven,Use only measured microwatt sensors
+Induction for pumps and motors,high-power load,REJECT_DEFAULT,No measured load or loss,FOD heat offset and cost unknown,Measure before selecting

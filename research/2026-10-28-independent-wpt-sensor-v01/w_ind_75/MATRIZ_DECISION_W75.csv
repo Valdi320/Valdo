@@ -1,0 +1,6 @@
+opcion,fuente,tipo_de_dato,standby_no_rx_mw,entrada_tx_con_rx_2_9mw,estado,decision,motivo
+Renesas P9235A-R con P9027LP-R,Renesas,autor,5,NO_PUBLICADA,OBSOLETE,NO_GO,Reposo sin RX no es consumo operativo y ambos IC estan obsoletos
+TI BQ50002A con BQ500511A,TI,autor_hasta_30mW_standby,NO_CORRESPONDE,NO_PUBLICADA,REVISION_CICLO_VIDA_PENDIENTE,HOLD,Sin mediciones de par en carga y consumo a mW
+Cable corto reparable,HIPOTESIS_W74,idealizado,0,2.9,REFERENCIA,BASELINE,No elimina contactos pero conserva autonomia en el escenario
+Simple Wireless Power GPL-3.0,mark-belbin,prototipo_100W,NO_PUBLICADO,NO_PUBLICADA,EXTERNO,NO_GO,No corresponde a sensor de 2.9mW ni controla FOD autonomo
+WISP5 BSD-2-Clause,wisp,plataforma_RFID,NO_CORRESPONDE,NO_CORRESPONDE,EXTERNO,INVESTIGAR_MICROSENSOR,Requiere lector RFID y caracterizar disponibilidad de energia

@@ -1,0 +1,5 @@
+Bloque,Funcion,Referencia,Cantidad,Diotronic_auxiliar,Alternativa_comparada,Precio_IVA_EUR,MOQ_confirmado,Stock_Zaragoza,Eleccion_y_limite
+R4 HEALTH,Resistencia 4k7 1% 0805 125mW,Panasonic ERJ6ENF4701V,1,"Diotronic SKU/stock/MOQ/IVA PENDIENTES","TME ERJ6ENF4701V ficha; precio final ES/stock pendientes",PENDIENTE,PENDIENTE,NO_VERIFICADO,"Candidato del criba sintética, no una protección homologada"
+R4 HEALTH referencia comercial,Mismo SKU 4k7,Panasonic ERJ6ENF4701V,1,"Diotronic SKU/stock sin verificar","Reichelt España web 0.15 IVA incluido por unidad sin envio",0.15,"1 anunciado web",NO_VERIFICADO,"Precio orientativo no oferta puesta Zaragoza"
+Q1 ya presente,Transistor PMOS,onsemi BSS84LT1G,1,"Diotronic por verificar","Mouser/DigiKey/TME coste/stock finales pendientes",PENDIENTE,PENDIENTE,NO_VERIFICADO,"Requiere fuga real a 5V temperatura y curva puerta"
+U1 ya presente,Supervisor OUTB,TI TPS3700DDCR,1,"Diotronic por verificar","Distribuidor TI trazable TME/Mouser/DigiKey pendiente",PENDIENTE,PENDIENTE,NO_VERIFICADO,"POR/HEALTH no cualificado ni cableado a EN"

@@ -1,0 +1,29 @@
+name: W-IND-34 EOL window arithmetic (NO hardware approval)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_34/**'
+      - '.github/workflows/w-ind-34-eol-window.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_34/**'
+      - '.github/workflows/w-ind-34-eol-window.yml'
+jobs:
+  digital-window-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Deterministic model tests (NO POWER TESTS)
+        run: |
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_34
+          python -m unittest -v test_w34_eol_window.py
+          python w34_eol_window.py > w34_evidence.json
+      - name: Archive audit (not a certification)
+        uses: actions/upload-artifact@v4
+        with:
+          name: w-ind-34-digital-eol-evidence
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_34/w34_evidence.json

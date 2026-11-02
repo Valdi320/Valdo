@@ -1,0 +1,62 @@
+name: W-IND-44 OUTB PMOS KiCad diagnostic (UNPOWERED ONLY)
+on:
+  push:
+    branches: [w/independent-sensor-wpt-link-20261028]
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_44/**'
+      - '.github/workflows/w-ind-44-outb-pmos-kicad.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_44/**'
+      - '.github/workflows/w-ind-44-outb-pmos-kicad.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  w44-schematic-unpowered:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate native KiCad files and synthetic tests
+        run: |
+          set -euo pipefail
+          cd research/2026-10-28-independent-wpt-sensor-v01/w_ind_44
+          python3 generate_w44.py
+          python3 generate_w44.py --verify
+          python3 -m unittest -v test_w44
+          mkdir -p native_out
+          python3 ../w_ind_43/w43_por_gate.py --out native_out/w43_known_unsafe_reference.json
+      - name: KiCad 9.0.2 native ERC and exact XML pin audit
+        run: |
+          set -euo pipefail
+          IMAGE=kicad/kicad:9.0.2
+          ROOT=research/2026-10-28-independent-wpt-sensor-v01/w_ind_44
+          docker pull "$IMAGE"
+          docker run --rm "$IMAGE" kicad-cli version
+          docker run --rm --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e XDG_CACHE_HOME=/tmp/cache \
+            -e XDG_CONFIG_HOME=/tmp/config -e XDG_DATA_HOME=/tmp/data \
+            -v "$GITHUB_WORKSPACE:/repo" -w "/repo/$ROOT" "$IMAGE" \
+            sh -ec '
+              mkdir -p /tmp/config/kicad/9.0 native_out
+              sed "s#[$]{KIPRJMOD}#/repo/research/2026-10-28-independent-wpt-sensor-v01/w_ind_44#g" sym-lib-table > /tmp/config/kicad/9.0/sym-lib-table
+              kicad-cli sch erc --format json --severity-all --exit-code-violations -o native_out/w44_erc.json W44_TPS3700_OUTB_PMOS_DIAGNOSTIC_NOT_SAFETY.kicad_sch
+              kicad-cli sch export netlist --format kicadxml -o native_out/w44_native.xml W44_TPS3700_OUTB_PMOS_DIAGNOSTIC_NOT_SAFETY.kicad_sch
+            '
+          python3 "$ROOT/netlist_gate_w44.py" "$ROOT/native_out/w44_native.xml" --out "$ROOT/native_out/w44_gate.json"
+      - name: Evidence even when blocked (never qualifies hardware)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: W44-OUTB-PMOS-UNPOWERED-KICAD-NOT-APPROVED
+          path: |
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_44/*.kicad_sch
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_44/*.kicad_sym
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_44/sym-lib-table
+            research/2026-10-28-independent-wpt-sensor-v01/w_ind_44/native_out/
+          if-no-files-found: warn
+          retention-days: 30

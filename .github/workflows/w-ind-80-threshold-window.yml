@@ -1,0 +1,32 @@
+name: W-IND-80 threshold feasibility audit
+on:
+  push:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_80/**'
+      - '.github/workflows/w-ind-80-threshold-window.yml'
+  pull_request:
+    paths:
+      - 'research/2026-10-28-independent-wpt-sensor-v01/w_ind_80/**'
+      - '.github/workflows/w-ind-80-threshold-window.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  threshold-window:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run W80 deterministic and adversarial numeric tests
+        working-directory: research/2026-10-28-independent-wpt-sensor-v01/w_ind_80
+        run: |
+          python3 -m unittest -v test_w80.py
+          python3 w80_threshold_window.py --input SCENARIO_SYNTHETIC.json --output W80_REPORT.json
+          python3 -c "import json; r=json.load(open('W80_REPORT.json')); assert r['no_grid_member_satisfies_both_static_constraints']; assert not r['hardware_approved']"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w80-synthetic-threshold-window
+          path: research/2026-10-28-independent-wpt-sensor-v01/w_ind_80/W80_REPORT.json

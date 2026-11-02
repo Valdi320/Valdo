@@ -1,0 +1,7 @@
+solucion,ventaja,criterio_cuantitativo,resultado_estado,limite_y_evidencia
+Cable reparable,Sin disipacion inductiva ni standby WPT,Baseline ideal 0.0696 Wh/dia a 2.9 mW,PREFERENCIA_BASE_CON_HIPOTESIS,Modelo matematico sin resistencias ni costes de cable
+WPT un punto de carga 20 mW,Conector electrico eliminado en modulo,Max 23.733333 mW TX media teorica,FALSO_POSITIVO_SI_NO_SE_MIDE_CICLO,0.4104 Wh/dia extra bajo supuesto sin pulsos
+WPT 30 s con pulso ficticio,Detecta energia transitoria desatendida,33 mW TX media y 0.7224 Wh/dia extra,BLOQUEADO_ENERGIA,Datos sinteticos no asociables a fabricante
+WPT activo STWBC86JR STWLC38JRM,Referencias activas del fabricante,Curva TX cargado RX 1-20mW mas protecciones,BLOQUEADO_DATOS,Sin eficiencia de ciclo ni temperatura FOD offset EMI probados; WLCSP reparabilidad dificil
+Radio ESP-NOW o OpenThread,Datos independientes de potencia,ACK app CRC secuencia timeout privacidad recuperacion,PENDIENTE_COMPARACION_MEDIDA,RF no suministra energia ni parada critica
+WISP5,Micro sensores RFID sin bateria,Potencia cosechable/lector y continuidad,PENDIENTE_NO_PRIORITARIO,No alimentar motores o sensores continuos sin pruebas

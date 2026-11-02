@@ -1,0 +1,12 @@
+dimension,option,evidence,decision,limit
+manufacturer_data_integrity,legacy_nan_power_guard,baseline reproduction: NaN comparison is false,FIXED_STRICT_FINITE_VALIDATION,software only
+manufacturer_data_integrity,legacy_infinite_voltage_and_power,Inf-Inf produces NaN and bypasses tolerance check,FIXED_STRICT_FINITE_VALIDATION,software only
+manufacturer_data_integrity,valid_an4913_table,22 original manufacturer points unchanged,PASS_DATASET_SCHEMA,not a board measurement
+active_module_power_400mW,ST25DV64KC_EH,AN4913 maximum 12.593mW,NO_GO,not a 0.4W supply
+microsensor_power,ST25DV64KC_EH,AN4913 minimum 1.035mW for H>=1A/m,CONDITIONAL_TARGET_0.25mW,actual antenna field and buffer unmeasured
+dock_charge,inductive_battery_charging,separate battery BMS FOD scope,OUT_OF_SCOPE,all battery and dock disconnected
+data_radio,ESP_NOW,small one-hop Espressif network,FIRST_CANDIDATE,needs application ACK CRC sequence timeout and authenticated privacy
+data_radio,OpenThread,IPv6 mesh and multi-hop,CONDITIONAL_ALTERNATIVE,greater stack and radio requirements
+passive_micro_sensor,WISP5,RFID energy harvesting,OPTIONAL_RESEARCH,640kHz branch diverged; no code reused
+critical_stop,radio_command,radio can be lost or replayed,REJECT,local hardwired fail-safe required
+hardware_release,WPT_sensor_pair,no physical FOD thermal offset EMI or cutoff test,BLOCKED,hardware_approved=false

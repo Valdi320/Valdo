@@ -1,0 +1,35 @@
+{
+  "battery_or_bms_connected": false,
+  "decision": "NO_GO_UNDER_HYPOTHESES",
+  "failed_hypothetical_gates": [
+    "WPT_EXCESS_DAILY_ENERGY"
+  ],
+  "hardware_approved": false,
+  "independent_review_required": [
+    "actual TX idle/fixed dissipation and DC efficiency measured across load and offset",
+    "real maximum output/peak load with startup and brownout",
+    "FOD including metal and wet dustbin; temperature rise and drift",
+    "hardware autonomous cutoff, independent overcurrent and thermal trip",
+    "capacitor/inductor residual energy and reverse-feed routes",
+    "EMI and RF coexistence; local ACK CRC sequence timeout privacy and recovery",
+    "TX/RX alignment, gap, dust/water tolerance and module replacement cycles",
+    "battery/BMS/charger remain unconnected; independent safe test authorization",
+    "verified itemized parts and local Diotronic/TME/Mouser/DigiKey pricing with VAT/MOQ/stock"
+  ],
+  "max_tx_fixed_overhead_W_for_daily_budget": 0.01793408448117539,
+  "model": "CONTINUOUS_TX_IDEAL_DC_PLUS_FIXED_OVERHEAD; WIRE_IDEAL_3V3_AND_I2R",
+  "physical_tests_performed": false,
+  "schema": "VALDO_W74_SENSOR_ENERGY_V1",
+  "sensor_load_average_W": 0.0029000000000000002,
+  "source_kind": "SYNTHETIC_HYPOTHESIS",
+  "wired_daily_energy_Wh": 0.06961802754820937,
+  "wired_peak_voltage_drop_percent": 0.1836547291092746,
+  "wired_supply_average_W": 0.002900751147842057,
+  "wpt_average_dissipation_W": 0.1029,
+  "wpt_daily_energy_Wh": 2.5392,
+  "wpt_extra_energy_Wh_per_day": 2.469581972451791,
+  "wpt_peak_dissipation_W": 0.20000000000000004,
+  "wpt_to_wired_energy_ratio": 36.4733114313192,
+  "wpt_transmitter_average_W": 0.1058,
+  "wpt_transmitter_peak_W": 0.30000000000000004
+}
