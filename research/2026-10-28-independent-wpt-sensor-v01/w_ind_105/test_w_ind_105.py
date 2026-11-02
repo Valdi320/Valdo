@@ -91,9 +91,13 @@ class ReaderInclusiveNfcEnergyTests(unittest.TestCase):
         self.assertGreater(point["average_reader_chip_reference_mw"], point["average_tag_rail_mw_assumed"])
 
     def test_400mw_active_module_remains_far_above_best_tag_rail(self):
-        self.assertLess(
-            self.report["best_tag_point_in_an4913"]["average_tag_rail_mw_assumed"],
-            400.0,
+        sensor = self.report["sensor_reference"]
+        self.assertEqual(sensor["active_module_reference_mw"], 400.0)
+        self.assertLess(sensor["best_case_average_tag_rail_mw"], 400.0)
+        self.assertAlmostEqual(
+            sensor["best_case_average_tag_rail_fraction_of_active_module"],
+            sensor["best_case_average_tag_rail_mw"] / 400.0,
+            places=12,
         )
 
     def test_boolean_efficiency_rejected(self):
