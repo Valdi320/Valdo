@@ -8,6 +8,7 @@ import unittest
 from w_ind_102.w_ind_102 import load_rows
 from w_ind_105.w_ind_105 import (
     READER,
+    SENSOR_SCENARIO,
     build_report,
     screen_point,
 )
@@ -50,7 +51,13 @@ class ReaderInclusiveNfcEnergyTests(unittest.TestCase):
     def test_baseline_1a_m_am10_is_exact(self):
         point = self.report["sensor_reference"]["baseline_1a_m_am10"]
         self.assertEqual(point["p_eh_mw_manufacturer"], 1.035)
-        self.assertAlmostEqual(point["p_sensor_rail_mw_assumed"], 0.67275, places=9)
+        self.assertAlmostEqual(point["p_sensor_rail_mw_while_field_on_assumed"], 0.67275, places=9)
+
+    def test_baseline_field_duty_average_is_consistent_with_w_ind_104(self):
+        point = self.report["sensor_reference"]["baseline_1a_m_am10"]
+        self.assertAlmostEqual(point["field_on_time_per_period_s_assumed"], 0.495, places=9)
+        self.assertAlmostEqual(point["average_tag_rail_mw_assumed"], 0.33301125, places=9)
+        self.assertAlmostEqual(point["average_sensor_side_margin_ratio"], 1.3427872984, places=8)
 
     def test_baseline_reader_to_sensor_ratio_and_tag_count(self):
         point = self.report["sensor_reference"]["baseline_1a_m_am10"]
@@ -58,31 +65,34 @@ class ReaderInclusiveNfcEnergyTests(unittest.TestCase):
         self.assertEqual(point["ideal_tag_count_lower_bound_typ"], 50)
         self.assertEqual(point["ideal_tag_count_lower_bound_max"], 83)
 
+    def test_baseline_reader_energy_per_period_is_lower_bound(self):
+        sensor = self.report["sensor_reference"]
+        self.assertAlmostEqual(sensor["baseline_reader_chip_energy_per_period_mj"], 16.632, places=9)
+        self.assertAlmostEqual(sensor["baseline_tag_rail_energy_per_period_mj"], 0.33301125, places=9)
+
     def test_best_an4913_point_and_ideal_tag_count(self):
         point = self.report["best_tag_point_in_an4913"]
         self.assertEqual(point["am_percent"], 10)
         self.assertEqual(point["h_a_per_m_rms"], 5.5)
         self.assertEqual(point["p_eh_mw_manufacturer"], 12.593)
-        self.assertAlmostEqual(point["p_sensor_rail_mw_assumed"], 8.18545, places=9)
+        self.assertAlmostEqual(point["p_sensor_rail_mw_while_field_on_assumed"], 8.18545, places=9)
+        self.assertAlmostEqual(point["average_tag_rail_mw_assumed"], 4.05179775, places=9)
         self.assertEqual(point["ideal_tag_count_lower_bound_typ"], 5)
         self.assertEqual(point["ideal_tag_count_lower_bound_max"], 7)
 
     def test_all_22_points_fail_dedicated_reader_break_even(self):
         sweep = self.report["sweep"]
-        self.assertIs(sweep["all_22_sensor_rail_outputs_below_reader_active_typ"], True)
+        self.assertIs(sweep["all_22_average_tag_rail_outputs_below_reader_active_typ"], True)
         self.assertEqual(sweep["dedicated_harvesting_points_at_or_above_reader_reference"], 0)
 
     def test_sensor_side_margin_is_not_reader_energy_margin(self):
-        sensor = self.report["sensor_reference"]
-        self.assertGreater(sensor["baseline_sensor_rail_margin_over_0_248mw"], 1.0)
-        self.assertGreater(
-            self.report["sensor_reference"]["baseline_1a_m_am10"]["reader_minus_one_tag_typ_mw"],
-            0.0,
-        )
+        point = self.report["sensor_reference"]["baseline_1a_m_am10"]
+        self.assertGreater(point["average_sensor_side_margin_ratio"], 1.0)
+        self.assertGreater(point["average_reader_chip_reference_mw"], point["average_tag_rail_mw_assumed"])
 
     def test_400mw_active_module_remains_far_above_best_tag_rail(self):
         self.assertLess(
-            self.report["best_tag_point_in_an4913"]["p_sensor_rail_mw_assumed"],
+            self.report["best_tag_point_in_an4913"]["average_tag_rail_mw_assumed"],
             400.0,
         )
 
@@ -117,6 +127,18 @@ class ReaderInclusiveNfcEnergyTests(unittest.TestCase):
         reader["active_max_ma"] = 10.0
         with self.assertRaises(ValueError):
             screen_point(self.rows[0], reader=reader)
+
+    def test_field_duty_above_one_rejected(self):
+        scenario = dict(SENSOR_SCENARIO)
+        scenario["field_duty_during_off_time"] = 1.01
+        with self.assertRaises(ValueError):
+            screen_point(self.rows[0], scenario=scenario)
+
+    def test_burst_must_fit_period(self):
+        scenario = dict(SENSOR_SCENARIO)
+        scenario["burst_ms"] = 1000.0
+        with self.assertRaises(ValueError):
+            screen_point(self.rows[0], scenario=scenario)
 
     def test_no_hardware_approval_or_battery_connection(self):
         limits = self.report["limits"]
