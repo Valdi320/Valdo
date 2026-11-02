@@ -225,6 +225,10 @@ def build_report(
             "best_case_average_reader_chip_reference_mw": (
                 best["average_reader_chip_reference_mw"]
             ),
+            "active_module_reference_mw": ACTIVE_MODULE_REFERENCE_MW,
+            "best_case_average_tag_rail_fraction_of_active_module": (
+                best["average_tag_rail_mw_assumed"] / ACTIVE_MODULE_REFERENCE_MW
+            ),
             "baseline_average_sensor_side_margin_ratio": (
                 baseline["average_sensor_side_margin_ratio"]
             ),
