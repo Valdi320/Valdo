@@ -20,7 +20,7 @@ Inputs are the 22 exact ST AN4913 Rev.2 points already validated in W-IND-102, p
 - W-IND-104 sensor profile retained: 0.248 mW average, 1 s period, 10 ms burst, field available for 50% of the non-burst interval.
 - Downstream conversion efficiency: 65%, inherited as an explicit assumption from W-IND-104, not measured.
 
-| Manufacturer point | Tag V_EH output | Assumed sensor rail while field is on | Average sensor rail over W-IND-104 period | Reader chip reference average while field is on |
+| Manufacturer point | Tag V_EH output | Assumed sensor rail while field is on | Average sensor rail over W-IND-104 period | Reader chip reference average over W-IND-104 period |
 |---|---:|---:|---:|---:|
 | AM 10%, 1.0 A/m RMS | 1.035 mW | 0.67275 mW | **0.33301 mW** | 16.632 mW |
 | AM 10%, 5.5 A/m RMS (best AN4913 point) | 12.593 mW | 8.18545 mW | **4.05180 mW** | 16.632 mW |
@@ -65,7 +65,7 @@ The 400 mW active-module reference remains far beyond the best tag rail result. 
 | Item | Diotronic Zaragoza | Alternative / public price | Availability / reason |
 |---|---|---|---|
 | X-NUCLEO-NFC08A1 reader evaluation board | Exact public reference not found; local stock and final price pending | DigiKey Spain: 33.95 € ex VAT / 41.0795 € incl VAT; 443 shown in stock, MOQ 1, standard lead-time field 13 weeks. Farnell: 34.98 € ex / 42.33 € incl, MOQ 1, 28-week standard lead. RS: 33.96 € ex / 41.09 € incl, temporarily out of stock; next visible quantity dated 11-Dec-2026. | **Not selected.** Evaluation board includes ST25R3916B and a 47 × 34 mm, four-turn 13.56 MHz antenna. Its published up-to-1.7 W differential output is not our measured field or power draw. |
-| ST25DV64KC-IE8T3 tag IC | Exact local stock/price pending | DigiKey EU page: 1.38 € ex / 1.6422 € incl, 2,327 shown; confirm Spain checkout. Mouser Spain page shows 1.38 € and 3,982 stock/ETA data; confirm tax and live availability at checkout. | **Reference only.** Tag EH output depends on field, antenna and load. |
+| ST25DV64KC-IE8T3 tag IC | Exact local stock/price pending | DigiKey EU (Germany) page: 1.38 € ex, 2,327 shown; applying Spain's 21% VAT gives an estimate of 1.6698 € incl, not a verified Spain checkout total. Mouser Spain page shows 1.38 € and 3,982 stock/ETA data, but the visible ETA is 2026-08-19 (past); tax treatment and live availability must be reconfirmed at checkout. | **Reference only.** Tag EH output depends on field, antenna and load. |
 | EH buffer capacitor | Local passive alternatives can be checked once electrical limits are known; no exact reference approved | No part selected. W-IND-104's 47 µF candidate remains rejected as final hardware because ESR, leakage, tolerance, temperature and life are not qualified. | Do not choose by nominal capacitance alone. |
 | MCU / radio | Diotronic availability pending after MCU choice | No board or module selected. | ESP-NOW/OpenThread is a protocol decision, not a power source. |
 | Regulated WPT TX/RX, FOD, thermal cut, independent cut | Do not source safety-critical parts from an unqualified catalogue match | Specialist distributors / manufacturer documentation required; no selected part or price. | Need traceable ratings, FOD behavior, thermal limits, offset/EMI data and independent hardware cut. |
@@ -93,7 +93,7 @@ The prior local WISP pin is the **master** revision, not the 640kHz branch. Bran
 - OOMWOO CAD HEAD 1e1c4091ca6b4937dc16468dc8034eae7cc96adf is +1 and adds/updates Fusion wheel/assembly artifacts; no WPT interface was adopted.
 - OOMWOO PCB HEAD ac8ac0b52254582be3acda9d3fddfd06cbbabd4f is +12; it regenerates the charging-dock output PDF and updates main-phone/sensor schematics. No WPT TX/RX or independent WPT cut was selected.
 - OOMWOO firmware HEAD fd8689f3e3f7bcd0dcc35725be4a48cd9fcc8596 is +8; it updates docs/SPEC.md and include/oomwoo_pins.h. No WPT firmware was adopted.
-- The other seven local upstream clones remain clean at their recorded pins. None was updated.
+- The other seven local upstream clones remain clean at their recorded pins. None was updated. TME exact references for the reader board/tag were not found in the targeted search; that is not proof of unavailability.
 - Local adaptation remains a reference-only copy: WPT_DATOS_V01.md, WPT_LIMITES_D22.md and DECISION_NO_TRASPLANTE.md were read; the adaptation directory has no .git and no *.lock. Its WPT contract/limits have not been changed.
 - Codex A67/A68 work is in a separate support repository/branch and is recorded as local-only with a blocked goal and no push/PR. It was not imported or edited.
 - The shared X20ProAbierto/Valdo checkout is dirty with untracked work from other branches; it was not touched. The local publication checkout W_IND_12_PUBLISH_OWN_20261028 was not used for this commit sequence.
