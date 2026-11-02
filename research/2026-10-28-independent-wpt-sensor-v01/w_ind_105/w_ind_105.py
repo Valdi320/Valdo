@@ -16,7 +16,13 @@ from typing import Any
 
 from w_ind_102.w_ind_102 import DATA_PATH, load_rows, validate_rows
 
-DOWNSTREAM_EFFICIENCY = 0.65  # inherited assumption from W-IND-104; not measured
+DOWNSTREAM_EFFICIENCY = 0.65  # inherited W-IND-104 assumption; not measured
+SENSOR_SCENARIO = {
+    "average_load_mw": 0.248,
+    "period_s": 1.0,
+    "burst_ms": 10.0,
+    "field_duty_during_off_time": 0.50,
+}
 READER = {
     "vdd_v": 2.4,
     "power_down_typ_ua": 0.5,
@@ -29,7 +35,6 @@ READER = {
     "active_max_ma": 23.0,
     "active_rfo_segments_enabled": False,
 }
-MICRO_SENSOR_AVERAGE_TARGET_MW = 0.248
 ACTIVE_MODULE_REFERENCE_MW = 400.0
 
 
@@ -65,17 +70,34 @@ def _validate_reader(reader: dict[str, Any]) -> tuple[float, float, float]:
     return vdd, active_typ_ma, active_max_ma
 
 
+def _validate_sensor_scenario(scenario: dict[str, Any]) -> tuple[float, float, float, float]:
+    if type(scenario) is not dict:
+        raise ValueError("sensor scenario must be a mapping")
+    average_load_mw = _finite_number("sensor_average_load_mw", scenario.get("average_load_mw"))
+    period_s = _finite_number("sensor_period_s", scenario.get("period_s"))
+    burst_ms = _finite_number("sensor_burst_ms", scenario.get("burst_ms"))
+    field_duty = _finite_number(
+        "field_duty_during_off_time", scenario.get("field_duty_during_off_time")
+    )
+    if burst_ms / 1000.0 >= period_s:
+        raise ValueError("sensor burst must fit inside its period")
+    if field_duty > 1.0:
+        raise ValueError("field duty must be <= 1")
+    return average_load_mw, period_s, burst_ms, field_duty
+
+
 def screen_point(
     row: dict[str, Any],
     downstream_efficiency: float = DOWNSTREAM_EFFICIENCY,
     reader: dict[str, Any] = READER,
+    scenario: dict[str, Any] = SENSOR_SCENARIO,
 ) -> dict[str, Any]:
-    """Compare one ST AN4913 tag output point with the reader chip reference.
+    """Compare one ST AN4913 point with a reader chip reference.
 
-    P_EH is already the tag's DC output. The assumed downstream efficiency is
-    applied once, only to estimate a regulated sensor rail after V_EH.
-    Reader active current is from a test condition with RFO segments disabled;
-    it excludes antenna-drive power, host MCU, board and regulator losses.
+    P_EH is already the tag's DC output. Downstream efficiency is applied once
+    to estimate a regulated sensor rail. The field duty is the W-IND-104
+    assumption: 50% of the non-burst interval. Reader active power is counted
+    only during the same field-on interval, and its output segments are disabled.
     """
     efficiency = _validate_efficiency(downstream_efficiency)
     if type(row) is not dict:
@@ -86,6 +108,7 @@ def screen_point(
     h_field = _finite_number("h_a_per_m_rms", row.get("h_a_per_m_rms"))
     p_eh = _finite_number("p_eh_mw", row.get("p_eh_mw"))
     vdd, active_typ_ma, active_max_ma = _validate_reader(reader)
+    average_load_mw, period_s, burst_ms, field_duty = _validate_sensor_scenario(scenario)
 
     reader_typ_mw = vdd * active_typ_ma
     reader_max_mw = vdd * active_max_ma
@@ -93,21 +116,35 @@ def screen_point(
     if sensor_rail_mw <= 0:
         raise ValueError("sensor rail power must be positive")
 
+    off_time_s = period_s - burst_ms / 1000.0
+    field_on_time_s = field_duty * off_time_s
+    period_fraction_with_field = field_on_time_s / period_s
+    average_tag_rail_mw = sensor_rail_mw * period_fraction_with_field
+    average_reader_chip_reference_mw = reader_typ_mw * period_fraction_with_field
+
     return {
         "am_percent": am,
         "h_a_per_m_rms": h_field,
         "p_eh_mw_manufacturer": p_eh,
         "downstream_efficiency_assumed": efficiency,
-        "p_sensor_rail_mw_assumed": sensor_rail_mw,
+        "p_sensor_rail_mw_while_field_on_assumed": sensor_rail_mw,
+        "average_tag_rail_mw_assumed": average_tag_rail_mw,
+        "average_reader_chip_reference_mw": average_reader_chip_reference_mw,
         "reader_active_chip_reference_typ_mw": reader_typ_mw,
         "reader_active_chip_reference_max_mw": reader_max_mw,
+        "field_duty_during_off_time_assumed": field_duty,
+        "field_on_time_per_period_s_assumed": field_on_time_s,
         "reader_to_sensor_ratio_typ": reader_typ_mw / sensor_rail_mw,
         "reader_to_sensor_ratio_max": reader_max_mw / sensor_rail_mw,
         "ideal_tag_count_lower_bound_typ": math.ceil(reader_typ_mw / sensor_rail_mw),
         "ideal_tag_count_lower_bound_max": math.ceil(reader_max_mw / sensor_rail_mw),
-        "reader_minus_one_tag_typ_mw": reader_typ_mw - sensor_rail_mw,
-        "reader_minus_one_tag_max_mw": reader_max_mw - sensor_rail_mw,
-        "dedicated_harvesting_break_even_vs_chip_reference": sensor_rail_mw >= reader_typ_mw,
+        "reader_minus_one_tag_typ_mw_while_field_on": reader_typ_mw - sensor_rail_mw,
+        "reader_minus_one_tag_max_mw_while_field_on": reader_max_mw - sensor_rail_mw,
+        "average_sensor_load_mw_from_w_ind_104": average_load_mw,
+        "average_sensor_side_margin_ratio": average_tag_rail_mw / average_load_mw,
+        "dedicated_harvesting_break_even_vs_chip_reference": (
+            average_tag_rail_mw >= average_reader_chip_reference_mw
+        ),
     }
 
 
@@ -125,14 +162,19 @@ def build_report(
     )
     best = max(points, key=lambda point: point["p_eh_mw_manufacturer"])
     all_below = all(
-        point["p_sensor_rail_mw_assumed"]
-        < point["reader_active_chip_reference_typ_mw"]
+        point["average_tag_rail_mw_assumed"]
+        < point["average_reader_chip_reference_mw"]
         for point in points
     )
     vdd = READER["vdd_v"]
     reader_typ_mw = vdd * READER["active_typ_ma"]
     reader_max_mw = vdd * READER["active_max_ma"]
-    best_sensor_rail_mw = best["p_sensor_rail_mw_assumed"]
+    best_sensor_rail_mw = best["p_sensor_rail_mw_while_field_on_assumed"]
+    average_load_mw, period_s, burst_ms, field_duty = _validate_sensor_scenario(
+        SENSOR_SCENARIO
+    )
+    off_time_s = period_s - burst_ms / 1000.0
+    field_on_time_s = field_duty * off_time_s
 
     return {
         "schema": "valdo.w_ind_105.reader_inclusive_nfc_energy_gate.v1",
@@ -166,19 +208,37 @@ def build_report(
             "field_generated_in_power_down_mode": False,
             "wake_mode_tag_eh_credit_mw": 0.0,
         },
+        "sensor_scenario": {
+            "average_load_mw_from_w_ind_104": average_load_mw,
+            "period_s": period_s,
+            "burst_ms": burst_ms,
+            "off_time_s": off_time_s,
+            "field_duty_during_off_time": field_duty,
+            "field_on_time_per_period_s": field_on_time_s,
+            "field_on_fraction_of_period": field_on_time_s / period_s,
+        },
         "downstream_efficiency_assumption": efficiency,
         "sensor_reference": {
-            "average_target_mw_from_w_ind_104": MICRO_SENSOR_AVERAGE_TARGET_MW,
-            "active_module_reference_mw": ACTIVE_MODULE_REFERENCE_MW,
+            "average_load_mw": average_load_mw,
             "baseline_1a_m_am10": baseline,
-            "baseline_sensor_rail_margin_over_0_248mw": (
-                baseline["p_sensor_rail_mw_assumed"] / MICRO_SENSOR_AVERAGE_TARGET_MW
+            "best_case_average_tag_rail_mw": best["average_tag_rail_mw_assumed"],
+            "best_case_average_reader_chip_reference_mw": (
+                best["average_reader_chip_reference_mw"]
+            ),
+            "baseline_average_sensor_side_margin_ratio": (
+                baseline["average_sensor_side_margin_ratio"]
+            ),
+            "baseline_reader_chip_energy_per_period_mj": (
+                reader_typ_mw * field_on_time_s
+            ),
+            "baseline_tag_rail_energy_per_period_mj": (
+                baseline["average_tag_rail_mw_assumed"] * period_s
             ),
         },
         "best_tag_point_in_an4913": best,
         "sweep": {
             "manufacturer_point_count": len(points),
-            "all_22_sensor_rail_outputs_below_reader_active_typ": all_below,
+            "all_22_average_tag_rail_outputs_below_reader_active_typ": all_below,
             "dedicated_harvesting_points_at_or_above_reader_reference": sum(
                 point["dedicated_harvesting_break_even_vs_chip_reference"]
                 for point in points
@@ -186,7 +246,7 @@ def build_report(
             "best_case_sensor_rail_to_reader_typ_ratio": (
                 best_sensor_rail_mw / reader_typ_mw
             ),
-            "best_case_reader_minus_one_tag_typ_mw": (
+            "best_case_reader_minus_one_tag_typ_mw_while_field_on": (
                 reader_typ_mw - best_sensor_rail_mw
             ),
             "ideal_tag_count_lower_bound_typ_min": min(
@@ -206,11 +266,11 @@ def build_report(
         "decision": {
             "dedicated_nfc_energy_harvesting": (
                 "NO_GO_FOR_ST25R3916B_READER_CANDIDATE: all 22 AN4913 tag points, "
-                "after 65% assumed downstream conversion, remain below the 33.6 mW "
-                "typical chip-only active reference with RFO segments disabled. "
-                "Actual field-on input must additionally account for antenna drive, "
-                "host MCU, board, regulator and RF losses; no positive whole-system "
-                "energy balance is demonstrated."
+                "after 65% assumed downstream conversion and 50% field duty over "
+                "the W-IND-104 off-time, remain below the 33.6 mW typical chip-only "
+                "active reference with RFO segments disabled. Actual field-on input "
+                "must additionally account for antenna drive, host MCU, board, "
+                "regulator and RF losses; no positive whole-system energy balance is demonstrated."
             ),
             "opportunistic_nfc_harvesting": (
                 "CONDITIONAL_ONLY_WHEN_THE_READER_FIELD_IS_ALREADY_REQUIRED_FOR_DATA_OR_ID: "
@@ -247,6 +307,7 @@ def build_report(
             "reader_regulator_loss_included": False,
             "tag_coupling_changes_with_multiple_tags_included": False,
             "field_geometry_and_antenna_transfer_qualified": False,
+            "field_duty_during_off_time": field_duty,
             "ideal_tag_count_assumes_linear_sum_without_mutual_loading": True,
             "reader_wake_mode_harvest_credit_mw": 0.0,
         },
